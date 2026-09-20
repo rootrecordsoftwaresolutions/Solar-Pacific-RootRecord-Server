@@ -1,0 +1,210 @@
+Metadata for: My_Workspace-Relax_Work_46.wav
+Generated: 2026-09-03T13:53:08.909Z
+
+--- Track Information ---
+Title: Relax Work 46
+Artist: storeyalexander94
+Year: 2026
+
+--- Musical Information ---
+
+--- Creation Details ---
+Prompt: Ambient with soft warm drones, subtle ocean breeze textures, quiet melodic hints, relaxed tropical night atmosphere, seamless looping structure; slow drifting foundation with gently swaying harmonic beds, sparse mallet phrases in the verse-like opening, a slightly fuller middle pass with shimmer and distant chime accents, then a return to the bare drone for a perfectly circular ending; breathy field-recording layers, soft filtered swells, and a looping tidal pulse; intimate close-mic mix, warm and velvety with a spacious horizon, soft, warm, ambient, tropical
+
+--- Lyrics ---
+[Instrumental]
+
+Cover Art URL: https://cdn2.suno.ai/image_cf038483-9b05-465b-9b44-ff56017a2cf9.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Relax Work 46",
+  "play_count": 0,
+  "upvote_count": 0,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "cf038483-9b05-465b-9b44-ff56017a2cf9",
+  "entity_type": "song_schema",
+  "video_url": "",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/cf038483-9b05-465b-9b44-ff56017a2cf9.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    },
+    {
+      "url": "https://cdn1.suno.ai/cf038483-9b05-465b-9b44-ff56017a2cf9.mp3",
+      "content_type": "mp3",
+      "delivery": "progressive"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/image_cf038483-9b05-465b-9b44-ff56017a2cf9.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/image_large_cf038483-9b05-465b-9b44-ff56017a2cf9.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "Ambient with soft warm drones, subtle ocean breeze textures, quiet melodic hints, relaxed tropical night atmosphere, seamless looping structure; slow drifting foundation with gently swaying harmonic beds, sparse mallet phrases in the verse-like opening, a slightly fuller middle pass with shimmer and distant chime accents, then a return to the bare drone for a perfectly circular ending; breathy field-recording layers, soft filtered swells, and a looping tidal pulse; intimate close-mic mix, warm and velvety with a spacious horizon, soft, warm, ambient, tropical",
+    "prompt": "[Instrumental]",
+    "gpt_description_prompt": "Peaceful Pacific island ambient, soft warm drones, subtle ocean breeze textures, quiet melodic hints, relaxed tropical night mood, seamless loop",
+    "type": "gen",
+    "duration": 198.04,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": true,
+    "vox_render_mode": "strict",
+    "can_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "FD429C1A",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "FD429C40",
+          "border_color": "00000000"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "minimal_album_art",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": false,
+  "user_id": "234176ba-b771-46ba-8c87-00181d7b09ef",
+  "display_name": "storeyalexander94",
+  "handle": "storeyalexander94",
+  "is_handle_updated": false,
+  "avatar_image_url": "https://cdn1.suno.ai/sAura14.jpg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-01T04:46:34.649Z",
+  "is_public": false,
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 1,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "publish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  }
+}

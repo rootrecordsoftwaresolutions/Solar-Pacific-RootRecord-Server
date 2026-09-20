@@ -1,0 +1,218 @@
+Metadata for: My_Workspace-Relax_Work_18.wav
+Generated: 2026-09-03T13:59:58.233Z
+
+--- Track Information ---
+Title: Relax Work 18
+Artist: storeyalexander94
+Year: 2026
+
+--- Musical Information ---
+
+--- Creation Details ---
+Prompt: Ambient lounge with soft pads, light sparkling textures, gentle melodic hints, relaxed evening pulse, airy seamless flow, sparse brushed percussion, liquid synth arps drifting through verses, pre-chorus opens with filtered shimmer and reversed swells, chorus folds into a warm wide pad bed with bell-like accents and soft vocal ooohs, bridge thins to a single tone and tide-like noise before returning, smooth spacious mix with glossy low end and close intimate detail, gentle, ambient, warm, light, lounge, tropical, soft, smooth
+
+--- Lyrics ---
+[Instrumental]
+
+Cover Art URL: https://cdn2.suno.ai/image_52859c98-bf86-4f21-8277-5921309aae13.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Relax Work 18",
+  "play_count": 2,
+  "upvote_count": 0,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "52859c98-bf86-4f21-8277-5921309aae13",
+  "entity_type": "song_schema",
+  "video_url": "",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/52859c98-bf86-4f21-8277-5921309aae13.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    },
+    {
+      "url": "https://cdn1.suno.ai/52859c98-bf86-4f21-8277-5921309aae13.mp3",
+      "content_type": "mp3",
+      "delivery": "progressive"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/image_52859c98-bf86-4f21-8277-5921309aae13.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/image_large_52859c98-bf86-4f21-8277-5921309aae13.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "Ambient lounge with soft pads, light sparkling textures, gentle melodic hints, relaxed evening pulse, airy seamless flow, sparse brushed percussion, liquid synth arps drifting through verses, pre-chorus opens with filtered shimmer and reversed swells, chorus folds into a warm wide pad bed with bell-like accents and soft vocal ooohs, bridge thins to a single tone and tide-like noise before returning, smooth spacious mix with glossy low end and close intimate detail, gentle, ambient, warm, light, lounge, tropical, soft, smooth",
+    "prompt": "[Instrumental]",
+    "gpt_description_prompt": "Warm tropical lounge ambient, soft pads, gentle melodic hints, light sparkling textures, relaxed evening mood, no heavy drums, smooth and spacious, seamless loop",
+    "type": "gen",
+    "duration": 183.4,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": true,
+    "vox_render_mode": "strict",
+    "can_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "FD429C1A",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "FD429C40",
+          "border_color": "00000000"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "film_strip",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": false,
+  "user_id": "234176ba-b771-46ba-8c87-00181d7b09ef",
+  "display_name": "storeyalexander94",
+  "handle": "storeyalexander94",
+  "is_handle_updated": false,
+  "avatar_image_url": "https://cdn1.suno.ai/sAura14.jpg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-01T04:32:02.189Z",
+  "is_public": false,
+  "reaction": {
+    "play_count": 2,
+    "skip_count": 0,
+    "flagged": false,
+    "clip": "52859c98-bf86-4f21-8277-5921309aae13",
+    "updated_at": "2026-09-01T05:51:00.647Z"
+  },
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "ambient, lounge, tropical",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "publish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  }
+}

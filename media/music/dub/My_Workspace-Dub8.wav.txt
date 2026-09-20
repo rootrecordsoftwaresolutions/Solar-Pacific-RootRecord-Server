@@ -1,0 +1,218 @@
+Metadata for: My_Workspace-Dub8.wav
+Generated: 2026-09-03T13:47:04.494Z
+
+--- Track Information ---
+Title: Dub8
+Artist: storeyalexander94
+Year: 2026
+
+--- Musical Information ---
+
+--- Creation Details ---
+Prompt: Instrumental tropical lagoon dubstep with deep underwater-feeling sub bass, bright marimba-like tropical leads, soft island percussion, syncopated half-time groove, spacious stereo delays, filtered water-droplet textures, gentle intro, bass-led drop, breezy melodic interlude, then a return to the opening groove. Keep the ending harmonically and rhythmically identical to the opening for a seamless loop; clean low end, restrained transients, wide but uncluttered mix.
+
+--- Lyrics ---
+[Instrumental]
+
+Cover Art URL: https://cdn2.suno.ai/image_7bd8c8ac-0c8f-46bd-9dbe-172b30acd673.jpeg
+
+--- Raw API Response ---
+{
+  "status": "complete",
+  "title": "Dub8",
+  "play_count": 2,
+  "upvote_count": 0,
+  "allow_comments": true,
+  "is_verified": false,
+  "id": "7bd8c8ac-0c8f-46bd-9dbe-172b30acd673",
+  "entity_type": "song_schema",
+  "video_url": "",
+  "audio_url": "https://studio-api.prod.suno.com/api/forbidden",
+  "media_urls": [
+    {
+      "url": "https://d2lwuy8qc234o3.cloudfront.net/1/clip/7bd8c8ac-0c8f-46bd-9dbe-172b30acd673.m4a",
+      "content_type": "m4a-opus",
+      "delivery": "progressive",
+      "encoding": "1.0.0"
+    },
+    {
+      "url": "https://cdn1.suno.ai/7bd8c8ac-0c8f-46bd-9dbe-172b30acd673.mp3",
+      "content_type": "mp3",
+      "delivery": "progressive"
+    }
+  ],
+  "image_url": "https://cdn2.suno.ai/image_7bd8c8ac-0c8f-46bd-9dbe-172b30acd673.jpeg",
+  "image_large_url": "https://cdn2.suno.ai/image_large_7bd8c8ac-0c8f-46bd-9dbe-172b30acd673.jpeg",
+  "major_model_version": "v5.5",
+  "model_name": "chirp-fenix",
+  "metadata": {
+    "tags": "Instrumental tropical lagoon dubstep with deep underwater-feeling sub bass, bright marimba-like tropical leads, soft island percussion, syncopated half-time groove, spacious stereo delays, filtered water-droplet textures, gentle intro, bass-led drop, breezy melodic interlude, then a return to the opening groove. Keep the ending harmonically and rhythmically identical to the opening for a seamless loop; clean low end, restrained transients, wide but uncluttered mix.",
+    "prompt": "[Instrumental]",
+    "gpt_description_prompt": "Tropical lagoon dubstep, deep underwater-feeling bass, bright tropical leads, soft island drums, spacious and groovy, seamless loop",
+    "type": "gen",
+    "duration": 163.92,
+    "refund_credits": false,
+    "stream": true,
+    "make_instrumental": true,
+    "vox_render_mode": "strict",
+    "can_remix": true,
+    "is_remix": false,
+    "priority": 10,
+    "has_stem": false,
+    "video_is_stale": true,
+    "uses_latest_model": true,
+    "model_badges": {
+      "songcard": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "0000004D",
+          "border_color": "00000000"
+        }
+      },
+      "songrow": {
+        "display_name": "v5.5",
+        "light": {
+          "text_color": "FD429C",
+          "background_color": "FD429C1A",
+          "border_color": "00000000"
+        },
+        "dark": {
+          "text_color": "FD429C",
+          "background_color": "FD429C40",
+          "border_color": "00000000"
+        }
+      }
+    },
+    "image_config": {
+      "use_image_config_template": true,
+      "id": "renaissance",
+      "default_cover_style": "brand_refresh"
+    },
+    "is_mumble": false
+  },
+  "is_liked": false,
+  "user_id": "234176ba-b771-46ba-8c87-00181d7b09ef",
+  "display_name": "storeyalexander94",
+  "handle": "storeyalexander94",
+  "is_handle_updated": false,
+  "avatar_image_url": "https://cdn1.suno.ai/sAura14.jpg",
+  "is_trashed": false,
+  "is_hidden": false,
+  "created_at": "2026-09-01T04:57:49.059Z",
+  "is_public": false,
+  "reaction": {
+    "play_count": 2,
+    "skip_count": 0,
+    "flagged": false,
+    "clip": "7bd8c8ac-0c8f-46bd-9dbe-172b30acd673",
+    "updated_at": "2026-09-01T05:25:02.744Z"
+  },
+  "is_persona_root": false,
+  "is_following_creator": false,
+  "albums": [],
+  "ownership": {
+    "ownership_reason": "subscribed"
+  },
+  "explicit": false,
+  "comment_count": 0,
+  "flag_count": 0,
+  "display_tags": "tropical, dubstep",
+  "is_contest_clip": false,
+  "has_hook": false,
+  "batch_index": 0,
+  "action_config": {
+    "actions": [
+      {
+        "action_type": "add_to_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "like_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "share_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "dislike_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "report_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remove_from_playlist",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "delete_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "edit_song_details",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_hook",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "download_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "open_in_studio",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "publish_song",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remaster",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_extend",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_cover",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "remix_reuse_style",
+        "disabled": false,
+        "visible": true
+      },
+      {
+        "action_type": "create_voice",
+        "disabled": false,
+        "visible": true
+      }
+    ]
+  }
+}
