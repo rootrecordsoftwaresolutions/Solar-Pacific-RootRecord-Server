@@ -1,0 +1,255 @@
+"""Live NWS + NHC lines for Ava chat. Do not invent. Prefer tonight over a stale afternoon period."""
+from __future__ import annotations
+
+import logging
+import re
+import time
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+import httpx
+
+from apps.core import config
+
+log = logging.getLogger("ava.live_wx")
+HST = ZoneInfo("Pacific/Honolulu")
+UA = {"User-Agent": "AvaIvy/2.0 (https://avaivy.cloud; chat-wx)"}
+POINT = "https://api.weather.gov/points/19.5429,-155.0372"
+ALERTS = "https://api.weather.gov/alerts/active?area=HI"
+
+_cache: tuple[float, list[str]] | None = None
+_CACHE_S = 180.0
+
+
+def _pick_period(periods: list[dict], hour: int) -> dict | None:
+    if not periods:
+        return None
+    if hour >= 18 or hour < 5:
+        for p in periods:
+            if "tonight" in str(p.get("name") or "").lower():
+                return p
+        if "afternoon" in str(periods[0].get("name") or "").lower() and len(periods) > 1:
+            return periods[1]
+    return periods[0]
+
+
+def _period_line(p: dict) -> str:
+    name = p.get("name") or "?"
+    temp = p.get("temperature")
+    unit = p.get("temperatureUnit") or "F"
+    short = p.get("shortForecast") or ""
+    wind = p.get("windSpeed") or ""
+    gust = p.get("windGust") or ""
+    bits = [f"{name}", f"{temp}{unit}" if temp is not None else ""]
+    if short:
+        bits.append(str(short))
+    if wind:
+        bits.append(f"wind {wind}")
+    if gust:
+        bits.append(f"gusts {gust}")
+    return ", ".join(b for b in bits if b)
+
+
+def _alert_line(alerts: list[dict]) -> str:
+    if not alerts:
+        return "HI alerts: none active"
+    grouped: dict[str, bool] = {}
+    order: list[str] = []
+    for a in alerts[:8]:
+        ev = str(a.get("event") or "alert")
+        areas = str(a.get("areas") or "")
+        bi = bool(re.search(r"Big Island|Puna|Kona|Hilo|Kohala|Kaʻū|Kau", areas, re.I))
+        if ev not in grouped:
+            order.append(ev)
+            grouped[ev] = bi
+        else:
+            grouped[ev] = grouped[ev] or bi
+    names = [f"{ev} (Big Island in area)" if grouped[ev] else ev for ev in order]
+    return "HI alerts: " + "; ".join(names)
+
+
+def _from_md() -> tuple[list[dict], list[dict], str]:
+    from apps.core.services.reports import latest_report
+
+    report = latest_report("nws-weather-*.md")
+    if not report:
+        return [], [], "no NWS file"
+    text = report.read_text(encoding="utf-8", errors="replace")
+    age_h = (time.time() - report.stat().st_mtime) / 3600.0
+    written = datetime.fromtimestamp(report.stat().st_mtime, HST).strftime("%H:%M HST")
+    stamp = f"file {written}, {age_h:.1f} h old"
+    alerts: list[dict] = []
+    for m in re.finditer(r"\*\*([^*]+)\*\* —[^\n]*\n([^\n]*)\n_([^_]+)_", text):
+        alerts.append({"event": m.group(1).strip(), "headline": m.group(2).strip(), "areas": m.group(3).strip()})
+    periods: list[dict] = []
+    chunks = re.split(r"^### ", text, flags=re.M)
+    for chunk in chunks[1:]:
+        lines = chunk.strip().splitlines()
+        if not lines:
+            continue
+        name = lines[0].strip()
+        # Keep shortForecast on the title line only. Joining the detail
+        # paragraph used to yield "Occasional Rain Showers Occasional rain showers".
+        title_line = lines[1].strip() if len(lines) > 1 else ""
+        rest = " ".join(lines[1:])
+        tm = re.search(r"(\d+)°([FC])", title_line or rest)
+        wm = re.search(r"wind[^\d]{0,20}(\d+(?:\s+to\s+\d+)?)\s*mph", rest, re.I)
+        gm = re.search(r"gusts as high as (\d+)\s*mph", rest, re.I)
+        sm = re.search(r"—\s*([^.\n]+)", title_line)
+        short = (sm.group(1).strip() if sm else "")
+        periods.append(
+            {
+                "name": name,
+                "temperature": int(tm.group(1)) if tm else None,
+                "temperatureUnit": tm.group(2) if tm else "F",
+                "shortForecast": short,
+                "windSpeed": f"{wm.group(1)} mph" if wm else "",
+                "windGust": f"{gm.group(1)} mph" if gm else "",
+            }
+        )
+    return periods, alerts, stamp
+
+
+async def _from_api() -> tuple[list[dict], list[dict], str] | None:
+    try:
+        async with httpx.AsyncClient(timeout=10, headers=UA, follow_redirects=True) as client:
+            r = await client.get(POINT)
+            periods: list[dict] = []
+            if r.status_code == 200:
+                fc = (r.json().get("properties") or {}).get("forecast")
+                if fc:
+                    rf = await client.get(fc)
+                    if rf.status_code == 200:
+                        periods = (rf.json().get("properties") or {}).get("periods") or []
+            alerts: list[dict] = []
+            ra = await client.get(ALERTS)
+            if ra.status_code == 200:
+                for f in (ra.json().get("features") or [])[:8]:
+                    p = f.get("properties") or {}
+                    alerts.append(
+                        {
+                            "event": p.get("event") or "Unknown",
+                            "headline": p.get("headline") or "",
+                            "areas": p.get("areaDesc") or "",
+                            "severity": p.get("severity") or "",
+                        }
+                    )
+            if not periods:
+                return None
+            return periods, alerts, "live NWS " + datetime.now(HST).strftime("%H:%M HST")
+    except Exception as e:
+        log.debug("NWS live fetch: %s", e)
+        return None
+
+
+def hurricane_line() -> str:
+    try:
+        from apps.core.services import hurricane_desk
+
+        pub = hurricane_desk.public_payload()
+        if pub.get("hawaii"):
+            return str(pub["hawaii"])
+    except Exception:
+        pass
+    from apps.core.services.hurricane_tracker import load_storms
+
+    data = load_storms()
+    storms = data.get("storms") or []
+    ts = str(data.get("ts") or "")
+    near = []
+    for s in storms:
+        if not isinstance(s, dict):
+            continue
+        nm = s.get("nearest_hawaii_nm")
+        try:
+            nmi = float(nm) if nm is not None else None
+        except (TypeError, ValueError):
+            nmi = None
+        if nmi is None:
+            continue
+        near.append((nmi, s))
+    near.sort(key=lambda x: x[0])
+    if not near:
+        n = int(data.get("count") or 0)
+        return (
+            "Nearest Hurricane from a Hawaiian island: none mapped. "
+            f"Worldwide count {n}. Sample {ts or 'unknown'}."
+        )
+    nmi, s = near[0]
+    name = s.get("name") or s.get("id") or "storm"
+    label = s.get("label") or s.get("class") or "cyclone"
+    hi = s.get("hawaii_nm") if isinstance(s.get("hawaii_nm"), dict) else {}
+    island = "Hawaiʻi"
+    dist_nm = int(round(nmi))
+    if hi:
+        island, d = min(hi.items(), key=lambda kv: float(kv[1] or 9e9))
+        dist_nm = int(round(float(d)))
+    if dist_nm >= 800:
+        return (
+            f"Pacific basin cyclone (not a Hawaiʻi threat): {label} {name}, "
+            f"{dist_nm} nm from {island}. West of Kauaʻi is Asia/Japan. Do not alarm."
+            + (f" Sample {ts}." if ts else "")
+        )
+    return (
+        f"Nearest Hurricane from a Hawaiian island: {label} {name}, "
+        f"{dist_nm} nm from {island}."
+        + (f" Sample {ts}." if ts else "")
+    )
+
+
+def _period_start(periods: list[dict], hour: int) -> int:
+    if not periods:
+        return 0
+    picked = _pick_period(periods, hour)
+    if picked is None:
+        return 0
+    for i, p in enumerate(periods):
+        if p is picked:
+            return i
+    return 0
+
+
+def _wx_period_lines(periods: list[dict], stamp: str, *, hour: int, max_n: int = 3) -> list[str]:
+    """Current period plus the next ones (tonight / tomorrow) so 'tomorrow' asks have file facts."""
+    if not periods:
+        return [f"Weather ({stamp}): DOWN"]
+    start = _period_start(periods, hour)
+    chosen = periods[start : start + max(1, max_n)]
+    out: list[str] = []
+    for i, p in enumerate(chosen):
+        body = _period_line(p)
+        if i == 0:
+            out.append(f"Weather ({stamp}): {body}")
+        else:
+            out.append(f"Next: {body}")
+    return out
+
+
+def weather_lines_sync() -> list[str]:
+    """No HTTP. Fresh cache if origin already fetched NWS; else the markdown on disk."""
+    if _cache and (time.monotonic() - _cache[0]) < _CACHE_S:
+        return _cache[1]
+    hour = datetime.now(HST).hour
+    periods, alerts, stamp = _from_md()
+    lines = _wx_period_lines(periods, stamp, hour=hour, max_n=3)
+    lines.append(_alert_line(alerts))
+    lines.append(hurricane_line())
+    return lines
+
+
+async def weather_lines() -> list[str]:
+    global _cache
+    now = time.monotonic()
+    if _cache and (now - _cache[0]) < _CACHE_S:
+        return _cache[1]
+    hour = datetime.now(HST).hour
+    fetched = await _from_api()
+    if fetched:
+        periods, alerts, stamp = fetched
+    else:
+        periods, alerts, stamp = _from_md()
+    lines = _wx_period_lines(periods, stamp, hour=hour, max_n=3)
+    lines.append(_alert_line(alerts))
+    lines.append(hurricane_line())
+    _cache = (now, lines)
+    return lines

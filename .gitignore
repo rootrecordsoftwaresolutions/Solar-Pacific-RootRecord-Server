@@ -1,0 +1,108 @@
+# Secrets and env — never commit
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.token
+*.pem
+*.p12
+*.jks
+*.keystore
+credentials.env
+credentials.env.*
+google-services.json
+
+# Python / Node build & deps
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.next/
+out/
+dist/
+build/
+.wrangler/
+.cache/
+*.egg-info/
+*.tsbuildinfo
+.turbo/
+
+# Runtime / local state
+**/store/
+!**/store/.gitkeep
+logs/
+*.log
+*.jsonl
+*.db
+*.sqlite
+*.sqlite3
+local/
+private/
+.local/
+
+# Media
+*.wav
+*.mp3
+
+# Backups & temp
+*.bak
+*.tmp
+*.temp
+*.zip
+*.debris
+*.megaignore
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local workspaces (not published)
+agents/
+blockchain/
+rootrecord-public/
+rootrecord-online/
+aws-sync/
+rootrecord-aws/
+android/
+rootmc/
+rootmc-mobile-web/
+rootrecord-home/
+media/
+kokoro/store/
+local-data-globe/data/outbox.ndjson
+# Large generated/runtime artifacts
+reports/
+bitcoin/
+bitcoin-cash/
+dogecoin/
+**/builds/
+*.aab
+*.jar
+
+# Local blockchain / crypto nodes
+bitcoin/
+dogecoin/
+bitcoin-cash/
+
+# RootMC local server workspaces
+rootmc/
+
+# Generated indexes/state
+fs-index/state/
+network-globe/data/
+
+# Historical reports
+reports/
+
+# RootMC Android project — intentionally published
+!rootmc-android/
+!rootmc-android/android/
+!rootmc-android/android/**
+
+# RootMC Android machine-local configuration
+rootmc-android/android/local.properties
+origin/repo/
