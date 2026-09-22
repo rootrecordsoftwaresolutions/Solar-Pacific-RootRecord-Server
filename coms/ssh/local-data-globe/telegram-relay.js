@@ -68,7 +68,7 @@ function loadMasterEnv() {
 function getBotToken() {
   if (botToken) return botToken;
   loadMasterEnv();
-  botToken = (process.env.AVA_TELEGRAM_BOT_TOKEN || process.env.TELEGRAM_BOT_TOKEN || '').trim();
+  botToken = (process.env.TELEGRAM_BOT_TOKEN || process.env.AVA_TELEGRAM_BOT_TOKEN || '').trim();
   return botToken;
 }
 
