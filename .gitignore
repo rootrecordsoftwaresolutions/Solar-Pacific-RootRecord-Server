@@ -1,4 +1,19 @@
+# Separate repositories
 aws-sync/
 
-# Separate repository
-aws-sync/
+# Archives and backups
+*.zip
+backups/
+
+# Media Artifacts
+*.wav
+*.mp3
+
+# Agent operational files
+# Hidden for security, integrity, and functionality reasons
+/agents/
+
+# Environment / secret files
+.env
+*.env
+
