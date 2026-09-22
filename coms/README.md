@@ -12,9 +12,14 @@ everything at once on activation.
 | Skill | Status | Purpose |
 |---|---|---|
 | `ssh/` | **Live** | Data-pack pull + verify + remote-wipe-confirm between RootRecord and AWS Mainland. Replaced the old Telegram-based `rr-packer` relay. |
-| `telegram/` | Stub — real code not yet ported here | Chat/trigger polling (`rr-chat`). Kept on Telegram deliberately — outbound-only polling solves NAT traversal for free. Not being replaced. |
-| `discord/` | Not built | Future. |
-| `slack/` | Not built | Future. |
+| `telegram/` | **Live** (functions) | `send_message`/`get_me`/`get_updates`. Separate from the still-running AWS `chat_poll.py` trigger poller — see `telegram/references/aws-chat-poll.md`. |
+| `discord/` | **Live** (functions) | Post/pin/forward/read messages, DMs, guild channels. Persona reply logic (`discord_chat.py`) intentionally not ported. |
+| `slack/` | **Live** (functions) | `post_message`/`history`/`auth_test`. Replies only, never deletes history. |
+
+All three protocol skills load their bot token from a single file:
+`/home/rootrecord/master/master-key.env` — `AVA_TELEGRAM_BOT_TOKEN`,
+`AVA_DISCORD_BOT_TOKEN` (+ fallbacks), `AVA_SLACK_BOT_TOKEN`. `ssh/` doesn't
+use this — its credential is the SSH key file itself, referenced directly.
 
 ## Adding a new protocol later
 

@@ -1,91 +1,28 @@
-# SSH Globe Relay Skill
+---
+name: ssh
+description: SSH/rsync relay between RootRecord and AWS Mainland for network-globe telemetry data packs. Pull-based — RootRecord rsyncs zips from AWS out/, verifies, confirms over SSH to trigger remote wipe. Replaced the old Telegram push (rr-packer). Use for starting/stopping/checking the relay or troubleshooting SSH/relay failures.
+---
 
-## Purpose
+Part of `coms/` (see `coms/README.md`) — loads independently of `telegram/`,
+`discord/`, `slack/`. Runtime path: `/home/rootrecord/.ollama/skills/coms/ssh`.
 
-SSH-based telemetry collection and relay skill for the RootRecord Network Globe system.
+Flow: local collector → SSH relay → AWS Mainland `out/` → RootRecord pull
+(verify + confirm) → Network Globe backend.
 
-This skill is designed for:
-- human operators
-- AI-assisted maintenance
-- repeatable deployment
+## Commands
 
-## Runtime Flow
+- Start: `./run.sh`
+- Stop: `pkill -f ssh-relay`
+- Status: `./scripts/health-check.sh`
+- Logs: `./logs/`
 
-    Local collector
-        |
-        v
-    SSH relay transport
-        |
-        v
-    US-Mainland-Server
-        |
-        v
-    Network Globe backend
+## Rules
 
-## Deployment
-
-This skill is loaded from:
-
-    /home/rootrecord/.ollama/skills/coms/ssh
-
-Part of the `coms` group alongside `telegram`, `discord`, and `slack` —
-each is its own independently-loadable skill (own SKILL.md, own metadata
-entry) so activating one doesn't pull the others into context. `coms/`
-itself is just the organizational parent folder, not a skill.
-
-Do not create duplicate copies.
-
-## Active Components
-
-The active runtime directory contains only files intended to execute:
-run.sh, scripts/, config/, data/, logs/
-
-## Context Preservation
-
-Historical files are retained as .bak context where they are not part of the
-active runtime. See backups/ (retired Python/paramiko implementation) and
-context/ (planning and setup docs) for history.
-
-## Operational Rules
-
-- Do not delete historical implementations.
-- Do not commit runtime data.
-- Keep secrets outside the skill package.
-- Verify SSH connectivity before relay startup.
-
-## Start
-
-From the skill directory:
-
-    cd /home/rootrecord/.ollama/skills/coms/ssh
-    ./run.sh
-
-## Stop
-
-    Ctrl+C
-
-or:
-
-    pkill -f ssh-relay
-
-## Status
-
-    cd /home/rootrecord/.ollama/skills/coms/ssh
-    ./scripts/health-check.sh
-
-## Logs
-
-Location:
-
-    ./logs/
+- Never delete `backups/` or `context/` — historical implementations stay as reference
+- No runtime data committed; no secrets in the skill package
+- Verify SSH connectivity before relay startup
 
 ## Troubleshooting
 
-SSH failure:
-- verify key
-- verify host
-- verify permissions
-
-Relay failure:
-- check outbox
-- check network connectivity
+- SSH failure → check key, host, permissions
+- Relay failure → check outbox, network connectivity
