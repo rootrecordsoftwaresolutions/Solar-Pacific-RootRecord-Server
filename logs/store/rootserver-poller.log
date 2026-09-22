@@ -478,3 +478,187 @@
 2026-09-22T13:32:25-10:00Poller is online.
 2026-09-22T13:32:30-10:00Poller is online.
 2026-09-22T13:32:35-10:00Poller is online.
+2026-09-22T13:32:40-10:00Poller is online.
+2026-09-22T13:32:45-10:00Poller is online.
+2026-09-22T13:32:50-10:00Poller is online.
+2026-09-22T13:32:55-10:00Poller is online.
+2026-09-22T13:33:00-10:00Poller is online.
+2026-09-22T13:33:05-10:00Poller is online.
+2026-09-22T13:33:10-10:00Poller is online.
+2026-09-22T13:33:15-10:00Poller is online.
+2026-09-22T13:33:20-10:00Poller is online.
+2026-09-22T13:33:25-10:00Poller is online.
+2026-09-22T13:33:30-10:00Poller is online.
+2026-09-22T13:33:35-10:00Poller is online.
+2026-09-22T13:33:40-10:00Poller is online.
+2026-09-22T13:33:45-10:00Poller is online.
+2026-09-22T13:33:50-10:00Poller is online.
+2026-09-22T13:33:55-10:00Poller is online.
+2026-09-22T13:34:00-10:00Poller is online.
+2026-09-22T13:34:02-10:00cloudflared: 2026-09-22T23:34:02Z INF Initiating graceful shutdown due to signal terminated ...
+2026-09-22T13:34:02-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T13:34:02-10:00Tunnel DOWN — token file missing: /home/rootrecord/.cloudflared/rootserver-poller.token
+2026-09-22T13:34:02-10:00Poller is online.
+2026-09-22T13:34:07-10:00Poller is online.
+2026-09-22T13:34:12-10:00Poller is online.
+2026-09-22T13:34:17-10:00Poller is online.
+2026-09-22T13:34:20-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T13:34:20-10:00Starting cloudflared mode=token public_host=rootserver.rootrecord.cloud
+2026-09-22T13:34:20-10:00Poller is online.
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Starting tunnel tunnelID=0f16a586-8791-4711-8347-a162c264110d
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Version 2026.9.1 (Checksum 03f1f25d1cc93b9ad6c60569d44060bc4f17ed97075760ed8cfca4b12dcd68cc)
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF GOOS: linux, GOVersion: go1.26.8, GoArch: amd64
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Settings: map[no-autoupdate:true]
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Environmental variables map[POLLER_TUNNEL_MODE:token TUNNEL_TOKEN:*****]
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Generated Connector ID: 83656f06-950f-4fef-beb1-3406b04715a5
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Initial protocol quic
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF ICMP proxy will use 192.168.1.66 as source for IPv4
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF ICMP proxy will use fdac:a7:f8b5:8:7296:f2c2:5a7f:602e in zone wlo1 as source for IPv6
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF ICMP proxy will use 192.168.1.66 as source for IPv4
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF ICMP proxy will use fdac:a7:f8b5:8:7296:f2c2:5a7f:602e in zone wlo1 as source for IPv6
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Starting metrics server on 127.0.0.1:20241/metrics
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=2606:4700:a0::6
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Registered tunnel connection connIndex=0 connection=a0e033c1-5b8c-492c-9a9e-97478bfa5a0b event=0 ip=2606:4700:a0::6 location=lax11 protocol=quic
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=1 event=0 ip=2606:4700:a8::2
+2026-09-22T13:34:20-10:00cloudflared: 2026-09-22T23:34:20Z INF Updated to new configuration config="{\"ingress\":[{\"hostname\":\"origin.avaivy.cloud\",\"service\":\"http://127.0.0.1:8787\"},{\"service\":\"http_status:404\"}],\"warp-routing\":{\"enabled\":false}}" version=4
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF Registered tunnel connection connIndex=1 connection=a4037b96-49ac-4be6-a50e-3c90562c50e2 event=0 ip=2606:4700:a8::2 location=sjc08 protocol=quic
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |                               CONNECTIVITY PRE-CHECKS                               |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  COMPONENT         TARGET                     STATUS  DETAILS                       |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  TCP Connectivity  region1.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  TCP Connectivity  region2.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable              |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |                                                                                     |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF |  SUMMARY: Environment is healthy. cloudflared will use 'quic' as primary protocol.  |
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck component="Cloudflare API" details="API is reachable" run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 status=pass target=api.cloudflare.com:443
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF precheck complete hard_fail=false run_id=3fe473b5-601f-4d86-acc4-2364eea1f918 suggested_protocol=quic
+2026-09-22T13:34:21-10:00cloudflared: 2026-09-22T23:34:21Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=2 event=0 ip=2606:4700:a0::10
+2026-09-22T13:34:22-10:00cloudflared: 2026-09-22T23:34:22Z INF Registered tunnel connection connIndex=2 connection=4142febc-6f90-4ed8-9fc1-fdf536ece386 event=0 ip=2606:4700:a0::10 location=lax11 protocol=quic
+2026-09-22T13:34:22-10:00cloudflared: 2026-09-22T23:34:22Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=3 event=0 ip=2606:4700:a8::5
+2026-09-22T13:34:23-10:00cloudflared: 2026-09-22T23:34:23Z INF Registered tunnel connection connIndex=3 connection=2ac86ef1-892c-4c20-94e3-dd8addd128ab event=0 ip=2606:4700:a8::5 location=sjc08 protocol=quic
+2026-09-22T13:34:25-10:00Poller is online.
+2026-09-22T13:34:30-10:00Poller is online.
+2026-09-22T13:34:35-10:00Poller is online.
+2026-09-22T13:34:40-10:00Poller is online.
+2026-09-22T13:34:45-10:00Poller is online.
+2026-09-22T13:34:50-10:00Poller is online.
+2026-09-22T13:34:55-10:00Poller is online.
+2026-09-22T13:35:00-10:00Poller is online.
+2026-09-22T13:35:05-10:00Poller is online.
+2026-09-22T13:35:09-10:00cloudflared: 2026-09-22T23:35:09Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:35:09-10:00cloudflared: 2026-09-22T23:35:09Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg event=0 ip=2606:4700:a8::5 type=http
+2026-09-22T13:35:09-10:00cloudflared: 2026-09-22T23:35:09Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:35:09-10:00cloudflared: 2026-09-22T23:35:09Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/power-on event=0 ip=2606:4700:a8::5 type=http
+2026-09-22T13:35:10-10:00Poller is online.
+2026-09-22T13:35:15-10:00Poller is online.
+2026-09-22T13:35:19-10:00cloudflared: 2026-09-22T23:35:19Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:35:19-10:00cloudflared: 2026-09-22T23:35:19Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg event=0 ip=2606:4700:a8::5 type=http
+2026-09-22T13:35:20-10:00Poller is online.
+2026-09-22T13:35:25-10:00Poller is online.
+2026-09-22T13:35:30-10:00Poller is online.
+2026-09-22T13:35:35-10:00Poller is online.
+2026-09-22T13:35:40-10:00Poller is online.
+2026-09-22T13:35:45-10:00Poller is online.
+2026-09-22T13:35:47-10:00cloudflared: 2026-09-22T23:35:47Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:35:47-10:00cloudflared: 2026-09-22T23:35:47Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/health event=0 ip=2606:4700:a8::5 type=http
+2026-09-22T13:35:47-10:00cloudflared: 2026-09-22T23:35:47Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=1 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:35:47-10:00cloudflared: 2026-09-22T23:35:47Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=1 dest=https://origin.avaivy.cloud/health event=0 ip=2606:4700:a8::2 type=http
+2026-09-22T13:35:50-10:00Poller is online.
+2026-09-22T13:35:55-10:00Poller is online.
+2026-09-22T13:36:00-10:00Poller is online.
+2026-09-22T13:36:01-10:00cloudflared: 2026-09-22T23:36:01Z WRN Serve tunnel error error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=2 event=0 ip=2606:4700:a0::10
+2026-09-22T13:36:01-10:00cloudflared: 2026-09-22T23:36:01Z INF Retrying connection in up to 1s connIndex=2 event=0 ip=2606:4700:a0::10
+2026-09-22T13:36:01-10:00cloudflared: 2026-09-22T23:36:01Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=1 event=0 ip=2606:4700:a8::2
+2026-09-22T13:36:01-10:00cloudflared: 2026-09-22T23:36:01Z INF Retrying connection in up to 1s connIndex=1 event=0 ip=2606:4700:a8::2
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=0 event=0 ip=2606:4700:a0::6
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=2606:4700:a0::6
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z ERR Serve tunnel error error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=3 event=0 ip=2606:4700:a8::5
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z INF Retrying connection in up to 1s connIndex=3 event=0 ip=2606:4700:a8::5
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z ERR Connection terminated error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=3
+2026-09-22T13:36:02-10:00cloudflared: 2026-09-22T23:36:02Z ERR Connection terminated error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=2
+2026-09-22T13:36:03-10:00cloudflared: 2026-09-22T23:36:03Z ERR Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=1
+2026-09-22T13:36:03-10:00cloudflared: 2026-09-22T23:36:03Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.200.63
+2026-09-22T13:36:04-10:00cloudflared: 2026-09-22T23:36:04Z INF Registered tunnel connection connIndex=0 connection=5ebddcc4-1c9e-4f47-9963-b6b3a1cd629a event=0 ip=198.41.200.63 location=lax01 protocol=quic
+2026-09-22T13:36:05-10:00Poller is online.
+2026-09-22T13:36:10-10:00Poller is online.
+2026-09-22T13:36:13-10:00cloudflared: 2026-09-22T23:36:13Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=1 event=0 ip=198.41.200.113
+2026-09-22T13:36:13-10:00cloudflared: 2026-09-22T23:36:13Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=3 event=0 ip=198.41.192.57
+2026-09-22T13:36:13-10:00cloudflared: 2026-09-22T23:36:13Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=2 event=0 ip=198.41.192.47
+2026-09-22T13:36:14-10:00cloudflared: 2026-09-22T23:36:14Z INF Registered tunnel connection connIndex=2 connection=4dbdc3fe-e736-444e-aadb-1b9529e51c9c event=0 ip=198.41.192.47 location=lax07 protocol=quic
+2026-09-22T13:36:14-10:00cloudflared: 2026-09-22T23:36:14Z INF Registered tunnel connection connIndex=3 connection=d5618040-3a06-4ac2-bb40-1aad80182a00 event=0 ip=198.41.192.57 location=lax10 protocol=quic
+2026-09-22T13:36:14-10:00cloudflared: 2026-09-22T23:36:14Z INF Registered tunnel connection connIndex=1 connection=781ffdef-f957-494c-9f1e-7c869de59dbd event=0 ip=198.41.200.113 location=lax01 protocol=quic
+2026-09-22T13:36:15-10:00Poller is online.
+2026-09-22T13:36:20-10:00Poller is online.
+2026-09-22T13:36:25-10:00Poller is online.
+2026-09-22T13:36:30-10:00Poller is online.
+2026-09-22T13:36:35-10:00Poller is online.
+2026-09-22T13:36:40-10:00Poller is online.
+2026-09-22T13:36:45-10:00Poller is online.
+2026-09-22T13:36:50-10:00Poller is online.
+2026-09-22T13:36:55-10:00Poller is online.
+2026-09-22T13:37:00-10:00Poller is online.
+2026-09-22T13:37:05-10:00Poller is online.
+2026-09-22T13:37:10-10:00Poller is online.
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Initiating graceful shutdown due to signal terminated ...
+2026-09-22T13:37:14-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T13:37:14-10:00Starting cloudflared mode=token public_host=rootserver.rootrecord.cloud
+2026-09-22T13:37:14-10:00Poller is online.
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Starting tunnel tunnelID=0f16a586-8791-4711-8347-a162c264110d
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Version 2026.9.1 (Checksum 03f1f25d1cc93b9ad6c60569d44060bc4f17ed97075760ed8cfca4b12dcd68cc)
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF GOOS: linux, GOVersion: go1.26.8, GoArch: amd64
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Settings: map[no-autoupdate:true]
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Environmental variables map[POLLER_TUNNEL_MODE:token TUNNEL_TOKEN:*****]
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Generated Connector ID: a2d33dbd-0e08-4310-bda4-f22b4e4a145d
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Initial protocol quic
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF ICMP proxy will use 192.168.1.66 as source for IPv4
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF ICMP proxy will use fdac:a7:f8b5:8:7296:f2c2:5a7f:602e in zone wlo1 as source for IPv6
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF ICMP proxy will use 192.168.1.66 as source for IPv4
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF ICMP proxy will use fdac:a7:f8b5:8:7296:f2c2:5a7f:602e in zone wlo1 as source for IPv6
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Starting metrics server on 127.0.0.1:20241/metrics
+2026-09-22T13:37:14-10:00cloudflared: 2026-09-22T23:37:14Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.200.113
+2026-09-22T13:37:15-10:00cloudflared: 2026-09-22T23:37:15Z INF Registered tunnel connection connIndex=0 connection=c3062737-dbec-4779-a97c-c11a83319d0b event=0 ip=198.41.200.113 location=lax01 protocol=quic
+2026-09-22T13:37:15-10:00cloudflared: 2026-09-22T23:37:15Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=1 event=0 ip=198.41.192.107
+2026-09-22T13:37:15-10:00cloudflared: 2026-09-22T23:37:15Z INF Updated to new configuration config="{\"ingress\":[{\"hostname\":\"origin.avaivy.cloud\", \"service\":\"http://127.0.0.1:8787\"}, {\"service\":\"http_status:404\"}], \"warp-routing\":{\"enabled\":false}}" version=4
+2026-09-22T13:37:15-10:00cloudflared: 2026-09-22T23:37:15Z INF Registered tunnel connection connIndex=1 connection=d9130197-1919-4101-8613-a08f159df46e event=0 ip=198.41.192.107 location=lax10 protocol=quic
+2026-09-22T13:37:16-10:00cloudflared: 2026-09-22T23:37:16Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=2 event=0 ip=198.41.192.167
+2026-09-22T13:37:16-10:00cloudflared: 2026-09-22T23:37:16Z INF Registered tunnel connection connIndex=2 connection=6c671a1b-263e-4bb6-b4f3-3169d774a6d9 event=0 ip=198.41.192.167 location=lax10 protocol=quic
+2026-09-22T13:37:17-10:00cloudflared: 2026-09-22T23:37:17Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=3 event=0 ip=198.41.200.193
+2026-09-22T13:37:17-10:00cloudflared: 2026-09-22T23:37:17Z INF Registered tunnel connection connIndex=3 connection=24f38582-f6e3-4eec-a23d-c65794edf41e event=0 ip=198.41.200.193 location=lax01 protocol=quic
+2026-09-22T13:37:19-10:00Poller is online.
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |                               CONNECTIVITY PRE-CHECKS                               |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  COMPONENT         TARGET                     STATUS  DETAILS                       |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  TCP Connectivity  region1.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  TCP Connectivity  region2.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable              |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |                                                                                     |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF |  SUMMARY: Environment is healthy. cloudflared will use 'quic' as primary protocol.  |
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF +-------------------------------------------------------------------------------------+
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region1.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=region2.v2.argotunnel.com
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck component="Cloudflare API" details="API is reachable" run_id=35b493e4-33fc-471d-982e-be729520d114 status=pass target=api.cloudflare.com:443
+2026-09-22T13:37:22-10:00cloudflared: 2026-09-22T23:37:22Z INF precheck complete hard_fail=false run_id=35b493e4-33fc-471d-982e-be729520d114 suggested_protocol=quic
+2026-09-22T13:37:24-10:00Poller is online.
+2026-09-22T13:37:29-10:00Poller is online.
+2026-09-22T13:37:34-10:00Poller is online.
