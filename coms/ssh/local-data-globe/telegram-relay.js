@@ -40,6 +40,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const MASTER_ENV = '/home/rootrecord/master/master-key.env';
+loadMasterEnv();
 const CHAT_ID = process.env.TELEGRAM_RELAY_CHAT_ID || '';
 const BATCH_MS = Number(process.env.TELEGRAM_BATCH_MS || 15 * 60 * 1000);
 const BATCH_MAX_RECORDS = Number(process.env.TELEGRAM_BATCH_MAX_RECORDS || 5000);
