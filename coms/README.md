@@ -30,3 +30,14 @@ skill's `SKILL.md` body reasonably lean (rough guideline: under ~5000
 tokens) — if a protocol's instructions get big, push the bulk into
 `references/` and have `SKILL.md` point at it rather than inlining
 everything.
+
+###
+All three are now real, working function libraries — not stubs — all pointed at /home/rootrecord/master/master-key.env:
+
+coms/telegram — send_message, get_me, get_updates, ported from communications/telegram/scripts/telegram.py. This is a different, simpler script than the AWS chat_poll.py trigger poller — that one's still running as-is on AWS and is now documented separately in telegram/references/aws-chat-poll.md so the two don't get conflated.
+coms/discord — full set: post (with file attachments, auto-splitting long messages), pin, forward, read history, DMs, list guild channels. Left out discord_chat.py (the Ava-persona reply generator) and discord_september.py (legacy migration script) — those are a different, much bigger thing than "discord functions."
+coms/slack — updated in place. Also fixed something while I was in there: the token env-var name I'd guessed earlier (SLACK_BOT_TOKEN) was wrong — found the real one (AVA_SLACK_BOT_TOKEN) while reading config.py for Discord/Telegram's token functions, so that's corrected now too.
+
+One thing worth flagging: since these are all async def functions (matching the originals), whatever calls them — an Ollama agent, a script — needs to run them through asyncio.run(...) or an existing event loop. Not a problem, just something to know going in rather than hit as a surprise.
+
+I did not touch coms/ssh for the master-key.env change — it doesn't have a bot-token-style secret, the SSH key file itself is the credential and it's already referenced directly by path, so there was nothing there to point at master-key.env.
