@@ -258,3 +258,74 @@
 2026-09-22T13:17:20-10:00cloudflared: 2026-09-22T23:17:20Z INF Registered tunnel connection connIndex=3 connection=2ba2f30e-b281-4cdb-aba3-6d14dddd5e26 event=0 ip=198.41.200.73 location=lax01 protocol=quic
 2026-09-22T13:17:20-10:00Poller is online.
 2026-09-22T13:17:25-10:00Poller is online.
+2026-09-22T13:17:30-10:00Poller is online.
+2026-09-22T13:17:35-10:00Poller is online.
+2026-09-22T13:17:40-10:00Poller is online.
+2026-09-22T13:17:45-10:00Poller is online.
+2026-09-22T13:17:50-10:00Poller is online.
+2026-09-22T13:17:55-10:00Poller is online.
+2026-09-22T13:18:00-10:00Poller is online.
+2026-09-22T13:18:05-10:00Poller is online.
+2026-09-22T13:18:10-10:00Poller is online.
+2026-09-22T13:18:15-10:00Poller is online.
+2026-09-22T13:18:20-10:00Poller is online.
+2026-09-22T13:18:25-10:00Poller is online.
+2026-09-22T13:18:30-10:00Poller is online.
+2026-09-22T13:18:35-10:00Poller is online.
+2026-09-22T13:18:40-10:00Poller is online.
+2026-09-22T13:18:45-10:00Poller is online.
+2026-09-22T13:18:50-10:00Poller is online.
+2026-09-22T13:18:55-10:00Poller is online.
+2026-09-22T13:19:00-10:00Poller is online.
+2026-09-22T13:19:05-10:00Poller is online.
+2026-09-22T13:19:10-10:00Poller is online.
+2026-09-22T13:19:15-10:00Poller is online.
+2026-09-22T13:19:20-10:00Poller is online.
+2026-09-22T13:19:25-10:00Poller is online.
+2026-09-22T13:19:30-10:00Poller is online.
+2026-09-22T13:19:35-10:00Poller is online.
+2026-09-22T13:19:40-10:00Poller is online.
+2026-09-22T13:19:45-10:00Poller is online.
+2026-09-22T13:19:50-10:00Poller is online.
+2026-09-22T13:19:55-10:00Poller is online.
+2026-09-22T13:20:00-10:00Poller is online.
+2026-09-22T13:20:04-10:00cloudflared: 2026-09-22T23:20:04Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:20:04-10:00cloudflared: 2026-09-22T23:20:04Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg event=0 ip=198.41.200.73 type=http
+2026-09-22T13:20:05-10:00cloudflared: 2026-09-22T23:20:05Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:20:05-10:00cloudflared: 2026-09-22T23:20:05Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/power-on event=0 ip=198.41.200.73 type=http
+2026-09-22T13:20:05-10:00Poller is online.
+2026-09-22T13:20:10-10:00Poller is online.
+2026-09-22T13:20:15-10:00cloudflared: 2026-09-22T23:20:15Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:20:15-10:00cloudflared: 2026-09-22T23:20:15Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg event=0 ip=198.41.200.73 type=http
+2026-09-22T13:20:15-10:00Poller is online.
+2026-09-22T13:20:20-10:00Poller is online.
+2026-09-22T13:20:25-10:00Poller is online.
+2026-09-22T13:20:30-10:00Poller is online.
+2026-09-22T13:20:35-10:00Poller is online.
+2026-09-22T13:20:40-10:00Poller is online.
+2026-09-22T13:20:45-10:00Poller is online.
+2026-09-22T13:20:45-10:00cloudflared: 2026-09-22T23:20:45Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:20:45-10:00cloudflared: 2026-09-22T23:20:45Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=3 dest=https://origin.avaivy.cloud/health event=0 ip=198.41.200.73 type=http
+2026-09-22T13:20:46-10:00cloudflared: 2026-09-22T23:20:46Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=1 event=1 ingressRule=0 originService=http://127.0.0.1:8787
+2026-09-22T13:20:46-10:00cloudflared: 2026-09-22T23:20:46Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8787: connect: connection refused" connIndex=1 dest=https://origin.avaivy.cloud/health event=0 ip=198.41.192.7 type=http
+2026-09-22T13:20:50-10:00Poller is online.
+2026-09-22T13:20:55-10:00Poller is online.
+2026-09-22T13:21:00-10:00Poller is online.
+2026-09-22T13:21:05-10:00Poller is online.
+2026-09-22T13:21:10-10:00Poller is online.
+2026-09-22T13:21:15-10:00Poller is online.
+2026-09-22T13:21:20-10:00Poller is online.
+2026-09-22T13:21:25-10:00Poller is online.
+2026-09-22T13:21:30-10:00Poller is online.
+2026-09-22T13:21:35-10:00Poller is online.
+2026-09-22T13:21:40-10:00Poller is online.
+2026-09-22T13:21:45-10:00Poller is online.
+2026-09-22T13:21:50-10:00Poller is online.
+2026-09-22T13:21:55-10:00Poller is online.
+2026-09-22T13:22:00-10:00Poller is online.
+2026-09-22T13:22:05-10:00Poller is online.
+2026-09-22T13:22:10-10:00Poller is online.
+2026-09-22T13:22:15-10:00Poller is online.
+2026-09-22T13:22:20-10:00Poller is online.
+2026-09-22T13:22:25-10:00Poller is online.
+2026-09-22T13:22:30-10:00Poller is online.
