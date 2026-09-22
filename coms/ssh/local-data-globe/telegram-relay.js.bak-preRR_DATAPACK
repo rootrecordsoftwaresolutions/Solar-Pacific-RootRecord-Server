@@ -18,28 +18,19 @@
  *    zip files named rootrecord-YYYYMMDD-HHMM-<hash>.zip, same shape as
  *    what rr-packer was already producing there.
  *
- * Config (env, all loaded from /home/rootrecord/master/master-key.env via
- * loadMasterEnv() -- this is the SAME file and SAME var names packer.py
- * (the AWS-side half of this bot pair) reads, confirmed by reading
- * packer.py's own source. Verified working 2026-09-22 via the three-gate
- * check: getMe -> rootsender_bot, sendMessage -> ok:true, getChat title
- * -> "Root Record Data Relay".
- *   RR_DATAPACK_CHAT_ID      - required to actually send; channel/chat id
- *                              for "Root Record Data Relay"
- *   RR_DATAPACK_SEND_BOT_TOKEN (fallback RR_DATAPACK_BOT_TOKEN, then
- *                              RR_TELEGRAM_BOT_TOKEN) - bot token for
- *                              @rootsender_bot, same fallback order
- *                              packer.py uses
+ * Config (env):
+ *   TELEGRAM_RELAY_CHAT_ID   - required to actually send; channel/chat id
+ *                              for "Root Record Data Relay" (or wherever
+ *                              you want this routed -- keep it separate
+ *                              from RR_CONTROL_CHAT_ID / RR_PUBLISH_CHAT_ID)
  *   TELEGRAM_BATCH_MS        - default 900000 (15 min), matches existing
  *                              channel cadence
  *   TELEGRAM_BATCH_MAX_RECORDS - default 5000, safety valve so a very
  *                              long outage doesn't grow one batch forever;
  *                              flushes early if hit
- *
- * NOTE: CHAT_ID must NOT be read as a top-level const at module-load time
- * -- master-key.env hasn't been loaded yet at that point, so it would
- * always resolve to ''. It's read lazily via getChatId(), same pattern
- * as getBotToken(), the first time it's actually needed.
+ *   AVA_TELEGRAM_BOT_TOKEN / TELEGRAM_BOT_TOKEN - bot token, loaded from
+ *                              /home/rootrecord/master/master-key.env,
+ *                              same convention as coms/telegram
  */
 
 const { spawn } = require('child_process');
@@ -49,11 +40,12 @@ const path = require('path');
 const crypto = require('crypto');
 
 const MASTER_ENV = '/home/rootrecord/master/master-key.env';
+loadMasterEnv();
+const CHAT_ID = process.env.TELEGRAM_RELAY_CHAT_ID || '';
 const BATCH_MS = Number(process.env.TELEGRAM_BATCH_MS || 15 * 60 * 1000);
 const BATCH_MAX_RECORDS = Number(process.env.TELEGRAM_BATCH_MAX_RECORDS || 5000);
 
 let botToken = '';
-let chatId = '';
 let batch = [];
 let flushTimer = null;
 let sending = false;
@@ -76,20 +68,8 @@ function loadMasterEnv() {
 function getBotToken() {
   if (botToken) return botToken;
   loadMasterEnv();
-  botToken = (
-    process.env.RR_DATAPACK_SEND_BOT_TOKEN
-    || process.env.RR_DATAPACK_BOT_TOKEN
-    || process.env.RR_TELEGRAM_BOT_TOKEN
-    || ''
-  ).trim();
+  botToken = (process.env.TELEGRAM_BOT_TOKEN || process.env.AVA_TELEGRAM_BOT_TOKEN || '').trim();
   return botToken;
-}
-
-function getChatId() {
-  if (chatId) return chatId;
-  loadMasterEnv();
-  chatId = (process.env.RR_DATAPACK_CHAT_ID || '').trim();
-  return chatId;
 }
 
 function apiBase() {
@@ -119,10 +99,10 @@ function zipFile(srcPath, destPath) {
 
 async function sendDocument(zipPath, caption) {
   const base = apiBase();
-  if (!base || !getChatId()) return false;
+  if (!base || !CHAT_ID) return false;
   const fileBuf = fs.readFileSync(zipPath);
   const form = new FormData();
-  form.set('chat_id', String(getChatId()));
+  form.set('chat_id', String(CHAT_ID));
   form.set('caption', caption.slice(0, 1024));
   form.set('document', new Blob([fileBuf]), path.basename(zipPath));
   const res = await fetch(`${base}/sendDocument`, { method: 'POST', body: form, signal: AbortSignal.timeout(30000) });
@@ -137,7 +117,7 @@ async function sendDocument(zipPath, caption) {
 
 async function flush() {
   if (sending || batch.length === 0) return;
-  if (!apiBase() || !getChatId()) {
+  if (!apiBase() || !CHAT_ID) {
     // No token / no chat id configured -- nothing we can do, drop silently
     // rather than grow forever. This is insurance, not the source of truth.
     batch = [];
@@ -175,8 +155,8 @@ function offer(record) {
 function start() {
   if (started) return;
   started = true;
-  if (!getChatId()) {
-    console.error('telegram-relay: RR_DATAPACK_CHAT_ID not set — insurance relay is inert until configured');
+  if (!CHAT_ID) {
+    console.error('telegram-relay: TELEGRAM_RELAY_CHAT_ID not set — insurance relay is inert until configured');
   }
   flushTimer = setInterval(() => flush().catch(() => {}), BATCH_MS);
 }
