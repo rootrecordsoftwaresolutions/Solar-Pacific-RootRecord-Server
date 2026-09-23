@@ -3,9 +3,8 @@ set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
-load_token
-
-remote_url() { echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"; }
+# SSH remotes — do not embed PATs in git config
+remote_url() { echo "git@github.com:${1}.git"; }
 
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
@@ -31,14 +30,14 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   url="$(remote_url "$slug")"
   if git remote get-url "$remote_name" >/dev/null 2>&1; then
     git remote set-url "$remote_name" "$url"
-    echo "[ok] $id remote '$remote_name' updated"
+    echo "[ok] $id remote '$remote_name' → SSH"
   else
     if [[ "$remote_name" == "origin" ]] && git remote get-url origin >/dev/null 2>&1; then
       git remote set-url origin "$url"
-      echo "[ok] $id origin set"
+      echo "[ok] $id origin → SSH"
     else
       git remote add "$remote_name" "$url"
-      echo "[ok] $id remote '$remote_name' added"
+      echo "[ok] $id remote '$remote_name' added (SSH)"
     fi
   fi
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')

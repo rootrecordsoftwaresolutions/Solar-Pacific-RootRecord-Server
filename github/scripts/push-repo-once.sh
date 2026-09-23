@@ -9,12 +9,13 @@ set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
-load_token
+# load_token optional — SSH remotes; keep for API tools if needed
+load_token || true
 
 ID="${1:-}"
 [[ -n "$ID" ]] || { echo "usage: $0 <repo-id>"; exit 2; }
 
-remote_url() { echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"; }
+remote_url() { echo "git@github.com:${1}.git"; }
 
 found=0
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
