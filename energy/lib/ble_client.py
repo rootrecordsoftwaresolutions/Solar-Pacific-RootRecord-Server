@@ -87,6 +87,12 @@ async def connect(alias: str):
 async def apply_bool(alias: str, method: str, want: bool) -> dict:
     device = await connect(alias)
     try:
+        # connect() returns before the background auth task finishes (encrypt type 7: _encryption is None
+        # until then) so send_packet asserts. Wait for AUTHENTICATED, then let the first heartbeat land.
+        state = await asyncio.wait_for(device.wait_until_authenticated_or_error(), timeout=20)
+        if not state.authenticated:
+            raise BleUnavailable(f"auth not completed: {state}")
+        await asyncio.sleep(1.0)
         fn = getattr(device, method, None)
         if fn is None:
             raise BleUnavailable(f"{alias} has no method {method}")
