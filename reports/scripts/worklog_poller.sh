@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Runs until killed. Logging is active only while this process lives.
+# Runs until killed. Logging only while this process lives. Full-home scan ~90s interval.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 # shellcheck source=/dev/null
@@ -14,8 +14,8 @@ if [[ -f "$PID_FILE" ]]; then
 fi
 echo $$ > "$PID_FILE"
 trap 'rm -f "$PID_FILE"; exit 0' INT TERM EXIT
-echo "worklog poller start pid=$$ (scan every 60s)"
+echo "worklog poller start pid=$$ scope=$HOME_ROOT (scan every 90s)"
 while true; do
   scan_once || true
-  sleep 60
+  sleep 90
 done
