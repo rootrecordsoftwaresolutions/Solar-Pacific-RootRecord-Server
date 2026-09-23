@@ -1,38 +1,34 @@
 #!/usr/bin/env bash
-# ==============================================================================
-# run-ollama.sh — ONLY supported ollama run entry (single-flight + DESK_LIVE)
-# Usage:
-#   run-ollama.sh <model> 'prompt'
-#   DESK_LIVE_FILE=/path/to/block run-ollama.sh <model> 'prompt'
-# ==============================================================================
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MODEL="${1:?model}"
-shift || true
+# This file is copied over plumbing run-ollama.sh
+PLUMB="$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")"
+# when installed to plumbing/scripts:
+SINGLE="$(cd "$(dirname "$0")" && pwd)/single-flight.sh"
+MODEL="${1:?model}"; shift || true
 JOB="ollama:$MODEL:$(date +%Y%m%d-%H%M%S)"
-
 export OLLAMA_NUM_PARALLEL=1
 export OLLAMA_MAX_LOADED_MODELS=1
-if [[ "${RR_ALLOW_IGPU:-0}" != "1" ]]; then
-  unset OLLAMA_IGPU_ENABLE 2>/dev/null || true
-fi
+[[ "${RR_ALLOW_IGPU:-0}" == "1" ]] || unset OLLAMA_IGPU_ENABLE 2>/dev/null || true
 
 DESK_BLOCK="DESK_LIVE:
 (none — no measured desk attached this turn)
-RULE: For any watt/SOC/%/kWh/panel/host/NPU live claim → reply No data / I can't view that desk."
+
+HARD RULES FOR THIS TURN:
+- Do NOT state watts, SOC, kWh/day, pack online/offline, panel status, or host load.
+- Do NOT restate standing envelopes (~4–5 kWh/day, Delta 2, River 2 Pro, Starlink) as if they were live readings.
+- If asked for status: one short line that you are the named agent + \"No live desk data attached.\" Nothing else about power/hardware."
 
 if [[ -n "${DESK_LIVE_FILE:-}" && -f "${DESK_LIVE_FILE}" ]]; then
   DESK_BLOCK="DESK_LIVE:
-$(cat "$DESK_LIVE_FILE")"
+$(cat "$DESK_LIVE_FILE")
+
+Cite ONLY lines inside DESK_LIVE for measurements. Standing policy is not a live reading."
 fi
 
 USER_PROMPT="${*:-}"
-if [[ -z "$USER_PROMPT" ]]; then
-  USER_PROMPT=$(cat)
-fi
-
+[[ -n "$USER_PROMPT" ]] || USER_PROMPT=$(cat)
 FULL="${DESK_BLOCK}
 
 User request: ${USER_PROMPT}"
-
-exec "$HERE/single-flight.sh" run "$JOB" -- ollama run "$MODEL" "$FULL"
+exec "$SINGLE" run "$JOB" -- ollama run "$MODEL" "$FULL"

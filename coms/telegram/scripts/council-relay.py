@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""council-relay.py — one long-poll → single-flight Ollama → post as voice."""
+"""council-relay.py — one getUpdates; single-voice by default; A→B→C→A only on triggers.
+Each hop posts with that voice's bot token."""
 from __future__ import annotations
 import json, os, re, subprocess, sys, time, urllib.error, urllib.request
 from pathlib import Path
@@ -7,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONF = ROOT / "config" / "relay.conf"
 VOICES = ROOT / "config" / "voices.conf"
+PIPELINE_ORDER = ("ava", "bruce", "carly", "ava")  # A→B→C→A
 
 def load_kv(path: Path) -> dict:
     out = {}
@@ -59,24 +61,54 @@ def token_for(voice):
 def api(token, method, payload=None):
     url = f"https://api.telegram.org/bot{token}/{method}"
     data = None if payload is None else json.dumps(payload).encode()
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"} if data else {}, method="POST" if data else "GET")
+    req = urllib.request.Request(
+        url, data=data,
+        headers={"Content-Type": "application/json"} if data else {},
+        method="POST" if data else "GET",
+    )
     with urllib.request.urlopen(req, timeout=60) as r:
         body = json.load(r)
     if not body.get("ok"):
         raise RuntimeError(f"{method} failed: {body}")
     return body
 
-def pick_voice(text, voices):
+def wants_pipeline(text: str, triggers: list[str]) -> bool:
     t = text.lower()
-    if re.search(r"\b@?ava\b|@ava_ivy_bot", t):
-        return "ava"
-    if re.search(r"\b@?bruce\b|@brucemonitor_bot", t):
-        return "bruce"
-    if re.search(r"\b@?carly\b|@carlymal_bot", t):
-        return "carly"
-    return "ava"
+    for trig in triggers:
+        trig = trig.strip().lower()
+        if trig and trig in t:
+            return True
+    if re.search(r"\ba\s*>\s*b\s*>\s*c\b", t):
+        return True
+    return False
 
-def run_ollama(cfg, voice, voices, prompt):
+def mentioned_voice(text: str, voices: dict, entities=None) -> str | None:
+    """Single-voice if a specific bot/@name is addressed. DM handled by chat type."""
+    t = text.lower()
+    # username mentions
+    for vid, v in voices.items():
+        user = (v.get("user") or "").lower()
+        if user and f"@{user}".lower() in t:
+            return vid
+    if re.search(r"(^|\s)@?ava(\s|$|[,:])|@ava_ivy_bot|@avaivy_bot", t) and not re.search(r"\b(bruce|carly)\b", t):
+        return "ava"
+    if re.search(r"(^|\s)@?bruce(\s|$|[,:])|@brucemonitor_bot", t) and not re.search(r"\b(ava|carly)\b", t):
+        return "bruce"
+    if re.search(r"(^|\s)@?carly(\s|$|[,:])|@carlymal_bot", t) and not re.search(r"\b(ava|bruce)\b", t):
+        return "carly"
+    # multiple names without pipeline trigger → still single? prefer first mentioned
+    hits = []
+    if re.search(r"\bava\b|@ava", t):
+        hits.append("ava")
+    if re.search(r"\bbruce\b|@bruce", t):
+        hits.append("bruce")
+    if re.search(r"\bcarly\b|@carly", t):
+        hits.append("carly")
+    if len(hits) == 1:
+        return hits[0]
+    return None
+
+def run_ollama(cfg, voice, voices, prompt, prior=""):
     run = cfg.get("RUN_OLLAMA", "")
     env = os.environ.copy()
     desk = cfg.get("DESK_LIVE_FILE", "")
@@ -84,9 +116,10 @@ def run_ollama(cfg, voice, voices, prompt):
         env["DESK_LIVE_FILE"] = desk
     else:
         env.pop("DESK_LIVE_FILE", None)
+    full = prompt if not prior else f"Prior council turns:\n{prior}\n\nYour turn as {voice}. User:\n{prompt}"
     def once(m):
-        p = subprocess.run([run, m, prompt], capture_output=True, text=True, env=env, timeout=600)
-        out = (p.stdout or "")
+        p = subprocess.run([run, m, full], capture_output=True, text=True, env=env, timeout=600)
+        out = p.stdout or ""
         return "\n".join(ln for ln in out.splitlines() if not ln.startswith("[ok] single-flight")).strip()
     text = ""
     try:
@@ -99,6 +132,19 @@ def run_ollama(cfg, voice, voices, prompt):
         except Exception:
             text = "No data — inference failed."
     return text or "No data — inference failed."
+
+def post_as(voice_id, voices, chat_id, text, max_text):
+    tok = token_for(voices[voice_id])
+    if not tok:
+        print(f"[fail] no token for {voice_id}", file=sys.stderr)
+        return False
+    api(tok, "sendMessage", {
+        "chat_id": chat_id,
+        "text": text[:max_text],
+        "disable_web_page_preview": True,
+    })
+    print(f"[ok] posted as {voice_id}")
+    return True
 
 def main():
     cfg = load_kv(CONF)
@@ -116,13 +162,17 @@ def main():
         print(f"No data: token for poll voice {poll_voice}", file=sys.stderr); return 3
     chat_id = cfg.get("COUNCIL_CHAT_ID", "").strip()
     if not chat_id:
-        print("No data: set COUNCIL_CHAT_ID in config/relay.conf", file=sys.stderr); return 4
+        print("No data: COUNCIL_CHAT_ID empty", file=sys.stderr); return 4
+    triggers = [x.strip() for x in cfg.get("PIPELINE_TRIGGERS", "").split(",") if x.strip()]
+    default_voice = cfg.get("DEFAULT_SINGLE_VOICE", "ava")
+    max_text = int(cfg.get("MAX_TEXT", "3900") or 3900)
     state_dir = Path(cfg.get("STATE_DIR", "/home/rootrecord/Database/intake/council-relay"))
     state_dir.mkdir(parents=True, exist_ok=True)
     offset_file = state_dir / "offset.txt"
     offset = int(offset_file.read_text().strip() or "0") if offset_file.is_file() else 0
     timeout = int(cfg.get("POLL_TIMEOUT", "20") or "20")
-    print(f"[ok] council-relay poll_voice={poll_voice} chat={chat_id}")
+    print(f"[ok] relay chat={chat_id} poll={poll_voice} pipeline_triggers={len(triggers)}")
+
     while True:
         try:
             body = api(token, "getUpdates", {"timeout": timeout, "offset": offset, "allowed_updates": ["message"]})
@@ -138,13 +188,38 @@ def main():
             text = (msg.get("text") or "").strip()
             if not text:
                 continue
-            if str(msg.get("chat", {}).get("id", "")) != str(chat_id):
+            chat = msg.get("chat") or {}
+            ch = str(chat.get("id", ""))
+            is_private = chat.get("type") == "private"
+            # Group: only council chat. Private: allow (DM to whichever bot received — we only poll AVA token though)
+            if not is_private and ch != str(chat_id):
                 continue
-            voice = pick_voice(text, voices)
+            # DMs to Ava bot only while POLL_VOICE=ava; document limitation
+            if is_private:
+                voice = poll_voice
+                reply = run_ollama(cfg, voice, voices, text)
+                post_as(voice, voices, ch, reply, max_text)
+                continue
+
+            if wants_pipeline(text, triggers):
+                prior = ""
+                for hop in PIPELINE_ORDER:
+                    if hop not in voices:
+                        continue
+                    label = hop
+                    reply = run_ollama(cfg, hop, voices, text, prior=prior)
+                    post_as(hop, voices, chat_id, reply, max_text)
+                    prior += f"\n[{hop}]: {reply}\n"
+                    # single-flight already serializes ollama; brief pause between posts
+                    time.sleep(0.5)
+                print("[ok] pipeline A>B>C>A done")
+                continue
+
+            voice = mentioned_voice(text, voices) or default_voice
+            if voice not in voices:
+                voice = default_voice
             reply = run_ollama(cfg, voice, voices, text)
-            send_token = token_for(voices[voice]) or token
-            api(send_token, "sendMessage", {"chat_id": chat_id, "text": reply[: int(cfg.get("MAX_TEXT", "3900") or 3900)], "disable_web_page_preview": True})
-            print(f"[ok] {voice} replied")
+            post_as(voice, voices, chat_id, reply, max_text)
         time.sleep(0.2)
 
 if __name__ == "__main__":
