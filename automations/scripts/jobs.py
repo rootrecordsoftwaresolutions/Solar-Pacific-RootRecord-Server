@@ -187,6 +187,7 @@ EVERY_SECONDS = [
         "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
+]
 #------- work logger
     {
         "id": "worklog_poller",
