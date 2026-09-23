@@ -7,6 +7,8 @@
 # Baks/logs  → /home/rootrecord/Database/GITHUB/
 # GitHub trio: skills + website + mainland (skills/us-mainland-server).
 # Pacific .gitignore excludes us-mainland-server/ (own repo). No rclone / aws-sync.
+# Inference: prefer FLM llama3.2:3b on NPU (:52625); Ollama dolphin lanes = CPU fallback.
+# Telegram council-relay via coms/telegram (one getUpdates). Plumbing single-flight.
 # ==============================================================================
 #
 # HOW TO ADD A JOB (no AI required)
@@ -84,6 +86,44 @@ ON_BOOT = [
         "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
+
+    # --- priority 3: Ollama serve warm ------------------------------------------
+    {
+        "id": "ollama_warmup",
+        "enabled": True,
+        "priority": 3,
+        "description": "Ensure ollama serve is up (CPU fallback lanes).",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/plumbing/scripts/ollama-warmup.sh",
+        "timeout_sec": 120,
+        "cwd": "/home/rootrecord",
+        "env": {},
+    },
+    # --- priority 4: FastFlowLM NPU (llama3.2:3b) ------------------------------
+    {
+        "id": "flm_npu_warmup",
+        "enabled": True,
+        "priority": 4,
+        "description": "Start FastFlowLM llama3.2:3b on XDNA NPU :52625 if binary present.",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/plumbing/scripts/flm-warmup.sh",
+        "timeout_sec": 240,
+        "cwd": "/home/rootrecord",
+        "env": {},
+    },
+    # --- priority 5: Telegram council relay (one process) ----------------------
+    {
+        "id": "council_relay",
+        "enabled": True,
+        "priority": 5,
+        "description": "Start council-relay.py if not already running (single getUpdates).",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/coms/telegram/scripts/ensure-relay.sh",
+        "timeout_sec": 30,
+        "cwd": "/home/rootrecord/.ollama/skills/coms/telegram",
+        "env": {},
+    },
+
     # --- priority 3: TEMPLATE (on boot) — copy from here -------------------------
     # {
     #     "id": "example_on_boot_p3",
