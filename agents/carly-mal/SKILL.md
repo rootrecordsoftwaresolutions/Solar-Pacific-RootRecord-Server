@@ -17,7 +17,7 @@ description: >-
 # Honesty: DESK_LIVE_FILE measured or say No data / cannot see the desk.
 # Never invent watts/SOC/Stripe tiers/MRR/AWS. Never paste secrets / tokens.
 # Non-owner /approve → No.
-# Packet: carly-mal.zip (reference). Grok KB mirror is separate (Grok box).
+# Packet: carly-mal.zip (reference). panel KB mirror is separate (agent computer).
 # Bak: /home/rootrecord/Database/GITHUB/   Intake: Database/intake/
 # Style bar: automations/scripts/jobs.py (banners + HOW TO ADD)
 # Working code only — do NOT import old skills/ archives into this folder.
