@@ -6,7 +6,7 @@
 # rr-rootserver-poller.service. See scripts/jobs.py header and stop-poller-stack.sh.
 #
 # Job definitions live in jobs.py — ON_BOOT priorities (0=self, 1=cloudflare, 2+=templates),
-# then recurring sections. Keep section formatting identical.
+# then recurring sections (EVERY_* + ON_AT exact HH:MM). Keep section formatting identical.
 """
 from __future__ import annotations
 
@@ -347,11 +347,29 @@ def enabled_jobs(section: list) -> list:
     return [j for j in section if isinstance(j, dict) and j.get("enabled")]
 
 
+def _normalize_hhmm(raw: object) -> str | None:
+    """Accept '13:00' / '9:05' → '13:00' / '09:05'. Invalid → None."""
+    if not isinstance(raw, str):
+        return None
+    s = raw.strip()
+    if ":" not in s:
+        return None
+    try:
+        hh_s, mm_s = s.split(":", 1)
+        hh, mm = int(hh_s), int(mm_s)
+    except ValueError:
+        return None
+    if not (0 <= hh <= 23 and 0 <= mm <= 59):
+        return None
+    return f"{hh:02d}:{mm:02d}"
+
+
 def scheduler_loop() -> None:
-    """Drive EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR until stop."""
+    """Drive EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR / ON_AT until stop."""
     sec_jobs = enabled_jobs(getattr(jobmod, "EVERY_SECONDS", []))
     min_jobs = enabled_jobs(getattr(jobmod, "EVERY_MINUTE", []))
     hour_jobs = enabled_jobs(getattr(jobmod, "EVERY_HOUR", []))
+    at_jobs = enabled_jobs(getattr(jobmod, "ON_AT", []))
 
     next_due: dict[str, float] = {}
     now = time.monotonic()
@@ -364,11 +382,13 @@ def scheduler_loop() -> None:
 
     last_minute: int | None = None
     last_hour: int | None = None
+    # ON_AT: fire once per calendar day per HH:MM match (local desk TZ)
+    fired_at: set[str] = set()
 
     log(
         f"{full_timestamp()}scheduler  "
         f"every_seconds={len(sec_jobs)}  every_minute={len(min_jobs)}  "
-        f"every_hour={len(hour_jobs)}"
+        f"every_hour={len(hour_jobs)}  on_at={len(at_jobs)}"
     )
 
     while not _stop.is_set():
@@ -384,6 +404,9 @@ def scheduler_loop() -> None:
 
         minute = wall.minute
         hour = wall.hour
+        hm = f"{hour:02d}:{minute:02d}"
+        day = wall.date().isoformat()
+
         if last_minute is None:
             last_minute = minute
             last_hour = hour
@@ -394,6 +417,22 @@ def scheduler_loop() -> None:
                     if only and minute not in only:
                         continue
                     run_job(j)
+
+                # Exact HH:MM jobs (local / HST)
+                for j in at_jobs:
+                    times = {
+                        t
+                        for raw in (j.get("at_times") or [])
+                        if (t := _normalize_hhmm(raw)) is not None
+                    }
+                    if hm not in times:
+                        continue
+                    key = f"{j['id']}|{day}|{hm}"
+                    if key in fired_at:
+                        continue
+                    run_job(j)
+                    fired_at.add(key)
+
                 last_minute = minute
             if hour != last_hour and minute == 0:
                 for j in hour_jobs:
@@ -404,6 +443,10 @@ def scheduler_loop() -> None:
                 last_hour = hour
             elif hour != last_hour:
                 last_hour = hour
+
+            # Keep only today's ON_AT fire keys
+            if fired_at:
+                fired_at = {k for k in fired_at if f"|{day}|" in k}
 
         _stop.wait(0.25)
 

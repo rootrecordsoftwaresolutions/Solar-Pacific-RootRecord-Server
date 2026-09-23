@@ -25,7 +25,8 @@
 # BOOT ORDER
 #   ON_BOOT runs first, sorted by priority (0 = highest / first).
 #   Then ONCE_AT_START (if any).
-#   Then recurring: EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR.
+#   Then recurring: EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR / ON_AT.
+# ON_AT = exact local wall-clock HH:MM (desk TZ = HST). Example: at_times=["13:00"]
 # ====================================================
 
 # ------------------------------------------------------------------------------
@@ -256,6 +257,31 @@ EVERY_HOUR = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
+
+# ====================================================
+# SECTION: ON_AT
+# Exact local wall-clock times (desk TZ — Pacific/Honolulu / HST).
+# Fires once when HH:MM matches; repeats next days at the same times.
+# at_times = ["13:00"] or ["07:30", "13:00", "21:15"]  (24h HH:MM)
+# Already covered for top-of-hour only: EVERY_HOUR + only_at_hours=[13]
+# Use ON_AT when you need a specific minute (or several exact times).
+# ====================================================
+ON_AT = [
+    # --- TEMPLATE (exact HH:MM local) — copy from here --------------------------
+    # {
+    #     "id": "example_on_at_1300",
+    #     "enabled": False,
+    #     "description": "Runs once at 13:00 HST (local desk clock).",
+    #     "at_times": ["13:00"],
+    #     "builtin": "",
+    #     "command": "/home/rootrecord/path/to/script.sh",
+    #     "timeout_sec": 300,
+    #     "cwd": "/home/rootrecord",
+    #     "env": {},
+    # },
+    # --- end TEMPLATE ------------------------------------------------------------
+]
+
 # ====================================================
 # FULL BLANK TEMPLATE (reference — all keys labeled)
 # Copy into the correct section list above; delete keys that section does not use.
@@ -268,6 +294,7 @@ EVERY_HOUR = [
 #     "interval_sec": 60,                       # EVERY_SECONDS only
 #     "only_at_minutes": [],                    # EVERY_MINUTE only — [] = all minutes
 #     "only_at_hours": [],                      # EVERY_HOUR only — [] = all hours 0-23
+#     "at_times": ["13:00"],                    # ON_AT only — local HH:MM list (HST)
 #     "builtin": "",                            # "" or self_process|tunnel_start|heartbeat|http_ping
 #     "command": "/home/rootrecord/script.sh",  # shell via bash -lc; "" if builtin set
 #     "process": "",                            # ON_BOOT self_process — main process path
@@ -290,6 +317,7 @@ EVERY_HOUR = [
 #     "interval_sec": 60,                       # EVERY_SECONDS only
 #     "only_at_minutes": [],                    # EVERY_MINUTE only — [] = all minutes
 #     "only_at_hours": [],                      # EVERY_HOUR only — [] = all hours 0-23
+#     "at_times": ["13:00"],                    # ON_AT only — local HH:MM list (HST)
 #     "builtin": "",                            # "" or self_process|tunnel_start|heartbeat|http_ping
 #     "command": "/home/rootrecord/script.sh",  # shell via bash -lc; "" if builtin set
 #     "process": "",                            # ON_BOOT self_process — main process path
