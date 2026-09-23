@@ -258,3 +258,14 @@
 2026-09-23T11:52:12-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-23T11:52:42-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-23T11:53:12-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:53:42-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:54:05-10:00 owner: stop
+2026-09-23T11:54:31-10:00 action: FAIL — AssertionError: 
+2026-09-23T11:54:35-10:00 owner: start pid=43471 interval_s=30.0 (thin owner; no pack scan)
+2026-09-23T11:54:35-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:55:05-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:55:35-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:56:05-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:56:35-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:57:05-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T11:57:35-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
