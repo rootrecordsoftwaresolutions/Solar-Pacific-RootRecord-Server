@@ -1454,3 +1454,80 @@
 2026-09-22T14:22:47-10:00Poller is online.
 2026-09-22T14:22:52-10:00Poller is online.
 2026-09-22T14:22:54-10:00cloudflared ERR/WARN: 2026-09-23T00:22:54Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:48494->198.41.192.167:7844: sendmsg: network is unreachable" connIndex=3
+2026-09-22T14:22:57-10:00Poller is online.
+2026-09-22T14:22:59-10:00cloudflared ERR/WARN: 2026-09-23T00:22:59Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:40143->198.41.200.63:7844: sendmsg: network is unreachable" connIndex=1
+2026-09-22T14:23:00-10:00cloudflared ERR/WARN: 2026-09-23T00:23:00Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:43841->198.41.200.23:7844: sendmsg: network is unreachable" connIndex=2
+2026-09-22T14:23:02-10:00Poller is online.
+2026-09-22T14:23:07-10:00Poller is online.
+2026-09-22T14:23:12-10:00Poller is online.
+2026-09-22T14:23:13-10:00cloudflared ERR/WARN: 2026-09-23T00:23:13Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->198.41.192.107:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=198.41.192.107
+2026-09-22T14:23:17-10:00Poller is online.
+2026-09-22T14:23:21-10:00cloudflared ERR/WARN: 2026-09-23T00:23:21Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a8::9]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a8::9
+2026-09-22T14:23:22-10:00Poller is online.
+2026-09-22T14:23:23-10:00cloudflared ERR/WARN: 2026-09-23T00:23:23Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->198.41.200.23:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=198.41.200.23
+2026-09-22T14:23:27-10:00Poller is online.
+2026-09-22T14:23:31-10:00cloudflared ERR/WARN: 2026-09-23T00:23:31Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a8::7]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a8::7
+2026-09-22T14:23:32-10:00Poller is online.
+2026-09-22T14:23:37-10:00Poller is online.
+2026-09-22T14:23:42-10:00Poller is online.
+2026-09-22T14:23:47-10:00Poller is online.
+2026-09-22T14:23:52-10:00Poller is online.
+2026-09-22T14:23:57-10:00Poller is online.
+2026-09-22T14:24:02-10:00cloudflared ERR/WARN: 2026-09-23T00:24:02Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.63
+2026-09-22T14:24:02-10:00Poller is online.
+2026-09-22T14:24:07-10:00Poller is online.
+2026-09-22T14:24:10-10:00cloudflared ERR/WARN: 2026-09-23T00:24:10Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a8::8]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a8::8
+2026-09-22T14:24:12-10:00Poller is online.
+2026-09-22T14:24:17-10:00Poller is online.
+2026-09-22T14:24:18-10:00cloudflared ERR/WARN: 2026-09-23T00:24:18Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40143->[2606:4700:a0::1]:7844: sendmsg: network is unreachable" connIndex=1 event=0 ip=2606:4700:a0::1
+2026-09-22T14:24:18-10:00cloudflared ERR/WARN: 2026-09-23T00:24:18Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:43841->[2606:4700:a8::3]:7844: sendmsg: network is unreachable" connIndex=2 event=0 ip=2606:4700:a8::3
+2026-09-22T14:24:18-10:00cloudflared ERR/WARN: 2026-09-23T00:24:18Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:48494->[2606:4700:a0::2]:7844: sendmsg: network is unreachable" connIndex=3 event=0 ip=2606:4700:a0::2
+2026-09-22T14:24:18-10:00cloudflared ERR/WARN: 2026-09-23T00:24:18Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:43841->[2606:4700:a8::3]:7844: sendmsg: network is unreachable" connIndex=2
+2026-09-22T14:24:22-10:00Poller is online.
+2026-09-22T14:24:22-10:00cloudflared ERR/WARN: 2026-09-23T00:24:22Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:48494->[2606:4700:a0::2]:7844: sendmsg: network is unreachable" connIndex=3
+2026-09-22T14:24:27-10:00Poller is online.
+2026-09-22T14:24:32-10:00Poller is online.
+2026-09-22T14:24:37-10:00Poller is online.
+2026-09-22T14:24:42-10:00cloudflared ERR/WARN: 2026-09-23T00:24:42Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.23
+2026-09-22T14:24:42-10:00Poller is online.
+2026-09-22T14:24:47-10:00Poller is online.
+2026-09-22T14:24:49-10:00cloudflared ERR/WARN: 2026-09-23T00:24:49Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:40143->[2606:4700:a0::1]:7844: sendmsg: network is unreachable" connIndex=1
+2026-09-22T14:24:52-10:00Poller is online.
+2026-09-22T14:24:57-10:00Poller is online.
+2026-09-22T14:25:02-10:00Poller is online.
+2026-09-22T14:25:02-10:00cloudflared ERR/WARN: 2026-09-23T00:25:02Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a8::9]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a8::9
+2026-09-22T14:25:07-10:00Poller is online.
+2026-09-22T14:25:12-10:00Poller is online.
+2026-09-22T14:25:17-10:00Poller is online.
+2026-09-22T14:25:22-10:00Poller is online.
+2026-09-22T14:25:27-10:00Poller is online.
+2026-09-22T14:25:32-10:00Poller is online.
+2026-09-22T14:25:34-10:00tunnel connected  conn=0  edge=lax01
+2026-09-22T14:25:37-10:00Poller is online.
+2026-09-22T14:25:42-10:00Poller is online.
+2026-09-22T14:25:47-10:00Poller is online.
+2026-09-22T14:25:52-10:00Poller is online.
+2026-09-22T14:25:57-10:00Poller is online.
+2026-09-22T14:26:02-10:00Poller is online.
+2026-09-22T14:26:07-10:00Poller is online.
+2026-09-22T14:26:12-10:00Poller is online.
+2026-09-22T14:26:17-10:00Poller is online.
+2026-09-22T14:26:22-10:00Poller is online.
+2026-09-22T14:26:27-10:00Poller is online.
+2026-09-22T14:26:32-10:00Poller is online.
+2026-09-22T14:26:37-10:00Poller is online.
+2026-09-22T14:26:42-10:00Poller is online.
+2026-09-22T14:26:47-10:00Poller is online.
+2026-09-22T14:26:52-10:00Poller is online.
+2026-09-22T14:26:57-10:00Poller is online.
+2026-09-22T14:27:02-10:00Poller is online.
+2026-09-22T14:27:07-10:00Poller is online.
+2026-09-22T14:27:12-10:00Poller is online.
+2026-09-22T14:27:17-10:00Poller is online.
+2026-09-22T14:27:22-10:00Poller is online.
+2026-09-22T14:27:27-10:00Poller is online.
+2026-09-22T14:27:32-10:00Poller is online.
+2026-09-22T14:27:37-10:00Poller is online.
+2026-09-22T14:27:42-10:00Poller is online.
+2026-09-22T14:27:47-10:00Poller is online.
+2026-09-22T14:27:52-10:00Poller is online.
