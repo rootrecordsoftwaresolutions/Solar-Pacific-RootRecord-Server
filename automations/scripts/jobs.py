@@ -1,4 +1,4 @@
-# ==============================================================================
+# ====================================================
 # # INFO — MUST HAVE (future agents / operators)
 # ------------------------------------------------------------------------------
 # Ctrl-C in the poller window, or running stop-poller-stack.sh / the home
@@ -9,7 +9,7 @@
 #   - poller-watch.py (status terminal)
 # Leaving an orphan tunnel or poller is a bug. Do not "fix only" the window.
 # Restart shortcut: /home/rootrecord/rootserver-poller
-# ==============================================================================
+# ====================================================
 #
 # HOW TO ADD A JOB (no AI required)
 #   1) Copy the blank TEMPLATE block from the matching section below.
@@ -26,7 +26,7 @@
 #   ON_BOOT runs first, sorted by priority (0 = highest / first).
 #   Then ONCE_AT_START (if any).
 #   Then recurring: EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR.
-# ==============================================================================
+# ====================================================
 
 # ------------------------------------------------------------------------------
 # SHARED DEFAULTS (optional overrides per job still win)
@@ -38,10 +38,10 @@ DEFAULTS = {
     "env": {},
 }
 
-# ==============================================================================
+# ====================================================
 # SECTION: ON_BOOT  (priority list — lower number runs first)
 # Cloudflare lives here at priority 1. Priority 0 is this desk itself.
-# ==============================================================================
+# ====================================================
 ON_BOOT = [
     # --- priority 0: self / status terminal (redundant registry — keep) -----------
     {
@@ -89,10 +89,10 @@ ON_BOOT = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
-# ==============================================================================
+# ====================================================
 # SECTION: ONCE_AT_START
 # One-time scripts after ON_BOOT finishes (tunnel already handled above).
-# ==============================================================================
+# ====================================================
 ONCE_AT_START = [
     # --- TEMPLATE (run once after boot priorities) — copy from here --------------
     # {
@@ -108,10 +108,10 @@ ONCE_AT_START = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
-# ==============================================================================
+# ====================================================
 # SECTION: EVERY_SECONDS
 # Fires on a repeating interval. interval_sec is required.
-# ==============================================================================
+# ====================================================
 EVERY_SECONDS = [
     # --- live job: desk heartbeat (do not remove; disable only if intentional) ---
     {
@@ -140,11 +140,11 @@ EVERY_SECONDS = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
-# ==============================================================================
+# ====================================================
 # SECTION: EVERY_MINUTE
 # Fires once when the wall-clock minute changes (second ~0).
 # Optional: only_at_minutes = [0, 15, 30, 45]  (empty list = every minute)
-# ==============================================================================
+# ====================================================
 EVERY_MINUTE = [
     # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
     # {
@@ -161,11 +161,11 @@ EVERY_MINUTE = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
-# ==============================================================================
+# ====================================================
 # SECTION: EVERY_HOUR
 # Fires once when the wall-clock hour changes (minute 0).
 # Optional: only_at_hours = [0, 6, 12, 18]  (empty list = every hour, 0–23)
-# ==============================================================================
+# ====================================================
 EVERY_HOUR = [
     # --- TEMPLATE (every hour / selected hours) — copy from here ----------------
     # {
@@ -182,7 +182,7 @@ EVERY_HOUR = [
     # --- end TEMPLATE ------------------------------------------------------------
 ]
 
-# ==============================================================================
+# ====================================================
 # FULL BLANK TEMPLATE (reference — all keys labeled)
 # Copy into the correct section list above; delete keys that section does not use.
 # ------------------------------------------------------------------------------
@@ -207,4 +207,4 @@ EVERY_HOUR = [
 #     "cwd": "/home/rootrecord",                # working directory; "" = poller cwd
 #     "env": {"EXAMPLE": "value"},              # extra env vars for command only
 # },
-# ==============================================================================
+# ====================================================
