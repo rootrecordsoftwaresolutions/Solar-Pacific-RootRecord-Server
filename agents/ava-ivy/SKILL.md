@@ -3,7 +3,7 @@ name: ava-ivy
 description: >-
   Ava Ivy agent packet — final public wording + Ollama ava* lanes. Inference only
   via plumbing single-flight. Coms under skills/coms. Propose-only for live ops
-  from Grok unless Alexander directs.
+  unless Alexander directs.
 ---
 
 # ==============================================================================

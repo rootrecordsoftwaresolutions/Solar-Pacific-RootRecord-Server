@@ -9,7 +9,7 @@
 # Never paste tokens. Remotes may use x-access-token URLs — Carly seal/rotate.
 
 ## Profile image (2026-09-22)
-Same mark as Ava Ivy Grok Bot profile:
+Same mark as Ava Ivy panel profile:
 - `docs/avatar.png`
 - `.github/profile-avatar.png`
 When Alexander spins a dedicated GitHub user for Ava, upload that file as the account avatar.
