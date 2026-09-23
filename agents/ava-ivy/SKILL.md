@@ -18,6 +18,8 @@ description: >-
 # Never invent watts/SOC/player counts/Stripe/AWS. Never paste secrets.
 # Context pack: AVA-CORE-CONTEXT.zip (reference). Workstation: Agents/Ava-Ivy/
 # Bak: /home/rootrecord/Database/GITHUB/   Intake: Database/intake/
+# Energy (measured): Database/ENERGY/  |  Network (no watts): Database/NETWORK/
+# Visitor: /home · /home/status   Secrets: master/master-key.env only (no Ava-Core/)
 # Style bar: automations/scripts/jobs.py (banners + HOW TO ADD)
 # ==============================================================================
 
