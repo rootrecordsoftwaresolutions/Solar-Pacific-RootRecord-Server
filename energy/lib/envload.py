@@ -20,5 +20,9 @@ def load_env(paths: list[Path] | None = None) -> None:
                 os.environ[k] = v
 
 def user_id() -> str:
+    """BLE connect user id — AVA_ECOFLOW_USER_ID, else ECOFLOW_ACCOUNT_ID."""
     load_env()
-    return (os.environ.get("AVA_ECOFLOW_USER_ID") or "").strip()
+    uid = (os.environ.get("AVA_ECOFLOW_USER_ID") or "").strip()
+    if not uid:
+        uid = (os.environ.get("ECOFLOW_ACCOUNT_ID") or "").strip()
+    return uid
