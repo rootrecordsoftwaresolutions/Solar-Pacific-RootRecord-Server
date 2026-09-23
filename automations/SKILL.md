@@ -47,3 +47,13 @@ Copy the blank TEMPLATE inside the section you need; keep key order identical.
 /home/rootrecord/rootserver-poller stop
 /home/rootrecord/rootserver-poller status
 ```
+
+## Change backups (MUST)
+
+Dated pre-change backups for this desk must go under:
+
+`/home/rootrecord/Database/GITHUB/`
+
+Example: `automations.bak-<tag>-YYYYMMDD-HHMMSS`
+
+**Never** write `automations.bak-*` into `/home/rootrecord/.ollama/skills/` (floods git autopush).

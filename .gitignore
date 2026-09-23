@@ -24,3 +24,7 @@ logs/store/rootserver-poller.log
 automations/scripts/__pycache__/
 **/__pycache__/
 *.pyc
+
+# dated change backups — live under /home/rootrecord/Database/GITHUB
+automations.bak-*/
+*.bak-*/
