@@ -10,7 +10,7 @@
 | `docs/IDENTITY.md` | Who Ava is |
 | `docs/ROLE-AND-BOUNDS.md` | What she owns / walls |
 | `docs/PUBLIC-VOICE.md` | Facts-only public wording |
-| `docs/LIVE-PATHS.md` | Current OmniBook / Grok paths |
+| `docs/LIVE-PATHS.md` | Current OmniBook / panel paths |
 | `notes/` | Dated sync scraps |
 
 Skill packet: `~/.ollama/skills/agents/ava-ivy/SKILL.md` + `AVA-CORE-CONTEXT.zip` (reference only).
