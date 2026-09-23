@@ -1,28 +1,16 @@
 ---
 name: ssh
-description: SSH/rsync relay between RootRecord and AWS Mainland for network-globe telemetry data packs. Pull-based — RootRecord rsyncs zips from AWS out/, verifies, confirms over SSH to trigger remote wipe. Replaced the old Telegram push (rr-packer). Use for starting/stopping/checking the relay or troubleshooting SSH/relay failures.
+description: >-
+  SSH/rsync pull relay RootRecord↔AWS Mainland (network-globe packs).
+  Replaced Telegram rr-packer. Start/stop/health or SSH/relay debug.
 ---
 
-Part of `coms/` (see `coms/README.md`) — loads independently of `telegram/`,
-`discord/`, `slack/`. Runtime path: `/home/rootrecord/.ollama/skills/coms/ssh`.
+# ssh
 
-Flow: local collector → SSH relay → AWS Mainland `out/` → RootRecord pull
-(verify + confirm) → Network Globe backend.
+Under `coms/` (independent of telegram/discord/slack). Path: `coms/ssh`.
 
-## Commands
+Flow: collector → SSH → AWS `out/` → RootRecord pull (verify+confirm) → Globe.
 
-- Start: `./run.sh`
-- Stop: `pkill -f ssh-relay`
-- Status: `./scripts/health-check.sh`
-- Logs: `./logs/`
+- Start `./run.sh` · Stop `pkill -f ssh-relay` · Health `./scripts/health-check.sh` · Logs `./logs/`
 
-## Rules
-
-- Never delete `backups/` or `context/` — historical implementations stay as reference
-- No runtime data committed; no secrets in the skill package
-- Verify SSH connectivity before relay startup
-
-## Troubleshooting
-
-- SSH failure → check key, host, permissions
-- Relay failure → check outbox, network connectivity
+**Rules:** keep `backups/`+`context/`; no secrets/runtime data in package; verify SSH before start.

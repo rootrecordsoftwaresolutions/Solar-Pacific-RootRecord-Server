@@ -28,3 +28,7 @@ automations/scripts/__pycache__/
 # dated change backups — live under /home/rootrecord/Database/GITHUB
 automations.bak-*/
 *.bak-*/
+
+# website Next build artifacts
+website/site/node_modules/
+website/site/.next/
