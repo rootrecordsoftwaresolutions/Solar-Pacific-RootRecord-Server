@@ -9,9 +9,10 @@ backups/
 *.wav
 *.mp3
 
-# Agent operational files
-# Hidden for security, integrity, and functionality reasons
-/agents/
+# Agent packets: allow thin SKILL.md + docs (working code).
+# Heavy context zips stay out via global *.zip rule.
+# Do NOT commit secrets into agents/*/ 
+# /agents/  (removed 2026-09-22 — Ava Ivy: track SKILL.md for GitHub identity pushes)
 
 # Environment / secret files
 .env
