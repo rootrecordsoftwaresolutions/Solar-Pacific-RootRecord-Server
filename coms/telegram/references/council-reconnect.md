@@ -1,20 +1,8 @@
-# Council Telegram reconnect (prep)
+# Council reconnect
 
-Bots: `@ava_ivy_bot` · `@brucemonitor_bot` · `@carlymal_bot`
-Tokens: `~/.config/ava-council/secrets.env` and/or `master-key.env` — never print.
-
-## Lane → Ollama model
-| Voice | Model |
-|---|---|
-| ava | `ava-telegram` (fallback `ava`) |
-| bruce | `bruce-telegram` (fallback `bruce`) |
-| carly | `carly-telegram` (fallback `carly`) |
-
-## Relay home
-All outbound protocol helpers: `~/.ollama/skills/coms/`
-Council long-poll / UX historically: `council-telegram` + `ava-council.service` (may be archived — rewire here, do not fork tokens into skills git).
-
-## Rules
-- Exactly one getUpdates poller.
-- Relays speak as the named voice only.
-- Grok Bot bridge stays manual.
+1. `bash scripts/status.sh`
+2. Set `COUNCIL_CHAT_ID` in `config/relay.conf`
+3. Stop legacy `apps.council` (Alexander approve) — one getUpdates only
+4. `python3 scripts/council-relay.py`
+5. Smoke: `@bruce status` → No data without DESK_LIVE
+6. Grok lane stays manual
