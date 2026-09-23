@@ -10,7 +10,7 @@ Measured samples → `/home/rootrecord/Database/ENERGY/` only (not Network).
 - One BLE owner: user unit `ava-ecoflow-ble.service`. Do not dual-start pollers.
 - Poll buckets (1/5/15/30/60/daily): **stubs only** under `scripts/poll/` — enable after atomic actions prove out.
 - Secrets stay in env files; never paste into chat or SKILL.
-- `AVA_ECOFLOW_USER_ID` must be supplied by operator in `~/RootRecord/Ava-Core/.env` (placeholder only if missing — never invent).
+- `AVA_ECOFLOW_USER_ID` must be supplied by operator in `/home/rootrecord/master/master-key.env` (placeholder only if missing — never invent).
 
 ## HOW TO ADD AN ACTION (no AI required)
 
@@ -28,7 +28,7 @@ Measured samples → `/home/rootrecord/Database/ENERGY/` only (not Network).
 | Python (owner) | `lib/py` → `.venv/bin/python` (override: `ENERGY_PYTHON`) |
 | venv | `~/.ollama/skills/energy/.venv` — bleak + light eflib runtime (ecdsa, bleak-retry-connector, pycryptodome, protobuf, aiohttp) |
 | eflib vendor | `lib/vendor/eflib` (PYTHONPATH via `lib/py` / `ENERGY_EFLIB_PATH`) |
-| Env secrets | `~/RootRecord/Ava-Core/.env` (mode 600) — operator fills `AVA_ECOFLOW_USER_ID` |
+| Env secrets | `/home/rootrecord/master/master-key.env` (mode 600) — operator fills `AVA_ECOFLOW_USER_ID` |
 
 ## Paths
 
