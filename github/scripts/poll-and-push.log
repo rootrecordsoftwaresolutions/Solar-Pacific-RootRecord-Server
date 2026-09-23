@@ -605,3 +605,13 @@ To https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Serve
 To https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server.git
    b7c3e85..10ab03f  HEAD -> main
 [2026-09-23T00:12:55Z] pushed main (2 file(s) changed)
+[main afc9f81] Auto-sync: 2026-09-23 00:17:55 UTC
+ 9 files changed, 478 insertions(+), 40 deletions(-)
+ create mode 100644 automations.bak-poller-window-20260922-141716/SKILL.md
+ create mode 100755 automations.bak-poller-window-20260922-141716/rootserver_poller.py
+ create mode 100644 automations.bak-poller-window-20260922-141716/rr-rootserver-poller.service
+ create mode 100755 automations.bak-poller-window-20260922-141716/run-poller.sh
+ create mode 100755 automations/scripts/open-poller-window.sh
+To https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server.git
+   10ab03f..afc9f81  HEAD -> main
+[2026-09-23T00:17:57Z] pushed main (6 file(s) changed)

@@ -1,20 +1,16 @@
 #!/usr/bin/env bash
-# Open a titled terminal that shows live poller + cloudflared lines.
+# Open a titled terminal with a colored live poller view.
 # Does NOT start a second poller — systemd owns the process.
 set -euo pipefail
-LOG="${HOME}/.ollama/skills/logs/store/rootserver-poller.log"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+WATCH="$ROOT/scripts/poller-watch.py"
 TITLE="RootRecord poller — rootserver"
-mkdir -p "$(dirname "$LOG")"
-touch "$LOG"
+export POLLER_LOG="${POLLER_LOG:-$HOME/.ollama/skills/logs/store/rootserver-poller.log}"
+mkdir -p "$(dirname "$POLLER_LOG")"
+touch "$POLLER_LOG"
 
-# Prefer gnome-terminal; fall back to x-terminal-emulator.
 if command -v gnome-terminal >/dev/null 2>&1; then
-  exec gnome-terminal --title="$TITLE" --geometry=120x32 -- bash -lc "
-    echo '=== RootRecord poller window ==='
-    echo \"Log: $LOG\"
-    systemctl --user is-active rr-rootserver-poller.service 2>/dev/null || true
-    echo '--- live (Ctrl-C closes window only; service keeps running) ---'
-    exec tail -n 40 -F '$LOG'
-  "
+  exec gnome-terminal --title="$TITLE" --geometry=100x36 -- \
+    bash -lc "exec /usr/bin/python3 '$WATCH'"
 fi
-exec x-terminal-emulator -T "$TITLE" -e bash -lc "tail -n 40 -F '$LOG'"
+exec x-terminal-emulator -T "$TITLE" -e /usr/bin/python3 "$WATCH"

@@ -1325,3 +1325,132 @@
 2026-09-22T14:17:47-10:00cloudflared: 2026-09-23T00:17:47Z INF Registered tunnel connection connIndex=3 connection=e1d8513b-a6b0-4478-8384-572a94034533 event=0 ip=2606:4700:a0::1 location=lax07 protocol=quic
 2026-09-22T14:17:49-10:00Poller is online.
 2026-09-22T14:17:54-10:00Poller is online.
+2026-09-22T14:17:59-10:00Poller is online.
+2026-09-22T14:18:04-10:00Poller is online.
+2026-09-22T14:18:09-10:00Poller is online.
+2026-09-22T14:18:14-10:00Poller is online.
+2026-09-22T14:18:19-10:00Poller is online.
+2026-09-22T14:18:24-10:00Poller is online.
+2026-09-22T14:18:29-10:00Poller is online.
+2026-09-22T14:18:34-10:00Poller is online.
+2026-09-22T14:18:39-10:00Poller is online.
+2026-09-22T14:18:44-10:00Poller is online.
+2026-09-22T14:18:44-10:00cloudflared: 2026-09-23T00:18:44Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=2 event=0 ip=2606:4700:a8::10
+2026-09-22T14:18:44-10:00cloudflared: 2026-09-23T00:18:44Z INF Retrying connection in up to 1s connIndex=2 event=0 ip=2606:4700:a8::10
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=3 event=0 ip=2606:4700:a0::1
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z INF Retrying connection in up to 1s connIndex=3 event=0 ip=2606:4700:a0::1
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z WRN Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=3
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z WRN Serve tunnel error error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=2606:4700:a8::8
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=2606:4700:a8::8
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z ERR Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=1 event=0 ip=2606:4700:a0::7
+2026-09-22T14:18:45-10:00cloudflared: 2026-09-23T00:18:45Z INF Retrying connection in up to 1s connIndex=1 event=0 ip=2606:4700:a0::7
+2026-09-22T14:18:46-10:00cloudflared: 2026-09-23T00:18:46Z ERR Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=2
+2026-09-22T14:18:46-10:00cloudflared: 2026-09-23T00:18:46Z ERR Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=1
+2026-09-22T14:18:47-10:00cloudflared: 2026-09-23T00:18:47Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.192.47
+2026-09-22T14:18:47-10:00cloudflared: 2026-09-23T00:18:47Z INF Registered tunnel connection connIndex=0 connection=bcdd7b07-4b9b-4e01-b79b-7253704ede1b event=0 ip=198.41.192.47 location=lax07 protocol=quic
+2026-09-22T14:18:49-10:00Poller is online.
+2026-09-22T14:18:54-10:00Poller is online.
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=1 event=0 ip=198.41.200.33
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=3 event=0 ip=198.41.192.167
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=2 event=0 ip=198.41.200.73
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Registered tunnel connection connIndex=1 connection=710937fc-9c55-4813-89d4-4ca1e3d4f2ff event=0 ip=198.41.200.33 location=lax01 protocol=quic
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Registered tunnel connection connIndex=2 connection=8265ffb0-107c-4e81-aff9-503c87540dcf event=0 ip=198.41.200.73 location=lax01 protocol=quic
+2026-09-22T14:18:55-10:00cloudflared: 2026-09-23T00:18:55Z INF Registered tunnel connection connIndex=3 connection=04dd5ad1-72b4-4821-98e6-97504abcbd24 event=0 ip=198.41.192.167 location=lax05 protocol=quic
+2026-09-22T14:18:59-10:00Poller is online.
+2026-09-22T14:19:04-10:00Poller is online.
+2026-09-22T14:19:09-10:00Poller is online.
+2026-09-22T14:19:14-10:00Poller is online.
+2026-09-22T14:19:19-10:00Poller is online.
+2026-09-22T14:19:24-10:00Poller is online.
+2026-09-22T14:19:28-10:00cloudflared: 2026-09-23T00:19:28Z INF Initiating graceful shutdown due to signal terminated ...
+2026-09-22T14:19:29-10:00Starting cloudflared mode=token public_host=rootserver.rootrecord.cloud
+2026-09-22T14:19:29-10:00Waiting for tunnel register (timeout=45s) before polling…
+2026-09-22T14:19:29-10:00tunnel starting  id=9adf2231-9546-4491-a9ff-0b2dced95c7a
+2026-09-22T14:19:29-10:00tunnel connected  conn=0  edge=sjc05
+2026-09-22T14:19:29-10:00Tunnel READY — first connection registered.
+2026-09-22T14:19:29-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T14:19:29-10:00Poller is online.
+2026-09-22T14:19:29-10:00tunnel ingress  rootserver.rootrecord.cloud → 127.0.0.1:8799
+2026-09-22T14:19:30-10:00tunnel connected  conn=1  edge=lax07
+2026-09-22T14:19:31-10:00tunnel connected  conn=2  edge=lax09
+2026-09-22T14:19:32-10:00tunnel connected  conn=3  edge=sjc11
+2026-09-22T14:19:34-10:00Poller is online.
+2026-09-22T14:19:39-10:00Poller is online.
+2026-09-22T14:19:44-10:00Poller is online.
+2026-09-22T14:19:49-10:00Poller is online.
+2026-09-22T14:19:52-10:00Starting cloudflared mode=token public_host=rootserver.rootrecord.cloud
+2026-09-22T14:19:52-10:00Waiting for tunnel register (timeout=45s) before polling…
+2026-09-22T14:19:52-10:00tunnel starting  id=9adf2231-9546-4491-a9ff-0b2dced95c7a
+2026-09-22T14:19:52-10:00tunnel connected  conn=0  edge=lax09
+2026-09-22T14:19:52-10:00Tunnel READY — first connection registered.
+2026-09-22T14:19:52-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T14:19:52-10:00Poller is online.
+2026-09-22T14:19:52-10:00tunnel ingress  rootserver.rootrecord.cloud → 127.0.0.1:8799
+2026-09-22T14:19:52-10:00tunnel connected  conn=1  edge=sjc05
+2026-09-22T14:19:53-10:00tunnel connected  conn=2  edge=sjc07
+2026-09-22T14:19:55-10:00tunnel connected  conn=3  edge=lax08
+2026-09-22T14:19:57-10:00Poller is online.
+2026-09-22T14:20:02-10:00Poller is online.
+2026-09-22T14:20:07-10:00Poller is online.
+2026-09-22T14:20:12-10:00Poller is online.
+2026-09-22T14:20:17-10:00Poller is online.
+2026-09-22T14:20:22-10:00Poller is online.
+2026-09-22T14:20:27-10:00Poller is online.
+2026-09-22T14:20:32-10:00Poller is online.
+2026-09-22T14:20:37-10:00Poller is online.
+2026-09-22T14:20:42-10:00Poller is online.
+2026-09-22T14:20:47-10:00Poller is online.
+2026-09-22T14:20:52-10:00Poller is online.
+2026-09-22T14:20:57-10:00Poller is online.
+2026-09-22T14:21:02-10:00Poller is online.
+2026-09-22T14:21:07-10:00Poller is online.
+2026-09-22T14:21:12-10:00Poller is online.
+2026-09-22T14:21:17-10:00Poller is online.
+2026-09-22T14:21:22-10:00Poller is online.
+2026-09-22T14:21:27-10:00Poller is online.
+2026-09-22T14:21:32-10:00Poller is online.
+2026-09-22T14:21:37-10:00Poller is online.
+2026-09-22T14:21:42-10:00Poller is online.
+2026-09-22T14:21:43-10:00cloudflared ERR/WARN: 2026-09-23T00:21:43Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=3 event=0 ip=2606:4700:a0::2
+2026-09-22T14:21:43-10:00cloudflared ERR/WARN: 2026-09-23T00:21:43Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=0 event=0 ip=2606:4700:a0::3
+2026-09-22T14:21:43-10:00cloudflared ERR/WARN: 2026-09-23T00:21:43Z WRN Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=3
+2026-09-22T14:21:43-10:00cloudflared ERR/WARN: 2026-09-23T00:21:43Z WRN Serve tunnel error error="datagram manager error: timeout: no recent network activity" connIndex=1 event=0 ip=2606:4700:a8::5
+2026-09-22T14:21:43-10:00cloudflared ERR/WARN: 2026-09-23T00:21:43Z ERR Serve tunnel error error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=2 event=0 ip=2606:4700:a8::7
+2026-09-22T14:21:44-10:00cloudflared ERR/WARN: 2026-09-23T00:21:44Z ERR Connection terminated error="accept stream listener error: failed to accept QUIC stream: timeout: no recent network activity" connIndex=2
+2026-09-22T14:21:45-10:00cloudflared ERR/WARN: 2026-09-23T00:21:45Z ERR Connection terminated error="datagram manager error: timeout: no recent network activity" connIndex=1
+2026-09-22T14:21:47-10:00Poller is online.
+2026-09-22T14:21:49-10:00cloudflared ERR/WARN: 2026-09-23T00:21:49Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.37
+2026-09-22T14:21:52-10:00Poller is online.
+2026-09-22T14:21:53-10:00cloudflared ERR/WARN: 2026-09-23T00:21:53Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=2 event=0 ip=198.41.200.63
+2026-09-22T14:21:53-10:00cloudflared ERR/WARN: 2026-09-23T00:21:53Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=1 event=0 ip=198.41.200.23
+2026-09-22T14:21:53-10:00cloudflared ERR/WARN: 2026-09-23T00:21:53Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=3 event=0 ip=198.41.192.27
+2026-09-22T14:21:53-10:00cloudflared ERR/WARN: 2026-09-23T00:21:53Z ERR Connection terminated error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=3
+2026-09-22T14:21:54-10:00cloudflared ERR/WARN: 2026-09-23T00:21:54Z ERR Connection terminated error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=1
+2026-09-22T14:21:55-10:00cloudflared ERR/WARN: 2026-09-23T00:21:55Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=2606:4700:a0::2
+2026-09-22T14:21:56-10:00cloudflared ERR/WARN: 2026-09-23T00:21:56Z ERR Connection terminated error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=2
+2026-09-22T14:21:57-10:00Poller is online.
+2026-09-22T14:21:59-10:00cloudflared ERR/WARN: 2026-09-23T00:21:59Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->198.41.192.37:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=198.41.192.37
+2026-09-22T14:22:02-10:00cloudflared ERR/WARN: 2026-09-23T00:22:02Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a0::7]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a0::7
+2026-09-22T14:22:02-10:00Poller is online.
+2026-09-22T14:22:07-10:00Poller is online.
+2026-09-22T14:22:12-10:00Poller is online.
+2026-09-22T14:22:17-10:00Poller is online.
+2026-09-22T14:22:22-10:00Poller is online.
+2026-09-22T14:22:23-10:00cloudflared ERR/WARN: 2026-09-23T00:22:23Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:48494->[2606:4700:a0::4]:7844: sendmsg: network is unreachable" connIndex=3 event=0 ip=2606:4700:a0::4
+2026-09-22T14:22:23-10:00cloudflared ERR/WARN: 2026-09-23T00:22:23Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:43841->[2606:4700:a8::1]:7844: sendmsg: network is unreachable" connIndex=2 event=0 ip=2606:4700:a8::1
+2026-09-22T14:22:23-10:00cloudflared ERR/WARN: 2026-09-23T00:22:23Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40143->[2606:4700:a8::10]:7844: sendmsg: network is unreachable" connIndex=1 event=0 ip=2606:4700:a8::10
+2026-09-22T14:22:26-10:00cloudflared ERR/WARN: 2026-09-23T00:22:26Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->198.41.192.67:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=198.41.192.67
+2026-09-22T14:22:27-10:00Poller is online.
+2026-09-22T14:22:28-10:00cloudflared ERR/WARN: 2026-09-23T00:22:28Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:40143->[2606:4700:a8::10]:7844: sendmsg: network is unreachable" connIndex=1
+2026-09-22T14:22:30-10:00cloudflared ERR/WARN: 2026-09-23T00:22:30Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:48494->[2606:4700:a0::4]:7844: sendmsg: network is unreachable" connIndex=3
+2026-09-22T14:22:31-10:00cloudflared ERR/WARN: 2026-09-23T00:22:31Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:43841->[2606:4700:a8::1]:7844: sendmsg: network is unreachable" connIndex=2
+2026-09-22T14:22:32-10:00Poller is online.
+2026-09-22T14:22:37-10:00Poller is online.
+2026-09-22T14:22:42-10:00Poller is online.
+2026-09-22T14:22:44-10:00cloudflared ERR/WARN: 2026-09-23T00:22:44Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40014->[2606:4700:a0::3]:7844: sendmsg: network is unreachable" connIndex=0 event=0 ip=2606:4700:a0::3
+2026-09-22T14:22:47-10:00cloudflared ERR/WARN: 2026-09-23T00:22:47Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:48494->198.41.192.167:7844: sendmsg: network is unreachable" connIndex=3 event=0 ip=198.41.192.167
+2026-09-22T14:22:47-10:00cloudflared ERR/WARN: 2026-09-23T00:22:47Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:43841->198.41.200.23:7844: sendmsg: network is unreachable" connIndex=2 event=0 ip=198.41.200.23
+2026-09-22T14:22:47-10:00cloudflared ERR/WARN: 2026-09-23T00:22:47Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: write udp [::]:40143->198.41.200.63:7844: sendmsg: network is unreachable" connIndex=1 event=0 ip=198.41.200.63
+2026-09-22T14:22:47-10:00Poller is online.
+2026-09-22T14:22:52-10:00Poller is online.
+2026-09-22T14:22:54-10:00cloudflared ERR/WARN: 2026-09-23T00:22:54Z ERR Connection terminated error="failed to dial to edge with quic: write udp [::]:48494->198.41.192.167:7844: sendmsg: network is unreachable" connIndex=3

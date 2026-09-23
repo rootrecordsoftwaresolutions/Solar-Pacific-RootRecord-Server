@@ -146,75 +146,12 @@ def start_tunnel() -> bool:
         **popen_kwargs,
     )
 
-    def _cloudflared_interesting(text: str) -> str | None:
-        """Return a short line to log, or None to drop noise."""
-        t = text.strip()
-        if not t:
-            return None
-        # Drop precheck banners / tables / component spam
-        drop_sub = (
-            "CONNECTIVITY PRE-CHECKS",
-            "-----------",
-            "COMPONENT         TARGET",
-            "precheck component=",
-            "precheck complete",
-            "SUMMARY:",
-            "DNS Resolution",
-            "UDP Connectivity",
-            "TCP Connectivity",
-            "Cloudflare API",
-            "Tunnel connection curve preferences",
-            "ICMP proxy will use",
-            "Generated Connector ID",
-            "Initial protocol",
-            "Starting metrics server",
-            "Version ",
-            "GOOS:",
-            "Settings: map[",
-            "Environmental variables map[",
-            "Autoupdate frequency",
-            "Metrics server",
-        )
-        if any(s in t for s in drop_sub):
-            return None
-        if t.startswith("|") or t.startswith("+--"):
-            return None
-        # Keep errors/warns and useful lifecycle
-        low = t.lower()
-        if " err " in f" {low} " or "error" in low or "failed" in low or " warn" in low:
-            return f"cloudflared ERR/WARN: {t}"
-        if "Registered tunnel connection" in t:
-            # connIndex=0 location=sjc08 protocol=quic
-            idx = ""
-            loc = ""
-            for part in t.split():
-                if part.startswith("connIndex="):
-                    idx = part.split("=", 1)[1]
-                if part.startswith("location="):
-                    loc = part.split("=", 1)[1]
-            return f"tunnel connected  conn={idx or '?'}  edge={loc or '?'}"
-        if "Starting tunnel" in t:
-            tid = ""
-            for part in t.split():
-                if part.startswith("tunnelID="):
-                    tid = part.split("=", 1)[1]
-            return f"tunnel starting  id={tid or '?'}"
-        if "Updated to new configuration" in t:
-            if "rootserver.rootrecord.cloud" in t:
-                return "tunnel ingress  rootserver.rootrecord.cloud → 127.0.0.1:8799"
-            return "tunnel ingress  updated"
-        if "Connected to Cloudflare" in t:
-            return "tunnel connected to Cloudflare"
-        return None  # default: quiet
-
     def pump() -> None:
         assert _tunnel_proc is not None
         assert _tunnel_proc.stdout is not None
         for line in _tunnel_proc.stdout:
             text = line.rstrip()
-            interesting = _cloudflared_interesting(text)
-            if interesting:
-                log(f"{full_timestamp()}{interesting}")
+            log(f"{full_timestamp()}cloudflared: {text}")
             # First registered connection = tunnel path is live enough to poll.
             if "Registered tunnel connection" in text or "Connected to Cloudflare" in text:
                 if not _tunnel_ready.is_set():
