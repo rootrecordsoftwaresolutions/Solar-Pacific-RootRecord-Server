@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "@/app/energy/page.module.css";
+import styles from "@/app/home/status/page.module.css";
 
 /** AWS Network Globe — only AWS hook on this page (visual background). */
 const DEFAULT_GLOBE = "https://www.rootrecord.cloud";
