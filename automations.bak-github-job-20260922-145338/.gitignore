@@ -17,10 +17,3 @@ backups/
 .env
 *.env
 
-
-# --- github / poller runtime (never auto-commit) ---
-github/scripts/poll-and-push.log
-logs/store/rootserver-poller.log
-automations/scripts/__pycache__/
-**/__pycache__/
-*.pyc
