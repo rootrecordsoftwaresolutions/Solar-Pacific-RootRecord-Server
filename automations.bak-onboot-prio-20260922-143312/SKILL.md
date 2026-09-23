@@ -29,14 +29,10 @@ header in `scripts/jobs.py`.
 
 ## Job sections in `jobs.py`
 
-- `ON_BOOT` — priority list (lower runs first)
-  - **priority 0** — `self_terminal` (this process + status window)
-  - **priority 1** — `cloudflare_tunnel`
-  - **priority 2+** — copy TEMPLATE for more boot hooks
-- `ONCE_AT_START` — one-shot after ON_BOOT finishes
 - `EVERY_SECONDS` — repeating interval (`interval_sec`)
 - `EVERY_MINUTE` — on wall-clock minute change (`only_at_minutes` optional)
 - `EVERY_HOUR` — on wall-clock hour change (`only_at_hours` optional)
+- `ONCE_AT_START` — one-shot after tunnel READY
 
 Copy the blank TEMPLATE inside the section you need; keep key order identical.
 

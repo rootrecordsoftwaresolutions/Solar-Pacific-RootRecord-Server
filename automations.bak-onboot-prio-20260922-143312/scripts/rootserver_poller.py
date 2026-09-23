@@ -5,8 +5,7 @@
 # Ctrl-C / stop-poller-stack.sh must terminate this process, cloudflared, and
 # rr-rootserver-poller.service. See scripts/jobs.py header and stop-poller-stack.sh.
 #
-# Job definitions live in jobs.py — ON_BOOT priorities (0=self, 1=cloudflare, 2+=templates),
-# then recurring sections. Keep section formatting identical.
+# Job definitions live in jobs.py — edit there; keep section formatting identical.
 """
 from __future__ import annotations
 
@@ -279,35 +278,6 @@ def run_builtin(job: dict) -> None:
             _latest = line
         log(line)
         return
-    if name == "self_process":
-        # Priority 0 boot registry — lists this desk + status terminal.
-        proc = job.get("process") or str(Path(__file__).resolve())
-        term = job.get("terminal") or "RootRecord poller — rootserver"
-        watch = job.get("watch") or str(SCRIPTS / "poller-watch.py")
-        log(f"{full_timestamp()}boot:p0 self_process")
-        log(f"{full_timestamp()}boot:p0 process  = {proc}")
-        log(f"{full_timestamp()}boot:p0 terminal = {term}")
-        log(f"{full_timestamp()}boot:p0 watch    = {watch}")
-        log(f"{full_timestamp()}boot:p0 pid      = {os.getpid()}")
-        return
-    if name == "tunnel_start":
-        # Priority 1 boot — Cloudflare tunnel (was hard-coded; now job-driven).
-        global HOSTNAME, TOKEN_FILE, CLOUDFLARED_BIN, TUNNEL_READY_TIMEOUT_SEC
-        if job.get("public_host"):
-            HOSTNAME = str(job["public_host"])
-        if job.get("token_file"):
-            TOKEN_FILE = Path(str(job["token_file"]))
-        if job.get("cloudflared_bin"):
-            CLOUDFLARED_BIN = str(job["cloudflared_bin"])
-        if job.get("timeout_sec"):
-            TUNNEL_READY_TIMEOUT_SEC = float(job["timeout_sec"])
-        log(f"{full_timestamp()}boot:p1 cloudflare_tunnel host={HOSTNAME}")
-        started = start_tunnel()
-        if started:
-            wait_for_tunnel_ready()
-        elif ENABLE_TUNNEL:
-            log(f"{full_timestamp()}Tunnel DOWN — continuing with local jobs only.")
-        return
     if name == "http_ping":
         url = (job.get("command") or f"http://{HOST}:{PORT}/").strip()
         try:
@@ -409,30 +379,19 @@ def shutdown(*_args) -> None:
             _tunnel_proc.kill()
 
 
-def run_on_boot() -> None:
-    """ON_BOOT priority list — lower priority number runs first."""
-    boot = [j for j in enabled_jobs(getattr(jobmod, "ON_BOOT", [])) if isinstance(j, dict)]
-    boot.sort(key=lambda j: int(j.get("priority", 100)))
-    log(f"{full_timestamp()}boot:start  jobs={len(boot)}")
-    for j in boot:
-        prio = j.get("priority", "?")
-        jid = j.get("id", "?")
-        log(f"{full_timestamp()}boot:run  priority={prio}  id={jid}")
-        run_job(j)
-    log(f"{full_timestamp()}boot:done")
-
-
 def main() -> int:
     signal.signal(signal.SIGTERM, shutdown)
     signal.signal(signal.SIGINT, shutdown)
 
-    # HTTP bind early so local health works even while tunnel is coming up.
+    started = start_tunnel()
+    if started:
+        wait_for_tunnel_ready()
+    elif ENABLE_TUNNEL:
+        log(f"{full_timestamp()}Tunnel DOWN — continuing with local jobs only.")
+
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     threading.Thread(target=server.serve_forever, name="http", daemon=True).start()
     log(f"{full_timestamp()}HTTP listening on http://{HOST}:{PORT} (open access on bind)")
-
-    # Boot priority chain: p0 self_terminal → p1 cloudflare → p2+ templates
-    run_on_boot()
 
     for j in enabled_jobs(getattr(jobmod, "ONCE_AT_START", [])):
         run_job(j)

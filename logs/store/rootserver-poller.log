@@ -1605,3 +1605,84 @@
 2026-09-22T14:32:46-10:00Poller is online.
 2026-09-22T14:32:51-10:00Poller is online.
 2026-09-22T14:32:56-10:00Poller is online.
+2026-09-22T14:33:01-10:00Poller is online.
+2026-09-22T14:33:06-10:00Poller is online.
+2026-09-22T14:33:11-10:00Poller is online.
+2026-09-22T14:33:16-10:00Poller is online.
+2026-09-22T14:33:21-10:00Poller is online.
+2026-09-22T14:33:26-10:00Poller is online.
+2026-09-22T14:33:31-10:00Poller is online.
+2026-09-22T14:33:36-10:00Poller is online.
+2026-09-22T14:33:41-10:00Poller is online.
+2026-09-22T14:33:46-10:00HTTP listening on http://127.0.0.1:8799 (open access on bind)
+2026-09-22T14:33:46-10:00boot:start  jobs=2
+2026-09-22T14:33:46-10:00boot:run  priority=0  id=self_terminal
+2026-09-22T14:33:46-10:00boot:p0 self_process
+2026-09-22T14:33:46-10:00boot:p0 process  = /home/rootrecord/.ollama/skills/automations/scripts/rootserver_poller.py
+2026-09-22T14:33:46-10:00boot:p0 terminal = RootRecord poller — rootserver
+2026-09-22T14:33:46-10:00boot:p0 watch    = /home/rootrecord/.ollama/skills/automations/scripts/poller-watch.py
+2026-09-22T14:33:46-10:00boot:p0 pid      = 89319
+2026-09-22T14:33:46-10:00boot:run  priority=1  id=cloudflare_tunnel
+2026-09-22T14:33:46-10:00boot:p1 cloudflare_tunnel host=rootserver.rootrecord.cloud
+2026-09-22T14:33:46-10:00Starting cloudflared mode=token public_host=rootserver.rootrecord.cloud
+2026-09-22T14:33:46-10:00Waiting for tunnel register (timeout=45s) before jobs…
+2026-09-22T14:33:46-10:00tunnel starting  id=9adf2231-9546-4491-a9ff-0b2dced95c7a
+2026-09-22T14:33:46-10:00tunnel connected  conn=0  edge=lax10
+2026-09-22T14:33:46-10:00Tunnel READY — first connection registered.
+2026-09-22T14:33:46-10:00boot:done
+2026-09-22T14:33:46-10:00scheduler  every_seconds=1  every_minute=0  every_hour=0
+2026-09-22T14:33:46-10:00Poller is online.
+2026-09-22T14:33:46-10:00tunnel ingress  rootserver.rootrecord.cloud → 127.0.0.1:8799
+2026-09-22T14:33:47-10:00tunnel connected  conn=1  edge=lax01
+2026-09-22T14:33:48-10:00tunnel connected  conn=2  edge=lax09
+2026-09-22T14:33:49-10:00tunnel connected  conn=3  edge=lax01
+2026-09-22T14:33:51-10:00Poller is online.
+2026-09-22T14:33:56-10:00Poller is online.
+2026-09-22T14:34:01-10:00Poller is online.
+2026-09-22T14:34:06-10:00Poller is online.
+2026-09-22T14:34:11-10:00Poller is online.
+2026-09-22T14:34:16-10:00Poller is online.
+2026-09-22T14:34:21-10:00Poller is online.
+2026-09-22T14:34:26-10:00Poller is online.
+2026-09-22T14:34:31-10:00Poller is online.
+2026-09-22T14:34:36-10:00Poller is online.
+2026-09-22T14:34:41-10:00Poller is online.
+2026-09-22T14:34:46-10:00Poller is online.
+2026-09-22T14:34:51-10:00Poller is online.
+2026-09-22T14:34:56-10:00Poller is online.
+2026-09-22T14:35:01-10:00Poller is online.
+2026-09-22T14:35:06-10:00Poller is online.
+2026-09-22T14:35:11-10:00Poller is online.
+2026-09-22T14:35:16-10:00Poller is online.
+2026-09-22T14:35:21-10:00Poller is online.
+2026-09-22T14:35:26-10:00Poller is online.
+2026-09-22T14:35:31-10:00Poller is online.
+2026-09-22T14:35:36-10:00Poller is online.
+2026-09-22T14:35:41-10:00Poller is online.
+2026-09-22T14:35:46-10:00Poller is online.
+2026-09-22T14:35:51-10:00Poller is online.
+2026-09-22T14:35:56-10:00Poller is online.
+2026-09-22T14:36:01-10:00Poller is online.
+2026-09-22T14:36:06-10:00Poller is online.
+2026-09-22T14:36:11-10:00Poller is online.
+2026-09-22T14:36:16-10:00Poller is online.
+2026-09-22T14:36:21-10:00Poller is online.
+2026-09-22T14:36:27-10:00Poller is online.
+2026-09-22T14:36:32-10:00Poller is online.
+2026-09-22T14:36:37-10:00Poller is online.
+2026-09-22T14:36:42-10:00Poller is online.
+2026-09-22T14:36:47-10:00Poller is online.
+2026-09-22T14:36:52-10:00Poller is online.
+2026-09-22T14:36:57-10:00Poller is online.
+2026-09-22T14:37:02-10:00Poller is online.
+2026-09-22T14:37:07-10:00Poller is online.
+2026-09-22T14:37:12-10:00Poller is online.
+2026-09-22T14:37:17-10:00Poller is online.
+2026-09-22T14:37:22-10:00Poller is online.
+2026-09-22T14:37:27-10:00Poller is online.
+2026-09-22T14:37:32-10:00Poller is online.
+2026-09-22T14:37:37-10:00Poller is online.
+2026-09-22T14:37:42-10:00Poller is online.
+2026-09-22T14:37:47-10:00Poller is online.
+2026-09-22T14:37:52-10:00Poller is online.
+2026-09-22T14:37:57-10:00Poller is online.

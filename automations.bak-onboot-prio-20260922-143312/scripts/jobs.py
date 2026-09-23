@@ -6,7 +6,6 @@
 #   - rootserver_poller.py
 #   - cloudflared (tunnel child)
 #   - systemd user unit: rr-rootserver-poller.service
-#   - poller-watch.py (status terminal)
 # Leaving an orphan tunnel or poller is a bug. Do not "fix only" the window.
 # Restart shortcut: /home/rootrecord/rootserver-poller
 # ==============================================================================
@@ -14,18 +13,20 @@
 # HOW TO ADD A JOB (no AI required)
 #   1) Copy the blank TEMPLATE block from the matching section below.
 #   2) Paste it inside that section's list (keep the commas).
-#   3) Set enabled=True, fill labeled fields.
+#   3) Set enabled=True, fill id / description / schedule fields / command.
 #   4) Keep the same key order and quoting style as the examples.
 #   5) Restart: /home/rootrecord/rootserver-poller restart
 #
 # ACTION TYPES
-#   builtin  — engine built-in (see labels on each live job)
-#   command  — shell string run with bash -lc
+#   command  — shell string run with bash -lc (recommended for one-shot scripts)
+#   builtin  — engine built-in: "heartbeat" | "http_ping"
+#   (leave command="" and builtin="" only while drafting a disabled template)
 #
-# BOOT ORDER
-#   ON_BOOT runs first, sorted by priority (0 = highest / first).
-#   Then ONCE_AT_START (if any).
-#   Then recurring: EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR.
+# SCHEDULE SECTIONS
+#   EVERY_SECONDS  — fires every interval_sec (float/int seconds)
+#   EVERY_MINUTE   — fires once per wall-clock minute (when the minute changes)
+#   EVERY_HOUR     — fires once per wall-clock hour (when the hour changes)
+#   ONCE_AT_START  — fires one time after tunnel READY (startup scripts)
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
@@ -37,76 +38,6 @@ DEFAULTS = {
     "cwd": "",
     "env": {},
 }
-
-# ==============================================================================
-# SECTION: ON_BOOT  (priority list — lower number runs first)
-# Cloudflare lives here at priority 1. Priority 0 is this desk itself.
-# ==============================================================================
-ON_BOOT = [
-    # --- priority 0: self / status terminal (redundant registry — keep) -----------
-    {
-        "id": "self_terminal",
-        "enabled": True,
-        "priority": 0,
-        "description": "This desk process + status terminal (self registry).",
-        "builtin": "self_process",
-        "command": "",
-        "process": "/home/rootrecord/.ollama/skills/automations/scripts/rootserver_poller.py",
-        "terminal": "RootRecord poller — rootserver",
-        "watch": "/home/rootrecord/.ollama/skills/automations/scripts/poller-watch.py",
-        "timeout_sec": 5,
-        "cwd": "",
-        "env": {},
-    },
-    # --- priority 1: Cloudflare tunnel -------------------------------------------
-    {
-        "id": "cloudflare_tunnel",
-        "enabled": True,
-        "priority": 1,
-        "description": "Start Cloudflare tunnel for rootserver.rootrecord.cloud.",
-        "builtin": "tunnel_start",
-        "command": "",
-        "public_host": "rootserver.rootrecord.cloud",
-        "token_file": "/home/rootrecord/.cloudflared/rootserver.token",
-        "cloudflared_bin": "/home/rootrecord/.ollama/skills/automations/bin/cloudflared",
-        "local_service": "http://127.0.0.1:8799",
-        "timeout_sec": 45,
-        "cwd": "",
-        "env": {},
-    },
-    # --- priority 2: TEMPLATE (on boot) — copy from here -------------------------
-    # {
-    #     "id": "example_on_boot_p2",
-    #     "enabled": False,
-    #     "priority": 2,
-    #     "description": "One-line plain description of what this boot job does.",
-    #     "builtin": "",
-    #     "command": "/home/rootrecord/path/to/boot-script.sh",
-    #     "timeout_sec": 120,
-    #     "cwd": "/home/rootrecord",
-    #     "env": {},
-    # },
-    # --- end TEMPLATE ------------------------------------------------------------
-]
-
-# ==============================================================================
-# SECTION: ONCE_AT_START
-# One-time scripts after ON_BOOT finishes (tunnel already handled above).
-# ==============================================================================
-ONCE_AT_START = [
-    # --- TEMPLATE (run once after boot priorities) — copy from here --------------
-    # {
-    #     "id": "example_once_at_start",
-    #     "enabled": False,
-    #     "description": "One-line plain description of what this job does.",
-    #     "builtin": "",
-    #     "command": "/home/rootrecord/path/to/oneshot.sh",
-    #     "timeout_sec": 300,
-    #     "cwd": "/home/rootrecord",
-    #     "env": {},
-    # },
-    # --- end TEMPLATE ------------------------------------------------------------
-]
 
 # ==============================================================================
 # SECTION: EVERY_SECONDS
@@ -125,7 +56,7 @@ EVERY_SECONDS = [
         "cwd": "",
         "env": {},
     },
-    # --- TEMPLATE (every X seconds) — copy from here -----------------------------
+    # --- TEMPLATE (every X seconds) — copy from here -------------------------------
     # {
     #     "id": "example_every_seconds",
     #     "enabled": False,
@@ -137,7 +68,7 @@ EVERY_SECONDS = [
     #     "cwd": "/home/rootrecord",
     #     "env": {},
     # },
-    # --- end TEMPLATE ------------------------------------------------------------
+    # --- end TEMPLATE --------------------------------------------------------------
 ]
 
 # ==============================================================================
@@ -146,7 +77,7 @@ EVERY_SECONDS = [
 # Optional: only_at_minutes = [0, 15, 30, 45]  (empty list = every minute)
 # ==============================================================================
 EVERY_MINUTE = [
-    # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
+    # --- TEMPLATE (every minute / selected minutes) — copy from here --------------
     # {
     #     "id": "example_every_minute",
     #     "enabled": False,
@@ -158,7 +89,7 @@ EVERY_MINUTE = [
     #     "cwd": "/home/rootrecord",
     #     "env": {},
     # },
-    # --- end TEMPLATE ------------------------------------------------------------
+    # --- end TEMPLATE --------------------------------------------------------------
 ]
 
 # ==============================================================================
@@ -167,7 +98,7 @@ EVERY_MINUTE = [
 # Optional: only_at_hours = [0, 6, 12, 18]  (empty list = every hour, 0–23)
 # ==============================================================================
 EVERY_HOUR = [
-    # --- TEMPLATE (every hour / selected hours) — copy from here ----------------
+    # --- TEMPLATE (every hour / selected hours) — copy from here ------------------
     # {
     #     "id": "example_every_hour",
     #     "enabled": False,
@@ -179,7 +110,27 @@ EVERY_HOUR = [
     #     "cwd": "/home/rootrecord",
     #     "env": {},
     # },
-    # --- end TEMPLATE ------------------------------------------------------------
+    # --- end TEMPLATE --------------------------------------------------------------
+]
+
+# ==============================================================================
+# SECTION: ONCE_AT_START
+# One-time scripts after tunnel READY (and before / with first heartbeat cycle).
+# Use for boot hooks you want to paste in and leave enabled.
+# ==============================================================================
+ONCE_AT_START = [
+    # --- TEMPLATE (run once at start) — copy from here ----------------------------
+    # {
+    #     "id": "example_once_at_start",
+    #     "enabled": False,
+    #     "description": "One-line plain description of what this job does.",
+    #     "builtin": "",
+    #     "command": "/home/rootrecord/path/to/oneshot.sh",
+    #     "timeout_sec": 300,
+    #     "cwd": "/home/rootrecord",
+    #     "env": {},
+    # },
+    # --- end TEMPLATE --------------------------------------------------------------
 ]
 
 # ==============================================================================
@@ -189,21 +140,13 @@ EVERY_HOUR = [
 # {
 #     "id": "unique_snake_case_name",          # required — unique across all sections
 #     "enabled": False,                         # required — True to run
-#     "priority": 2,                            # ON_BOOT only — lower runs first
 #     "description": "Plain words: what / why.",# required — human label
 #     "interval_sec": 60,                       # EVERY_SECONDS only
 #     "only_at_minutes": [],                    # EVERY_MINUTE only — [] = all minutes
 #     "only_at_hours": [],                      # EVERY_HOUR only — [] = all hours 0-23
-#     "builtin": "",                            # "" or self_process|tunnel_start|heartbeat|http_ping
+#     "builtin": "",                            # "" or "heartbeat" | "http_ping"
 #     "command": "/home/rootrecord/script.sh",  # shell via bash -lc; "" if builtin set
-#     "process": "",                            # ON_BOOT self_process — main process path
-#     "terminal": "",                           # ON_BOOT self_process — window title
-#     "watch": "",                              # ON_BOOT self_process — watch script path
-#     "public_host": "",                        # ON_BOOT tunnel_start
-#     "token_file": "",                         # ON_BOOT tunnel_start
-#     "cloudflared_bin": "",                    # ON_BOOT tunnel_start
-#     "local_service": "",                      # ON_BOOT tunnel_start — origin URL
-#     "timeout_sec": 120,                       # kill command / tunnel wait seconds
+#     "timeout_sec": 120,                       # kill command after N seconds
 #     "cwd": "/home/rootrecord",                # working directory; "" = poller cwd
 #     "env": {"EXAMPLE": "value"},              # extra env vars for command only
 # },
