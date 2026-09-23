@@ -24,7 +24,7 @@ const EMPTY: EnergySnapshot = {
   riverSoc: "No data",
   acOut: "Waiting",
   buckets: "Waiting",
-  source: "/home/rootrecord/Database/ENERGY",
+  source: "/home/rootrecord/Database/ENERGY", // soc/*-last, watts/*-last, samples/read-*
   updated: null,
 };
 
