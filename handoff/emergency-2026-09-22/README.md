@@ -1,9 +1,7 @@
-# Emergency handoff pack — 2026-09-22 HST
+# DAILY AI DEV HANDOFF
 
-Power emergency save. Operator resumes tomorrow.
+Zip this whole folder when briefing external / coverage AIs.
 
-Contains each agent's EMERGENCY-STATE, FULL-RESUME, and FUNCTIONS-TODOS plus STATUS / READ_FIRST snapshots.
+**Start at `MASTER-HANDOFF-FOR-EXTERNAL-AIS-2026-09-22.md`** (also linked from `00_READ_FIRST.md`), then `STATUS_LATEST.md`.
 
-**No third-party vendor product names in these docs.**
-
-**Cut off globally (at pack time):** packer SSH-first incomplete then `collect_locations` finished later; Telegram-only packs short-term; council-relay may be down; EcoFlow/NETWORK writers not shipped.
+No third-party vendor product names in these docs.
