@@ -76,14 +76,14 @@ ON_BOOT = [
     },
     # --- priority 2: ensure GitHub backup remote (token from master-key.env) ------
     {
-        "id": "github_backup_remote",
+        "id": "github_setup_remotes",
         "enabled": True,
         "priority": 2,
-        "description": "Ensure skills git remote 'backup' is configured from GITHUB_TOKEN.",
+        "description": "Ensure all enabled GitHub remotes/worktrees (repos.conf).",
         "builtin": "",
-        "command": "bash /home/rootrecord/.ollama/skills/github/scripts/setup-remote.sh",
-        "timeout_sec": 60,
-        "cwd": "/home/rootrecord/.ollama/skills",
+        "command": "bash /home/rootrecord/.ollama/skills/github/scripts/setup-all-remotes.sh",
+        "timeout_sec": 180,
+        "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
     # --- priority 3: TEMPLATE (on boot) — copy from here -------------------------
@@ -139,14 +139,14 @@ EVERY_SECONDS = [
     },
     # --- github autopush: one check-stage-commit-push cycle (was manual loop) ----
     {
-        "id": "github_autopush",
+        "id": "github_sync_all",
         "enabled": True,
-        "description": "Auto-sync ~/.ollama/skills to GitHub backup remote (90MB size guard).",
+        "description": "Auto-sync all enabled repos in github/scripts/repos.conf (90MB guard).",
         "interval_sec": 300,
         "builtin": "",
-        "command": "bash /home/rootrecord/.ollama/skills/github/scripts/push-once.sh",
-        "timeout_sec": 180,
-        "cwd": "/home/rootrecord/.ollama/skills",
+        "command": "bash /home/rootrecord/.ollama/skills/github/scripts/sync-all.sh",
+        "timeout_sec": 300,
+        "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------

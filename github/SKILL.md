@@ -1,16 +1,18 @@
 ---
 name: github
 description: >-
-  Auto-sync ~/.ollama/skills → GitHub backup remote (90MB guard). Driven by
-  automations jobs.py; token GITHUB_TOKEN in master-key.env.
+  Multi-repo auto-sync to GitHub (skills + website; mainland optional).
+  Poller every 300s. Baks → /home/rootrecord/Database/GITHUB only.
 ---
 
 # github
 
-**Poller-owned** (do not also run `poll-and-push.sh`):
-- ON_BOOT p2 `github_backup_remote` → `scripts/setup-remote.sh`
-- EVERY_SECONDS 300 `github_autopush` → `scripts/push-once.sh`
+**Poller:** ON_BOOT `setup-all-remotes.sh` · EVERY_SECONDS 300 `sync-all.sh`  
+Do not also run `poll-and-push.sh`.
 
-Manual: `bash scripts/push-once.sh`
+**Registry:** `scripts/repos.conf`  
+**Push one:** `scripts/push-repo-once.sh <id>`  
+**Bak helper:** `scripts/bak-new.sh <tag> [paths…]` → `/home/rootrecord/Database/GITHUB/`
 
-**Token:** `/home/rootrecord/master/master-key.env` → `GITHUB_TOKEN` (fine-grained, `Solar-Pacific-RootRecord-Server` Contents R/W). Remote name: `backup`. Log gitignored: `scripts/poll-and-push.log`.
+**Token:** `GITHUB_TOKEN` in `/home/rootrecord/master/master-key.env`  
+**Logs:** `/home/rootrecord/Database/GITHUB/logs/`
