@@ -70,3 +70,5 @@ description: >-
 # ------------------------------------------------------------------------------
 # Non-owner /approve → reply No.
 # Owner approve path is council/Telegram trust — Bruce mediates pipes.
+
+<!-- author: Carly Mal — live SKILL tracked under Carly identity pushes -->
