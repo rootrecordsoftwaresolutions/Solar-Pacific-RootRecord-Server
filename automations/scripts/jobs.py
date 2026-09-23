@@ -196,7 +196,7 @@ EVERY_SECONDS = [
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_poller.sh",
         "timeout_sec": 60,
-    #   "cwd": "/home/rootrecord/",
+       "cwd": "/home/",
         "env": {},
     },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------
