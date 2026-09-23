@@ -1,17 +1,17 @@
 ---
 name: github
 description: >-
-  Auto-sync three GitHub repos (skills, website, US-Mainland-Server). Poller
-  every 300s. Baks → /home/rootrecord/Database/GITHUB only.
+  Auto-sync skills + website + us-mainland-server to their GitHub repos
+  every 300s. Intake/baks under /home/rootrecord/Database/.
 ---
 
 # github
 
-**Repos** `scripts/repos.conf` — all three enabled:
+**repos.conf**
 - `skills` → Solar-Pacific-RootRecord-Server (`~/.ollama/skills`)
-- `website` → RootRecord-Website (mirror from `skills/website/site`)
-- `mainland` → US-Mainland-Server (`Database/GITHUB/worktrees/mainland`)
+- `website` → RootRecord-Website (mirror `skills/website/site`)
+- `mainland` → US-Mainland-Server (`skills/us-mainland-server`, own repo)
 
-**Poller:** boot `setup-all-remotes.sh` · every 300s `sync-all.sh`  
-**Bak:** `scripts/bak-new.sh <tag> [paths…]` → `/home/rootrecord/Database/GITHUB/`  
-**Token:** `GITHUB_TOKEN` in `master-key.env` · **Logs:** `Database/GITHUB/logs/`
+**Poller:** boot `setup-all-remotes.sh` · 300s `sync-all.sh`  
+**Data:** `/home/rootrecord/Database/intake/` · **Baks/logs:** `Database/GITHUB/`  
+**Ignore on Pacific:** `us-mainland-server/` (and retired `aws-sync/`)

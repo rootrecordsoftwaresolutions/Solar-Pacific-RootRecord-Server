@@ -1,15 +1,13 @@
-# ====================================================
+# ==============================================================================
 # # INFO — MUST HAVE (future agents / operators)
 # ------------------------------------------------------------------------------
-# Ctrl-C in the poller window, or running stop-poller-stack.sh / the home
-# shortcut "stop", MUST kill EVERY related process:
-#   - rootserver_poller.py
-#   - cloudflared (tunnel child)
-#   - systemd user unit: rr-rootserver-poller.service
-#   - poller-watch.py (status terminal)
-# Leaving an orphan tunnel or poller is a bug. Do not "fix only" the window.
-# Restart shortcut: /home/rootrecord/rootserver-poller
-# ====================================================
+# Ctrl-C in the poller window / `rootserver-poller stop` MUST kill the whole stack
+# (poller + cloudflared + systemd unit). Never "window only".
+# Data intake → /home/rootrecord/Database/intake/
+# Baks/logs  → /home/rootrecord/Database/GITHUB/
+# GitHub trio: skills + website + mainland (skills/us-mainland-server).
+# Pacific .gitignore excludes us-mainland-server/ (own repo). No rclone / aws-sync.
+# ==============================================================================
 #
 # HOW TO ADD A JOB (no AI required)
 #   1) Copy the blank TEMPLATE block from the matching section below.
@@ -79,7 +77,7 @@ ON_BOOT = [
         "id": "github_setup_remotes",
         "enabled": True,
         "priority": 2,
-        "description": "Ensure all enabled GitHub remotes/worktrees (repos.conf).",
+        "description": "Ensure remotes for skills + website + mainland (repos.conf).",
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/github/scripts/setup-all-remotes.sh",
         "timeout_sec": 180,
@@ -141,7 +139,7 @@ EVERY_SECONDS = [
     {
         "id": "github_sync_all",
         "enabled": True,
-        "description": "Auto-sync all enabled repos in github/scripts/repos.conf (90MB guard).",
+        "description": "Push skills + website + mainland (repos.conf; 90MB guard). Baks → Database/GITHUB.",
         "interval_sec": 300,
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/github/scripts/sync-all.sh",

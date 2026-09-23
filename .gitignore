@@ -32,3 +32,5 @@ automations.bak-*/
 # website Next build artifacts
 website/site/node_modules/
 website/site/.next/
+us-mainland-server/
+aws-sync.retired*/

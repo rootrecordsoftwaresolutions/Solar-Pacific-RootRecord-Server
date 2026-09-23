@@ -1,94 +1,78 @@
 #!/usr/bin/env bash
-# One sync cycle for a single repo id from repos.conf
-set -uo pipefail
+# ==============================================================================
+# push-repo-once.sh  — one check-stage-commit-push for a repos.conf id
+# Usage: push-repo-once.sh <id>
+# Size guard: skip files > MAX_FILE_MB (default 90). Token from master-key.env.
+# Baks/logs: /home/rootrecord/Database/GITHUB/
+# ==============================================================================
+set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
+load_token
+
 ID="${1:-}"
-[[ -n "$ID" ]] || { echo "Usage: $0 <repo-id>"; exit 2; }
+[[ -n "$ID" ]] || { echo "usage: $0 <repo-id>"; exit 2; }
 
-LOG="$BAK_ROOT/logs/${ID}-push.log"
-log() { echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [$ID] $*" | tee -a "$LOG"; }
+remote_url() { echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"; }
 
-line="$(grep -v '^#' "$REPOS_CONF" | awk -F'\t' -v id="$ID" '$1==id {print; exit}')"
-[[ -n "$line" ]] || { log "ERROR: unknown id $ID"; exit 1; }
-IFS=$'\t' read -r id enabled mode local_path slug remote_name <<<"$line"
-[[ "$enabled" == "1" ]] || { log "disabled — skip"; exit 0; }
+found=0
+while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
+  [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
+  [[ "$id" == "$ID" ]] || continue
+  found=1
+  [[ "$enabled" == "1" ]] || { echo "[skip] $id disabled"; exit 0; }
 
-if [[ "$mode" == "inplace" ]]; then
-  REPO_DIR="$local_path"
-else
-  REPO_DIR="$BAK_ROOT/worktrees/$id"
-  if [[ ! -d "$REPO_DIR/.git" ]]; then
-    log "ERROR: worktree missing — run setup-all-remotes.sh first"
-    exit 1
-  fi
-  if [[ ! -d "$local_path" ]]; then
-    log "ERROR: local source missing: $local_path"
-    exit 1
-  fi
-  # Mirror desk → worktree (no node_modules / .next / .git)
-  rsync -a --delete \
-    --exclude '.git/' \
-    --exclude 'node_modules/' \
-    --exclude '.next/' \
-    --exclude '*.log' \
-    "$local_path"/ "$REPO_DIR"/
-fi
-
-cd "$REPO_DIR" || { log "ERROR: cd $REPO_DIR"; exit 1; }
-if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  log "ERROR: not a git repo"
-  exit 1
-fi
-
-CHANGED="$(git status --porcelain)"
-if [[ -z "$CHANGED" ]]; then
-  log "— no changes"
-  exit 0
-fi
-
-BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-SKIPPED=()
-STAGE_PATHS=()
-while IFS= read -r row; do
-  path="${row:3}"
-  path="${path%\"}"; path="${path#\"}"
-  [[ -z "$path" ]] && continue
-  [[ ! -e "$path" ]] && continue
-  size_bytes=$(stat -c%s -- "$path" 2>/dev/null || echo 0)
-  size_mb=$(( size_bytes / 1024 / 1024 ))
-  if (( size_mb > MAX_FILE_MB )); then
-    SKIPPED+=("$path (${size_mb}MB)")
+  if [[ "$mode" == "inplace" ]]; then
+    root="$local_path"
   else
-    STAGE_PATHS+=("$path")
+    root="$BAK_ROOT/worktrees/$id"
+    mkdir -p "$root"
+    if [[ ! -d "$root/.git" ]]; then
+      echo "ERROR: mirror worktree missing — run setup-all-remotes.sh first" >&2
+      exit 1
+    fi
+    rsync -a --delete \
+      --exclude '.git' \
+      --exclude 'node_modules' \
+      --exclude '.next' \
+      "$local_path"/ "$root"/
   fi
-done <<< "$CHANGED"
 
-if (( ${#SKIPPED[@]} > 0 )); then
-  log "SKIPPED over ${MAX_FILE_MB}MB:"
-  for s in "${SKIPPED[@]}"; do log "  - $s"; done
-fi
-if (( ${#STAGE_PATHS[@]} == 0 )); then
-  log "nothing to commit after size guard"
+  [[ -d "$root/.git" ]] || { echo "ERROR: not a git repo: $root" >&2; exit 1; }
+  cd "$root"
+  git remote set-url "$remote_name" "$(remote_url "$slug")" 2>/dev/null \
+    || git remote set-url origin "$(remote_url "$slug")"
+
+  # size guard
+  oversized=0
+  while IFS= read -r -d '' f; do
+    sz=$(stat -c%s "$f" 2>/dev/null || echo 0)
+    if (( sz > MAX_FILE_MB * 1024 * 1024 )); then
+      echo "✗ skip oversized (${sz}B): $f"
+      oversized=1
+    fi
+  done < <(git ls-files -mo --exclude-standard -z 2>/dev/null || true)
+  if (( oversized )); then
+    echo "✗ $id aborted: file(s) over ${MAX_FILE_MB}MB"
+    exit 1
+  fi
+
+  if git diff --quiet && git diff --cached --quiet && [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+    echo "— [$id] no changes"
+    exit 0
+  fi
+
+  git add -A
+  n=$(git diff --cached --name-only | wc -l | tr -d ' ')
+  msg="auto: $(date -u +%Y-%m-%dT%H:%MZ) desk sync ($n file(s))"
+  git commit -m "$msg" >/dev/null
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact
+  echo "↑ [$id] $n files → $slug ($branch)"
+  echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug" \
+    >> "$BAK_ROOT/logs/${id}.log"
   exit 0
-fi
+done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
 
-git add -A -- "${STAGE_PATHS[@]}" 2>>"$LOG" || true
-if git diff --cached --quiet; then
-  log "nothing staged"
-  exit 0
-fi
-
-MSG="Auto-sync: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-if ! git -c user.email='bruce@rootrecord.local' -c user.name='Bruce Monitor' commit -m "$MSG" >>"$LOG" 2>&1; then
-  # maybe identity already set
-  git commit -m "$MSG" >>"$LOG" 2>&1 || { log "ERROR: commit failed"; exit 1; }
-fi
-
-if git push "$remote_name" "HEAD:$BRANCH" >>"$LOG" 2>&1; then
-  log "↑ ${#STAGE_PATHS[@]} files"
-  exit 0
-fi
-log "✗ push failed"
-exit 1
+(( found )) || { echo "ERROR: id not in repos.conf: $ID" >&2; exit 1; }

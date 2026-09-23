@@ -1,25 +1,18 @@
 ---
 name: website
 description: >-
-  RootRecord public Next.js site (Vercel). Edit site/. Repo
-  rootrecordsoftwaresolutions/RootRecord-Website.
+  RootRecord public site (Next.js foundation) → RootRecord-Website via mirror
+  sync every 300s. Edit site/ here; baks under Database/GITHUB/.
 ---
 
 # website
 
-Desk root; Vercel/GitHub app = `site/`.
-
 | | |
 |--|--|
-| App | `site/` |
-| GitHub | https://github.com/rootrecordsoftwaresolutions/RootRecord-Website |
-| Vercel | https://rootrecord-website.vercel.app (Next.js, root `.`) |
-| Bak | `/home/rootrecord/Database/GITHUB/` only |
+| Edit | `site/` (Next.js App Router) |
+| GitHub | `rootrecordsoftwaresolutions/RootRecord-Website` |
+| Sync | poller `github_sync_all` (mirror → Database/GITHUB/worktrees/website) |
+| Baks | `/home/rootrecord/Database/GITHUB/` |
+| Intake | `/home/rootrecord/Database/intake/` |
 
-**Stack:** Next 15 App Router, React 19, TS. Foundation: Home + Status (`No data`/`Waiting`). No secrets; no desk APIs/auth yet.
-
-```bash
-cd site && npm i && npm run dev
-```
-
-Provenance: `old skills/rootrecord-online/site` (stripped). See `references/`.
+Foundation only — no heavy API until rebuild continues.

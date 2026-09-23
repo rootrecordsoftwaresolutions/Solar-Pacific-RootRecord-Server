@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
-# Ensure each enabled repo has a local git tree + authenticated remote.
 set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
 load_token
 
-remote_url() {
-  echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"
-}
+remote_url() { echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"; }
 
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
@@ -23,7 +20,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
   if [[ ! -d "$root/.git" ]]; then
     if [[ -d "$root" ]] && [[ -n "$(ls -A "$root" 2>/dev/null || true)" ]]; then
-      echo "[warn] $id: $root exists without .git — init not auto; fix manually"
+      echo "[warn] $id: $root non-empty without .git — fix manually"
       continue
     fi
     echo "[clone] $slug → $root"
@@ -36,10 +33,9 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     git remote set-url "$remote_name" "$url"
     echo "[ok] $id remote '$remote_name' updated"
   else
-    # after clone, origin already exists — rename or add
     if [[ "$remote_name" == "origin" ]] && git remote get-url origin >/dev/null 2>&1; then
       git remote set-url origin "$url"
-      echo "[ok] $id origin URL set"
+      echo "[ok] $id origin set"
     else
       git remote add "$remote_name" "$url"
       echo "[ok] $id remote '$remote_name' added"

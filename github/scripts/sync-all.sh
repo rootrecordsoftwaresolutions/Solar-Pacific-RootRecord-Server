@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# One cycle for every enabled repo in repos.conf
-set -uo pipefail
+# ==============================================================================
+# sync-all.sh  — iterate enabled repos.conf → push-repo-once.sh
+# Called by automations jobs.py  github_sync_all  (every 300s)
+# ==============================================================================
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
+source "$HERE/common.sh"
 ensure_bak_root
-SCRIPTS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RC=0
+
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
-  [[ "$enabled" != "1" ]] && continue
-  if ! bash "$SCRIPTS/push-repo-once.sh" "$id"; then
-    RC=1
-  fi
+  [[ "$enabled" == "1" ]] || continue
+  bash "$HERE/push-repo-once.sh" "$id" || echo "✗ [$id] sync failed (continuing)"
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
-exit $RC
