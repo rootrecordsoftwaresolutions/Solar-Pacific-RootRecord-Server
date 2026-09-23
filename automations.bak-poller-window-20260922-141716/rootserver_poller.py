@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""RootRecord automations poller — Cloudflare tunnel first, then heartbeat.
+"""RootRecord automations poller — heartbeat + optional Cloudflare tunnel.
 
-Order:
-  1) start cloudflared (token tunnel)
-  2) wait until at least one tunnel connection registers (or timeout)
-  3) bind HTTP + start 5s \"Poller is online.\" loop
-
+Every 5 seconds logs: <FULLTIMESTAMP>Poller is online.
 Serves the same line on HTTP (open access on the bound port).
+Optional: spawn cloudflared with a tunnel token to publish that port.
 """
 from __future__ import annotations
 
@@ -16,7 +13,7 @@ import subprocess
 import sys
 import threading
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -27,7 +24,7 @@ HOSTNAME = os.environ.get("POLLER_PUBLIC_HOST", "rootserver.rootrecord.cloud")
 TOKEN_FILE = Path(
     os.environ.get(
         "CLOUDFLARED_TOKEN_FILE",
-        str(Path.home() / ".cloudflared" / "rootserver.token"),
+        str(Path.home() / ".cloudflared" / "origin.token"),
     )
 )
 CLOUDFLARED_BIN = os.environ.get(
@@ -35,16 +32,15 @@ CLOUDFLARED_BIN = os.environ.get(
     str(Path(__file__).resolve().parents[1] / "bin" / "cloudflared"),
 )
 ENABLE_TUNNEL = os.environ.get("POLLER_ENABLE_TUNNEL", "1") != "0"
-TUNNEL_READY_TIMEOUT_SEC = float(os.environ.get("POLLER_TUNNEL_READY_TIMEOUT_SEC", "45"))
 
 _latest = "starting"
 _lock = threading.Lock()
 _stop = threading.Event()
-_tunnel_ready = threading.Event()
 _tunnel_proc: subprocess.Popen | None = None
 
 
 def full_timestamp() -> str:
+    # Full ISO-8601 with timezone offset (HST on this host when TZ is local)
     return datetime.now().astimezone().isoformat(timespec="seconds")
 
 
@@ -57,7 +53,7 @@ def log(msg: str) -> None:
 
 
 class Handler(BaseHTTPRequestHandler):
-    def log_message(self, fmt: str, *args) -> None:
+    def log_message(self, fmt: str, *args) -> None:  # quieter access log
         return
 
     def _send(self, code: int, body: str, ctype: str = "text/plain; charset=utf-8") -> None:
@@ -76,11 +72,15 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, line + "\n")
             return
         if self.path == "/json":
-            import json
-
             self._send(
                 200,
-                json.dumps({"ok": True, "host": HOSTNAME, "line": line}) + "\n",
+                (
+                    '{"ok":true,"host":%s,"line":%s}\n'
+                    % (
+                        __import__("json").dumps(HOSTNAME),
+                        __import__("json").dumps(line),
+                    )
+                ),
                 "application/json; charset=utf-8",
             )
             return
@@ -97,24 +97,24 @@ def heartbeat_loop() -> None:
         _stop.wait(INTERVAL_SEC)
 
 
-def start_tunnel() -> bool:
-    """Spawn cloudflared. Returns True if spawn started (not necessarily ready)."""
+def start_tunnel() -> None:
     global _tunnel_proc
     if not ENABLE_TUNNEL:
         log(f"{full_timestamp()}Tunnel disabled (POLLER_ENABLE_TUNNEL=0).")
-        _tunnel_ready.set()
-        return False
+        return
     if not Path(CLOUDFLARED_BIN).is_file():
         log(f"{full_timestamp()}Tunnel DOWN — cloudflared missing at {CLOUDFLARED_BIN}")
-        return False
+        return
     if not TOKEN_FILE.is_file():
         log(f"{full_timestamp()}Tunnel DOWN — token file missing: {TOKEN_FILE}")
-        return False
+        return
     token = TOKEN_FILE.read_text(encoding="utf-8").strip()
     if not token:
         log(f"{full_timestamp()}Tunnel DOWN — empty token file")
-        return False
-
+        return
+    # Token tunnels get hostname/ingress from Cloudflare Zero Trust config.
+    # Local side only needs: run --token <token> (ingress already points at a service URL).
+    # We also support quick mode via POLLER_TUNNEL_MODE=quick (ephemeral URL, not the named host).
     mode = os.environ.get("POLLER_TUNNEL_MODE", "token").lower()
     if mode == "quick":
         cmd = [
@@ -124,7 +124,6 @@ def start_tunnel() -> bool:
             "--url",
             f"http://{HOST}:{PORT}",
         ]
-        popen_kwargs: dict = {}
     else:
         cmd = [
             CLOUDFLARED_BIN,
@@ -132,60 +131,33 @@ def start_tunnel() -> bool:
             "--no-autoupdate",
             "run",
         ]
+        # Token via env — never put on argv (shows in ps).
         env = os.environ.copy()
         env["TUNNEL_TOKEN"] = token
-        popen_kwargs = {"env": env}
-
     log(f"{full_timestamp()}Starting cloudflared mode={mode} public_host={HOSTNAME}")
-    _tunnel_proc = subprocess.Popen(
-        cmd,
+    popen_kwargs = dict(
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
         bufsize=1,
-        **popen_kwargs,
     )
+    if mode != "quick":
+        popen_kwargs["env"] = env
+    _tunnel_proc = subprocess.Popen(cmd, **popen_kwargs)
 
     def pump() -> None:
         assert _tunnel_proc is not None
         assert _tunnel_proc.stdout is not None
         for line in _tunnel_proc.stdout:
-            text = line.rstrip()
-            log(f"{full_timestamp()}cloudflared: {text}")
-            # First registered connection = tunnel path is live enough to poll.
-            if "Registered tunnel connection" in text or "Connected to Cloudflare" in text:
-                if not _tunnel_ready.is_set():
-                    log(f"{full_timestamp()}Tunnel READY — first connection registered.")
-                    _tunnel_ready.set()
+            log(f"{full_timestamp()}cloudflared: {line.rstrip()}")
             if _stop.is_set():
                 break
-        if _tunnel_proc.poll() is not None and not _tunnel_ready.is_set():
-            log(f"{full_timestamp()}Tunnel DOWN — cloudflared exited before ready (code={_tunnel_proc.returncode}).")
 
     threading.Thread(target=pump, name="cloudflared-log", daemon=True).start()
-    return True
-
-
-def wait_for_tunnel_ready() -> None:
-    if not ENABLE_TUNNEL:
-        return
-    if _tunnel_ready.is_set():
-        return
-    log(
-        f"{full_timestamp()}Waiting for tunnel register "
-        f"(timeout={TUNNEL_READY_TIMEOUT_SEC:.0f}s) before polling…"
-    )
-    if _tunnel_ready.wait(timeout=TUNNEL_READY_TIMEOUT_SEC):
-        return
-    log(
-        f"{full_timestamp()}Tunnel WAITING — no register within "
-        f"{TUNNEL_READY_TIMEOUT_SEC:.0f}s; starting poller anyway."
-    )
 
 
 def shutdown(*_args) -> None:
     _stop.set()
-    _tunnel_ready.set()
     global _tunnel_proc
     if _tunnel_proc and _tunnel_proc.poll() is None:
         _tunnel_proc.terminate()
@@ -199,18 +171,11 @@ def main() -> int:
     signal.signal(signal.SIGTERM, shutdown)
     signal.signal(signal.SIGINT, shutdown)
 
-    # 1) Tunnel first — before HTTP bind and before heartbeat polling.
-    started = start_tunnel()
-    if started:
-        wait_for_tunnel_ready()
-    elif ENABLE_TUNNEL:
-        log(f"{full_timestamp()}Tunnel DOWN — continuing with local poller only.")
-
-    # 2) Local HTTP, then 3) heartbeat loop.
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     threading.Thread(target=server.serve_forever, name="http", daemon=True).start()
     log(f"{full_timestamp()}HTTP listening on http://{HOST}:{PORT} (open access on bind)")
 
+    start_tunnel()
     heartbeat_loop()
 
     server.shutdown()
