@@ -242,7 +242,9 @@ def run_command_job(job: dict) -> None:
     extra = job.get("env") or {}
     if isinstance(extra, dict):
         env.update({str(k): str(v) for k, v in extra.items()})
-    log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
+    quiet = jid in ("github_sync_all", "github_setup_remotes", "github_autopush")
+    if not quiet:
+        log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
     try:
         r = subprocess.run(
             ["bash", "-lc", cmd],
@@ -255,10 +257,20 @@ def run_command_job(job: dict) -> None:
         out = (r.stdout or "").strip()
         err = (r.stderr or "").strip()
         if r.returncode == 0:
-            log(f"{full_timestamp()}job:{jid} OK")
             if out:
-                for line in out.splitlines()[:20]:
+                for line in out.splitlines()[:40]:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    # Drop noisy setup chatter; keep sync results.
+                    if quiet and any(
+                        line.startswith(p)
+                        for p in ("[ok]", "[skip]", "[clone]", "Updated", "Added", "Done.")
+                    ):
+                        continue
                     log(f"{full_timestamp()}job:{jid} | {line}")
+            elif not quiet:
+                log(f"{full_timestamp()}job:{jid} OK")
         else:
             log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
             for line in (err or out).splitlines()[:20]:

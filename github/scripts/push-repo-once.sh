@@ -44,7 +44,7 @@ fi
 
 CHANGED="$(git status --porcelain)"
 if [[ -z "$CHANGED" ]]; then
-  log "no changes"
+  log "— no changes"
   exit 0
 fi
 
@@ -87,8 +87,8 @@ if ! git -c user.email='bruce@rootrecord.local' -c user.name='Bruce Monitor' com
 fi
 
 if git push "$remote_name" "HEAD:$BRANCH" >>"$LOG" 2>&1; then
-  log "pushed $BRANCH (${#STAGE_PATHS[@]} file(s)) → $slug"
+  log "↑ ${#STAGE_PATHS[@]} files"
   exit 0
 fi
-log "ERROR: push to $remote_name/$BRANCH failed"
+log "✗ push failed"
 exit 1

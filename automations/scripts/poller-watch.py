@@ -176,11 +176,56 @@ def format_line(raw: str) -> str | None:
     if body.startswith("scheduler"):
         return f"  {DIM}{t}{RST}  {WHITE}☰{RST}  {body}"
     if body.startswith("job:"):
+        # job:github_sync_all | [iso] [skills] ↑ 10 files
+        if " | " in body:
+            payload = body.split(" | ", 1)[1].strip()
+            # strip leading iso timestamp if present
+            if len(payload) > 22 and payload[4] == "-" and "T" in payload[:20]:
+                # find "] " after [id]
+                pass
+            # Prefer [id] markers from sync logs
+            repo = ""
+            rest = payload
+            if "] [" in payload:
+                # [2026-...Z] [skills] ↑ 10 files
+                try:
+                    after = payload.split("] ", 1)[1]
+                    if after.startswith("[") and "]" in after:
+                        repo = after[1 : after.index("]")]
+                        rest = after[after.index("]") + 1 :].strip()
+                except Exception:
+                    rest = payload
+            if "no changes" in rest or rest.startswith("—"):
+                if repo:
+                    return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {DIM}github {repo} · no changes{RST}"
+                return None
+            if rest.startswith("↑") or " files" in rest or "pushed" in rest.lower():
+                # normalize "↑ 10 files" or legacy long push lines
+                n = ""
+                for tok in rest.replace("file(s)", "files").split():
+                    if tok.isdigit():
+                        n = tok
+                        break
+                label = repo or "repo"
+                if n:
+                    return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}↑ {n} files{RST}"
+                return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}{rest}{RST}"
+            if rest.startswith("✗") or "FAIL" in rest or "ERROR" in rest:
+                label = repo or "repo"
+                return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}github {label}{RST}  {DIM}{rest}{RST}"
+            # other piped lines (setup): dim short
+            if len(rest) > 80:
+                return None
+            return f"  {DIM}{t}{RST}  {DIM}▸  {rest}{RST}"
         if " FAIL" in body or " ERROR" in body or " TIMEOUT" in body:
-            return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{body}{RST}"
-        if " OK" in body or " RUN" in body:
-            return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {body}"
-        return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {body}"
+            short = body.split("job:", 1)[-1]
+            if len(short) > 60:
+                short = short[:57] + "…"
+            return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{short}{RST}"
+        # Hide bare RUN / OK noise
+        if body.endswith(" OK") or " RUN  " in body:
+            return None
+        return None
     if "ERR" in body or "DOWN" in body:
         return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{body}{RST}"
     if len(body) > 120:
