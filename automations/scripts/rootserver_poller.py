@@ -16,6 +16,7 @@ import subprocess
 import sys
 import threading
 import time
+import json
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -27,6 +28,7 @@ import jobs as jobmod  # noqa: E402
 INTERVAL_FALLBACK = float(os.environ.get("POLLER_INTERVAL_SEC", "5"))
 HOST = os.environ.get("POLLER_BIND", "127.0.0.1")
 PORT = int(os.environ.get("POLLER_PORT", "8799"))
+ENERGY_ROOT = Path(os.environ.get("ENERGY_ROOT", "/home/rootrecord/Database/ENERGY"))
 HOSTNAME = os.environ.get("POLLER_PUBLIC_HOST", "rootserver.rootrecord.cloud")
 TOKEN_FILE = Path(
     os.environ.get(
@@ -60,6 +62,76 @@ def heartbeat_line() -> str:
     return f"{full_timestamp()}Poller is online."
 
 
+
+def _read_energy_json(rel: str):
+    """Measured ENERGY last-file or None. Never invent."""
+    try:
+        return json.loads((ENERGY_ROOT / rel).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return None
+
+
+def _fmt_w(n) -> str:
+    if not isinstance(n, (int, float)):
+        return "No data"
+    return f"{n} W"
+
+
+def _fmt_soc(n) -> str:
+    if not isinstance(n, (int, float)):
+        return "No data"
+    return f"{n}%"
+
+
+def build_energy_snapshot() -> dict:
+    """Hawaii ENERGY board payload for /energy (and Vercel feed)."""
+    delta_soc = _read_energy_json("soc/delta2-last.json")
+    river_soc = _read_energy_json("soc/river2pro-last.json")
+    delta_w = _read_energy_json("watts/delta2-last.json")
+    river_w = _read_energy_json("watts/river2pro-last.json")
+    has_delta = bool(delta_soc or delta_w)
+    has_river = bool(river_soc or river_w)
+    live = has_delta or has_river
+
+    def pick_w(key: str):
+        if has_delta and isinstance(delta_w, dict) and key in delta_w:
+            return _fmt_w(delta_w.get(key))
+        if has_river and isinstance(river_w, dict) and key in river_w:
+            return _fmt_w(river_w.get(key))
+        return "No data" if key.startswith("solar") or key.startswith("usbc") else "Waiting"
+
+    ats = []
+    for blob in (delta_soc, river_soc, delta_w, river_w):
+        if isinstance(blob, dict) and blob.get("at"):
+            ats.append(blob["at"])
+    updated = sorted(ats)[-1] if ats else None
+
+    return {
+        "status": "live" if live else "Waiting",
+        "solarInW": pick_w("solar_input_power") if live else "No data",
+        "deltaSoc": _fmt_soc(delta_soc.get("soc")) if isinstance(delta_soc, dict) else "No data",
+        "riverSoc": _fmt_soc(river_soc.get("soc")) if isinstance(river_soc, dict) else "Waiting",
+        "acOut": pick_w("ac_output_power") if has_delta else ("Waiting" if not has_river else pick_w("ac_output_power")),
+        "usbC": pick_w("usbc_output_power") if live else "No data",
+        "buckets": "Waiting",
+        "ports": {
+            "ac": pick_w("ac_output_power") if has_delta else "Waiting",
+            "usbc": pick_w("usbc_output_power") if live else "No data",
+        },
+        "source": str(ENERGY_ROOT),
+        "files": {
+            "present": {
+                "delta2Soc": bool(delta_soc),
+                "river2proSoc": bool(river_soc),
+                "delta2Watts": bool(delta_w),
+                "river2proWatts": bool(river_w),
+            }
+        },
+        "updated": updated,
+        "note": "Measured desk samples via rootserver /energy. Missing device = No data / Waiting.",
+    }
+
+
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt: str, *args) -> None:
         return
@@ -80,11 +152,18 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, line + "\n")
             return
         if self.path == "/json":
-            import json
-
             self._send(
                 200,
                 json.dumps({"ok": True, "host": HOSTNAME, "line": line}) + "\n",
+                "application/json; charset=utf-8",
+            )
+            return
+        # Hawaii ENERGY feed for Vercel /api/energy (measured last-files only)
+        if self.path in ("/energy", "/energy/", "/api/energy"):
+            body = build_energy_snapshot()
+            self._send(
+                200,
+                json.dumps(body) + "\n",
                 "application/json; charset=utf-8",
             )
             return

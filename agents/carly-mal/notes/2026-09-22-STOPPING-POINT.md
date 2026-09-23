@@ -25,3 +25,7 @@ See FULL-RESUME §E. Plus this STOPPING-POINT. Staging under `staging area/lanes
 Import old skills · invent watts/Stripe · stack LLM · paste tokens · second NETWORK tree · second relay.
 
 — Carly Mal
+# Carly path scrub 2026-09-23 ~10:47 HST
+- LIVE-PATHS + SKILL energy rows → Database/ENERGY + /home/status + master-key only
+- Seal note: DAILY AI DEV HANDOFF/CARLY-MAL-HOME-STATUS-SEAL-2026-09-23.md
+- Hosted cutover still WAITING ENERGY on Vercel

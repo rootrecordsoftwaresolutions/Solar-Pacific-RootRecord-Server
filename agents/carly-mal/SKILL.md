@@ -31,7 +31,10 @@ description: >-
 | Prompt (in zip) | `prompt.md` — keep defensive-only; no exploits |
 | Telegram | `../coms/telegram/` (`voices.conf`, `relay.conf`, `council-relay.py`) |
 | Plumbing | `../plumbing/scripts/{run-ollama,run-infer,single-flight}.sh` |
-| Energy folder | `../energy/` (empty until measured writer fills DESK_LIVE — No data until then) |
+| Energy data | `/home/rootrecord/Database/ENERGY` (`soc/` `watts/` `samples/` `*-last.json`) — measured only; empty/missing = No data / Waiting |
+| Energy scripts | `~/.ollama/skills/energy/` (Bruce wall; Carly seals honesty) |
+| Visitor status | Vercel `/home` + `/home/status` only (globe iframe bg); no top-level `/energy` |
+| Secrets | central `/home/rootrecord/master/master-key.env` only — never Ava-Core `.env`; `/api/energy` never reads keys |
 | Memberships | Live edge = Stripe Payment Link + account API + D1 webhooks (cloud). Desk scripts archived — re-home as **new working code** only, one writer. |
 | Baks | `/home/rootrecord/Database/GITHUB/` |
 | Desk live | `/home/rootrecord/Database/intake/desk-live.txt` (`DESK_LIVE_FILE`) |
@@ -56,6 +59,10 @@ description: >-
 # 5) Do NOT import old skills archives (stripe-poll, account-import, etc.) —
 #    rebuild as working code if needed.
 # 6) Bak under Database/GITHUB/ before editing this SKILL or the zip packet.
+# 7) Live paths (2026-09-23): ENERGY data = Database/ENERGY; visitor = /home/status;
+#    secrets = master/master-key.env only. Never NETWORK/metrics/ecoflow. Never invent watts.
+# 8) PORT-SMOKE: reads OK ≠ toggles OK at low SOC — public copy must not claim ports green
+#    until toggles pass or we say Waiting. Delta 2 AC scripts stay off while Starlink is up.
 
 # ------------------------------------------------------------------------------
 # SECTION: DESK HONESTY + ENERGY
