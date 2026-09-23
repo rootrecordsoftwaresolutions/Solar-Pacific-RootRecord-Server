@@ -10,15 +10,25 @@ Measured samples → `/home/rootrecord/Database/ENERGY/` only (not Network).
 - One BLE owner: user unit `ava-ecoflow-ble.service`. Do not dual-start pollers.
 - Poll buckets (1/5/15/30/60/daily): **stubs only** under `scripts/poll/` — enable after atomic actions prove out.
 - Secrets stay in env files; never paste into chat or SKILL.
+- `AVA_ECOFLOW_USER_ID` must be supplied by operator in `~/RootRecord/Ava-Core/.env` (placeholder only if missing — never invent).
 
 ## HOW TO ADD AN ACTION (no AI required)
 
 1. Copy an existing script under `scripts/actions/` (e.g. `delta2-usb-on.sh`).
 2. Rename clearly: `<device>-<port>-<on|off>.sh` or `<device>-read.sh`.
-3. Set `ACTION_DEVICE`, `ACTION_METHOD`, `ACTION_WANT` (or call `lib/action_runner.py`).
+3. Keep thin: call `"$ROOT/lib/py" "$ROOT/lib/action_runner.py"` with `ACTION` args (`--device` / `--method` / `--want`).
 4. `chmod +x` the new script.
 5. Document one line in `scripts/actions/README.md`.
-6. Test dry: run script; expect honest failure if BLE/eflib down — never fake OK watts.
+6. Test dry: run script; expect honest failure if BLE/eflib/USER_ID down — never fake OK watts.
+
+## Deps (light)
+
+| What | Where |
+|------|--------|
+| Python (owner) | `lib/py` → `.venv/bin/python` (override: `ENERGY_PYTHON`) |
+| venv | `~/.ollama/skills/energy/.venv` — bleak + light eflib runtime (ecdsa, bleak-retry-connector, pycryptodome, protobuf, aiohttp) |
+| eflib vendor | `lib/vendor/eflib` (PYTHONPATH via `lib/py` / `ENERGY_EFLIB_PATH`) |
+| Env secrets | `~/RootRecord/Ava-Core/.env` (mode 600) — operator fills `AVA_ECOFLOW_USER_ID` |
 
 ## Paths
 
@@ -46,4 +56,5 @@ systemctl --user enable --now ava-ecoflow-ble.service
 ## Real vs stub
 
 - **Real structure:** action scripts + shared runner + BLE owner/log-watch + systemd unit wiring.
-- **Live BLE control:** requires `eflib` + `bleak` on PYTHONPATH (vendor or venv) and `AVA_ECOFLOW_USER_ID`. Without them scripts exit non-zero with a clear reason — never fake success.
+- **Live BLE control:** requires `eflib` + `bleak` (via `lib/py` / `.venv`) and `AVA_ECOFLOW_USER_ID`. Without them scripts exit non-zero with a clear reason — never fake success.
+- **Do not** enable aggressive polling or dual-start BLE owners while the unit is already running.
