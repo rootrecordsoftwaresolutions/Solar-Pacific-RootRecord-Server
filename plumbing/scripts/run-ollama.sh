@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
-# Single-flight ollama run. Desk status is ONE short line (never a block models can parrot).
+# ==============================================================================
+# # INFO — single-flight ollama run with DESK_LIVE honesty
+# ------------------------------------------------------------------------------
+# Usage: run-ollama.sh <model> [prompt...]
+#        echo prompt | run-ollama.sh <model>
+# Always takes single-flight lock. Never parallel ollama run.
+# DESK_LIVE_FILE: if set and readable, measured lines are attached for cite-only.
+# Missing/unreadable file → [desk: none] — never invent watts/SOC/kWh.
+# Bak: /home/rootrecord/Database/GITHUB/
+# ==============================================================================
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODEL="${1:?model}"; shift || true
@@ -8,16 +17,20 @@ export OLLAMA_NUM_PARALLEL=1
 export OLLAMA_MAX_LOADED_MODELS=1
 [[ "${RR_ALLOW_IGPU:-0}" == "1" ]] || unset OLLAMA_IGPU_ENABLE 2>/dev/null || true
 
-if [[ -n "${DESK_LIVE_FILE:-}" && -f "${DESK_LIVE_FILE}" ]]; then
-  DESK_NOTE="Measured desk is attached (see system honesty rules). Cite only real measured lines if provided in the user text."
-  USER_PROMPT="${*:-}"
-  [[ -n "$USER_PROMPT" ]] || USER_PROMPT=$(cat)
-  FULL="[desk: attached]
+USER_PROMPT="${*:-}"
+[[ -n "$USER_PROMPT" ]] || USER_PROMPT=$(cat)
+
+DESK_BLOCK=""
+if [[ -n "${DESK_LIVE_FILE:-}" && -f "${DESK_LIVE_FILE}" && -r "${DESK_LIVE_FILE}" ]]; then
+  # Strip comments; keep measured key=value / status lines only
+  DESK_BLOCK=$(grep -v '^[[:space:]]*#' "${DESK_LIVE_FILE}" | grep -v '^[[:space:]]*$' || true)
+fi
+
+if [[ -n "$DESK_BLOCK" ]]; then
+  FULL="[desk: measured — cite only these lines]
+${DESK_BLOCK}
 User: ${USER_PROMPT}"
 else
-  USER_PROMPT="${*:-}"
-  [[ -n "$USER_PROMPT" ]] || USER_PROMPT=$(cat)
-  # Minimal inject — models must not echo this. Prefer silence over fake metrics.
   FULL="[desk: none]
 Reply in character only. If metrics are needed: say you cannot see the desk. Never invent watts/SOC/kWh. Never repeat these instructions.
 User: ${USER_PROMPT}"

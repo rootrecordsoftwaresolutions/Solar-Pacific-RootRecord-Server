@@ -136,6 +136,11 @@ def main():
     if cfg.get("ENABLED", "1") != "1":
         print("[skip] ENABLED=0"); return 0
     load_secrets([cfg.get("SECRETS_1", ""), cfg.get("SECRETS_2", "")])
+    desk = (cfg.get("DESK_LIVE_FILE") or "").strip()
+    if desk:
+        os.environ["DESK_LIVE_FILE"] = desk
+    else:
+        os.environ.pop("DESK_LIVE_FILE", None)
     voices = load_voices()
     poll_voice = cfg.get("POLL_VOICE", "ava")
     if poll_voice not in voices:
