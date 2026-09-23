@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Open colored live poller window. Ctrl-C in that window stops the whole stack.
+# Open a titled terminal with a colored live poller view.
+# Does NOT start a second poller — systemd owns the process.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WATCH="$ROOT/scripts/poller-watch.py"

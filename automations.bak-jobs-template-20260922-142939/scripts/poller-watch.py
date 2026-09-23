@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Pretty live view of the rootserver poller log (colors + filter).
-
-# INFO — MUST HAVE (future agents):
-# Ctrl-C in this window MUST stop the entire stack (poller, cloudflared,
-# systemd unit). Never exit the window while leaving those processes up.
-"""
+"""Pretty live view of the rootserver poller log (colors + filter)."""
 from __future__ import annotations
 
 import os
@@ -13,8 +8,6 @@ import sys
 import time
 from pathlib import Path
 
-SCRIPTS = Path(__file__).resolve().parent
-STOP = SCRIPTS / "stop-poller-stack.sh"
 LOG = Path(
     os.environ.get(
         "POLLER_LOG",
@@ -24,6 +17,7 @@ LOG = Path(
 HOST = os.environ.get("POLLER_PUBLIC_HOST", "rootserver.rootrecord.cloud")
 LOCAL = os.environ.get("POLLER_LOCAL", "http://127.0.0.1:8799/")
 
+# ANSI
 RST = "\033[0m"
 BOLD = "\033[1m"
 DIM = "\033[2m"
@@ -34,6 +28,7 @@ YELLOW = "\033[33m"
 RED = "\033[31m"
 MAGENTA = "\033[35m"
 WHITE = "\033[97m"
+BG = "\033[40m"
 
 
 def unit_state() -> str:
@@ -47,15 +42,6 @@ def unit_state() -> str:
         return (r.stdout or r.stderr or "unknown").strip()
     except Exception:
         return "unknown"
-
-
-def stop_everything() -> None:
-    print(f"\n{YELLOW}Ctrl-C — stopping ENTIRE stack (poller + tunnel + unit)…{RST}", flush=True)
-    try:
-        subprocess.run(["bash", str(STOP)], check=False)
-    except Exception as e:
-        print(f"{RED}stop failed: {e}{RST}", flush=True)
-    print(f"{DIM}stack stop requested — window exiting{RST}", flush=True)
 
 
 def banner() -> None:
@@ -72,24 +58,33 @@ def banner() -> None:
     print(f"{CYAN}│{RST}  public   {WHITE}https://{HOST}/{RST}", flush=True)
     print(f"{CYAN}│{RST}  local    {DIM}{LOCAL}{RST}", flush=True)
     print(f"{CYAN}│{RST}  systemd  {st}", flush=True)
-    print(f"{CYAN}│{RST}  jobs     {DIM}{SCRIPTS / 'jobs.py'}{RST}", flush=True)
     print(f"{CYAN}│{RST}  log      {DIM}{LOG}{RST}", flush=True)
-    print(
-        f"{CYAN}│{RST}  {YELLOW}Ctrl-C stops EVERY process"
-        f" (poller + cloudflared + unit){RST}",
-        flush=True,
-    )
+    print(f"{CYAN}│{RST}  {DIM}Ctrl-C closes this window only — service keeps running{RST}", flush=True)
     print(f"{CYAN}{BOLD}╰{bar}──{RST}", flush=True)
     print(flush=True)
 
 
 def split_ts(line: str) -> tuple[str, str]:
-    if len(line) >= 25 and line[10:11] == "T" and line[19:20] in "+-":
+    # 2026-09-22T14:18:19-10:00rest
+    if len(line) >= 25 and line[4] == "-" and "T" in line[:20]:
+        # find end of offset +HH:MM or -HH:MM
+        for i, ch in enumerate(line):
+            if i > 19 and ch in ("P", "T", "c", "H", "W") and i > 20:
+                # weak — prefer ISO end at +HH:MM / -HH:MM after seconds
+                pass
+        # timestamps are like 2026-09-22T14:18:19-10:00
+        if len(line) >= 25 and line[19] in "+-" and line[22] == ":":
+            return line[:25], line[25:]
+        if len(line) >= 30 and line[26] in "+-" :  # with ms unlikely
+            return line[:32], line[32:]
+    # try: first 25 chars if looks iso
+    if len(line) > 25 and line[10] == "T":
         return line[:25], line[25:]
     return "", line
 
 
 def clock(ts: str) -> str:
+    # show HH:MM:SS from ISO
     if "T" in ts and len(ts) >= 19:
         return ts[11:19]
     return ts or "--:--:--"
@@ -118,6 +113,7 @@ def format_line(raw: str) -> str | None:
     t = clock(ts)
     body = rest
 
+    # Drop residual noise if old log still has it
     noise = (
         "CONNECTIVITY PRE-CHECKS",
         "precheck ",
@@ -140,18 +136,25 @@ def format_line(raw: str) -> str | None:
     if any(n in body for n in noise) or body.strip().startswith("|") or body.strip().startswith("+--"):
         return None
 
+    # Old verbose cloudflared: lines
     if body.startswith("cloudflared: "):
-        raw_cf = body[len("cloudflared: ") :]
+        raw_cf = body[len("cloudflared: "):]
         if "Registered tunnel connection" in raw_cf:
             bits = _edge_bits(raw_cf)
             return f"  {DIM}{t}{RST}  {CYAN}◆{RST}  {CYAN}tunnel connected{RST}  {DIM}{bits}{RST}"
         if "Starting tunnel" in raw_cf:
             return f"  {DIM}{t}{RST}  {MAGENTA}▲{RST}  {MAGENTA}tunnel starting{RST}"
-        if "error=" in raw_cf.lower() or " ERR" in raw_cf or raw_cf.startswith("ERR"):
-            short = "tunnel timeout — reconnecting" if "timeout" in raw_cf.lower() else "tunnel error"
+        if " ERR " in f" {raw_cf} " or raw_cf.startswith("ERR ") or " error=" in raw_cf.lower():
+            short = "tunnel error"
+            if "timeout" in raw_cf.lower():
+                short = "tunnel timeout — reconnecting"
+            elif "terminated" in raw_cf.lower():
+                short = "tunnel connection terminated"
             return f"  {DIM}{t}{RST}  {YELLOW}!{RST}  {YELLOW}{short}{RST}"
-        if " WRN" in raw_cf or raw_cf.startswith("WRN"):
-            short = "tunnel timeout — reconnecting" if "timeout" in raw_cf.lower() else "tunnel warn"
+        if " WRN " in f" {raw_cf} " or raw_cf.startswith("WRN "):
+            short = "tunnel warn"
+            if "timeout" in raw_cf.lower():
+                short = "tunnel timeout — reconnecting"
             return f"  {DIM}{t}{RST}  {YELLOW}!{RST}  {YELLOW}{short}{RST}"
         return None
 
@@ -173,16 +176,9 @@ def format_line(raw: str) -> str | None:
         return f"  {DIM}{t}{RST}  {CYAN}→{RST}  {WHITE}{body}{RST}"
     if body.startswith("HTTP listening"):
         return f"  {DIM}{t}{RST}  {WHITE}○{RST}  HTTP listening on :8799"
-    if body.startswith("scheduler"):
-        return f"  {DIM}{t}{RST}  {WHITE}☰{RST}  {body}"
-    if body.startswith("job:"):
-        if " FAIL" in body or " ERROR" in body or " TIMEOUT" in body:
-            return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{body}{RST}"
-        if " OK" in body or " RUN" in body:
-            return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {body}"
-        return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {body}"
-    if "ERR" in body or "DOWN" in body:
+    if body.startswith("cloudflared ERR") or "DOWN" in body:
         return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{body}{RST}"
+    # default: keep short dim crumbs only
     if len(body) > 120:
         return None
     return f"  {DIM}{t}  {body}{RST}"
@@ -192,10 +188,12 @@ def follow() -> int:
     banner()
     LOG.parent.mkdir(parents=True, exist_ok=True)
     LOG.touch(exist_ok=True)
+    # Show last ~30 interesting lines, then follow
     try:
         existing = LOG.read_text(encoding="utf-8", errors="replace").splitlines()
     except OSError:
         existing = []
+    # Collect interesting lines, then print only the last 18 (clean desk view).
     buf: list[str] = []
     for raw in existing[-200:]:
         out = format_line(raw)
@@ -203,7 +201,7 @@ def follow() -> int:
             buf.append(out)
     for out in buf[-18:]:
         print(out, flush=True)
-
+    # follow with tail -F via reading file grow (portable)
     with LOG.open("r", encoding="utf-8", errors="replace") as f:
         f.seek(0, os.SEEK_END)
         while True:
@@ -220,5 +218,5 @@ if __name__ == "__main__":
     try:
         sys.exit(follow())
     except KeyboardInterrupt:
-        stop_everything()
+        print(f"\n{DIM}window closed — service still running{RST}")
         sys.exit(0)
