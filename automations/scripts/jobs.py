@@ -187,7 +187,6 @@ EVERY_SECONDS = [
         "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
-]
 #------- work logger
     {
         "id": "worklog_poller",
@@ -197,7 +196,7 @@ EVERY_SECONDS = [
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_poller.sh",
         "timeout_sec": 30,
-     #   "cwd": "/home/rootrecord/.ollama/skills/github",
+    #   "cwd": "/home/rootrecord/",
         "env": {},
     },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------
@@ -304,4 +303,4 @@ EVERY_HOUR = [
 #     "cwd": "/home/rootrecord",                # working directory; "" = poller cwd
 #     "env": {"EXAMPLE": "value"},              # extra env vars for command only
 # },
-]
+
