@@ -187,6 +187,18 @@ EVERY_SECONDS = [
         "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
+#------- work logger
+    {
+        "id": "worklog_poller",
+        "enabled": True,
+        "description": "Work Logger",
+        "interval_sec": 30,
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_poller.sh",
+        "timeout_sec": 30,
+     #   "cwd": "/home/rootrecord/.ollama/skills/github",
+        "env": {},
+    },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------
     # {
     #     "id": "example_every_seconds",
@@ -270,3 +282,25 @@ EVERY_HOUR = [
 #     "env": {"EXAMPLE": "value"},              # extra env vars for command only
 # },
 # ====================================================
+# {
+#     "id": "unique_snake_case_name",          # required — unique across all sections
+#     "enabled": False,                         # required — True to run
+#     "priority": 2,                            # ON_BOOT only — lower runs first
+#     "description": "Plain words: what / why.",# required — human label
+#     "interval_sec": 60,                       # EVERY_SECONDS only
+#     "only_at_minutes": [],                    # EVERY_MINUTE only — [] = all minutes
+#     "only_at_hours": [],                      # EVERY_HOUR only — [] = all hours 0-23
+#     "builtin": "",                            # "" or self_process|tunnel_start|heartbeat|http_ping
+#     "command": "/home/rootrecord/script.sh",  # shell via bash -lc; "" if builtin set
+#     "process": "",                            # ON_BOOT self_process — main process path
+#     "terminal": "",                           # ON_BOOT self_process — window title
+#     "watch": "",                              # ON_BOOT self_process — watch script path
+#     "public_host": "",                        # ON_BOOT tunnel_start
+#     "token_file": "",                         # ON_BOOT tunnel_start
+#     "cloudflared_bin": "",                    # ON_BOOT tunnel_start
+#     "local_service": "",                      # ON_BOOT tunnel_start — origin URL
+#     "timeout_sec": 120,                       # kill command / tunnel wait seconds
+#     "cwd": "/home/rootrecord",                # working directory; "" = poller cwd
+#     "env": {"EXAMPLE": "value"},              # extra env vars for command only
+# },
+]
