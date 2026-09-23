@@ -1,18 +1,17 @@
 ---
 name: github
 description: >-
-  Multi-repo auto-sync to GitHub (skills + website; mainland optional).
-  Poller every 300s. Baks → /home/rootrecord/Database/GITHUB only.
+  Auto-sync three GitHub repos (skills, website, US-Mainland-Server). Poller
+  every 300s. Baks → /home/rootrecord/Database/GITHUB only.
 ---
 
 # github
 
-**Poller:** ON_BOOT `setup-all-remotes.sh` · EVERY_SECONDS 300 `sync-all.sh`  
-Do not also run `poll-and-push.sh`.
+**Repos** `scripts/repos.conf` — all three enabled:
+- `skills` → Solar-Pacific-RootRecord-Server (`~/.ollama/skills`)
+- `website` → RootRecord-Website (mirror from `skills/website/site`)
+- `mainland` → US-Mainland-Server (`Database/GITHUB/worktrees/mainland`)
 
-**Registry:** `scripts/repos.conf`  
-**Push one:** `scripts/push-repo-once.sh <id>`  
-**Bak helper:** `scripts/bak-new.sh <tag> [paths…]` → `/home/rootrecord/Database/GITHUB/`
-
-**Token:** `GITHUB_TOKEN` in `/home/rootrecord/master/master-key.env`  
-**Logs:** `/home/rootrecord/Database/GITHUB/logs/`
+**Poller:** boot `setup-all-remotes.sh` · every 300s `sync-all.sh`  
+**Bak:** `scripts/bak-new.sh <tag> [paths…]` → `/home/rootrecord/Database/GITHUB/`  
+**Token:** `GITHUB_TOKEN` in `master-key.env` · **Logs:** `Database/GITHUB/logs/`

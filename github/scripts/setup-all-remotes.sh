@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Ensure each enabled repo has an authenticated remote. Worktrees under BAK_ROOT.
+# Ensure each enabled repo has a local git tree + authenticated remote.
 set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
@@ -7,8 +7,7 @@ ensure_bak_root
 load_token
 
 remote_url() {
-  local slug="$1"
-  echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${slug}.git"
+  echo "https://x-access-token:${GITHUB_TOKEN}@github.com/${1}.git"
 }
 
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
@@ -19,24 +18,31 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     root="$local_path"
   else
     root="$BAK_ROOT/worktrees/$id"
-    mkdir -p "$root"
-    if [[ ! -d "$root/.git" ]]; then
-      echo "[clone] $id → $root"
-      git clone --depth 1 "$(remote_url "$slug")" "$root" 2>&1 | redact
-    fi
   fi
+  mkdir -p "$(dirname "$root")"
 
   if [[ ! -d "$root/.git" ]]; then
-    echo "[warn] $id: not a git repo at $root — skip remote setup"
-    continue
+    if [[ -d "$root" ]] && [[ -n "$(ls -A "$root" 2>/dev/null || true)" ]]; then
+      echo "[warn] $id: $root exists without .git — init not auto; fix manually"
+      continue
+    fi
+    echo "[clone] $slug → $root"
+    git clone "$(remote_url "$slug")" "$root" 2>&1 | redact
   fi
+
   cd "$root"
   url="$(remote_url "$slug")"
   if git remote get-url "$remote_name" >/dev/null 2>&1; then
     git remote set-url "$remote_name" "$url"
-    echo "[ok] $id updated remote '$remote_name'"
+    echo "[ok] $id remote '$remote_name' updated"
   else
-    git remote add "$remote_name" "$url"
-    echo "[ok] $id added remote '$remote_name'"
+    # after clone, origin already exists — rename or add
+    if [[ "$remote_name" == "origin" ]] && git remote get-url origin >/dev/null 2>&1; then
+      git remote set-url origin "$url"
+      echo "[ok] $id origin URL set"
+    else
+      git remote add "$remote_name" "$url"
+      echo "[ok] $id remote '$remote_name' added"
+    fi
   fi
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
