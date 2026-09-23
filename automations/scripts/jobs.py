@@ -187,16 +187,16 @@ EVERY_SECONDS = [
         "cwd": "/home/rootrecord/.ollama/skills/github",
         "env": {},
     },
-#------- work logger
+# --- worklog: one scan per cycle (NOT the forever poller — that times out) -----
     {
-        "id": "worklog_poller",
+        "id": "worklog_scan",
         "enabled": True,
-        "description": "Work Logger",
-        "interval_sec": 30,
+        "description": "Offline work auto-doc: one full-home file/folder scan into Database/WORKLOG.",
+        "interval_sec": 90,
         "builtin": "",
-        "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_poller.sh",
-        "timeout_sec": 60,
-       "cwd": "/home/",
+        "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_once.sh",
+        "timeout_sec": 180,
+        "cwd": "/home/rootrecord/.ollama/skills/reports/scripts",
         "env": {},
     },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------
