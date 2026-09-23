@@ -14,7 +14,7 @@ Standing inventory for Advisor / ship-seal. Not an ops executor lane.
 - Council-relay / DESK_LIVE writers / EcoFlow → Bruce
 - AppSec seal / Memberships/Stripe → Carly
 - Final public wording lock → Ava
-- Primary coding → Cursor
+- Primary coding → operator-directed (not Grok)
 
 ## Open TODOs (resume tomorrow)
 - [ ] Cite NETWORK charts only after real location/sysmon samples exist

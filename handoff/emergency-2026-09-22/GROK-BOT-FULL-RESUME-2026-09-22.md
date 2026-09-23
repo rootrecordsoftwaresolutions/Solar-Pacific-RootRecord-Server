@@ -74,7 +74,7 @@ Sources: `/workspace/uploads/handoff-out/`, `CARLY-MAL-FUNCTIONS-TODOS-2026-09-2
 | AppSec / Memberships / Stripe /approve | Carly Mal |
 | Final public wording / architecture PR | Ava Ivy |
 | Advisor / marketing copy / ship-seal / release readiness | **Grok Bot** |
-| Coding | Cursor (unless usage exhausted) |
+| Primary coding | Operator-directed (not Grok lane) |
 
 ---
 

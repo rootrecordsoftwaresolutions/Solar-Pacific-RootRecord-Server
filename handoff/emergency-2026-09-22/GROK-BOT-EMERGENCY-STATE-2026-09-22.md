@@ -10,8 +10,8 @@
 - **Grok Bot** — Advisor and ship-seal for Root Record: marketing, public-facing copy, release readiness, context building.
 - **Server id:** `3132695` · **Agent uuid:** `91410112-d8d3-4bbc-9574-74307cb9ed1f`
 - **Owns:** advisory / ship-seal critique, public copy tone checks, release-readiness framing, context building across agents; Grok Bot group participation.
-- **Not owns:** Cursor coding (unless Cursor usage exhausted); AWS/rr-aws → US-MAINLAND; council-relay / DESK_LIVE writers / EcoFlow → Bruce; AppSec / Memberships/Stripe → Carly; final public wording → Ava.
-- **Coding:** Cursor unless operator says otherwise. Prefer greppable ops notes over one-off hardcodes.
+- **Not owns:** primary coding; AWS/rr-aws → US-MAINLAND; council-relay / DESK_LIVE writers / EcoFlow → Bruce; AppSec / Memberships/Stripe → Carly; final public wording → Ava.
+- Prefer greppable ops notes over one-off hardcodes. Primary coding is not this lane.
 
 ---
 
@@ -82,7 +82,7 @@ Sources used: `/workspace/uploads/handoff-out/`, Carly FUNCTIONS-TODOS, agent-de
 ---
 
 ## 5. Standing rules (do not drop)
-- Public Kīlauea/NWS briefs: no OptiPlex/OmniBook/MariaDB/Cursor/Ava desk internals; missing = No data / Waiting
+- Public Kīlauea/NWS briefs: no OptiPlex/OmniBook/MariaDB/Ava desk internals; missing = No data / Waiting
 - Empirical only — match DESK_LIVE honesty
 - No secret pastes; no PAT in remotes
 - General behavioral fixes over one-off hardcodes

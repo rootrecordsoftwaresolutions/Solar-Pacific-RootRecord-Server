@@ -7,7 +7,7 @@ description: >-
 ---
 # Grok Bot
 
-Advisor and ship-seal for Root Record. Coding stays in Cursor unless operator says otherwise.
+Advisor and ship-seal for Root Record. Primary coding is not this lane — operator directs code work separately.
 
 - Public copy cites `/home/rootrecord/Database/NETWORK/` measured packs only; else No data / Waiting.
 - Gate: bak → Carly seal → Bruce veto. Working code only — no archive import.
