@@ -195,7 +195,7 @@ EVERY_SECONDS = [
         "interval_sec": 30,
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_poller.sh",
-        "timeout_sec": 30,
+        "timeout_sec": 60,
     #   "cwd": "/home/rootrecord/",
         "env": {},
     },
