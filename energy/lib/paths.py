@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""Shared paths for energy skill. Measured data → Database/ENERGY only."""
+from __future__ import annotations
+from pathlib import Path
+
+SKILL_ROOT = Path("/home/rootrecord/.ollama/skills/energy")
+CONFIG = SKILL_ROOT / "config" / "devices.conf"
+ENERGY_DATA = Path("/home/rootrecord/Database/ENERGY")
+SAMPLES = ENERGY_DATA / "samples"
+PORTS = ENERGY_DATA / "ports"
+SOC = ENERGY_DATA / "soc"
+WATTS = ENERGY_DATA / "watts"
+LOG_DIR = Path("/home/rootrecord/.ollama/skills/logs/store")
+BLE_LOG = LOG_DIR / "ava-ecoflow-ble.log"
+STATE_DIR = Path("/home/rootrecord/.ollama/skills/state/store")
+VENDOR = SKILL_ROOT / "lib" / "vendor"
+
+
+def ensure_dirs() -> None:
+    for p in (SAMPLES, PORTS, SOC, WATTS, LOG_DIR, STATE_DIR, ENERGY_DATA / "buckets"):
+        p.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,10 @@
+2026-09-23T10:00:40-10:00 owner: start pid=811306 interval_s=30.0 (thin owner; no pack scan)
+2026-09-23T10:00:40-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T10:00:40-10:00 owner: stop
+2026-09-23T10:00:53-10:00 action: WAITING / No data — bleak missing: No module named 'bleak'
+2026-09-23T10:00:53-10:00 action: WAITING / No data — bleak missing: No module named 'bleak'
+2026-09-23T10:00:55-10:00 owner: start pid=811353 interval_s=30.0 (thin owner; no pack scan)
+2026-09-23T10:00:55-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T10:00:55-10:00 owner: stop
+2026-09-23T10:01:06-10:00 owner: start pid=811454 interval_s=30.0 (thin owner; no pack scan)
+2026-09-23T10:01:06-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
