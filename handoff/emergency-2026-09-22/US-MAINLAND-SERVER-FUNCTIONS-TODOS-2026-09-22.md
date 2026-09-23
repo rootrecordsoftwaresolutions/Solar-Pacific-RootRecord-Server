@@ -58,7 +58,7 @@
 - [ ] Desk: install pull/ingest timer writing into `Database/US-MAINLAND-SERVER/DATA PACKETS/`; retire broken `rr-ingest` path or retarget it.
 - [ ] Verify Telegram still works as fallback when SSH path fails (token/chat stay on host secrets — never paste).
 - [ ] Re-check disk after next two pack cycles; watch journal ENOSPC.
-- [ ] Update `rootrecord-aws-ops` Grok skill: datapath SSH-first + Telegram fallback (overrides old “Telegram only” rule once live).
+- [ ] Update `rootrecord-aws-ops` Advisor skill: datapath SSH-first + Telegram fallback (overrides old “Telegram only” rule once live).
 - [ ] Optional: named radio Cloudflare hostname; document in connect/status handoff.
 
 ---

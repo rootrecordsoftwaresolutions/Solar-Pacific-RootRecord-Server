@@ -19,7 +19,7 @@
 - Exactly **one** `council-relay.py` getUpdates process.
 - Exactly **one** LLM generation at a time via `single-flight.sh` / `run-infer.sh` (FLM NPU prefer → Ollama fallback).
 - Bak before every edit under `/home/rootrecord/Database/GITHUB/`.
-- Grok room ≠ Telegram auto-wake; mediate so agents do not stack turns/generations.
+- Advisor room ≠ Telegram auto-wake; mediate so agents do not stack turns/generations.
 - Legacy `apps.council` / `council-telegram` = archived (`~/.ollama/old skills/council/`).
 
 ### Inference stack (own / enforce)
@@ -33,7 +33,7 @@
 | Final public wording | Ava Ivy |
 | AppSec seal + Stripe/D1/tiers | Carly Mal |
 | AWS / rr-aws / datapacks | US-MAINLAND-SERVER |
-| Coding | Cursor unless operator says otherwise |
+| Coding | coding lane unless operator says otherwise |
 
 ### Loop
 `AVA → Bruce → Carly → AVA` — only when explicitly triggered; default Telegram is single-voice.
@@ -56,11 +56,11 @@
 
 1. **Wire real desks into `DESK_LIVE_FILE`** — EcoFlow + host-metrics measured lines only; stop “no desk” being the permanent state.
 2. **Harden council UX cleanliness** — no instruction leaks to Telegram; silence cues; per-bot posts on A→B→C→A; verify chat id stays old council group (`-1004367256267`), not Data Relay.
-3. **Persona parity pack** — bak → Carly seal → Bruce NPU/RAM veto → live for `*-telegram` / FLM system prompts vs Grok room bar.
+3. **Persona parity pack** — bak → Carly seal → Bruce NPU/RAM veto → live for `*-telegram` / FLM system prompts vs Advisor room bar.
 4. **Keep dual-poller impossible** — refuse start if `apps.council` or second relay detected; document in plumbing.
 5. **Multi-bot DM poll (later)** — group @ works; DM still Ava poll token only (409 avoidance). Design multi-offset carefully.
 6. **AWS cutover leftover** — confirm mainland 1-min git pull timer on US host (US-MAINLAND-SERVER lane); OmniBook push already 5 min.
-7. **Rebuild Bruce workstation KB** if wiped like Ava’s — from `skills/agents/bruce-monitor` zip + Grok identity KB; bak first.
+7. **Rebuild Bruce workstation KB** if wiped like Ava’s — from `skills/agents/bruce-monitor` zip + Advisor identity KB; bak first.
 8. **Update Daily Handoff STATUS** after each ops change; re-zip for free-AI sessions.
 
 ---
@@ -72,7 +72,7 @@
 - [ ] Persona parity draft for bruce-telegram / FLM sysmsg → Carly seal
 - [ ] Optional: refuse-busy HTTP/CLI wrapper for any script that forgets single-flight
 - [ ] Sync this report into next `STATUS_YYYY-MM-DD.md` when ops change
-- [ ] Stay quiet in Grok room unless essential — mediate, don’t monologue
+- [ ] Stay quiet in Advisor room unless essential — mediate, don’t monologue
 
 ---
 

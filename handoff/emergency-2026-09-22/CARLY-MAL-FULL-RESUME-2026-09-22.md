@@ -2,7 +2,7 @@
 
 **Audience:** Alexander offline laptop review + team resume tomorrow.  
 **Companion:** `CARLY-MAL-EMERGENCY-STATE-2026-09-22.md` · `CARLY-MAL-FUNCTIONS-TODOS-2026-09-22.md`  
-**Grok box mirror:** `/workspace/emergency-handoff/CARLY-MAL-FULL-RESUME-2026-09-22.md`  
+**agent computer mirror:** `/workspace/emergency-handoff/CARLY-MAL-FULL-RESUME-2026-09-22.md`  
 **Operator ask:** list ANY files you touch offline so we don’t clash.
 
 ---
@@ -15,7 +15,7 @@
 | Council mediate / single-flight / NPU-RAM | **Bruce Monitor** |
 | Final public wording | **Ava Ivy** |
 | AWS / packer / Hawaii / globe | **US-MAINLAND-SERVER** |
-| Marketing ship-seal | **Grok Bot** |
+| Marketing ship-seal | **Advisor** |
 
 Rules: Never Clara. Proposal-only memberships. Bak before OmniBook edits. No secret pastes. No LLM stacking. Working code only — **no `old skills/` import**.
 
@@ -52,7 +52,7 @@ Rules: Never Clara. Proposal-only memberships. Bak before OmniBook edits. No sec
 `DAILY AI DEV HANDOFF/staging area/lanes/carly/` — LIVE-INVENTORY, ARCHIVED-CANDIDATES, STYLE-DEBT, README, SKILL mirror  
 Work log: `staging area/work log/2026-09-22-carly-lane-inventory.md`
 
-### Grok box
+### agent computer
 - `/workspace/carly-identity/kb/CARLY-KNOWLEDGEBASE.md`
 - `/workspace/reports/Memberships-Worker-Full-Doc-2026-09-18.md` (pre-rebuild)
 - `/workspace/emergency-handoff/CARLY-MAL-EMERGENCY-STATE-2026-09-22.md`
@@ -66,7 +66,7 @@ Work log: `staging area/work log/2026-09-22-carly-lane-inventory.md`
 3. **DESK_LIVE measured writer** — still `WAITING` only; energy stills blocked. Bruce owns writer → NETWORK + desk-live.
 4. **`Database/NETWORK`** — layout exists (README, charts/, datapacks/, locations/, metrics/) — **empty consumers**. Carly cites only after measured samples; no dual tree.
 5. **Memberships** — wall owned; **no** live Stripe/D1 re-verify; **no** new working-code skill yet. Archive stays archive.
-6. **Persona parity** `carly-telegram` ↔ Grok KB — not started.
+6. **Persona parity** `carly-telegram` ↔ KB — not started.
 7. **Own GitHub user / real email** — pending Alexander.
 8. **Telegram-fallback live packer edit** — sealed at draft; live delta after collect_locations fix needs eyes again.
 
@@ -80,7 +80,7 @@ Work log: `staging area/work log/2026-09-22-carly-lane-inventory.md`
 4. Carly: re-seal any packer/NETWORK delta past sealed draft; fail-closed purge only after successful relay.
 5. Bruce: EcoFlow + OmniBook sys metrics → `NETWORK/metrics/` + desk-live writer (one path).
 6. Carly: memberships Stripe/D1 **proposal** re-verify (lowest vs power/metrics).
-7. Ava/Grok: public charts/copy only after real NETWORK samples.
+7. Ava/Advisor: public charts/copy only after real NETWORK samples.
 
 ---
 

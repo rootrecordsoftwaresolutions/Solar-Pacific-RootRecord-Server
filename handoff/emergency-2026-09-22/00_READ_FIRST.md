@@ -19,14 +19,14 @@
 - **One inference at a time** on OmniBook (`skills/plumbing` single-flight).
 - Prefer **NPU via FastFlowLM** when up; Ollama is CPU fallback for persona Modelfiles.
 - Outside-world I/O lives under `~/.ollama/skills/coms/` (not scattered).
-- Coding stays in **Cursor** unless the operator says otherwise.
+- Coding stays in **coding lane** unless the operator says otherwise.
 
 ## Machines (short)
 | Role | What |
 |------|------|
 | OmniBook (Solar Pacific RootRecord Server) | Live skills, poller, FLM/NPU, council relay, Starlink/solar site |
 | US-Mainland-Server (AWS) | Always-on collectors / globe / radio — own GitHub; OmniBook pushes, AWS should pull |
-| Grok Bot panel | Ava Ivy / Bruce Monitor / Carly Mal — manual Grok↔Telegram bridge only |
+| Advisor panel | Ava Ivy / Bruce Monitor / Carly Mal — manual Advisor↔Telegram bridge only |
 
 ## Agent loop
 `AVA → Bruce → Carly → AVA`  

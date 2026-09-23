@@ -2,6 +2,8 @@
 
 Power emergency save. Operator resumes tomorrow.
 
-Contains each agent's EMERGENCY-STATE, FULL-RESUME, and FUNCTIONS-TODOS plus STATUS / READ_FIRST snapshots from `DAILY AI DEV HANDOFF` at push time.
+Contains each agent's EMERGENCY-STATE, FULL-RESUME, and FUNCTIONS-TODOS plus STATUS / READ_FIRST snapshots.
 
-**Cut off globally:** packer SSH-first incomplete (`collect_locations.py` missing); Telegram-only packs short-term; council-relay not running; EcoFlow/NETWORK writers not shipped.
+**No third-party vendor product names in these docs.**
+
+**Cut off globally (at pack time):** packer SSH-first incomplete then `collect_locations` finished later; Telegram-only packs short-term; council-relay may be down; EcoFlow/NETWORK writers not shipped.

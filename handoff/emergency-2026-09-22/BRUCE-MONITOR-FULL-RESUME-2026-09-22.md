@@ -14,7 +14,7 @@
 | AppSec seal + Memberships | Carly Mal |
 | AWS / globe / packer / location collect | US-MAINLAND-SERVER |
 | Final public wording | Ava Ivy |
-| Public chart copy after samples | Grok Bot |
+| Public chart copy after samples | Advisor |
 
 ---
 
@@ -57,7 +57,7 @@
 4. **One** `ensure-relay.sh` if no `^python3 …council-relay.py` — confirm single process.
 5. US-MAINLAND: disk/Telegram-only status; later restore SSH-first only after Carly re-check + Bruce race ping.
 6. Bruce (bak first): EcoFlow sampler → desk-live.txt + `NETWORK/metrics/omnibook/`; self-purge after successful land.
-7. Carly seals energy cite / any packer delta; Ava/Grok cite measured only.
+7. Carly seals energy cite / any packer delta; Ava/Advisor cite measured only.
 
 ---
 
