@@ -183,6 +183,8 @@ CREATE TABLE IF NOT EXISTS aggregate_measurement (
     valid_sample_count INTEGER NOT NULL DEFAULT 0,
     expected_sample_count INTEGER,
     coverage_pct REAL,
+    observed_span_s REAL,
+    valid_duration_s REAL,
     value_avg REAL,
     value_min REAL,
     value_max REAL,
