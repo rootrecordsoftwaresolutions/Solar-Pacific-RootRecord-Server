@@ -29,7 +29,8 @@ def unpack(obj):
             return unpack(obj[key])
     return []
 
-def main():
+def migrate(source, serial, model, alias, db=None):
+    conn=connect(db) if db else connect()
     p=argparse.ArgumentParser()
     p.add_argument("--source",type=Path,required=True)
     p.add_argument("--serial",required=True)
@@ -37,12 +38,15 @@ def main():
     p.add_argument("--alias")
     p.add_argument("--db",type=Path)
     args=p.parse_args()
-    conn=connect(args.db) if args.db else connect()
+    return migrate(args.source,args.serial,args.model,args.alias,args.db)
+
+def main():
+    return 0
     initialize_schema(conn)
     now=datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00","Z")
-    device=upsert_device(conn,serial_number=args.serial,model=args.model,alias=args.alias,role="primary_power_storage",observed_at=now)
+    device=upsert_device(conn,serial_number=serial,model=model,alias=alias,role="primary_power_storage",observed_at=now)
     imported=0; skipped=0
-    for path in files_for(args.source):
+    for path in files_for(source):
         source_name=str(path.resolve())
         row=conn.execute("SELECT source_id FROM observation_source WHERE source_type='legacy_json' AND source_name=?",(source_name,)).fetchone()
         if row: source_id=row[0]
