@@ -1,32 +1,61 @@
 # RootRecord SQLite Data Layer
 
-This directory contains the canonical SQLite schema and persistence primitives for
-the Energy/EcoFlow data-layer upgrade.
+This directory is the canonical persistence and condensation layer for Energy/EcoFlow telemetry.
+
+## Runtime path
+
+EcoFlow BLE -> EFLIB -> read_runner -> SQLite observation/measurement rows -> closed-period condensation -> nine reporting layers.
+
+Legacy JSON remains a compatibility/output layer during migration.
 
 ## Files
 
-- `schema.sql` — schema definition; safe to execute repeatedly.
-- `store.py` — transactional persistence primitives; no automatic DB creation.
-- `MIGRATION-SPEC.md` — migration and semantic rules.
+- `schema.sql` — canonical relational schema.
+- `store.py` — transactional persistence primitives.
+- `ingest.py` — EFLIB snapshot ingestion bridge.
+- `aggregate.py` — nine-layer condensation engine.
+- `condense.py` — runtime hook that only processes newly closed periods.
+- `MIGRATION-SPEC.md` — data-model and migration semantics.
+- `MIGRATION-RUNBOOK.md` — legacy import verification procedure.
+- `OPERATIONAL-DATA-LAYER.md` — runtime data flow.
 - `../scripts/init_rootrecord_db.py` — explicit schema initializer.
+- `../scripts/migrate_json.py` — additive legacy JSON importer.
+- `../scripts/condense_closed_periods.py` — explicit condensation runner.
+- `../scripts/verify_rootrecord_db.py` — integrity verifier.
 
-## Important
+## Database
 
-The database is not initialized by importing this package.
-
-The target production database is:
+Target production path:
 
 `/home/rootrecord/Database/ROOTRECORD/rootrecord.db`
 
-Telemetry producers must explicitly call the persistence functions. The module
-does not replace the existing BLE/poller path yet.
+Importing modules does not create telemetry. Live ingestion explicitly initializes the schema on first persistence.
+
+## Model
+
+A device has exactly one modeled primary battery and zero or more expansion batteries.
+
+- B1 = River 2 Pro.
+- B2 = Delta 2.
+- B3 = Delta 2 expansion battery under B2; it is not a third device.
+
+Battery observations are separate from device, electrical, and port measurements.
 
 ## State semantics
 
-- `measured` — source supplied a real measurement, including measured zero.
-- `defaulted` — EFLIB explicitly supplied a configured default because the
-  source packet was absent.
-- `missing` — source/packet did not provide a valid measurement.
-- `not_applicable` — metric does not apply to this hardware.
+- `measured` — source supplied a real value, including measured zero.
+- `defaulted` — EFLIB explicitly supplied a configured default.
+- `missing` — source did not provide a value.
+- `not_applicable` — metric does not apply to the hardware.
 
-Never encode missing or not-applicable as numeric zero.
+Never convert missing/not-applicable into numeric zero.
+
+## Time layers
+
+`1sec -> 1min -> 5min -> 15min -> 1hour -> day -> 7days -> month -> year`
+
+Observation timestamps are canonical UTC ISO-8601 with `Z`. Reporting boundaries use Pacific/Honolulu time.
+
+Power energy is integrated from elapsed valid measurements and bounded interpolation gaps; it is not calculated by assuming a full-period average.
+
+Aggregation runs are persisted and idempotent. Closed periods are not repeatedly rebuilt by the live runtime once marked complete.
