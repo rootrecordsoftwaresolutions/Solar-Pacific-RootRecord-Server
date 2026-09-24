@@ -1,13 +1,13 @@
 """Focused regression tests for the RootRecord condensation engine."""
 from __future__ import annotations
 
-import sqlite3
 import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
 from energy.db.aggregate import aggregate_at
+from energy.db.condense import condense_closed_periods
 from energy.db.store import (
     add_device_measurement,
     add_port_measurement,
@@ -150,6 +150,87 @@ class AggregateRegressionTests(unittest.TestCase):
         self.assertEqual(row["metric_key"], "enabled")
         self.assertEqual(row["value_avg"], 1.0)
         self.assertEqual(row["state"], "measured")
+
+    def test_power_records_duration_fields(self):
+        self.observation("2026-09-24T22:00:00.000Z", 100)
+        self.observation("2026-09-24T22:00:30.000Z", 100)
+        self.conn.commit()
+
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
+
+        row = self.conn.execute(
+            """SELECT observed_span_s,valid_duration_s,coverage_pct
+               FROM aggregate_measurement am
+               JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
+               WHERE ar.layer='1min' AND am.metric_key='input_power'"""
+        ).fetchone()
+        self.assertAlmostEqual(row["observed_span_s"], 30.0)
+        self.assertAlmostEqual(row["valid_duration_s"], 30.0)
+        self.assertAlmostEqual(row["coverage_pct"], 50.0)
+
+    def test_aggregation_is_idempotent(self):
+        self.observation("2026-09-24T22:00:00.000Z", 100)
+        self.observation("2026-09-24T22:00:30.000Z", 100)
+        self.conn.commit()
+
+        at = datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc)
+        aggregate_at(self.conn, "1min", at)
+        first = self.conn.execute(
+            """SELECT COUNT(*),SUM(energy_wh)
+               FROM aggregate_measurement am
+               JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
+               WHERE ar.layer='1min'"""
+        ).fetchone()
+        aggregate_at(self.conn, "1min", at)
+        second = self.conn.execute(
+            """SELECT COUNT(*),SUM(energy_wh)
+               FROM aggregate_measurement am
+               JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
+               WHERE ar.layer='1min'"""
+        ).fetchone()
+        self.assertEqual(first[0], second[0])
+        self.assertAlmostEqual(first[1], second[1])
+
+    def test_gap_over_interpolation_limit_does_not_claim_coverage(self):
+        self.observation("2026-09-24T22:00:00.000Z", 100)
+        self.observation("2026-09-24T22:01:01.000Z", 100)
+        self.conn.commit()
+
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
+        row = self.conn.execute(
+            """SELECT coverage_pct,energy_wh
+               FROM aggregate_measurement am
+               JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
+               WHERE ar.layer='1min' AND am.metric_key='input_power'"""
+        ).fetchone()
+        self.assertEqual(row["coverage_pct"], 0.0)
+        self.assertIsNone(row["energy_wh"])
+
+    def test_condensation_skips_open_period_and_backfills_closed_period(self):
+        self.observation("2026-09-24T21:59:30.000Z", 100)
+        self.observation("2026-09-24T22:00:30.000Z", 100)
+        self.observation("2026-09-24T22:01:30.000Z", 100)
+        self.conn.commit()
+
+        total = condense_closed_periods(self.db)
+        self.assertGreater(total, 0)
+
+        complete = self.conn.execute(
+            """SELECT COUNT(*) FROM aggregation_run
+               WHERE layer='1min' AND status='complete'"""
+        ).fetchone()[0]
+        self.assertEqual(complete, 1)
+
+        second = condense_closed_periods(self.db)
+        self.assertEqual(second, 0)
 
 
 if __name__ == "__main__":
