@@ -158,3 +158,10 @@
 2026-09-24T12:37:57-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-24T12:38:27-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-24T12:38:57-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T12:39:27-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T12:39:31-10:00 owner: stop
+2026-09-24T12:40:04-10:00 owner: start pid=7056 interval_s=30.0 (thin owner; no pack scan)
+2026-09-24T12:40:04-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T12:40:34-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T12:41:04-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T12:41:34-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
