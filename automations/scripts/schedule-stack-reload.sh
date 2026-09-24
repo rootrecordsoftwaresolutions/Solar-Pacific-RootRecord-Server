@@ -20,7 +20,6 @@ if [[ ! -f "$FLAG" ]]; then
 fi
 
 if ! ( set -o noclobber; echo "$$" > "$LOCK" ) 2>/dev/null; then
-  # Stale lock older than 5 minutes → take over
   if [[ -f "$LOCK" ]]; then
     age=$(( $(date +%s) - $(stat -c %Y "$LOCK" 2>/dev/null || echo 0) ))
     if (( age > 300 )); then
@@ -54,7 +53,6 @@ echo "[reload] armed — full poller stack stop/start in 8s"
 echo "[reload] log=$LOG"
 echo "[reload] runner=$DO_RELOAD"
 
-# Prefer systemd-run so the job outlives the poller process completely.
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
 if [[ -z "${DBUS_SESSION_BUS_ADDRESS:-}" && -S "${XDG_RUNTIME_DIR}/bus" ]]; then
   export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
@@ -73,9 +71,7 @@ if command -v systemd-run >/dev/null 2>&1; then
 fi
 
 if [[ "$scheduled" -eq 0 ]]; then
-  # Detach fully: new session, nohup, ignore HUP when poller dies
-  nohup setsid /bin/bash -c "sleep 8; exec /bin/bash '$DO_RELOAD'" \
-    >>"$LOG" 2>&1 &"
+  nohup setsid /bin/bash -c "sleep 8; exec /bin/bash '$DO_RELOAD'" >>"$LOG" 2>&1 &
   echo "[reload] scheduled via nohup/setsid pid=$!"
 fi
 
