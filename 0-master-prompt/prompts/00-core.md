@@ -43,6 +43,12 @@ Do not create:
 
 Use the existing final path.
 
+## No parallel runtime
+
+Do not start a second poller, second cloudflared, second BLE owner, or parallel "apply code" process.
+
+Code pushed to GitHub is applied by the existing `github_sync_all` → merge → **automatic full poller stack reload**. Do not recommend manual restart after ordinary pushes unless the operator asks or the stack is hung.
+
 ## Temporary work
 
 Disposable helpers go in `/tmp/`, not project/home directories.

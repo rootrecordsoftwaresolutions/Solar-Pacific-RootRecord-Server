@@ -27,6 +27,19 @@ The intended refresh interval is five minutes.
 
 The snapshot and history are context/provenance records. They do not replace direct verification when an operation depends on live hardware, services, endpoints, or deployed runtime state.
 
+## Automated deploy path (skills)
+
+**Confirmed:** Desk `github_sync_all` (~every 300s) bidirectionally syncs skills. When GitHub has new skills commits, they are merged locally and the **poller stack auto-reloads** (full stop of poller + cloudflared + watch, then start). BLE owner unit is left alone.
+
+AIs must not suggest parallel restarts or dual processes for ordinary code deploys.
+
+## Energy data layer (2026-09-24)
+
+- Canonical SQLite: `/home/rootrecord/Database/ROOTRECORD/rootrecord.db`
+- Dual-write producer: `energy/lib/read_runner.py` (SQLite then legacy JSON)
+- Poller `/energy` prefers SQLite; EcoFlow reads scheduled ONCE_AT_START + every 15 minutes
+- B3 = expansion battery under Delta 2 (documented in `devices.conf`); no invented MAC
+
 ## Cross-project operating principles
 
 - Constant self and community improvement is the documented RootRecord mission.

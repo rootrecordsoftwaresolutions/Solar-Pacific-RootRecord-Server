@@ -25,6 +25,17 @@ Do not create:
 
 unless the operator explicitly asks for them.
 
+## Applying code to the live desk
+
+After you push to GitHub `main` on the skills repo:
+
+- The desk `github_sync_all` job pulls/merges within about five minutes.
+- A successful skills merge **automatically reloads** the poller stack (full stop → start).
+- You do **not** need to instruct the operator to restart the poller for ordinary code deploys.
+- You do **not** start parallel processes to "activate" the new code.
+
+If the operator needs the change immediately, they may reboot the machine or run `/home/rootrecord/rootserver-poller restart` once — that is optional, not the default AI recommendation.
+
 ## Paste-safe execution
 
 When giving commands for the operator to run:

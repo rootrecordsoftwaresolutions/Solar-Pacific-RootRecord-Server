@@ -4,11 +4,16 @@
 # Usage: push-repo-once.sh <id>
 # Size guard: skip files > MAX_FILE_MB (default 90). Token from master-key.env.
 # Baks/logs: /home/rootrecord/Database/GITHUB/
+#
+# When GitHub has new commits that merge into the local skills tree, this script
+# sets a reload flag so the poller stack can fully stop/start and pick up code.
+# Never reset --hard. Never force-push.
 # ==============================================================================
 set -euo pipefail
 # shellcheck disable=SC1091
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
+mkdir -p "$BAK_ROOT/flags" "$BAK_ROOT/logs"
 # load_token optional — SSH remotes; keep for API tools if needed
 load_token || true
 
@@ -16,6 +21,21 @@ ID="${1:-}"
 [[ -n "$ID" ]] || { echo "usage: $0 <repo-id>"; exit 2; }
 
 remote_url() { echo "git@github.com:${1}.git"; }
+
+mark_code_pulled() {
+  local id="$1"
+  local local_path="$2"
+  local remote_head="$3"
+  echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) id=$id head=$remote_head path=$local_path" \
+    >> "$BAK_ROOT/flags/code-pulled.log"
+  echo "$remote_head" > "$BAK_ROOT/flags/code-pulled.$id"
+  # Skills tree runs the poller — any successful remote merge into it requires stack reload.
+  if [[ "$id" == "skills" || "$local_path" == *"/.ollama/skills"* || "$local_path" == *"/skills" ]]; then
+    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) skills-code-pulled id=$id head=$remote_head" \
+      > "$BAK_ROOT/flags/reload-poller-stack"
+    echo "↻ [$id] CODE_PULLED — poller stack reload armed"
+  fi
+}
 
 found=0
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
@@ -102,6 +122,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
   local_head="$(git rev-parse HEAD)"
   remote_head="$(git rev-parse "$remote_ref")"
+  merged_remote=0
 
   if [[ "$local_head" == "$remote_head" ]]; then
     echo "— [$id] local and GitHub already match"
@@ -120,6 +141,8 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     fi
 
     echo "✓ [$id] GitHub changes merged into local $branch"
+    merged_remote=1
+    mark_code_pulled "$id" "$local_path" "$(git rev-parse HEAD)"
   fi
 
   # Final race-safe push. Another writer may update GitHub between the
@@ -145,6 +168,8 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
         echo "✗ [$id] final merge conflict; local history preserved" >&2
         exit 1
       fi
+      merged_remote=1
+      mark_code_pulled "$id" "$local_path" "$(git rev-parse HEAD)"
     fi
 
     if git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact; then
@@ -158,7 +183,6 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
   echo "✗ [$id] push failed after race-safe retries; local history preserved" >&2
   exit 1
-  exit 0
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
 
 (( found )) || { echo "ERROR: id not in repos.conf: $ID" >&2; exit 1; }
