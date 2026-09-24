@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# schedule-stack-reload.sh — arm deferred full stack reload
+# schedule-stack-reload.sh — arm deferred full stack reload after skills pull
+# ------------------------------------------------------------------------------
 # Standing format for all future builds.
+# Prefers systemd-run --user --on-active=8s; falls back to nohup/setsid.
+# Layout style (standing): keep SECTION banners.
 # ==============================================================================
 set -u
 
+# ====================================================
+# SECTION: PATHS
+# ====================================================
 BAK_ROOT="${BAK_ROOT:-/home/rootrecord/Database/GITHUB}"
 FLAG="$BAK_ROOT/flags/reload-poller-stack"
 LOCK="/tmp/rootrecord-stack-reload.lock"
@@ -14,6 +20,9 @@ DO_RELOAD="/home/rootrecord/.ollama/skills/automations/scripts/do-stack-reload.s
 
 mkdir -p "$(dirname "$LOG")" "$BAK_ROOT/flags"
 
+# ====================================================
+# SECTION: GUARDS (flag / lock / debounce)
+# ====================================================
 if [[ ! -f "$FLAG" ]]; then
   echo "[reload] no flag — nothing to do"
   exit 0
@@ -49,6 +58,9 @@ if [[ ! -f "$DO_RELOAD" ]]; then
   exit 1
 fi
 
+# ====================================================
+# SECTION: SCHEDULE (systemd-run or nohup/setsid)
+# ====================================================
 echo "[reload] armed — full poller stack stop/start in 8s"
 echo "[reload] log=$LOG"
 echo "[reload] runner=$DO_RELOAD"
