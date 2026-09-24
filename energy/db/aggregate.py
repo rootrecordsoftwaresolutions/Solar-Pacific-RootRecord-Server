@@ -75,12 +75,14 @@ def aggregate_period(conn, layer, start, end, source_layer=None):
                      (layer,_iso(start),_iso(end),source_layer,now))
     run=conn.execute("SELECT aggregation_run_id FROM aggregation_run WHERE layer=? AND period_start=? AND period_end=?",(layer,_iso(start),_iso(end))).fetchone()[0]
     conn.execute("DELETE FROM aggregate_measurement WHERE aggregation_run_id=?",(run,))
-    rows=conn.execute("""SELECT dm.metric_key, dm.value_num, o.observed_at
+    rows=conn.execute("""SELECT dm.metric_key, dm.value_num, o.observed_at, dm.state, dm.unit
                          FROM device_measurement dm JOIN observation o ON o.observation_id=dm.observation_id
-                         WHERE o.observed_at>=? AND o.observed_at<? AND dm.state IN ('measured','defaulted')
+                         WHERE o.observed_at>=? AND o.observed_at<?
                          ORDER BY dm.metric_key,o.observed_at""",(_iso(start),_iso(end))).fetchall()
     grouped={}
-    for r in rows: grouped.setdefault(("device",r[0],r[0]),[]).append((r[1],r[2]))
+    for r in rows:
+        grouped.setdefault(("device",r[0],r[0]),[]).append((r[1],r[2]))
+
     brows=conn.execute("""SELECT b.battery_id,bm.metric_key,bm.value_num,o.observed_at
                           FROM battery_measurement bm JOIN battery b ON b.battery_id=bm.battery_id
                           JOIN observation o ON o.observation_id=bm.observation_id

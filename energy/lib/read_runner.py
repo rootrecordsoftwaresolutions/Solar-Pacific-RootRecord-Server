@@ -10,6 +10,7 @@ sys.path.insert(0,str(HERE)); sys.path.insert(0,str(HERE.parent.parent))
 from paths import SAMPLES,SOC,WATTS,ensure_dirs
 from ble_client import connect,BleUnavailable,eflib_ready
 from energy.db.ingest import persist_eflow_device
+from energy.db.condense import condense_closed_periods
 HST=ZoneInfo("Pacific/Honolulu")
 def _fields(device):
     def g(n,d=None): return getattr(device,n,d)
@@ -34,6 +35,7 @@ def main():
     snap["at"]=datetime.now(HST).isoformat(timespec="seconds"); snap["source"]="ble"
     try:
         persist_eflow_device(device,args.device,observed_at)
+            condense_closed_periods()
     except Exception as e:
         print(f"DB_ERROR: {type(e).__name__}: {e}",file=sys.stderr)
         try: asyncio.run(device.disconnect())
