@@ -36,3 +36,8 @@ website/site/.next/
 us-mainland-server/
 aws-sync.retired*/
 plumbing/state/
+
+# stray git-internal backups (accidental commit 2026-09-24, see cleanup commit)
+.git.corrupt-*/
+.git.bak-*/
+*.corrupt-*/
