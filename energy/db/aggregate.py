@@ -37,14 +37,15 @@ def period_bounds(layer,at):
     return start,end
 
 def _state(rows):
-    states={r["state"] for r in rows}
+    states={r["state"] for r in rows if r.get("in_period",True)}
     if "measured" in states or "defaulted" in states: return "measured"
     if states and states <= {"not_applicable"}: return "not_applicable"
     return "missing"
 
 def _energy(rows,start,end):
     total=0.0; covered=0.0
-    points=[(r["value"],_dt(r["at"])) for r in rows if r["value"] is not None and r["state"] in ("measured","defaulted")]
+    points=[(r["value"],_dt(r["at"])) for r in rows
+            if r["value"] is not None and r["state"] in ("measured","defaulted")]
     if len(points)<2: return None,0.0
     for (v1,t1),(v2,t2) in zip(points,points[1:]):
         gap=(t2-t1).total_seconds()
@@ -59,16 +60,17 @@ def _energy(rows,start,end):
     return total,covered
 
 def _aggregate(rows,start,end,power=False):
-    numeric=[r for r in rows if r["value"] is not None and r["state"] in ("measured","defaulted")]
+    period_rows=[r for r in rows if r.get("in_period",True)]
+    numeric=[r for r in period_rows if r["value"] is not None and r["state"] in ("measured","defaulted")]
     vals=[float(r["value"]) for r in numeric]
     if not vals:
-        return {"sample_count":len(rows),"valid_sample_count":0,"coverage_pct":0.0,
+        return {"sample_count":len(period_rows),"valid_sample_count":0,"coverage_pct":0.0,
                 "value_avg":None,"value_min":None,"value_max":None,"value_sum":None,
                 "value_delta":None,"energy_wh":None,"state":_state(rows)}
     energy,covered=_energy(rows,start,end) if power else (None,0.0)
     span=(end-start).total_seconds()
-    coverage=100.0*covered/span if power else 100.0*len(numeric)/max(1,len(rows))
-    return {"sample_count":len(rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),
+    coverage=100.0*covered/span if power else 100.0*len(numeric)/max(1,len(period_rows))
+    return {"sample_count":len(period_rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),
             "value_avg":sum(vals)/len(vals),"value_min":min(vals),"value_max":max(vals),
             "value_sum":sum(vals),"value_delta":vals[-1]-vals[0],"energy_wh":energy,
             "state":"measured"}
@@ -88,36 +90,56 @@ def aggregate_period(conn,layer,start,end,source_layer="raw"):
     conn.execute("DELETE FROM aggregate_measurement WHERE aggregation_run_id=?",(run,))
 
     grouped={}
-    def add(subject_type,subject_id,metric,value,at,state,unit):
+    def add(subject_type,subject_id,metric,value,at,state,unit,in_period):
         grouped.setdefault((subject_type,subject_id,metric,unit),[]).append(
-            {"value":value,"at":at,"state":state})
+            {"value":value,"at":at,"state":state,"in_period":in_period})
+
+    # Include a one-minute neighbor window so power integration can use the
+    # last valid point before and first valid point after a reporting boundary.
+    # Statistics/counts still use only observations inside the period.
+    neighbor_start=_iso(start-timedelta(seconds=MAX_INTERPOLATION_GAP_S))
+    neighbor_end=_iso(end+timedelta(seconds=MAX_INTERPOLATION_GAP_S))
 
     for r in conn.execute("""SELECT o.device_id,dm.metric_key,dm.value_num,dm.value_bool,
                                     dm.value_text,dm.unit,dm.state,o.observed_at
                              FROM device_measurement dm JOIN observation o ON o.observation_id=dm.observation_id
                              WHERE o.observed_at>=? AND o.observed_at<? ORDER BY dm.metric_key,o.observed_at""",
-                          (period_start,period_end)):
+                          (neighbor_start,neighbor_end)):
         value=r["value_num"] if r["value_num"] is not None else r["value_bool"]
-        add("device",r["device_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"])
+        add("device",r["device_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"],
+            period_start<=r["observed_at"]<period_end)
 
     for r in conn.execute("""SELECT b.battery_id,bm.metric_key,bm.value_num,bm.value_bool,bm.unit,bm.state,o.observed_at
                              FROM battery_measurement bm JOIN battery b ON b.battery_id=bm.battery_id
                              JOIN observation o ON o.observation_id=bm.observation_id
                              WHERE o.observed_at>=? AND o.observed_at<? ORDER BY b.battery_id,bm.metric_key,o.observed_at""",
-                          (period_start,period_end)):
+                          (neighbor_start,neighbor_end)):
         value=r["value_num"] if r["value_num"] is not None else r["value_bool"]
-        add("battery",r["battery_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"])
+        add("battery",r["battery_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"],
+            period_start<=r["observed_at"]<period_end)
 
     for r in conn.execute("""SELECT o.device_id,em.channel,em.metric_key,em.value_num,em.unit,em.state,o.observed_at
                              FROM electrical_measurement em JOIN observation o ON o.observation_id=em.observation_id
                              WHERE o.observed_at>=? AND o.observed_at<? ORDER BY o.device_id,em.channel,em.metric_key,o.observed_at""",
-                          (period_start,period_end)):
-        add("device",r["device_id"],f"electrical:{r['channel']}:{r['metric_key']}",r["value_num"],r["observed_at"],r["state"],r["unit"])
+                          (neighbor_start,neighbor_end)):
+        add("device",r["device_id"],f"electrical:{r['channel']}:{r['metric_key']}",r["value_num"],r["observed_at"],r["state"],r["unit"],
+            period_start<=r["observed_at"]<period_end)
 
     for r in conn.execute("""SELECT o.device_id,o.online,o.observed_at
                              FROM observation o WHERE o.observed_at>=? AND o.observed_at<? AND o.online IS NOT NULL
-                             ORDER BY o.device_id,o.observed_at""",(period_start,period_end)):
-        add("device",r["device_id"],"online",r["online"],r["observed_at"],"measured",None)
+                             ORDER BY o.device_id,o.observed_at""",(neighbor_start,neighbor_end)):
+        add("device",r["device_id"],"online",r["online"],r["observed_at"],"measured",None,
+            period_start<=r["observed_at"]<period_end)
+
+    for r in conn.execute("""SELECT o.device_id,pm.port_id,pm.metric_key,pm.value_num,pm.value_bool,
+                                    pm.value_text,pm.unit,pm.state,o.observed_at
+                             FROM port_measurement pm JOIN observation o ON o.observation_id=pm.observation_id
+                             WHERE o.observed_at>=? AND o.observed_at<? ORDER BY pm.port_id,pm.metric_key,o.observed_at""",
+                          (neighbor_start,neighbor_end)):
+        value=r["value_num"] if r["value_num"] is not None else r["value_bool"]
+        if value is None: value=r["value_text"]
+        add("port",r["port_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"],
+            period_start<=r["observed_at"]<period_end)
 
     count=0
     for (stype,sid,metric,unit),rows in grouped.items():
