@@ -1,0 +1,9 @@
+RootRecord deploy probe
+Written: 2026-09-24T23:06:00Z
+Purpose: verify github_sync_all merge arms schedule-stack-reload → do-stack-reload.
+Expected after next skills pull:
+  CODE_PULLED
+  [reload] armed / scheduled
+  stack-reload.log: do-stack-reload BEGIN … END
+  poller window drops briefly then returns
+Standing format: keep for all future builds.
