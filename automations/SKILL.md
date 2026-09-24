@@ -2,14 +2,17 @@
 name: automations
 description: >-
   Boot poller + Cloudflare tunnel + jobs.py (incl. github_sync_all every 300s).
-  After GitHub pulls new skills code, the stack auto-reloads — do not suggest manual restart.
+  After GitHub pulls new skills code, the stack auto-reloads — standing format for all future builds.
+  Do not suggest manual restart or parallel runtimes.
 ---
 
 # automations
 
 **MUST:** Ctrl-C / `rootserver-poller stop` kills poller + cloudflared + unit.
 
-## Auto-reload after GitHub pull (automated — do not suggest parallel restarts)
+## Auto-reload after GitHub pull — standing format for all future builds
+
+**Keep this format for every future build.** Do not invent a competing restart or dual-runtime path.
 
 When `github_sync_all` merges remote skills code into the live tree:
 
@@ -25,7 +28,8 @@ When `github_sync_all` merges remote skills code into the live tree:
 **AI operators must not:**
 - suggest `/home/rootrecord/rootserver-poller restart` after a code push/pull that will sync naturally;
 - start a second poller, second cloudflared, or parallel "apply the new code" process;
-- dual-start BLE owners.
+- dual-start BLE owners;
+- regress this format in future features.
 
 Manual restart remains valid only when the operator explicitly wants an immediate reload outside the 5-minute sync window, or when diagnosing a hung stack.
 
@@ -35,7 +39,7 @@ Manual restart remains valid only when the operator explicitly wants an immediat
 | CLI | `/home/rootrecord/rootserver-poller` |
 | Public | `https://rootserver.rootrecord.cloud/` |
 | GitHub sync | `github_sync_all` → skills + website + mainland |
-| Auto-reload | `scripts/schedule-stack-reload.sh` |
+| Auto-reload | `scripts/schedule-stack-reload.sh` (standing) |
 | Data | `/home/rootrecord/Database/` (intake + GITHUB baks) |
 
 `ON_BOOT` p0 self → p1 tunnel → p2 `github_setup_remotes` → schedules.

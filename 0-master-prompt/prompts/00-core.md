@@ -43,6 +43,18 @@ Do not create:
 
 Use the existing final path.
 
+## Deploy format — standing rule for all future builds
+
+**Keep this format forever unless the operator explicitly changes policy:**
+
+1. Push to GitHub `main` (skills / existing repos).
+2. Desk `github_sync_all` merges (never force-push / never `reset --hard`).
+3. Skills merge → automatic **full** poller stack stop/start (`schedule-stack-reload.sh`).
+4. No second poller, second cloudflared, second BLE owner, or parallel “apply code” process.
+5. Do not default to “please restart the poller” after ordinary pushes.
+
+New features, jobs, energy paths, and services must fit this path. Do not invent a competing deploy or restart scheme.
+
 ## No parallel runtime
 
 Do not start a second poller, second cloudflared, second BLE owner, or parallel "apply code" process.

@@ -43,9 +43,11 @@ Verify:
 - whether a job actually fires;
 - whether the action changes the intended state.
 
-## Automated code apply (poller stack)
+## Automated code apply (poller stack) — standing format for all future builds
 
-**Confirmed automation:** After GitHub merges new skills code into the live tree, the desk **automatically** fully stops and restarts the poller stack.
+**Confirmed automation — keep for every future build:**
+
+After GitHub merges new skills code into the live tree, the desk **automatically** fully stops and restarts the poller stack.
 
 Path:
 
@@ -58,6 +60,7 @@ Path:
 **Do not** tell the operator to restart the poller after a normal code push/pull.
 **Do not** start a second poller, second tunnel, or parallel apply process.
 **Do not** kill `ava-ecoflow-ble.service` as part of code apply (BLE owner is separate).
+**Do not** replace this with a different deploy/restart pattern in future builds unless the operator explicitly changes policy.
 
 Manual `/home/rootrecord/rootserver-poller restart` is only for explicit operator request or a hung stack outside the sync window.
 
@@ -75,4 +78,5 @@ Every operational handoff should include:
 - verification evidence;
 - rollback path where relevant;
 - remaining work;
-- anything intentionally not tested.
+- anything intentionally not tested;
+- reminder that deploy remains **push → sync → auto full stack reload** for future builds.

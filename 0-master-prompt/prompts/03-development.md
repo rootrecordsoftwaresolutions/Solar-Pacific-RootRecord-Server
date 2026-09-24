@@ -25,16 +25,18 @@ Do not create:
 
 unless the operator explicitly asks for them.
 
-## Applying code to the live desk
+## Applying code to the live desk — standing format for all future builds
 
-After you push to GitHub `main` on the skills repo:
+**Keep this deploy format for every future build:**
 
-- The desk `github_sync_all` job pulls/merges within about five minutes.
-- A successful skills merge **automatically reloads** the poller stack (full stop → start).
-- You do **not** need to instruct the operator to restart the poller for ordinary code deploys.
-- You do **not** start parallel processes to "activate" the new code.
+1. Push to GitHub `main` on the skills repo.
+2. Desk `github_sync_all` pulls/merges within about five minutes.
+3. A successful skills merge **automatically reloads** the poller stack (full stop → start).
+4. Do **not** instruct the operator to restart the poller for ordinary code deploys.
+5. Do **not** start parallel processes to "activate" the new code.
+6. Wire new jobs/features into this path; do not invent a competing restart scheme.
 
-If the operator needs the change immediately, they may reboot the machine or run `/home/rootrecord/rootserver-poller restart` once — that is optional, not the default AI recommendation.
+If the operator needs the change immediately, they may reboot the machine or run `/home/rootrecord/rootserver-poller restart` once — optional, not the default AI recommendation.
 
 ## Paste-safe execution
 
