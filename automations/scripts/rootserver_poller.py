@@ -7,6 +7,9 @@
 #
 # Job definitions live in jobs.py — ON_BOOT priorities (0=self, 1=cloudflare, 2+=templates),
 # then recurring sections (EVERY_* + ON_AT exact HH:MM). Keep section formatting identical.
+#
+# Energy: /energy prefers SQLite (canonical) then falls back to legacy JSON last-files.
+# EcoFlow reads are scheduled in jobs.py (ONCE_AT_START + EVERY_MINUTE 0/15/30/45).
 """
 from __future__ import annotations
 
@@ -22,7 +25,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
+SKILLS_ROOT = SCRIPTS.parent.parent  # ~/.ollama/skills
 sys.path.insert(0, str(SCRIPTS))
+sys.path.insert(0, str(SKILLS_ROOT))
 import jobs as jobmod  # noqa: E402
 
 INTERVAL_FALLBACK = float(os.environ.get("POLLER_INTERVAL_SEC", "5"))
@@ -62,7 +67,6 @@ def heartbeat_line() -> str:
     return f"{full_timestamp()}Poller is online."
 
 
-
 def _read_energy_json(rel: str):
     """Measured ENERGY last-file or None. Never invent."""
     try:
@@ -74,62 +78,137 @@ def _read_energy_json(rel: str):
 def _fmt_w(n) -> str:
     if not isinstance(n, (int, float)):
         return "No data"
-    return f"{n} W"
+    if float(n) == int(n):
+        return f"{int(n)} W"
+    return f"{n:.1f} W"
 
 
 def _fmt_soc(n) -> str:
     if not isinstance(n, (int, float)):
         return "No data"
-    return f"{n}%"
+    if float(n) == int(n):
+        return f"{int(n)}%"
+    return f"{n:.1f}%"
+
+
+def _sqlite_board() -> dict | None:
+    """Latest measured board from canonical SQLite, or None."""
+    try:
+        from energy.db.latest import board_snapshot
+
+        return board_snapshot()
+    except Exception:
+        return None
 
 
 def build_energy_snapshot() -> dict:
-    """Hawaii ENERGY board payload for /energy (and Vercel feed)."""
+    """Hawaii ENERGY board for /energy — SQLite first, then legacy JSON."""
+    sqlite = _sqlite_board()
+    delta_sql = (sqlite or {}).get("delta2") if isinstance(sqlite, dict) else None
+    river_sql = (sqlite or {}).get("river2pro") if isinstance(sqlite, dict) else None
+
     delta_soc = _read_energy_json("soc/delta2-last.json")
     river_soc = _read_energy_json("soc/river2pro-last.json")
     delta_w = _read_energy_json("watts/delta2-last.json")
     river_w = _read_energy_json("watts/river2pro-last.json")
-    has_delta = bool(delta_soc or delta_w)
-    has_river = bool(river_soc or river_w)
+
+    def soc_of(sql_row, json_blob):
+        if isinstance(sql_row, dict) and sql_row.get("soc") is not None:
+            return sql_row["soc"]
+        if isinstance(json_blob, dict) and json_blob.get("soc") is not None:
+            return json_blob["soc"]
+        return None
+
+    def watt_of(sql_row, key, json_blob):
+        if isinstance(sql_row, dict) and sql_row.get(key) is not None:
+            return sql_row[key]
+        if isinstance(json_blob, dict) and json_blob.get(key) is not None:
+            return json_blob[key]
+        return None
+
+    d_soc = soc_of(delta_sql, delta_soc)
+    r_soc = soc_of(river_sql, river_soc)
+    solar = watt_of(delta_sql, "solar_input_power", delta_w)
+    if solar is None:
+        solar = watt_of(river_sql, "solar_input_power", river_w)
+    ac = watt_of(delta_sql, "ac_output_power", delta_w)
+    if ac is None:
+        ac = watt_of(river_sql, "ac_output_power", river_w)
+    usbc = watt_of(delta_sql, "usbc_output_power", delta_w)
+    if usbc is None:
+        usbc = watt_of(river_sql, "usbc_output_power", river_w)
+
+    has_delta = d_soc is not None or isinstance(delta_sql, dict) or bool(delta_soc or delta_w)
+    has_river = r_soc is not None or isinstance(river_sql, dict) or bool(river_soc or river_w)
     live = has_delta or has_river
 
-    def pick_w(key: str):
-        if has_delta and isinstance(delta_w, dict) and key in delta_w:
-            return _fmt_w(delta_w.get(key))
-        if has_river and isinstance(river_w, dict) and key in river_w:
-            return _fmt_w(river_w.get(key))
-        return "No data" if key.startswith("solar") or key.startswith("usbc") else "Waiting"
-
     ats = []
+    for row in (delta_sql, river_sql):
+        if isinstance(row, dict) and row.get("observed_at"):
+            ats.append(row["observed_at"])
     for blob in (delta_soc, river_soc, delta_w, river_w):
         if isinstance(blob, dict) and blob.get("at"):
             ats.append(blob["at"])
     updated = sorted(ats)[-1] if ats else None
 
+    source = "sqlite" if (delta_sql or river_sql) else str(ENERGY_ROOT)
+
+    # Expansion B3 summary when present on Delta 2
+    b3 = None
+    if isinstance(delta_sql, dict):
+        for exp in delta_sql.get("expansions") or []:
+            if exp.get("soc") is not None or exp.get("sn"):
+                b3 = {
+                    "sn": exp.get("sn"),
+                    "slot": exp.get("slot"),
+                    "soc": _fmt_soc(exp.get("soc")) if exp.get("soc") is not None else "No data",
+                }
+                break
+
     return {
         "status": "live" if live else "Waiting",
-        "solarInW": pick_w("solar_input_power") if live else "No data",
-        "deltaSoc": _fmt_soc(delta_soc.get("soc")) if isinstance(delta_soc, dict) else "No data",
-        "riverSoc": _fmt_soc(river_soc.get("soc")) if isinstance(river_soc, dict) else "Waiting",
-        "acOut": pick_w("ac_output_power") if has_delta else ("Waiting" if not has_river else pick_w("ac_output_power")),
-        "usbC": pick_w("usbc_output_power") if live else "No data",
+        "solarInW": _fmt_w(solar) if live else "No data",
+        "deltaSoc": _fmt_soc(d_soc) if d_soc is not None else ("No data" if not has_delta else "Waiting"),
+        "riverSoc": _fmt_soc(r_soc) if r_soc is not None else ("Waiting" if not has_river else "No data"),
+        "acOut": _fmt_w(ac) if ac is not None else ("Waiting" if live else "No data"),
+        "usbC": _fmt_w(usbc) if usbc is not None else ("No data" if live else "No data"),
+        "b3": b3,
         "buckets": "Waiting",
         "ports": {
-            "ac": pick_w("ac_output_power") if has_delta else "Waiting",
-            "usbc": pick_w("usbc_output_power") if live else "No data",
+            "ac": _fmt_w(ac) if ac is not None else "Waiting",
+            "usbc": _fmt_w(usbc) if usbc is not None else "No data",
         },
-        "source": str(ENERGY_ROOT),
+        "source": source,
         "files": {
             "present": {
-                "delta2Soc": bool(delta_soc),
-                "river2proSoc": bool(river_soc),
-                "delta2Watts": bool(delta_w),
-                "river2proWatts": bool(river_w),
+                "delta2Soc": d_soc is not None or bool(delta_soc),
+                "river2proSoc": r_soc is not None or bool(river_soc),
+                "delta2Watts": bool(delta_w) or (isinstance(delta_sql, dict) and delta_sql.get("ac_output_power") is not None),
+                "river2proWatts": bool(river_w) or (isinstance(river_sql, dict) and river_sql.get("ac_output_power") is not None),
+                "sqlite": bool(delta_sql or river_sql),
             }
         },
         "updated": updated,
-        "note": "Measured desk samples via rootserver /energy. Missing device = No data / Waiting.",
+        "note": "Measured samples. SQLite is canonical; JSON last-files are compatibility. Missing = No data / Waiting.",
     }
+
+
+def _energy_log_line() -> str:
+    """One clean line for poller console after EcoFlow reads."""
+    snap = build_energy_snapshot()
+    parts = [
+        f"status={snap.get('status')}",
+        f"B2={snap.get('deltaSoc')}",
+        f"B1={snap.get('riverSoc')}",
+        f"solar={snap.get('solarInW')}",
+        f"ac={snap.get('acOut')}",
+        f"usbc={snap.get('usbC')}",
+        f"src={snap.get('source')}",
+    ]
+    b3 = snap.get("b3")
+    if isinstance(b3, dict):
+        parts.insert(3, f"B3={b3.get('soc')}")
+    return "ENERGY  " + "  ".join(parts)
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -158,7 +237,6 @@ class Handler(BaseHTTPRequestHandler):
                 "application/json; charset=utf-8",
             )
             return
-        # Hawaii ENERGY feed for Vercel /api/energy (measured last-files only)
         if self.path in ("/energy", "/energy/", "/api/energy"):
             body = build_energy_snapshot()
             self._send(
@@ -309,6 +387,10 @@ def wait_for_tunnel_ready() -> None:
         )
 
 
+def _is_ecoflow_job(jid: str) -> bool:
+    return jid.startswith("ecoflow_") or jid in ("delta2_read", "river2pro_read")
+
+
 def run_command_job(job: dict) -> None:
     jid = job.get("id", "?")
     cmd = (job.get("command") or "").strip()
@@ -322,8 +404,12 @@ def run_command_job(job: dict) -> None:
     if isinstance(extra, dict):
         env.update({str(k): str(v) for k, v in extra.items()})
     quiet = jid in ("github_sync_all", "github_setup_remotes", "github_autopush")
+    eco = _is_ecoflow_job(jid)
     if not quiet:
-        log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
+        if eco:
+            log(f"{full_timestamp()}job:{jid} RUN  EcoFlow BLE read…")
+        else:
+            log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
     try:
         r = subprocess.run(
             ["bash", "-lc", cmd],
@@ -336,12 +422,22 @@ def run_command_job(job: dict) -> None:
         out = (r.stdout or "").strip()
         err = (r.stderr or "").strip()
         if r.returncode == 0:
-            if out:
+            if eco:
+                # Prefer SUMMARY= lines from read_runner; else one board line from DB/JSON.
+                summaries = [
+                    ln.strip()
+                    for ln in out.splitlines()
+                    if ln.strip().startswith("SUMMARY=") or ln.strip().startswith("STATUS=")
+                ]
+                if summaries:
+                    for ln in summaries[-6:]:
+                        log(f"{full_timestamp()}job:{jid} | {ln}")
+                log(f"{full_timestamp()}{_energy_log_line()}")
+            elif out:
                 for line in out.splitlines()[:40]:
                     line = line.strip()
                     if not line:
                         continue
-                    # Drop noisy setup chatter; keep sync results.
                     if quiet and any(
                         line.startswith(p)
                         for p in ("[ok]", "[skip]", "[clone]", "Updated", "Added", "Done.")
@@ -354,6 +450,8 @@ def run_command_job(job: dict) -> None:
             log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
             for line in (err or out).splitlines()[:20]:
                 log(f"{full_timestamp()}job:{jid} ! {line}")
+            if eco:
+                log(f"{full_timestamp()}{_energy_log_line()}")
     except subprocess.TimeoutExpired:
         log(f"{full_timestamp()}job:{jid} TIMEOUT after {timeout:.0f}s")
     except Exception as e:
@@ -371,7 +469,6 @@ def run_builtin(job: dict) -> None:
         log(line)
         return
     if name == "self_process":
-        # Priority 0 boot registry — lists this desk + status terminal.
         proc = job.get("process") or str(Path(__file__).resolve())
         term = job.get("terminal") or "RootRecord poller — rootserver"
         watch = job.get("watch") or str(SCRIPTS / "poller-watch.py")
@@ -382,7 +479,6 @@ def run_builtin(job: dict) -> None:
         log(f"{full_timestamp()}boot:p0 pid      = {os.getpid()}")
         return
     if name == "tunnel_start":
-        # Priority 1 boot — Cloudflare tunnel (was hard-coded; now job-driven).
         global HOSTNAME, TOKEN_FILE, CLOUDFLARED_BIN, TUNNEL_READY_TIMEOUT_SEC
         if job.get("public_host"):
             HOSTNAME = str(job["public_host"])
@@ -427,7 +523,6 @@ def enabled_jobs(section: list) -> list:
 
 
 def _normalize_hhmm(raw: object) -> str | None:
-    """Accept '13:00' / '9:05' → '13:00' / '09:05'. Invalid → None."""
     if not isinstance(raw, str):
         return None
     s = raw.strip()
@@ -444,7 +539,6 @@ def _normalize_hhmm(raw: object) -> str | None:
 
 
 def scheduler_loop() -> None:
-    """Drive EVERY_SECONDS / EVERY_MINUTE / EVERY_HOUR / ON_AT until stop."""
     sec_jobs = enabled_jobs(getattr(jobmod, "EVERY_SECONDS", []))
     min_jobs = enabled_jobs(getattr(jobmod, "EVERY_MINUTE", []))
     hour_jobs = enabled_jobs(getattr(jobmod, "EVERY_HOUR", []))
@@ -456,12 +550,10 @@ def scheduler_loop() -> None:
         interval = float(j.get("interval_sec") or INTERVAL_FALLBACK)
         if interval <= 0:
             interval = INTERVAL_FALLBACK
-        # fire soon after start
         next_due[j["id"]] = now
 
     last_minute: int | None = None
     last_hour: int | None = None
-    # ON_AT: fire once per calendar day per HH:MM match (local desk TZ)
     fired_at: set[str] = set()
 
     log(
@@ -497,7 +589,6 @@ def scheduler_loop() -> None:
                         continue
                     run_job(j)
 
-                # Exact HH:MM jobs (local / HST)
                 for j in at_jobs:
                     times = {
                         t
@@ -523,7 +614,6 @@ def scheduler_loop() -> None:
             elif hour != last_hour:
                 last_hour = hour
 
-            # Keep only today's ON_AT fire keys
             if fired_at:
                 fired_at = {k for k in fired_at if f"|{day}|" in k}
 
@@ -531,7 +621,6 @@ def scheduler_loop() -> None:
 
 
 def shutdown(*_args) -> None:
-    """INFO — MUST HAVE: tear down tunnel child with this process."""
     _stop.set()
     _tunnel_ready.set()
     global _tunnel_proc
@@ -544,7 +633,6 @@ def shutdown(*_args) -> None:
 
 
 def run_on_boot() -> None:
-    """ON_BOOT priority list — lower priority number runs first."""
     boot = [j for j in enabled_jobs(getattr(jobmod, "ON_BOOT", [])) if isinstance(j, dict)]
     boot.sort(key=lambda j: int(j.get("priority", 100)))
     log(f"{full_timestamp()}boot:start  jobs={len(boot)}")
@@ -560,12 +648,10 @@ def main() -> int:
     signal.signal(signal.SIGTERM, shutdown)
     signal.signal(signal.SIGINT, shutdown)
 
-    # HTTP bind early so local health works even while tunnel is coming up.
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     threading.Thread(target=server.serve_forever, name="http", daemon=True).start()
     log(f"{full_timestamp()}HTTP listening on http://{HOST}:{PORT} (open access on bind)")
 
-    # Boot priority chain: p0 self_terminal → p1 cloudflare → p2+ templates
     run_on_boot()
 
     for j in enabled_jobs(getattr(jobmod, "ONCE_AT_START", [])):
