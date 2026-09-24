@@ -65,12 +65,14 @@ def _aggregate(rows,start,end,power=False):
     vals=[float(r["value"]) for r in numeric]
     if not vals:
         return {"sample_count":len(period_rows),"valid_sample_count":0,"coverage_pct":0.0,
+                "observed_span_s":0.0,"valid_duration_s":0.0 if power else None,
                 "value_avg":None,"value_min":None,"value_max":None,"value_sum":None,
                 "value_delta":None,"energy_wh":None,"state":_state(rows)}
     energy,covered=_energy(rows,start,end) if power else (None,0.0)
+    observed_span_s=max(0.0,(_dt(numeric[-1]["at"])-_dt(numeric[0]["at"])).total_seconds()) if len(numeric)>1 else 0.0
     span=(end-start).total_seconds()
     coverage=100.0*covered/span if power else 100.0*len(numeric)/max(1,len(period_rows))
-    return {"sample_count":len(period_rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),
+    return {"sample_count":len(period_rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),"observed_span_s":observed_span_s,"valid_duration_s":covered if power else None,
             "value_avg":sum(vals)/len(vals),"value_min":min(vals),"value_max":max(vals),
             "value_sum":sum(vals),"value_delta":vals[-1]-vals[0],"energy_wh":energy,
             "state":"measured"}
@@ -148,11 +150,11 @@ def aggregate_period(conn,layer,start,end,source_layer="raw"):
         s=_aggregate(rows,start,end,power)
         conn.execute("""INSERT INTO aggregate_measurement
           (aggregation_run_id,subject_type,subject_id,metric_key,unit,sample_count,valid_sample_count,
-           expected_sample_count,coverage_pct,value_avg,value_min,value_max,value_sum,value_delta,energy_wh,state)
-          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+           expected_sample_count,coverage_pct,observed_span_s,valid_duration_s,value_avg,value_min,value_max,value_sum,value_delta,energy_wh,state)
+          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
           (run,stype,sid,metric,unit,s["sample_count"],s["valid_sample_count"],
-           math.ceil((end-start).total_seconds()/10),s["coverage_pct"],s["value_avg"],s["value_min"],
-           s["value_max"],s["value_sum"],s["value_delta"],s["energy_wh"],s["state"]))
+           math.ceil((end-start).total_seconds()/10),s["coverage_pct"],s["observed_span_s"],s["valid_duration_s"],
+           s["value_avg"],s["value_min"],s["value_max"],s["value_sum"],s["value_delta"],s["energy_wh"],s["state"]))
         count+=1
     watermark=conn.execute("SELECT MAX(observed_at) FROM observation WHERE observed_at>=? AND observed_at<?",
                            (period_start,period_end)).fetchone()[0]

@@ -27,9 +27,18 @@ def connect(db_path: Path | str = DEFAULT_DB_PATH) -> sqlite3.Connection:
 def initialize_schema(conn: sqlite3.Connection) -> None:
     """Create schema objects without creating any telemetry data."""
     conn.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(aggregate_measurement)")}
+    if "observed_span_s" not in columns:
+        conn.execute("ALTER TABLE aggregate_measurement ADD COLUMN observed_span_s REAL")
+    if "valid_duration_s" not in columns:
+        conn.execute("ALTER TABLE aggregate_measurement ADD COLUMN valid_duration_s REAL")
     conn.execute(
         "INSERT OR IGNORE INTO schema_version(version, applied_at) "
         "VALUES (1, strftime('%Y-%m-%dT%H:%M:%fZ','now'))"
+    )
+    conn.execute(
+        "INSERT OR IGNORE INTO schema_version(version, applied_at) "
+        "VALUES (2, strftime('%Y-%m-%dT%H:%M:%fZ','now'))"
     )
     conn.commit()
 
