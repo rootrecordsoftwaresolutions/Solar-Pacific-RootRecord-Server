@@ -25,13 +25,25 @@ Do not create:
 
 unless the operator explicitly asks for them.
 
+## File layout style (standing)
+
+For operator-edited schedules and catalogs (especially `automations/scripts/jobs.py`):
+
+- Keep `# SECTION:` banners.
+- Keep commented **TEMPLATE** blocks at the end of each section.
+- Keep **HOW TO ADD A JOB** (or equivalent) in the header.
+- Add new live entries *above* the TEMPLATE; never delete the TEMPLATE to “clean up.”
+- If the layout was stripped, restore from git history, then re-apply current live jobs.
+
+Canonical example and rules: `prompts/09-file-layout-style.md`.
+
 ## Applying code to the live desk — standing format for all future builds
 
 **Keep this deploy format for every future build:**
 
 1. Push to GitHub `main` on the skills repo.
 2. Desk `github_sync_all` pulls/merges within about five minutes.
-3. A successful skills merge **automatically reloads** the poller stack (full stop → start).
+3. A successful skills merge **automatically reloads** the poller stack (full stop → start + window).
 4. Do **not** instruct the operator to restart the poller for ordinary code deploys.
 5. Do **not** start parallel processes to "activate" the new code.
 6. Wire new jobs/features into this path; do not invent a competing restart scheme.
