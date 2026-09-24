@@ -3,7 +3,7 @@
 **Project:** Solar-Pacific-RootRecord-Server
 **Local root:** `/home/rootrecord/.ollama/skills`
 **Database root:** `/home/rootrecord/Database`
-**Status:** PLANNING — architecture corrected, implementation not started
+**Status:** IMPLEMENTATION IN PROGRESS — canonical schema, ingestion, aggregation, condensation, migration tooling, and sync foundation are built; production DB remains intentionally uninitialized.
 
 ---
 
@@ -242,13 +242,13 @@ Never delete original source data until: migration is verified, queries against 
 - [x] Local data-layer audit completed (Energy stubs, BLE dependency chain, log volume, JSON volume)
 - [x] Bucket model corrected to the 9-layer condensing architecture, working vs. permanent tiers (section 2)
 - [x] Formal pre-migration audit protocol defined (section 5)
-- [ ] Repository audit executed (sections 5 & 6 — blocked on repo/filesystem access)
-- [ ] Schema finalized against real payloads
-- [ ] Database skill built
+- [x] Repository/data-layer audit completed for the implementation scope; remaining live-system checks are operational validation, not schema blockers
+- [x] Schema finalized against the inspected EFLIB/EcoFlow model; further fields are additive as new payloads expose them
+- [x] Database skill built (`energy/db/` + operational scripts)
 - [ ] BLE → DB migration
 - [ ] Git runtime cleanup
-- [ ] Condensation engine
-- [ ] Historical backfill
+- [x] Condensation engine implemented with wall-clock boundaries, idempotent runs, boundary-aware power integration, and port aggregation
+- [x] Historical backfill tooling implemented; production migration remains an explicit operator action
 - [ ] Wall-clock scheduler
 - [ ] Exact-boundary GitHub sync
 - [ ] JSON reduction
@@ -258,7 +258,7 @@ Never delete original source data until: migration is verified, queries against 
 
 ---
 
-## 10. Definition of Done
+## 10. Implementation Checkpoint\n\nImplemented on `main`:\n\n- Canonical SQLite schema separates device identity, primary/expansion batteries, ports, observations, typed measurements, raw/source metadata, and aggregation runs.\n- EcoFlow EFLIB snapshots persist into SQLite while retaining legacy JSON compatibility output.\n- Delta 2 expansion batteries remain children of the Delta 2 device; B3 is not modeled as a separate device.\n- Aggregation uses Honolulu wall-clock boundaries and UTC storage timestamps.\n- Power energy uses bounded trapezoidal integration and now includes valid edge samples across period boundaries without contaminating period statistics.\n- Port telemetry is included in aggregate output.\n- Condensation backfills every closed period between the earliest and latest persisted observations and skips completed periods.\n- Regression coverage exists for edge energy, measured zero, and port aggregation.\n- GitHub synchronization is now race-safe and bidirectional; production telemetry is not committed to GitHub.\n\nProduction DB initialization and live BLE cutover are intentionally not claimed complete until explicitly run and verified.\n\n## 11. Definition of Done
 
 1. BLE telemetry no longer lives in a Git-tracked growing log.
 2. All runtime telemetry lives in SQLite, structured per the 9-layer model.
