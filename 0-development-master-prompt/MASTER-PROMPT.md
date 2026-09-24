@@ -110,6 +110,8 @@ Use environment variable names only when documenting secrets, for example:
 - `TELEGRAM_BRUCE_TOKEN`
 - `TELEGRAM_CARLY_TOKEN`
 
+Only one .env may be used, located at `/home/rootrecord/master/master-key.env`
+
 ## 10. Durable documentation
 
 Update the master-prompt repository when a rule, workflow convention, repository boundary, or durable cross-project decision changes.
