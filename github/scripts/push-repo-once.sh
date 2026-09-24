@@ -5,8 +5,9 @@
 # Size guard: skip files > MAX_FILE_MB (default 90). Token from master-key.env.
 # Baks/logs: /home/rootrecord/Database/GITHUB/
 #
-# When GitHub has new commits that merge into the local skills tree, this script
-# sets a reload flag so the poller stack can fully stop/start and pick up code.
+# When GitHub merges into the live skills tree, arm + immediately schedule a
+# deferred full poller stack reload (bash schedule-stack-reload.sh). Do not rely
+# on the parent sync-all process still running old in-memory code after merge.
 # Never reset --hard. Never force-push.
 # ==============================================================================
 set -euo pipefail
@@ -14,13 +15,14 @@ set -euo pipefail
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
 ensure_bak_root
 mkdir -p "$BAK_ROOT/flags" "$BAK_ROOT/logs"
-# load_token optional — SSH remotes; keep for API tools if needed
 load_token || true
 
 ID="${1:-}"
 [[ -n "$ID" ]] || { echo "usage: $0 <repo-id>"; exit 2; }
 
 remote_url() { echo "git@github.com:${1}.git"; }
+
+RELOAD_SCRIPT="/home/rootrecord/.ollama/skills/automations/scripts/schedule-stack-reload.sh"
 
 mark_code_pulled() {
   local id="$1"
@@ -29,11 +31,17 @@ mark_code_pulled() {
   echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) id=$id head=$remote_head path=$local_path" \
     >> "$BAK_ROOT/flags/code-pulled.log"
   echo "$remote_head" > "$BAK_ROOT/flags/code-pulled.$id"
-  # Skills tree runs the poller — any successful remote merge into it requires stack reload.
+  # Skills tree runs the poller — merge requires full stack reload.
   if [[ "$id" == "skills" || "$local_path" == *"/.ollama/skills"* || "$local_path" == *"/skills" ]]; then
     echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) skills-code-pulled id=$id head=$remote_head" \
       > "$BAK_ROOT/flags/reload-poller-stack"
     echo "↻ [$id] CODE_PULLED — poller stack reload armed"
+    # Schedule NOW from disk (merged tree), not from parent sync-all's old in-memory script.
+    if [[ -f "$RELOAD_SCRIPT" ]]; then
+      bash "$RELOAD_SCRIPT" || echo "⚠ [$id] schedule-stack-reload failed"
+    else
+      echo "⚠ [$id] missing $RELOAD_SCRIPT — flag left for next sync-all"
+    fi
   fi
 }
 
@@ -66,7 +74,6 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   git remote set-url "$remote_name" "$(remote_url "$slug")" 2>/dev/null \
     || git remote set-url origin "$(remote_url "$slug")"
 
-  # size guard
   oversized=0
   while IFS= read -r -d '' f; do
     sz=$(stat -c%s "$f" 2>/dev/null || echo 0)
@@ -82,13 +89,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
   branch=$(git rev-parse --abbrev-ref HEAD)
 
-  # --------------------------------------------------------------------------
-  # Commit any local changes first. This preserves runtime/generated state in
-  # normal Git history instead of discarding it.
-  # --------------------------------------------------------------------------
-  local_changed=0
   if ! git diff --quiet || ! git diff --cached --quiet || [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
-    local_changed=1
     git add -A
     n=$(git diff --cached --name-only | wc -l | tr -d ' ')
     msg="auto: $(date -u +%Y-%m-%dT%H:%MZ) desk sync ($n file(s))"
@@ -99,13 +100,6 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     echo "— [$id] no local changes"
   fi
 
-  # --------------------------------------------------------------------------
-  # Always fetch GitHub so the live checkout sees remote changes even when
-  # there was nothing local to commit.
-  #
-  # Never reset --hard.
-  # Never force-push.
-  # --------------------------------------------------------------------------
   echo "↓ [$id] fetching $remote_name/$branch"
 
   if ! git fetch "$remote_name" "$branch" 2>&1 | redact; then
@@ -122,7 +116,6 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
   local_head="$(git rev-parse HEAD)"
   remote_head="$(git rev-parse "$remote_ref")"
-  merged_remote=0
 
   if [[ "$local_head" == "$remote_head" ]]; then
     echo "— [$id] local and GitHub already match"
@@ -130,23 +123,16 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     echo "↑ [$id] local is ahead of GitHub"
   else
     echo "↓ [$id] GitHub has changes; merging $remote_ref"
-
-    # Merge rather than rebase so existing local commit IDs remain intact.
-    # A real conflict is aborted safely; neither side is discarded.
     if ! git merge --no-edit "$remote_ref" 2>&1 | redact; then
       echo "✗ [$id] merge conflict; aborting safely" >&2
       git merge --abort >/dev/null 2>&1 || true
       echo "✗ [$id] local history preserved; nothing was force-pushed" >&2
       exit 1
     fi
-
     echo "✓ [$id] GitHub changes merged into local $branch"
-    merged_remote=1
     mark_code_pulled "$id" "$local_path" "$(git rev-parse HEAD)"
   fi
 
-  # Final race-safe push. Another writer may update GitHub between the
-  # earlier fetch and this push. Re-fetch and merge once before retrying.
   for attempt in 1 2; do
     local_head="$(git rev-parse HEAD)"
     git fetch "$remote_name" "$branch" >/dev/null 2>&1 || {
@@ -168,7 +154,6 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
         echo "✗ [$id] final merge conflict; local history preserved" >&2
         exit 1
       fi
-      merged_remote=1
       mark_code_pulled "$id" "$local_path" "$(git rev-parse HEAD)"
     fi
 
