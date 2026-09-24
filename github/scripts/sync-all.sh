@@ -18,9 +18,6 @@ RELOAD_SCRIPT="/home/rootrecord/.ollama/skills/automations/scripts/schedule-stac
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
   [[ "$enabled" == "1" ]] || continue
-  # A remote update can arrive between fetch/merge and push. Retry the entire
-  # sync cycle immediately so remote changes are not left waiting for the next
-  # five-minute poll.
   success=0
   for attempt in 1 2 3; do
     if bash "$HERE/push-repo-once.sh" "$id"; then
@@ -33,12 +30,12 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   (( success )) || echo "✗ [$id] sync failed after 3 attempts (continuing)"
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
 
-# If skills code was pulled, arm a deferred full stack reload (does not run in
-# parallel with this job — waits until sync-all exits).
+# Always invoke via bash (file may not be +x after git pull). -f not -x.
 if [[ -f "$BAK_ROOT/flags/reload-poller-stack" ]]; then
-  if [[ -x "$RELOAD_SCRIPT" ]]; then
-    bash "$RELOAD_SCRIPT" || true
+  if [[ -f "$RELOAD_SCRIPT" ]]; then
+    echo "↻ reload flag present — scheduling full poller stack reload"
+    bash "$RELOAD_SCRIPT" || echo "⚠ schedule-stack-reload failed (flag left for next cycle)"
   else
-    echo "⚠ reload flag set but missing $RELOAD_SCRIPT"
+    echo "⚠ reload flag set but missing file: $RELOAD_SCRIPT"
   fi
 fi
