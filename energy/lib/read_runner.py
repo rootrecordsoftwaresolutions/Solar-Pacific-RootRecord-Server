@@ -35,7 +35,7 @@ def main():
     snap["at"]=datetime.now(HST).isoformat(timespec="seconds"); snap["source"]="ble"
     try:
         persist_eflow_device(device,args.device,observed_at)
-            condense_closed_periods()
+        condense_closed_periods()
     except Exception as e:
         print(f"DB_ERROR: {type(e).__name__}: {e}",file=sys.stderr)
         try: asyncio.run(device.disconnect())
