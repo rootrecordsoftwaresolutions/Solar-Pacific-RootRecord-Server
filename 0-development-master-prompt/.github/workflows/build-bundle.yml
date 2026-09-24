@@ -1,0 +1,49 @@
+name: Build Master Prompt Bundle
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate manifest and required files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f MASTER-PROMPT.md
+          test -f manifest/prompts.yaml
+          test -f skill/SKILL.md
+          python3 - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          manifest = yaml.safe_load(Path("manifest/prompts.yaml").read_text())
+          for item in manifest["prompts"]:
+              path = Path(item["file"])
+              if item.get("required") and not path.is_file():
+                  raise SystemExit(f"Missing required prompt: {path}")
+          print("Manifest validation passed.")
+          PY
+
+      - name: Build ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f RootRecord-Master-Prompt-latest.zip
+          zip -r RootRecord-Master-Prompt-latest.zip             MASTER-PROMPT.md             README.md             prompts             manifest             skill             .github/workflows/build-bundle.yml
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RootRecord-Master-Prompt-latest
+          path: RootRecord-Master-Prompt-latest.zip
+          if-no-files-found: error
