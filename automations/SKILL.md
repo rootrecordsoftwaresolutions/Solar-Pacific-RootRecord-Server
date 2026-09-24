@@ -1,35 +1,44 @@
 ---
 name: automations
 description: >-
-  Boot poller + Cloudflare tunnel + jobs.py (incl. github_sync_all every 300s).
-  After GitHub pulls new skills code, the stack auto-reloads and reopens the status window.
-  Standing format for all future builds — do not suggest manual restart or parallel runtimes.
+  Boot poller + Cloudflare tunnel + jobs.py (github_sync_all every 300s).
+  Auto stack reload after skills pull; reopen status window.
+  Standing format for all future builds — sectioned jobs.py, no parallel runtimes.
 ---
 
 # automations
 
-**MUST:** Ctrl-C / `rootserver-poller stop` kills poller + cloudflared + unit.
+**MUST:** Ctrl-C / close window / `rootserver-poller stop` kills poller + cloudflared + unit.
 
-## Auto-reload after GitHub pull — standing format for all future builds
+## HOW TO ADD A JOB
 
-**Keep this format for every future build.** Do not invent a competing restart or dual-runtime path.
+1. Open `scripts/jobs.py`.
+2. Copy the **TEMPLATE** block inside the matching **SECTION** (ON_BOOT, EVERY_MINUTE, …).
+3. Paste above the TEMPLATE, set `enabled=True`, fill fields, keep key order.
+4. Code apply is automatic after GitHub pull (do not invent a second scheduler).
 
-When `github_sync_all` merges remote skills code into the live tree:
+## Auto-reload after GitHub pull (standing)
 
-1. `push-repo-once.sh` sets reload flag and runs `schedule-stack-reload.sh`
-2. After ~8s, `do-stack-reload.sh`:
-   - stops unit + poller + cloudflared + poller-watch
-   - starts `rr-rootserver-poller.service`
-   - **reopens the status window** (`open-poller-window.sh`)
-3. `ava-ecoflow-ble.service` is **not** killed
+1. Skills merge arms reload flag + `schedule-stack-reload.sh`
+2. `do-stack-reload.sh` stops stack, starts unit, **opens status window**
+3. BLE owner (`ava-ecoflow-ble`) is **not** killed
 
-**AI operators must not:** suggest default manual restart after ordinary pushes; start a second poller/tunnel/BLE owner; regress this format.
+**Do not** suggest default manual restart after ordinary pushes; **do not** dual-start pollers/tunnels/BLE.
+
+## Layout style (standing)
+
+`jobs.py` is the canonical sectioned catalog. Keep SECTION + TEMPLATE blocks.
+If missing, restore from git and re-apply live jobs. See `0-master-prompt/prompts/09-file-layout-style.md`.
+
+## Paths
 
 | | |
 |--|--|
 | Jobs | `scripts/jobs.py` |
 | CLI | `/home/rootrecord/rootserver-poller` |
 | Public | `https://rootserver.rootrecord.cloud/` |
-| GitHub sync | `github_sync_all` → skills + website + mainland |
-| Auto-reload | `schedule-stack-reload.sh` → `do-stack-reload.sh` (includes window) |
+| Auto-reload | `scripts/schedule-stack-reload.sh` → `do-stack-reload.sh` |
 | Data | `/home/rootrecord/Database/` |
+
+`ON_BOOT` p0 self → p1 tunnel (internet gate) → p2 remotes → Ollama/FLM/relay.
+EcoFlow: ONCE_AT_START + every :00/:15/:30/:45 → SQLite dual-write.
