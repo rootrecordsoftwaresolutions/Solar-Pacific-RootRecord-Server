@@ -60,20 +60,79 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     exit 1
   fi
 
-  if git diff --quiet && git diff --cached --quiet && [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
-    echo "— [$id] no changes"
-    exit 0
+  branch=$(git rev-parse --abbrev-ref HEAD)
+
+  # --------------------------------------------------------------------------
+  # Commit any local changes first. This preserves runtime/generated state in
+  # normal Git history instead of discarding it.
+  # --------------------------------------------------------------------------
+  local_changed=0
+  if ! git diff --quiet || ! git diff --cached --quiet || [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
+    local_changed=1
+    git add -A
+    n=$(git diff --cached --name-only | wc -l | tr -d ' ')
+    msg="auto: $(date -u +%Y-%m-%dT%H:%MZ) desk sync ($n file(s))"
+    git commit -m "$msg" >/dev/null
+    echo "↑ [$id] committed $n local file(s)"
+  else
+    n=0
+    echo "— [$id] no local changes"
   fi
 
-  git add -A
-  n=$(git diff --cached --name-only | wc -l | tr -d ' ')
-  msg="auto: $(date -u +%Y-%m-%dT%H:%MZ) desk sync ($n file(s))"
-  git commit -m "$msg" >/dev/null
-  branch=$(git rev-parse --abbrev-ref HEAD)
-  git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact
-  echo "↑ [$id] $n files → $slug ($branch)"
-  echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug" \
-    >> "$BAK_ROOT/logs/${id}.log"
+  # --------------------------------------------------------------------------
+  # Always fetch GitHub so the live checkout sees remote changes even when
+  # there was nothing local to commit.
+  #
+  # Never reset --hard.
+  # Never force-push.
+  # --------------------------------------------------------------------------
+  echo "↓ [$id] fetching $remote_name/$branch"
+
+  if ! git fetch "$remote_name" "$branch" 2>&1 | redact; then
+    echo "✗ [$id] fetch failed; local history preserved" >&2
+    exit 1
+  fi
+
+  remote_ref="$remote_name/$branch"
+
+  if ! git rev-parse --verify "$remote_ref" >/dev/null 2>&1; then
+    echo "✗ [$id] remote branch unavailable after fetch: $remote_ref" >&2
+    exit 1
+  fi
+
+  local_head="$(git rev-parse HEAD)"
+  remote_head="$(git rev-parse "$remote_ref")"
+
+  if [[ "$local_head" == "$remote_head" ]]; then
+    echo "— [$id] local and GitHub already match"
+  elif git merge-base --is-ancestor "$remote_ref" HEAD; then
+    echo "↑ [$id] local is ahead of GitHub"
+  else
+    echo "↓ [$id] GitHub has changes; merging $remote_ref"
+
+    # Merge rather than rebase so existing local commit IDs remain intact.
+    # A real conflict is aborted safely; neither side is discarded.
+    if ! git merge --no-edit "$remote_ref" 2>&1 | redact; then
+      echo "✗ [$id] merge conflict; aborting safely" >&2
+      git merge --abort >/dev/null 2>&1 || true
+      echo "✗ [$id] local history preserved; nothing was force-pushed" >&2
+      exit 1
+    fi
+
+    echo "✓ [$id] GitHub changes merged into local $branch"
+  fi
+
+  # Push only when local HEAD contains commits not present on GitHub.
+  local_head="$(git rev-parse HEAD)"
+  remote_head="$(git rev-parse "$remote_ref")"
+
+  if [[ "$local_head" == "$remote_head" ]]; then
+    echo "— [$id] nothing to push"
+  else
+    git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact
+    echo "↑ [$id] $n files → $slug ($branch)"
+    echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug"       >> "$BAK_ROOT/logs/${id}.log"
+  fi
   exit 0
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
 
