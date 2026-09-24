@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-24T11:25:00Z",
+  "refresh_interval_minutes": 5,
+  "status": "active",
+  "repository": {
+    "name": "rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server",
+    "branch": "main",
+    "last_verified_commit": "4fcaf524e03e9db64e9357be68b463fd4b3b1e68",
+    "source": "github",
+    "verified_at": "2026-09-24T11:25:00Z"
+  },
+  "connections": {
+    "github": {
+      "status": "connected",
+      "source": "github_connector",
+      "verified_at": "2026-09-24T11:25:00Z"
+    },
+    "rootrecord_server": {
+      "status": "unknown",
+      "source": null,
+      "verified_at": null
+    },
+    "mainland_server": {
+      "status": "unknown",
+      "source": null,
+      "verified_at": null
+    }
+  },
+  "power": {
+    "status": "unknown",
+    "battery_percent": null,
+    "solar_watts": null,
+    "grid_watts": null,
+    "load_watts": null,
+    "source": null,
+    "verified_at": null
+  },
+  "work": {
+    "status": "active",
+    "active_task": "Rename 0-development-master-prompt to 0-master-prompt and establish live five-minute state/history files.",
+    "last_action": "Inspected the current GitHub tree and rebuilt the master-prompt directory plan from the live main branch.",
+    "next_action": "Deploy and verify the five-minute state updater against the real operational collectors.",
+    "verified_at": "2026-09-24T11:25:00Z"
+  },
+  "evidence": {
+    "overall": "Confirmed",
+    "notes": "Repository structure and current GitHub state were directly inspected. Live server and power telemetry were not independently queried during this snapshot."
+  }
+}
