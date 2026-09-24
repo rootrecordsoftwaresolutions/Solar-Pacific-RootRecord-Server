@@ -1,0 +1,262 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>RootRecord Data Layer + Clock-Aligned Sync Upgrade Plan</h1>
+<p><strong>Project:</strong> Solar-Pacific-RootRecord-Server
+<strong>Local root:</strong> <code>/home/rootrecord/.ollama/skills</code>
+<strong>Database root:</strong> <code>/home/rootrecord/Database</code>
+<strong>Status:</strong> PLANNING — architecture corrected, implementation not started</p>
+<hr>
+<h2>1. Mission</h2>
+<p>Move RootRecord away from:</p>
+<ul>
+<li>sprawling JSON state/history files</li>
+<li>continuously growing telemetry logs</li>
+<li>filesystem bucket stubs</li>
+<li>process-relative timers</li>
+<li>GitHub-tracked runtime artifacts</li>
+</ul>
+<p>and toward:</p>
+<ul>
+<li>a <strong>SQLite-first, 9-layer time-resolution data architecture</strong></li>
+<li>a <strong>wall-clock-aligned condensation scheduler</strong></li>
+<li>a <strong>safe, bidirectional, non-destructive GitHub sync</strong></li>
+<li>an <strong>LLM-queryable database skill</strong></li>
+<li>a <strong>thin, independently-updatable Mainland/AWS edge</strong></li>
+</ul>
+<p>Division of responsibility:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>code, configuration, schemas, skills</td>
+</tr>
+<tr>
+<td><strong>SQLite</strong></td>
+<td>canonical live + historical runtime data</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td>small config / compatibility snapshots only</td>
+</tr>
+<tr>
+<td><strong>Logs</strong></td>
+<td>diagnostics only — never telemetry</td>
+</tr>
+<tr>
+<td><strong>Mainland/AWS</strong></td>
+<td>thin, independent deploy/update edge</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. The Corrected Data Model (supersedes earlier bucket design)</h2>
+<p>This is <strong>not</strong> a generic multi-bucket aggregation system. It is <strong>9 rolling, condensing data layers</strong>, each with an explicit reset/condensation boundary. This replaces any earlier schema built around generic <code>bucket_data</code> tables.</p>
+<pre><code>1sec → 1min → 5min → 15min → 1hour → day → 7days → month → year
+</code></pre>
+<p><strong>9 persistent data layers/files, in order — split into working and permanent tiers:</strong></p>
+<p><strong>Working / resetting layers</strong> (continuously overwritten, not permanent history):</p>
+<ol>
+<li><strong>1sec</strong> — primary/high-resolution layer. Continuously receives raw measurements.</li>
+<li><strong>1min</strong> — condensed from 1sec every minute; 1sec resets after condensation.</li>
+<li><strong>5min</strong></li>
+<li><strong>15min</strong></li>
+<li><strong>1hour</strong></li>
+</ol>
+<p><strong>Permanent historical layers</strong> (never reset, only appended to):
+6. <strong>day</strong> — condensed at the 24-hour boundary from the working layers.
+7. <strong>7days</strong> — condensed weekly average of the <code>day</code> layer.
+8. <strong>month</strong>
+9. <strong>year</strong></p>
+<p>Do not substitute this set with a generic period list (<code>1m/30m/12h/1d/1w/1mo</code>, etc.) and do not invent additional permanent aggregation layers beyond these nine.</p>
+<h3>Condensation boundaries</h3>
+<ul>
+<li><strong>1sec → 1min:</strong> every minute boundary. 1sec layer clears after condensing.</li>
+<li><strong>1min/5min/15min/1hour → day:</strong> at the 24-hour boundary.</li>
+<li><strong>day → 7days:</strong> at <strong>Sunday 23:59</strong>. If the system was offline/unavailable at that boundary, the condensation runs on the <strong>first Monday boot</strong> instead.</li>
+<li><strong>7days → month, month → year:</strong> same &quot;condense on boundary, or on first boot after a missed boundary&quot; principle applies up the hierarchy.</li>
+</ul>
+<h3>Non-negotiable rules for this model</h3>
+<ul>
+<li><strong>Never fabricate data.</strong> A missing measurement stays <code>missing</code> — never <code>0</code>, never interpolated, unless zero was an actual measured value.</li>
+<li><strong>Missed boundaries must self-heal.</strong> If the machine was asleep, offline, or crashed through a condensation boundary, the next boot performs the missed condensation from persisted data — not from scheduler memory.</li>
+<li><strong>Condensation is idempotent.</strong> Running it twice must never double-count or duplicate.</li>
+<li><strong>Preserve rollback.</strong> Don't discard a lower layer's source data until the layer above it is verified.</li>
+</ul>
+<hr>
+<h2>3. Critical Rules (still apply)</h2>
+<h3>3.1 SQLite is canonical</h3>
+<p>Target file: <code>/home/rootrecord/Database/ROOTRECORD/rootrecord.db</code>
+Exact schema is finalized only after real Energy/BLE payloads are inspected against the 9-layer model above.</p>
+<h3>3.2 GitHub is not a telemetry database</h3>
+<p>GitHub must never receive: BLE heartbeats, live telemetry, large runtime logs, generated historical JSON, SQLite databases, or disposable runtime state. GitHub stays a code/config/schema layer only.</p>
+<h3>3.3 No destructive Git sync</h3>
+<p>Never: <code>git reset --hard origin/main</code>, <code>git push --force</code>.</p>
+<p>Required flow:</p>
+<pre><code>local changes → commit → fetch → compare histories → merge if needed → push
+</code></pre>
+<p>Merge conflicts must abort safely, never overwrite.</p>
+<h3>3.4 Exact wall-clock timing</h3>
+<p>All condensation and sync timing is based on <strong>clock boundaries</strong>, not process uptime (e.g. <code>xx:05</code>, <code>xx:15</code>, <code>00:00</code>, Sunday 23:59, first-of-month 00:00) — not &quot;5 minutes after the process started.&quot;</p>
+<hr>
+<h2>4. Audit Findings To Date (2026-09-24)</h2>
+<ul>
+<li><strong>No RootRecord canonical DB exists yet.</strong> Unrelated SQLite files exist elsewhere (<code>unsorted/.../index.sqlite</code>, <code>usda.sqlite</code>) — do not repurpose them.</li>
+<li><strong><code>Database/ENERGY/</code></strong> bucket folders (<code>1m/5m/15m/30m/hour/daily</code>) are explicitly marked <strong>STUB ONLY</strong>; <code>poll_enabled=0</code>. Nothing live is being produced yet — safe to redesign before any data starts flowing.</li>
+<li><strong>JSON sprawl:</strong> 889 files, ~38 MB, under <code>Database/</code>. Needs per-file classification (config / snapshot / history / cache / generated) before any migration — no mass conversion.</li>
+<li><strong>Logging is a bigger problem than the original BLE log complaint:</strong>
+<ul>
+<li><code>ava-core-session-2026-09-17.log</code> ≈ 793 MB</li>
+<li><code>ava-core-2026-09-17.log</code> ≈ 1.52 GB</li>
+<li><code>origin-uvicorn-2026-09-17.log</code> ≈ 25 MB</li>
+<li><code>ava-console.log</code> ≈ 21 MB, <code>ollama.log</code> ≈ 2.6 MB, <code>auto-push.log</code> ≈ 2.1 MB, <code>rootserver-poller.log</code> ≈ 1.3 MB</li>
+<li>Duplicate historical copies live under <code>~/.ollama/github-history/</code>, <code>~/.ollama/old skills/</code>, <code>Database/GITHUB/</code> (the latter alone ≈ 1.3 GB, mostly backups — must not be treated as live data).</li>
+</ul>
+</li>
+<li><strong>BLE has many writers/readers</strong> tied to the old log path — all must migrate together: <code>enable-ble-boot.sh</code>, <code>ble-status.sh</code>, <code>ble-owner.py</code>, <code>ble-log-watch.sh</code>, <code>action_runner.py</code>, <code>paths.py</code>, <code>read_runner.py</code>, <code>energy/SKILL.md</code>, <code>devices.conf</code>.</li>
+<li><strong><code>ava-auto-push.timer</code> exists and is enabled</strong> — unaudited. Must be understood (what it triggers, frequency, overlap with <code>github_sync_all</code>, whether it commits runtime artifacts) before any GitHub timing changes.</li>
+<li><strong>GitHub bidirectional sync (<code>push-repo-once.sh</code>) is already built and tested</strong> — do not rebuild. Verified across <code>skills</code>, <code>website</code>, <code>mainland</code> repos.</li>
+<li><strong>Existing scheduler processes</strong> (<code>rootserver_poller.py</code>, <code>poller-watch.py</code>) are already running — the wall-clock capability should be integrated into them, not replaced by a competing scheduler.</li>
+</ul>
+<hr>
+<h2>5. Mandatory Pre-Migration Repository Audit</h2>
+<p><strong>Core rule: understand first, modify second.</strong> Nothing below is a destructive action — this whole phase is read-only inventory. Repository: <a href="https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server">Solar-Pacific-RootRecord-Server</a> (<code>main</code> branch, treated as authoritative — not search-engine indexing).</p>
+<h3>5.1 Inspection order</h3>
+<ol>
+<li><strong>Master control / intent</strong> — <code>0-master-prompt/</code>, <code>handoff/</code>, <code>.github/</code>, <code>.gitignore</code>: existing migration plans, operational rules, deployment expectations, CI/CD behavior.</li>
+<li><strong>Core runtime</strong> — <code>agents/</code>, <code>automations/</code>, <code>coms/</code>, <code>plumbing/</code>: for every script/service found, what launches it, what it reads/writes, whether it's scheduled, whether it touches telemetry or Git, whether its timing is process-relative or wall-clock.</li>
+<li><strong>Energy system (high priority)</strong> — the entire <code>energy/</code> tree, not just the obvious bucket files: <code>scripts/poll/</code>, <code>scripts/ble/</code>, <code>lib/</code>, <code>config/</code>, <code>buckets/</code>, <code>samples/</code>, <code>ports/</code>, <code>soc/</code>, <code>watts/</code>, <code>SKILL.md</code>. Trace the full path: <code>physical source → BLE/poller → parser → ingestion → storage → aggregation → consumer</code>. Don't assume a directory's name describes its actual runtime behavior.</li>
+<li><strong>GitHub sync</strong> — entire <code>github/</code> tree: every pull/fetch/merge/commit/push mechanism, <code>push-repo-once.sh</code>, <code>github_sync_all</code>, Git timers/hooks, whether any of it currently pushes telemetry/logs/runtime state/databases.</li>
+<li><strong>Automation/scheduling</strong> — entire <code>automations/</code> tree: search for <code>interval</code>, <code>interval_sec</code>, <code>sleep</code>, <code>next_due</code>, <code>schedule</code>, <code>timer</code>, <code>cron</code>, <code>wall_clock</code>, <code>ON_AT</code>, <code>systemd</code>, <code>poll</code>, <code>heartbeat</code>, <code>every</code>, <code>period</code>, <code>bucket</code>. Classify each as process-relative, wall-clock, systemd-triggered, cron-triggered, Python-internal, or duplicated across multiple schedulers.</li>
+<li><strong>State / status / reports</strong> — <code>state/</code>, <code>status/</code>, <code>reports/</code>: classify every persistent file individually (config, current state, historical state, generated report, cache, compatibility snapshot, telemetry, health info). Don't assume every JSON file is disposable.</li>
+<li><strong>Logging</strong> — <code>logs/</code>: what produces each log, whether it's Git-tracked, whether anything actually consumes it, whether any log is functioning as an accidental database. Do not delete or truncate anything.</li>
+<li><strong>Full repository sweep</strong> — after the priority directories, inspect the entire tree for coverage (scripts, config, services, timers, docs, JSON/YAML/TOML, DB references, hidden files, files referenced by code but living outside the obvious subsystem).</li>
+<li><strong>Local <code>/home/rootrecord/Database</code></strong> — audited separately when local filesystem access is available: <code>Database/ENERGY/</code>, <code>Database/GITHUB/</code>, existing SQLite files, JSON collections, historical copies, duplicate archives. Existing Energy structures are not automatically the final architecture.</li>
+</ol>
+<h3>5.2 For every file considered for change</h3>
+<ul>
+<li><strong>Inbound:</strong> what calls/imports/reads/launches/references it?</li>
+<li><strong>Outbound:</strong> what does it call/import/write/launch/modify?</li>
+<li><strong>Runtime owner:</strong> what service/process actually executes it?</li>
+<li><strong>Persistence impact:</strong> what data does changing it affect?</li>
+<li><strong>Git impact:</strong> could changing it alter sync behavior?</li>
+</ul>
+<p>A file isn't safe to replace just because another file looks like it does the same thing.</p>
+<h3>5.3 File classification</h3>
+<p>Every relevant persistent file eventually gets one label: <code>CANONICAL_CONFIG</code>, <code>CANONICAL_RUNTIME_STATE</code>, <code>CANONICAL_TELEMETRY</code>, <code>HISTORICAL_DATA</code>, <code>GENERATED</code>, <code>CACHE</code>, <code>DIAGNOSTIC_LOG</code>, <code>COMPATIBILITY</code>, <code>LEGACY</code>, or <code>UNKNOWN</code>. Nothing marked <code>UNKNOWN</code> gets deleted or migrated until its purpose is established.</p>
+<h3>5.4 Explicitly forbidden during the audit</h3>
+<p>No deleting, renaming, moving, or rewriting files; no replacing schedulers, BLE ingestion, or telemetry paths; no migrating or deleting data (JSON, logs, historical); no initializing a DB over existing data; no changing Git remotes/branches; no <code>git reset --hard</code>, <code>git push --force(-with-lease)</code>, or <code>git clean -fd</code>; no enabling previously-disabled polling or new production timers; no altering production/Mainland deployment behavior. If local and remote repo state differ, report the difference — don't silently resolve it.</p>
+<h3>5.5 Don't build a second competing system</h3>
+<p>No second poller, scheduler, GitHub sync engine, BLE pipeline, telemetry database, or bucket hierarchy. Existing components get integrated, deliberately replaced, or deliberately retired — never duplicated alongside.</p>
+<h3>5.6 Audit deliverable</h3>
+<p>Before any implementation starts, produce: (A) repository map, (B) runtime map — what runs and what launches it, (C) telemetry map — source → ingestion → storage → aggregation → consumer, (D) scheduling map, (E) Git sync map, (F) storage map with classifications, (G) dependency map, (H) migration map per component (<code>KEEP</code> / <code>MODIFY</code> / <code>REPLACE</code> / <code>MIGRATE</code> / <code>RETIRE</code> / <code>INVESTIGATE</code> — classifications, not commands), (I) risk list (destructive-op risks, duplicate schedulers/pipelines, data-loss risks, race conditions, missing-boundary risks, Git risks, stale paths, unknown dependencies), (J) nine-layer mapping — for every current telemetry mechanism, which of the nine layers (section 2) it maps to, or <code>UNMAPPED</code> if none.</p>
+<h3>5.7 Implementation gate</h3>
+<p>Move from audit to migration only once: the inventory is complete, runtime ownership is understood, telemetry flow is understood, existing schedulers and Git sync are identified, storage is classified, the nine-layer mapping is done, unknown dependencies are resolved, destructive operations are explicitly excluded, and the migration sequence is documented. The first real implementation step should be the <strong>smallest reversible change</strong> that establishes the new architecture.</p>
+<hr>
+<h2>6. Outstanding Diagnostic Commands (read-only, run on the machine itself)</h2>
+<pre><code class="language-bash">systemctl --user cat ava-auto-push.timer 2&gt;/dev/null || true
+systemctl --user cat ava-auto-push.service 2&gt;/dev/null || true
+systemctl --user cat ava-ecoflow-ble.service 2&gt;/dev/null || true
+systemctl --user cat rr-rootserver-poller.service 2&gt;/dev/null || true
+
+echo; echo &#34;=== ALL ROOTRECORD TIMERS ===&#34;
+systemctl --user list-timers --all 2&gt;/dev/null \
+  | grep -Ei &#39;ava|rr-|rootrecord|energy|poll|push|publish|ingest&#39; || true
+
+echo; echo &#34;=== GIT-TRACKED LOGS ===&#34;
+cd /home/rootrecord/.ollama/skills
+git ls-files | grep -Ei &#39;(^|/)(logs?|.*\.log$)&#39; | head -300
+
+echo; echo &#34;=== GIT-TRACKED JSON ===&#34;
+git ls-files | grep -Ei &#39;\.json$&#39; | head -300
+
+echo; echo &#34;=== GITIGNORE ===&#34;
+cat .gitignore
+
+echo; echo &#34;=== ENERGY POLL CODE ===&#34;
+find energy/scripts/poll energy/lib energy/scripts/ble \
+  -maxdepth 3 -type f -print 2&gt;/dev/null | sort
+
+echo; echo &#34;=== CURRENT SCHEDULER DEFINITIONS ===&#34;
+grep -RIn --exclude-dir=.git \
+  &#39;interval_sec\|next_due\|ON_AT\|wall_clock\|schedule&#39; \
+  automations/scripts 2&gt;/dev/null | head -400
+</code></pre>
+<p>This is purely diagnostic — nothing is modified.</p>
+<hr>
+<h2>7. Implementation Order</h2>
+<pre><code>1. Repository audit (section 5) + diagnostic commands (section 6)
+2. Source data inventory (Energy/BLE payloads, JSON files, logs)
+3. Finalize 9-layer schema against real payloads
+4. Build database skill (schema, lib, scripts)
+5. Initialize empty DB — no producer changes yet
+6. BLE → DB migration (structured insert replaces log append)
+7. Dual-write validation (old path + DB, compare)
+8. Cut BLE fully over to DB
+9. Git runtime-artifact cleanup (inventory → migrate → git rm --cached → .gitignore)
+10. Build the condensation engine (1sec→1min→...→year, per section 2)
+11. Historical backfill (from earliest real data → present, idempotent)
+12. Wall-clock scheduler integrated into existing poller
+13. Move GitHub sync to exact clock boundaries
+14. JSON reduction (classify all 889 files → keep/migrate/generate/delete)
+15. Read-only LLM query interface onto the DB
+16. Thin Mainland/AWS updater
+17. Full failure/rollback test pass
+18. Production cutover
+</code></pre>
+<p><strong>Rule for every step above:</strong> inspect before implementing. Nothing in this plan is assumed correct until it's been checked against the actual repository, running processes, and real data.</p>
+<hr>
+<h2>8. Rollback Requirements</h2>
+<p>Before any destructive step:</p>
+<ul>
+<li>Git commit</li>
+<li>DB backup</li>
+<li>config backup</li>
+<li>source-data backup</li>
+<li>migration marker</li>
+</ul>
+<p>Never delete original source data until: migration is verified, queries against the new layer are verified, the live producer is verified, and a rollback path is confirmed to work.</p>
+<hr>
+<h2>9. Current Status</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> GitHub repos reconciled; bidirectional sync built and tested</li>
+<li><input checked="" disabled="" type="checkbox"> Local data-layer audit completed (Energy stubs, BLE dependency chain, log volume, JSON volume)</li>
+<li><input checked="" disabled="" type="checkbox"> Bucket model corrected to the 9-layer condensing architecture, working vs. permanent tiers (section 2)</li>
+<li><input checked="" disabled="" type="checkbox"> Formal pre-migration audit protocol defined (section 5)</li>
+<li><input disabled="" type="checkbox"> Repository audit executed (sections 5 &amp; 6 — blocked on repo/filesystem access)</li>
+<li><input disabled="" type="checkbox"> Schema finalized against real payloads</li>
+<li><input disabled="" type="checkbox"> Database skill built</li>
+<li><input disabled="" type="checkbox"> BLE → DB migration</li>
+<li><input disabled="" type="checkbox"> Git runtime cleanup</li>
+<li><input disabled="" type="checkbox"> Condensation engine</li>
+<li><input disabled="" type="checkbox"> Historical backfill</li>
+<li><input disabled="" type="checkbox"> Wall-clock scheduler</li>
+<li><input disabled="" type="checkbox"> Exact-boundary GitHub sync</li>
+<li><input disabled="" type="checkbox"> JSON reduction</li>
+<li><input disabled="" type="checkbox"> LLM query interface</li>
+<li><input disabled="" type="checkbox"> Mainland thin edge</li>
+<li><input disabled="" type="checkbox"> Production validation</li>
+</ul>
+<hr>
+<h2>10. Definition of Done</h2>
+<ol>
+<li>BLE telemetry no longer lives in a Git-tracked growing log.</li>
+<li>All runtime telemetry lives in SQLite, structured per the 9-layer model.</li>
+<li>Each of the 9 layers condenses on its correct wall-clock boundary, with missed-boundary self-healing.</li>
+<li>Missing data is never fabricated.</li>
+<li>Backfill is idempotent.</li>
+<li>GitHub sync runs on exact clock boundaries and never carries telemetry.</li>
+<li>JSON sprawl is classified and reduced.</li>
+<li>LLMs can query the DB directly, read-only.</li>
+<li>Existing RootRecord functionality is intact throughout.</li>
+<li>Mainland can update independently from GitHub.</li>
+<li>No destructive Git operation exists anywhere in the pipeline.</li>
+<li>Every migration step has a documented rollback.</li>
+</ol>
+
+</body></html>
