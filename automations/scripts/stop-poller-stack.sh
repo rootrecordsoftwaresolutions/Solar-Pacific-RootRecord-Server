@@ -1,10 +1,28 @@
 #!/usr/bin/env bash
-# INFO — MUST HAVE: stop EVERY rootserver poller / cloudflared / unit process.
+# ==============================================================================
+# stop-poller-stack.sh — stop EVERY rootserver poller / cloudflared / unit process
+# ------------------------------------------------------------------------------
+# Used by: Ctrl-C / window close (poller-watch), rootserver-poller stop,
+#          do-stack-reload.sh.
+# Does NOT stop ava-ecoflow-ble (single BLE owner stays).
+# Layout style (standing): keep SECTION banners.
+# ==============================================================================
 set -u
+
+# ====================================================
+# SECTION: CONFIG
+# ====================================================
 UNIT=rr-rootserver-poller.service
+
+# ====================================================
+# SECTION: STOP UNIT
+# ====================================================
 echo "[stop] stopping systemd unit ${UNIT}…"
 systemctl --user stop "${UNIT}" 2>/dev/null || true
 
+# ====================================================
+# SECTION: MATCH KILLS (soft then hard)
+# ====================================================
 kill_match() {
   local pat="$1"
   local pids
@@ -22,7 +40,6 @@ kill_match 'automations/scripts/poller-watch\.py'
 
 sleep 1
 
-# hard kill leftovers
 for pat in 'rootserver_poller\.py' 'automations/bin/cloudflared' 'automations/scripts/poller-watch\.py'; do
   pids=$(pgrep -f "$pat" 2>/dev/null || true)
   if [ -n "$pids" ]; then

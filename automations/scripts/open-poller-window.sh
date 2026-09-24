@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
-# Open colored live poller window. Ctrl-C in that window stops the whole stack.
+# ==============================================================================
+# open-poller-window.sh — open colored live poller status window
+# ------------------------------------------------------------------------------
+# Ctrl-C or close window must stop the whole stack (handled in poller-watch.py).
+# Used by: rootserver-poller window, do-stack-reload after start.
+# Layout style (standing): keep SECTION banners.
+# ==============================================================================
 set -euo pipefail
+
+# ====================================================
+# SECTION: PATHS
+# ====================================================
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WATCH="$ROOT/scripts/poller-watch.py"
 TITLE="RootRecord poller — rootserver"
@@ -8,6 +18,9 @@ export POLLER_LOG="${POLLER_LOG:-$HOME/.ollama/skills/logs/store/rootserver-poll
 mkdir -p "$(dirname "$POLLER_LOG")"
 touch "$POLLER_LOG"
 
+# ====================================================
+# SECTION: OPEN TERMINAL
+# ====================================================
 if command -v gnome-terminal >/dev/null 2>&1; then
   exec gnome-terminal --title="$TITLE" --geometry=100x36 -- \
     bash -lc "exec /usr/bin/python3 '$WATCH'"
