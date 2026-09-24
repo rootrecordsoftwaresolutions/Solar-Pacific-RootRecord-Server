@@ -64,6 +64,61 @@ class AggregateRegressionTests(unittest.TestCase):
             )
         return obs
 
+    def test_sequence_less_observation_is_idempotent(self):
+        first = create_observation(
+            self.conn,
+            device_id=self.device,
+            observed_at="2026-09-24T22:00:00.000Z",
+            source_id=self.source,
+            online=True,
+        )
+        second = create_observation(
+            self.conn,
+            device_id=self.device,
+            observed_at="2026-09-24T22:00:00.000Z",
+            source_id=self.source,
+            online=False,
+        )
+        count = self.conn.execute(
+            "SELECT COUNT(*) FROM observation WHERE device_id=? AND observed_at=? AND source_id=?",
+            (self.device, "2026-09-24T22:00:00.000Z", self.source),
+        ).fetchone()[0]
+        self.assertEqual(first, second)
+        self.assertEqual(count, 1)
+
+    def test_text_port_metadata_is_not_numeric_aggregate_data(self):
+        obs = self.observation("2026-09-24T22:00:05.000Z")
+        self.conn.execute(
+            "INSERT INTO device_port(device_id,port_type,port_index) VALUES (?,?,?)",
+            (self.device, "usb", 1),
+        )
+        port = self.conn.execute(
+            "SELECT port_id FROM device_port WHERE device_id=? AND port_type='usb' AND port_index=1",
+            (self.device,),
+        ).fetchone()[0]
+        add_port_measurement(
+            self.conn,
+            observation_id=obs,
+            port_id=port,
+            metric_key="label",
+            value="USB-A",
+            state="measured",
+        )
+        self.conn.commit()
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
+        row = self.conn.execute(
+            """SELECT COUNT(*) FROM aggregate_measurement am
+               JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
+               WHERE ar.layer='1min' AND am.subject_type='port'
+                 AND am.subject_id=? AND am.metric_key='label'""",
+            (port,),
+        ).fetchone()[0]
+        self.assertEqual(row, 0)
+
     def test_power_crosses_period_boundary_without_losing_edge_energy(self):
         self.observation("2026-09-24T21:59:30.000Z", 100)
         self.observation("2026-09-24T22:00:30.000Z", 100)
