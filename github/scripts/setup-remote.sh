@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
-# Compat: skills remote only. Prefer setup-all-remotes.sh.
+# ============================================================================
+# github/scripts/setup-remote.sh — ensure origin remote for one repos.conf id
+# ----------------------------------------------------------------------------
+# WHAT: Configure remote URL with token (never printed). Args: <id>
+# Layout style (standing): keep this header.
+# ============================================================================
 set -euo pipefail
-SCRIPTS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
-source "$SCRIPTS/common.sh"
-ensure_bak_root
-ROOT="/home/rootrecord/.ollama/skills"
-SLUG="rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server"
-URL="git@github.com:${SLUG}.git"
-cd "$ROOT"
-if git remote get-url backup >/dev/null 2>&1; then
-  git remote set-url backup "$URL"
-  echo "Updated existing 'backup' remote → SSH."
-else
-  git remote add backup "$URL"
-  echo "Added new 'backup' remote → SSH."
+source "$HERE/common.sh"
+ID="${1:?id required}"
+load_token
+line=$(grep -E "^${ID}\t" "$REPOS_CONF" || true)
+[[ -n "$line" ]] || { echo "ERROR: id $ID not in repos.conf" >&2; exit 1; }
+IFS=$'\t' read -r id enabled mode local_path slug remote_name <<<<"$line"
+mkdir -p "$local_path"
+if [[ ! -d "$local_path/.git" ]]; then
+  echo "[skip] $id — no .git at $local_path"
+  exit 0
 fi
-# Also scrub origin if it still embeds a token
-if git remote get-url origin >/dev/null 2>&1; then
-  git remote set-url origin "$URL"
-  echo "Origin scrubbed → SSH."
-fi
-echo "Done. No PAT in remote URLs."
+url="https://x-access-token:${GITHUB_TOKEN}@github.com/${slug}.git"
+git -C "$local_path" remote remove "$remote_name" 2>/dev/null || true
+git -C "$local_path" remote add "$remote_name" "$url"
+echo "[ok] $id remote $remote_name → github.com/$slug"

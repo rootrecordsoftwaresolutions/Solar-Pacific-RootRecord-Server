@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-# Legacy alias: skills repo only. Prefer sync-all.sh / push-repo-once.sh.
-exec "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/push-repo-once.sh" skills
+# ============================================================================
+# github/scripts/push-once.sh — thin wrapper: push skills once
+# ----------------------------------------------------------------------------
+# WHAT: Calls push-repo-once.sh skills
+# Layout style (standing): keep this header.
+# ============================================================================
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec bash "$HERE/push-repo-once.sh" skills

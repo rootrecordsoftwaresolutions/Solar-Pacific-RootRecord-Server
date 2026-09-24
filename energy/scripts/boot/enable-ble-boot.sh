@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
-# Wire + enable single BLE owner on boot (thin). Safe to re-run.
+# ============================================================================
+# energy/scripts/boot/enable-ble-boot.sh — enable BLE owner at login
+# ----------------------------------------------------------------------------
+# WHAT: systemctl --user enable --now ava-ecoflow-ble.service
+# Layout style (standing): keep this header.
+# ============================================================================
 set -euo pipefail
+UNIT=ava-ecoflow-ble.service
 systemctl --user daemon-reload
-systemctl --user enable ava-ecoflow-ble.service
-systemctl --user restart ava-ecoflow-ble.service
-systemctl --user --no-pager --full status ava-ecoflow-ble.service | head -25
-echo "log: /home/rootrecord/.ollama/skills/logs/store/ava-ecoflow-ble.log"
+systemctl --user enable --now "$UNIT"
+systemctl --user is-enabled "$UNIT"
+systemctl --user is-active "$UNIT"
