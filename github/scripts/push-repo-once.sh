@@ -125,38 +125,38 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   # Final race-safe push. Another writer may update GitHub between the
   # earlier fetch and this push. Re-fetch and merge once before retrying.
   for attempt in 1 2; do
-    local_head="\$(git rev-parse HEAD)"
-    git fetch "\$remote_name" "\$branch" >/dev/null 2>&1 || {
-      echo "✗ [\$id] final fetch failed" >&2
+    local_head="$(git rev-parse HEAD)"
+    git fetch "$remote_name" "$branch" >/dev/null 2>&1 || {
+      echo "✗ [$id] final fetch failed" >&2
       exit 1
     }
-    remote_ref="\$remote_name/\$branch"
-    remote_head="\$(git rev-parse "\$remote_ref")"
+    remote_ref="$remote_name/$branch"
+    remote_head="$(git rev-parse "$remote_ref")"
 
-    if [[ "\$local_head" == "\$remote_head" ]]; then
-      echo "— [\$id] nothing to push"
+    if [[ "$local_head" == "$remote_head" ]]; then
+      echo "— [$id] nothing to push"
       exit 0
     fi
 
-    if ! git merge-base --is-ancestor "\$remote_ref" HEAD; then
-      echo "↓ [\$id] remote changed during sync; merging before push (attempt \$attempt)"
-      if ! git merge --no-edit "\$remote_ref" 2>&1 | redact; then
+    if ! git merge-base --is-ancestor "$remote_ref" HEAD; then
+      echo "↓ [$id] remote changed during sync; merging before push (attempt $attempt)"
+      if ! git merge --no-edit "$remote_ref" 2>&1 | redact; then
         git merge --abort >/dev/null 2>&1 || true
-        echo "✗ [\$id] final merge conflict; local history preserved" >&2
+        echo "✗ [$id] final merge conflict; local history preserved" >&2
         exit 1
       fi
     fi
 
-    if git push -u "\$remote_name" "HEAD:refs/heads/\$branch" 2>&1 | redact; then
-      echo "↑ [\$id] \$n files → \$slug (\$branch)"
-      echo "[\$(date -u +%Y-%m-%dT%H:%M:%SZ)] [\$id] pushed \$branch (\$n file(s)) → \$slug" >> "\$BAK_ROOT/logs/\$id.log"
+    if git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact; then
+      echo "↑ [$id] $n files → $slug ($branch)"
+      echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug" >> "$BAK_ROOT/logs/$id.log"
       exit 0
     fi
 
-    echo "↻ [\$id] push raced with another writer; retrying" >&2
+    echo "↻ [$id] push raced with another writer; retrying" >&2
   done
 
-  echo "✗ [\$id] push failed after race-safe retries; local history preserved" >&2
+  echo "✗ [$id] push failed after race-safe retries; local history preserved" >&2
   exit 1
   exit 0
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
