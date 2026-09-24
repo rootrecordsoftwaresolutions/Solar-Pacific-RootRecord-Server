@@ -43,17 +43,25 @@ Do not create:
 
 Use the existing final path.
 
+## File layout style (standing)
+
+Operator-facing config and catalogs use **section banners + TEMPLATE blocks** (canonical: `automations/scripts/jobs.py`).
+
+- Do not strip SECTION / TEMPLATE / HOW TO ADD documentation to compress files.
+- When editing such a file, keep the layout; add new entries above the TEMPLATE.
+- If you find the layout missing, restore it from git history and re-apply live entries.
+
+Detail: `prompts/09-file-layout-style.md`.
+
 ## Deploy format — standing rule for all future builds
 
 **Keep this format forever unless the operator explicitly changes policy:**
 
 1. Push to GitHub `main` (skills / existing repos).
 2. Desk `github_sync_all` merges (never force-push / never `reset --hard`).
-3. Skills merge → automatic **full** poller stack stop/start (`schedule-stack-reload.sh`).
+3. Skills merge → automatic **full** poller stack stop/start (`schedule-stack-reload.sh`) and reopen status window.
 4. No second poller, second cloudflared, second BLE owner, or parallel “apply code” process.
 5. Do not default to “please restart the poller” after ordinary pushes.
-
-New features, jobs, energy paths, and services must fit this path. Do not invent a competing deploy or restart scheme.
 
 ## No parallel runtime
 
