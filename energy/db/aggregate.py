@@ -69,9 +69,10 @@ def _aggregate(rows,start,end,power=False):
                 "value_avg":None,"value_min":None,"value_max":None,"value_sum":None,
                 "value_delta":None,"energy_wh":None,"state":_state(rows)}
     energy,covered=_energy(rows,start,end) if power else (None,0.0)
+    observed_span_s=max(0.0,(_dt(numeric[-1]["at"])-_dt(numeric[0]["at"])).total_seconds()) if len(numeric)>1 else 0.0
     span=(end-start).total_seconds()
     coverage=100.0*covered/span if power else 100.0*len(numeric)/max(1,len(period_rows))
-    return {"sample_count":len(period_rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),
+    return {"sample_count":len(period_rows),"valid_sample_count":len(vals),"coverage_pct":min(100.0,coverage),"observed_span_s":observed_span_s,"valid_duration_s":covered if power else None,
             "value_avg":sum(vals)/len(vals),"value_min":min(vals),"value_max":max(vals),
             "value_sum":sum(vals),"value_delta":vals[-1]-vals[0],"energy_wh":energy,
             "state":"measured"}
