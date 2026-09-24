@@ -47,6 +47,26 @@ The standard development loop is:
 
 Do not stop after writing a file and call it fixed.
 
+## 3b. Deploy format — standing rule for all future builds
+
+**This is permanent policy for Solar Pacific skills deploys. Keep this format for all future builds.**
+
+| Step | What happens |
+|------|----------------|
+| 1 | Change lands on GitHub `main` |
+| 2 | Desk `github_sync_all` (~300s) fetch/merge (no force-push, no hard reset) |
+| 3 | Skills merge arms `Database/GITHUB/flags/reload-poller-stack` |
+| 4 | `schedule-stack-reload.sh` fully stops then starts the poller stack |
+| 5 | New code runs; no parallel “activate” process |
+
+**AIs must not:** recommend default manual poller restart after ordinary pushes; start a second poller/tunnel/BLE owner; invent a competing deploy path.
+
+**AIs must:** preserve this format when adding jobs, energy features, or services; document handoffs so the next agent inherits the same expectation.
+
+Manual restart or full machine reboot only when the operator asks, the stack is hung, or a one-time first load of the automation is needed.
+
+Detail: `handoff/AUTO-STACK-RELOAD-2026-09-24.md`, `automations/scripts/schedule-stack-reload.sh`.
+
 ## 4. Live state and telemetry
 
 The live-state layer is part of the operating context.
@@ -176,7 +196,8 @@ A handoff should tell the next agent:
 - what was actually verified;
 - what remains;
 - what is historical;
-- what the next concrete action is.
+- what the next concrete action is;
+- that **deploy remains push → sync → auto full stack reload** for future builds.
 
 Do not create a giant handoff simply because the previous session was long.
 
@@ -236,3 +257,5 @@ When a reset, migration, or repository cleanup has occurred:
 ## 17. Final rule
 
 Do the work, verify the work, and leave the next agent a cleaner understanding than the one you started with.
+
+Preserve the standing deploy format (GitHub → sync → auto full stack reload) in every future build unless the operator explicitly changes policy.
