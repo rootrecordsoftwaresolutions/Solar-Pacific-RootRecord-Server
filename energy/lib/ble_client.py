@@ -16,6 +16,12 @@ from envload import user_id, load_env  # noqa: E402
 
 MFG_KEY = 0xB5B5
 
+# Optional env overrides for known aliases (legacy). Prefer devices.conf mac=.
+_MAC_ENV_BY_ALIAS = {
+    "delta2": "AVA_ECOFLOW_BLE_MAC",
+    "river2pro": "AVA_ECOFLOW_RIVER_BLE_MAC",
+}
+
 
 class BleUnavailable(RuntimeError):
     pass
@@ -57,6 +63,16 @@ async def _scan(mac: str, seconds: float = 10.0):
     return found.get("rec")
 
 
+def _resolve_mac(alias: str, cfg: dict) -> str:
+    """Env override if present, else devices.conf mac=. Never invent a MAC."""
+    env_key = _MAC_ENV_BY_ALIAS.get(alias, "")
+    if env_key:
+        from_env = (os.environ.get(env_key, "") or "").strip()
+        if from_env:
+            return from_env
+    return (cfg.get("mac", "") or "").strip()
+
+
 async def connect(alias: str):
     """Connect Device for alias. Raises BleUnavailable on missing deps/device."""
     ok, reason = eflib_ready()
@@ -67,12 +83,15 @@ async def connect(alias: str):
     if not uid:
         raise BleUnavailable("AVA_ECOFLOW_USER_ID not set (env file missing or empty)")
     cfg = device_cfg(alias)
-    env_mac_key = "AVA_ECOFLOW_BLE_MAC" if alias == "delta2" else "AVA_ECOFLOW_RIVER_BLE_MAC"
-    mac = (os.environ.get(env_mac_key, "") or cfg.get("mac", "")).strip()
+    mac = _resolve_mac(alias, cfg)
     if not mac:
-        raise BleUnavailable(f"no MAC for {alias}")
+        raise BleUnavailable(
+            f"no MAC for {alias} (set mac= in devices.conf or env override; do not invent)"
+        )
     sn = cfg.get("sn", "")
     mod = cfg.get("eflib_module", "")
+    if not mod:
+        raise BleUnavailable(f"no eflib_module for {alias}")
     import importlib
     Device = importlib.import_module(mod).Device
     rec = await _scan(mac)
