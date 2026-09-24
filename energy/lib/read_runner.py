@@ -20,6 +20,21 @@ def _fields(device):
             "ac_output_power":g("ac_output_power"),"ac_input_power":g("ac_input_power"),
             "usbc_output_power":g("usbc_output_power"),"usba_output_power":g("usba_output_power"),
             "solar_input_power":solar,"soc":g("battery_level",g("soc"))}
+def _summary_line(alias: str, fields: dict, db_ok: bool) -> str:
+    def fmt(v, unit=""):
+        if v is None:
+            return "—"
+        if isinstance(v, float) and v == int(v):
+            v = int(v)
+        return f"{v}{unit}"
+    return (
+        f"SUMMARY={alias}"
+        f" soc={fmt(fields.get('soc'),'%')}"
+        f" solar={fmt(fields.get('solar_input_power'),'W')}"
+        f" ac_out={fmt(fields.get('ac_output_power'),'W')}"
+        f" usbc={fmt(fields.get('usbc_output_power'),'W')}"
+        f" db={'ok' if db_ok else 'fail'}"
+    )
 async def _read(alias):
     device=await connect(alias)
     await asyncio.sleep(2.0)
@@ -27,31 +42,37 @@ async def _read(alias):
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--device",required=True); args=p.parse_args(); ensure_dirs()
     ok,reason=eflib_ready()
-    if not ok: print("WAITING"); print(f"No data — {reason}"); return 2
+    if not ok: print("WAITING"); print(f"No data — {reason}"); print("STATUS=WAITING"); return 2
     try: device,snap=asyncio.run(_read(args.device))
-    except BleUnavailable as e: print("WAITING"); print(f"No data — {e}"); return 2
-    except Exception as e: print("WAITING"); print(f"No data — {type(e).__name__}: {e}"); return 1
+    except BleUnavailable as e: print("WAITING"); print(f"No data — {e}"); print("STATUS=WAITING"); return 2
+    except Exception as e: print("WAITING"); print(f"No data — {type(e).__name__}: {e}"); print("STATUS=WAITING"); return 1
     observed_at=datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00","Z")
     snap["at"]=datetime.now(HST).isoformat(timespec="seconds"); snap["source"]="ble"
+    db_ok=False
     try:
         persist_eflow_device(device,args.device,observed_at)
         condense_closed_periods()
+        db_ok=True
     except Exception as e:
         print(f"DB_ERROR: {type(e).__name__}: {e}",file=sys.stderr)
         try: asyncio.run(device.disconnect())
         except Exception: pass
-        return 1
+        # still write JSON compatibility if we have fields
     finally:
         try: asyncio.run(device.disconnect())
         except Exception: pass
+    fields=snap["fields"]
     path=SAMPLES/f"read-{args.device}-{datetime.now(HST).strftime('%Y%m%d-%H%M%S')}.json"
     path.write_text(json.dumps(snap,indent=2),encoding="utf-8")
-    fields=snap["fields"]
     if fields.get("soc") is not None: (SOC/f"{args.device}-last.json").write_text(json.dumps({"soc":fields["soc"],"at":snap["at"]},indent=2))
     watts={k:fields[k] for k in ("ac_output_power","ac_input_power","usbc_output_power","solar_input_power") if fields.get(k) is not None}
     if watts: (WATTS/f"{args.device}-last.json").write_text(json.dumps({**watts,"at":snap["at"]},indent=2))
-    else: print("WAITING"); print("No data — connected but watt fields empty/None (not inventing)")
-    print(json.dumps(snap,indent=2))
-    print("STATUS=OK" if any(v is not None for v in fields.values()) else "STATUS=WAITING")
-    return 0 if any(v is not None for v in fields.values()) else 2
+    print(_summary_line(args.device, fields, db_ok))
+    any_val=any(v is not None for v in fields.values())
+    if not any_val:
+        print("WAITING"); print("No data — connected but fields empty/None (not inventing)")
+        print("STATUS=WAITING")
+        return 2
+    print("STATUS=OK")
+    return 0 if db_ok else 1
 if __name__=="__main__": raise SystemExit(main())
