@@ -28,8 +28,12 @@ Move RootRecord away from sprawling JSON, growing telemetry logs, filesystem buc
 ---
 
 ## 2. Nine-layer model (canonical)
+
+```
 1sec → 1min → 5min → 15min → 1hour → day → 7days → month → year
-text**Working (reset after verified condensation):** 1sec, 1min, 5min, 15min, 1hour  
+```
+
+**Working (reset after verified condensation):** 1sec, 1min, 5min, 15min, 1hour  
 **Permanent (append-only):** day, 7days, month, year
 
 Rules (non-negotiable):
@@ -58,9 +62,11 @@ Timestamps: observations stored as UTC ISO-8601 with `Z`. Reporting boundaries u
 |---------|-----|------|
 | B1 | R621ZA16XH6K1155 | River 2 Pro — top-level device |
 | B2 | R331ZAB5SG6S2858 | Delta 2 — top-level device |
-| B3 | R331ZAB5SG755642 | Expansion battery under B2 (not a separate device) |
+| B3 | R331ZAB5SG755642 | Expansion battery under B2 (not a separate BLE device) |
 
-`devices.conf` currently has only B2 and B1. Secondary Delta 2 / B3 config gap must be closed deliberately.
+`devices.conf` records B3 under `[delta2]` (`expansion_expected_sn`) and `[inventory]`. No MAC is invented for B3. Live discovery is via eflib `battery_*_sn` when the pack is attached to B2.
+
+If B3 is ever a standalone second Delta 2, add a full `[delta2_secondary]` section with a real `mac=` and `eflib_module=` — never invent a MAC.
 
 ---
 
@@ -75,6 +81,7 @@ Timestamps: observations stored as UTC ISO-8601 with `Z`. Reporting boundaries u
 - [x] Regression tests for zero/missing/boundary/gap/idempotency
 - [x] Bidirectional GitHub sync present (do not rebuild); telemetry not to be committed
 - [x] BLE owner and action scripts preserved
+- [x] B3 expansion inventory documented in `devices.conf` (expected SN + parent; no invented MAC)
 
 ---
 
@@ -82,14 +89,25 @@ Timestamps: observations stored as UTC ISO-8601 with `Z`. Reporting boundaries u
 
 Ordered; each step is inspect-then-change.
 
-1. **Close config inventory gap**  
-   Add secondary Delta 2 / B3 section to `energy/config/devices.conf` so expansion battery identity is runtime-discoverable.
+1. ~~Close config inventory gap~~ **done** — B3 documented as expansion under B2; no MAC invented.
 
 2. **Production DB initialization (operator)**  
    Initialize empty DB at the canonical path; run verifier. No mass import required unless explicitly chosen.
 
+   ```bash
+   cd /home/rootrecord/.ollama/skills
+   energy/lib/py -m energy.scripts.init_rootrecord_db
+   # or: energy/lib/py energy/scripts/init_rootrecord_db.py
+   energy/lib/py energy/scripts/verify_rootrecord_db.py
+   ```
+
 3. **Live dual-write validation**  
-   Real BLE reads → confirm observation counts, state semantics, expansion-battery rows, condensation of closed periods. Keep legacy JSON until verified.
+   Real BLE reads of `delta2` and `river2pro` → confirm observation counts, state semantics, expansion-battery rows when B3 is attached, condensation of closed periods. Keep legacy JSON until verified.
+
+   ```bash
+   energy/scripts/read/delta2-read.sh
+   energy/scripts/read/river2pro-read.sh
+   ```
 
 4. **Wall-clock scheduler integration**  
    Hook condensation (and any remaining timing) into existing poller/timers. No competing scheduler.
@@ -120,7 +138,7 @@ Ordered; each step is inspect-then-change.
 - Second BLE owner / poller / scheduler / sync engine
 - Importing historical EcoFlow DBs by default (inspect-only unless decided otherwise)
 - Treating `energy/data/` as the production DB path (superseded by code)
-- Fabricating missing values
+- Fabricating missing values or inventing BLE MACs
 - Enabling aggressive poll buckets while dual-write validation is incomplete
 - Force-push or hard-reset in any sync path
 
@@ -143,13 +161,14 @@ Ordered; each step is inspect-then-change.
 
 ---
 
-## 9. 2026-09-24 checkpoint (reconciled)
+## 9. Checkpoint
 
-Code on `main` implements schema, dual-write ingestion, condensation, and verification tooling. Production database initialization and full live cutover have **not** been claimed complete. The worklog entry that still said “audit / inventory in progress before schema lock” is superseded by the implemented tree; treat this plan’s status sections as authoritative going forward.
+Code on `main` implements schema, dual-write ingestion, condensation, verification tooling, and B3 inventory in config. Production database initialization and full live cutover have **not** been claimed complete.
 
-Canonical DB path (code): `/home/rootrecord/Database/ROOTRECORD/rootrecord.db`  
-(Earlier “energy/data/” preference is superseded.)
+Canonical DB path (code): `/home/rootrecord/Database/ROOTRECORD/rootrecord.db`
 
-Still open: devices.conf B3 gap, production DB init + live validation, wall-clock scheduler integration, exact-boundary Git sync, Git runtime cleanup, JSON reduction, LLM query interface, Mainland edge, full cutover.
+**Next operator action:** init + verify DB, then live dual-write reads.
 
-Do not treat historical EcoFlow DBs as import sources unless explicitly decided. Preserve BLE owner and existing sync.
+Still open after that: wall-clock scheduler integration, exact-boundary Git sync, Git runtime cleanup, JSON reduction, LLM query interface, Mainland edge, full cutover.
+
+Preserve BLE owner and existing sync. Do not treat historical EcoFlow DBs as import sources unless explicitly decided.
