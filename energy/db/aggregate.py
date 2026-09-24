@@ -139,9 +139,11 @@ def aggregate_period(conn,layer,start,end,source_layer="raw"):
                              WHERE o.observed_at>=? AND o.observed_at<? ORDER BY pm.port_id,pm.metric_key,o.observed_at""",
                           (neighbor_start,neighbor_end)):
         value=r["value_num"] if r["value_num"] is not None else r["value_bool"]
-        if value is None: value=r["value_text"]
-        add("port",r["port_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"],
-            period_start<=r["observed_at"]<period_end)
+        # aggregate_measurement is numeric by design; text port metadata stays
+        # in the canonical port_measurement table and is never coerced to float.
+        if value is not None:
+            add("port",r["port_id"],r["metric_key"],value,r["observed_at"],r["state"],r["unit"],
+                period_start<=r["observed_at"]<period_end)
 
     count=0
     for (stype,sid,metric,unit),rows in grouped.items():
