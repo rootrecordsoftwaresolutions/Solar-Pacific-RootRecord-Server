@@ -1,0 +1,26 @@
+name: Energy Data Layer Tests
+
+on:
+  push:
+    paths:
+      - "energy/**"
+      - ".github/workflows/energy-tests.yml"
+  pull_request:
+    paths:
+      - "energy/**"
+      - ".github/workflows/energy-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run data-layer regression tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python -m unittest discover -s energy/db -p "test_*.py" -v
