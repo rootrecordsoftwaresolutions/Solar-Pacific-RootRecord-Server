@@ -1,35 +1,31 @@
-version: "1.0"
+version: "1.1"
 updated: "2026-09-24"
 
 prompts:
   - id: core
     file: prompts/00-core.md
     required: true
-
   - id: architecture
     file: prompts/01-architecture.md
     required: true
-
   - id: agents
     file: prompts/02-agents.md
     required: true
-
   - id: development
     file: prompts/03-development.md
     required: true
-
   - id: operations
     file: prompts/04-operations.md
     required: true
-
   - id: energy
     file: prompts/05-energy.md
     required: false
-
   - id: handoff
     file: prompts/06-handoff.md
     required: true
-
   - id: current-state
     file: prompts/07-current-state.md
+    required: true
+  - id: repository-and-file-links
+    file: prompts/08-repository-and-file-links.md
     required: true

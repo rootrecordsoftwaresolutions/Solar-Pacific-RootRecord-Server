@@ -1,14 +1,36 @@
 # Agents
 
-Agents should use the master prompt as a common operating contract while retaining role-specific skills and repository-specific instructions.
+RootRecord's current conceptual agent framework includes:
 
-Relevant role/skill documentation should be consulted before making changes.
+- AVA — coordinating intelligence
+- Bruce — operational/monitoring specialization
+- Carly — specialized workflow/execution support
 
-Agents must distinguish:
+Current conceptual processing loop:
 
-- LIVE VERIFIED
-- DOCUMENTED POLICY
-- HISTORICAL
-- UNTESTED / UNKNOWN
+`AVA → Bruce → Carly → AVA`
 
-An agent should not claim to have inspected a live system when it only inspected an archive or handoff.
+This framework contains unresolved architectural questions. Do not invent final authority, values, memory boundaries, identity, or delegation rules.
+
+## Advisory vs verification
+
+Agent output is advisory.
+
+For operational claims, independent proof comes from the real system:
+
+- operator-run commands;
+- live readback;
+- packet/state evidence;
+- repository inspection.
+
+An agent saying something worked is not itself proof that hardware or live infrastructure changed.
+
+## Agent handoffs
+
+When handing work between agents, state:
+
+- confirmed facts;
+- changes;
+- evidence;
+- unresolved items;
+- historical context that must not be mistaken for current state.

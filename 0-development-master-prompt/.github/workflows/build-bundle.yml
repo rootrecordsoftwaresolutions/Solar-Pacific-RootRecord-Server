@@ -15,14 +15,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate manifest and required files
+      - name: Validate prompt manifest
         shell: bash
         run: |
           set -euo pipefail
           test -f MASTER-PROMPT.md
+          test -f README.md
           test -f manifest/prompts.yaml
           test -f skill/SKILL.md
           python3 - <<'PY'
+          import re
           from pathlib import Path
           import yaml
 
@@ -31,7 +33,10 @@ jobs:
               path = Path(item["file"])
               if item.get("required") and not path.is_file():
                   raise SystemExit(f"Missing required prompt: {path}")
-          print("Manifest validation passed.")
+          text = Path("prompts/08-repository-and-file-links.md").read_text()
+          if "rootrecordsoftwaresolutions" not in text:
+              raise SystemExit("Repository/file link index appears empty.")
+          print("Manifest and link-index validation passed.")
           PY
 
       - name: Build ZIP

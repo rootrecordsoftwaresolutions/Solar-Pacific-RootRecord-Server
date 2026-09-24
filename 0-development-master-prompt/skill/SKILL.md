@@ -1,34 +1,36 @@
 ---
 name: dev-prompts
-description: Load and apply the RootRecord Master Prompt and the applicable prompt files before development or operational work.
+description: Load the RootRecord Master Prompt and the applicable prompt files before RootRecord development or operational work.
 ---
 
 # RootRecord Dev Prompts Skill
 
-## Purpose
+## Canonical repository
 
-Use the RootRecord Master Prompt as the cross-project operating contract.
-
-## Canonical source
-
-The authoritative master-prompt repository is:
-
-`https://github.com/rootrecordsoftwaresolutions/RootRecord-Master-Prompt`
+https://github.com/rootrecordsoftwaresolutions/RootRecord-Master-Prompt
 
 ## Procedure
 
 1. Load `MASTER-PROMPT.md`.
-2. Load the prompt files applicable to the current task.
-3. Inspect the actual target repository before changing anything.
-4. Classify important facts as LIVE VERIFIED, DOCUMENTED POLICY, HISTORICAL, or UNTESTED / UNKNOWN.
-5. Make the smallest appropriate change.
-6. Verify the result.
-7. Report changed paths and evidence.
+2. Load the applicable prompt files.
+3. Load `prompts/08-repository-and-file-links.md` when navigating or changing frequently touched files.
+4. Inspect the actual target repository.
+5. Classify material facts as Confirmed, Hypothesis, Unknown, or Historical.
+6. Patch the existing final path.
+7. Validate.
+8. Independently double-check.
+9. Hand off with exact paths and evidence.
 
-## Temporary files
+## Existing-work rule
 
-For RootRecord work, do not leave disposable helper scripts in project/home directories. Use `/tmp/` when temporary files are actually needed.
+Do not create alternate roots, v2 trees, duplicate implementations, or migration scaffolding unless explicitly requested.
 
-## Durable changes
+## Temporary work
 
-If a durable architectural or workflow decision changes, update the appropriate master-prompt file rather than creating an isolated copy in another repository.
+Use `/tmp/` for disposable helpers.
+
+Permanent EcoFlow action scripts remain in the existing energy skill structure.
+
+## Operator workflow
+
+When a manual command is required, follow the established one-paste-safe-block workflow and use absolute paths.
