@@ -6,7 +6,7 @@ Measured samples → `/home/rootrecord/Database/ENERGY/` only (not Network).
 ## INFO — MUST HAVE
 
 - DESK_LIVE honesty: never invent watts/SOC. Unavailable → `WAITING` / `No data`, exit non-zero.
-- Devices: Delta 2 (AC = Starlink), River 2 Pro (laptop AC + car DC).
+- Devices: Delta 2 (unrestricted for testing), River 2 Pro (AC feeds Starlink as of 2026-09-23; laptop AC + car DC).
 - One BLE owner: user unit `ava-ecoflow-ble.service`. Do not dual-start pollers.
 - Poll buckets (1/5/15/30/60/daily): **stubs only** under `scripts/poll/` — enable after atomic actions prove out.
 - Secrets stay in env files; never paste into chat or SKILL.
