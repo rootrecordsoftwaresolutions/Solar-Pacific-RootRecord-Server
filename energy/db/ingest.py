@@ -13,8 +13,14 @@ def _serial(device: Any) -> str:
         return raw.decode(errors="replace")
     return str(raw or "UNKNOWN")
 
-def _state(value: Any) -> str:
-    return "missing" if value is None else "measured"
+def _state(device: Any, attr: str, value: Any) -> str:
+    """Preserve EFLIB's explicit missing-default semantics."""
+    if value is not None:
+        return "measured"
+    field = getattr(type(device), attr, None)
+    if getattr(field, "has_missing_default", False):
+        return "defaulted"
+    return "missing"
 
 def _ensure_port(conn, device_id, port_type, index=0):
     conn.execute("""INSERT INTO device_port(device_id,port_type,port_index)
@@ -67,7 +73,7 @@ def persist_eflow_device(device: Any, alias: str, observed_at: str) -> int:
                 v=_get(device,attr)
                 add_battery_measurement(conn, observation_id=observation_id,
                     battery_id=primary, metric_key=metric, value=v, unit=unit,
-                    state=_state(v))
+                    state=_state(device, attr, v))
 
         for attr, metric, unit in [
             ("input_power","input_power","W"),("output_power","output_power","W"),
@@ -83,7 +89,7 @@ def persist_eflow_device(device: Any, alias: str, observed_at: str) -> int:
             if hasattr(device, attr):
                 v=_get(device,attr)
                 add_device_measurement(conn, observation_id=observation_id,
-                    metric_key=metric, value=v, unit=unit, state=_state(v))
+                    metric_key=metric, value=v, unit=unit, state=_state(device, attr, v))
 
         for attr, channel, metric, unit in [
             ("input_power","input_total","power_w","W"),("output_power","output_total","power_w","W"),
@@ -100,7 +106,7 @@ def persist_eflow_device(device: Any, alias: str, observed_at: str) -> int:
             if hasattr(device, attr):
                 v=_get(device,attr)
                 add_electrical_measurement(conn, observation_id=observation_id,
-                    channel=channel, metric_key=metric, value=v, unit=unit, state=_state(v))
+                    channel=channel, metric_key=metric, value=v, unit=unit, state=_state(device, attr, v))
 
         for ptype, attr in [("ac","ac_ports"),("usb","usb_ports"),("dc12v","dc_12v_port")]:
             if hasattr(device,attr):
