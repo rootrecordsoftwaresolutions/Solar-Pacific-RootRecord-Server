@@ -59,3 +59,13 @@ Observation timestamps are canonical UTC ISO-8601 with `Z`. Reporting boundaries
 Power energy is integrated from elapsed valid measurements and bounded interpolation gaps; it is not calculated by assuming a full-period average.
 
 Aggregation runs are persisted and idempotent. Closed periods are not repeatedly rebuilt by the live runtime once marked complete.
+
+
+## Schema v2 duration semantics
+
+Aggregate rows also persist:
+- `observed_span_s`: elapsed time between the first and last valid in-period samples.
+- `valid_duration_s`: elapsed duration actually covered by bounded power integration.
+- `coverage_pct`: for power metrics, valid duration divided by the reporting-period duration; for non-power metrics, valid in-period samples divided by in-period samples.
+
+A power gap greater than 60 seconds is not interpolated. Measured zero remains measured zero; missing and not-applicable remain distinct.

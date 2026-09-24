@@ -1,11 +1,8 @@
 """Runtime condensation of newly closed telemetry periods."""
 from __future__ import annotations
-from datetime import datetime, timezone
+from datetime import datetime
 from energy.db.store import connect, initialize_schema
 from energy.db.aggregate import aggregate_period, period_bounds, LAYERS, _iso
-
-def _next_period(layer,start,end):
-    return end
 
 def condense_closed_periods(db_path=None):
     conn=connect(db_path) if db_path else connect()
