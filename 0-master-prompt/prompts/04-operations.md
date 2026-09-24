@@ -43,6 +43,24 @@ Verify:
 - whether a job actually fires;
 - whether the action changes the intended state.
 
+## Automated code apply (poller stack)
+
+**Confirmed automation:** After GitHub merges new skills code into the live tree, the desk **automatically** fully stops and restarts the poller stack.
+
+Path:
+
+1. `jobs.py` → `github_sync_all` (every ~300s) → `github/scripts/sync-all.sh`
+2. `push-repo-once.sh` merges remote → sets `Database/GITHUB/flags/reload-poller-stack`
+3. `automations/scripts/schedule-stack-reload.sh` defers ~8s, then:
+   - `stop-poller-stack.sh` (unit + poller + cloudflared + poller-watch)
+   - starts `rr-rootserver-poller.service` (or CLI fallback)
+
+**Do not** tell the operator to restart the poller after a normal code push/pull.
+**Do not** start a second poller, second tunnel, or parallel apply process.
+**Do not** kill `ava-ecoflow-ble.service` as part of code apply (BLE owner is separate).
+
+Manual `/home/rootrecord/rootserver-poller restart` is only for explicit operator request or a hung stack outside the sync window.
+
 ## Public endpoints
 
 Do not introduce unauthenticated mutation endpoints.
