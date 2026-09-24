@@ -1531,3 +1531,7 @@
 2026-09-23T23:57:58-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-23T23:58:28-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-23T23:58:58-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T23:59:27-10:00 action: OK Delta2 AC charging ON readback=True sample=/home/rootrecord/Database/ENERGY/samples/delta2-enable_ac_charging-on-20260923-235927.json
+2026-09-23T23:59:28-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-23T23:59:54-10:00 action: OK Delta2 AC charging OFF readback=True sample=/home/rootrecord/Database/ENERGY/samples/delta2-enable_ac_charging-off-20260923-235954.json
+2026-09-23T23:59:58-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
