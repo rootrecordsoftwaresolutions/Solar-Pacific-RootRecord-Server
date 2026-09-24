@@ -37,6 +37,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
       --exclude '.git' \
       --exclude 'node_modules' \
       --exclude '.next' \
+      --exclude 'tsconfig.tsbuildinfo' \
       "$local_path"/ "$root"/
   fi
 
