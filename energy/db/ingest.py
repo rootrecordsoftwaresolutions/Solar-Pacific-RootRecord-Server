@@ -113,7 +113,7 @@ def persist_eflow_device(device: Any, alias: str, observed_at: str) -> int:
                 pid=_ensure_port(conn,device_id,ptype)
                 v=_get(device,attr)
                 add_port_measurement(conn,observation_id=observation_id,port_id=pid,
-                    metric_key="enabled",value=v,state=_state(v))
+                    metric_key="enabled",value=v,state=_state(device, attr, v))
 
         for slot, prefix in ((1,"battery_1"),(2,"battery_2")):
             if not hasattr(device, f"{prefix}_enabled"):
@@ -131,7 +131,7 @@ def persist_eflow_device(device: Any, alias: str, observed_at: str) -> int:
                 if hasattr(device,attr):
                     v=_get(device,attr)
                     add_battery_measurement(conn,observation_id=observation_id,
-                        battery_id=bid,metric_key=metric,value=v,unit=unit,state=_state(v))
+                        battery_id=bid,metric_key=metric,value=v,unit=unit,state=_state(device, attr, v))
 
         insert_raw_payload(conn,observation_id=observation_id,
             payload_format="normalized_snapshot",
