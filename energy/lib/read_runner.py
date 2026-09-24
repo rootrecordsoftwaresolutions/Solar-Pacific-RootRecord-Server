@@ -55,12 +55,10 @@ def main():
         db_ok=True
     except Exception as e:
         print(f"DB_ERROR: {type(e).__name__}: {e}",file=sys.stderr)
-        try: asyncio.run(device.disconnect())
-        except Exception: pass
-        # still write JSON compatibility if we have fields
-    finally:
-        try: asyncio.run(device.disconnect())
-        except Exception: pass
+    try:
+        asyncio.run(device.disconnect())
+    except Exception:
+        pass
     fields=snap["fields"]
     path=SAMPLES/f"read-{args.device}-{datetime.now(HST).strftime('%Y%m%d-%H%M%S')}.json"
     path.write_text(json.dumps(snap,indent=2),encoding="utf-8")
@@ -73,6 +71,7 @@ def main():
         print("WAITING"); print("No data — connected but fields empty/None (not inventing)")
         print("STATUS=WAITING")
         return 2
-    print("STATUS=OK")
-    return 0 if db_ok else 1
+    # Measured data saved (JSON always; SQLite when db_ok). Exit 0 so dual-read jobs succeed.
+    print("STATUS=OK" + ("" if db_ok else " (json-only; db failed)"))
+    return 0
 if __name__=="__main__": raise SystemExit(main())
