@@ -283,6 +283,85 @@ ON_AT = [
 ]
 
 # ====================================================
+# ECOFLOW TOGGLES — per function / access / toggle catalog (added 2026-09-23)
+# NOT read by the poller (the scheduler only reads ON_BOOT / ONCE_AT_START / EVERY_* / ON_AT); jobs.py is loaded once at start.
+# This is the one place that names every EcoFlow function: its on/off scripts, readback field, how success is verified, status.
+# To SCHEDULE one: copy the template below into ON_AT (or EVERY_*), set enabled=True + at_times, then
+#   /home/rootrecord/rootserver-poller restart
+# CAVEATS (from reading rootserver_poller.py, 2026-09-23):
+#  - The scheduler is single-threaded and run_job() blocks. One toggle takes ~25 s wall clock (10 s scan + connect + auth + ~2.5 s),
+#    so the 5 s heartbeat stalls meanwhile, and an ON_AT job whose minute passes while the loop is blocked is MISSED (no catch-up).
+#    Avoid minutes that collide with long jobs (github_sync_all up to 300 s, worklog_scan up to 180 s).
+#  - No on-demand trigger exists: the HTTP handler is GET-only (/, /health, /poller, /json, /energy, /api/energy) and is exposed
+#    publicly through the tunnel - do NOT add an unauthenticated state-changing route.
+#  - BLE sessions must be serialized: commands are wrapped with flock (the poller is serial, manual runs are not).
+#  - AC fields (ac_ports, ac_output_power, ...) are library DEFAULTS when the inverter is silent: verify AC by inverter packets.
+# ====================================================
+ECOFLOW_ACTIONS = "/home/rootrecord/.ollama/skills/energy/scripts/actions"
+ECOFLOW_LOCK = "/tmp/ecoflow-ble.lock"
+
+
+def ecoflow_command(script: str) -> str:
+    """Shell string for a job `command`: serialize BLE with flock, then run one action script."""
+    return f"flock -w 60 {ECOFLOW_LOCK} bash {ECOFLOW_ACTIONS}/{script}"
+
+
+# EXAMPLE scheduled toggle (copy into ON_AT; keep enabled False until times are chosen):
+# {
+#     "id": "delta2_usb_on_0700",
+#     "enabled": False,
+#     "description": "Delta 2 USB ON at 07:00 HST",
+#     "at_times": ["07:00"],
+#     "builtin": "",
+#     "command": ecoflow_command("delta2-usb-on.sh"),
+#     "timeout_sec": 150,
+#     "cwd": "/home/rootrecord/.ollama/skills/energy",
+#     "env": {},
+# },
+
+TOGGLES = [
+    {"id": "delta2_usb", "device": "delta2", "function": "USB ports", "on": "delta2-usb-on.sh", "off": "delta2-usb-off.sh",
+     "field": "usb_ports", "protected": False, "status": "PASS real change 2026-09-23 (chg2)",
+     "verify": "readback (PD heartbeat = real measurement)", "note": "USB-C often feeds River / OmniBook - check loads before switching OFF"},
+    {"id": "delta2_dc12v", "device": "delta2", "function": "DC 12V (car socket)", "on": "delta2-dc-on.sh", "off": "delta2-dc-off.sh",
+     "field": "dc_12v_port", "protected": False, "status": "PASS real change 2026-09-23 (chg1)",
+     "verify": "readback (PD heartbeat = real measurement)", "note": ""},
+    {"id": "delta2_ac", "device": "delta2", "function": "AC outlets", "on": "delta2-ac-on.sh", "off": "delta2-ac-off.sh",
+     "field": "ac_ports", "protected": False, "status": "UNTESTED post-fix (operator: Delta 2 unrestricted)",
+     "verify": "ON = inverter packets (src 4) arrive AND ac_ports True; OFF = fresh connection >=12 s after auth with zero inverter packets",
+     "note": "same-connection OFF readback may be stale True; AC readbacks are library defaults when the inverter is silent"},
+    {"id": "delta2_ac_charging", "device": "delta2", "function": "AC charging", "on": "delta2-ac-charging-on.sh",
+     "off": "delta2-ac-charging-off.sh", "field": "ac_charging", "protected": False, "status": "UNTESTED post-fix",
+     "verify": "readback changes to the wanted value", "note": "pre-fix: FAIL AssertionError"},
+    {"id": "delta2_energy_backup", "device": "delta2", "function": "Energy backup", "on": "delta2-energy-backup-on.sh",
+     "off": "delta2-energy-backup-off.sh", "field": "energy_backup", "protected": False, "status": "UNTESTED post-fix",
+     "verify": "readback changes to the wanted value", "note": "pre-fix OK runs were probably no-ops (charge limits None, H2 unproven)"},
+    {"id": "delta2_grid_bypass", "device": "delta2", "function": "Grid bypass", "on": "delta2-grid-bypass-on.sh",
+     "off": "delta2-grid-bypass-off.sh", "field": "disable_grid_bypass", "protected": False, "status": "UNTESTED post-fix",
+     "verify": "readback changes to the wanted value", "note": "method is enable_disable_grid_bypass(disabled): confirm what on/off mean in the wrapper before scheduling"},
+    {"id": "river2pro_ac", "device": "river2pro", "function": "AC outlets", "on": "river2pro-ac-on.sh", "off": "river2pro-ac-off.sh",
+     "field": "ac_ports", "protected": True, "status": "UNTESTED post-fix",
+     "verify": "ON = inverter packets + ac_ports True; OFF = fresh connection, zero inverter packets", "note": "AC feeds Starlink since 2026-09-23 - ask the operator before any use"},
+    {"id": "river2pro_ac_always_on", "device": "river2pro", "function": "AC always-on", "on": "river2pro-ac-always-on-on.sh",
+     "off": "river2pro-ac-always-on-off.sh", "field": "", "protected": True, "status": "UNTESTED post-fix",
+     "verify": "unknown (readback field name unverified)", "note": "AC behavior; Starlink rides this AC - ask first"},
+    {"id": "river2pro_xboost", "device": "river2pro", "function": "AC X-Boost", "on": "river2pro-xboost-on.sh",
+     "off": "river2pro-xboost-off.sh", "field": "", "protected": True, "status": "UNTESTED post-fix",
+     "verify": "unknown (readback field name unverified)", "note": "AC behavior; Starlink rides this AC - ask first"},
+    {"id": "river2pro_dc12v", "device": "river2pro", "function": "DC 12V (car)", "on": "river2pro-dc-on.sh", "off": "river2pro-dc-off.sh",
+     "field": "dc_12v_port", "protected": False, "status": "UNTESTED post-fix", "verify": "readback changes to the wanted value", "note": ""},
+    {"id": "river2pro_energy_backup", "device": "river2pro", "function": "Energy backup", "on": "river2pro-energy-backup-on.sh",
+     "off": "river2pro-energy-backup-off.sh", "field": "energy_backup", "protected": False, "status": "UNTESTED post-fix",
+     "verify": "readback changes to the wanted value", "note": "pre-fix: FAIL AssertionError"},
+]
+
+# Reads (no state change). AC fields may be null/default in the 2 s read window - treat null as "unmeasured".
+READS = [
+    {"id": "delta2_read", "script": "/home/rootrecord/.ollama/skills/energy/scripts/read/delta2-read.sh"},
+    {"id": "river2pro_read", "script": "/home/rootrecord/.ollama/skills/energy/scripts/read/river2pro-read.sh"},
+]
+
+# ====================================================
 # FULL BLANK TEMPLATE (reference — all keys labeled)
 # Copy into the correct section list above; delete keys that section does not use.
 # ------------------------------------------------------------------------------
