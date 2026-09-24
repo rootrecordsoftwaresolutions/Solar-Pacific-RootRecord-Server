@@ -5,6 +5,7 @@ remain missing; measured zero remains a real measurement.
 """
 from __future__ import annotations
 from datetime import datetime,timedelta,timezone
+import math
 from zoneinfo import ZoneInfo
 
 LAYERS=("1sec","1min","5min","15min","1hour","day","7days","month","year")
@@ -128,7 +129,7 @@ def aggregate_period(conn,layer,start,end,source_layer="raw"):
            expected_sample_count,coverage_pct,value_avg,value_min,value_max,value_sum,value_delta,energy_wh,state)
           VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
           (run,stype,sid,metric,unit,s["sample_count"],s["valid_sample_count"],
-           int((end-start).total_seconds()/10),s["coverage_pct"],s["value_avg"],s["value_min"],
+           math.ceil((end-start).total_seconds()/10),s["coverage_pct"],s["value_avg"],s["value_min"],
            s["value_max"],s["value_sum"],s["value_delta"],s["energy_wh"],s["state"]))
         count+=1
     watermark=conn.execute("SELECT MAX(observed_at) FROM observation WHERE observed_at>=? AND observed_at<?",
