@@ -272,3 +272,10 @@ Never delete original source data until: migration is verified, queries against 
 10. Mainland can update independently from GitHub.
 11. No destructive Git operation exists anywhere in the pipeline.
 12. Every migration step has a documented rollback.
+
+
+## 2026-09-24 implementation checkpoint
+
+The canonical data layer now includes schema v2 duration fields, boundary-aware power integration with a 60-second interpolation ceiling, explicit measured/defaulted/missing/not-applicable handling, port and expansion-battery persistence, idempotent closed-period condensation, expanded integrity verification, regression coverage for zero/missing/boundary/gap/idempotency/condensation behavior, and GitHub Actions CI for the data-layer tests.
+
+Production database initialization and legacy JSON backfill remain explicit operator actions and have not been performed by this implementation pass.
