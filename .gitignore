@@ -4,6 +4,7 @@ aws-sync/
 # Archives and backups
 *.zip
 backups/
+logs/
 
 # Media Artifacts
 *.wav
