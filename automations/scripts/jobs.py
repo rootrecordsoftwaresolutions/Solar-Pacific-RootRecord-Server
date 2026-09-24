@@ -145,6 +145,21 @@ ON_BOOT = [
 # One-time scripts after ON_BOOT finishes (tunnel already handled above).
 # ====================================================
 ONCE_AT_START = [
+    # --- first EcoFlow sample after boot (SQLite dual-write + legacy JSON) --------
+    {
+        "id": "ecoflow_read_boot",
+        "enabled": True,
+        "description": "One BLE read of Delta 2 + River 2 Pro after boot; saves SQLite then JSON.",
+        "builtin": "",
+        "command": (
+            "flock -w 90 /tmp/ecoflow-ble.lock bash -c '"
+            "/home/rootrecord/.ollama/skills/energy/scripts/read/delta2-read.sh; "
+            "/home/rootrecord/.ollama/skills/energy/scripts/read/river2pro-read.sh'"
+        ),
+        "timeout_sec": 180,
+        "cwd": "/home/rootrecord/.ollama/skills/energy",
+        "env": {},
+    },
     # --- TEMPLATE (run once after boot priorities) — copy from here --------------
     # {
     #     "id": "example_once_at_start",
@@ -221,6 +236,24 @@ EVERY_SECONDS = [
 # Optional: only_at_minutes = [0, 15, 30, 45]  (empty list = every minute)
 # ====================================================
 EVERY_MINUTE = [
+    # --- EcoFlow dual-write read (SQLite canonical + legacy JSON last-files) -----
+    # BLE sessions ~20–40s each; serialize with flock. Avoid colliding with
+    # github_sync_all / worklog_scan when possible (0/15/30/45 is fine).
+    {
+        "id": "ecoflow_read_cycle",
+        "enabled": True,
+        "description": "BLE read Delta 2 + River 2 Pro → SQLite + JSON; poller /energy shows saved data.",
+        "only_at_minutes": [0, 15, 30, 45],
+        "builtin": "",
+        "command": (
+            "flock -w 90 /tmp/ecoflow-ble.lock bash -c '"
+            "/home/rootrecord/.ollama/skills/energy/scripts/read/delta2-read.sh; "
+            "/home/rootrecord/.ollama/skills/energy/scripts/read/river2pro-read.sh'"
+        ),
+        "timeout_sec": 180,
+        "cwd": "/home/rootrecord/.ollama/skills/energy",
+        "env": {},
+    },
     # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
     # {
     #     "id": "example_every_minute",
@@ -390,26 +423,3 @@ READS = [
 #     "env": {"EXAMPLE": "value"},              # extra env vars for command only
 # },
 # ====================================================
-# {
-#     "id": "unique_snake_case_name",          # required — unique across all sections
-#     "enabled": False,                         # required — True to run
-#     "priority": 2,                            # ON_BOOT only — lower runs first
-#     "description": "Plain words: what / why.",# required — human label
-#     "interval_sec": 60,                       # EVERY_SECONDS only
-#     "only_at_minutes": [],                    # EVERY_MINUTE only — [] = all minutes
-#     "only_at_hours": [],                      # EVERY_HOUR only — [] = all hours 0-23
-#     "at_times": ["13:00"],                    # ON_AT only — local HH:MM list (HST)
-#     "builtin": "",                            # "" or self_process|tunnel_start|heartbeat|http_ping
-#     "command": "/home/rootrecord/script.sh",  # shell via bash -lc; "" if builtin set
-#     "process": "",                            # ON_BOOT self_process — main process path
-#     "terminal": "",                           # ON_BOOT self_process — window title
-#     "watch": "",                              # ON_BOOT self_process — watch script path
-#     "public_host": "",                        # ON_BOOT tunnel_start
-#     "token_file": "",                         # ON_BOOT tunnel_start
-#     "cloudflared_bin": "",                    # ON_BOOT tunnel_start
-#     "local_service": "",                      # ON_BOOT tunnel_start — origin URL
-#     "timeout_sec": 120,                       # kill command / tunnel wait seconds
-#     "cwd": "/home/rootrecord",                # working directory; "" = poller cwd
-#     "env": {"EXAMPLE": "value"},              # extra env vars for command only
-# },
-
