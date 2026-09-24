@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# schedule-stack-reload.sh
-#
-# When GitHub pulls new skills code, fully stop every process the poller stack
-# operates, then start clean so new edits load without a manual restart.
-#
-# Standing format for all future builds — invoke with: bash this-script.sh
+# schedule-stack-reload.sh — arm deferred full stack reload
+# Standing format for all future builds.
 # ==============================================================================
 set -u
 
@@ -14,9 +10,7 @@ FLAG="$BAK_ROOT/flags/reload-poller-stack"
 LOCK="/tmp/rootrecord-stack-reload.lock"
 STAMP="$BAK_ROOT/flags/last-stack-reload"
 LOG="/home/rootrecord/.ollama/skills/logs/store/stack-reload.log"
-STOP="/home/rootrecord/.ollama/skills/automations/scripts/stop-poller-stack.sh"
-CLI="/home/rootrecord/rootserver-poller"
-UNIT="rr-rootserver-poller.service"
+DO_RELOAD="/home/rootrecord/.ollama/skills/automations/scripts/do-stack-reload.sh"
 
 mkdir -p "$(dirname "$LOG")" "$BAK_ROOT/flags"
 
@@ -26,55 +20,60 @@ if [[ ! -f "$FLAG" ]]; then
 fi
 
 if ! ( set -o noclobber; echo "$$" > "$LOCK" ) 2>/dev/null; then
-  echo "[reload] already in progress — skip"
-  exit 0
+  if [[ -f "$LOCK" ]]; then
+    age=$(( $(date +%s) - $(stat -c %Y "$LOCK" 2>/dev/null || echo 0) ))
+    if (( age > 300 )); then
+      echo "[reload] clearing stale lock (age=${age}s)"
+      rm -f "$LOCK"
+      echo "$$" > "$LOCK" || true
+    else
+      echo "[reload] already in progress — skip"
+      exit 0
+    fi
+  fi
 fi
 
 if [[ -f "$STAMP" ]]; then
   last=$(cat "$STAMP" 2>/dev/null || echo 0)
   now=$(date +%s)
-  if [[ "$last" =~ ^[0-9]+$ ]] && (( now - last < 60 )); then
+  if [[ "$last" =~ ^[0-9]+$ ]] && (( now - last < 45 )); then
     echo "[reload] debounced (last reload epoch=$last)"
     rm -f "$LOCK"
     exit 0
   fi
 fi
 
+if [[ ! -f "$DO_RELOAD" ]]; then
+  echo "[reload] FAIL missing $DO_RELOAD"
+  rm -f "$LOCK"
+  exit 1
+fi
+
 echo "[reload] armed — full poller stack stop/start in 8s"
-echo "[reload] flag=$(tr '\n' ' ' < "$FLAG" 2>/dev/null || true)"
 echo "[reload] log=$LOG"
+echo "[reload] runner=$DO_RELOAD"
 
-# Deferred so github_sync_all can exit; always bash stop script (may not be +x).
-nohup bash -c "
-  set +e
-  exec >>'$LOG' 2>&1
-  echo \"\$(date -u +%Y-%m-%dT%H:%M:%SZ) stack-reload BEGIN\"
-  sleep 8
-  if [[ -f '$STOP' ]]; then
-    bash '$STOP'
-  else
-    systemctl --user stop '$UNIT' 2>/dev/null || true
-    pkill -f 'rootserver_poller\\.py' 2>/dev/null || true
-    pkill -f 'automations/bin/cloudflared' 2>/dev/null || true
-    pkill -f 'poller-watch\\.py' 2>/dev/null || true
-  fi
-  rm -f /tmp/ecoflow-ble.lock 2>/dev/null || true
-  systemctl --user daemon-reload 2>/dev/null || true
-  sleep 1
-  if systemctl --user start '$UNIT' 2>/dev/null; then
-    echo \"\$(date -u +%Y-%m-%dT%H:%M:%SZ) started $UNIT\"
-  elif [[ -f '$CLI' || -x '$CLI' ]]; then
-    bash '$CLI' start 2>/dev/null || '$CLI' start 2>/dev/null || true
-    echo \"\$(date -u +%Y-%m-%dT%H:%M:%SZ) started via $CLI\"
-  else
-    echo \"\$(date -u +%Y-%m-%dT%H:%M:%SZ) FAIL: no unit and no CLI\"
-  fi
-  date +%s > '$STAMP'
-  rm -f '$FLAG'
-  rm -f '$LOCK'
-  echo \"\$(date -u +%Y-%m-%dT%H:%M:%SZ) stack-reload END\"
-" >/dev/null 2>&1 &
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS:-}" && -S "${XDG_RUNTIME_DIR}/bus" ]]; then
+  export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+fi
 
-disown 2>/dev/null || true
+scheduled=0
+if command -v systemd-run >/dev/null 2>&1; then
+  if systemd-run --user --on-active=8s --unit=rootrecord-stack-reload.service \
+      --description="RootRecord poller stack reload after GitHub pull" \
+      /bin/bash "$DO_RELOAD" 2>>"$LOG"; then
+    echo "[reload] scheduled via systemd-run --user --on-active=8s"
+    scheduled=1
+  else
+    echo "[reload] systemd-run failed — falling back to nohup"
+  fi
+fi
+
+if [[ "$scheduled" -eq 0 ]]; then
+  nohup setsid /bin/bash -c "sleep 8; exec /bin/bash '$DO_RELOAD'" >>"$LOG" 2>&1 &
+  echo "[reload] scheduled via nohup/setsid pid=$!"
+fi
+
 echo "[reload] scheduled (log=$LOG)"
 exit 0
