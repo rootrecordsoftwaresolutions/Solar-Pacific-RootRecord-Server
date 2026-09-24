@@ -133,7 +133,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
     remote_ref="$remote_name/$branch"
     remote_head="$(git rev-parse "$remote_ref")"
 
-    if [[ "\$local_head" == "\$remote_head" ]]; then
+    if [[ "$local_head" == "$remote_head" ]]; then
       echo "— [$id] nothing to push"
       exit 0
     fi
@@ -149,7 +149,7 @@ while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
 
     if git push -u "$remote_name" "HEAD:refs/heads/$branch" 2>&1 | redact; then
       echo "↑ [$id] $n files → $slug ($branch)"
-      echo "[\$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug" >> "$BAK_ROOT/logs/$id.log"
+      echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] [$id] pushed $branch ($n file(s)) → $slug" >> "$BAK_ROOT/logs/$id.log"
       exit 0
     fi
 
