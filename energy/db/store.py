@@ -16,6 +16,8 @@ DEFAULT_DB_PATH = Path("/home/rootrecord/Database/ROOTRECORD/rootrecord.db")
 
 def connect(db_path: Path | str = DEFAULT_DB_PATH) -> sqlite3.Connection:
     """Open a RootRecord SQLite connection with integrity/safety defaults."""
+    db_path = Path(db_path)
+    db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(str(db_path))
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
