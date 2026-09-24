@@ -9,35 +9,37 @@ This file is the navigation index for major RootRecord files that are repeatedly
 Repository:
 https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server
 
+### Master prompt / live-state layer
+
+- [`0-master-prompt/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/0-master-prompt)
+- [`0-master-prompt/MASTER-PROMPT.md`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/0-master-prompt/MASTER-PROMPT.md)
+- [`0-master-prompt/state/state.json`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/0-master-prompt/state/state.json)
+- [`0-master-prompt/logs/state-history.json`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/0-master-prompt/logs/state-history.json)
+- [`0-master-prompt/prompts/08-repository-and-file-links.md`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/0-master-prompt/prompts/08-repository-and-file-links.md)
+
+The state snapshot is current machine-readable context. The state history is the five-minute operational recorder. Neither replaces direct verification of the live system.
+
 ### Development / operating context
 
-- `0-development-master-prompt/` — operator's development master-prompt area (the current handoff ZIP contains the authoritative workflow material used to update this index)
-- `Workflow-Rules.md` — paste-safe execution, evidence, backup, relay, and verification conventions
-- `00_READ_FIRST.md` — entry-point/read-first context
-
-> Note: the GitHub API view available during this update did not expose the `0-development-master-prompt` path on the default branch, so the two links above are intentionally represented as directory/file navigation targets rather than claimed as currently verified API paths. The uploaded 2026-09-24 handoff is the source used for their content.
+- [`Workflow-Rules.md`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/Workflow-Rules.md)
+- [`00_READ_FIRST.md`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/00_READ_FIRST.md)
+- [`automations/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/automations)
+- [`agents/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/agents)
+- [`status/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/status)
+- [`coms/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/coms)
 
 ### Energy
 
-- [`energy/lib/ble_client.py`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/energy/lib/ble_client.py)
 - [`energy/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/energy)
+- [`energy/lib/ble_client.py`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/energy/lib/ble_client.py)
 - [`automations/scripts/jobs.py`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/blob/main/automations/scripts/jobs.py)
-
-### Operational structure
-
-- [`automations/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/automations)
-- [`coms/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/coms)
-- [`agents/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/agents)
-- [`status/`](https://github.com/rootrecordsoftwaresolutions/Solar-Pacific-RootRecord-Server/tree/main/status)
 
 ## US Mainland Server
 
 Repository:
 https://github.com/rootrecordsoftwaresolutions/US-Mainland-Server
 
-### Network globe
-
-The current GitHub mirror search identified:
+### Network globe / recovery
 
 - [`mirror/network-globe/server.js`](https://github.com/rootrecordsoftwaresolutions/US-Mainland-Server/blob/main/mirror/network-globe/server.js)
 - [`mirror/network-globe/HAWAII-MERGE.md`](https://github.com/rootrecordsoftwaresolutions/US-Mainland-Server/blob/main/mirror/network-globe/HAWAII-MERGE.md)
@@ -78,3 +80,14 @@ When a frequently touched file changes location:
 2. do not create a duplicate copy just to preserve an old link;
 3. if the old path is historically important, label it **Historical** and point to the new canonical file;
 4. do not claim a link is live/deployed merely because it exists in GitHub.
+
+## State-link maintenance rule
+
+The state files describe observations, not source code.
+
+When a state producer, collector, or updater changes:
+
+1. update the relevant implementation links here;
+2. update the state schema/documentation;
+3. verify the producer's actual runtime path;
+4. do not treat a stale state snapshot as live evidence.

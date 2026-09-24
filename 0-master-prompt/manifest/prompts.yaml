@@ -1,4 +1,4 @@
-version: "1.1"
+version: "1.2"
 updated: "2026-09-24"
 
 prompts:
@@ -29,3 +29,8 @@ prompts:
   - id: repository-and-file-links
     file: prompts/08-repository-and-file-links.md
     required: true
+
+state:
+  current: state/state.json
+  history: logs/state-history.json
+  refresh_interval_minutes: 5

@@ -47,6 +47,12 @@ For a live system, verify the resulting state, not just the command's exit statu
 
 ## GitHub
 
-Use the repository's existing GitHub structure. Do not create duplicate source copies in the Master Prompt repository.
+Use the repository's existing GitHub structure. Do not create duplicate source copies in the Master Prompt area.
 
-The Master Prompt repository should link to frequently touched implementation files instead.
+The Master Prompt area should link to frequently touched implementation files instead.
+
+## Live-state context
+
+Read `../state/state.json` from the master-prompt root when operational context is relevant.
+
+Treat the snapshot as context with provenance, not as a substitute for direct verification.

@@ -9,6 +9,24 @@ The RootRecord ecosystem currently spans:
 - RootRecord Website
 - RootRecord Master Prompt
 
+The canonical RootRecord master-prompt area in this repository is now:
+
+`0-master-prompt/`
+
+## Live-state layer
+
+The machine-readable current snapshot is:
+
+`0-master-prompt/state/state.json`
+
+The historical recorder is:
+
+`0-master-prompt/logs/state-history.json`
+
+The intended refresh interval is five minutes.
+
+The snapshot and history are context/provenance records. They do not replace direct verification when an operation depends on live hardware, services, endpoints, or deployed runtime state.
+
 ## Cross-project operating principles
 
 - Constant self and community improvement is the documented RootRecord mission.

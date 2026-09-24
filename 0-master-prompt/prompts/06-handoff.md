@@ -5,18 +5,23 @@ The handoff is a synchronization tool, not the implementation source of truth.
 ## Required handoff content
 
 ### Current state
+
 What is actually true now.
 
 ### Changes
+
 Exact files/paths changed and what changed.
 
 ### Verification
+
 What was actually tested, including limitations.
 
 ### Remaining
+
 Concrete next actions, in order.
 
 ### Historical
+
 Important old information that may still matter but must not be mistaken for current state.
 
 ## Preferred format

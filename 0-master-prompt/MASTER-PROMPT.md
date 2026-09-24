@@ -2,9 +2,11 @@
 
 ## 1. Purpose
 
-You are working inside the RootRecord ecosystem. This master prompt provides the durable cross-project operating rules so every new session does not require the operator to re-upload the same context.
+You are working inside the RootRecord ecosystem. This master prompt is the durable cross-project operating contract. It should let a new session orient itself without requiring the operator to re-upload the same context.
 
 Implementation details belong in the actual RootRecord repositories.
+
+This directory also contains a machine-readable live-state layer. The prompt defines how to work; the state files describe what is currently known; the logs preserve the observed timeline.
 
 ## 2. Repository map
 
@@ -45,16 +47,61 @@ The standard development loop is:
 
 Do not stop after writing a file and call it fixed.
 
-## 4. Existing architecture first
+## 4. Live state and telemetry
+
+The live-state layer is part of the operating context.
+
+### Current snapshot
+
+`state/state.json` is the canonical machine-readable snapshot of the latest known state.
+
+It may contain:
+
+- repository/runtime connection status;
+- service reachability;
+- power and energy readings;
+- active work;
+- recent worklog information;
+- verification timestamps;
+- source/provenance for observed values.
+
+The snapshot is expected to refresh on the established five-minute cadence when the state updater is running.
+
+### Historical state
+
+`logs/state-history.json` is the append-oriented machine-readable timeline.
+
+A five-minute refresh may record a snapshot even when nothing changed. This is intentional: the history is a black-box recorder for RootRecord operational continuity, not merely a human-readable changelog.
+
+Do not infer that an old value is current. Every live value must carry a verification timestamp and, where applicable, a source.
+
+### Missing telemetry
+
+Use explicit states such as `unknown`, `stale`, `disconnected`, or `offline` when evidence is unavailable.
+
+Never manufacture a value to make the state look complete.
+
+### Evidence
+
+Live-state claims follow the same evidence discipline as all other operational claims:
+
+- **Confirmed** — directly verified by the recorded source/readback.
+- **Hypothesis** — plausible but not independently established.
+- **Unknown** — not established.
+- **Historical** — true only for a prior checkpoint.
+
+## 5. Existing architecture first
 
 - Reuse existing files, services, operations, and paths.
 - Do not create `v2` directories, alternate roots, installers, migrations, or parallel implementations unless explicitly requested.
-- Do not rename a final file simply to make a new implementation easier.
+- Do not rename a final implementation file simply to make a new implementation easier.
 - Do not rebuild a system that already has a working operation.
 - Trace page → API → handler → data → collector/builder → scheduler/runtime when that chain applies.
 - Prefer the smallest surgical change that fits the existing architecture.
 
-## 5. Operator efficiency
+The `0-master-prompt` rename is an intentional organizational change, not a new implementation root.
+
+## 6. Operator efficiency
 
 The operator prefers fast, concrete progress over unnecessary questions.
 
@@ -67,7 +114,7 @@ When execution is delegated to the operator:
 - Preserve rollback capability.
 - Do not make the operator discover an assistant-created bug.
 
-## 6. Safe editing pattern
+## 7. Safe editing pattern
 
 For consequential edits, prefer:
 
@@ -75,7 +122,7 @@ For consequential edits, prefer:
 
 Do not overwrite a file blindly when a bounded edit is sufficient.
 
-## 7. Evidence discipline
+## 8. Evidence discipline
 
 Every important claim should be classified:
 
@@ -90,7 +137,7 @@ A local agent's assertion is not independent hardware verification.
 
 For live operational claims, the strongest evidence is an operator-run command plus readback/packet/state evidence showing the changed state.
 
-## 8. Temporary files
+## 9. Temporary files
 
 Disposable troubleshooting helpers do not belong in project/home directories.
 
@@ -100,7 +147,7 @@ For EcoFlow work in particular:
 - permanent action scripts → the established energy skill structure
 - do not leave `dig*.sh`, probe, cleanup, or one-off helper debris in `/home/rootrecord/`
 
-## 9. Secrets
+## 10. Secrets
 
 Never print, paste, commit, or document token values.
 
@@ -110,17 +157,17 @@ Use environment variable names only when documenting secrets, for example:
 - `TELEGRAM_BRUCE_TOKEN`
 - `TELEGRAM_CARLY_TOKEN`
 
-Only one .env may be used, located at `/home/rootrecord/master/master-key.env`
+Only one .env may be used, located at `/home/rootrecord/master/master-key.env`.
 
-## 10. Durable documentation
+## 11. Durable documentation
 
-Update the master-prompt repository when a rule, workflow convention, repository boundary, or durable cross-project decision changes.
+Update the master-prompt area when a rule, workflow convention, repository boundary, or durable cross-project decision changes.
 
 Do not copy large implementation files into this repository.
 
 The repository/file index should contain links to the real files instead.
 
-## 11. Handoffs
+## 12. Handoffs
 
 A handoff should tell the next agent:
 
@@ -133,7 +180,7 @@ A handoff should tell the next agent:
 
 Do not create a giant handoff simply because the previous session was long.
 
-## 12. RootRecord architectural context
+## 13. RootRecord architectural context
 
 The foundational context describes RootRecord as an ecosystem centered on:
 
@@ -153,7 +200,7 @@ Current conceptual agent loop:
 
 This is architectural context, not a license to invent unresolved agent authority, values, memory boundaries, or identity rules.
 
-## 13. Energy/EcoFlow caution
+## 14. Energy/EcoFlow caution
 
 Do not infer device behavior from wrapper names alone.
 
@@ -168,7 +215,7 @@ For EcoFlow actions:
 
 AC state requires particular care because inverter heartbeat packets and default values can differ from what a wrapper appears to report.
 
-## 14. Public operational surfaces
+## 15. Public operational surfaces
 
 The RootRecord poller is documented as GET-only/public through its tunnel endpoints.
 
@@ -176,7 +223,7 @@ Do not add an unauthenticated mutation/toggle route.
 
 Do not claim a scheduler feature exists merely because a catalog or template exists. Verify the running scheduler/runtime behavior.
 
-## 15. Historical boundary
+## 16. Historical boundary
 
 Historical work remains valuable, but historical ≠ current.
 
@@ -186,6 +233,6 @@ When a reset, migration, or repository cleanup has occurred:
 - old archives remain historical reference;
 - a working implementation found only in an archive must not be described as currently deployed until verified.
 
-## 16. Final rule
+## 17. Final rule
 
 Do the work, verify the work, and leave the next agent a cleaner understanding than the one you started with.
