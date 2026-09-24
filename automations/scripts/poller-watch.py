@@ -2,12 +2,14 @@
 """Pretty live view of the rootserver poller log (colors + filter).
 
 # INFO — MUST HAVE (future agents):
-# Ctrl-C in this window MUST stop the entire stack (poller, cloudflared,
+# Ctrl-C OR closing this window MUST stop the entire stack (poller, cloudflared,
 # systemd unit). Never exit the window while leaving those processes up.
 """
 from __future__ import annotations
 
+import atexit
 import os
+import signal
 import subprocess
 import sys
 import time
@@ -35,6 +37,8 @@ RED = "\033[31m"
 MAGENTA = "\033[35m"
 WHITE = "\033[97m"
 
+_stop_done = False
+
 
 def unit_state() -> str:
     try:
@@ -49,13 +53,53 @@ def unit_state() -> str:
         return "unknown"
 
 
-def stop_everything() -> None:
-    print(f"\n{YELLOW}Ctrl-C — stopping ENTIRE stack (poller + tunnel + unit)…{RST}", flush=True)
+def stop_everything(reason: str = "exit") -> None:
+    """Idempotent full stack stop. Called on Ctrl-C, window close, or signals."""
+    global _stop_done
+    if _stop_done:
+        return
+    _stop_done = True
     try:
-        subprocess.run(["bash", str(STOP)], check=False)
+        print(
+            f"\n{YELLOW}{reason} — stopping ENTIRE stack "
+            f"(poller + tunnel + unit)…{RST}",
+            flush=True,
+        )
+    except Exception:
+        pass
+    try:
+        subprocess.run(["bash", str(STOP)], check=False, timeout=60)
     except Exception as e:
-        print(f"{RED}stop failed: {e}{RST}", flush=True)
-    print(f"{DIM}stack stop requested — window exiting{RST}", flush=True)
+        try:
+            print(f"{RED}stop failed: {e}{RST}", flush=True)
+        except Exception:
+            pass
+    try:
+        print(f"{DIM}stack stop requested — window exiting{RST}", flush=True)
+    except Exception:
+        pass
+
+
+def _on_signal(signum: int, _frame) -> None:
+    names = {
+        signal.SIGINT: "Ctrl-C",
+        signal.SIGTERM: "SIGTERM",
+        signal.SIGHUP: "window close (SIGHUP)",
+    }
+    reason = names.get(signum, f"signal {signum}")
+    stop_everything(reason)
+    # Exit cleanly after stop so the terminal does not hang
+    sys.exit(0)
+
+
+def _install_handlers() -> None:
+    for sig in (signal.SIGINT, signal.SIGTERM, signal.SIGHUP):
+        try:
+            signal.signal(sig, _on_signal)
+        except Exception:
+            pass
+    # Closing some terminals only triggers atexit / normal exit
+    atexit.register(lambda: stop_everything("window exit"))
 
 
 def banner() -> None:
@@ -75,7 +119,7 @@ def banner() -> None:
     print(f"{CYAN}│{RST}  jobs     {DIM}{SCRIPTS / 'jobs.py'}{RST}", flush=True)
     print(f"{CYAN}│{RST}  log      {DIM}{LOG}{RST}", flush=True)
     print(
-        f"{CYAN}│{RST}  {YELLOW}Ctrl-C stops EVERY process"
+        f"{CYAN}│{RST}  {YELLOW}Ctrl-C or close window stops EVERY process"
         f" (poller + cloudflared + unit){RST}",
         flush=True,
     )
@@ -175,19 +219,16 @@ def format_line(raw: str) -> str | None:
         return f"  {DIM}{t}{RST}  {WHITE}○{RST}  HTTP listening on :8799"
     if body.startswith("scheduler"):
         return f"  {DIM}{t}{RST}  {WHITE}☰{RST}  {body}"
+    if body.startswith("ENERGY "):
+        return f"  {DIM}{t}{RST}  {GREEN}⚡{RST}  {GREEN}{body}{RST}"
+    if body.startswith("SUMMARY=") or body.startswith("STATUS="):
+        return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {body}"
     if body.startswith("job:"):
-        # job:github_sync_all | [iso] [skills] ↑ 10 files
         if " | " in body:
             payload = body.split(" | ", 1)[1].strip()
-            # strip leading iso timestamp if present
-            if len(payload) > 22 and payload[4] == "-" and "T" in payload[:20]:
-                # find "] " after [id]
-                pass
-            # Prefer [id] markers from sync logs
             repo = ""
             rest = payload
             if "] [" in payload:
-                # [2026-...Z] [skills] ↑ 10 files
                 try:
                     after = payload.split("] ", 1)[1]
                     if after.startswith("[") and "]" in after:
@@ -200,7 +241,6 @@ def format_line(raw: str) -> str | None:
                     return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {DIM}github {repo} · no changes{RST}"
                 return None
             if rest.startswith("↑") or " files" in rest or "pushed" in rest.lower():
-                # normalize "↑ 10 files" or legacy long push lines
                 n = ""
                 for tok in rest.replace("file(s)", "files").split():
                     if tok.isdigit():
@@ -213,7 +253,6 @@ def format_line(raw: str) -> str | None:
             if rest.startswith("✗") or "FAIL" in rest or "ERROR" in rest:
                 label = repo or "repo"
                 return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}github {label}{RST}  {DIM}{rest}{RST}"
-            # other piped lines (setup): dim short
             if len(rest) > 80:
                 return None
             return f"  {DIM}{t}{RST}  {DIM}▸  {rest}{RST}"
@@ -222,7 +261,6 @@ def format_line(raw: str) -> str | None:
             if len(short) > 60:
                 short = short[:57] + "…"
             return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{short}{RST}"
-        # Hide bare RUN / OK noise
         if body.endswith(" OK") or " RUN  " in body:
             return None
         return None
@@ -254,7 +292,7 @@ def follow() -> int:
         while True:
             line = f.readline()
             if not line:
-                time.sleep(0.2)
+                time.sleep(0.25)
                 continue
             out = format_line(line)
             if out:
@@ -262,8 +300,9 @@ def follow() -> int:
 
 
 if __name__ == "__main__":
+    _install_handlers()
     try:
         sys.exit(follow())
     except KeyboardInterrupt:
-        stop_everything()
+        stop_everything("Ctrl-C")
         sys.exit(0)
