@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
+# ============================================================================
+# envload.py — load EcoFlow keys from master-key.env (never print secrets)
+# ----------------------------------------------------------------------------
+# WHAT: Least-privilege allowlist into os.environ for BLE/read.
+# HOW:  load_env() then user_id() / device SN helpers.
+# Layout style (standing): keep SECTION banners.
+# ============================================================================
 """Load EcoFlow keys from central master-key.env only. Never print secrets."""
 from __future__ import annotations
+
 import os
 from pathlib import Path
 
-# Single secrets root — no Ava-Core path.
+# ====================================================
+# SECTION: PATHS + ALLOWLIST
+# ====================================================
 MASTER_KEY_ENV = Path("/home/rootrecord/master/master-key.env")
-
-# Least privilege: only keys energy BLE needs (plus SN aliases).
 ALLOW = frozenset({
     "AVA_ECOFLOW_USER_ID",
     "ECOFLOW_ACCOUNT_ID",
@@ -16,6 +24,9 @@ ALLOW = frozenset({
     "ECOFLOW_DELTA_2_SECONDARY",
 })
 
+# ====================================================
+# SECTION: LOAD
+# ====================================================
 
 def load_env(paths: list[Path] | None = None) -> None:
     for env in paths or [MASTER_KEY_ENV]:

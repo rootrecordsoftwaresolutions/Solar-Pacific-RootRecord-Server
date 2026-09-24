@@ -1,13 +1,33 @@
 #!/usr/bin/env bash
-# energy lib — one owner path for venv python + vendor PYTHONPATH
-# Usage: lib/py script.py [args...]   or ENERGY_PYTHON=... lib/py ...
+# ============================================================================
+# energy/lib/py — energy skill Python launcher
+# ----------------------------------------------------------------------------
+# WHAT: Run a script with the energy venv + eflib PYTHONPATH.
+# HOW:  Prefer ENERGY_PYTHON, else skill .venv, else system python3.
+# Layout style (standing): keep this header.
+# ============================================================================
 set -euo pipefail
-ROOT="/home/rootrecord/.ollama/skills/energy"
+
+# ====================================================
+# SECTION: PATHS
+# ====================================================
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+VENV_PY="$ROOT/.venv/bin/python"
 VENDOR="$ROOT/lib/vendor"
-export PYTHONPATH="${VENDOR}${PYTHONPATH:+:$PYTHONPATH}"
-PY="${ENERGY_PYTHON:-$ROOT/.venv/bin/python}"
-if [[ ! -x "$PY" ]]; then
-  echo "WAITING / No data — energy python missing: $PY" >&2
-  exit 2
+
+# ====================================================
+# SECTION: RESOLVE INTERPRETER
+# ====================================================
+if [[ -n "${ENERGY_PYTHON:-}" ]]; then
+  PY="$ENERGY_PYTHON"
+elif [[ -x "$VENV_PY" ]]; then
+  PY="$VENV_PY"
+else
+  PY="python3"
 fi
+
+# ====================================================
+# SECTION: ENV + EXEC
+# ====================================================
+export PYTHONPATH="${ENERGY_EFLIB_PATH:-$VENDOR}:${PYTHONPATH:-}"
 exec "$PY" "$@"

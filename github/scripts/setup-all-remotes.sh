@@ -1,43 +1,18 @@
 #!/usr/bin/env bash
+# ============================================================================
+# github/scripts/setup-all-remotes.sh — ensure remotes for every enabled repo
+# ----------------------------------------------------------------------------
+# WHAT: Loop repos.conf and run setup-remote.sh for each enabled id.
+# Layout style (standing): keep this header.
+# ============================================================================
 set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck disable=SC1091
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
+source "$HERE/common.sh"
 ensure_bak_root
-# SSH remotes — do not embed PATs in git config
-remote_url() { echo "git@github.com:${1}.git"; }
-
 while IFS=$'\t' read -r id enabled mode local_path slug remote_name; do
   [[ "$id" =~ ^#.*$ || -z "${id:-}" ]] && continue
-  [[ "$enabled" != "1" ]] && { echo "[skip] $id disabled"; continue; }
-
-  if [[ "$mode" == "inplace" ]]; then
-    root="$local_path"
-  else
-    root="$BAK_ROOT/worktrees/$id"
-  fi
-  mkdir -p "$(dirname "$root")"
-
-  if [[ ! -d "$root/.git" ]]; then
-    if [[ -d "$root" ]] && [[ -n "$(ls -A "$root" 2>/dev/null || true)" ]]; then
-      echo "[warn] $id: $root non-empty without .git — fix manually"
-      continue
-    fi
-    echo "[clone] $slug → $root"
-    git clone "$(remote_url "$slug")" "$root" 2>&1 | redact
-  fi
-
-  cd "$root"
-  url="$(remote_url "$slug")"
-  if git remote get-url "$remote_name" >/dev/null 2>&1; then
-    git remote set-url "$remote_name" "$url"
-    echo "[ok] $id remote '$remote_name' → SSH"
-  else
-    if [[ "$remote_name" == "origin" ]] && git remote get-url origin >/dev/null 2>&1; then
-      git remote set-url origin "$url"
-      echo "[ok] $id origin → SSH"
-    else
-      git remote add "$remote_name" "$url"
-      echo "[ok] $id remote '$remote_name' added (SSH)"
-    fi
-  fi
+  [[ "$enabled" == "1" ]] || continue
+  bash "$HERE/setup-remote.sh" "$id" || true
 done < <(grep -v '^#' "$REPOS_CONF" | grep -v '^[[:space:]]*$')
+echo "[ok] setup-all-remotes done"

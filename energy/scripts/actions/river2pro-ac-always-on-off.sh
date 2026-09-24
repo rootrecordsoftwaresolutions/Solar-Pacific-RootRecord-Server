@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
-# River2Pro AC always-on OFF
-# Bruce Monitor — atomic EcoFlow action. Exits non-zero on WAITING/No data.
+# =============================================================================
+# energy/scripts/actions/river2pro-ac-always-on-off.sh - River2Pro AC always-on OFF
+# =============================================================================
 set -euo pipefail
 ROOT="/home/rootrecord/.ollama/skills/energy"
-exec "$ROOT/lib/py" "$ROOT/lib/action_runner.py" \
-  --device "river2pro" \
-  --method "enable_ac_always_on" \
-  --want "off" \
-  --label "River2Pro AC always-on OFF"
+exec "$ROOT/lib/py" "$ROOT/lib/action_runner.py" --device "river2pro" --method "enable_ac_always_on" --want "off" --label "River2Pro AC always-on OFF"

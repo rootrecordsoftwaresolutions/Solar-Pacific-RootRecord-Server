@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+# ============================================================================
+# energy/scripts/ble/ble-stop.sh — stop single BLE owner
+# ----------------------------------------------------------------------------
+# WHAT: Stop ava-ecoflow-ble.service only (does not stop the rootserver poller).
+# Layout style (standing): keep this header.
+# ============================================================================
 set -euo pipefail
-systemctl --user stop ava-ecoflow-ble.service || true
-# clear stale pid if any
-PIDF=/home/rootrecord/.ollama/skills/state/store/ava-ecoflow-ble.pid
-if [[ -f "$PIDF" ]]; then
-  pid=$(cat "$PIDF" || true)
-  if [[ -n "${pid:-}" ]] && ! kill -0 "$pid" 2>/dev/null; then rm -f "$PIDF"; fi
-fi
-echo "stopped (or was inactive)"
+UNIT=ava-ecoflow-ble.service
+systemctl --user stop "$UNIT" || true
+systemctl --user --no-pager --full status "$UNIT" 2>/dev/null | head -15 || true
