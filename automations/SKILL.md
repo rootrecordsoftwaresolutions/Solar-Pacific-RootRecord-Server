@@ -2,8 +2,8 @@
 name: automations
 description: >-
   Boot poller + Cloudflare tunnel + jobs.py (incl. github_sync_all every 300s).
-  After GitHub pulls new skills code, the stack auto-reloads — standing format for all future builds.
-  Do not suggest manual restart or parallel runtimes.
+  After GitHub pulls new skills code, the stack auto-reloads and reopens the status window.
+  Standing format for all future builds — do not suggest manual restart or parallel runtimes.
 ---
 
 # automations
@@ -16,22 +16,14 @@ description: >-
 
 When `github_sync_all` merges remote skills code into the live tree:
 
-1. `push-repo-once.sh` sets `/home/rootrecord/Database/GITHUB/flags/reload-poller-stack`
-2. `sync-all.sh` calls `schedule-stack-reload.sh`
-3. After an 8s deferral (so the sync job can exit), the stack **fully stops then starts**:
-   - `rr-rootserver-poller.service`
-   - `rootserver_poller.py`
-   - cloudflared tunnel
-   - `poller-watch.py`
-4. `ava-ecoflow-ble.service` is **not** killed (single BLE owner stays)
+1. `push-repo-once.sh` sets reload flag and runs `schedule-stack-reload.sh`
+2. After ~8s, `do-stack-reload.sh`:
+   - stops unit + poller + cloudflared + poller-watch
+   - starts `rr-rootserver-poller.service`
+   - **reopens the status window** (`open-poller-window.sh`)
+3. `ava-ecoflow-ble.service` is **not** killed
 
-**AI operators must not:**
-- suggest `/home/rootrecord/rootserver-poller restart` after a code push/pull that will sync naturally;
-- start a second poller, second cloudflared, or parallel "apply the new code" process;
-- dual-start BLE owners;
-- regress this format in future features.
-
-Manual restart remains valid only when the operator explicitly wants an immediate reload outside the 5-minute sync window, or when diagnosing a hung stack.
+**AI operators must not:** suggest default manual restart after ordinary pushes; start a second poller/tunnel/BLE owner; regress this format.
 
 | | |
 |--|--|
@@ -39,8 +31,5 @@ Manual restart remains valid only when the operator explicitly wants an immediat
 | CLI | `/home/rootrecord/rootserver-poller` |
 | Public | `https://rootserver.rootrecord.cloud/` |
 | GitHub sync | `github_sync_all` → skills + website + mainland |
-| Auto-reload | `scripts/schedule-stack-reload.sh` (standing) |
-| Data | `/home/rootrecord/Database/` (intake + GITHUB baks) |
-
-`ON_BOOT` p0 self → p1 tunnel → p2 `github_setup_remotes` → schedules.
-EcoFlow reads: `ONCE_AT_START` + every :00/:15/:30/:45 → SQLite dual-write; `/energy` prefers SQLite.
+| Auto-reload | `schedule-stack-reload.sh` → `do-stack-reload.sh` (includes window) |
+| Data | `/home/rootrecord/Database/` |
