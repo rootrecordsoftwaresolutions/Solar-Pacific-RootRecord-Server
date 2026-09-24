@@ -196,6 +196,10 @@ CREATE TABLE IF NOT EXISTS aggregate_measurement (
     UNIQUE(aggregation_run_id, subject_type, subject_id, metric_key)
 );
 
+CREATE UNIQUE INDEX IF NOT EXISTS uq_observation_identity_without_sequence
+    ON observation(device_id, observed_at, source_id)
+    WHERE source_sequence IS NULL;
+
 CREATE INDEX IF NOT EXISTS idx_observation_device_time
     ON observation(device_id, observed_at);
 
