@@ -12,7 +12,7 @@ Play on A.I. eyes. Thin desk camera skill restored from legacy panels-cam.
 - Never invent a frame or caption. No stream means WAITING / No data.
 - Secrets only in store/secrets.env or master-key.env — never in SKILL or git.
 - Gateway is light: health, one JPEG still, power on/off. Heavy GIF stays on AWS when live.
-- Data samples go under /home/rootrecord/Database/A-EYES/
+- Frames write ONLY to /home/rootrecord/Database/A-EYES/frames/ — no local skill-store mirror.
 - NPU vision captions are staged in plumbing vision-npu.md
 
 ## Layout
@@ -20,8 +20,7 @@ Play on A.I. eyes. Thin desk camera skill restored from legacy panels-cam.
 - Scripts: scripts/cam_gateway.py, panels_grab.py, cam_power_session.py, solar_origin_mux.py
 - Secrets: store/secrets.env (mode 600)
 - Connection: store/CONNECTION.json
-- Frames (skill): store/frames/
-- Frames (database): /home/rootrecord/Database/A-EYES/frames/
+- Frames: /home/rootrecord/Database/A-EYES/frames/ (single source of truth, no local mirror)
 - Unit: ~/.config/systemd/user/rr-solar-cam-gateway.service
 
 ## Gateway API (path secret)

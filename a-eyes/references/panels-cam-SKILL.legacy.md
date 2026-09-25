@@ -35,7 +35,7 @@ Scheduler job `panels-cam` every 15 minutes (night-sleep gated with other Ava cr
 ```
 
 State: `ecoflow-ble-poller/store/state/panels-cam.json`  
-Frames: `panels-cam/store/frames/`  
+Frames: `/home/rootrecord/Database/A-EYES/frames/` (Database only, no skill-store mirror)  
 Connection: `panels-cam/store/CONNECTION.json` (also under `look/store/camera-dvr/`)
 
 ## Offline
