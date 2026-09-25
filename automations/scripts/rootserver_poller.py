@@ -54,7 +54,10 @@ def log(msg: str) -> None:
 
 
 def heartbeat_line() -> str:
-    return f"{full_timestamp()}Poller is online."
+    try:
+        return f"{full_timestamp()}{_energy_log_line()}"
+    except Exception:
+        return f"{full_timestamp()}Poller is online."
 
 
 def internet_ok(force: bool = False) -> bool:

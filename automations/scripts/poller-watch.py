@@ -220,7 +220,7 @@ def format_line(raw: str) -> str | None:
     if body.startswith("scheduler"):
         return f"  {DIM}{t}{RST}  {WHITE}☰{RST}  {body}"
     if body.startswith("ENERGY "):
-        return f"  {DIM}{t}{RST}  {GREEN}⚡{RST}  {GREEN}{body}{RST}"
+        return f"  {DIM}{t}{RST}  {YELLOW}⚡{RST}  {YELLOW}{body}{RST}"
     if body.startswith("SUMMARY=") or body.startswith("STATUS="):
         return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {body}"
     if body.startswith("job:"):
