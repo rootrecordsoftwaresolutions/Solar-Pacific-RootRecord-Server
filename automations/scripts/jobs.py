@@ -213,8 +213,8 @@ EVERY_SECONDS = [
     {
         "id": "ecoflow_read_cycle",
         "enabled": True,
-        "description": "BLE dual-read every 6s (~10/min) → SQLite+JSON; kWh-dense samples.",
-        "interval_sec": 6,
+        "description": "Leap-frog BLE: Delta2 / River2Pro alternate every 5s (each ~10s).",
+        "interval_sec": 5,
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/energy/scripts/read/leapfrog-read.sh",
         "timeout_sec": 180,

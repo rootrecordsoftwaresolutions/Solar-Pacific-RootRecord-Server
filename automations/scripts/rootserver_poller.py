@@ -378,7 +378,7 @@ def run_command_job(job: dict) -> None:
             log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
             for line in (err or out).splitlines()[:20]:
                 log(f"{full_timestamp()}job:{jid} ! {line}")
-                except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired:
         log(f"{full_timestamp()}job:{jid} TIMEOUT after {timeout:.0f}s")
     except Exception as e:
         log(f"{full_timestamp()}job:{jid} ERROR {e}")
