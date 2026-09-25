@@ -170,6 +170,25 @@ def _value_columns(value: Any) -> tuple[Optional[float], Optional[str], Optional
     return None, str(value), None
 
 
+
+def _coerce_state_value(value, state: str):
+    n, text_v, boolean = _value_columns(value)
+    filled = sum(x is not None for x in (n, text_v, boolean))
+    if filled == 0:
+        if state in ("measured", "defaulted"):
+            state = "missing"
+        return None, None, None, state
+    if filled > 1:
+        if n is not None:
+            text_v = boolean = None
+        elif boolean is not None:
+            n = text_v = None
+        else:
+            n = boolean = None
+    if state in ("missing", "not_applicable"):
+        state = "measured"
+    return n, text_v, boolean, state
+
 def add_device_measurement(
     conn: sqlite3.Connection,
     *,
@@ -180,7 +199,7 @@ def add_device_measurement(
     state: str = "measured",
 ) -> None:
     """Persist one device metric while preserving missing/not-applicable state."""
-    n, text, boolean = _value_columns(value)
+    n, text, boolean, state = _coerce_state_value(value, state)
     conn.execute(
         """
         INSERT INTO device_measurement(
@@ -210,7 +229,7 @@ def add_battery_measurement(
     state: str = "measured",
 ) -> None:
     """Persist one battery metric."""
-    n, text, boolean = _value_columns(value)
+    n, text, boolean, state = _coerce_state_value(value, state)
     conn.execute(
         """
         INSERT INTO battery_measurement(
@@ -266,7 +285,7 @@ def add_port_measurement(
     state: str = "measured",
 ) -> None:
     """Persist one port measurement."""
-    n, text, boolean = _value_columns(value)
+    n, text, boolean, state = _coerce_state_value(value, state)
     conn.execute(
         """
         INSERT INTO port_measurement(
