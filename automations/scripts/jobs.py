@@ -198,18 +198,44 @@ ONCE_AT_START = [
 # Fires on a repeating interval. interval_sec is required.
 # ====================================================
 EVERY_SECONDS = [
-    # --- live job: desk heartbeat (do not remove; disable only if intentional) ---
     {
         "id": "heartbeat",
         "enabled": True,
-        "description": "Log + HTTP body line: <timestamp>Poller is online.",
-        "interval_sec": 5,
+        "description": "ENERGY snapshot once per minute (last sample / 1m).",
+        "interval_sec": 60,
         "builtin": "heartbeat",
         "command": "",
         "timeout_sec": 5,
         "cwd": "",
         "env": {},
     },
+
+    {
+        "id": "ecoflow_read_cycle",
+        "enabled": True,
+        "description": "BLE dual-read every 6s (~10/min) → SQLite+JSON; kWh-dense samples.",
+        "interval_sec": 6,
+        "builtin": "",
+        "command": ECOFLOW_DUAL_READ,
+        "timeout_sec": 180,
+        "cwd": "/home/rootrecord/.ollama/skills/energy",
+        "env": {},
+    },
+
+    {
+        "id": "sys_stats_cycle",
+        "enabled": True,
+        "description": "Host CPU/load/mem → Database/SYSTEM; same 6s cadence optional — keep 15min-aligned via only_at if preferred.",
+        "interval_sec": 60,
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/system-stats/scripts/sys-sample.sh",
+        "timeout_sec": 60,
+        "cwd": "/home/rootrecord/.ollama/skills/system-stats",
+        "env": {},
+    },
+
+    # --- live job: desk heartbeat (do not remove; disable only if intentional) ---
+
     # --- github autopush: one check-stage-commit-push cycle ---------------------
     {
         "id": "github_sync_all",
@@ -270,29 +296,7 @@ EVERY_MINUTE = [
     },
     # --- EcoFlow dual-write read (SQLite canonical + legacy JSON last-files) -----
     # BLE sessions ~20–40s each; serialize with flock. Minutes 0/15/30/45.
-    {
-        "id": "ecoflow_read_cycle",
-        "enabled": True,
-        "description": "BLE read Delta 2 + River 2 Pro → SQLite + JSON; poller /energy shows saved data.",
-        "only_at_minutes": [0, 15, 30, 45],
-        "builtin": "",
-        "command": ECOFLOW_DUAL_READ,
-        "timeout_sec": 180,
-        "cwd": "/home/rootrecord/.ollama/skills/energy",
-        "env": {},
 
-    },
-    {
-        "id": "sys_stats_cycle",
-        "enabled": True,
-        "description": "Host CPU/load/mem → Database/SYSTEM; same :00/:15/:30/:45 as Ecoflow.",
-        "only_at_minutes": [0, 15, 30, 45],
-        "builtin": "",
-        "command": "bash /home/rootrecord/.ollama/skills/system-stats/scripts/sys-sample.sh",
-        "timeout_sec": 60,
-        "cwd": "/home/rootrecord/.ollama/skills/system-stats",
-        "env": {},
-    },
 
     # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
     # {
