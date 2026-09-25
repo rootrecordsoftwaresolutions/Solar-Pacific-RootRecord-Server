@@ -486,3 +486,49 @@ Traceback (most recent call last):
     import river_car_dc as river  # noqa: E402
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ModuleNotFoundError: No module named 'river_car_dc'
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 25, in <module>
+    from cam_power_session import power_off, power_on  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_power_session.py", line 22, in <module>
+    import river_car_dc as river  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'river_car_dc'
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 25, in <module>
+    from cam_power_session import power_off, power_on  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_power_session.py", line 22, in <module>
+    import river_car_dc as river  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'river_car_dc'
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 25, in <module>
+    from cam_power_session import power_off, power_on  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_power_session.py", line 22, in <module>
+    import river_car_dc as river  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'river_car_dc'
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 25, in <module>
+    from cam_power_session import power_off, power_on  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_power_session.py", line 22, in <module>
+    import river_car_dc as river  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/river_car_dc.py", line 23, in <module>
+    from ecoflow_ble_store import RIVER_SN  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'ecoflow_ble_store'
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 25, in <module>
+    from cam_power_session import power_off, power_on  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_power_session.py", line 22, in <module>
+    import river_car_dc as river  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/river_car_dc.py", line 23, in <module>
+    from ecoflow_ble_store import RIVER_SN  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'ecoflow_ble_store'
