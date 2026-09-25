@@ -2,13 +2,12 @@
 from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
-from energy.db.store import connect, connect_layer, initialize_schema, DEFAULT_DB_PATH, LAYERS_DIR
+from energy.db.store import connect, connect_layer, initialize_schema, DEFAULT_DB_PATH
 from energy.db.aggregate import aggregate_period, period_bounds, LAYERS, _iso
 
 
-def condense_closed_periods(db_path=None, layers_dir=None):
+def condense_closed_periods(db_path=None):
     raw_path = Path(db_path) if db_path else DEFAULT_DB_PATH
-    layers_dir = Path(layers_dir) if layers_dir else LAYERS_DIR
     raw_conn = connect(raw_path)
     initialize_schema(raw_conn)
     total = 0
@@ -20,7 +19,7 @@ def condense_closed_periods(db_path=None, layers_dir=None):
         latest = datetime.fromisoformat(row[1].replace("Z", "+00:00"))
 
         for layer in LAYERS:
-            layer_conn = connect_layer(layer, raw_path, layers_dir)
+            layer_conn = connect_layer(layer, raw_path)
             try:
                 start, _ = period_bounds(layer, earliest)
                 while True:

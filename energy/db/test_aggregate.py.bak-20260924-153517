@@ -1,7 +1,6 @@
-"""Focused regression tests for the RootRecord condensation engine (split db layout)."""
+"""Focused regression tests for the RootRecord condensation engine."""
 from __future__ import annotations
 
-import shutil
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -13,7 +12,6 @@ from energy.db.store import (
     add_device_measurement,
     add_port_measurement,
     connect,
-    connect_layer,
     create_observation,
     initialize_schema,
     upsert_device,
@@ -25,9 +23,6 @@ class AggregateRegressionTests(unittest.TestCase):
         self.tmp = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
         self.tmp.close()
         self.db = Path(self.tmp.name)
-        self.layers_dir = Path(tempfile.mkdtemp(prefix="rootrecord-layers-"))
-        self._layer_conns = []
-
         self.conn = connect(self.db)
         initialize_schema(self.conn)
         self.device = upsert_device(
@@ -45,18 +40,10 @@ class AggregateRegressionTests(unittest.TestCase):
         ).lastrowid
 
     def tearDown(self):
-        for lc in self._layer_conns:
-            lc.close()
         self.conn.close()
         self.db.unlink(missing_ok=True)
         for suffix in ("-wal", "-shm"):
             Path(str(self.db) + suffix).unlink(missing_ok=True)
-        shutil.rmtree(self.layers_dir, ignore_errors=True)
-
-    def open_layer(self, layer):
-        lc = connect_layer(layer, self.db, self.layers_dir)
-        self._layer_conns.append(lc)
-        return lc
 
     def observation(self, stamp, power=None):
         obs = create_observation(
@@ -118,10 +105,12 @@ class AggregateRegressionTests(unittest.TestCase):
             state="measured",
         )
         self.conn.commit()
-
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
-        row = lc.execute(
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
+        row = self.conn.execute(
             """SELECT COUNT(*) FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
                WHERE ar.layer='1min' AND am.subject_type='port'
@@ -136,10 +125,13 @@ class AggregateRegressionTests(unittest.TestCase):
         self.observation("2026-09-24T22:01:30.000Z", 100)
         self.conn.commit()
 
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
 
-        row = lc.execute(
+        row = self.conn.execute(
             """SELECT sample_count,coverage_pct,energy_wh
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -156,10 +148,13 @@ class AggregateRegressionTests(unittest.TestCase):
         self.observation("2026-09-24T22:00:05.000Z", 0)
         self.conn.commit()
 
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
 
-        row = lc.execute(
+        row = self.conn.execute(
             """SELECT value_avg,state
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -192,10 +187,13 @@ class AggregateRegressionTests(unittest.TestCase):
         )
         self.conn.commit()
 
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
 
-        row = lc.execute(
+        row = self.conn.execute(
             """SELECT subject_type,subject_id,metric_key,value_avg,state
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -213,10 +211,13 @@ class AggregateRegressionTests(unittest.TestCase):
         self.observation("2026-09-24T22:00:30.000Z", 100)
         self.conn.commit()
 
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
 
-        row = lc.execute(
+        row = self.conn.execute(
             """SELECT observed_span_s,valid_duration_s,coverage_pct
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -232,16 +233,15 @@ class AggregateRegressionTests(unittest.TestCase):
         self.conn.commit()
 
         at = datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc)
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", at)
-        first = lc.execute(
+        aggregate_at(self.conn, "1min", at)
+        first = self.conn.execute(
             """SELECT COUNT(*),SUM(energy_wh)
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
                WHERE ar.layer='1min'"""
         ).fetchone()
-        aggregate_at(lc, "1min", at)
-        second = lc.execute(
+        aggregate_at(self.conn, "1min", at)
+        second = self.conn.execute(
             """SELECT COUNT(*),SUM(energy_wh)
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -255,9 +255,12 @@ class AggregateRegressionTests(unittest.TestCase):
         self.observation("2026-09-24T22:01:01.000Z", 100)
         self.conn.commit()
 
-        lc = self.open_layer("1min")
-        aggregate_at(lc, "1min", datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc))
-        row = lc.execute(
+        aggregate_at(
+            self.conn,
+            "1min",
+            datetime(2026, 9, 24, 22, 0, tzinfo=timezone.utc),
+        )
+        row = self.conn.execute(
             """SELECT coverage_pct,energy_wh
                FROM aggregate_measurement am
                JOIN aggregation_run ar ON ar.aggregation_run_id=am.aggregation_run_id
@@ -272,17 +275,16 @@ class AggregateRegressionTests(unittest.TestCase):
         self.observation("2026-09-24T22:01:30.000Z", 100)
         self.conn.commit()
 
-        total = condense_closed_periods(self.db, layers_dir=self.layers_dir)
+        total = condense_closed_periods(self.db)
         self.assertGreater(total, 0)
 
-        lc = self.open_layer("1min")
-        complete = lc.execute(
+        complete = self.conn.execute(
             """SELECT COUNT(*) FROM aggregation_run
                WHERE layer='1min' AND status='complete'"""
         ).fetchone()[0]
         self.assertEqual(complete, 1)
 
-        second = condense_closed_periods(self.db, layers_dir=self.layers_dir)
+        second = condense_closed_periods(self.db)
         self.assertEqual(second, 0)
 
 
