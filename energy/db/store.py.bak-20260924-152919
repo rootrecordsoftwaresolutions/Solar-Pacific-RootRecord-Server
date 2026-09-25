@@ -27,9 +27,13 @@ def connect(db_path: Path | str = DEFAULT_DB_PATH) -> sqlite3.Connection:
 
 
 def initialize_schema(conn: sqlite3.Connection) -> None:
-    """Create raw-telemetry schema objects only. Aggregation layers live in
-    their own per-layer db files now — see initialize_layer_schema()."""
+    """Create schema objects without creating any telemetry data."""
     conn.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(aggregate_measurement)")}
+    if "observed_span_s" not in columns:
+        conn.execute("ALTER TABLE aggregate_measurement ADD COLUMN observed_span_s REAL")
+    if "valid_duration_s" not in columns:
+        conn.execute("ALTER TABLE aggregate_measurement ADD COLUMN valid_duration_s REAL")
     conn.execute(
         "INSERT OR IGNORE INTO schema_version(version, applied_at) "
         "VALUES (1, strftime('%Y-%m-%dT%H:%M:%fZ','now'))"
@@ -39,44 +43,6 @@ def initialize_schema(conn: sqlite3.Connection) -> None:
         "VALUES (2, strftime('%Y-%m-%dT%H:%M:%fZ','now'))"
     )
     conn.commit()
-
-
-LAYERS_DIR = Path("/home/rootrecord/Database/ROOTRECORD/layers")
-LAYER_SCHEMA_PATH = Path(__file__).with_name("schema_layers.sql")
-
-
-def layer_db_path(layer: str, layers_dir: Path | str = LAYERS_DIR) -> Path:
-    """Path to the standalone db file for one aggregation layer (e.g. '1min.db')."""
-    return Path(layers_dir) / f"{layer}.db"
-
-
-def initialize_layer_schema(conn: sqlite3.Connection) -> None:
-    conn.executescript(LAYER_SCHEMA_PATH.read_text(encoding="utf-8"))
-    conn.execute(
-        "INSERT OR IGNORE INTO schema_version(version, applied_at) "
-        "VALUES (1, strftime('%Y-%m-%dT%H:%M:%fZ','now'))"
-    )
-    conn.commit()
-
-
-def connect_layer(
-    layer: str,
-    raw_db_path: Path | str = DEFAULT_DB_PATH,
-    layers_dir: Path | str = LAYERS_DIR,
-) -> sqlite3.Connection:
-    """Open one layer's own db file, with the raw canonical db ATTACHed as
-    'raw' so aggregate_period() can read source telemetry without the two
-    living in the same file."""
-    path = layer_db_path(layer, layers_dir)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(str(path))
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys = ON")
-    conn.execute("PRAGMA journal_mode = WAL")
-    conn.execute("PRAGMA synchronous = NORMAL")
-    initialize_layer_schema(conn)
-    conn.execute("ATTACH DATABASE ? AS raw", (str(raw_db_path),))
-    return conn
 
 
 def upsert_device(
