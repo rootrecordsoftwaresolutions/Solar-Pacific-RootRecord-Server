@@ -40,5 +40,6 @@ If missing, restore from git and re-apply live jobs. See `0-master-prompt/prompt
 | Auto-reload | `scripts/schedule-stack-reload.sh` → `do-stack-reload.sh` |
 | Data | `/home/rootrecord/Database/` |
 
-`ON_BOOT` p0 self → p1 tunnel (internet gate) → p2 remotes → Ollama/FLM/relay.
+`ON_BOOT` p0 self → p1 tunnel (internet gate) → p2 remotes → Ollama/FLM/relay → p6 a-eyes cam server → p7 a-eyes timelapse catch-up.
 EcoFlow: ONCE_AT_START + every :00/:15/:30/:45 → SQLite dual-write.
+a-eyes timelapse: EVERY_HOUR compiles the hour just ended; ON_AT 22:01 stitches the day + exports the GIF; ON_BOOT catch-up covers any hour missed while the poller was down. Scripts live in the a-eyes skill, not here.

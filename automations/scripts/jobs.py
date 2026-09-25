@@ -160,6 +160,18 @@ ON_BOOT = [
         "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
         "env": {},
     },
+    # --- priority 7: a-eyes timelapse boot catch-up ------------------------------
+    {
+        "id": "a_eyes_timelapse_catchup",
+        "enabled": True,
+        "priority": 7,
+        "description": "Compile any completed hour missing a chunk today + run daily render if the window already closed (covers late boot/downtime).",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/a-eyes/scripts/timelapse_catchup.sh",
+        "timeout_sec": 600,
+        "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
+        "env": {},
+    },
     # --- TEMPLATE (on boot) — copy from here -------------------------------------
     # {
     #     "id": "example_on_boot_p3",
@@ -343,6 +355,18 @@ EVERY_MINUTE = [
 # Optional: only_at_hours = [0, 6, 12, 18]  (empty list = every hour, 0–23)
 # ====================================================
 EVERY_HOUR = [
+    # --- a-eyes timelapse: compile the hour that just ended -----------------------
+    {
+        "id": "a_eyes_timelapse_hourly_compile",
+        "enabled": True,
+        "description": "Compile the previous hour's ch1 frames into video_chunks/hour_HH.mp4, then archive those frames. No-op outside the 05:00-22:00 capture window.",
+        "only_at_hours": [],
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/a-eyes/scripts/timelapse_hourly.sh",
+        "timeout_sec": 600,
+        "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
+        "env": {},
+    },
     # --- TEMPLATE (every hour / selected hours) — copy from here ----------------
     # {
     #     "id": "example_every_hour",
@@ -365,6 +389,18 @@ EVERY_HOUR = [
 # at_times = ["13:00"] or ["07:30", "13:00", "21:15"]  (24h HH:MM)
 # ====================================================
 ON_AT = [
+    # --- a-eyes timelapse: end-of-day master render + gif -------------------------
+    {
+        "id": "a_eyes_timelapse_daily_render",
+        "enabled": True,
+        "description": "Stitch today's hour_HH.mp4 chunks into master_stitched_timelapse.mp4 and export optimized_web_timelapse.gif.",
+        "at_times": ["22:01"],
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/a-eyes/scripts/timelapse_daily.sh",
+        "timeout_sec": 900,
+        "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
+        "env": {},
+    },
     # --- TEMPLATE (exact HH:MM local) — copy from here --------------------------
     # {
     #     "id": "example_on_at_1300",
