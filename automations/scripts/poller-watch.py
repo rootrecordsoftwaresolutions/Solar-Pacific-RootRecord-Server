@@ -219,6 +219,9 @@ def format_line(raw: str) -> str | None:
         return f"  {DIM}{t}{RST}  {WHITE}○{RST}  HTTP listening on :8799"
     if body.startswith("scheduler"):
         return f"  {DIM}{t}{RST}  {WHITE}☰{RST}  {body}"
+    if "OK wrote/updated" in body and "worklog" in body.lower():
+        short = body if len(body) <= 90 else body[:87] + "…"
+        return f"  {DIM}{t}{RST}  {BRIGHT_GREEN}📓{RST}  {GREEN}{short}{RST}"
     if body.startswith("ENERGY "):
         return f"  {DIM}{t}{RST}  {YELLOW}⚡{RST}  {YELLOW}{body}{RST}"
     if body.startswith("SUMMARY=") or body.startswith("STATUS="):
@@ -236,6 +239,12 @@ def format_line(raw: str) -> str | None:
                         rest = after[after.index("]") + 1 :].strip()
                 except Exception:
                     rest = payload
+            # Worklog success — green notebook
+            if "worklog" in rest.lower() or "WORKLOG" in rest or "worklog_current" in rest:
+                short = rest
+                if len(short) > 90:
+                    short = short[:87] + "…"
+                return f"  {DIM}{t}{RST}  {BRIGHT_GREEN}📓{RST}  {GREEN}{short}{RST}"
             if "no changes" in rest or rest.startswith("—"):
                 if repo:
                     return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {DIM}github {repo} · no changes{RST}"
