@@ -25,7 +25,17 @@ from __future__ import annotations
 
 import time
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 from typing import Callable
+
+# Every due fetch module (+ hurricanes) runs as its own thread now (see
+# run_once). core/http_client.py's per-host locking is what makes this safe:
+# two threads hitting the SAME host still serialize behind that host's own
+# rate floor; threads hitting different hosts never wait on each other.
+# Capped rather than unbounded purely so a future module addition doesn't
+# silently spawn dozens of threads -- there are 10 fetch modules + hurricanes
+# today (11), so this cap isn't expected to bind in practice.
+MAX_CONCURRENT_MODULES = 16
 
 from core import hst_time
 from core.manifest import Manifest
@@ -162,34 +172,63 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
     """One dispatch pass: check every fetch module's cadence, run whichever
     are due, check the hurricanes cadence, check for HST midnight rollover.
 
-    Each of the three phases below is individually try/except-guarded (see
-    module docstring) -- one module's exception is logged and skipped, and
-    the other phases still run this same pass.
+    CONCURRENCY NOTE (added 2026-09-25): every due module (+ hurricanes, if
+    due) now runs in its own thread instead of strictly one-after-another.
+    Previously a full pass took the SUM of every resource's own per-host
+    rate floor -- ~150+ resources across 7 hosts serialized on one thread
+    added up to 18-25 minutes for a single pass, and radar/hurricanes (late
+    in dispatch order) were never reached before the process got restarted.
+    Running modules concurrently means the pass now takes roughly as long
+    as its single slowest host's own queue (core/http_client.py's per-host
+    locking is what keeps this correct -- same-host requests still wait
+    their turn, different-host requests never block each other).
+
+    manifest.save() now happens after EACH task finishes (inside
+    _run_and_save below), not once at the very end of the whole pass --
+    previously a slow/interrupted pass meant _manifest.json was never
+    written at all, since save() only ran after literally everything
+    (hurricanes included) had already completed.
+
+    Each task is individually try/except-guarded (see module docstring) --
+    one module's exception is logged and skipped, every other task still
+    completes this same pass.
     """
     manifest = Manifest(base_dir).load()
     now_mono = time.monotonic()
+
+    def _run_and_save(label: str, fn: Callable[[], None]) -> None:
+        try:
+            fn()
+        except Exception:
+            _log(f"module:{label} ERROR (skipped this pass)\n{traceback.format_exc()}")
+        manifest.save()
+
+    tasks: list[tuple[str, Callable[[], None]]] = []
 
     for name, fetch_fn in FETCH_MODULES.items():
         tier = tiers.module_tier(name)
         last_run = state.last_run_monotonic.get(name)
         if tiers.is_due(last_run_monotonic=last_run, now_monotonic=now_mono, tier=tier):
-            try:
-                _run_module(name, fetch_fn, manifest, base_dir)
-            except Exception:
-                _log(f"module:{name} ERROR (skipped this pass)\n{traceback.format_exc()}")
             state.last_run_monotonic[name] = now_mono
+            tasks.append((
+                name,
+                lambda name=name, fetch_fn=fetch_fn: _run_module(name, fetch_fn, manifest, base_dir),
+            ))
 
-    if (
+    hurricanes_due = (
         state.last_hurricanes_run_monotonic is None
         or (now_mono - state.last_hurricanes_run_monotonic) >= HURRICANES_CADENCE_SECONDS
-    ):
-        try:
-            hurricane_sources.poll(hurricanes_base_dir)
-        except Exception:
-            _log(f"hurricanes ERROR (skipped this pass)\n{traceback.format_exc()}")
+    )
+    if hurricanes_due:
         state.last_hurricanes_run_monotonic = now_mono
+        tasks.append(("hurricanes", lambda: hurricane_sources.poll(hurricanes_base_dir)))
 
-    manifest.save()
+    if tasks:
+        _log(f"dispatching {len(tasks)} due task(s) concurrently: {', '.join(t[0] for t in tasks)}")
+        with ThreadPoolExecutor(max_workers=min(len(tasks), MAX_CONCURRENT_MODULES)) as pool:
+            futures = [pool.submit(_run_and_save, label, fn) for label, fn in tasks]
+            for f in futures:
+                f.result()  # _run_and_save already swallows exceptions; this just waits for completion
 
     try:
         _check_midnight_rollover(state, base_dir)

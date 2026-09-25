@@ -7,6 +7,7 @@ fetch/. Uses httpx (already a dependency in the old system's scripts).
 """
 from __future__ import annotations
 
+import threading
 import time
 from dataclasses import dataclass
 from typing import Any
@@ -19,6 +20,26 @@ from pathlib import Path
 _CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
 _last_request_at: dict[str, float] = {}  # host -> monotonic time of last request
+
+# One lock per host, so concurrent fetches to DIFFERENT hosts never wait on
+# each other -- only same-host calls serialize behind that host's own floor.
+# _locks_meta_lock guards creation of a new per-host Lock the first time a
+# given host is seen; after that, all waiting happens on the host's own lock,
+# never on _locks_meta_lock itself (per-fetch-module concurrency added
+# 2026-09-25 -- a single global sleep was previously serializing every
+# resource across every host, turning a ~13min worst-case host queue into
+# an ~18-25min whole-pass wait).
+_host_locks: dict[str, threading.Lock] = {}
+_locks_meta_lock = threading.Lock()
+
+
+def _lock_for(host: str) -> threading.Lock:
+    with _locks_meta_lock:
+        lock = _host_locks.get(host)
+        if lock is None:
+            lock = threading.Lock()
+            _host_locks[host] = lock
+        return lock
 
 
 def _load_hosts_config() -> dict[str, Any]:
@@ -42,15 +63,22 @@ def _rate_floor_seconds(host: str) -> float:
 
 
 def _enforce_rate_floor(host: str) -> None:
-    floor = _rate_floor_seconds(host)
-    last = _last_request_at.get(host)
-    now = time.monotonic()
-    if last is not None:
-        elapsed = now - last
-        wait = floor - elapsed
-        if wait > 0:
-            time.sleep(wait)
-    _last_request_at[host] = time.monotonic()
+    # Held only for this one host's check-sleep-update sequence -- a thread
+    # fetching a different host never touches this lock, so it never waits
+    # here. A thread fetching the SAME host blocks on this exact section,
+    # which is the point: two concurrent requests to api.weather.gov must
+    # still be >=30s apart even if they came from two different fetch
+    # modules running in parallel.
+    with _lock_for(host):
+        floor = _rate_floor_seconds(host)
+        last = _last_request_at.get(host)
+        now = time.monotonic()
+        if last is not None:
+            elapsed = now - last
+            wait = floor - elapsed
+            if wait > 0:
+                time.sleep(wait)
+        _last_request_at[host] = time.monotonic()
 
 
 @dataclass
