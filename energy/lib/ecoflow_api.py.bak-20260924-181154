@@ -38,13 +38,14 @@ def _sorted_qstr(d: dict[str, Any]) -> str:
 
 class EcoflowApi:
     def __init__(self) -> None:
-        from envload import api_keys
-        self.access_key, self.secret_key = api_keys()
+        load_env()
+        self.access_key = (os.environ.get("ECOFLOW_ACCESS_KEY") or "").strip()
+        self.secret_key = (os.environ.get("ECOFLOW_SECRET_KEY") or "").strip()
         region = (os.environ.get("ECOFLOW_REGION") or "us").strip().lower()
         self.base = _BASE.get(region, _BASE["us"]).rstrip("/")
         if not self.access_key or not self.secret_key:
             raise EcoflowApiError(
-                "ECOFLOW_ACCESS / ECOFLOW_SECRET missing or empty in master-key.env"
+                "ECOFLOW_ACCESS_KEY / ECOFLOW_SECRET_KEY missing in master-key.env"
             )
 
     def _headers(self, params: dict[str, Any] | None = None) -> dict[str, str]:

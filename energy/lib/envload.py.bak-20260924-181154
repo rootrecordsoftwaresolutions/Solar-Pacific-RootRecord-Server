@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
+# ============================================================================
+# envload.py — load EcoFlow keys from master-key.env (never print secrets)
+# ----------------------------------------------------------------------------
+# WHAT: Least-privilege allowlist into os.environ for BLE/read + cloud API.
+# HOW:  load_env() then user_id() / device SN helpers.
+# Layout style (standing): keep SECTION banners.
+# ============================================================================
 """Load EcoFlow keys from central master-key.env only. Never print secrets."""
 from __future__ import annotations
 
 import os
 from pathlib import Path
 
+# ====================================================
+# SECTION: PATHS + ALLOWLIST
+# ====================================================
 MASTER_KEY_ENV = Path("/home/rootrecord/master/master-key.env")
 ALLOW = frozenset({
     "AVA_ECOFLOW_USER_ID",
@@ -12,12 +22,15 @@ ALLOW = frozenset({
     "ECOFLOW_DELTA_2",
     "ECOFLOW_RIVER_2_PRO",
     "ECOFLOW_DELTA_2_SECONDARY",
-    # Official cloud API — names already used in master-key.env
-    "ECOFLOW_ACCESS",
-    "ECOFLOW_SECRET",
-    "ECOFLOW_REGION",
+    # Official cloud API
+    "ECOFLOW_ACCESS_KEY",
+    "ECOFLOW_SECRET_KEY",
+    "ECOFLOW_REGION",          # us | eu | a | global
 })
 
+# ====================================================
+# SECTION: LOAD
+# ====================================================
 
 def load_env(paths: list[Path] | None = None) -> None:
     for env in paths or [MASTER_KEY_ENV]:
@@ -36,16 +49,9 @@ def load_env(paths: list[Path] | None = None) -> None:
 
 
 def user_id() -> str:
+    """BLE connect user id — AVA_ECOFLOW_USER_ID, else ECOFLOW_ACCOUNT_ID."""
     load_env()
     uid = (os.environ.get("AVA_ECOFLOW_USER_ID") or "").strip()
     if not uid:
         uid = (os.environ.get("ECOFLOW_ACCOUNT_ID") or "").strip()
     return uid
-
-
-def api_keys() -> tuple[str, str]:
-    """Return (access, secret) from ECOFLOW_ACCESS / ECOFLOW_SECRET."""
-    load_env()
-    access = (os.environ.get("ECOFLOW_ACCESS") or "").strip()
-    secret = (os.environ.get("ECOFLOW_SECRET") or "").strip()
-    return access, secret
