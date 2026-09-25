@@ -280,6 +280,18 @@ EVERY_MINUTE = [
         "timeout_sec": 180,
         "cwd": "/home/rootrecord/.ollama/skills/energy",
         "env": {},
+    {
+        "id": "sys_stats_cycle",
+        "enabled": True,
+        "description": "Host CPU/load/mem → Database/SYSTEM; same :00/:15/:30/:45 as Ecoflow.",
+        "only_at_minutes": [0, 15, 30, 45],
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/system-stats/scripts/sys-sample.sh",
+        "timeout_sec": 60,
+        "cwd": "/home/rootrecord/.ollama/skills/system-stats",
+        "env": {},
+    },
+
     },
     # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
     # {

@@ -222,6 +222,8 @@ def format_line(raw: str) -> str | None:
     if "OK wrote/updated" in body and "worklog" in body.lower():
         short = body if len(body) <= 90 else body[:87] + "…"
         return f"  {DIM}{t}{RST}  {BRIGHT_GREEN}📓{RST}  {GREEN}{short}{RST}"
+    if body.startswith("SYSTEM "):
+        return f"  {DIM}{t}{RST}  {CYAN}🖥{RST}  {CYAN}{body}{RST}"
     if body.startswith("ENERGY "):
         return f"  {DIM}{t}{RST}  {YELLOW}⚡{RST}  {YELLOW}{body}{RST}"
     if body.startswith("SUMMARY=") or body.startswith("STATUS="):
