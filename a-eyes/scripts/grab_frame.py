@@ -72,6 +72,16 @@ def grab_jpeg(channel: int = 1, stream: int = 0) -> Path:
 
 
 if __name__ == "__main__":
+    from datetime import datetime
     ch = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-    p = grab_jpeg(channel=ch)
-    print(f"OK {p}")
+    t0 = datetime.now()
+    try:
+        path = grab_jpeg(channel=ch)
+        kb = path.stat().st_size / 1024
+        ts = t0.strftime("%H:%M:%S")
+        dt = (datetime.now() - t0).total_seconds()
+        print(f"  {ts}  \U0001F4F7  a-eyes  ch{ch} \u2192 {path.name}  ({kb:.1f} KB, {dt:.2f}s)")
+    except Exception as e:
+        ts = t0.strftime("%H:%M:%S")
+        print(f"  {ts}  \u2717  a-eyes  ch{ch} FAILED: {str(e)[:150]}")
+        sys.exit(1)

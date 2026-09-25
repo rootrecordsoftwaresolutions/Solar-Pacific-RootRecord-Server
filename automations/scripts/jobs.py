@@ -148,6 +148,18 @@ ON_BOOT = [
         "cwd": "/home/rootrecord/.ollama/skills/coms/telegram",
         "env": {},
     },
+    # --- priority 6: a-eyes cam server -------------------------------------------
+    {
+        "id": "a_eyes_cam_server",
+        "enabled": True,
+        "priority": 6,
+        "description": "Ensure a-eyes cam server (127.0.0.1:8791) is running.",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/a-eyes/scripts/ensure_cam_server.sh",
+        "timeout_sec": 30,
+        "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
+        "env": {},
+    },
     # --- TEMPLATE (on boot) — copy from here -------------------------------------
     # {
     #     "id": "example_on_boot_p3",
@@ -259,6 +271,18 @@ EVERY_SECONDS = [
         "command": "bash /home/rootrecord/.ollama/skills/reports/scripts/worklog_once.sh",
         "timeout_sec": 180,
         "cwd": "/home/rootrecord/.ollama/skills/reports/scripts",
+        "env": {},
+    },
+    # --- a-eyes: periodic 4-channel frame grab into Database (1s = PERF TEST) ---
+    {
+        "id": "a_eyes_frame_grab",
+        "enabled": True,
+        "description": "Grab ch1-4 stills, save to /home/rootrecord/Database/A-EYES/frames/.",
+        "interval_sec": 1,
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/a-eyes/scripts/grab_all.sh",
+        "timeout_sec": 120,
+        "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
         "env": {},
     },
     # --- TEMPLATE (every X seconds) — copy from here -----------------------------
