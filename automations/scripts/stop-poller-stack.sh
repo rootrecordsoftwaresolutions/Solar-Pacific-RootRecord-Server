@@ -17,8 +17,14 @@ UNIT=rr-rootserver-poller.service
 # ====================================================
 # SECTION: STOP UNIT
 # ====================================================
+# IMPORTANT: stop the systemd unit FIRST. This is a deliberate stop, so
+# Restart=always will not resurrect the service. Killing the main PID first
+# causes systemd to interpret the exit as a failure and restart the stack.
 echo "[stop] stopping systemd unit ${UNIT}…"
 systemctl --user stop "${UNIT}" 2>/dev/null || true
+
+# Kill anything still remaining in the service cgroup.
+systemctl --user kill --kill-who=all "${UNIT}" 2>/dev/null || true
 
 # ====================================================
 # SECTION: MATCH KILLS (soft then hard)
