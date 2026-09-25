@@ -109,7 +109,25 @@ def run_resource(
         body_bytes = (json.dumps(cleaned_obj, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
 
     elif method == "text":
-        text_body = extract_text(raw_content) if extract_text else raw_content.decode("utf-8", errors="replace")
+        if extract_text:
+            # extract_text is arbitrary, category-specific code (see e.g.
+            # fetch/text_products.py's _extract_latest_product_text, which
+            # raises ValueError when a product simply has no current
+            # issuance -- a normal, expected condition, not a bug). Guard
+            # it the same way the json branch above guards json.loads:
+            # one resource's extraction failure must produce a clean
+            # "invalid" outcome, not propagate out of run_resource and
+            # abort every other resource in the caller's fetch_all() loop
+            # (text_products.py iterates ~11 products from one call --
+            # this was silently truncating that list after the first
+            # product with no current issuance).
+            try:
+                text_body = extract_text(raw_content)
+            except Exception as e:
+                manifest.record_failure(resource_id, failed_at_hst_iso=now.isoformat())
+                return FetchOutcome(resource_id, "invalid", f"extract_text failed: {e}")
+        else:
+            text_body = raw_content.decode("utf-8", errors="replace")
         validation = validators.looks_like_product(text_body)
         if not validation.ok:
             manifest.record_failure(resource_id, failed_at_hst_iso=now.isoformat())
