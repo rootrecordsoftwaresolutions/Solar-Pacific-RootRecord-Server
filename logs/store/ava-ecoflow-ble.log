@@ -1953,3 +1953,4 @@
 2026-09-25T13:09:18-10:00 owner: start pid=2008 interval_s=30.0 (thin owner; no pack scan)
 2026-09-25T13:09:18-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-25T13:09:48-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-25T13:10:18-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
