@@ -172,6 +172,19 @@ ON_BOOT = [
         "cwd": "/home/rootrecord/.ollama/skills/a-eyes",
         "env": {},
     },
+    # --- priority 8: weather scheduler daemon -------------------------------------
+    {
+        "id": "weather_poller",
+        "enabled": True,
+        "priority": 8,
+        "description": "Ensure the weather/ scheduler daemon is running -- fetches everything once immediately on start (all tiers, hurricanes included), then keeps its own internal per-tier cadence forever. See weather/scheduler/run_cycle.py.",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/automations/scripts/ensure-weather-poller.sh",
+        "timeout_sec": 30,
+        "needs_internet": False,
+        "cwd": "/home/rootrecord/.ollama/skills/weather",
+        "env": {},
+    },
     # --- TEMPLATE (on boot) — copy from here -------------------------------------
     # {
     #     "id": "example_on_boot_p3",
