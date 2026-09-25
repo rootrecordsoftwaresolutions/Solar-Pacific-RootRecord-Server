@@ -230,3 +230,48 @@ def test_broken_hurricanes_poll_does_not_crash_run_once():
         run_cycle.hurricane_sources.poll = original_poll
     finally:
         _restore(restore)
+
+
+def test_alerts_processing_ignores_the_wwamap_png_outcome():
+    # Regression: fetch/alerts.py's fetch_all() returns TWO outcomes, in
+    # this order -- the alerts_active_hi JSON feed FIRST, then the
+    # wwamap_png image (see config/resources.yaml). _run_alerts_processing
+    # used to iterate over every outcome and json.loads() its path
+    # unconditionally; since the JSON one is processed first, dedupe/etc.
+    # already ran successfully by the time it hit the PNG's binary bytes
+    # and raised an uncaught UnicodeDecodeError. That's why asserting
+    # "dedupe was called" or "the module was attempted" doesn't actually
+    # catch this bug -- both are true either way. The real, load-bearing
+    # assertion is that the function returns normally (this stdlib test
+    # runner reports a FAIL if it raises) AND that its output file, whose
+    # write is the very last line of the function, actually landed on
+    # disk -- proving the PNG outcome was reached and skipped, not that
+    # the function died partway through it.
+    import json
+    import tempfile
+    from pathlib import Path
+
+    from fetch import _engine
+
+    tmp_dir = tempfile.mkdtemp()
+    json_path = Path(tmp_dir) / "area=HI_current.json"
+    json_path.write_text(json.dumps({"features": []}), encoding="utf-8")
+    png_path = Path(tmp_dir) / "hfo.png"
+    png_path.write_bytes(b"\x89PNG\r\n\x1a\n" + b"not really a png but binary")
+
+    outcomes = [
+        _engine.FetchOutcome(
+            resource_id="alerts_active_hi", status="written",
+            detail="ok", path=str(json_path),
+        ),
+        _engine.FetchOutcome(
+            resource_id="wwamap_png", status="written",
+            detail="ok", path=str(png_path),
+        ),
+    ]
+
+    run_cycle._run_alerts_processing(outcomes, tmp_dir)  # must not raise
+
+    enriched_path = Path(tmp_dir) / "alerts_enriched_current.json"
+    assert enriched_path.exists()
+    assert json.loads(enriched_path.read_text(encoding="utf-8")) == []

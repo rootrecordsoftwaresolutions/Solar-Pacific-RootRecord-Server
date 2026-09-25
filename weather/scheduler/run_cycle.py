@@ -114,6 +114,18 @@ def _run_alerts_processing(alert_fetch_outcomes, base_dir: str) -> None:
     from pathlib import Path
 
     for outcome in alert_fetch_outcomes:
+        # fetch/alerts.py's fetch_all() returns two outcomes: the JSON
+        # alerts feed (resource_id "alerts_active_hi") AND the wwamap PNG
+        # image (resource_id "wwamap_png", see config/resources.yaml).
+        # Only the former is alerts data -- json.loads-ing the PNG's bytes
+        # as UTF-8 text raised UnicodeDecodeError here (not OSError, not
+        # JSONDecodeError, so it wasn't being caught below), which killed
+        # this whole processing step for the pass and looked like an
+        # "alerts module failure" in the log when the fetch itself was
+        # actually fine. Filter to the one resource this function's
+        # docstring already says it's meant to process.
+        if outcome.resource_id != "alerts_active_hi":
+            continue
         if outcome.status != "written" or not outcome.path:
             continue
         try:
