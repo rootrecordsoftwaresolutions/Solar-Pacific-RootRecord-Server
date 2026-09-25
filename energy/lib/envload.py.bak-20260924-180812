@@ -2,7 +2,7 @@
 # ============================================================================
 # envload.py — load EcoFlow keys from master-key.env (never print secrets)
 # ----------------------------------------------------------------------------
-# WHAT: Least-privilege allowlist into os.environ for BLE/read + cloud API.
+# WHAT: Least-privilege allowlist into os.environ for BLE/read.
 # HOW:  load_env() then user_id() / device SN helpers.
 # Layout style (standing): keep SECTION banners.
 # ============================================================================
@@ -22,10 +22,6 @@ ALLOW = frozenset({
     "ECOFLOW_DELTA_2",
     "ECOFLOW_RIVER_2_PRO",
     "ECOFLOW_DELTA_2_SECONDARY",
-    # Official cloud API
-    "ECOFLOW_ACCESS_KEY",
-    "ECOFLOW_SECRET_KEY",
-    "ECOFLOW_REGION",          # us | eu | a | global
 })
 
 # ====================================================
