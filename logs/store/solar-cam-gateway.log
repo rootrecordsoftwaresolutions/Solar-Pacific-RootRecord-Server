@@ -6406,3 +6406,522 @@ BrokenPipeError: [Errno 32] Broken pipe
 127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318624461 HTTP/1.1" 200 -
 127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318624461 HTTP/1.1" 200 -
 127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318629461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318629461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318629461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318629461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318634461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318634461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318634461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318634461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318639461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318639461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318639461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318639461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318644461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318644461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318644461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318644461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318649461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318649461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318649461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318649461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318654461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318654461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318654461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318654461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318659461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318659461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318659461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318659461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318664461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318664461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318664461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318664461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318664461 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 45118)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 79, in do_GET
+    self._still(channel=2)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318669461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318669461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318669461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318669461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318674461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318674461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318674461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318674461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318679461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318679461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318679461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318679461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318703462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318703462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318703462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318703462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318739804 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318739804 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44118)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 82, in do_GET
+    self._still(channel=3)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318739804 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318739804 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44130)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 85, in do_GET
+    self._still(channel=4)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318741327 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318741327 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318739804 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318739804 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44102)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 76, in do_GET
+    self._still(channel=1)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318739804 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318739804 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44116)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 79, in do_GET
+    self._still(channel=2)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318741327 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318741327 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44132)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 76, in do_GET
+    self._still(channel=1)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318741327 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318741327 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44140)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 79, in do_GET
+    self._still(channel=2)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318746328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318746328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318746328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318746328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318751328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318751328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318751328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318751328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318751328 HTTP/1.1" 503 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 36612)
+Traceback (most recent call last):
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 98, in _still
+    self.wfile.write(data)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 496, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 484, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 79, in do_GET
+    self._still(channel=2)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 102, in _still
+    self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rootrecord/.ollama/skills/a-eyes/scripts/cam_gateway.py", line 49, in _json
+    self.end_headers()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 598, in end_headers
+    self.flush_headers()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 602, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318756328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318756328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318756328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318756328 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318761461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318761461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318761461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318761461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318766461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318766461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318766461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318766461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318771461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318771461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318771461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318771461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318776461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318776461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318776461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318776461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318781461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318781461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318781461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318781461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318786461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318786461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318786461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318786461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318791461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318791461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318791461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318791461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318796461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318796461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318796461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318796461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318801461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318801461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318801461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318801461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318806461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318806461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318806461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318806461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318811461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318811461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318811461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318811461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318816461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318816461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318816461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318816461 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch3.jpg?t=1790318823462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch4.jpg?t=1790318823462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current_ch2.jpg?t=1790318823462 HTTP/1.1" 200 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg?t=1790318823462 HTTP/1.1" 200 -
