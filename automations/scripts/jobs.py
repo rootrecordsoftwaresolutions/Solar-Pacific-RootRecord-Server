@@ -280,6 +280,8 @@ EVERY_MINUTE = [
         "timeout_sec": 180,
         "cwd": "/home/rootrecord/.ollama/skills/energy",
         "env": {},
+
+    },
     {
         "id": "sys_stats_cycle",
         "enabled": True,
@@ -292,7 +294,6 @@ EVERY_MINUTE = [
         "env": {},
     },
 
-    },
     # --- TEMPLATE (every minute / selected minutes) — copy from here ------------
     # {
     #     "id": "example_every_minute",
