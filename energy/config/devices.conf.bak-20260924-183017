@@ -75,8 +75,8 @@ eflib_module=eflib.devices.river2_pro
 # ====================================================
 [inventory]
 bsec_alias=security
-bsec_sn=R331ZAB5SG755642
-bsec_name=B3
+bsec_sn=REPLACE_WITH_REAL_SN
+bsec_name=Bsec
 bsec_role=security
 b1_alias=river2pro
 b1_sn=R621ZA16XH6K1155
@@ -110,17 +110,13 @@ poll_enabled=0
 env_files=/home/rootrecord/master/master-key.env
 
 # --- Security battery (internal only, WiFi/API) -------------------------------
-# --- Security / B3 (Delta 2 secondary) — internal only, API path -------------
-# SN + display name come from master-key.env:
-#   ECOFLOW_DELTA_2_SECONDARY / ECOFLOW_DELTA_2_SECONDARY_NAME
 [security]
 model=Delta 2
 alias=security
-sn=R331ZAB5SG755642
+sn=REPLACE_WITH_REAL_SN
 mac=
 role=security
-name=B3
+name=Bsec
 eflib_module=eflib.devices.delta2
 prefer_api=1
 track=internal_only
-

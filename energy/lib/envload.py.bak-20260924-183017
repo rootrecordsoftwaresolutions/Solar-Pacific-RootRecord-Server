@@ -12,9 +12,7 @@ ALLOW = frozenset({
     "ECOFLOW_DELTA_2",
     "ECOFLOW_RIVER_2_PRO",
     "ECOFLOW_DELTA_2_SECONDARY",
-    "ECOFLOW_DELTA_2_NAME",
-    "ECOFLOW_DELTA_2_SECONDARY_NAME",
-    "ECOFLOW_RIVER_2_PRO_NAME",
+    # Official cloud API — names already used in master-key.env
     "ECOFLOW_ACCESS",
     "ECOFLOW_SECRET",
     "ECOFLOW_REGION",
@@ -46,30 +44,8 @@ def user_id() -> str:
 
 
 def api_keys() -> tuple[str, str]:
+    """Return (access, secret) from ECOFLOW_ACCESS / ECOFLOW_SECRET."""
     load_env()
     access = (os.environ.get("ECOFLOW_ACCESS") or "").strip()
     secret = (os.environ.get("ECOFLOW_SECRET") or "").strip()
     return access, secret
-
-
-def env_sn(alias: str) -> str:
-    """Resolve SN from env the same way BLE inventory names are set."""
-    load_env()
-    key = {
-        "delta2": "ECOFLOW_DELTA_2",
-        "river2pro": "ECOFLOW_RIVER_2_PRO",
-        "security": "ECOFLOW_DELTA_2_SECONDARY",
-        "b3": "ECOFLOW_DELTA_2_SECONDARY",
-    }.get(alias, "")
-    return (os.environ.get(key) or "").strip() if key else ""
-
-
-def env_name(alias: str) -> str:
-    load_env()
-    key = {
-        "delta2": "ECOFLOW_DELTA_2_NAME",
-        "river2pro": "ECOFLOW_RIVER_2_PRO_NAME",
-        "security": "ECOFLOW_DELTA_2_SECONDARY_NAME",
-        "b3": "ECOFLOW_DELTA_2_SECONDARY_NAME",
-    }.get(alias, "")
-    return (os.environ.get(key) or "").strip() if key else ""
