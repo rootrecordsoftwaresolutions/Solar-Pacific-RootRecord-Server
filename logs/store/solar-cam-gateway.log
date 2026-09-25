@@ -1185,3 +1185,6 @@ a-eyes gateway listen=127.0.0.1:8791 secret=set
 a-eyes gateway listen=127.0.0.1:8791 secret=set
 127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/health HTTP/1.1" 200 -
 127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/current.jpg HTTP/1.1" 200 -
+127.0.0.1 - "GET / HTTP/1.1" 404 -
+127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - "GET /cvz9w4rKzCQ4D7GPr2bPQ_WaBg0vN5cve2gtomLYOxA/health HTTP/1.1" 200 -
