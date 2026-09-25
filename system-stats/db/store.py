@@ -1,8 +1,14 @@
 """SYSTEM raw + per-layer SQLite helpers (mirrors energy/db/store pattern)."""
 from __future__ import annotations
 import sqlite3
+import sys
 from pathlib import Path
-from . import paths  # type: ignore  # runtime path via PYTHONPATH
+
+# lib/ is on PYTHONPATH when the skill runs; also support direct import
+_SKILL = Path(__file__).resolve().parents[1]
+if str(_SKILL / "lib") not in sys.path:
+    sys.path.insert(0, str(_SKILL / "lib"))
+import paths  # noqa: E402
 
 SCHEMA = Path(__file__).resolve().parent / "schema.sql"
 

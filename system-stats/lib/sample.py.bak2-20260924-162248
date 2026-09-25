@@ -95,14 +95,10 @@ def persist(snap):
     _atomic_write(LOAD / "host-last.json", {"load1": f["load1"]["value"], "load5": f["load5"]["value"], "load15": f["load15"]["value"], "state": f["load1"]["state"], "at": snap["at"]})
     _atomic_write(MEM / "host-last.json", {"mem_used_percent": f["mem_used_percent"]["value"], "mem_available_bytes": f["mem_available_bytes"]["value"], "mem_total_bytes": f["mem_total_bytes"]["value"], "state": f["mem_used_percent"]["state"], "at": snap["at"]})
 
-    # 2) SQLite raw + condensation (new isolation path)
+    # 2) SQLite raw (new isolation path)
     db_ok = False
     try:
         persist_snapshot(snap)
-        from db.condense import condense_closed_periods
-        condense_closed_periods()
-        from status_json import write_status_json
-        write_status_json()
         db_ok = True
     except Exception as e:
         print(f"DB_ERROR: {type(e).__name__}: {e}", file=sys.stderr)

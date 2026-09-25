@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, os, sys, time
+import json, os, time
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
-
 from paths import CPU, LAST, LOAD, MEM, SAMPLES, ensure_dirs
-
-# db helpers (skill root on path)
-_SKILL = Path(__file__).resolve().parents[1]
-if str(_SKILL) not in sys.path:
-    sys.path.insert(0, str(_SKILL))
-from db.store import persist_snapshot  # noqa: E402
 
 LOCAL = ZoneInfo("Pacific/Honolulu")
 
@@ -86,7 +79,6 @@ def _atomic_write(path, obj):
 
 def persist(snap):
     ensure_dirs()
-    # 1) JSON dual-write (unchanged — website / AWS transmission)
     sample_path = SAMPLES / f"sys-{_local_stamp()}.json"
     _atomic_write(sample_path, snap)
     f = snap["fields"]
@@ -94,36 +86,22 @@ def persist(snap):
     _atomic_write(CPU / "host-last.json", {"cpu_percent": f["cpu_percent"]["value"], "state": f["cpu_percent"]["state"], "at": snap["at"]})
     _atomic_write(LOAD / "host-last.json", {"load1": f["load1"]["value"], "load5": f["load5"]["value"], "load15": f["load15"]["value"], "state": f["load1"]["state"], "at": snap["at"]})
     _atomic_write(MEM / "host-last.json", {"mem_used_percent": f["mem_used_percent"]["value"], "mem_available_bytes": f["mem_available_bytes"]["value"], "mem_total_bytes": f["mem_total_bytes"]["value"], "state": f["mem_used_percent"]["state"], "at": snap["at"]})
+    return sample_path
 
-    # 2) SQLite raw + condensation (new isolation path)
-    db_ok = False
-    try:
-        persist_snapshot(snap)
-        from db.condense import condense_closed_periods
-        condense_closed_periods()
-        from status_json import write_status_json
-        write_status_json()
-        db_ok = True
-    except Exception as e:
-        print(f"DB_ERROR: {type(e).__name__}: {e}", file=sys.stderr)
-
-    return sample_path, db_ok
-
-def summary_line(snap, db_ok: bool):
+def summary_line(snap):
     f = snap["fields"]
     def v(key, fmt):
         cell = f.get(key) or {}
         if cell.get("state") != "measured" or cell.get("value") is None:
             return "—"
         return fmt(cell["value"])
-    src = "sqlite" if db_ok else "proc"
-    return f"SYSTEM  cpu={v('cpu_percent', lambda x: f'{x:.0f}%')}  load={v('load1', lambda x: f'{x:.2f}')}  mem={v('mem_used_percent', lambda x: f'{x:.0f}%')}  src={src}"
+    return f"SYSTEM  cpu={v('cpu_percent', lambda x: f'{x:.0f}%')}  load={v('load1', lambda x: f'{x:.2f}')}  mem={v('mem_used_percent', lambda x: f'{x:.0f}%')}  src=proc"
 
 def main():
     snap = snapshot()
-    path, db_ok = persist(snap)
-    print(summary_line(snap, db_ok))
-    print(f"OK wrote {path}" + ("" if db_ok else " (json-only; db failed)"))
+    path = persist(snap)
+    print(summary_line(snap))
+    print(f"OK wrote {path}")
     return 0
 
 if __name__ == "__main__":
