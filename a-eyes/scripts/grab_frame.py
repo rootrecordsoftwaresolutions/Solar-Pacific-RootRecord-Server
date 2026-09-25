@@ -14,7 +14,21 @@ from pathlib import Path
 
 SKILL = Path(__file__).resolve().parents[1]
 CONN_PATH = SKILL / "store" / "CONNECTION.json"
+MASTER_KEY = Path("/home/rootrecord/master/master-key.env")
 DB_FRAMES = Path("/home/rootrecord/Database/A-EYES/frames")
+
+
+def load_master_key(name: str) -> str:
+    if not MASTER_KEY.is_file():
+        raise FileNotFoundError(f"missing {MASTER_KEY}")
+    for line in MASTER_KEY.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, _, v = line.partition("=")
+        if k.strip() == name:
+            return v.strip().strip('"').strip("'")
+    raise KeyError(f"{name} not found in {MASTER_KEY}")
 
 
 def load_conn() -> dict:
@@ -29,12 +43,12 @@ def rtsp_url(channel: int = 1, stream: int = 0) -> str:
     urls = lan.get("rtsp_urls") or {}
     key = "channel_main" if int(stream) == 0 else "channel_sub"
     tmpl = urls.get(key) or urls.get("channel_main")
+    user = lan.get("rtsp_user") or "admin"
+    pw = load_master_key("AEYES_RTSP_PASSWORD")
     if not tmpl:
         ip = lan.get("ip") or "192.168.1.33"
-        user = lan.get("rtsp_user") or "admin"
-        pw = lan.get("rtsp_password") or "admin"
         return f"rtsp://{user}:{pw}@{ip}:554/user={user}&password={pw}&channel={channel}&stream={stream}"
-    return tmpl.replace("{N}", str(channel))
+    return tmpl.replace("{USER}", user).replace("{PASS}", pw).replace("{N}", str(channel))
 
 
 def grab_jpeg(channel: int = 1, stream: int = 0) -> Path:
