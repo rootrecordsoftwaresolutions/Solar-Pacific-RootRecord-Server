@@ -37,11 +37,11 @@ kill_match() {
 kill_match 'rootserver_poller\.py'
 kill_match 'automations/bin/cloudflared'
 kill_match 'automations/scripts/poller-watch\.py'
-kill_match 'a-eyes/scripts/cam_server\.py'
+kill_match 'cam_server\.py'
 
 sleep 1
 
-for pat in 'rootserver_poller\.py' 'automations/bin/cloudflared' 'automations/scripts/poller-watch\.py' 'a-eyes/scripts/cam_server\.py'; do
+for pat in 'rootserver_poller\.py' 'automations/bin/cloudflared' 'automations/scripts/poller-watch\.py' 'cam_server\.py'; do
   pids=$(pgrep -f "$pat" 2>/dev/null || true)
   if [ -n "$pids" ]; then
     echo "[stop] kill -9 $pat -> $pids"
