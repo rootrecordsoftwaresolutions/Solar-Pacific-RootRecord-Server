@@ -364,7 +364,6 @@ def run_command_job(job: dict) -> None:
                     s = ln.strip()
                     if s.startswith("SUMMARY=") or s.startswith("STATUS="):
                         log(f"{full_timestamp()}job:{jid} | {s}")
-                log(f"{full_timestamp()}{_energy_log_line()}")
             elif out:
                 for line in out.splitlines()[:40]:
                     line = line.strip()
@@ -379,9 +378,7 @@ def run_command_job(job: dict) -> None:
             log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
             for line in (err or out).splitlines()[:20]:
                 log(f"{full_timestamp()}job:{jid} ! {line}")
-            if eco:
-                log(f"{full_timestamp()}{_energy_log_line()}")
-    except subprocess.TimeoutExpired:
+                except subprocess.TimeoutExpired:
         log(f"{full_timestamp()}job:{jid} TIMEOUT after {timeout:.0f}s")
     except Exception as e:
         log(f"{full_timestamp()}job:{jid} ERROR {e}")
