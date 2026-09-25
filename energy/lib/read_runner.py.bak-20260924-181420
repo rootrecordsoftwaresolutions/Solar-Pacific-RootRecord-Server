@@ -79,30 +79,29 @@ def _prefer_api(alias: str) -> bool:
         return False
 
 
-def _has_data(fields: dict) -> bool:
-    return any(
-        fields.get(k) is not None
-        for k in ("soc", "ac_output_power", "ac_input_power", "solar_input_power", "usbc_output_power")
-    )
-
-
 def derive_charge_source(fields: dict, source: str, other_ac_outs: list[float]) -> str:
     """Generator status is API-only (per operator rule)."""
     try:
         ac_in = float(fields.get("ac_input_power") or 0)
     except (TypeError, ValueError):
         ac_in = 0.0
-    if ac_in <= 5:
+    if ac_in <= 5:  # noise floor
         return "none"
+
+    # Any other tracked battery showing significant AC output → transfer
     for out in other_ac_outs:
         if out is not None and out > 20 and abs(out - ac_in) < max(80, ac_in * 0.4):
             return "battery_transfer"
+
     if source == "api":
+        # Only API path may claim generator
         return "generator"
+    # BLE path: we know AC is coming in but cannot assert generator
     return "ac"
 
 
 def _collect_other_ac_outs(exclude_alias: str) -> list[float]:
+    """Best-effort: look at last known watts files for other devices."""
     outs = []
     try:
         cp = load_conf()
@@ -128,15 +127,7 @@ def _collect_other_ac_outs(exclude_alias: str) -> list[float]:
 async def _read_ble(alias: str):
     device = await connect(alias)
     await asyncio.sleep(2.0)
-    fields = _fields_from_ble(device)
-    if not _has_data(fields):
-        # Connected but no usable telemetry — treat as failure so API can run
-        try:
-            await device.disconnect()
-        except Exception:
-            pass
-        raise BleUnavailable("BLE connected but fields empty/None")
-    return device, fields
+    return device, _fields_from_ble(device)
 
 
 def _read_api(alias: str) -> dict:
@@ -160,18 +151,13 @@ def main() -> int:
     device = None
     ble_err = None
 
-    # 1) Prefer BLE unless prefer_api=1
-    #    Silence eflib/bleak connect spam when falling back to API.
+    # 1) Prefer BLE unless explicitly marked prefer_api
     if not _prefer_api(alias):
         ok, reason = eflib_ready()
         if ok:
-            import io, contextlib
-            buf_out, buf_err = io.StringIO(), io.StringIO()
             try:
-                with contextlib.redirect_stdout(buf_out), contextlib.redirect_stderr(buf_err):
-                    device, fields = asyncio.run(_read_ble(alias))
+                device, fields = asyncio.run(_read_ble(alias))
                 source = "ble"
-                # BLE succeeded — if eflib printed anything non-fatal, ignore it
             except BleUnavailable as e:
                 ble_err = str(e)
             except Exception as e:
@@ -179,15 +165,15 @@ def main() -> int:
         else:
             ble_err = reason
 
-    # 2) API fallback when BLE missing or empty
+    # 2) API fallback
     if source != "ble":
         try:
             fields = _read_api(alias)
             source = "api"
-            device = None
         except Exception as e:
             print("WAITING")
-            print(f"No data — BLE: {ble_err or 'skipped'}; API: {type(e).__name__}: {e}")
+            msg = f"No data — BLE: {ble_err or 'skipped'}; API: {type(e).__name__}: {e}"
+            print(msg)
             print("STATUS=WAITING")
             return 2
 
@@ -208,7 +194,7 @@ def main() -> int:
         "charge_source": charge_source,
     }
 
-    # 4) Persist
+    # 4) Persist (BLE device object when available; API path still writes JSON + watts)
     db_ok = False
     if device is not None:
         try:
@@ -222,9 +208,14 @@ def main() -> int:
         except Exception:
             pass
     else:
-        db_ok = True  # JSON path is authoritative for API reads
+        # API-only: still write lightweight sample + last files
+        try:
+            # optional future: persist_api_fields(...)
+            db_ok = True  # JSON path is authoritative for now
+        except Exception:
+            pass
 
-    # 5) Samples / last files
+    # 5) Write samples / last files
     path = SAMPLES / f"read-{alias}-{datetime.now(HST).strftime('%Y%m%d-%H%M%S')}.json"
     path.write_text(json.dumps(snap, indent=2), encoding="utf-8")
 
@@ -242,15 +233,21 @@ def main() -> int:
             json.dumps({**watts, "at": snap["at"], "source": source, "charge_source": charge_source}, indent=2)
         )
 
-    # 6) Console
+    # 6) Console summary (skip main ENERGY noise for internal_only devices)
     if not _is_internal_only(alias):
         print(_summary_line(alias, fields, db_ok, source, charge_source))
     else:
         print(f"INTERNAL={alias} soc={fields.get('soc')} src={source} charge={charge_source}")
 
-    if not _has_data(fields):
+    any_val = any(v is not None for v in fields.values() if not str(k).startswith("_") for k in [1])  # noqa
+    # simpler check
+    any_val = any(
+        fields.get(k) is not None
+        for k in ("soc", "ac_output_power", "ac_input_power", "solar_input_power", "usbc_output_power")
+    )
+    if not any_val:
         print("WAITING")
-        print("No data — fields empty/None (not inventing)")
+        print("No data — connected/API ok but fields empty/None (not inventing)")
         print("STATUS=WAITING")
         return 2
 

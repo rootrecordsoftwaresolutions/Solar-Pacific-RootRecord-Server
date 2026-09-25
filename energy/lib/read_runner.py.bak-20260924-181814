@@ -161,20 +161,16 @@ def main() -> int:
     ble_err = None
 
     # 1) Prefer BLE unless prefer_api=1
-    #    Silence eflib/bleak connect spam when falling back to API.
     if not _prefer_api(alias):
         ok, reason = eflib_ready()
         if ok:
-            import io, contextlib
-            buf_out, buf_err = io.StringIO(), io.StringIO()
             try:
-                with contextlib.redirect_stdout(buf_out), contextlib.redirect_stderr(buf_err):
-                    device, fields = asyncio.run(_read_ble(alias))
+                device, fields = asyncio.run(_read_ble(alias))
                 source = "ble"
-                # BLE succeeded — if eflib printed anything non-fatal, ignore it
             except BleUnavailable as e:
                 ble_err = str(e)
             except Exception as e:
+                # Any connect/auth/disappear error → fall through to API
                 ble_err = f"{type(e).__name__}: {e}"
         else:
             ble_err = reason
