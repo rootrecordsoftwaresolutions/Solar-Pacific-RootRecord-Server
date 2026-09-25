@@ -21,7 +21,7 @@ hosts:
     notes: "Primary structured API for alerts, products, and gridpoints."
 
   www.weather.gov:
-    rate_floor_seconds: 10
+    rate_floor_seconds: 2
     notes: "Static image/gif hosting under /images/hfo/, plus /hfo/* text redirect pages."
 
   forecast.weather.gov:
