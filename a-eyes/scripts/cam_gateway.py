@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""a-eyes light gateway: health + current.jpg from Night Owl RTSP."""
+"""a-eyes light gateway: health + multi-channel stills from Night Owl RTSP."""
 from __future__ import annotations
 import json
 import os
@@ -56,7 +56,6 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         secret = self._secret().strip("/")
         if not secret:
-            # no secret configured → allow /health and /current.jpg at root
             return path.lstrip("/") or "health"
         pref = "/" + secret
         if path != pref and not path.startswith(pref + "/"):
@@ -71,16 +70,26 @@ class Handler(BaseHTTPRequestHandler):
         if rest == "health":
             self._json(200, {"ok": True, "service": "a-eyes-gateway"})
             return
+        
+        # Route logic mapping for all 4 camera streams
         if rest in ("current.jpg", "still.jpg"):
-            self._still()
+            self._still(channel=1)
             return
+        elif rest == "current_ch2.jpg":
+            self._still(channel=2)
+            return
+        elif rest == "current_ch3.jpg":
+            self._still(channel=3)
+            return
+        elif rest == "current_ch4.jpg":
+            self._still(channel=4)
+            return
+            
         self._deny()
 
-    def _still(self) -> None:
-        env = _load_env()
-        ch = int(env.get("RR_SOLAR_CHANNEL") or 1)
+    def _still(self, channel: int) -> None:
         try:
-            path = grab_jpeg(channel=ch, stream=0)
+            path = grab_jpeg(channel=channel, stream=0)
             data = path.read_bytes()
             self.send_response(200)
             self.send_header("Content-Type", "image/jpeg")
@@ -88,9 +97,9 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(data)
             STATE.parent.mkdir(parents=True, exist_ok=True)
-            STATE.write_text(json.dumps({"ok": True, "path": str(path), "ch": ch}) + "\n")
+            STATE.write_text(json.dumps({"ok": True, "path": str(path), "ch": channel}) + "\n")
         except Exception as e:
-            self._json(503, {"ok": False, "error": str(e)[:300]})
+            self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
 
 
 def main() -> None:
