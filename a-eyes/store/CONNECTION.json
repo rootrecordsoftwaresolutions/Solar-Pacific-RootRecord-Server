@@ -1,0 +1,11 @@
+{
+  "lan": {
+    "ip": "192.168.1.33",
+    "rtsp_user": "admin",
+    "rtsp_password": "REPLACE_ME",
+    "rtsp_urls": {
+      "channel_main": "rtsp://admin:REPLACE_ME@192.168.1.33:554/user=admin&password=REPLACE_ME&channel={N}&stream=0",
+      "channel_sub": "rtsp://admin:REPLACE_ME@192.168.1.33:554/user=admin&password=REPLACE_ME&channel={N}&stream=1"
+    }
+  }
+}
