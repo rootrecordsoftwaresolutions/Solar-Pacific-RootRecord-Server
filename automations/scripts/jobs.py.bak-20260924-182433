@@ -213,8 +213,8 @@ EVERY_SECONDS = [
     {
         "id": "ecoflow_read_cycle",
         "enabled": True,
-        "description": "Leap-frog: Delta2 / River2Pro alternate; API fallback when BLE out of range.",
-        "interval_sec": 15,
+        "description": "Leap-frog BLE: Delta2 / River2Pro alternate every 5s (each ~10s).",
+        "interval_sec": 5,
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/energy/scripts/read/leapfrog-read.sh",
         "timeout_sec": 180,

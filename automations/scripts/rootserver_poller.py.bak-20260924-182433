@@ -362,27 +362,18 @@ def run_command_job(job: dict) -> None:
         env.update({str(k): str(v) for k, v in extra.items()})
     quiet = jid in ("github_sync_all", "github_setup_remotes", "github_autopush")
     eco = _is_ecoflow_job(jid)
-    # EcoFlow: no RUN spam — only the final SUMMARY line (or a quiet FAIL)
-    if not quiet and not eco:
-        log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
+    if not quiet:
+        log(f"{full_timestamp()}job:{jid} RUN  {"EcoFlow BLE read…" if eco else cmd}")
     try:
         r = subprocess.run(["bash", "-lc", cmd], cwd=cwd, env=env, timeout=timeout, capture_output=True, text=True)
         out = (r.stdout or "").strip()
         err = (r.stderr or "").strip()
         if r.returncode == 0:
             if eco:
-                # One clean line: prefer SUMMARY=; fold INTERNAL= the same way.
-                # Skip STATUS= (redundant when SUMMARY is present).
-                summary = None
                 for ln in out.splitlines():
                     s = ln.strip()
-                    if s.startswith("SUMMARY=") or s.startswith("INTERNAL="):
-                        summary = s
-                        break
-                if summary:
-                    log(f"{full_timestamp()}  ▸  {summary}")
-                else:
-                    log(f"{full_timestamp()}  ▸  {jid} OK")
+                    if s.startswith("SUMMARY=") or s.startswith("STATUS="):
+                        log(f"{full_timestamp()}job:{jid} | {s}")
             elif out:
                 for line in out.splitlines()[:40]:
                     line = line.strip()
@@ -394,22 +385,9 @@ def run_command_job(job: dict) -> None:
             elif not quiet:
                 log(f"{full_timestamp()}job:{jid} OK")
         else:
-            if eco:
-                # Only log real failures (both BLE and API down) — one line
-                reason = ""
-                for ln in (out or err).splitlines():
-                    s = ln.strip()
-                    if s.startswith("No data") or s.startswith("WAITING"):
-                        reason = s
-                        break
-                if reason:
-                    log(f"{full_timestamp()}  ✗  {jid}  {reason}")
-                else:
-                    log(f"{full_timestamp()}  ✗  {jid} FAIL code={r.returncode}")
-            else:
-                log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
-                for line in (err or out).splitlines()[:20]:
-                    log(f"{full_timestamp()}job:{jid} ! {line}")
+            log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
+            for line in (err or out).splitlines()[:20]:
+                log(f"{full_timestamp()}job:{jid} ! {line}")
     except subprocess.TimeoutExpired:
         log(f"{full_timestamp()}job:{jid} TIMEOUT after {timeout:.0f}s")
     except Exception as e:
