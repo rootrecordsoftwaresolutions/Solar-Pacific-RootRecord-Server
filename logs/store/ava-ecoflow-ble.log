@@ -452,3 +452,14 @@
 2026-09-24T15:02:45-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-24T15:03:15-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
 2026-09-24T15:03:45-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:04:15-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:04:45-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:05:15-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:05:45-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:06:15-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:06:45-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:06:58-10:00 owner: stop
+2026-09-24T15:07:02-10:00 owner: start pid=111711 interval_s=30.0 (thin owner; no pack scan)
+2026-09-24T15:07:02-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:07:32-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
+2026-09-24T15:08:02-10:00 owner: heartbeat ok — atomic actions own short BLE sessions; poll buckets disabled
