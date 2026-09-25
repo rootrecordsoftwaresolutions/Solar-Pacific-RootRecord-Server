@@ -10,8 +10,8 @@ from pathlib import Path
 
 SKILL = Path(__file__).resolve().parents[1]
 STORE = SKILL / "store"
-FRAMES = STORE / "frames"
 DB_FRAMES = Path("/home/rootrecord/Database/A-EYES/frames")
+FRAMES = DB_FRAMES
 CONN_PATH = STORE / "CONNECTION.json"
 
 
@@ -36,7 +36,6 @@ def rtsp_url(channel: int = 1, stream: int = 0) -> str:
 
 
 def grab_jpeg(channel: int = 1, stream: int = 0, out: Path | None = None) -> Path:
-    FRAMES.mkdir(parents=True, exist_ok=True)
     DB_FRAMES.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     path = out or (FRAMES / f"ch{channel}-{ts}.jpg")
@@ -53,9 +52,6 @@ def grab_jpeg(channel: int = 1, stream: int = 0, out: Path | None = None) -> Pat
     if r.returncode != 0 or not path.is_file() or path.stat().st_size < 100:
         err = (r.stderr or r.stdout or "ffmpeg failed").strip()[:300]
         raise RuntimeError(err or "empty jpeg")
-    # mirror into Database
-    dest = DB_FRAMES / path.name
-    dest.write_bytes(path.read_bytes())
     return path
 
 
