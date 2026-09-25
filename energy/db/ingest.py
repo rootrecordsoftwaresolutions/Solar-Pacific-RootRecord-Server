@@ -14,12 +14,18 @@ def _serial(device: Any) -> str:
     return str(raw or "UNKNOWN")
 
 def _state(device: Any, attr: str, value: Any) -> str:
-    """Preserve EFLIB's explicit missing-default semantics."""
+    """State must match CHECK: measured/defaulted need a value; null → missing/not_applicable."""
+    ac_attrs = {
+        "ac_output_power", "ac_input_power",
+        "ac_output_voltage", "ac_output_current",
+        "ac_input_voltage", "ac_input_current",
+        "ac_charging", "ac_charging_speed",
+    }
+    if attr in ac_attrs and getattr(device, "ac_ports", None) is False:
+        return "not_applicable"
     if value is not None:
         return "measured"
-    field = getattr(type(device), attr, None)
-    if getattr(field, "has_missing_default", False):
-        return "defaulted"
+    # Never return "defaulted" with a null value (violates CHECK).
     return "missing"
 
 def _ensure_port(conn, device_id, port_type, index=0):
