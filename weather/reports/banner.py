@@ -2,6 +2,9 @@
 
 This is a presentation-only processor. It reads the collected raw GIF and
 writes a separate banner copy; the raw weather-data product is never modified.
+
+The output is intentionally modest in size so the README image is centered
+and does not dominate the page.
 """
 from __future__ import annotations
 
@@ -14,8 +17,10 @@ SOURCE_RELATIVE = Path(
     "GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif"
 )
 OUTPUT_RELATIVE = Path("reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif")
+# Drop the lower label strip from the 600x600 NESDIS product, then scale
+# down for README display (keeps animation, avoids a full-width hero image).
 CROP_BOX = (0, 0, 600, 584)
-TARGET_SIZE = (1200, 1168)
+TARGET_SIZE = (420, 409)
 EXPECTED_SOURCE_SIZE = (600, 600)
 
 
@@ -69,4 +74,4 @@ def generate_readme_banner(base_dir: str | Path) -> Path:
     return output
 
 
-__all__ = ["generate_readme_banner", "SOURCE_RELATIVE", "OUTPUT_RELATIVE"]
+__all__ = ["generate_readme_banner", "SOURCE_RELATIVE", "OUTPUT_RELATIVE", "TARGET_SIZE", "CROP_BOX"]

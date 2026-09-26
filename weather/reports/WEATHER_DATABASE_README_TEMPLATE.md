@@ -4,9 +4,11 @@
 
 ## 🛰️ Live GOES-18 Hawaii GeoColor
 
-![GOES-18 Hawaii GeoColor]({{README_BANNER_URL}})
+<p align="center">
+  <img src="{{README_BANNER_URL}}" width="420" alt="GOES-18 Hawaii GeoColor" />
+</p>
 
-This banner is the processed **GOES-18 Hawaii — GeoColor** product generated from the locally collected `_current.gif`. The raw source image is never modified; a separate presentation copy is written for README use.
+<p align="center"><em>Processed GOES-18 Hawaii — GeoColor (presentation copy; raw source is never modified).</em></p>
 
 ## 🌐 What This Is
 
