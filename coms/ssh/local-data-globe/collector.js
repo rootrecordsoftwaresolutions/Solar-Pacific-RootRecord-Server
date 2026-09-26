@@ -397,7 +397,7 @@ function maintainAwsFeed() {
 }
 
 function connectSsh() {
-  if (shuttingDown || sshProc || sshConnecting) return;
+  if (shuttingDown || sshProc || sshConnecting || maintenanceRunning) return;
 
   sshConnecting = true;
   const p = spawn('ssh', sshArgs(), { stdio: ['pipe', 'pipe', 'pipe'] });
