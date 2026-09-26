@@ -216,7 +216,20 @@ def _write_current(current_path: Path, content: str, archive_dir: Path, created_
     """Write current, archiving the previous version only when content changed."""
     if current_path.is_file():
         try:
-            if current_path.read_text(encoding="utf-8", errors="replace") == content:
+            existing = current_path.read_text(encoding="utf-8", errors="replace")
+            comparable_existing = re.sub(
+                r"^- \\*\\*Generated:\\*\\* .+? HST$",
+                "- **Generated:** <timestamp> HST",
+                existing,
+                flags=re.M,
+            )
+            comparable_content = re.sub(
+                r"^- \\*\\*Generated:\\*\\* .+? HST$",
+                "- **Generated:** <timestamp> HST",
+                content,
+                flags=re.M,
+            )
+            if comparable_existing == comparable_content:
                 return
         except OSError:
             pass
@@ -266,7 +279,7 @@ def generate(base_dir: str) -> list[Path]:
 
         title = _display_name(resource_id, names)
         current_path = reports_dir / "{}_current.md".format(resource_id)
-        created_at = _existing_created_at(current_path) or now
+        created_at = now
         report = (
             _header(title, state.url, state.current_fetch_timestamp_hst, created_at)
             + _as_markdown_report(body)
@@ -277,7 +290,7 @@ def generate(base_dir: str) -> list[Path]:
 
     sections.sort(key=lambda item: (item[1].lower(), item[0].lower()))
 
-    aggregate_created_at = _existing_created_at(reports_dir / AGGREGATE_FILENAME) or now
+    aggregate_created_at = now
     aggregate: list[str] = [
         "# Hawaii State Weather Report",
         "",
