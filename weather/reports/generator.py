@@ -20,6 +20,7 @@ from core.manifest import Manifest
 REPORTS_DIRNAME = "reports"
 LEVEL0_DIRNAME = "0 Level Processing"
 ARCHIVE_DIRNAME = "archived"
+REPORTING_README = Path(__file__).resolve().parent / "README.md"
 AGGREGATE_FILENAME = "Hawaii_State_Weather_Report_current.md"
 _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhistory_")
 _EXCLUDED_IDS = {"rain_summary_graphical"}
@@ -320,5 +321,57 @@ def generate(base_dir: str) -> list[Path]:
         ])
 
     aggregate_path = reports_dir / AGGREGATE_FILENAME
-    _write_current(aggregate_path, "\n".join(aggregate), archive_dir, now)
-    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path]
+    aggregate_content = "\n".join(aggregate)
+    _write_current(aggregate_path, aggregate_content, archive_dir, now)
+
+    # Keep the repository README itself as the public-facing live statewide
+    # report. It is generated from the same sections as Level 0 so it cannot
+    # drift into a separately maintained copy of the report.
+    readme_lines = [
+        "# 🌺 Hawaiʻi State Weather Report",
+        "",
+        "> **Live statewide report — automatically regenerated from the latest locally collected official weather products.**",
+        "",
+        "| Status | Coverage | Updated | Sections |",
+        "|---|---|---|---:|",
+        "| 🟢 Active | Hawaiʻi statewide | {} HST | {} |".format(now, len(sections)),
+        "",
+        "## 📡 Current Conditions & Official Products",
+        "",
+        "This README is intentionally a **living report**, not a static project description. Each scheduler report cycle regenerates the statewide data and refreshes this document when the underlying report content changes.",
+        "",
+        "**Data boundary:** official-source content is preserved separately; this page is a readable statewide presentation derived from that collected data. No AI/LLM is used to decide geographic ownership of products.",
+        "",
+        "---",
+        "",
+    ]
+    for index, (resource_id, title, source_url, fetched_at, body) in enumerate(sections, 1):
+        readme_lines.extend([
+            "## {}. {}".format(index, title),
+            "",
+            "| Field | Value |",
+            "|---|---|",
+            "| **Resource ID** | {} |".format(resource_id),
+            "| **Official source** | {} |".format(source_url),
+            "| **Collected** | {} HST |".format(fetched_at or "Unknown"),
+            "",
+            _as_markdown_report(body),
+            "",
+            "---",
+            "",
+        ])
+    readme_lines.extend([
+        "## 🧭 Report Integrity",
+        "",
+        "- Official source identity is retained.",
+        "- Raw source data is retained separately from this presentation layer.",
+        "- Current reports are archived when substantive content changes.",
+        "- Geographic processing is deterministic and auditable.",
+        "- Products with unresolved geography are not silently copied into counties.",
+        "",
+        "_Generated automatically by the RootRecord weather reporting pipeline._",
+        "",
+    ])
+    REPORTING_README.write_text("\n".join(readme_lines), encoding="utf-8")
+
+    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README]
