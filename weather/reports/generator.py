@@ -121,6 +121,15 @@ def generate(base_dir: str) -> list[Path]:
 
     manifest = Manifest(base_dir).load()
     names = _load_resource_names()
+
+    # Remove only stale generated Markdown files. Raw source data is never
+    # touched. The next pass recreates the complete current report set.
+    expected = {AGGREGATE_FILENAME}
+    for resource_id in manifest.all_states():
+        expected.add("{}_current.md".format(resource_id))
+    for old in reports_dir.glob("*_current.md"):
+        if old.name not in expected:
+            old.unlink()
     sections: list[tuple[str, str, str, str | None, str]] = []
 
     for resource_id, state in manifest.all_states().items():
