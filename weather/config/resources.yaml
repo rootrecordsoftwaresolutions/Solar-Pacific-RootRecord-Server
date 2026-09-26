@@ -228,6 +228,7 @@ hurricanes_reference_only:
 # ---------------------------------------------------------------------------
 satellite:
   items:
+  # HFO-hosted Hawaii IR products.
   - id: hawaii_ir_latest
     name: "State of Hawaii — Infrared (latest frame)"
     tier: 2
@@ -240,16 +241,126 @@ satellite:
     method: image
     url: "https://www.weather.gov/images/hfo/satellite/Hawaii_IR_loop.gif"
 
-  - id: goes18_hi_geocolor
-    name: "GOES-18 Hawaii sector, GeoColor (full-res, NESDIS)"
+  # GOES imagery.  These are intentionally the stable NESDIS GIF endpoints,
+  # not the timestamped archive filenames.  NESDIS updates the stable GIF in
+  # place; the fetch engine therefore sees the current image, hashes the
+  # actual bytes, and archives the prior version only when the image changes.
+  #
+  # The local resolver keeps the real remote product name and adds _current:
+  # e.g. GOES18-HI-GEOCOLOR-600x600_current.gif
+  #
+  # East Pacific / GOES-19
+  - id: goes19_eep_geocolor
+    name: "GOES-19 East Pacific — GeoColor"
     tier: 2
     method: image
-    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-1000x1000.gif"
-    note: "Higher resolution than HFO's own gifs. NESDIS-hosted, not NWS proper, but public."
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/GEOCOLOR/GOES19-EEP-GEOCOLOR-900x540.gif"
 
-  # Individual loop frames (00-10) — one resource id per sector, frame index
-  # is a path segment (not a separate resource entry per frame; fetch/satellite.py
-  # iterates 00-10 for each of the 5 sector keys below at runtime).
+  - id: goes19_eep_glm_extent3
+    name: "GOES-19 East Pacific — GLM Extent3"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/GLM/SECTOR/eep/EXTENT3/GOES19-GLM-EEP-EXTENT3-900x540.gif"
+
+  - id: goes19_eep_airmass
+    name: "GOES-19 East Pacific — AirMass"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/AirMass/GOES19-EEP-AirMass-900x540.gif"
+
+  - id: goes19_eep_sandwich
+    name: "GOES-19 East Pacific — Sandwich"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/Sandwich/GOES19-EEP-Sandwich-900x540.gif"
+
+  - id: goes19_eep_fire_temperature
+    name: "GOES-19 East Pacific — Fire Temperature"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/FireTemperature/GOES19-EEP-FireTemperature-900x540.gif"
+
+  - id: goes19_eep_02
+    name: "GOES-19 East Pacific — Band 02"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/02/GOES19-EEP-02-900x540.gif"
+
+  - id: goes19_eep_07
+    name: "GOES-19 East Pacific — Band 07"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/07/GOES19-EEP-07-900x540.gif"
+
+  - id: goes19_eep_13
+    name: "GOES-19 East Pacific — Band 13"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/13/GOES19-EEP-13-900x540.gif"
+
+  - id: goes19_eep_14
+    name: "GOES-19 East Pacific — Band 14"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/14/GOES19-EEP-14-900x540.gif"
+
+  # Hawaii / GOES-18
+  - id: goes18_hi_geocolor
+    name: "GOES-18 Hawaii — GeoColor"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600.gif"
+
+  - id: goes18_hi_glm_extent3
+    name: "GOES-18 Hawaii — GLM Extent3"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/GLM/SECTOR/hi/EXTENT3/GOES18-GLM-HI-EXTENT3-600x600.gif"
+
+  - id: goes18_hi_airmass
+    name: "GOES-18 Hawaii — AirMass"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/AirMass/GOES18-HI-AirMass-600x600.gif"
+
+  - id: goes18_hi_sandwich
+    name: "GOES-18 Hawaii — Sandwich"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/Sandwich/GOES18-HI-Sandwich-600x600.gif"
+
+  - id: goes18_hi_daynight_cloud_micro_combo
+    name: "GOES-18 Hawaii — Day/Night Cloud Micro Combo"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/DayNightCloudMicroCombo/GOES18-HI-DayNightCloudMicroCombo-600x600.gif"
+
+  - id: goes18_hi_fire_temperature
+    name: "GOES-18 Hawaii — Fire Temperature"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/FireTemperature/GOES18-HI-FireTemperature-600x600.gif"
+
+  - id: goes18_hi_07
+    name: "GOES-18 Hawaii — Band 07"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/07/GOES18-HI-07-600x600.gif"
+
+  - id: goes18_hi_08
+    name: "GOES-18 Hawaii — Band 08"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/08/GOES18-HI-08-600x600.gif"
+
+  - id: goes18_hi_14
+    name: "GOES-18 Hawaii — Band 14"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/14/GOES18-HI-14-600x600.gif"
+
+  # Individual HFO loop frames.  Each frame remains its own resource so
+  # manifest/change detection/archive history stays independent.
   loop_frame_sectors:
     frame_range: [0, 10]
     tier: 2
