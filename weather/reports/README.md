@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T05:49:30-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T09:13:33-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -4269,10 +4269,10 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-26T04:59:19.971881-10:00 HST |
+| **Collected** | 2026-09-26T09:12:32.990309-10:00 HST |
 
 ```text
-172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
 ```
 
 ---
@@ -4339,7 +4339,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T05:40:31.368095-10:00 HST |
+| **Collected** | 2026-09-26T09:13:33.083689-10:00 HST |
 
 ```text
 Home
@@ -4463,7 +4463,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 15:39:29 UTC
+Last update Sat, 26 Sep 2026 19:09:21 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -4526,11 +4526,27 @@ Atlantic
 
 Disturbances:
 
-None
+ALL
+
+1
 
 Disturbances:
 
-None
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
 
 Disturbances:
 
@@ -4634,7 +4650,7 @@ Tropical Weather Outlook
 
 (en Español*)
 
-200 AM HST Sat Sep 26 2026
+800 AM HST Sat Sep 26 2026
 
 Hurricane Nolo
 
@@ -4643,26 +4659,26 @@ Buoys |
 Grids |
 Storm Archive
 
-...NOLO STILL MEANDERING SOUTH OF THE BIG ISLAND OF HAWAII...
+...NOLO MOVING SLOWLY WESTWARD...
 ...ADDITIONAL HEAVY RAINFALL, GUSTY WINDS, AND LARGE WAVES EXPECTED FOR PORTIONS OF THE HAWAIIAN ISLANDS...
 
-5:00 AM HST Sat Sep 26
+8:00 AM HST Sat Sep 26
 
-Location: 16.9°N 155.5°W
+Location: 16.8°N 155.7°W
 
-Moving: Stationary
+Moving: W at 3 mph
 
-Min pressure: 976 mb
+Min pressure: 977 mb
 
-Max sustained: 105 mph
+Max sustained: 100 mph
 
 Public
 
 Advisory
 
-#24
+#24A
 
-500 AM HST
+800 AM HST
 
 Forecast
 
@@ -4751,11 +4767,11 @@ Tropical Weather Outlook
 
 (en Español*)
 
-800 AM EDT Sat Sep 26 2026
+200 PM EDT Sat Sep 26 2026
 
 Tropical Weather Discussion
 
-1215 UTC Sat Sep 26 2026
+1815 UTC Sat Sep 26 2026
 
 Tropical Storm Gonzalo
 
@@ -4950,7 +4966,7 @@ Tropical Weather Outlook
 
 (en Español*)
 
-500 AM PDT Sat Sep 26 2026
+1100 AM PDT Sat Sep 26 2026
 
 Tropical Weather Discussion
 
@@ -4963,26 +4979,26 @@ Buoys |
 Grids |
 Storm Archive
 
-...POLO REMAINS A POWERFUL HURRICANE...
-...EXPECTED TO MAKE LANDFALL IN BAJA CALIFORNIA SUR ON MONDAY AS A STRONG HURRICANE...
+...POLO STILL A POWERFUL CATEGORY 4 HURRICANE...
+...FORECAST TO MAKE LANDFALL IN BAJA CALIFORNIA SUR ON MONDAY AS A STRONG HURRICANE...
 
-8:00 AM MST Sat Sep 26
+11:00 AM MST Sat Sep 26
 
-Location: 17.9°N 111.7°W
+Location: 18.3°N 112.2°W
 
 Moving: WNW at 9 mph
 
-Min pressure: 928 mb
+Min pressure: 936 mb
 
-Max sustained: 155 mph
+Max sustained: 145 mph
 
 Public
 
 Advisory
 
-#24
+#24A
 
-800 AM MST
+1100 AM MST
 
 Forecast
 
