@@ -9,6 +9,7 @@ from core import hst_time
 ROOT = "reports"
 LEVEL0 = "0 Level Processing"
 LEVEL1 = "1 County Processing"
+LEVEL1_DIRNAME = LEVEL1
 OFFICIAL = "Official Sources"
 ARCHIVE = "archived"
 CONFIG = "report_counties.yaml"
