@@ -67,12 +67,21 @@ class Manifest:
         return self
 
     def save(self) -> None:
+        # The scheduler runs fetch modules concurrently.  The snapshot and the
+        # temp-file replace must stay under the SAME lock: otherwise two
+        # concurrent saves can each take a valid snapshot and then race their
+        # writes, allowing an older snapshot to overwrite a newer one.  That
+        # can silently erase a freshly recorded content_sha256 and make the
+        # next poll treat unchanged content as changed again.
         with self._lock:
             self.path.parent.mkdir(parents=True, exist_ok=True)
             serializable = {rid: state.to_dict() for rid, state in self._data.items()}
-        tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(serializable, indent=2, ensure_ascii=False), encoding="utf-8")
-        tmp.replace(self.path)  # atomic-ish swap, avoid a torn manifest on crash
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(
+                json.dumps(serializable, indent=2, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            tmp.replace(self.path)  # atomic swap while the manifest lock is held
 
     def get(self, resource_id: str) -> ResourceState | None:
         with self._lock:
