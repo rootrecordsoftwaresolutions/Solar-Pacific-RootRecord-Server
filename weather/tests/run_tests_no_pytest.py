@@ -2,7 +2,7 @@
 functions named test_*, reports pass/fail without needing pytest installed."""
 import importlib.util, sys, traceback, pathlib, os
 
-ROOT = pathlib.Path(__file__).resolve().parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 def discover(base):
