@@ -1,104 +1,152 @@
-# Hawaii Weather Reports
+# Hawaii State Weather Reporting
 
-The report layer is derived from the collected NWS Hawaii Forecast Office
-(HFO) data under:
+> **A source-preserving, continuously updating weather-reporting layer for Hawaiʻi — designed from the start to expand to other regions and eventually global coverage.**
 
-\`/home/rootrecord/Database/WEATHER/Hawai'i/hfo\`
+![Status](https://img.shields.io/badge/status-active-2ea44f?style=flat-square) ![Focus](https://img.shields.io/badge/current%20coverage-Hawaiʻi-1f6feb?style=flat-square) ![Processing](https://img.shields.io/badge/processing-deterministic-6f42c1?style=flat-square)
 
-Reports are written into the first organized processing layer:
+## 🌺 What this is
 
-\`/home/rootrecord/Database/WEATHER/Hawai'i/reports/0 Level Processing\`
+This directory contains the human-readable reporting layer built from the collected weather data for Hawaiʻi.
 
-## Outputs
+**Preserve the official source first. Process it second. Never lose provenance.**
 
-- \`Hawaii_State_Weather_Report_current.md\` — one combined statewide report.
-- \`<resource_id>_current.md\` — one readable Markdown report per current official
-  text product.
-- \`archived/\` — previous report versions, retained using the report's original
-  creation timestamp.
+The current deployment is Hawaiʻi-focused. The architecture is intentionally location-aware rather than Hawaii-hardcoded, so additional states, regions, countries, and customer-specific locations can be introduced without changing the fundamental source/provenance model.
 
-The scheduler regenerates these reports after each dispatch pass.
+## 📡 Current statewide report
 
-## Raw data
+The primary statewide output is:
 
-Raw official HTML responses are retained automatically when an HTTP response
-is HTML. The parsed/cleaned product remains the normal current/archive
-artifact, while the raw HTML is kept in that resource's \`raw/\` companion
-directory.
+    0 Level Processing/Hawaii_State_Weather_Report_current.md
 
-The report layer never deletes or rewrites raw source data.
+It is regenerated from the collected data as the underlying products change. Previous versions are retained in the Level 0 archive when the report content actually changes.
 
-## Level 0 processing
+## 🗂️ Reporting architecture
 
-Level 0 is the first organized report layer extracted from the raw weather data. It intentionally remains broad and unclassified; later processing levels can consume these readable reports without changing the raw-data layer.
+```text
+Collected Official Data
+        │
+        ├──────────────► Official Sources
+        │                 ├── NWS-HFO
+        │                 ├── NHC
+        │                 ├── NOAA
+        │                 └── NOAA-NESDIS / NOAA-GML
+        │
+        ▼
+0 Level Processing
+        │
+        ▼
+1 County Processing
+        │
+        ├── Honolulu
+        ├── Hawaii
+        ├── Maui
+        ├── Kauai
+        └── Kalawao
+        │
+        └── unresolved/  ← retained, never silently assigned
+```
 
-Current reports remain named with `_current.md`. When a report actually changes, the previous current version is moved into `archived/` using the timestamp recorded when that version was created. Unchanged reports are not re-archived.
+### Why the separation matters
 
+The same weather product can be useful to several downstream consumers, but the system must not blur the distinction between what an official source said, what statewide processing extracted, what geographic rules assigned to a county, and what a future application may infer.
 
-## Level 1 county processing
+That separation is especially important for automated and local-LLM consumers.
 
-Level 1 is a deterministic geographic processing layer. It may use the preserved Official Sources record when its resource ID and authoritative source URL match the Level 0 record; otherwise it uses the Level 0 record. It never modifies or replaces Level 0.
+## 🏛️ Official Sources
 
-Reports are written under:
+Official readable products are preserved outside the processing levels under:
 
-`/home/rootrecord/Database/WEATHER/Hawai'i/reports/1 County Processing`
+    Official Sources/<source>/
 
-The county layer is deterministic and uses explicit geographic rules, resource
-routing, county aliases, and later geographic datasets such as NWS shapefiles.
-It does not use AI/LLM classification.
+Each source maintains its own current/archive lifecycle.
 
-Each county gets:
+| Source | Purpose |
+|---|---|
+| **NWS-HFO** | National Weather Service Hawaiʻi Forecast Office and weather.gov products |
+| **NHC** | National Hurricane Center products |
+| **NOAA** | NOAA-hosted source material |
+| **NOAA-GML** | NOAA Geophysical Monitoring / solar-calculation source material |
+| **NOAA-NESDIS** | NESDIS-hosted material when represented as reportable products |
 
-- a directory containing an individual `<resource_id>_current.md` for every
-  deterministically assigned source record;
-- a county aggregate named
-  `<county>_County_Weather_Report_current.md`;
-- previous versions are archived in the Level-1 `archived/` directory using
-  the original report-creation timestamp.
+The official-source Markdown records are readable representations of collected source products, **not AI summaries**.
 
-Statewide resources explicitly configured as statewide are included in every county. If a source cannot be assigned geographically by an authoritative UGC/zone rule, explicit resource rule, or documented text rule, Level 1 preserves it under `unresolved/` and excludes it from every county. This prevents ambiguous geography from being silently copied into multiple counties.
+## 🧭 Geographic processing
 
-This makes every processing level independently reproducible and independently
-archivable.
+Level 1 uses deterministic geographic assignment. Authoritative NWS zone/county relationships are preferred, followed by explicit county UGCs and documented routing rules.
 
+If geography cannot be established safely, the product is retained under:
 
-## Official-source preservation
+    1 County Processing/unresolved/
 
-Official readable weather products are also mirrored outside the processing
-levels so the source identity is never lost.
+It is **not copied into every county** merely because the system cannot determine where it belongs. Explicitly statewide resources are the exception and are intentionally included in every county.
 
-Reports are organized under:
+NWS provides zone/county correlation data for this purpose, and its API supports alert retrieval by state, county, and forecast zone. urlNWS GIS Zone/County resourceshttps://www.weather.gov/gis/ZoneCounty · urlNWS API documentationhttps://www.weather.gov/documentation/services-web-api
 
-`/home/rootrecord/Database/WEATHER/Hawai'i/reports/Official Sources/<source>/`
+## 🕒 Current vs. archived reports
 
-Current source groups include:
+Current products use _current.md filenames.
 
-- `NWS-HFO/` — NWS Hawaii Forecast Office products and weather.gov forecast products.
-- `NHC/` — National Hurricane Center products.
-- `NOAA/` — NOAA-hosted source material.
-- `NOAA-NESDIS/` — NESDIS-hosted imagery/source material when represented as reports.\n- `NOAA-GML/` — NOAA Geophysical Monitoring for Climate/solar-calculation source material.
+When a product's substantive content changes, the previous current version is moved into archived/ using its original report-creation timestamp, and the new version becomes current. Timestamp-only regeneration does not create unnecessary archive versions.
 
-Each source has its own `archived/` directory and independent current/archive
-lifecycle. A change to an NWS-HFO product therefore does not age or overwrite
-an NHC product, and neither source is treated as part of a processing level.
+Raw source data is not replaced by the reporting layer.
 
-The exact fetched official bytes remain in the URL-mirrored raw weather-data
-tree. The source-isolated Markdown layer is the readable official-product
-representation; it is not an AI summary or interpretation.
+## 🌎 Designed to grow beyond Hawaiʻi
 
-## GIS source preservation
+Hawaiʻi is the current deployment because it is the first fully developed geographic coverage area. The long-term structure can support a hierarchy such as:
 
-The GIS fetcher preserves both the authoritative NWS GIS catalog page and the
-versioned artifact selected from that catalog. This is important because NWS
-publishes versioned county, public-zone, zone/county-correlation, CWA, fire-zone,
-and marine-zone datasets. The catalog itself is retained as evidence of what
-version was available when the fetch occurred.
+```text
+Global
+├── United States
+│   ├── Hawaiʻi
+│   │   ├── statewide
+│   │   └── counties / local areas
+│   ├── Mainland server coverage
+│   │   └── selected states / regions
+│   └── special-interest locations
+├── Pacific
+├── Americas
+├── Europe
+├── Asia
+└── other global regions
+```
 
-NWS documents public forecast zones as polygon data and notes that zones may be
-subsets of counties; its Zone/County correlation file provides the corresponding
-county/FIPS relationship. The Level 1 county processor uses those authoritative
-relationships before falling back to less-specific routing rules.
+This lets the public GitHub project remain focused instead of becoming a giant dump of every location. Customer-facing location coverage, mainland infrastructure, and special-interest datasets can remain appropriately separated while sharing the same underlying architecture.
 
-## Provenance boundary
+## 🤖 Built for machines and humans
 
-The processing layers are intentionally separated from the Official Sources preservation layer. Official-source Markdown is generated directly from the collected source resource and never from Level 0. Level 1 records identify their `Source layer` and `County assignment`; unresolved products are never copied into county directories. This keeps source identity and geographic assignment auditable for downstream local-LLM use.
+The reports are Markdown because they are easy for people to read, easy to archive and diff, and straightforward for local automation or LLM-based systems to consume.
+
+The system intentionally avoids using an AI model to decide geographic ownership of a source product. Geographic assignment is deterministic and auditable.
+
+## 🔐 Data integrity principles
+
+- **Official data is preserved.**
+- **Raw source data is not rewritten by the report layer.**
+- **Source identity is retained.**
+- **Processing levels remain separate.**
+- **Geographic assignment is deterministic.**
+- **Unresolved geography is never silently duplicated.**
+- **Current and historical report versions are retained.**
+- **Derived reports identify their source layer.**
+- **The architecture is location-scalable.**
+
+## 🧪 Verification
+
+The repository includes a dependency-light test runner so reporting and scheduler logic can be verified without pytest.
+
+The latest verified baseline before the most recent documentation/test-harness commits was **82 passing, 0 failing, 0 errors**. Run the local suite after pulling the latest main branch before treating a new deployment as verified.
+
+## 📁 Related documentation
+
+- weather/BUILD_STATUS.md — implementation status and remaining work
+- weather/reports/ — current reporting architecture
+- weather/config/ — geographic and resource configuration
+- weather/discovery/ — deterministic hazard/source discovery
+- weather/fetch/ — source collection modules
+- weather/core/ — shared collection, archival, manifest, and HTTP infrastructure
+
+---
+
+### Project direction
+
+**Start with Hawaiʻi. Preserve the source. Make every transformation auditable. Expand the same architecture wherever the data needs to go.**
