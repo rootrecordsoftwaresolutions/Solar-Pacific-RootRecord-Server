@@ -8,7 +8,7 @@ read the same way:
 - `text_products_fallback.py` — forecast.weather.gov/product.php scrape,
   only called if `text_products.py` fails
 - `alerts.py` — api.weather.gov/alerts/active?area=HI (Tier 0)
-- `satellite.py` — HFO IR/VIS gifs + GOES-18 NESDIS sector gif
+- `satellite.py` — HFO IR gifs + GOES-18 NESDIS sector gif
 - `analyses.py` — streamline/surface/seastate charts
 - `radar.py` — radar.weather.gov static loop gif
 - `marine.py` — CWF, offshore, high seas, surf forecast
