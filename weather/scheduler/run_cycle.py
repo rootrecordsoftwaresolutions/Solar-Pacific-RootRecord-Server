@@ -264,18 +264,20 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
             data_changed = True
         except Exception:
             _log(f"reports ERROR\n{traceback.format_exc()}")
-    if data_changed or county_missing:
-        try:
-            county_reports.generate(base_dir)
-            _log("reports: regenerated Level 1 county Markdown reports")
-        except Exception:
-            _log(f"county reports ERROR\n{traceback.format_exc()}")
+    # Preserve official-source mirrors before any geographic processing.
+    # Level 1 may consume these authoritative source-isolated records.
     if data_changed or official_missing:
         try:
             official_reports.generate(base_dir)
             _log("reports: updated source-isolated official report mirrors")
         except Exception:
             _log(f"official reports ERROR\n{traceback.format_exc()}")
+    if data_changed or county_missing:
+        try:
+            county_reports.generate(base_dir)
+            _log("reports: regenerated Level 1 county Markdown reports")
+        except Exception:
+            _log(f"county reports ERROR\n{traceback.format_exc()}")
 
     try:
         _check_midnight_rollover(state, base_dir)
