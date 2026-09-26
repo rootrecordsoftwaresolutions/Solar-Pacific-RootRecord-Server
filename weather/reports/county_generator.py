@@ -9,6 +9,7 @@ from core import hst_time
 ROOT = "reports"
 LEVEL0 = "0 Level Processing"
 LEVEL1 = "1 County Processing"
+OFFICIAL = "Official Sources"
 ARCHIVE = "archived"
 CONFIG = "report_counties.yaml"
 
@@ -125,6 +126,10 @@ def generate(base_dir: str) -> list[Path]:
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
     buckets = {key: [] for key in counties}
     unresolved = []
+    source_candidates = {}
+    official_root = root / OFFICIAL
+    for official_path in sorted(official_root.glob("*/*_current.md")):
+        source_candidates[official_path.name.removesuffix("_current.md")] = official_path
     now = hst_time.hst_now().isoformat(timespec="seconds")
 
     for path in sorted(level0.glob("*_current.md")):
@@ -135,14 +140,21 @@ def generate(base_dir: str) -> list[Path]:
         except OSError:
             continue
         resource_id = path.name.removesuffix("_current.md")
+        official_path = source_candidates.get(resource_id)
+        if official_path is not None:
+            try:
+                raw = official_path.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                official_path = None
         source_m = re.search(r"^- \*\*Source:\*\* (.+)$", raw, re.M)
         title_m = re.search(r"^# (.+)$", raw, re.M)
         source = source_m.group(1).strip() if source_m else ""
+        source_layer = "Official Sources" if official_path is not None else LEVEL0
         title = title_m.group(1).strip() if title_m else resource_id.replace("_", " ").title()
         body = _body(raw)
         targets, scope = _targets(resource_id, body, cfg, ugc_map)
         if not targets:
-            unresolved.append((resource_id, title, source, scope, body))
+            unresolved.append((resource_id, title, source, scope, source_layer, body))
             continue
         for county in targets:
             buckets[county].append((resource_id, title, source, scope, body))
@@ -158,7 +170,7 @@ def generate(base_dir: str) -> list[Path]:
         # Every Level-1 source gets its own current/archived lifecycle.
         # This prevents the county layer from collapsing distinct products
         # into one irreversible file.
-        for rid, title, source, scope, body in sections:
+        for rid, title, source, scope, source_layer, body in sections:
             lines = [
                 f"# {title} — {name}", "",
                 "> **Level 1 county report — deterministically derived from Level 0.**", "",
@@ -166,7 +178,8 @@ def generate(base_dir: str) -> list[Path]:
                 f"- **Report created:** {now} HST",
                 f"- **County:** {name}",
                 f"- **Resource ID:** {rid}",
-                f"- **Source:** {source or 'Level 0 report metadata'}",
+                f"- **Source:** {source or 'Report metadata'}",
+                f"- **Source layer:** {source_layer}",
                 f"- **County assignment:** {scope}",
                 f"- **Source level:** {LEVEL0}",
                 "- **Processing:** deterministic rules only; no AI/LLM classification.",
@@ -191,11 +204,12 @@ def generate(base_dir: str) -> list[Path]:
             "- **Level 0:** untouched; its current and archived reports remain intact.",
             "", "---", ""
         ]
-        for i, (rid, title, source, scope, body) in enumerate(sections, 1):
+        for i, (rid, title, source, scope, source_layer, body) in enumerate(sections, 1):
             lines += [
                 f"## {i}. {title}", "",
                 f"- **Resource ID:** {rid}",
-                f"- **Source:** {source or 'Level 0 report metadata'}",
+                f"- **Source:** {source or 'Report metadata'}",
+                f"- **Source layer:** {source_layer}",
                 f"- **County assignment:** {scope}", "",
                 fence + "text", body, fence, "", "---", ""
             ]
@@ -205,7 +219,7 @@ def generate(base_dir: str) -> list[Path]:
     if unresolved:
         unresolved_dir = level1 / "unresolved"
         unresolved_dir.mkdir(parents=True, exist_ok=True)
-        for rid, title, source, scope, body in unresolved:
+        for rid, title, source, scope, source_layer, body in unresolved:
             lines = [
                 f"# {title} — Geographic Scope Unresolved", "",
                 "> **Level 1 unresolved-source record.** This product was not assigned to a county by an authoritative geographic rule and is intentionally excluded from county reports.",
