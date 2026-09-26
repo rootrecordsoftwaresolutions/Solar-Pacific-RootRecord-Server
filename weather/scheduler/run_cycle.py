@@ -26,6 +26,7 @@ from __future__ import annotations
 import time
 import traceback
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 from typing import Callable
 
 # Every due fetch module (+ hurricanes) runs as its own thread now (see
@@ -54,6 +55,7 @@ from fetch import (
 )
 from alerts import county_map, severity, dedupe
 from hurricanes.scripts import sources as hurricane_sources
+from reports import generator as weather_reports
 
 
 def _log(msg: str) -> None:
@@ -106,8 +108,9 @@ class SchedulerState:
         self.last_seen_hst_date: str | None = None  # for midnight-rollover detection
 
 
-def _run_module(name: str, fetch_fn: Callable, manifest: Manifest, base_dir: str) -> None:
+def _run_module(name: str, fetch_fn: Callable, manifest: Manifest, base_dir: str) -> bool:
     outcomes = fetch_fn(manifest, base_dir)
+    changed = any(outcome.status == "written" for outcome in outcomes)
     for outcome in outcomes:
         if outcome.status in ("failed", "invalid"):
             _log(
@@ -116,6 +119,7 @@ def _run_module(name: str, fetch_fn: Callable, manifest: Manifest, base_dir: str
             )
     if name == "alerts":
         _run_alerts_processing(outcomes, base_dir)
+    return changed
 
 
 def _run_alerts_processing(alert_fetch_outcomes, base_dir: str) -> None:
@@ -202,12 +206,14 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
     manifest = Manifest(base_dir).load()
     now_mono = time.monotonic()
 
-    def _run_and_save(label: str, fn: Callable[[], None]) -> None:
+    def _run_and_save(label: str, fn: Callable[[], bool]) -> bool:
         try:
-            fn()
+            changed = fn()
         except Exception:
             _log(f"module:{label} ERROR (skipped this pass)\n{traceback.format_exc()}")
+            changed = False
         manifest.save()
+        return changed
 
     tasks: list[tuple[str, Callable[[], None]]] = []
 
@@ -229,12 +235,21 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
         state.last_hurricanes_run_monotonic = now_mono
         tasks.append(("hurricanes", lambda: hurricane_sources.poll(hurricanes_base_dir)))
 
-    if tasks:
+    data_changed = False
+\n    if tasks:
         _log(f"dispatching {len(tasks)} due task(s) concurrently: {', '.join(t[0] for t in tasks)}")
         with ThreadPoolExecutor(max_workers=min(len(tasks), MAX_CONCURRENT_MODULES)) as pool:
             futures = [pool.submit(_run_and_save, label, fn) for label, fn in tasks]
             for f in futures:
-                f.result()  # _run_and_save already swallows exceptions; this just waits for completion
+                data_changed = f.result() or data_changed
+\n    reports_dir = Path(base_dir).parent / "reports"
+    aggregate_path = reports_dir / weather_reports.AGGREGATE_FILENAME
+    if data_changed or not aggregate_path.is_file():
+        try:
+            weather_reports.generate(base_dir)
+            _log("reports: regenerated statewide Markdown reports")
+        except Exception:
+            _log(f"reports ERROR\n{traceback.format_exc()}")
 
     try:
         _check_midnight_rollover(state, base_dir)
