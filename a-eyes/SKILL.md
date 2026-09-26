@@ -21,12 +21,12 @@ Simple version. Cameras only — no automations, no power sessions, no solar log
 
 - `scripts/grab_frame.py` — grabs one JPEG for a channel, saves to Database. Does nothing else.
 - `scripts/cam_server.py` — local HTTP server that broadcasts the current stills.
-- `scripts/timelapse_engine.py` — compiles `frames/` into an hourly `video_chunks/hour_HH.mp4`,
-  stitches the day into `final_output/master_stitched_timelapse.mp4` + a web GIF, and
-  catches up on boot if the poller wasn't running when a trigger fired. All paths are
+- `scripts/timelapse_engine.py` — compiles `frames/` into hourly `video_chunks/hour_HH.mp4`,
+  stitches the day into `final_output/master_stitched_timelapse.mp4` (MP4 only — no GIF),
+  and catches up on boot if the poller wasn't running when a trigger fired. All paths are
   derived from `grab_frame.DB_FRAMES` — nothing is re-typed by hand.
 - `scripts/timelapse_hourly.sh` / `timelapse_daily.sh` / `timelapse_catchup.sh` — thin
-  wrappers `jobs.py` calls (EVERY_HOUR, ON_AT 22:01, ON_BOOT).
+  wrappers `jobs.py` calls (EVERY_HOUR, ON_AT 19:01, ON_BOOT).
 - `store/CONNECTION.json` — DVR IP / RTSP credentials.
 - `references/CAMERAS.md` — how the cameras work.
 
@@ -35,14 +35,14 @@ Simple version. Cameras only — no automations, no power sessions, no solar log
 ```
 Database/A-EYES/
 ├── frames/          # grab_frame.py writes here (already timestamped — no staging step needed)
-├── video_chunks/    # hour_05.mp4 ... hour_21.mp4
-├── final_output/    # master_stitched_timelapse.mp4, optimized_web_timelapse.gif
+├── video_chunks/    # hour_05.mp4 ... hour_18.mp4  (14 hours)
+├── final_output/    # master_stitched_timelapse.mp4 only
 └── _archive/YYYYMMDD/hour_HH/   # frames moved here after a successful hourly compile (not deleted)
 ```
 
-Window 05:00–22:00 HST, ch1, target 3 min / 68 fps master, 30 fps GIF — all overridable
-via `A_EYES_TIMELAPSE_*` env vars in `jobs.py`'s job `env` field. See
-`scripts/timelapse_engine.py` docstring for the full list.
+Window **05:00–19:00 HST** (14 hours: 05–18), ch1, target ~3 min / 68 fps master —
+overridable via `A_EYES_TIMELAPSE_*` env vars. Daily stitch fires at **19:01 HST**.
+See `scripts/timelapse_engine.py` docstring for the full list.
 
 ## Run
 
