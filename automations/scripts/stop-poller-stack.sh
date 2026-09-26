@@ -13,6 +13,7 @@ set -u
 # SECTION: CONFIG
 # ====================================================
 UNIT=rr-rootserver-poller.service
+NETWORK_GLOBE_UNIT=network-globe-hawaii.service
 
 # ====================================================
 # SECTION: STOP UNIT
@@ -22,6 +23,12 @@ UNIT=rr-rootserver-poller.service
 # causes systemd to interpret the exit as a failure and restart the stack.
 echo "[stop] stopping systemd unit ${UNIT}…"
 systemctl --user stop "${UNIT}" 2>/dev/null || true
+
+# The Hawaii Network Globe collector owns the live SSH stream. Stop its
+# systemd unit before killing the collector so a Restart= policy cannot bring
+# the SSH connection back after an intentional stack shutdown.
+echo "[stop] stopping ${NETWORK_GLOBE_UNIT}…"
+systemctl --user stop "${NETWORK_GLOBE_UNIT}" 2>/dev/null || true
 
 # Kill anything still remaining in the service cgroup.
 systemctl --user kill --kill-who=all "${UNIT}" 2>/dev/null || true
