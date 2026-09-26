@@ -215,7 +215,7 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
         manifest.save()
         return changed
 
-    tasks: list[tuple[str, Callable[[], None]]] = []
+    tasks: list[tuple[str, Callable[[], bool]]] = []
 
     for name, fetch_fn in FETCH_MODULES.items():
         tier = tiers.module_tier(name)
