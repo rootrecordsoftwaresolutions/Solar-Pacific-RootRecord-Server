@@ -23,6 +23,7 @@ def fetch_all(manifest: Manifest, base_dir: str) -> list[_engine.FetchOutcome]:
                         manifest, base_dir, resource_id, url,
                         method="text", clean_text_body=item.get("clean_text", True),
                         extract_text=text_products_fallback.extract_pre_text,
+                        expected_ext="txt",
                         resource_id_hint=resource_id,
                     )
                 )
@@ -36,6 +37,7 @@ def fetch_all(manifest: Manifest, base_dir: str) -> list[_engine.FetchOutcome]:
                     manifest, base_dir, item["id"], item["url"],
                     method="text", clean_text_body=True,
                     extract_text=text_products_fallback.extract_pre_text,
+                    expected_ext="txt",
                     resource_id_hint=item["id"],
                 )
             )
