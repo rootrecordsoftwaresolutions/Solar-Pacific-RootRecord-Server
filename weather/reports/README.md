@@ -37,7 +37,7 @@ Current reports remain named with `_current.md`. When a report actually changes,
 
 ## Level 1 county processing
 
-Level 1 consumes Level 0 only; it never modifies or replaces Level 0.
+Level 1 is a deterministic geographic processing layer. It may use the preserved Official Sources record when its resource ID and authoritative source URL match the Level 0 record; otherwise it uses the Level 0 record. It never modifies or replaces Level 0.
 
 Reports are written under:
 
@@ -50,16 +50,13 @@ It does not use AI/LLM classification.
 Each county gets:
 
 - a directory containing an individual `<resource_id>_current.md` for every
-  Level-0 source assigned to that county;
+  deterministically assigned source record;
 - a county aggregate named
   `<county>_County_Weather_Report_current.md`;
 - previous versions are archived in the Level-1 `archived/` directory using
   the original report-creation timestamp.
 
-Statewide resources are included in every county. If a source cannot expose
-geography deterministically yet, Level 1 preserves it in every county and
-marks the assignment as unresolved/statewide-source rather than silently
-dropping information.
+Statewide resources explicitly configured as statewide are included in every county. If a source cannot be assigned geographically by an authoritative UGC/zone rule, explicit resource rule, or documented text rule, Level 1 preserves it under `unresolved/` and excludes it from every county. This prevents ambiguous geography from being silently copied into multiple counties.
 
 This makes every processing level independently reproducible and independently
 archivable.
@@ -79,7 +76,7 @@ Current source groups include:
 - `NWS-HFO/` — NWS Hawaii Forecast Office products and weather.gov forecast products.
 - `NHC/` — National Hurricane Center products.
 - `NOAA/` — NOAA-hosted source material.
-- `NOAA-NESDIS/` — NESDIS-hosted imagery/source material when represented as reports.
+- `NOAA-NESDIS/` — NESDIS-hosted imagery/source material when represented as reports.\n- `NOAA-GML/` — NOAA Geophysical Monitoring for Climate/solar-calculation source material.
 
 Each source has its own `archived/` directory and independent current/archive
 lifecycle. A change to an NWS-HFO product therefore does not age or overwrite
@@ -101,3 +98,7 @@ NWS documents public forecast zones as polygon data and notes that zones may be
 subsets of counties; its Zone/County correlation file provides the corresponding
 county/FIPS relationship. The Level 1 county processor uses those authoritative
 relationships before falling back to less-specific routing rules.
+
+## Provenance boundary
+
+The processing layers are intentionally separated from the Official Sources preservation layer. Official-source Markdown is generated directly from the collected source resource and never from Level 0. Level 1 records identify their `Source layer` and `County assignment`; unresolved products are never copied into county directories. This keeps source identity and geographic assignment auditable for downstream local-LLM use.
