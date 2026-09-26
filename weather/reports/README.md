@@ -18,7 +18,9 @@ The live report below is regenerated automatically from the current statewide re
 
 ## 🛰️ Imagery
 
-A GOES imagery banner will be selected from the live GOES-18 Hawaii or GOES-19 East Pacific products once the imagery feed is confirmed working. The banner choice is intentionally left open so the most useful current visualization can be selected from the collected products.
+![GOES-18 Hawaii GeoColor](https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/hfo/cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif)
+
+**GOES-18 Hawaii — GeoColor** is the selected live README banner. The image is the locally collected `_current.gif` product from the weather database, published through the existing weather-data synchronization pipeline.
 
 The imagery pipeline uses stable NOAA/NESDIS product URLs. The stable URL is fetched repeatedly; when the returned image changes, the previous version is archived and the current product keeps its real source filename followed by `_current`.
 
@@ -63,7 +65,7 @@ Official / NOAA / NWS / NESDIS sources
 
 Each scheduler/report-generation cycle can regenerate this README locally from the latest collected data.
 
-The README update is intentionally **local-first**. Generating a new report does not automatically commit or push to GitHub. Publication can be synchronized separately so data collection remains independent from Git operations.
+The README is published through the existing RootRecord Git synchronization workflow alongside the other generated weather/report/media artifacts.
 
 ## 🤖 Machine / LLM Use
 
@@ -91,7 +93,7 @@ No AI/LLM is used to decide geographic ownership of weather products.
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-25T21:06:48-10:00 HST | 35 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-25T21:24:16-10:00 HST | 35 |
 
 The report below is generated from the same current product sections as `0 Level Processing/Hawaii_State_Weather_Report_current.md`. It is a presentation layer only; official-source records and raw source data remain preserved separately.
 
@@ -563,7 +565,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-25T21:00:43.960572-10:00 HST |
+| **Collected** | 2026-09-25T21:18:13.282240-10:00 HST |
 
 ```text
 325
@@ -836,7 +838,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-25T21:00:47.557730-10:00 HST |
+| **Collected** | 2026-09-25T21:18:15.325084-10:00 HST |
 
 ```text
 948
@@ -1714,7 +1716,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-25T21:06:48.464923-10:00 HST |
+| **Collected** | 2026-09-25T21:24:15.821166-10:00 HST |
 
 ```text
 Home
@@ -2074,7 +2076,7 @@ view pas news
 
 
 
-Las upda e Sa , 26 Sep 2026 07:00:17 UTC
+Las upda e Sa , 26 Sep 2026 07:22:36 UTC
 
 
 
@@ -9605,7 +9607,7 @@ Take Our Survey
 |---|---|
 | **Resource ID** | nws_cwa_boundaries_catalog |
 | **Official source** | https://www.weather.gov/gis/CWABounds |
-| **Collected** | 2026-09-25T20:59:06.493581-10:00 HST |
+| **Collected** | 2026-09-25T21:16:22.042398-10:00 HST |
 
 ```text
 Coun y Warning Area Boundaries
@@ -10563,7 +10565,7 @@ Career Oppor uni ies
 |---|---|
 | **Resource ID** | nws_fire_zones_catalog |
 | **Official source** | https://www.weather.gov/gis/firezones |
-| **Collected** | 2026-09-25T20:59:18.561412-10:00 HST |
+| **Collected** | 2026-09-25T21:12:13.932752-10:00 HST |
 
 ```text
 NWS Fire Wea her Zones
@@ -10788,12 +10790,12 @@ Wireless Emergency Aler s
 
 
 
-Brochures
-
-
-
-
 Wea her-Ready Na ion
+
+
+
+
+Brochures
 
 
 
@@ -12529,7 +12531,7 @@ Career Oppor uni ies
 |---|---|
 | **Resource ID** | nws_public_counties_catalog |
 | **Official source** | https://www.weather.gov/gis/Counties |
-| **Collected** | 2026-09-25T20:33:45.220969-10:00 HST |
+| **Collected** | 2026-09-25T21:15:46.134777-10:00 HST |
 
 ```text
 nn northern         ss southern         ea east
@@ -12551,7 +12553,7 @@ nn northern         ss southern         ea east
 |---|---|
 | **Resource ID** | nws_public_zones_catalog |
 | **Official source** | https://www.weather.gov/gis/publiczones |
-| **Collected** | 2026-09-25T20:49:26.887031-10:00 HST |
+| **Collected** | 2026-09-25T21:11:38.087083-10:00 HST |
 
 ```text
 NWS Public Forecas Zones
@@ -14627,7 +14629,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-25T20:59:57.983508-10:00 HST |
+| **Collected** | 2026-09-25T21:17:28.837777-10:00 HST |
 
 ```text
 Na ional Wea her Service
@@ -14810,12 +14812,12 @@ Wireless Emergency Aler s
 
 
 
-Brochures
-
-
-
-
 Wea her-Ready Na ion
+
+
+
+
+Brochures
 
 
 
