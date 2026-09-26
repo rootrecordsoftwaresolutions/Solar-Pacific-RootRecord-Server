@@ -18,7 +18,9 @@ The live report below is regenerated automatically from the current statewide re
 
 ## 🛰️ Imagery
 
-A GOES imagery banner will be selected from the live GOES-18 Hawaii or GOES-19 East Pacific products once the imagery feed is confirmed working. The banner choice is intentionally left open so the most useful current visualization can be selected from the collected products.
+![GOES-18 Hawaii GeoColor](https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/hfo/cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif)
+
+**GOES-18 Hawaii — GeoColor** is the selected live README banner. The image is the locally collected `_current.gif` product from the weather database, published through the existing weather-data synchronization pipeline.
 
 The imagery pipeline uses stable NOAA/NESDIS product URLs. The stable URL is fetched repeatedly; when the returned image changes, the previous version is archived and the current product keeps its real source filename followed by `_current`.
 
@@ -63,7 +65,7 @@ Official / NOAA / NWS / NESDIS sources
 
 Each scheduler/report-generation cycle can regenerate this README locally from the latest collected data.
 
-The README update is intentionally **local-first**. Generating a new report does not automatically commit or push to GitHub. Publication can be synchronized separately so data collection remains independent from Git operations.
+The README is published through the existing RootRecord Git synchronization workflow alongside the other generated weather/report/media artifacts.
 
 ## 🤖 Machine / LLM Use
 
