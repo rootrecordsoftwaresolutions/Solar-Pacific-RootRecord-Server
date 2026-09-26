@@ -41,6 +41,7 @@ MODULE_MIN_TIER: dict[str, int] = {
     "climate": 5,      # also covers fetch_observations()
     "ndfd_gridpoint": 6,
     "misc": 1,        # includes NHC GTWO resources; host floor still applies
+    "gis": 6,
 }
 
 
