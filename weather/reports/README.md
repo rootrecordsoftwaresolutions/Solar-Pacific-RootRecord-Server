@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T04:43:20-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T04:51:20-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3720,7 +3720,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T04:36:42.047104-10:00 HST |
+| **Collected** | 2026-09-26T04:44:38.347939-10:00 HST |
 
 ```text
                         
@@ -4529,7 +4529,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-26T04:41:20.027965-10:00 HST |
+| **Collected** | 2026-09-26T04:49:19.979225-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4543,7 +4543,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-26T04:42:20.050391-10:00 HST |
+| **Collected** | 2026-09-26T04:50:19.867447-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4557,7 +4557,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-26T02:08:20.630450-10:00 HST |
+| **Collected** | 2026-09-26T04:45:19.934460-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4571,7 +4571,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-26T02:01:20.538462-10:00 HST |
+| **Collected** | 2026-09-26T04:46:19.922216-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4585,7 +4585,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-26T04:39:19.987133-10:00 HST |
+| **Collected** | 2026-09-26T04:47:19.894311-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4599,7 +4599,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-26T04:40:19.862225-10:00 HST |
+| **Collected** | 2026-09-26T04:48:19.967164-10:00 HST |
 
 ```text
 172 ACCA62 KNHC 261200TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada justo aleste-noreste de las Islas de Cabo Verde, y sobre la DepresiónTropical Fay, ubicada al oeste-suroeste de las Azores.No se espera la formación de ciclones tropicales durante lospróximos 7 días.$$Pronosticador Katz*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4613,7 +4613,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T04:43:19.653998-10:00 HST |
+| **Collected** | 2026-09-26T04:51:19.789707-10:00 HST |
 
 ```text
 Home
@@ -4737,7 +4737,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 14:42:59 UTC
+Last update Sat, 26 Sep 2026 14:50:07 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -5237,34 +5237,34 @@ Buoys |
 Grids |
 Storm Archive
 
-...POLO MOVING WEST-NORTHWESTWARD AS AN EXTREMELY DANGEROUS CATEGORY 5 HURRICANE...
-...EXPECTED TO MAKE LANDFALL IN BAJA CALIFORNIA SUR ON MONDAY AS A POWERFUL HURRICANE...
+...POLO REMAINS A POWERFUL HURRICANE...
+...EXPECTED TO MAKE LANDFALL IN BAJA CALIFORNIA SUR ON MONDAY AS A STRONG HURRICANE...
 
-5:00 AM MST Sat Sep 26
+8:00 AM MST Sat Sep 26
 
-Location: 17.7°N 111.5°W
+Location: 17.9°N 111.7°W
 
-Moving: WNW at 10 mph
+Moving: WNW at 9 mph
 
-Min pressure: 922 mb
+Min pressure: 928 mb
 
-Max sustained: 160 mph
+Max sustained: 155 mph
 
 Public
 
 Advisory
 
-#23A
+#24
 
-500 AM MST
+800 AM MST
 
 Forecast
 
 Advisory
 
-#23
+#24
 
-0900 UTC
+1500 UTC
 
 Forecast
 
@@ -5372,17 +5372,17 @@ Forecast
 
 Discussion
 
-#26
+#27
 
-200 AM PDT
+800 AM PDT
 
 Wind Speed
 
 Probabilities
 
-#26
+#27
 
-0900 UTC
+1500 UTC
 
 Productos en español:
 
