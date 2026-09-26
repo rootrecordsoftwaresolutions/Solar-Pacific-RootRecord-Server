@@ -15,7 +15,7 @@ tiers:
     name: satellite_imagery
     cadence_seconds: 600
     cadence_seconds_max: 900
-    description: "State/per-island IR & VIS latest + loop gifs."
+    description: "State IR latest + loop gifs."
   3:
     name: analyses_charts
     cadence_seconds: 3600
