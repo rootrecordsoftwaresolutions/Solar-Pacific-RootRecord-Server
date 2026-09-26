@@ -26,7 +26,7 @@ def _make_source(base: Path) -> Path:
     return source
 
 
-def test_banner_is_separate_and_preserves_animation():
+def test_banner_is_locked_size_and_preserves_animation():
     with tempfile.TemporaryDirectory() as tmp:
         base = Path(tmp)
         source = _make_source(base)
@@ -39,7 +39,8 @@ def test_banner_is_separate_and_preserves_animation():
         with Image.open(source) as original, Image.open(output) as banner:
             assert original.size == (600, 600)
             assert banner.size == TARGET_SIZE
-            assert TARGET_SIZE[0] <= 480
+            assert TARGET_SIZE == (1122, 359)
+            assert CROP_BOX == (0, 145, 600, 337)
             assert getattr(banner, "n_frames", 1) == 3
             assert banner.info.get("loop") == 0
 

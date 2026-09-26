@@ -3,8 +3,8 @@
 This is a presentation-only processor. It reads the collected raw GIF and
 writes a separate banner copy; the raw weather-data product is never modified.
 
-The output is intentionally modest in size so the README image is centered
-and does not dominate the page.
+Output is a fixed wide island strip (not the full square sector) so the README
+banner stays compact and consistent on every update.
 """
 from __future__ import annotations
 
@@ -17,10 +17,12 @@ SOURCE_RELATIVE = Path(
     "GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif"
 )
 OUTPUT_RELATIVE = Path("reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif")
-# Drop the lower label strip from the 600x600 NESDIS product, then scale
-# down for README display (keeps animation, avoids a full-width hero image).
-CROP_BOX = (0, 0, 600, 584)
-TARGET_SIZE = (420, 409)
+
+# Horizontal band through the Hawaiian Islands from the 600x600 HI sector.
+# Excludes the bottom NESDIS label strip. Aspect matches the locked target.
+CROP_BOX = (0, 145, 600, 337)  # 600 x 192
+# Locked README presentation size (wide, short — does not dominate the page).
+TARGET_SIZE = (1122, 359)
 EXPECTED_SOURCE_SIZE = (600, 600)
 
 
@@ -71,7 +73,22 @@ def generate_readme_banner(base_dir: str | Path) -> Path:
     if not output.is_file():
         raise RuntimeError("README banner was not created: {}".format(output))
 
+    # Hard guarantee: every published banner is exactly the locked size.
+    with Image.open(output) as check:
+        if check.size != TARGET_SIZE:
+            raise RuntimeError(
+                "README banner size mismatch: {} (expected {})".format(
+                    check.size, TARGET_SIZE
+                )
+            )
+
     return output
 
 
-__all__ = ["generate_readme_banner", "SOURCE_RELATIVE", "OUTPUT_RELATIVE", "TARGET_SIZE", "CROP_BOX"]
+__all__ = [
+    "generate_readme_banner",
+    "SOURCE_RELATIVE",
+    "OUTPUT_RELATIVE",
+    "TARGET_SIZE",
+    "CROP_BOX",
+]
