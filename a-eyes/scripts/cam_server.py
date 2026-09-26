@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
-"""a-eyes local camera server — live stills + simple password web UI.
+"""a-eyes local camera server — true live MJPEG + password web UI.
 
 Binds 127.0.0.1:8791 only. Public path is proxied by rootserver_poller at
 https://rootserver.rootrecord.cloud/aeyes (tunnel → :8799 → here).
 
 Routes:
   GET  /health
-  GET  /current.jpg | /current_ch2.jpg | /current_ch3.jpg | /current_ch4.jpg
-  GET  /aeyes  /aeyes/          → login or live 4-channel grid
-  POST /aeyes/login             → set auth cookie (password from master-key.env)
+  GET  /current.jpg | /current_ch2.jpg | …   still snapshot (local)
+  GET  /aeyes  /aeyes/                       login or live 4-channel grid
+  POST /aeyes/login
   GET  /aeyes/logout
-  GET  /aeyes/live/ch{1-4}.jpg  → live grab (auth required)
+  GET  /aeyes/live/ch{1-4}.mjpeg             continuous live MJPEG (auth)
+  GET  /aeyes/live/ch{1-4}.jpg               one-shot still (auth, fallback)
 
-Password key in /home/rootrecord/master/master-key.env:
-  AEYES_PUBLIC_PASSWORD=...
+Password: AEYES_PUBLIC_PASSWORD in /home/rootrecord/master/master-key.env
 """
 from __future__ import annotations
 
 import hashlib
 import hmac
 import json
+import subprocess
 import sys
 import threading
 from http.cookies import SimpleCookie
@@ -29,12 +30,25 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from grab_frame import DB_FRAMES, FramesBusy, grab_jpeg, load_master_key  # noqa: E402
+from grab_frame import (  # noqa: E402
+    DB_FRAMES,
+    FramesBusy,
+    crop_right_pct,
+    crop_right_px,
+    grab_jpeg,
+    load_master_key,
+    rtsp_url,
+)
 
 HOST = "127.0.0.1"
 PORT = 8791
 COOKIE_NAME = "aeyes_session"
-COOKIE_MAX_AGE = 60 * 60 * 12  # 12 hours
+COOKIE_MAX_AGE = 60 * 60 * 12
+
+# Substream (stream=1) for live web — lighter on the DVR / LAN.
+LIVE_STREAM = 1
+LIVE_FPS = 8
+LIVE_Q = 7  # mjpeg quality 2–31 (lower = better)
 
 STILL_ROUTES = {
     "current.jpg": 1,
@@ -43,8 +57,6 @@ STILL_ROUTES = {
     "current_ch4.jpg": 4,
 }
 
-# Last successful JPEG per channel — served when RTSP/lock is busy so the
-# browser always gets image/jpeg (never JSON) for <img> tags.
 _last_jpeg: dict[int, bytes] = {}
 _last_lock = threading.Lock()
 
@@ -66,7 +78,6 @@ def _expected_token() -> str:
 
 
 def _disk_latest(channel: int) -> bytes | None:
-    """Newest frame file for this channel already on disk (from grab_all)."""
     try:
         files = sorted(DB_FRAMES.glob(f"ch{channel}-*.jpg"), key=lambda p: p.stat().st_mtime)
         if not files:
@@ -75,6 +86,14 @@ def _disk_latest(channel: int) -> bytes | None:
         return data if len(data) > 500 else None
     except OSError:
         return None
+
+
+def _crop_vf() -> str | None:
+    pct = crop_right_pct()
+    px = crop_right_px()
+    if pct <= 0 and px <= 0:
+        return None
+    return f"crop=trunc((iw*(1-{pct})-{px})/2)*2:ih:0:0"
 
 
 LOGIN_HTML = """<!DOCTYPE html>
@@ -126,12 +145,11 @@ LIVE_HTML = """<!DOCTYPE html>
   header a { color: #8b9bb0; text-decoration: none; font-size: 0.85rem; }
   header a:hover { color: #e8eef5; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; padding: 0.5rem; }
-  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
   .cell { background: #141a22; border: 1px solid #243041; border-radius: 10px; overflow: hidden; }
   .label { padding: 0.4rem 0.65rem; font-size: 0.8rem; color: #8b9bb0;
-           border-bottom: 1px solid #1c2533; display: flex; justify-content: space-between; }
-  .label .st { font-size: 0.75rem; opacity: 0.7; }
-  .cell img { display: block; width: 100%; height: auto; background: #000; min-height: 140px;
+           border-bottom: 1px solid #1c2533; }
+  .cell img { display: block; width: 100%; height: auto; background: #000; min-height: 160px;
               object-fit: contain; }
 </style>
 </head>
@@ -141,48 +159,24 @@ LIVE_HTML = """<!DOCTYPE html>
     <a href="/aeyes/logout">Log out</a>
   </header>
   <div class="grid">
-    <div class="cell"><div class="label"><span>Channel 1</span><span class="st" id="s1"></span></div><img id="c1" alt="ch1"/></div>
-    <div class="cell"><div class="label"><span>Channel 2</span><span class="st" id="s2"></span></div><img id="c2" alt="ch2"/></div>
-    <div class="cell"><div class="label"><span>Channel 3</span><span class="st" id="s3"></span></div><img id="c3" alt="ch3"/></div>
-    <div class="cell"><div class="label"><span>Channel 4</span><span class="st" id="s4"></span></div><img id="c4" alt="ch4"/></div>
+    <div class="cell"><div class="label">Channel 1 · live</div>
+      <img src="/aeyes/live/ch1.mjpeg" alt="ch1"/></div>
+    <div class="cell"><div class="label">Channel 2 · live</div>
+      <img src="/aeyes/live/ch2.mjpeg" alt="ch2"/></div>
+    <div class="cell"><div class="label">Channel 3 · live</div>
+      <img src="/aeyes/live/ch3.mjpeg" alt="ch3"/></div>
+    <div class="cell"><div class="label">Channel 4 · live</div>
+      <img src="/aeyes/live/ch4.mjpeg" alt="ch4"/></div>
   </div>
-<script>
-(function () {
-  // One channel at a time — RTSP grabs take 1–5s each; firing all four every
-  // 2s starved the frames lock and returned 503 JSON into <img> tags.
-  const ids = [1, 2, 3, 4];
-  let i = 0;
-  function loadOne(n) {
-    var el = document.getElementById('c' + n);
-    var st = document.getElementById('s' + n);
-    if (!el) return;
-    if (st) st.textContent = '…';
-    var img = new Image();
-    img.onload = function () {
-      el.src = img.src;
-      if (st) st.textContent = new Date().toLocaleTimeString();
-    };
-    img.onerror = function () {
-      if (st) st.textContent = 'retry';
-    };
-    img.src = '/aeyes/live/ch' + n + '.jpg?t=' + Date.now();
-  }
-  function tick() {
-    loadOne(ids[i % ids.length]);
-    i += 1;
-  }
-  // Initial pass: stagger so all four fill within ~6s without overlapping.
-  ids.forEach(function (n, idx) { setTimeout(function () { loadOne(n); }, idx * 1500); });
-  setInterval(tick, 4000);
-})();
-</script>
 </body>
 </html>
 """
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "AEyesCamServer/2.1"
+    server_version = "AEyesCamServer/3.0"
+    # Long-lived MJPEG connections
+    timeout = 300
 
     def log_message(self, fmt: str, *args) -> None:
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
@@ -243,7 +237,7 @@ class Handler(BaseHTTPRequestHandler):
 
         name = path.lstrip("/")
         if name in STILL_ROUTES:
-            self._still(STILL_ROUTES[name], require_auth=False)
+            self._still(STILL_ROUTES[name])
             return
 
         if path in ("/aeyes",):
@@ -264,6 +258,21 @@ class Handler(BaseHTTPRequestHandler):
             )
             return
 
+        if path.startswith("/aeyes/live/ch") and path.endswith(".mjpeg"):
+            if not self._authed():
+                self._json(401, {"ok": False, "error": "unauthorized"})
+                return
+            try:
+                ch = int(path.split("/ch")[-1].split(".")[0])
+            except ValueError:
+                self._json(404, {"ok": False, "error": "not_found"})
+                return
+            if ch not in (1, 2, 3, 4):
+                self._json(404, {"ok": False, "error": "not_found"})
+                return
+            self._mjpeg_live(ch)
+            return
+
         if path.startswith("/aeyes/live/ch") and path.endswith(".jpg"):
             if not self._authed():
                 self._json(401, {"ok": False, "error": "unauthorized"})
@@ -276,7 +285,7 @@ class Handler(BaseHTTPRequestHandler):
             if ch not in (1, 2, 3, 4):
                 self._json(404, {"ok": False, "error": "not_found"})
                 return
-            self._still(ch, require_auth=False)  # already checked
+            self._still(ch)
             return
 
         self._json(404, {"ok": False, "error": "not_found"})
@@ -298,18 +307,12 @@ class Handler(BaseHTTPRequestHandler):
         except (FileNotFoundError, KeyError) as e:
             self._html(
                 500,
-                LOGIN_HTML.replace(
-                    "__ERR__",
-                    f'<div class="err">Server misconfigured: {e}</div>',
-                ),
+                LOGIN_HTML.replace("__ERR__", f'<div class="err">Server misconfigured: {e}</div>'),
             )
             return
 
         if not hmac.compare_digest(submitted, expected_pw):
-            self._html(
-                401,
-                LOGIN_HTML.replace("__ERR__", '<div class="err">Wrong password.</div>'),
-            )
+            self._html(401, LOGIN_HTML.replace("__ERR__", '<div class="err">Wrong password.</div>'))
             return
 
         token = _session_token(expected_pw)
@@ -325,11 +328,61 @@ class Handler(BaseHTTPRequestHandler):
             ],
         )
 
-    def _still(self, channel: int, *, require_auth: bool = False) -> None:
-        if require_auth and not self._authed():
-            self._json(401, {"ok": False, "error": "unauthorized"})
+    def _mjpeg_live(self, channel: int) -> None:
+        """Pipe continuous MJPEG from RTSP to the browser (true live)."""
+        url = rtsp_url(channel, LIVE_STREAM)
+        cmd = [
+            "ffmpeg", "-hide_banner", "-loglevel", "error",
+            "-rtsp_transport", "tcp",
+            "-i", url,
+            "-an",
+            "-r", str(LIVE_FPS),
+        ]
+        vf = _crop_vf()
+        if vf:
+            cmd += ["-vf", vf]
+        # mpjpeg = multipart JPEG stream browsers understand in <img src>
+        cmd += ["-f", "mpjpeg", "-q:v", str(LIVE_Q), "pipe:1"]
+
+        try:
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                bufsize=0,
+            )
+        except OSError as e:
+            self._json(503, {"ok": False, "error": f"ffmpeg start failed: {e}"})
             return
 
+        try:
+            self.send_response(200)
+            self.send_header("Content-Type", "multipart/x-mixed-replace; boundary=ffmpeg")
+            self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+            self.send_header("Pragma", "no-cache")
+            self.send_header("Connection", "close")
+            self.end_headers()
+
+            assert proc.stdout is not None
+            while True:
+                chunk = proc.stdout.read(4096)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
+                self.wfile.flush()
+        except (BrokenPipeError, ConnectionResetError):
+            pass  # client closed tab / navigated away
+        finally:
+            try:
+                proc.kill()
+            except OSError:
+                pass
+            try:
+                proc.wait(timeout=2)
+            except Exception:
+                pass
+
+    def _still(self, channel: int) -> None:
         data: bytes | None = None
         try:
             path = grab_jpeg(channel=channel)
@@ -354,33 +407,14 @@ class Handler(BaseHTTPRequestHandler):
         if data:
             self._jpeg(data)
             return
-
-        # Nothing to show yet — still return a tiny valid JPEG-ish failure as JSON
-        # only for non-img clients; for live UI we prefer empty 1x1 so <img> doesn't
-        # spam broken-icon. Use a minimal 1x1 black JPEG.
-        # 1x1 black JPEG:
-        tiny = bytes([
-            0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10, 0x4A, 0x46, 0x49, 0x46, 0x00, 0x01,
-            0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0xFF, 0xDB, 0x00, 0x43,
-            0x00, 0x08, 0x06, 0x06, 0x07, 0x06, 0x05, 0x08, 0x07, 0x07, 0x07, 0x09,
-            0x09, 0x08, 0x0A, 0x0C, 0x14, 0x0D, 0x0C, 0x0B, 0x0B, 0x0C, 0x19, 0x12,
-            0x13, 0x0F, 0x14, 0x1D, 0x1A, 0x1F, 0x1E, 0x1D, 0x1A, 0x1C, 0x1C, 0x20,
-            0x24, 0x2E, 0x27, 0x20, 0x22, 0x2C, 0x23, 0x1C, 0x1C, 0x28, 0x37, 0x29,
-            0x2C, 0x30, 0x31, 0x34, 0x34, 0x34, 0x1F, 0x27, 0x39, 0x3D, 0x38, 0x32,
-            0x3C, 0x2E, 0x33, 0x34, 0x32, 0xFF, 0xC0, 0x00, 0x0B, 0x08, 0x00, 0x01,
-            0x00, 0x01, 0x01, 0x01, 0x11, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x00, 0x01,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x08, 0xFF, 0xC4, 0x00, 0x14, 0x10, 0x01, 0x00, 0x00,
-            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            0x00, 0x00, 0xFF, 0xDA, 0x00, 0x08, 0x01, 0x01, 0x00, 0x00, 0x3F, 0x00,
-            0x7F, 0xFF, 0xD9,
-        ])
-        self._jpeg(tiny)
+        self._json(503, {"ok": False, "error": f"Ch{channel} unavailable"})
 
 
 def main() -> None:
     httpd = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"a-eyes cam server listen={HOST}:{PORT}", flush=True)
+    # Allow reuse after quick restart
+    httpd.allow_reuse_address = True
+    print(f"a-eyes cam server listen={HOST}:{PORT} (live MJPEG)", flush=True)
     httpd.serve_forever()
 
 
