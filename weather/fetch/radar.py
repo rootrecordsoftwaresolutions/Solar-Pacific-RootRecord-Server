@@ -38,6 +38,7 @@ def extract_ftm_status(html_bytes: bytes) -> str:
     for label, body in blocks:
         label = label.strip()
         for entity, char in (("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", '"'), ("&#39;", "'")):
+            label = label.replace(entity, char)
             body = body.replace(entity, char)
         sections.append(f"{label}\n{body.strip()}")
 
