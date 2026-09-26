@@ -46,6 +46,16 @@ _README_PLACEHOLDERS = (
     "{{REPORT_SECTIONS}}",
 )
 
+# Site chrome phrases that must never appear inside a product body.
+_CHROME_MARKERS = (
+    "Privacy Policy",
+    "Freedom of Information Act",
+    "USA.gov",
+    "About Us",
+    "Career Opportunities",
+    "National Weather Service Home",
+)
+
 
 def _load_resource_names() -> dict[str, str]:
     path = Path(__file__).resolve().parent.parent / "config" / "resources.yaml"
@@ -124,11 +134,51 @@ class _VisibleTextParser(HTMLParser):
             self.parts.append(data)
 
 
-def _html_to_text(raw: str) -> str:
-    """Extract the actual visible NWS report from an HTML response."""
+def _normalize_inline_whitespace(text: str) -> str:
+    """Collapse runs of spaces/tabs to a single space without destroying letters.
+
+    IMPORTANT: never put the letter t into a character class. Use an explicit
+    tab character via chr(9) so the source cannot be corrupted by escape
+    double-processing.
+    """
+    tab = chr(9)
+    text = text.replace(tab, " ")
+    return re.sub(r" +", " ", text).strip()
+
+
+def _strip_chrome(text: str) -> str:
+    """Drop trailing NWS website chrome if it leaked into extracted body text."""
+    cut = len(text)
+    for marker in _CHROME_MARKERS:
+        idx = text.find(marker)
+        if idx != -1:
+            cut = min(cut, idx)
+    return text[:cut].rstrip()
+
+
+def _pre_product_text(raw: str) -> str | None:
+    """Prefer the last <pre> block — that is the official NWS product body."""
     pre_matches = re.findall(r"<pre\b[^>]*>(.*?)</pre\s*>", raw, flags=re.I | re.S)
-    if pre_matches:
-        return html.unescape(re.sub(r"<[^>]+>", "", pre_matches[-1])).strip()
+    if not pre_matches:
+        return None
+    body = html.unescape(re.sub(r"<[^>]+>", "", pre_matches[-1]))
+    # Preserve fixed-width spacing inside the product. Only normalize newlines.
+    body = body.replace("\r\n", "\n").replace("\r", "\n")
+    body = _strip_chrome(body)
+    # Trim trailing blank lines only; keep internal column alignment intact.
+    return body.rstrip() + ("\n" if body.strip() else "")
+
+
+def _html_to_text(raw: str, *, preserve_pre: bool = True) -> str:
+    """Extract visible text from HTML.
+
+    When a <pre> product block exists, return it verbatim (fixed-width safe).
+    Otherwise parse visible text and normalize inline whitespace carefully.
+    """
+    if preserve_pre:
+        pre = _pre_product_text(raw)
+        if pre and pre.strip():
+            return pre.strip("\n")
 
     parser = _VisibleTextParser()
     try:
@@ -138,8 +188,20 @@ def _html_to_text(raw: str) -> str:
     except Exception:
         text = html.unescape(re.sub(r"<[^>]+>", "", raw))
 
-    lines = [re.sub(r"[ \t]+", " ", line).strip() for line in text.splitlines()]
-    return "\n".join(lines).strip()
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    lines = [_normalize_inline_whitespace(line) for line in text.splitlines()]
+    # Collapse excessive blank lines but keep paragraph breaks.
+    cleaned: list[str] = []
+    blank_run = 0
+    for line in lines:
+        if not line:
+            blank_run += 1
+            if blank_run <= 1:
+                cleaned.append("")
+            continue
+        blank_run = 0
+        cleaned.append(line)
+    return _strip_chrome("\n".join(cleaned)).strip()
 
 
 def _extract_report_text(path: Path) -> str | None:
@@ -152,10 +214,14 @@ def _extract_report_text(path: Path) -> str | None:
         return None
 
     if path.suffix.lower() == ".html":
-        return _html_to_text(raw) or None
+        text = _html_to_text(raw, preserve_pre=True)
+        return text or None
 
     if path.suffix.lower() != ".json":
-        return raw.strip() or None
+        # Plain text / .txt product bodies: preserve exact spacing.
+        body = raw.replace("\r\n", "\n").replace("\r", "\n")
+        body = _strip_chrome(body)
+        return body.rstrip() or None
 
     try:
         obj = json.loads(raw)
@@ -180,10 +246,9 @@ def _extract_report_text(path: Path) -> str | None:
 
     product_text = find_product_text(obj)
     if product_text:
-        return product_text
+        return _strip_chrome(product_text.replace("\r\n", "\n").replace("\r", "\n")).rstrip()
 
-    # Some api.weather.gov product list/detail captures only include metadata.
-    # Prefer a compact readable summary over dumping the entire JSON blob.
+    # Metadata-only capture (e.g. products list without a second-hop body).
     if isinstance(obj, dict):
         keys = (
             "productName", "productCode", "issuingOffice", "issuanceTime",
@@ -223,6 +288,40 @@ def _as_markdown_report(body: str) -> str:
     return fence + "text\n" + body.rstrip() + "\n" + fence
 
 
+def _cell_text(raw_cell: str) -> str:
+    """Plain text for one table cell — never destroy letter characters."""
+    text = re.sub(r"<[^>]+>", " ", raw_cell)
+    text = html.unescape(text)
+    return _normalize_inline_whitespace(text).replace("|", "\\|")
+
+
+def _parse_rwr_stations(raw: str) -> dict[str, dict[str, str]]:
+    """Map ICAO station id -> observation fields from the HFO RWR HTML table."""
+    stations: dict[str, dict[str, str]] = {}
+    for row in re.findall(r"<tr\b[^>]*>(.*?)</tr>", raw, flags=re.I | re.S):
+        icao_match = re.search(
+            r"href=[\"'][^\"']*/([A-Z0-9]{4})\.html[\"']",
+            row,
+            flags=re.I,
+        )
+        if not icao_match:
+            continue
+        icao = icao_match.group(1).upper()
+        cells = re.findall(r"<td\b[^>]*>(.*?)</td>", row, flags=re.I | re.S)
+        if len(cells) < 7:
+            continue
+        values = [_cell_text(cell) for cell in cells]
+        stations[icao] = {
+            "conditions": values[1] or "—",
+            "temp": values[2] or "—",
+            "dewpoint": values[3] or "—",
+            "rh": values[4] or "—",
+            "wind": values[5] or "—",
+            "pressure": values[6] or "—",
+        }
+    return stations
+
+
 def _current_conditions(base: Path) -> str:
     """Build a compact current-conditions table from the collected HFO RWR page."""
     source = base / "weather.gov" / "hfo" / "RWR" / "raw" / "RWR_raw_current.html"
@@ -234,6 +333,7 @@ def _current_conditions(base: Path) -> str:
     except OSError:
         return "Current conditions are unavailable from the latest collected HFO observations."
 
+    parsed = _parse_rwr_stations(raw)
     stations = [
         ("PHNL", "Honolulu"),
         ("PHLI", "Lihue"),
@@ -242,21 +342,21 @@ def _current_conditions(base: Path) -> str:
         ("PHKO", "Kona"),
     ]
     rows: list[str] = []
-    for station, label in stations:
-        match = re.search(
-            r"<tr\b[^>]*>.*?href=[\"'][^\"']*/" + re.escape(station) + r"\.html[\"'][^>]*>.*?</tr>",
-            raw,
-            flags=re.I | re.S,
-        )
-        if not match:
+    for icao, label in stations:
+        obs = parsed.get(icao)
+        if not obs:
             continue
-        cells = re.findall(r"<td\b[^>]*>(.*?)</td>", match.group(0), flags=re.I | re.S)
-        values = [_html_to_text(cell).replace("|", "\\|").strip() for cell in cells]
-        if len(values) >= 7:
-            rows.append("| {} | {} | {}°F | {}°F | {}% | {} | {} |".format(
-                label, values[1] or "—", values[2] or "—", values[3] or "—",
-                values[4] or "—", values[5] or "—", values[6] or "—"
-            ))
+        rows.append(
+            "| {} | {} | {}°F | {}°F | {}% | {} | {} |".format(
+                label,
+                obs["conditions"],
+                obs["temp"],
+                obs["dewpoint"],
+                obs["rh"],
+                obs["wind"],
+                obs["pressure"],
+            )
+        )
 
     if not rows:
         return "Current conditions are unavailable from the latest collected HFO observations."
@@ -372,8 +472,6 @@ def generate(base_dir: str) -> list[Path]:
     manifest = Manifest(base_dir).load()
     names = _load_resource_names()
 
-    # Remove only stale generated Markdown files. Raw source data is never
-    # touched. The next pass recreates the complete current report set.
     expected = {AGGREGATE_FILENAME}
     for resource_id in manifest.all_states():
         expected.add("{}_current.md".format(resource_id))
@@ -446,7 +544,6 @@ def generate(base_dir: str) -> list[Path]:
     aggregate_content = "\n".join(aggregate)
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
-    # Presentation-only banner. Raw GOES product remains untouched.
     try:
         generate_readme_banner(base)
         banner_url = (
@@ -457,8 +554,6 @@ def generate(base_dir: str) -> list[Path]:
             + OUTPUT_RELATIVE.as_posix()
         )
     except (FileNotFoundError, ValueError, RuntimeError):
-        # Fall back to the raw collected current GIF if the processed banner
-        # cannot be produced in this cycle.
         banner_url = (
             "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/"
             "RootRecord-Weather-Database/main/"
@@ -485,7 +580,7 @@ def generate(base_dir: str) -> list[Path]:
         template = template_path.read_text(encoding="utf-8")
     else:
         template = (
-            "# 🌺 Hawaiʻi State Weather Database\n\n"
+            "# Hawai'i State Weather Database\n\n"
             "{{CURRENT_CONDITIONS}}\n\n{{REPORT_SECTIONS}}\n"
         )
     REPORTING_README.write_text(_render_readme(template, replacements), encoding="utf-8")
@@ -496,7 +591,7 @@ def generate(base_dir: str) -> list[Path]:
         database_template = DATABASE_README_TEMPLATE.read_text(encoding="utf-8")
     else:
         database_template = (
-            "# 🌺 RootRecord Weather Database\n\n"
+            "# RootRecord Weather Database\n\n"
             "{{CURRENT_CONDITIONS}}\n\n{{REPORT_SECTIONS}}\n"
         )
     database_readme.write_text(
