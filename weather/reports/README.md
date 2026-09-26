@@ -63,3 +63,41 @@ dropping information.
 
 This makes every processing level independently reproducible and independently
 archivable.
+
+
+## Official-source preservation
+
+Official readable weather products are also mirrored outside the processing
+levels so the source identity is never lost.
+
+Reports are organized under:
+
+`/home/rootrecord/Database/WEATHER/Hawai'i/reports/Official Sources/<source>/`
+
+Current source groups include:
+
+- `NWS-HFO/` — NWS Hawaii Forecast Office products and weather.gov forecast products.
+- `NHC/` — National Hurricane Center products.
+- `NOAA/` — NOAA-hosted source material.
+- `NOAA-NESDIS/` — NESDIS-hosted imagery/source material when represented as reports.
+
+Each source has its own `archived/` directory and independent current/archive
+lifecycle. A change to an NWS-HFO product therefore does not age or overwrite
+an NHC product, and neither source is treated as part of a processing level.
+
+The exact fetched official bytes remain in the URL-mirrored raw weather-data
+tree. The source-isolated Markdown layer is the readable official-product
+representation; it is not an AI summary or interpretation.
+
+## GIS source preservation
+
+The GIS fetcher preserves both the authoritative NWS GIS catalog page and the
+versioned artifact selected from that catalog. This is important because NWS
+publishes versioned county, public-zone, zone/county-correlation, CWA, fire-zone,
+and marine-zone datasets. The catalog itself is retained as evidence of what
+version was available when the fetch occurred.
+
+NWS documents public forecast zones as polygon data and notes that zones may be
+subsets of counties; its Zone/County correlation file provides the corresponding
+county/FIPS relationship. The Level 1 county processor uses those authoritative
+relationships before falling back to less-specific routing rules.
