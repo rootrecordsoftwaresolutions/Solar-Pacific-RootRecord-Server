@@ -39,6 +39,7 @@ def test_banner_is_separate_and_preserves_animation():
         with Image.open(source) as original, Image.open(output) as banner:
             assert original.size == (600, 600)
             assert banner.size == TARGET_SIZE
+            assert TARGET_SIZE[0] <= 480
             assert getattr(banner, "n_frames", 1) == 3
             assert banner.info.get("loop") == 0
 
