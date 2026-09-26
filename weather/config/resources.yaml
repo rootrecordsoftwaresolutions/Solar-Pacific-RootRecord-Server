@@ -618,3 +618,110 @@ site_chrome_not_fetched:
   - "https://www.weather.gov/images/hfo/reference/xml.gif"
   - "https://www.weather.gov/images/hfo/reference/rss-blue.png"
   - "https://www.weather.gov/bundles/templating/images/wwamap/*.gif"
+
+# ---------------------------------------------------------------------------
+# 14. MISC / DISCOVERY SOURCES
+# ---------------------------------------------------------------------------
+# Static/binary sources are preserved exactly. These are source artifacts,
+# not AI-generated interpretations. URL templates are resolved at fetch time
+# so date/year-dependent pages stay dynamic.
+misc:
+  - id: nhc_gtwo_shapefiles
+    name: "NHC Tropical Weather Outlook shapefiles"
+    tier: 6
+    method: binary
+    url: "https://www.nhc.noaa.gov/xgtwo/gtwo_shapefiles.zip"
+    expected_ext: "zip"
+
+  - id: hfo_tib_reference
+    name: "Tsunami Bulletin product type reference"
+    tier: 6
+    method: binary
+    url: "https://forecast.weather.gov/product_types.php"
+    expected_ext: "html"
+    note: "TIB is a national NWS product type; do not treat the supplied HWX URL as an HFO county source. HFO tsunami products belong in future PTWC/tsunami work."
+
+  - id: hfo_rra_direct
+    name: "Hawaii Rainfall Summary direct product"
+    tier: 5
+    method: binary
+    url: "https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo"
+    expected_ext: "html"
+
+  - id: solar_calculation_table
+    name: "NOAA solar calculation table"
+    tier: 6
+    method: binary
+    url_template: "https://gml.noaa.gov/grad/solcalc/table.php?lat=21.3&lon=-157.85&year={year}"
+    expected_ext: "html"
+
+  - id: hfo_surf_reports_direct
+    name: "HFO statewide surf observations direct page"
+    tier: 4
+    method: binary
+    url: "https://www.weather.gov/hfo/surfreports"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_cpac_2day
+    name: "NHC Central Pacific Tropical Weather Outlook — 2 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_cpac_7day
+    name: "NHC Central Pacific Tropical Weather Outlook — 7 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_epac_2day
+    name: "NHC Eastern Pacific Tropical Weather Outlook — 2 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_epac_7day
+    name: "NHC Eastern Pacific Tropical Weather Outlook — 7 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_atlc_2day
+    name: "NHC Atlantic Tropical Weather Outlook — 2 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2"
+    expected_ext: "html"
+
+  - id: nhc_gtwo_atlc_7day
+    name: "NHC Atlantic Tropical Weather Outlook — 7 day"
+    tier: 1
+    method: binary
+    url: "https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7"
+    expected_ext: "html"
+
+  - id: nhc_homepage
+    name: "NHC source index"
+    tier: 6
+    method: binary
+    url: "https://www.nhc.noaa.gov/"
+    expected_ext: "html"
+
+  - id: noaa_homepage
+    name: "NOAA source index"
+    tier: 6
+    method: binary
+    url: "https://www.noaa.gov/"
+    expected_ext: "html"
+
+future_work:
+  tsunami:
+    source: "https://www.tsunami.gov/"
+    note: "Integrate with earthquake/tsunami processing after the base earthquake pipeline exists."
+  hazard_catalog:
+    source: "https://www.weather.gov/prh/data_products_hfo"
+    note: "Use deterministic catalog discovery to enumerate every HFO AWIPS hazard product rather than hand-clicking product pages."
