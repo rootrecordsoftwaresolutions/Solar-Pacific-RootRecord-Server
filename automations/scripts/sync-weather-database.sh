@@ -9,6 +9,21 @@ LOCK="/tmp/rootrecord-weather-db-sync.lock"
 exec 9>"$LOCK"
 flock -n 9 || exit 0
 
+cleanup_temp_files() {
+    # Remove only transient Git/sync artifacts.
+    # Never remove tracked weather data.
+    find "$REPO/.git" -type f \
+        \( -name "*.lock" -o -name "*.tmp" -o -name "*.part" -o -name "*~" -o -name "*.swp" \) \
+        -delete 2>/dev/null || true
+
+    find "$REPO" -type f \
+        \( -name "*.tmp" -o -name "*.part" -o -name "*.swp" -o -name "*~" \) \
+        -not -path "$REPO/.git/*" \
+        -delete 2>/dev/null || true
+}
+
+trap cleanup_temp_files EXIT
+
 cd "$REPO"
 
 git fetch "$REMOTE" "$BRANCH" --quiet
