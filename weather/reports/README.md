@@ -5,7 +5,7 @@
 ## 🛰️ Live GOES-18 Hawaii GeoColor
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif" width="420" alt="GOES-18 Hawaii GeoColor" />
+  <img src="https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif" width="1122" height="359" alt="GOES-18 Hawaii GeoColor" />
 </p>
 
 <p align="center"><em>Processed GOES-18 Hawaii — GeoColor (presentation copy; raw source is never modified).</em></p>
@@ -43,13 +43,13 @@ Raw collected source data remains the authoritative record. Generated reports ar
 
 | Location | Conditions | Temp | Dew point | RH | Wind | Pressure |
 |---|---|---:|---:|---:|---|---:|
-| Honolulu | Mostly cloudy | 27°F | 21°F | 69% | East 13 gusts to 24 | 29.90R |
-| Lihue | Light rain | 26°F | 23°F | 84% | East 22 gusts to 32 | 29.97R |
-| Kahului | Mostly cloudy | 26°F | 22°F | 76% | Northeast 18 gusts to 29 | 29.90R |
-| Hilo | Cloudy | 27°F | 22°F | 76% | East 15 gusts to 22 | 29.93R |
-| Kona | Cloudy | 28°F | 25°F | 84% | Southwest 5 | 29.78R |
+| Honolulu | Mostly cloudy | 81°F | 70°F | 69% | East 15 gusts to 28 | 29.90R |
+| Lihue | Light rain | 78°F | 73°F | 84% | East 25 gusts to 37 | 29.97R |
+| Kahului | Mostly cloudy | 79°F | 71°F | 76% | Northeast 21 gusts to 33 | 29.90R |
+| Hilo | Cloudy | 80°F | 72°F | 76% | East 17 gusts to 25 | 29.93R |
+| Kona | Cloudy | 82°F | 77°F | 84% | Southwest 6 | 29.78R |
 
-_Source: locally collected NWS-HFO Regional Weather Roundup (RWR)._
+_Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °F._
 
 ---
 
@@ -59,7 +59,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR)._
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-25T22:01:49-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-25T22:17:23-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
