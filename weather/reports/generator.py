@@ -146,7 +146,7 @@ def generate(base_dir: str) -> list[Path]:
             + _as_indented_text(body)
             + "\n"
         )
-        (reports_dir / "{}.md".format(resource_id)).write_text(report, encoding="utf-8")
+        (reports_dir / "{}_current.md".format(resource_id)).write_text(report, encoding="utf-8")
         sections.append((resource_id, title, state.url, state.current_fetch_timestamp_hst, body))
 
     sections.sort(key=lambda item: (item[1].lower(), item[0].lower()))
@@ -181,4 +181,4 @@ def generate(base_dir: str) -> list[Path]:
 
     aggregate_path = reports_dir / AGGREGATE_FILENAME
     aggregate_path.write_text("\n".join(aggregate), encoding="utf-8")
-    return [reports_dir / "{}.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path]
+    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path]
