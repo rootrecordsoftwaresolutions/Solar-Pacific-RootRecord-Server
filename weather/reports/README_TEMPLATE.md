@@ -18,9 +18,7 @@ The live report below is regenerated automatically from the current statewide re
 
 ## 🛰️ Imagery
 
-![GOES-18 Hawaii GeoColor](https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/hfo/cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif)
-
-**GOES-18 Hawaii — GeoColor** is the selected live README banner. The image is the locally collected `_current.gif` product from the weather database, published through the existing weather-data synchronization pipeline.
+![GOES-18 Hawaii GeoColor]({{README_BANNER_URL}})
 
 The imagery pipeline uses stable NOAA/NESDIS product URLs. The stable URL is fetched repeatedly; when the returned image changes, the previous version is archived and the current product keeps its real source filename followed by `_current`.
 
