@@ -136,3 +136,31 @@ every checkpoint.
   this session's approach) runs them for real. Only the `httpx`-touching
   paths (real live HTTP calls) are genuinely blocked without network; pure
   logic isn't.
+
+
+## 2026-09-25 — source-isolated official preservation
+
+Implemented a preservation layer distinct from processing levels:
+
+- Added `reports/official_generator.py`.
+- Official readable products are mirrored under
+  `reports/Official Sources/<source>/`.
+- Current source groups include NWS-HFO, NHC, NOAA, and NOAA-NESDIS.
+- Each source owns its own `archived/` directory and current/archive lifecycle.
+- Level 0 and Level 1 remain processing layers and are not replaced by the
+  official-source layer.
+- Exact fetched source bytes remain in the URL-mirrored raw data tree.
+- Scheduler now updates the official-source layer whenever fetched data
+  changes or the source layer is missing.
+- NWS GIS catalog pages are now retained as official source artifacts in
+  addition to the versioned ZIP/DBX datasets selected from them.
+- GIS artifact selection now understands NWS `ddmonyy` version dates instead
+  of relying on catalog link ordering.
+- Hawaii Level 1 county routing now has explicit SAME/HIC codes:
+  HIC001 Hawaii, HIC003 Honolulu, HIC005 Kalawao, HIC007 Kauai, HIC009 Maui.
+- Added tests for county UGC routing and official source grouping.
+
+Authoritative NWS GIS sources confirm that public forecast zones are polygon
+data and may be subsets of counties, while the Zone/County correlation file
+provides the county/FIPS relationship. The current Level 1 routing therefore
+has an authoritative UGC/zone-correlation path before text/resource fallbacks.
