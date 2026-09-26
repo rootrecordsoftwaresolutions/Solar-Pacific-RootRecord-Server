@@ -176,7 +176,7 @@ def _as_markdown_report(body: str) -> str:
     """Preserve fixed-width NWS formatting without Markdown mangling it."""
     fence = "`" * 3
     body = body.replace(fence, "[NWS-FENCE]")
-    return fence + "text\\n" + body.rstrip() + "\\n" + fence
+    return fence + "text\n" + body.rstrip() + "\n" + fence
 
 
 def generate(base_dir: str) -> list[Path]:
