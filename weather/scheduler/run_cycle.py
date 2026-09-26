@@ -236,13 +236,15 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
         tasks.append(("hurricanes", lambda: hurricane_sources.poll(hurricanes_base_dir)))
 
     data_changed = False
-\n    if tasks:
+
+    if tasks:
         _log(f"dispatching {len(tasks)} due task(s) concurrently: {', '.join(t[0] for t in tasks)}")
         with ThreadPoolExecutor(max_workers=min(len(tasks), MAX_CONCURRENT_MODULES)) as pool:
             futures = [pool.submit(_run_and_save, label, fn) for label, fn in tasks]
             for f in futures:
                 data_changed = f.result() or data_changed
-\n    reports_dir = Path(base_dir).parent / "reports"
+
+    reports_dir = Path(base_dir).parent / "reports"
     aggregate_path = reports_dir / weather_reports.AGGREGATE_FILENAME
     if data_changed or not aggregate_path.is_file():
         try:
