@@ -51,6 +51,7 @@ def fetch_one(manifest: Manifest, base_dir: str, resource_id: str) -> _engine.Fe
         method="text",
         clean_text_body=True,
         extract_text=extract_pre_text,
+        expected_ext="txt",
         resource_id_hint=resource_id,  # product.php URLs disambiguate by query string
     )
 
