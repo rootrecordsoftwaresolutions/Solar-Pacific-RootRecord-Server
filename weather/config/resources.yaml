@@ -304,26 +304,6 @@ satellite:
     sectors:
       - key: IRHawaii
         base_url: "https://www.weather.gov/images/hfo/loops/IRHawaii/"
-      - key: VISState
-        base_url: "https://www.weather.gov/images/hfo/loops/VISState/"
-      - key: VISKauai
-        base_url: "https://www.weather.gov/images/hfo/loops/VISKauai/"
-      - key: VISOahuMaui
-        base_url: "https://www.weather.gov/images/hfo/loops/VISOahuMaui/"
-      - key: VISHawaii
-        base_url: "https://www.weather.gov/images/hfo/loops/VISHawaii/"
-
-  external_reference_only:
-    - name: "GOES-17/18 Hawaii sector viewer"
-      url: "https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G17&sector=hi"
-    - name: "Full GOES sector index"
-      url: "https://www.star.nesdis.noaa.gov/GOES/index.php"
-
-# ---------------------------------------------------------------------------
-# 5. ANALYSES / MODEL CHARTS — fetch/analyses.py
-# ---------------------------------------------------------------------------
-analyses:
-  items:
   - id: stream_latest
     name: "Pacific Streamline Analysis (latest)"
     tier: 3
