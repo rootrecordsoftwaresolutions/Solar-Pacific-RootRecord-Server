@@ -116,7 +116,7 @@ def _as_indented_text(body: str) -> str:
 def generate(base_dir: str) -> list[Path]:
     """Generate per-product Markdown reports and one statewide aggregate."""
     base = Path(base_dir)
-    reports_dir = base / REPORTS_DIRNAME
+    reports_dir = base.parent / REPORTS_DIRNAME
     reports_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = Manifest(base_dir).load()
