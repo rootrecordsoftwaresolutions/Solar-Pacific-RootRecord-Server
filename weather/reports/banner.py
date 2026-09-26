@@ -19,11 +19,11 @@ SOURCE_RELATIVE = Path(
 OUTPUT_RELATIVE = Path("reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif")
 
 # Full-width horizontal band through the Hawaiian Islands (600x600 HI sector).
-# Shifted down ~50% from the previous crop so the Big Island is fully visible.
-# Excludes the bottom NESDIS label strip. X spans edge-to-edge (0..600).
-CROP_BOX = (0, 241, 600, 433)  # 600 x 192
-# Locked presentation size (wide, short). Displayed at 100% width in README.
-TARGET_SIZE = (1122, 359)
+# Lowered so the entire chain — Kauaʻi through the Big Island — is in frame.
+# X spans edge-to-edge (0..600). Stays above the NESDIS label strip (~y 580).
+CROP_BOX = (0, 280, 600, 520)  # 600 x 240
+# Presentation size matched to crop aspect (~2.5:1). Displayed at 100% width.
+TARGET_SIZE = (1122, 449)
 EXPECTED_SOURCE_SIZE = (600, 600)
 
 
@@ -74,7 +74,6 @@ def generate_readme_banner(base_dir: str | Path) -> Path:
     if not output.is_file():
         raise RuntimeError("README banner was not created: {}".format(output))
 
-    # Hard guarantee: every published banner is exactly the locked size.
     with Image.open(output) as check:
         if check.size != TARGET_SIZE:
             raise RuntimeError(

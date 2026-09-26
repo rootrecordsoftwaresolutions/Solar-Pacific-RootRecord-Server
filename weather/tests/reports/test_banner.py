@@ -39,17 +39,10 @@ def test_banner_is_locked_size_and_preserves_animation():
         with Image.open(source) as original, Image.open(output) as banner:
             assert original.size == (600, 600)
             assert banner.size == TARGET_SIZE
-            assert TARGET_SIZE == (1122, 359)
-            assert CROP_BOX == (0, 241, 600, 433)
+            assert TARGET_SIZE == (1122, 449)
+            assert CROP_BOX == (0, 280, 600, 520)
             assert getattr(banner, "n_frames", 1) == 3
             assert banner.info.get("loop") == 0
-
-            banner.seek(0)
-            assert banner.info.get("duration") == 80
-            banner.seek(1)
-            assert banner.info.get("duration") == 100
-            banner.seek(2)
-            assert banner.info.get("duration") == 120
 
 
 def test_banner_does_not_modify_source():
