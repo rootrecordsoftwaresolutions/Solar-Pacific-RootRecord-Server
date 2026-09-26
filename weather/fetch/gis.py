@@ -8,6 +8,7 @@ from __future__ import annotations
 import re
 from urllib.parse import urljoin
 from core.manifest import Manifest
+from core import http_client
 from fetch import _engine
 
 CATALOGS = {
@@ -31,7 +32,7 @@ def fetch_all(manifest: Manifest, base_dir: str):
     outcomes = []
     for resource_id, (catalog_url, pattern) in CATALOGS.items():
         try:
-            html = _engine.fetch_url(catalog_url, accept="text/html")
+            html = http_client.get(catalog_url, accept="text/html").content or b""
             href = _latest(html.decode("utf-8", errors="replace"), pattern)
         except Exception:
             href = None
