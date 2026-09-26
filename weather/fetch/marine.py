@@ -14,6 +14,12 @@ def fetch_all(manifest: Manifest, base_dir: str) -> list[_engine.FetchOutcome]:
     outcomes = []
 
     for item in marine:
+        if item["id"] == "cwf_coastal_waters":
+            # Sole owner is fetch/text_products.py, which already handles the
+            # CWF API resource. Running it here as well creates two concurrent
+            # writers for the same manifest resource_id.
+            continue
+
         method = item["method"]
         if method == "image":
             outcomes.append(
