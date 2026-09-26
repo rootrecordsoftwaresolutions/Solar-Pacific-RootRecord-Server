@@ -17,6 +17,8 @@ import yaml
 from core import hst_time
 from core.manifest import Manifest
 
+from reports.banner import OUTPUT_RELATIVE, generate_readme_banner
+
 REPORTS_DIRNAME = "reports"
 LEVEL0_DIRNAME = "0 Level Processing"
 ARCHIVE_DIRNAME = "archived"
@@ -325,6 +327,9 @@ def generate(base_dir: str) -> list[Path]:
     aggregate_content = "\n".join(aggregate)
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
+    generate_readme_banner(base)
+    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + OUTPUT_RELATIVE.as_posix()
+
     # Build the repository README from a stable documentation template plus the
     # exact same live sections used by the statewide aggregate.
     template_path = REPORTING_README.with_name("README_TEMPLATE.md")
@@ -363,7 +368,7 @@ def generate(base_dir: str) -> list[Path]:
         ])
 
     live_report = "\n".join(live_lines).rstrip()
-    readme_content = template.replace("{{LIVE_REPORT}}", live_report)
+    readme_content = template.replace("{{LIVE_REPORT}}", live_report).replace("{{README_BANNER_URL}}", banner_url)
     if "{{LIVE_REPORT}}" in readme_content:
         raise RuntimeError("README template placeholder was not rendered")
     REPORTING_README.write_text(readme_content.rstrip() + "\n", encoding="utf-8")
@@ -377,7 +382,7 @@ def generate(base_dir: str) -> list[Path]:
         database_template = DATABASE_README_TEMPLATE.read_text(encoding="utf-8")
     else:
         database_template = "# 🌺 RootRecord Weather Database\n\n{{LIVE_REPORT}}\n"
-    database_readme_content = database_template.replace("{{LIVE_REPORT}}", live_report)
+    database_readme_content = database_template.replace("{{LIVE_REPORT}}", live_report).replace("{{README_BANNER_URL}}", banner_url)
     if "{{LIVE_REPORT}}" in database_readme_content:
         raise RuntimeError("weather database README template placeholder was not rendered")
     database_readme.write_text(database_readme_content.rstrip() + "\n", encoding="utf-8")
