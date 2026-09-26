@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T11:03:33-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T11:12:33-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -67,44 +67,42 @@ The report below is generated from the same current product sections as `Hawaii_
 |---|---|
 | **Resource ID** | zfp_zone_forecast |
 | **Official source** | https://api.weather.gov/products/types/ZFP/locations/HFO |
-| **Collected** | 2026-09-26T05:09:27.963863-10:00 HST |
+| **Collected** | 2026-09-26T11:06:36.322540-10:00 HST |
 
 ```text
 000
-FPHW50 PHFO 261500
+FPHW50 PHFO 262054
 ZFPHFO
 
 Zone Forecast Product for Hawaii
 National Weather Service Honolulu HI
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-HIZ001-270730-
+HIZ001-271115-
 Niihau-
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Breezy. Partly sunny with isolated showers. Highs 81 to
-87. Northeast winds 10 to 25 mph. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy. Windy. Lows 72 to 78. East winds 10 to
-30 mph. 
-.SUNDAY...Mostly sunny. Windy. Highs 81 to 87. East winds 15 to
-35 mph increasing to 25 to 35 mph in the afternoon. Gusts up to
-55 mph. 
+.REST OF TODAY...Breezy. Partly sunny with isolated showers.
+Highs 81 to 87. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.TONIGHT...Partly cloudy. Breezy. Lows 72 to 78. East winds 15 to
+25 mph. 
+.SUNDAY...Mostly sunny. Windy. Highs 81 to 87. East winds 20 to
+35 mph. Gusts up to 55 mph in the afternoon. 
 .SUNDAY NIGHT...Partly cloudy in the evening then becoming mostly
 cloudy. Windy. Lows 72 to 78. East winds 20 to 30 mph. 
-.MONDAY...Partly sunny. Windy. Highs 81 to 87. East winds 20 to
-35 mph. Gusts up to 50 mph increasing to 60 mph in the afternoon.
+.MONDAY...Partly sunny. Windy. Highs 81 to 87. East winds 25 to
+30 mph with gusts to 50 mph. 
 .MONDAY NIGHT...Windy. Mostly cloudy with isolated showers. Lows
-72 to 78. East winds 20 to 30 mph with gusts to 50 mph. Chance of
-rain 20 percent. 
+72 to 78. East winds 20 to 30 mph. Chance of rain 20 percent. 
 .TUESDAY...Mostly cloudy. Windy. Isolated showers in the morning,
 then scattered showers in the afternoon. Highs 80 to 86. East
-winds 20 to 30 mph with gusts to 50 mph. Chance of rain
-40 percent. 
+winds 20 to 30 mph. Chance of rain 40 percent. 
 .TUESDAY NIGHT...Windy. Mostly cloudy with scattered showers.
-Lows 72 to 78. East winds 20 to 35 mph. Gusts up to 50 mph
-increasing to 60 mph after midnight. Chance of rain 50 percent. 
+Lows 72 to 78. East winds 20 to 35 mph. Gusts up to 55 mph after
+midnight. Chance of rain 50 percent. 
 .WEDNESDAY...Windy. Partly sunny with scattered showers. Highs
 80 to 86. Southeast winds 25 to 35 mph. Chance of rain
 50 percent. 
@@ -112,27 +110,26 @@ increasing to 60 mph after midnight. Chance of rain 50 percent.
 Lows 71 to 78. Southeast winds 20 to 30 mph. Chance of rain
 50 percent. 
 .THURSDAY...Windy. Mostly sunny with scattered showers. Highs
-80 to 85. Southeast winds 20 to 35 mph with gusts to 55 mph.
-Chance of rain 30 percent. 
+80 to 85. Southeast winds 20 to 30 mph. Chance of rain
+30 percent. 
 .THURSDAY NIGHT...Windy. Partly cloudy with scattered showers.
 Lows 71 to 77. South winds 15 to 30 mph. Chance of rain
 30 percent. 
 .FRIDAY...Windy. Mostly sunny with isolated showers. Highs 79 to
 85. Southeast winds 10 to 30 mph. Chance of rain 20 percent. 
 
-HIZ029-270730-
+HIZ029-271115-
 Kauai North-
 Including Princeville, Hanalei, Na Pali State Park
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Breezy. Mostly cloudy with scattered showers. Highs
-70 to 87. East winds up to 20 mph increasing to 10 to 25 mph in
-the afternoon. Chance of rain 50 percent. 
+.REST OF TODAY...Breezy. Mostly cloudy with scattered showers.
+Highs 70 to 87. East winds up to 20 mph. Chance of rain
+50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 66 to
-76. East winds 10 to 30 mph. Gusts up to 50 mph after midnight.
-Chance of rain 20 percent. 
+76. East winds 10 to 30 mph. Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
 Highs 71 to 88. East winds 10 to 30 mph. Chance of rain
 20 percent. 
@@ -162,24 +159,26 @@ sunny. Isolated showers. Highs 71 to 87. Southeast winds 10 to
 .FRIDAY...Mostly sunny with isolated showers. Highs 71 to 87.
 East winds up to 10 mph. Chance of rain 20 percent. 
 
-HIZ030-270730-
+HIZ030-271115-
 Kauai East-
 Including Lihue, Kapaa, Anahola
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 78 to
-86. Northeast winds 10 to 30 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 78 to 86. Northeast winds 10 to 30 mph. Chance of rain
+50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 68 to
-78. Northeast winds 10 to 30 mph. Chance of rain 20 percent. 
+78. Northeast winds 15 to 30 mph with gusts to 50 mph. Chance of
+rain 20 percent. 
 .SUNDAY...Windy. Partly sunny with isolated showers. Highs 78 to
 86. East winds 10 to 30 mph with gusts to 50 mph. Chance of rain
 20 percent. 
 .SUNDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
-Lows 68 to 77. East winds 10 to 25 mph with gusts to 45 mph.
-Chance of rain 50 percent. 
+Lows 68 to 77. East winds 10 to 25 mph. Chance of rain
+50 percent. 
 .MONDAY...Breezy. Partly sunny with scattered showers in the
 morning, then mostly sunny in the afternoon. Highs 78 to 86. East
 winds 10 to 20 mph. Chance of rain 30 percent. 
@@ -205,29 +204,29 @@ then mostly sunny with isolated showers in the afternoon. Highs
 78 to 86. Southeast winds up to 10 mph. Chance of rain
 40 percent. 
 
-HIZ031-270730-
+HIZ031-271115-
 Kauai South-
 Including Poipu, Kalaheo, Koloa
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 80 to
-89. Northeast winds 15 to 30 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 80 to 89. Northeast winds 20 to 30 mph. Chance of rain
+50 percent. 
 .TONIGHT...Mostly cloudy. Windy. Isolated showers after midnight.
-Lows 72 to 78. Northeast winds 20 to 30 mph with gusts to 50 mph.
-Chance of rain 20 percent. 
+Lows 72 to 78. Northeast winds 25 to 30 mph. Chance of rain
+20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
-Highs 80 to 89. East winds 20 to 30 mph with gusts to 55 mph.
+Highs 80 to 89. East winds 25 to 30 mph with gusts to 50 mph.
 Chance of rain 20 percent. 
 .SUNDAY NIGHT...Mostly cloudy. Windy. Isolated showers in the
 evening, then scattered showers after midnight. Lows 72 to 78.
-East winds 20 to 30 mph with gusts to 50 mph. Chance of rain
-40 percent. 
-.MONDAY...Windy. Partly sunny with isolated showers in the
+East winds 25 to 30 mph. Chance of rain 40 percent. 
+.MONDAY...Breezy. Partly sunny with isolated showers in the
 morning, then mostly sunny in the afternoon. Highs 81 to 89. East
-winds 15 to 30 mph. Chance of rain 20 percent. 
+winds 20 to 25 mph. Chance of rain 20 percent. 
 .MONDAY NIGHT...Breezy. Mostly cloudy with isolated showers. Lows
 72 to 78. East winds 15 to 25 mph. Chance of rain 20 percent. 
 .TUESDAY...Breezy. Mostly cloudy with isolated showers. Highs
@@ -250,27 +249,27 @@ mostly cloudy. Scattered showers. Lows 71 to 77. Southeast winds
 Scattered showers. Highs 79 to 89. East winds 10 to 15 mph.
 Chance of rain 40 percent. 
 
-HIZ003-270730-
+HIZ003-271115-
 Kauai Southwest-
 Including Waimea, Waimea Canyon State Park, Hanapepe, Kekaha, 
 Barking Sands
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with isolated showers. Highs 86 to
-91 near the shore to around 77 above 3000 feet. East winds up to
-30 mph. Chance of rain 20 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with isolated showers.
+Highs 86 to 91 near the shore to around 77 above 3000 feet. East
+winds up to 30 mph. Chance of rain 20 percent. 
 .TONIGHT...Mostly cloudy. Windy. Lows around 75 near the shore to
-around 66 above 3000 feet. East winds up to 30 mph. 
+around 66 above 3000 feet. East winds up to 30 mph increasing to
+10 to 30 mph after midnight. Gusts up to 50 mph. 
 .SUNDAY...Partly sunny in the morning then becoming mostly sunny.
 Windy. Highs around 88 near the shore to around 77 above
-3000 feet. East winds 10 to 30 mph with gusts to 55 mph. 
+3000 feet. East winds 10 to 30 mph with gusts to 50 mph. 
 .SUNDAY NIGHT...Mostly cloudy. Breezy. Lows 65 to 77. East winds
 10 to 25 mph with gusts to 45 mph. 
 .MONDAY...Partly sunny in the morning then becoming mostly sunny.
-Breezy. Highs 77 to 91. East winds 10 to 25 mph with gusts to
-50 mph. 
+Breezy. Highs 77 to 91. East winds 10 to 25 mph. 
 .MONDAY NIGHT...Mostly cloudy. Breezy. Lows 65 to 77. East winds
 10 to 20 mph. 
 .TUESDAY...Mostly cloudy. Breezy. Highs 77 to 90. East winds
@@ -293,48 +292,44 @@ partly cloudy. Isolated showers. Lows 64 to 76. Southeast winds
 .FRIDAY...Partly sunny with isolated showers. Highs 76 to 90.
 Southeast winds around 10 mph. Chance of rain 20 percent. 
 
-HIZ004-270730-
+HIZ004-271115-
 Kauai Mountains-
 Including Kokee State Park
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 74 to
-82 in the valleys to around 68 above 4000 feet. East winds 10 to
-30 mph. Chance of rain 50 percent. 
-.TONIGHT... Tropical storm conditions possible. Mostly cloudy
-with isolated showers. Lows around 71 in the valleys to around
-63 above 4000 feet. East winds 10 to 35 mph with gusts to 55 mph
-increasing to 10 to 45 mph with gusts to 80 mph after midnight.
-Chance of rain 20 percent. 
-.SUNDAY... Tropical storm conditions possible. Partly sunny with
-isolated showers. Highs 74 to 82 in the valleys to around
-68 above 4000 feet. East winds 15 to 45 mph with gusts to 80 mph.
-Chance of rain 20 percent. 
-.SUNDAY NIGHT... Tropical storm conditions possible. Mostly
-cloudy with scattered showers. Lows 62 to 73. East winds 10 to
-45 mph with gusts to 75 mph. Chance of rain 50 percent. 
-.MONDAY... Tropical storm conditions possible. Partly sunny.
-Scattered showers in the morning, then isolated showers in the
-afternoon. Highs 66 to 83. East winds 10 to 45 mph. Gusts up to
-75 mph decreasing to 65 mph in the afternoon. Chance of rain
-30 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 74 to 82 in the valleys to around 68 above 4000 feet. East
+winds 20 to 30 mph decreasing to 10 to 30 mph in the afternoon.
+Gusts up to 50 mph. Chance of rain 50 percent. 
+.TONIGHT...Windy. Mostly cloudy with isolated showers. Lows
+around 71 in the valleys to around 63 above 4000 feet. East winds
+15 to 35 mph. Gusts up to 60 mph after midnight. Chance of rain
+20 percent. 
+.SUNDAY...Windy. Partly sunny with isolated showers. Highs 74 to
+82 in the valleys to around 68 above 4000 feet. East winds 15 to
+35 mph with gusts to 60 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Windy. Mostly cloudy with scattered showers. Lows
+62 to 73. East winds 15 to 35 mph with gusts to 55 mph. Chance of
+rain 50 percent. 
+.MONDAY...Partly sunny. Windy. Scattered showers in the morning,
+then isolated showers in the afternoon. Highs 66 to 83. East
+winds 10 to 30 mph. Chance of rain 30 percent. 
 .MONDAY NIGHT...Mostly cloudy. Windy. Isolated showers in the
 evening, then scattered showers after midnight. Lows 62 to 73.
-East winds 10 to 35 mph with gusts to 60 mph. Chance of rain
-40 percent. 
+East winds 10 to 30 mph. Chance of rain 40 percent. 
 .TUESDAY...Mostly cloudy. Windy. Scattered showers in the
 morning, then isolated showers in the afternoon. Highs 66 to 83.
 East winds 10 to 30 mph. Chance of rain 30 percent. 
 .TUESDAY NIGHT...Windy. Mostly cloudy with scattered showers.
-Lows 62 to 73. East winds 10 to 30 mph with gusts to 50 mph.
-Chance of rain 50 percent. 
+Lows 62 to 73. East winds 10 to 30 mph. Chance of rain
+50 percent. 
 .WEDNESDAY...Windy. Mostly cloudy with scattered showers. Highs
 65 to 81. East winds 10 to 30 mph. Chance of rain 50 percent. 
 .WEDNESDAY NIGHT...Windy. Mostly cloudy with scattered showers.
-Lows 61 to 72. Southeast winds 10 to 35 mph with gusts to 55 mph.
-Chance of rain 50 percent. 
+Lows 61 to 72. Southeast winds 10 to 30 mph. Chance of rain
+50 percent. 
 .THURSDAY...Breezy. Partly sunny with scattered showers. Highs
 66 to 82. Southeast winds 10 to 25 mph. Gusts up to 45 mph in the
 morning. Chance of rain 40 percent. 
@@ -344,23 +339,23 @@ Southeast winds 10 to 20 mph. Chance of rain 40 percent.
 .FRIDAY...Partly sunny with scattered showers. Highs 66 to 83.
 Southeast winds 10 to 15 mph. Chance of rain 40 percent. 
 
-HIZ032-270730-
+HIZ032-271115-
 East Honolulu-
 Including Hawaii Kai, Aina Haina, Kahala
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 81 to
-88. East winds 25 to 35 mph. Chance of rain 40 percent. 
-.TONIGHT...Mostly cloudy. Windy. Lows around 78. Northeast winds
-30 to 35 mph shifting to the east 15 to 35 mph after midnight. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 81 to 88. East winds around 30 mph. Chance of rain
+40 percent. 
+.TONIGHT...Mostly cloudy. Windy. Lows around 78. East winds 30 to
+35 mph decreasing to 15 to 20 mph after midnight. 
 .SUNDAY...Partly sunny. Breezy. Highs 81 to 88. East winds 15 to
 20 mph. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows around 78. East winds
 10 to 20 mph. 
-.MONDAY...Sunny and breezy. Highs 82 to 88. East winds 10 to
-20 mph. 
+.MONDAY...Sunny. Highs 82 to 88. East winds 10 to 15 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows around 78. East winds 10 to
 15 mph. 
 .TUESDAY...Mostly sunny. Highs 82 to 88. East winds 10 to 15 mph.
@@ -383,18 +378,20 @@ mostly sunny in the afternoon. Highs 81 to 88. Light winds
 becoming east around 10 mph in the afternoon. Chance of rain
 20 percent. 
 
-HIZ033-270730-
+HIZ033-271115-
 Honolulu Metro-
 Including Honolulu, Waikiki
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Partly sunny with scattered showers. Highs 83 to
-88. East winds 25 to 30 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Partly sunny with scattered showers.
+Highs 83 to 88. East winds 25 to 30 mph. Chance of rain
+50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows
-around 77. East winds 25 to 30 mph decreasing to 15 to 30 mph
-after midnight. Chance of rain 20 percent. 
+around 77. East winds 25 to 30 mph decreasing to 15 to 20 mph
+after midnight. Gusts up to 40 mph after midnight. Chance of rain
+20 percent. 
 .SUNDAY...Partly sunny. Breezy. Isolated showers in the morning.
 Highs 83 to 88. East winds 15 to 20 mph. Chance of rain
 20 percent. 
@@ -424,26 +421,28 @@ mostly sunny in the afternoon. Highs 84 to 89. Light winds
 becoming east around 10 mph in the afternoon. Chance of rain
 20 percent. 
 
-HIZ034-270730-
+HIZ034-271115-
 Ewa Plain-
 Including Kapolei
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Partly sunny. Windy. Scattered showers until late
-afternoon, then isolated showers late in the afternoon. Highs
-83 to 89. East winds 15 to 30 mph. Chance of rain 40 percent. 
+.REST OF TODAY...Partly sunny. Windy. Scattered showers in the
+late morning and early afternoon, then isolated showers late in
+the afternoon. Highs 83 to 89. East winds 15 to 30 mph. Chance of
+rain 40 percent. 
 .TONIGHT...Mostly cloudy. Windy. Isolated showers after midnight.
-Lows around 77. East winds 15 to 30 mph. Chance of rain
-20 percent. 
+Lows around 77. East winds 20 to 30 mph decreasing to 15 to
+20 mph after midnight. Gusts up to 40 mph after midnight. Chance
+of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
 Highs 83 to 89. East winds 15 to 30 mph. Chance of rain
 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows around 77. East winds
 15 to 20 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs 84 to 90. East winds 15 to
-20 mph. Gusts up to 40 mph in the afternoon. 
+20 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows around 77. East winds 10 to
 15 mph. 
 .TUESDAY...Mostly sunny. Highs 84 to 90. East winds 10 to 15 mph.
@@ -466,19 +465,20 @@ light. Chance of rain 20 percent.
 84 to 89. Light winds becoming southeast around 10 mph in the
 afternoon. Chance of rain 20 percent. 
 
-HIZ006-270730-
+HIZ006-271115-
 Waianae Coast-
 Including Nanakuli, Waianae, Makaha
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Partly sunny. Windy. Scattered showers until late
-afternoon, then isolated showers late in the afternoon. Highs
-84 to 92. East winds 15 to 35 mph. Chance of rain 30 percent. 
+.REST OF TODAY...Partly sunny. Windy. Scattered showers in the
+late morning and early afternoon, then isolated showers late in
+the afternoon. Highs 84 to 92. East winds 15 to 30 mph with gusts
+to 55 mph. Chance of rain 30 percent. 
 .TONIGHT...Mostly cloudy. Windy. Isolated showers after midnight.
-Lows 72 to 79. East winds 10 to 35 mph with gusts to 55 mph.
-Chance of rain 20 percent. 
+Lows 72 to 79. East winds 10 to 30 mph. Gusts up to 55 mph in the
+evening. Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
 Highs 85 to 92. East winds 10 to 30 mph. Chance of rain
 20 percent. 
@@ -507,20 +507,21 @@ Chance of rain 20 percent.
 84 to 91. Light winds becoming southeast up to 10 mph in the
 afternoon. Chance of rain 20 percent. 
 
-HIZ007-270730-
+HIZ007-271115-
 Oahu North Shore-
 Including Waialua, Haleiwa, Pupukea
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 79 to
-86. East winds 15 to 30 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 79 to 86. East winds 15 to 30 mph with gusts to 50 mph.
+Chance of rain 50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 72 to
-78. East winds 10 to 30 mph with gusts to 55 mph. Chance of rain
-20 percent. 
+78. East winds 15 to 30 mph. Gusts up to 55 mph in the evening.
+Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
-Highs 80 to 87. East winds 10 to 30 mph. Chance of rain
+Highs 80 to 87. East winds 15 to 30 mph. Chance of rain
 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 72 to 78. East winds
 10 to 20 mph. 
@@ -545,29 +546,29 @@ Southeast winds 10 to 15 mph. Chance of rain 20 percent.
 Light winds becoming east around 10 mph in the afternoon. Chance
 of rain 20 percent. 
 
-HIZ035-270730-
+HIZ035-271115-
 Koolau Windward-
 Including Kahuku, Laie, Punaluu, Kahaluu, Ahuimanu
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Mostly cloudy. Windy. Numerous showers in the morning,
-then scattered showers in the afternoon. Highs 74 to 85. East
-winds 25 to 30 mph with gusts to 50 mph. Chance of rain
+.REST OF TODAY...Mostly cloudy. Windy. Numerous showers late in
+the morning, then scattered showers in the afternoon. Highs 74 to
+85. East winds 25 to 30 mph with gusts to 55 mph. Chance of rain
 70 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 70 to
 80. East winds 25 to 35 mph decreasing to 15 to 35 mph after
 midnight. Gusts up to 60 mph. Chance of rain 20 percent. 
 .SUNDAY...Windy. Partly sunny with isolated showers. Highs 74 to
-86. East winds 15 to 35 mph with gusts to 60 mph. Chance of rain
+86. East winds 15 to 30 mph with gusts to 60 mph. Chance of rain
 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Windy. Isolated showers after
 midnight. Lows 70 to 80. East winds 15 to 30 mph with gusts to
-60 mph. Chance of rain 20 percent. 
-.MONDAY...Mostly sunny. Windy. Highs 75 to 86. East winds 10 to
-30 mph. Gusts up to 55 mph decreasing to 45 mph in the afternoon.
+55 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny. Breezy. Highs 75 to 86. East winds 10 to
+25 mph with gusts to 45 mph. 
 .MONDAY NIGHT...Breezy. Partly cloudy in the evening, then mostly
 cloudy with isolated showers after midnight. Lows 70 to 79. East
 winds 10 to 25 mph with gusts to 45 mph. Chance of rain
@@ -594,20 +595,20 @@ rain 30 percent.
 isolated showers in the afternoon. Highs 76 to 86. East winds
 around 10 mph. Chance of rain 40 percent. 
 
-HIZ036-270730-
+HIZ036-271115-
 Koolau Leeward-
 Including Nuuanu, Manoa, Palolo
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy.
-Scattered showers early in the morning, then numerous showers
-late in the morning. Scattered showers in the afternoon. Highs
-71 to 86. East winds 25 to 40 mph. Chance of rain 70 percent. 
+.REST OF TODAY...Mostly cloudy. Windy. Numerous showers late in
+the morning, then scattered showers in the afternoon. Highs 71 to
+86. East winds 25 to 35 mph with gusts to 55 mph. Chance of rain
+70 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy
 with isolated showers. Lows 68 to 77. Northeast winds 25 to
-40 mph shifting to the east 15 to 40 mph after midnight. Gusts up
+40 mph shifting to the east 15 to 35 mph after midnight. Gusts up
 to 60 mph. Chance of rain 20 percent. 
 .SUNDAY...Windy. Partly sunny with isolated showers. Highs 72 to
 86. East winds 15 to 30 mph with gusts to 60 mph. Chance of rain
@@ -616,7 +617,7 @@ to 60 mph. Chance of rain 20 percent.
 midnight. Lows 69 to 77. East winds 10 to 25 mph with gusts to
 50 mph. Chance of rain 20 percent. 
 .MONDAY...Mostly sunny. Breezy. Highs 73 to 86. East winds 10 to
-25 mph with gusts to 50 mph. 
+25 mph with gusts to 45 mph. 
 .MONDAY NIGHT...Breezy. Partly cloudy in the evening, then mostly
 cloudy with isolated showers after midnight. Lows 68 to 77. East
 winds 10 to 20 mph. Chance of rain 20 percent. 
@@ -641,25 +642,25 @@ mostly cloudy. Scattered showers. Lows 67 to 76. Southeast winds
 isolated showers in the afternoon. Highs 73 to 86. East winds up
 to 10 mph. Chance of rain 40 percent. 
 
-HIZ009-270730-
+HIZ009-271115-
 Olomana-
 Including Kailua, Kaneohe, Waimanalo
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 78 to
-84. East winds 20 to 30 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 78 to 84. East winds 20 to 30 mph. Chance of rain
+50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 73 to
-78. East winds 25 to 30 mph decreasing to 15 to 30 mph after
-midnight. Gusts up to 50 mph. Chance of rain 20 percent. 
+78. East winds 25 to 30 mph with gusts to 50 mph decreasing to
+15 to 30 mph after midnight. Chance of rain 20 percent. 
 .SUNDAY...Windy. Partly sunny with isolated showers. Highs 78 to
 85. East winds 15 to 30 mph. Chance of rain 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 73 to 78. East winds
 10 to 20 mph. 
-.MONDAY...Mostly sunny. Breezy. Highs 79 to 85. East winds 10 to
-20 mph. 
+.MONDAY...Mostly sunny. Highs 79 to 85. East winds 10 to 15 mph. 
 .MONDAY NIGHT...Partly cloudy in the evening then becoming mostly
 cloudy. Lows 73 to 78. East winds 10 to 15 mph. 
 .TUESDAY...Partly sunny in the morning then becoming mostly
@@ -682,24 +683,24 @@ up to 10 mph. Chance of rain 20 percent.
 .FRIDAY...Partly sunny with isolated showers. Highs 78 to 85.
 Light winds. Chance of rain 20 percent. 
 
-HIZ010-270730-
+HIZ010-271115-
 Central Oahu-
 Including Mililani, Wahiawa, Pearl City
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY...Windy. Mostly cloudy with scattered showers. Highs 77 to
-85. East winds 15 to 35 mph. Chance of rain 50 percent. 
+.REST OF TODAY...Windy. Mostly cloudy with scattered showers.
+Highs 77 to 85. East winds 15 to 35 mph. Chance of rain
+50 percent. 
 .TONIGHT...Windy. Mostly cloudy with isolated showers. Lows
 around 73. East winds 15 to 35 mph. Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
 Highs 78 to 86. East winds 15 to 30 mph. Chance of rain
 20 percent. 
-.SUNDAY NIGHT...Partly cloudy. Breezy. Lows 71 to 76. East winds
-10 to 20 mph. 
-.MONDAY...Mostly sunny. Breezy. Highs 79 to 87. East winds 10 to
-20 mph. 
+.SUNDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds 10 to
+15 mph. 
+.MONDAY...Mostly sunny. Highs 79 to 87. East winds 10 to 15 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds 10 to
 15 mph. 
 .TUESDAY...Mostly sunny in the morning then becoming partly
@@ -723,20 +724,20 @@ around 10 mph in the evening becoming light. Chance of rain
 Light winds becoming southeast around 10 mph in the afternoon.
 Chance of rain 20 percent. 
 
-HIZ011-270730-
+HIZ011-271115-
 Waianae Mountains-
 Including Makakilo
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...WIND ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy with
-scattered showers. Highs 76 to 91. East winds 30 to 45 mph.
-Chance of rain 40 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Partly
+sunny with scattered showers. Highs 76 to 91. East winds 30 to
+40 mph with gusts to 60 mph. Chance of rain 40 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy.
-Isolated showers after midnight. Lows 66 to 76. East winds 30 to
-45 mph decreasing to 20 to 45 mph after midnight. Chance of rain
-20 percent. 
+Isolated showers after midnight. Lows 66 to 76. Northeast winds
+30 to 40 mph with gusts to 60 mph becoming east 20 to 30 mph
+after midnight. Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Windy. Isolated showers in the morning.
 Highs 77 to 91. East winds 20 to 30 mph with gusts to 50 mph.
 Chance of rain 20 percent. 
@@ -766,31 +767,30 @@ partly cloudy. Isolated showers. Lows 66 to 75. Southeast winds
 76 to 91. Southeast winds around 10 mph. Chance of rain
 20 percent. 
 
-HIZ037-270730-
+HIZ037-271115-
 Molokai Windward-
 Including Kalaupapa, Halawa Valley
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 68 to 83. East winds 25 to 35 mph.
-Chance of rain 50 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 68 to 83. East winds 25 to 35 mph
+with gusts to 55 mph. Chance of rain 50 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
-with isolated showers. Lows 61 to 77. East winds 25 to 40 mph
-increasing to 30 to 50 mph with gusts to 75 mph after midnight.
-Chance of rain 20 percent. 
+with isolated showers. Lows 61 to 77. East winds 25 to 35 mph
+increasing to 30 to 45 mph after midnight. Gusts up to 55 mph in
+the evening. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
 Isolated showers in the morning. Highs 68 to 84. East winds 30 to
-50 mph with gusts to 80 mph. Chance of rain 20 percent. 
+45 mph. Chance of rain 20 percent. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Mostly
-clear. Lows 62 to 77. East winds 25 to 45 mph with gusts to
-70 mph. 
-.MONDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 69 to 84. East winds 20 to 40 mph with gusts to 60 mph. 
+clear. Lows 62 to 77. East winds 25 to 40 mph. 
+.MONDAY...Mostly sunny. Windy. Highs 69 to 84. East winds 20 to
+30 mph with gusts to 50 mph. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 62 to 77. East winds
 15 to 30 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 69 to 84. East winds 15 to
@@ -812,29 +812,28 @@ Lows 61 to 77. Southeast winds 10 to 20 mph. Chance of rain
 .FRIDAY...Mostly sunny with isolated showers. Highs 69 to 84.
 East winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ038-270730-
+HIZ038-271115-
 Molokai Southeast-
 Including Pukoo
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 67 to 84. East winds 30 to 45 mph.
-Chance of rain 50 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 67 to 84. East winds 30 to 40 mph
+with gusts to 60 mph. Chance of rain 50 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
 with isolated showers. Lows 62 to 77. East winds 25 to 45 mph.
-Gusts up to 80 mph after midnight. Chance of rain 20 percent. 
+Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Highs 67 to 84. East winds 20 to 50 mph with gusts to 85 mph. 
+Highs 67 to 84. East winds 20 to 40 mph with gusts to 60 mph. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy. Lows 62 to 78. East winds 15 to 40 mph with gusts to
-75 mph. 
+cloudy. Lows 62 to 78. East winds 15 to 40 mph. 
 .MONDAY...Mostly sunny. Windy. Highs 68 to 85. East winds 15 to
-35 mph. Gusts up to 60 mph in the morning. 
+30 mph with gusts to 50 mph. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 62 to 78. East winds
 15 to 30 mph decreasing to 10 to 20 mph after midnight. 
 .TUESDAY...Mostly sunny. Breezy. Highs 68 to 85. East winds 15 to
@@ -856,30 +855,29 @@ rain 20 percent.
 .FRIDAY...Mostly sunny. Isolated showers in the morning. Highs
 67 to 85. East winds around 10 mph. Chance of rain 20 percent. 
 
-HIZ039-270730-
+HIZ039-271115-
 Molokai North-
 Including Hoolehua
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy.
-Scattered showers and isolated thunderstorms until late
-afternoon, then isolated showers and thunderstorms late in the
-afternoon. Locally heavy rainfall possible. Highs 73 to 85. East
-winds 30 to 45 mph. Chance of rain 40 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy. Scattered showers and isolated thunderstorms in the late
+morning and early afternoon, then isolated showers and
+thunderstorms late in the afternoon. Locally heavy rainfall
+possible. Highs 73 to 85. East winds 30 to 40 mph with gusts to
+60 mph. Chance of rain 40 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy.
 Isolated showers in the evening. Lows 67 to 78. East winds 30 to
-45 mph. Gusts up to 70 mph after midnight. Chance of rain
-20 percent. 
+45 mph. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Highs 74 to 85. East winds 35 to 45 mph with gusts to 70 mph. 
-.SUNDAY NIGHT... Tropical storm conditions possible. Mostly
-clear. Lows 68 to 79. East winds 25 to 40 mph with gusts to
-60 mph. 
+Highs 74 to 85. East winds 35 to 45 mph. 
+.SUNDAY NIGHT...Mostly clear. Windy. Lows 68 to 79. East winds
+25 to 35 mph with gusts to 55 mph. 
 .MONDAY...Sunny and windy. Highs 75 to 87. East winds 25 to
-35 mph with gusts to 55 mph. 
+30 mph. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 67 to 79. East winds
 15 to 30 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 75 to 87. East winds 20 to
@@ -898,27 +896,28 @@ mostly cloudy. Breezy. Lows 67 to 78. Southeast winds 10 to
 .FRIDAY...Partly sunny in the morning then becoming mostly sunny.
 Breezy. Highs 74 to 86. East winds 10 to 20 mph. 
 
-HIZ040-270730-
+HIZ040-271115-
 Molokai West-
 Including Kepuhi
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy.
-Scattered showers and isolated thunderstorms in the morning, then
-isolated showers and thunderstorms in the afternoon. Locally
-heavy rainfall possible. Highs 81 to 88. East winds 25 to 40 mph.
-Chance of rain 30 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy. Scattered showers and isolated thunderstorms late in the
+morning, then isolated showers and thunderstorms in the
+afternoon. Locally heavy rainfall possible. Highs 81 to 88. East
+winds 25 to 35 mph with gusts to 55 mph. Chance of rain
+30 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy.
 Lows around 77. East winds 25 to 40 mph with gusts to 60 mph. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
 Highs 82 to 88. East winds 25 to 40 mph with gusts to 60 mph. 
 .SUNDAY NIGHT...Mostly clear. Windy. Lows around 77. East winds
-15 to 35 mph. 
-.MONDAY...Sunny and windy. Highs 83 to 89. East winds 15 to
-30 mph. 
+15 to 30 mph with gusts to 50 mph. 
+.MONDAY...Sunny and breezy. Highs 83 to 89. East winds 15 to
+25 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows around 77. East winds
 10 to 25 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 82 to 88. East winds 10 to
@@ -936,26 +935,27 @@ mostly cloudy. Breezy. Lows around 76. Southeast winds 10 to
 20 mph. 
 .FRIDAY...Mostly sunny. Highs 81 to 87. East winds 10 to 15 mph. 
 
-HIZ041-270730-
+HIZ041-271115-
 Molokai Leeward South-
 Including Kaunakakai, Maunaloa
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy.
-Scattered showers and isolated thunderstorms until late
-afternoon, then isolated showers and thunderstorms late in the
-afternoon. Locally heavy rainfall possible. Highs 70 to 89. East
-winds 15 to 40 mph. Chance of rain 40 percent. 
-.TONIGHT... Tropical storm conditions expected. Mostly cloudy.
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy. Scattered showers and isolated thunderstorms in the late
+morning and early afternoon, then isolated showers and
+thunderstorms late in the afternoon. Locally heavy rainfall
+possible. Highs 70 to 89. East winds 15 to 35 mph with gusts to
+55 mph. Chance of rain 40 percent. 
+.TONIGHT... Tropical storm conditions possible. Mostly cloudy.
 Isolated showers in the evening. Lows 64 to 78. East winds 10 to
-40 mph with gusts to 60 mph. Chance of rain 20 percent. 
+35 mph with gusts to 55 mph. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Highs 71 to 90. East winds 15 to 35 mph with gusts to 60 mph. 
+Highs 71 to 90. East winds 15 to 35 mph with gusts to 55 mph. 
 .SUNDAY NIGHT...Mostly clear. Windy. Lows 64 to 78. East winds
-10 to 30 mph with gusts to 55 mph. 
+10 to 30 mph with gusts to 50 mph. 
 .MONDAY...Sunny and breezy. Highs 72 to 91. East winds 10 to
 25 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows 64 to 78. East winds
@@ -973,29 +973,26 @@ winds 10 to 20 mph.
 up to 15 mph. 
 .FRIDAY...Mostly sunny. Highs 71 to 90. East winds up to 10 mph. 
 
-HIZ042-270730-
+HIZ042-271115-
 Lanai Windward-
 Including Shipwreck Beach
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy.
-Scattered showers and isolated thunderstorms early in the
-morning, then isolated showers and thunderstorms in the late
-morning and afternoon. Locally heavy rainfall possible. Highs
-78 to 85. Northeast winds 15 to 40 mph. Chance of rain
-30 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with isolated showers and thunderstorms. Locally heavy
+rainfall possible. Highs 78 to 85. Northeast winds 15 to 40 mph.
+Chance of rain 20 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy in
 the evening then becoming partly cloudy. Lows 67 to 77. Northeast
-winds 10 to 40 mph increasing to 10 to 55 mph with gusts to
-80 mph after midnight. 
+winds 20 to 40 mph increasing to 35 to 45 mph after midnight.
+Gusts up to 60 mph increasing to 65 mph after midnight. 
 .SUNDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 78 to 85. East winds 30 to 50 mph with gusts to 80 mph. 
-.SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy. Lows 68 to 78. Northeast winds 20 to 45 mph shifting to
-the east 20 to 35 mph after midnight. 
+Highs 78 to 85. East winds 30 to 45 mph. 
+.SUNDAY NIGHT...Partly cloudy. Windy. Lows 68 to 78. East winds
+20 to 35 mph. 
 .MONDAY...Mostly sunny. Windy. Highs 79 to 86. Northeast winds
 15 to 30 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows 67 to 78. Northeast
@@ -1016,28 +1013,28 @@ winds 10 to 20 mph.
 .FRIDAY...Mostly sunny. Highs 77 to 85. East winds up to 10 mph
 increasing to 10 to 15 mph in the afternoon. 
 
-HIZ043-270730-
+HIZ043-271115-
 Lanai Leeward-
 Including Kaumalapau Harbor
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-isolated showers and thunderstorms. Locally heavy rainfall
-possible. Highs 81 to 88. Northeast winds 15 to 40 mph. Chance of
-rain 20 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Partly
+sunny with isolated showers and thunderstorms. Locally heavy
+rainfall possible. Highs 81 to 88. Northeast winds 15 to 40 mph.
+Chance of rain 20 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy in
 the evening then becoming partly cloudy. Lows 72 to 78. Northeast
-winds 20 to 40 mph increasing to 20 to 50 mph with gusts to
-85 mph after midnight. 
+winds 25 to 45 mph. Gusts up to 60 mph increasing to 70 mph after
+midnight. 
 .SUNDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 81 to 88. East winds 15 to 50 mph with gusts to 80 mph. 
+Highs 81 to 88. East winds 20 to 40 mph with gusts to 65 mph. 
 .SUNDAY NIGHT...Partly cloudy. Windy. Lows 73 to 79. East winds
-10 to 35 mph with gusts to 65 mph. 
-.MONDAY...Sunny and windy. Highs 82 to 88. Northeast winds 10 to
-30 mph. 
+10 to 30 mph with gusts to 50 mph. 
+.MONDAY...Sunny and breezy. Highs 82 to 88. Northeast winds 10 to
+25 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows 73 to 78. Northeast
 winds 10 to 20 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 81 to 87. East winds 10 to
@@ -1054,25 +1051,24 @@ winds 15 to 30 mph. Gusts up to 50 mph in the evening.
 winds 10 to 20 mph. 
 .FRIDAY...Mostly sunny. Highs 80 to 86. East winds 10 to 15 mph. 
 
-HIZ044-270730-
+HIZ044-271115-
 Lanai South-
 Including Manele
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY...Breezy. Mostly cloudy with isolated showers and
+.REST OF TODAY...Breezy. Partly sunny with isolated showers and
 thunderstorms. Locally heavy rainfall possible. Highs around 83.
-Northeast winds 10 to 25 mph. Chance of rain 20 percent. 
-.TONIGHT... Tropical storm conditions expected. Mostly cloudy in
+Northeast winds 10 to 20 mph. Chance of rain 20 percent. 
+.TONIGHT... Tropical storm conditions possible. Mostly cloudy in
 the evening then becoming partly cloudy. Lows around 76.
-Northeast winds 10 to 25 mph increasing to 10 to 40 mph with
-gusts to 70 mph after midnight. 
+Northeast winds 15 to 25 mph increasing to 25 to 35 mph with
+gusts to 55 mph after midnight. 
 .SUNDAY... Tropical storm conditions possible. Mostly sunny in
-the morning then becoming partly sunny. Highs around 83. East
-winds 20 to 40 mph. Gusts up to 70 mph decreasing to 60 mph in
-the afternoon. 
+the morning then becoming partly sunny. Highs around 83.
+Northeast winds 25 to 35 mph with gusts to 60 mph. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 74 to 79. Northeast
 winds 10 to 20 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs around 83. East winds 10 to
@@ -1093,30 +1089,31 @@ Southeast winds 15 to 25 mph.
 10 to 15 mph. 
 .FRIDAY...Sunny. Highs around 81. Southeast winds 10 to 15 mph. 
 
-HIZ015-270730-
+HIZ015-271115-
 Lanai Mauka-
 Including Lanai City
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy.
-Isolated showers and thunderstorms until late afternoon, then
-scattered showers and isolated thunderstorms late in the
-afternoon. Locally heavy rainfall possible. Highs 74 to 84.
-Northeast winds 15 to 40 mph. Chance of rain 30 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy. Isolated showers and thunderstorms in the late morning
+and early afternoon, then scattered showers and isolated
+thunderstorms late in the afternoon. Locally heavy rainfall
+possible. Highs 74 to 84. Northeast winds 15 to 40 mph. Chance of
+rain 30 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy in
 the evening then becoming partly cloudy. Lows 69 to 74. Northeast
-winds 15 to 40 mph increasing to 15 to 50 mph with gusts to
-85 mph after midnight. 
+winds 20 to 40 mph increasing to 30 to 40 mph after midnight.
+Gusts up to 60 mph. 
 .SUNDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 74 to 84. Northeast winds 25 to 50 mph. Gusts up to 85 mph
-decreasing to 75 mph in the afternoon. 
-.SUNDAY NIGHT...Partly cloudy. Windy. Lows 69 to 74. East winds
-15 to 30 mph. 
+Highs 74 to 84. Northeast winds 30 to 40 mph with gusts to
+60 mph. 
+.SUNDAY NIGHT...Partly cloudy. Breezy. Lows 69 to 74. Northeast
+winds 15 to 25 mph with gusts to 45 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs 75 to 84. Northeast winds
-10 to 25 mph with gusts to 45 mph. 
+15 to 25 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 69 to 74. Northeast winds
 10 to 15 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 74 to 83. East winds 10 to
@@ -1133,33 +1130,30 @@ winds 15 to 25 mph.
 10 to 15 mph. 
 .FRIDAY...Mostly sunny. Highs 73 to 82. East winds 10 to 15 mph. 
 
-HIZ016-270730-
+HIZ016-271115-
 Kahoolawe-
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 81 to 87. East winds 20 to 45 mph.
-Chance of rain 40 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Partly
+sunny with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 81 to 87. East winds 20 to 40 mph
+with gusts to 60 mph. Chance of rain 30 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy in
 the evening then becoming partly cloudy. Lows 72 to 77. East
-winds 20 to 50 mph. Gusts up to 75 mph after midnight. 
+winds 20 to 40 mph with gusts to 60 mph increasing to 25 to
+50 mph with gusts to 75 mph after midnight. 
 .SUNDAY... Tropical storm conditions possible. Mostly sunny in
 the morning then becoming partly sunny. Highs 81 to 87. East
-winds 25 to 45 mph with gusts to 70 mph increasing to 25 to
-55 mph with gusts to 80 mph in the afternoon. 
+winds 25 to 45 mph. Gusts up to 70 mph in the afternoon. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy. Lows 72 to 77. East winds 25 to 55 mph with gusts to
-80 mph decreasing to 20 to 45 mph with gusts to 70 mph after
-midnight. 
-.MONDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 81 to 87. East winds 15 to 35 mph increasing to 25 to
-40 mph in the afternoon. Gusts up to 60 mph. 
+cloudy. Lows 72 to 77. East winds 20 to 45 mph. 
+.MONDAY...Mostly sunny. Windy. Highs 81 to 87. East winds 15 to
+35 mph increasing to 25 to 35 mph in the afternoon. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 72 to 78. East winds
-10 to 30 mph with gusts to 50 mph. 
+10 to 30 mph. 
 .TUESDAY...Sunny and windy. Highs 80 to 87. East winds 15 to
 30 mph. 
 .TUESDAY NIGHT...Mostly clear. Windy. Lows 72 to 77. East winds
@@ -1175,34 +1169,32 @@ winds 10 to 20 mph.
 .FRIDAY...Sunny and breezy. Highs 79 to 85. East winds 10 to
 20 mph. 
 
-HIZ017-270730-
+HIZ017-271115-
 Maui Windward West-
 Including Wailuku
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs around 81 makai to around 64 mauka. East
-winds 15 to 40 mph. Chance of rain 50 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs around 81 makai to around
+64 mauka. East winds 15 to 40 mph. Chance of rain 50 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
 with isolated showers. Lows 69 to 76 makai to around 60 mauka.
-East winds 15 to 50 mph. Gusts up to 90 mph after midnight.
-Chance of rain 20 percent. 
+East winds 25 to 40 mph with gusts to 60 mph. Chance of rain
+20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Highs around 81 makai to around 64 mauka. East winds 25 to 50 mph
-with gusts to 90 mph. 
-.SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy. Lows 61 to 77. East winds 15 to 40 mph with gusts to
-70 mph. 
+Highs around 81 makai to around 64 mauka. East winds 25 to 40 mph
+with gusts to 60 mph. 
+.SUNDAY NIGHT...Partly cloudy. Windy. Lows 61 to 77. East winds
+15 to 35 mph with gusts to 55 mph. 
 .MONDAY...Mostly sunny. Windy. Highs 65 to 87. East winds 10 to
-30 mph with gusts to 60 mph. 
+30 mph with gusts to 50 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows 61 to 77. East winds
-10 to 25 mph with gusts to 45 mph decreasing to 10 to 15 mph
-after midnight. 
+10 to 25 mph decreasing to 10 to 15 mph after midnight. 
 .TUESDAY...Mostly sunny. Breezy. Highs 65 to 87. East winds 10 to
 20 mph. 
 .TUESDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
@@ -1224,25 +1216,26 @@ Lows 60 to 76. Southeast winds 10 to 15 mph. Chance of rain
 64 to 86. Light winds becoming east up to 10 mph in the
 afternoon. Chance of rain 20 percent. 
 
-HIZ018-270730-
+HIZ018-271115-
 Maui Leeward West-
 Including Lahaina, Kaanapali
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 79 to 87. Northeast winds 20 to 40 mph.
-Chance of rain 40 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 79 to 87. Northeast winds 20 to
+40 mph. Chance of rain 40 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
-with isolated showers. Lows 71 to 78. Northeast winds 15 to
-40 mph with gusts to 60 mph. Chance of rain 20 percent. 
+with isolated showers. Lows 71 to 78. Northeast winds 35 to
+40 mph decreasing to 15 to 30 mph after midnight. Gusts up to
+60 mph. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
 Highs 79 to 87. East winds 15 to 30 mph with gusts to 60 mph. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 72 to 78. East winds
-10 to 25 mph with gusts to 45 mph. 
+10 to 25 mph. Gusts up to 45 mph in the evening. 
 .MONDAY...Mostly sunny. Breezy. Highs 81 to 89. East winds 10 to
 20 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 71 to 78. East winds 10 to
@@ -1262,30 +1255,30 @@ up to 10 mph.
 .FRIDAY...Mostly sunny. Highs 80 to 87. Light winds becoming east
 up to 10 mph in the afternoon. 
 
-HIZ045-270730-
+HIZ045-271115-
 Maui Central Valley North-
 Including Kahului
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 81 to 88. Northeast winds 25 to 30 mph
-with gusts to 50 mph. Chance of rain 50 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 81 to 88. Northeast winds 25 to
+30 mph with gusts to 55 mph. Chance of rain 50 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy
-with isolated showers. Lows around 74. Northeast winds 20 to
-30 mph with gusts to 55 mph. Chance of rain 20 percent. 
+with isolated showers. Lows around 74. East winds 20 to 30 mph
+with gusts to 50 mph. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny with
-isolated showers. Highs 82 to 88. East winds 30 to 35 mph. Chance
-of rain 20 percent. 
+isolated showers. Highs 82 to 88. East winds 25 to 30 mph with
+gusts to 50 mph. Chance of rain 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 71 to 76. East winds
 10 to 25 mph. 
-.MONDAY...Mostly sunny. Windy. Highs 83 to 89. East winds 10 to
-20 mph increasing to 15 to 30 mph in the afternoon. 
-.MONDAY NIGHT...Partly cloudy. Breezy. Lows 71 to 76. East winds
-10 to 20 mph. 
+.MONDAY...Mostly sunny. Windy. Highs 83 to 89. East winds 15 to
+20 mph increasing to 20 to 30 mph in the afternoon. 
+.MONDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds 10 to
+15 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 82 to 89. East winds 15 to
 25 mph. 
 .TUESDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds 10 to
@@ -1301,31 +1294,30 @@ of rain 20 percent.
 .FRIDAY...Mostly sunny. Highs 82 to 88. Light winds becoming
 northeast 10 to 15 mph in the afternoon. 
 
-HIZ046-270730-
+HIZ046-271115-
 Maui Central Valley South-
 Including Maalaea
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy.
-Scattered showers and isolated thunderstorms in the morning, then
-isolated showers and thunderstorms in the afternoon. Locally
-heavy rainfall possible. Highs around 88. Northeast winds 30 to
-35 mph. Chance of rain 30 percent. 
-.TONIGHT... Tropical storm conditions expected. Mostly cloudy
-with isolated showers. Lows 72 to 81. Northeast winds 30 to
-35 mph with gusts to 55 mph becoming 20 to 40 mph with gusts to
-80 mph after midnight. Chance of rain 20 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy. Scattered showers and isolated thunderstorms late in the
+morning, then isolated showers and thunderstorms in the
+afternoon. Locally heavy rainfall possible. Highs around 88.
+Northeast winds 30 to 35 mph decreasing to 20 to 35 mph in the
+afternoon. Gusts up to 55 mph. Chance of rain 30 percent. 
+.TONIGHT... Tropical storm conditions possible. Mostly cloudy
+with isolated showers. Lows 72 to 81. Northeast winds 20 to
+35 mph with gusts to 60 mph. Chance of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Highs 86 to 91. Northeast winds 20 to 40 mph shifting to the east
-30 to 40 mph in the afternoon. Gusts up to 80 mph. 
+Highs 86 to 91. Northeast winds 25 to 35 mph with gusts to
+60 mph. 
 .SUNDAY NIGHT...Partly cloudy. Windy. Lows 72 to 81. East winds
-10 to 30 mph with gusts to 60 mph. 
-.MONDAY...Mostly sunny. Windy. Highs 87 to 92. East winds 10 to
-25 mph increasing to 20 to 30 mph in the afternoon. Gusts up to
-50 mph. 
+10 to 30 mph with gusts to 50 mph. 
+.MONDAY...Mostly sunny. Breezy. Highs 87 to 92. East winds 15 to
+25 mph. 
 .MONDAY NIGHT...Partly cloudy. Breezy. Lows 71 to 81. East winds
 10 to 20 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs around 89. East winds
@@ -1344,27 +1336,28 @@ winds 15 to 20 mph.
 Highs around 88. East winds up to 10 mph increasing to 10 to
 15 mph in the afternoon. 
 
-HIZ047-270730-
+HIZ047-271115-
 Windward Haleakala-
 Including Haiku, Makawao, Hana
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Occasional showers
-in the morning. Isolated thunderstorms through the day. Numerous
-showers in the afternoon. Locally heavy rainfall possible. Highs
-around 81 near the shore to around 66 near 5000 feet. East winds
-15 to 35 mph. Chance of rain near 100 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Occasional
+showers and isolated thunderstorms late in the morning, then
+numerous showers and isolated thunderstorms in the afternoon.
+Locally heavy rainfall possible. Highs around 81 near the shore
+to around 66 near 5000 feet. East winds 15 to 35 mph with gusts
+to 55 mph. Chance of rain near 100 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy
 with scattered showers. Lows 71 to 76 near the shore to around
 57 near 5000 feet. East winds 15 to 35 mph with gusts to 55 mph.
 Chance of rain 50 percent. 
 .SUNDAY... Tropical storm conditions possible. Mostly cloudy with
 scattered showers. Highs around 81 near the shore to around
-66 near 5000 feet. East winds 15 to 30 mph with gusts to 55 mph.
+66 near 5000 feet. East winds 15 to 30 mph with gusts to 50 mph.
 Chance of rain 40 percent. 
 .SUNDAY NIGHT...Breezy. Mostly cloudy with isolated showers. Lows
 57 to 76. East winds 10 to 25 mph with gusts to 45 mph. Chance of
@@ -1396,37 +1389,35 @@ around 10 mph. Chance of rain 20 percent.
 .FRIDAY...Mostly sunny. Isolated showers in the morning. Highs
 66 to 83. East winds up to 10 mph. Chance of rain 20 percent. 
 
-HIZ048-270730-
+HIZ048-271115-
 Kipahulu-
 Including Hamoa
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Mostly cloudy.
-Occasional showers in the morning. Isolated thunderstorms through
-the day. Numerous showers in the afternoon. Locally heavy
-rainfall possible. Highs 68 to 84. Northeast winds 15 to 30 mph.
-Chance of rain 90 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy. Occasional showers and isolated thunderstorms late in the
+morning, then numerous showers and isolated thunderstorms in the
+afternoon. Locally heavy rainfall possible. Highs 68 to 84.
+Northeast winds 15 to 30 mph. Chance of rain 90 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
-with scattered showers. Lows 64 to 76. Northeast winds 15 to
-30 mph increasing to east 15 to 55 mph with gusts to 90 mph after
-midnight. Chance of rain 50 percent. 
+with scattered showers. Lows 64 to 76. Northeast winds 20 to
+25 mph increasing to east 25 to 45 mph after midnight. Chance of
+rain 50 percent. 
 .SUNDAY... Tropical storm conditions possible. Mostly cloudy with
-scattered showers. Highs 69 to 84. East winds 25 to 55 mph with
-gusts to 90 mph. Chance of rain 40 percent. 
+scattered showers. Highs 69 to 84. East winds 25 to 40 mph with
+gusts to 60 mph. Chance of rain 40 percent. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Mostly
 cloudy. Isolated showers in the evening. Lows 65 to 77. East
-winds 20 to 50 mph with gusts to 80 mph. Chance of rain
-20 percent. 
-.MONDAY... Tropical storm conditions possible. Partly sunny.
-Isolated showers in the morning. Highs 70 to 84. East winds 20 to
-45 mph with gusts to 70 mph. Chance of rain 20 percent. 
+winds 20 to 40 mph. Chance of rain 20 percent. 
+.MONDAY...Partly sunny. Windy. Isolated showers in the morning.
+Highs 70 to 84. East winds 20 to 35 mph with gusts to 55 mph.
+Chance of rain 20 percent. 
 .MONDAY NIGHT...Windy. Mostly cloudy with isolated showers. Lows
-65 to 77. East winds 15 to 35 mph with gusts to 55 mph. Chance of
-rain 20 percent. 
+65 to 77. East winds 15 to 35 mph. Chance of rain 20 percent. 
 .TUESDAY...Partly sunny in the morning then becoming mostly
 sunny. Windy. Isolated showers. Highs 69 to 83. East winds 15 to
 30 mph. Chance of rain 20 percent. 
@@ -1448,32 +1439,32 @@ Lows 65 to 76. Southeast winds 10 to 25 mph. Chance of rain
 mostly sunny in the afternoon. Highs 69 to 84. East winds 10 to
 15 mph. Chance of rain 20 percent. 
 
-HIZ049-270730-
+HIZ049-271115-
 South Maui/Upcountry-
 Including Kihei, Makena, Pukalani, Kula, Ulupalakua
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY...Mostly cloudy. Isolated showers and thunderstorms in the
-morning, then scattered showers and isolated thunderstorms in the
-afternoon. Locally heavy rainfall possible. Highs around 88 near
-the shore to around 74 near 4000 feet. East winds up to 15 mph
-shifting to the south in the afternoon. Gusts up to 40 mph.
-Chance of rain 50 percent. 
+.REST OF TODAY...Mostly cloudy. Breezy. Isolated showers and
+thunderstorms late in the morning, then scattered showers and
+isolated thunderstorms in the afternoon. Locally heavy rainfall
+possible. Highs around 88 near the shore to around 74 near
+4000 feet. East winds up to 20 mph. Chance of rain 50 percent. 
 .TONIGHT...Breezy. Mostly cloudy with isolated showers. Lows
 around 74 near the shore to around 60 near 4000 feet. East winds
-up to 20 mph with gusts to 45 mph. Chance of rain 20 percent. 
+up to 20 mph with gusts to 45 mph increasing to 10 to 20 mph
+after midnight. Chance of rain 20 percent. 
 .SUNDAY...Partly sunny. Breezy. Isolated showers in the morning.
 Highs around 89 near the shore to around 75 near 4000 feet. East
 winds 10 to 25 mph. Chance of rain 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Lows 57 to 77. East winds 10 to
 15 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs 72 to 91. East winds 10 to
-20 mph. Gusts up to 40 mph. 
+20 mph. Gusts up to 40 mph in the afternoon. 
 .MONDAY NIGHT...Partly cloudy. Lows 57 to 77. East winds 10 to
-15 mph. Gusts up to 35 mph. 
+15 mph. 
 .TUESDAY...Mostly sunny. Highs 71 to 90. East winds 10 to 15 mph.
 .TUESDAY NIGHT...Partly cloudy. Lows 57 to 76. East winds around
 10 mph. 
@@ -1489,34 +1480,33 @@ up to 10 mph in the evening becoming light.
 Highs 70 to 89. Light winds becoming east up to 10 mph in the
 afternoon. 
 
-HIZ050-270730-
+HIZ050-271115-
 South Haleakala-
 Including Kipahulu, Kaupo
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected. Mostly cloudy with
-scattered showers and isolated thunderstorms. Locally heavy
-rainfall possible. Highs 75 to 87. East winds 20 to 40 mph.
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with scattered showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 75 to 87. East winds 20 to 40 mph.
 Chance of rain 50 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
-with scattered showers. Lows 58 to 77. East winds 20 to 45 mph
-increasing to 20 to 55 mph with gusts to 85 mph after midnight.
-Chance of rain 50 percent. 
+with scattered showers. Lows 58 to 77. East winds 25 to 45 mph
+with gusts to 65 mph. Chance of rain 50 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
 Scattered showers in the morning, then isolated showers in the
-afternoon. Highs 76 to 87. East winds 20 to 55 mph with gusts to
-85 mph. Chance of rain 30 percent. 
+afternoon. Highs 76 to 87. East winds 25 to 45 mph. Chance of
+rain 30 percent. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy. Lows 59 to 77. East winds 20 to 50 mph with gusts to
-80 mph. 
-.MONDAY... Tropical storm conditions possible. Mostly sunny.
-Highs 77 to 88. East winds 20 to 50 mph with gusts to 80 mph. 
+cloudy. Lows 59 to 77. East winds 20 to 40 mph with gusts to
+60 mph. 
+.MONDAY...Mostly sunny. Windy. Highs 77 to 88. East winds 20 to
+35 mph with gusts to 55 mph. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 59 to 77. East winds
-15 to 30 mph with gusts to 50 mph. 
+15 to 30 mph. 
 .TUESDAY...Mostly sunny. Breezy. Highs 76 to 86. East winds 15 to
 25 mph. 
 .TUESDAY NIGHT...Partly cloudy in the evening then becoming
@@ -1534,37 +1524,31 @@ sunny. Breezy. Highs 75 to 85. East winds 10 to 25 mph.
 15 mph. 
 .FRIDAY...Mostly sunny. Highs 75 to 85. East winds 10 to 15 mph. 
 
-HIZ022-270730-
+HIZ022-271115-
 Haleakala Summit-
 Including Haleakala National Park Above 6000 feet
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Scattered showers
-and isolated thunderstorms early in the morning, then occasional
-showers and isolated thunderstorms in the late morning and
-afternoon. Locally heavy rainfall possible. Highs around 63 at
-the visitor center to around 72 at the summit. East winds 10 to
-30 mph decreasing to up to 30 mph in the afternoon. Chance of
-rain near 100 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Occasional
+showers and isolated thunderstorms. Locally heavy rainfall
+possible. Highs around 63 at the visitor center to around 72 at
+the summit. East winds 15 to 30 mph. Chance of rain near
+100 percent. 
 .TONIGHT... Tropical storm conditions expected. Mostly cloudy
 with scattered showers. Lows around 55 at the visitor center to
-around 51 at the summit. East winds 10 to 30 mph increasing to
-15 to 45 mph with gusts to 75 mph after midnight. Chance of rain
-50 percent. 
+around 51 at the summit. East winds 15 to 30 mph increasing to
+15 to 40 mph after midnight. Chance of rain 50 percent. 
 .SUNDAY... Tropical storm conditions possible. Mostly cloudy.
 Scattered showers in the morning, then isolated showers in the
 afternoon. Highs around 64 at the visitor center to around 73 at
-the summit. East winds 15 to 45 mph with gusts to 75 mph. Chance
-of rain 40 percent. 
+the summit. East winds 15 to 40 mph. Chance of rain 40 percent. 
 .SUNDAY NIGHT... Tropical storm conditions possible. Mostly
-cloudy. Lows 48 to 65. East winds 15 to 45 mph with gusts to
-65 mph. 
-.MONDAY... Tropical storm conditions possible. Partly sunny.
-Highs 62 to 82. East winds 10 to 40 mph with gusts to 60 mph
-decreasing to 10 to 30 mph in the afternoon. 
+cloudy. Lows 48 to 65. East winds 15 to 40 mph. 
+.MONDAY...Partly sunny. Windy. Highs 62 to 82. East winds 10 to
+30 mph. 
 .MONDAY NIGHT...Mostly cloudy. Breezy. Lows 48 to 65. East winds
 10 to 25 mph. 
 .TUESDAY...Mostly sunny in the morning then becoming partly
@@ -1581,34 +1565,33 @@ winds 10 to 20 mph.
 up to 10 mph. 
 .FRIDAY...Partly sunny. Highs 61 to 82. Light winds. 
 
-HIZ023-270730-
+HIZ023-271115-
 Kona-
 Including Kailua-Kona, Kealakekua, Milolii
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY...Mostly cloudy. Scattered showers and isolated
-thunderstorms until late afternoon, then numerous showers and
-isolated thunderstorms late in the afternoon. Locally heavy
-rainfall possible. Highs 86 to 92 near the shore to around
-72 near 5000 feet. Light winds becoming southwest up to 10 mph in
-the afternoon. Chance of rain 70 percent. 
+.REST OF TODAY...Mostly cloudy. Scattered showers and isolated
+thunderstorms in the late morning and early afternoon, then
+numerous showers and isolated thunderstorms late in the
+afternoon. Locally heavy rainfall possible. Highs 86 to 92 near
+the shore to around 72 near 5000 feet. Light winds. Chance of
+rain 70 percent. 
 .TONIGHT...Mostly cloudy. Scattered showers in the evening, then
 isolated showers after midnight. Lows 71 to 78 near the shore to
-around 59 near 5000 feet. Southwest winds up to 10 mph shifting
-to the east after midnight. Gusts up to 30 mph. Chance of rain
-40 percent. 
+around 59 near 5000 feet. Light winds becoming east around 10 mph
+after midnight. Chance of rain 40 percent. 
 .SUNDAY...Partly sunny with isolated showers. Highs 86 to 92 near
-the shore to around 73 near 5000 feet. East winds 10 to 15 mph
-shifting to the west in the afternoon. Chance of rain 20 percent.
+the shore to around 73 near 5000 feet. East winds around 10 mph
+shifting to the southwest in the afternoon. Chance of rain
+20 percent. 
 .SUNDAY NIGHT...Mostly cloudy. Lows 56 to 80. East winds up to
 10 mph. 
 .MONDAY...Partly sunny. Isolated showers in the afternoon. Highs
-70 to 90. East winds around 10 mph shifting to the southwest in
-the afternoon. Gusts up to 30 mph. Chance of rain 20 percent. 
+70 to 90. East winds around 10 mph shifting to the west in the
+afternoon. Chance of rain 20 percent. 
 .MONDAY NIGHT...Partly cloudy. Lows 56 to 79. East winds up to
 10 mph. 
 .TUESDAY...Partly sunny. Highs 69 to 90. West winds up to 10 mph.
@@ -1626,36 +1609,33 @@ up to 10 mph in the evening becoming light.
 Highs 69 to 90. Light winds becoming southwest up to 10 mph in
 the afternoon. 
 
-HIZ051-270730-
+HIZ051-271115-
 Big Island South-
 Including Ocean View
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy. Numerous showers and isolated
-thunderstorms early in the morning, then occasional showers and
-isolated thunderstorms in the late morning and afternoon. Locally
-heavy rainfall possible. Highs around 85 near the shore to around
-70 near 5000 feet. Northeast winds 10 to 45 mph decreasing to up
-to 45 mph in the afternoon. Chance of rain 90 percent. 
-.TONIGHT... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy with scattered showers. Lows
-around 77 near the shore to around 62 near 5000 feet. East winds
-15 to 45 mph. Chance of rain 50 percent. 
-.SUNDAY... Tropical storm conditions expected with hurricane
-conditions possible. Partly sunny with isolated showers. Highs
-around 85 near the shore to around 71 near 5000 feet. East winds
-20 to 40 mph with gusts to 60 mph. Chance of rain 20 percent. 
-.SUNDAY NIGHT... Tropical storm conditions possible. Partly
-cloudy in the evening then becoming mostly cloudy. Lows 60 to 80.
-East winds 15 to 30 mph with gusts to 50 mph increasing to 20 to
-40 mph with gusts to 60 mph after midnight. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with occasional showers and isolated thunderstorms.
+Locally heavy rainfall possible. Highs around 85 near the shore
+to around 70 near 5000 feet. Northeast winds 10 to 45 mph with
+gusts to 70 mph. Chance of rain 90 percent. 
+.TONIGHT... Tropical storm conditions expected. Mostly cloudy
+with scattered showers. Lows around 77 near the shore to around
+62 near 5000 feet. East winds 25 to 45 mph with gusts to 70 mph
+decreasing to 15 to 35 mph with gusts to 60 mph after midnight.
+Chance of rain 50 percent. 
+.SUNDAY... Tropical storm conditions possible. Partly sunny with
+isolated showers. Highs around 85 near the shore to around
+71 near 5000 feet. East winds 20 to 35 mph with gusts to 60 mph.
+Chance of rain 20 percent. 
+.SUNDAY NIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Windy. Lows 60 to 80. East winds 15 to 35 mph. Gusts up
+to 50 mph increasing to 60 mph after midnight. 
 .MONDAY...Mostly sunny. Windy. Highs 70 to 87. East winds 15 to
-35 mph. Gusts up to 60 mph decreasing to 50 mph in the afternoon.
+30 mph. 
 .MONDAY NIGHT...Partly cloudy. Windy. Lows 60 to 79. East winds
 15 to 30 mph. 
 .TUESDAY...Partly sunny in the morning then becoming mostly
@@ -1674,20 +1654,20 @@ partly cloudy. Lows 60 to 79. East winds 10 to 15 mph.
 .FRIDAY...Sunny in the morning then becoming partly sunny. Highs
 69 to 85. East winds 10 to 15 mph. 
 
-HIZ052-270730-
+HIZ052-271115-
 Big Island Southeast-
 Including South Point, Pahala
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Occasional showers
-and isolated thunderstorms. Locally heavy rainfall possible.
-Highs 80 to 87 near the shore to 68 to 73 near 4000 feet.
-Northeast winds 15 to 35 mph. Chance of rain near 100 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Cloudy with
+occasional showers and isolated thunderstorms. Locally heavy
+rainfall possible. Highs 80 to 87 near the shore to 68 to 73 near
+4000 feet. Northeast winds 15 to 35 mph with gusts to 60 mph.
+Chance of rain 90 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy
 with scattered showers. Lows 70 to 76 near the shore to 57 to
 63 near 4000 feet. Northeast winds 15 to 35 mph with gusts to
@@ -1695,10 +1675,10 @@ with scattered showers. Lows 70 to 76 near the shore to 57 to
 .SUNDAY... Tropical storm conditions possible. Mostly cloudy.
 Scattered showers in the morning, then isolated showers in the
 afternoon. Highs 81 to 87 near the shore to 68 to 73 near
-4000 feet. Northeast winds 15 to 35 mph with gusts to 60 mph.
+4000 feet. Northeast winds 15 to 30 mph with gusts to 55 mph.
 Chance of rain 50 percent. 
 .SUNDAY NIGHT...Mostly cloudy. Breezy. Lows 57 to 78. Northeast
-winds 10 to 25 mph with gusts to 55 mph. 
+winds 10 to 25 mph with gusts to 50 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs 69 to 89. East winds 10 to
 20 mph with gusts to 45 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 58 to 78. Northeast winds
@@ -1720,23 +1700,22 @@ winds up to 10 mph. Chance of rain 20 percent.
 .FRIDAY...Sunny in the morning then becoming partly sunny. Highs
 69 to 89. East winds up to 10 mph. 
 
-HIZ053-270730-
+HIZ053-271115-
 Big Island East-
 Including Hilo, Volcano, Pahoa, Mountain View, Laupahoehoe
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY...Breezy. Occasional showers and isolated thunderstorms.
-Locally heavy rainfall possible. Highs 78 to 84 near the shore to
-63 to 68 at 4000 feet. Northeast winds 10 to 20 mph. Chance of
-rain near 100 percent. 
+.REST OF TODAY...Breezy. Cloudy with occasional showers and
+isolated thunderstorms. Locally heavy rainfall possible. Highs
+78 to 84 near the shore to 63 to 68 at 4000 feet. Northeast winds
+10 to 20 mph. Chance of rain 90 percent. 
 .TONIGHT...Cloudy and breezy. Occasional showers in the evening,
 then numerous showers after midnight. Lows 67 to 75 near the
-shore to 57 to 62 at 4000 feet. East winds up to 20 mph. Chance
+shore to 57 to 62 at 4000 feet. East winds 10 to 20 mph. Chance
 of rain 90 percent. 
 .SUNDAY...Mostly cloudy. Breezy. Numerous showers in the morning,
 then scattered showers in the afternoon. Highs 79 to 85 near the
@@ -1769,30 +1748,29 @@ Southeast winds 10 to 15 mph. Chance of rain 30 percent.
 66 to 85. Light winds becoming east around 10 mph in the
 afternoon. Chance of rain 20 percent. 
 
-HIZ054-270730-
+HIZ054-271115-
 Big Island North-
 Including Honokaa, Kamuela, Waipio Valley, Hawi
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST SUNDAY...
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy with numerous showers and
-isolated thunderstorms. Locally heavy rainfall possible. Highs
-63 to 84. East winds 15 to 40 mph. Chance of rain 70 percent. 
-.TONIGHT... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy with scattered showers. Lows
-67 to 75 near the shore to 61 to 69 near 3000 feet. East winds
-10 to 40 mph. Gusts up to 60 mph increasing to 80 mph after
-midnight. Chance of rain 50 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with numerous showers and isolated thunderstorms. Locally
+heavy rainfall possible. Highs 63 to 84. East winds 20 to 40 mph
+with gusts to 70 mph. Chance of rain 70 percent. 
+.TONIGHT... Tropical storm conditions expected. Mostly cloudy
+with scattered showers. Lows 67 to 75 near the shore to 61 to
+69 near 3000 feet. East winds 15 to 40 mph. Gusts up to 70 mph
+decreasing to 60 mph after midnight. Chance of rain 50 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
-Isolated showers in the morning. Highs 65 to 85. East winds 10 to
-35 mph with gusts to 75 mph. Chance of rain 20 percent. 
+Isolated showers in the morning. Highs 65 to 85. East winds 15 to
+35 mph. Gusts up to 60 mph increasing to 70 mph in the afternoon.
+Chance of rain 20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 55 to 76. East winds
-10 to 25 mph with gusts to 50 mph. 
+10 to 25 mph with gusts to 45 mph. 
 .MONDAY...Mostly sunny. Breezy. Highs 67 to 86. East winds 10 to
 20 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 56 to 76. Southeast winds
@@ -1814,34 +1792,34 @@ becoming light. Chance of rain 20 percent.
 .FRIDAY...Mostly sunny. Highs 65 to 84. Light winds becoming east
 around 10 mph in the afternoon. 
 
-HIZ026-270730-
+HIZ026-271115-
 Kohala-
 Including Kawaihae, Waikoloa, Waikii, Puuanahulu
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy. Isolated showers and
-thunderstorms in the morning, then scattered showers and isolated
-thunderstorms in the afternoon. Locally heavy rainfall possible.
-Highs 84 to 91 near the shore to around 72 above 4000 feet. East
-winds up to 40 mph with gusts to 60 mph. Chance of rain
-50 percent. 
-.TONIGHT... Tropical storm conditions expected with hurricane
-conditions possible. Mostly cloudy with isolated showers. Lows
-72 to 78 near the shore to 57 to 63 above 4000 feet. East winds
-up to 45 mph. Chance of rain 20 percent. 
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy. Isolated showers and thunderstorms late in the morning,
+then scattered showers and isolated thunderstorms in the
+afternoon. Locally heavy rainfall possible. Highs 84 to 91 near
+the shore to around 72 above 4000 feet. East winds up to 40 mph
+with gusts to 70 mph. Chance of rain 50 percent. 
+.TONIGHT... Tropical storm conditions expected. Mostly cloudy
+with isolated showers. Lows 72 to 78 near the shore to 57 to
+63 above 4000 feet. East winds up to 45 mph with gusts to 75 mph
+becoming 10 to 30 mph with gusts to 50 mph after midnight. Chance
+of rain 20 percent. 
 .SUNDAY... Tropical storm conditions possible. Partly sunny.
 Isolated showers in the morning. Highs 85 to 92 near the shore to
-70 to 76 above 4000 feet. Northeast winds 10 to 35 mph with gusts
-to 60 mph. Chance of rain 20 percent. 
+70 to 76 above 4000 feet. Northeast winds 10 to 35 mph. Gusts up
+to 50 mph increasing to 60 mph in the afternoon. Chance of rain
+20 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 56 to 77. East winds
-10 to 20 mph. 
-.MONDAY...Mostly sunny. Highs 69 to 93. East winds 10 to 15 mph
-shifting to the northwest in the afternoon. 
+10 to 20 mph. Gusts up to 40 mph in the evening. 
+.MONDAY...Mostly sunny. Highs 69 to 93. East winds around 10 mph
+shifting to the northwest in the afternoon. Gusts up to 30 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 56 to 77. Southeast winds
 around 10 mph in the evening becoming light. 
 .TUESDAY...Mostly sunny in the morning then becoming partly
@@ -1860,33 +1838,34 @@ evening becoming light.
 .FRIDAY...Mostly sunny. Highs 68 to 90. Light winds becoming
 northwest up to 15 mph in the afternoon. 
 
-HIZ027-270730-
+HIZ027-271115-
 Big Island Interior-
 Including Bradshaw Field, Saddle Road Above 5000 feet
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions possible. Occasional showers
-and isolated thunderstorms. Locally heavy rainfall possible.
-Highs 63 to 76 near 5000 feet to 58 to 65 near 8000 feet. East
-winds up to 30 mph with gusts to 50 mph. Chance of rain near
-100 percent. 
+.REST OF TODAY... Tropical storm conditions possible. Mostly
+cloudy with occasional showers and isolated thunderstorms.
+Locally heavy rainfall possible. Highs 63 to 76 near 5000 feet to
+58 to 65 near 8000 feet. East winds up to 30 mph with gusts to
+50 mph. Chance of rain 90 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy
 with scattered showers. Lows 55 to 61 near 5000 feet to 50 to
-55 near 8000 feet. East winds up to 30 mph with gusts to 50 mph.
-Chance of rain 50 percent. 
+55 near 8000 feet. East winds up to 30 mph increasing to 10 to
+30 mph after midnight. Gusts up to 50 mph. Chance of rain
+50 percent. 
 .SUNDAY... Tropical storm conditions possible. Mostly cloudy.
 Scattered showers in the morning, then isolated showers in the
 afternoon. Highs 63 to 77 near 5000 feet to 59 to 67 near
 8000 feet. East winds 10 to 30 mph with gusts to 50 mph. Chance
 of rain 50 percent. 
 .SUNDAY NIGHT...Partly cloudy. Breezy. Lows 49 to 60. East winds
-10 to 25 mph with gusts to 50 mph. 
+10 to 25 mph with gusts to 45 mph. 
 .MONDAY...Mostly sunny in the morning then becoming partly sunny.
-Breezy. Highs 61 to 77. East winds 10 to 20 mph. 
+Highs 61 to 77. East winds 10 to 15 mph shifting to the southeast
+in the afternoon. 
 .MONDAY NIGHT...Partly cloudy. Lows 50 to 60. East winds 10 to
 15 mph. 
 .TUESDAY...Partly sunny. Highs 60 to 76. Southeast winds around
@@ -1905,36 +1884,32 @@ partly cloudy. Lows 49 to 60. Southeast winds up to 10 mph.
 Highs 60 to 75. Light winds becoming south around 10 mph in the
 afternoon. 
 
-HIZ028-270730-
+HIZ028-271115-
 Big Island Summits-
 Including Mauna Loa and Mauna Kea Above 8000 feet
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH IN EFFECT THROUGH THIS AFTERNOON...
+...FLOOD WATCH IN EFFECT UNTIL 6 PM HST THIS EVENING...
 ...TROPICAL STORM WARNING IN EFFECT...
-...HURRICANE WATCH IN EFFECT...
 
-.TODAY... Tropical storm conditions expected with hurricane
-conditions possible. Cloudy. Numerous showers and isolated
-thunderstorms early in the morning, then occasional showers and
-isolated thunderstorms in the late morning and afternoon. Locally
-heavy rainfall possible. Highs around 61 at the visitor
+.REST OF TODAY... Tropical storm conditions expected. Mostly
+cloudy with occasional showers and isolated thunderstorms.
+Locally heavy rainfall possible. Highs around 61 at the visitor
 information station to around 52 near the summits. East winds up
 to 40 mph with gusts to 60 mph. Chance of rain 90 percent. 
 .TONIGHT... Tropical storm conditions possible. Mostly cloudy.
 Scattered showers in the evening, then isolated showers after
 midnight. Lows around 46 at the visitor information station to
-around 40 near the summits. East winds up to 35 mph. Chance of
-rain 50 percent. 
+around 40 near the summits. East winds up to 30 mph becoming
+10 to 25 mph after midnight. Chance of rain 50 percent. 
 .SUNDAY...Mostly cloudy. Breezy. Isolated showers in the morning.
 Highs around 63 at the visitor information station to around
-50 near the summits. East winds 10 to 25 mph with gusts to
-45 mph. Chance of rain 20 percent. 
-.SUNDAY NIGHT...Partly cloudy. Breezy. Lows 39 to 54. East winds
-10 to 20 mph. 
+50 near the summits. East winds 10 to 20 mph. Chance of rain
+20 percent. 
+.SUNDAY NIGHT...Partly cloudy. Lows 39 to 54. East winds 10 to
+15 mph. 
 .MONDAY...Mostly sunny in the morning then becoming partly sunny.
-Highs 50 to 73. Southeast winds around 10 mph becoming up to
-15 mph in the afternoon. 
+Highs 50 to 73. East winds up to 10 mph. 
 .MONDAY NIGHT...Partly cloudy. Lows 40 to 55. Light winds. 
 .TUESDAY...Partly sunny. Highs 49 to 72. Southwest winds up to
 10 mph. 
@@ -3454,7 +3429,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T10:56:52.891374-10:00 HST |
+| **Collected** | 2026-09-26T11:05:54.362351-10:00 HST |
 
 ```text
                         
@@ -4339,7 +4314,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T11:03:33.238129-10:00 HST |
+| **Collected** | 2026-09-26T11:12:32.949631-10:00 HST |
 
 ```text
 Home
@@ -4463,7 +4438,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 21:02:21 UTC
+Last update Sat, 26 Sep 2026 21:06:17 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -8071,41 +8046,42 @@ No outage message at this time.
 |---|---|
 | **Resource ID** | sfp_state_forecast |
 | **Official source** | https://api.weather.gov/products/types/SFP/locations/HFO |
-| **Collected** | 2026-09-26T05:07:27.851966-10:00 HST |
+| **Collected** | 2026-09-26T11:04:36.315641-10:00 HST |
 
 ```text
 000
-FPHW60 PHFO 261500
+FPHW60 PHFO 262054
 SFPHFO
 
 State Forecast for Hawaii
 National Weather Service Honolulu HI
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-HIZ001-003-004-006-007-009>011-015>018-022-029>050-270430-
+HIZ001-003-004-006-007-009>011-015>018-022-029>050-270415-
 Kauai-Oahu-Maui-Molokai-Lanai-
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
-...FLOOD WATCH FOR MOLOKAI LANAI KAHOOLAWE AND MAUI...
+...FLOOD WATCH...
 ...HIGH SURF ADVISORY FOR KAUAI OAHU MOLOKAI AND MAUI...
 ...TROPICAL STORM WATCH FOR MOLOKAI LANAI KAHOOLAWE AND MAUI...
 ...WIND ADVISORY FOR NIIHAU KAUAI AND OAHU...
 
-.TODAY...Mostly cloudy. Very windy. Scattered showers on Kauai.
-scattered showers and isolated thunderstorms Oahu and Maui
+.REST OF TODAY...Mostly cloudy. Very windy. Scattered showers on
+Kauai. scattered showers and isolated thunderstorms Oahu and Maui
 County. Locally heavy rainfall possible. Highs 85 to 90. East
-winds 25 to 40 mph. 
+winds 25 to 40 mph, strongest winds on Maui County. 
 .TONIGHT...Mostly cloudy. Very windy. On Kauai and Oahu, isolated
 showers. Maui County, scattered showers in the evening. Isolated
-showers after midnight. Lows 74 to 79. East winds 30 to 45 mph.
-Gusts up to 75 mph after midnight. 
+showers after midnight. Lows 74 to 79. East winds 25 to 40 mph
+with gusts to 60 mph, strongest winds on Maui County. 
 .SUNDAY...Mostly cloudy. Very windy. Leeward, isolated showers
 during the day. Windward and mountains, isolated showers during
 the day. Scattered showers at night. Highs 85 to 90. Lows 74 to
-79. East winds 30 to 45 mph with gusts to 75 mph. 
+79. East winds 25 to 40 mph with gusts to 60 mph strongest winds
+on Maui County.
 .MONDAY...Partly cloudy. Windy. Isolated showers windward and
-mountains. Highs 86 to 91. Lows 74 to 79. East winds 20 to
-35 mph. 
+mountains. Highs 86 to 91. Lows 74 to 79. East winds 15 to
+30 mph. 
 .TUESDAY...Mostly cloudy. Breezy. On Kauai, isolated showers
 during the day, then scattered showers at night. Oahu and Maui
 County, isolated showers. Highs 86 to 91. Lows 74 to 79. East
@@ -8114,28 +8090,29 @@ winds 15 to 25 mph.
 mountains. isolated showers leeward. Highs 84 to 89. Lows 73 to
 78. East winds 15 to 30 mph. 
 
-HIZ023-026>028-051>054-270430-
+HIZ023-026>028-051>054-270415-
 Big Island of Hawaii-
-500 AM HST Sat Sep 26 2026
+1054 AM HST Sat Sep 26 2026
 
 ...FLOOD WATCH...
 ...HIGH SURF ADVISORY...
-...HURRICANE WATCH...
 ...TROPICAL STORM WARNING...
 
-.TODAY...Very windy. Windward, occasional showers and isolated
-thunderstorms. Leeward, scattered showers and isolated
-thunderstorms through the day. Locally heavy rainfall possible.
-Highs 85 to 90. East winds 25 to 40 mph. 
+.REST OF TODAY...Cloudy. Very windy. Occasional showers and
+isolated thunderstorms windward. scattered showers and isolated
+thunderstorms leeward. Locally heavy rainfall possible. Highs
+85 to 90. East winds 25 to 40 mph with gusts to 60 mph. 
 .TONIGHT...Mostly cloudy. Very windy. Windward, occasional
 showers. Leeward, scattered showers in the evening, then isolated
-showers after midnight. Lows 72 to 77. East winds 25 to 40 mph. 
+showers after midnight. Lows 72 to 77. East winds 25 to 40 mph
+with gusts to 60 mph decreasing to 15 to 30 mph with gusts to
+60 mph. 
 .SUNDAY...Mostly cloudy. Windy. Leeward, isolated showers during
 the day. Windward, scattered showers during the day, then
 isolated showers at night. Highs 85 to 90. Lows 73 to 78. East
-winds 20 to 35 mph with gusts to 55 mph. 
-.MONDAY...Partly cloudy. Breezy. Highs 86 to 91. Lows 72 to 77.
-East winds 15 to 25 mph. 
+winds 15 to 30 mph with gusts to 55 mph. 
+.MONDAY...Partly cloudy. Highs 86 to 91. Lows 72 to 77. East
+winds 15 to 20 mph. 
 .TUESDAY...Mostly cloudy. Isolated showers windward. Highs 85 to
 90. Lows 72 to 77. East winds around 15 mph. 
 .WEDNESDAY...Partly cloudy. Windward, isolated showers during the
