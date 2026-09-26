@@ -126,10 +126,11 @@ def generate(base_dir: str) -> list[Path]:
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
     buckets = {key: [] for key in counties}
     unresolved = []
-    source_candidates = {}
+    source_candidates: dict[str, list[Path]] = {}
     official_root = root / OFFICIAL
     for official_path in sorted(official_root.glob("*/*_current.md")):
-        source_candidates[official_path.name.removesuffix("_current.md")] = official_path
+        rid = official_path.name.removesuffix("_current.md")
+        source_candidates.setdefault(rid, []).append(official_path)
     now = hst_time.hst_now().isoformat(timespec="seconds")
 
     for path in sorted(level0.glob("*_current.md")):
@@ -140,15 +141,20 @@ def generate(base_dir: str) -> list[Path]:
         except OSError:
             continue
         resource_id = path.name.removesuffix("_current.md")
-        official_path = source_candidates.get(resource_id)
-        if official_path is not None:
-            try:
-                raw = official_path.read_text(encoding="utf-8", errors="replace")
-            except OSError:
-                official_path = None
         source_m = re.search(r"^- \*\*Source:\*\* (.+)$", raw, re.M)
         title_m = re.search(r"^# (.+)$", raw, re.M)
         source = source_m.group(1).strip() if source_m else ""
+        official_path = None
+        for candidate in source_candidates.get(resource_id, []):
+            try:
+                candidate_text = candidate.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+            official_source_m = re.search(r"^- \*\*Official source:\*\* (.+)$", candidate_text, re.M)
+            if official_source_m and source and official_source_m.group(1).strip() == source:
+                official_path = candidate
+                raw = candidate_text
+                break
         source_layer = "Official Sources" if official_path is not None else LEVEL0
         title = title_m.group(1).strip() if title_m else resource_id.replace("_", " ").title()
         body = _body(raw)
@@ -157,7 +163,7 @@ def generate(base_dir: str) -> list[Path]:
             unresolved.append((resource_id, title, source, scope, source_layer, body))
             continue
         for county in targets:
-            buckets[county].append((resource_id, title, source, scope, body))
+            buckets[county].append((resource_id, title, source, scope, source_layer, body))
 
     outputs = []
     fence = chr(96) * 3
@@ -181,7 +187,7 @@ def generate(base_dir: str) -> list[Path]:
                 f"- **Source:** {source or 'Report metadata'}",
                 f"- **Source layer:** {source_layer}",
                 f"- **County assignment:** {scope}",
-                f"- **Source level:** {LEVEL0}",
+                f"- **Source level:** {source_layer}",
                 "- **Processing:** deterministic rules only; no AI/LLM classification.",
                 "- **Level 0:** untouched; its current and archived reports remain intact.",
                 "", "---", "", fence + "text", body, fence, ""
