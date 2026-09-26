@@ -1,4 +1,4 @@
-"""HFO-hosted IR/VIS satellite gifs + the GOES-18 NESDIS sector gif. Reads
+"""HFO-hosted IR satellite gifs + the GOES-18 NESDIS sector gif. Reads
 its resource list from config/resources.yaml (`satellite:` section) rather
 than hardcoding URLs twice.
 """
