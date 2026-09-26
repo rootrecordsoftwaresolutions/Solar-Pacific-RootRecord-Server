@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const telegramRelay = require('./telegram-relay.js');
 
-const POLL_MS = Number(process.env.POLL_MS || 2000);
+const POLL_MS = Number(process.env.POLL_MS || 1000);
 const PACKET_WINDOW_MS = Number(process.env.PACKET_WINDOW_MS || 10000);
 const SOURCE_NODE = process.env.SOURCE_NODE || 'HawaiiRoot';
 const SOURCE_REGION = process.env.SOURCE_REGION || 'local-hawaii';
