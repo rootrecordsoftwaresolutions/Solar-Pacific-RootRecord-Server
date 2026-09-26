@@ -30,8 +30,8 @@ def test_text_route():
 
 def test_unknown_preserved():
     found, scope = _targets("unknown", "No geography here", cfg())
-    assert found == {"honolulu", "hawaii", "maui", "kauai", "kalawao"}
-    assert scope == "unresolved/statewide-source"
+    assert found == set()
+    assert scope == "unresolved/no-geographic-assignment"
 
 
 def test_county_ugc_route():
