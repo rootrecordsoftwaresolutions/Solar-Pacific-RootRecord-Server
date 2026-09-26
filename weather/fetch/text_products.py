@@ -6,28 +6,43 @@ from __future__ import annotations
 
 import json
 
+from core import http_client
 from core.manifest import Manifest
 from fetch import _engine, text_products_fallback
 
 
 def _extract_latest_product_text(list_json_bytes: bytes) -> str:
-    """The API returns a JSON @graph list of latest products; each entry's
-    @id fetches the full record with a productText field. This helper is a
-    placeholder for that two-step resolution -- see note below.
+    """Resolve the latest product entry to its full productText record.
+
+    The products/types endpoint returns an @graph index, not the report body.
+    The first entry's @id is the authoritative second-hop product record.
     """
     envelope = json.loads(list_json_bytes.decode("utf-8"))
     graph = envelope.get("@graph", [])
     if not graph:
         raise ValueError("no products in @graph -- nothing to extract")
-    # NOTE: a real implementation makes a second http_client.get() to the
-    # first entry's `@id` URL to fetch the full record's `productText` field.
-    # That second hop belongs here (category-specific two-step API shape),
-    # not in fetch/_engine.py, which only knows single-request pipelines.
-    # Left as the documented next step rather than guessed at, since the
-    # exact field name/shape should be confirmed against a live response
-    # before being relied on for archiving.
-    first = graph[0]
-    return first.get("productText") or json.dumps(first)
+
+    product_url = graph[0].get("@id")
+    if not isinstance(product_url, str) or not product_url.strip():
+        raise ValueError("latest product has no @id")
+
+    result = http_client.get(
+        product_url,
+        accept="application/ld+json",
+    )
+    if result.not_modified or not result.content:
+        raise ValueError("latest product record returned no body")
+
+    try:
+        product = json.loads(result.content.decode("utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+        raise ValueError(f"latest product record is not valid JSON: {exc}") from exc
+
+    product_text = product.get("productText")
+    if not isinstance(product_text, str) or not product_text.strip():
+        raise ValueError("latest product record has no productText")
+
+    return product_text.strip()
 
 
 # One entry per text product this module owns (primary API path). Each maps
