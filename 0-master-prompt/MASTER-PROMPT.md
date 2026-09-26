@@ -78,6 +78,17 @@ Full rules: `prompts/09-file-layout-style.md`.
 
 Detail: `handoff/AUTO-STACK-RELOAD-2026-09-24.md`.
 
+## 3c. Verification discipline — standing rule for all AIs
+
+Before acting on an observed value or state, confirm it is real rather than assuming it. This is not extra caution for its own sake — it is what keeps a session from acting on a wrong picture of the system.
+
+- **Don't trust rendering.** Terminals, paste tools, and chat UIs can alter what a value looks like (e.g. auto-linkifying a bare hostname into `[host](url)`). Before editing based on how something *looks*, check the raw bytes (`cat -A`, `hexdump`, `git show`) if there's any doubt it could be display artifact rather than file content.
+- **Find the real mechanism before invoking it.** Don't guess a generic command (`systemctl restart <service>`, a plausible-sounding script name) for how a process is started, stopped, or reloaded. Grep the actual scripts/configs (`jobs.py`, `automations/scripts/*.sh`, unit files) for the CLI, script, or unit the codebase already uses, and use that. A wrong guess here can leave two competing processes running or silently do nothing.
+- **"Written" is not "deployed."** A fix that exists in a handoff doc, a sandbox copy, or a zip is not live until it's confirmed present in the actual checkout that runs in production (grep the real file for the change's signature). Verify each individual fix, not just "the session that produced them."
+- **"Committed" is not "pushed."** Check these as separate facts. An auto-sync daemon or another process may commit work before you do — don't assume a clean working tree means nothing needs pushing, or that a push happened just because a commit did.
+- **One step, one confirmation, then continue.** Apply a change, verify its specific, narrow effect, then move to the next step — rather than chaining speculative multi-step commands and hoping they all landed as intended.
+- **Follow the standing deploy path, don't improvise one.** If the repo already documents how restarts/reloads are supposed to happen (see §3b), use that path even under time pressure, rather than inventing a faster-looking manual alternative.
+
 ## 4. Live state and telemetry
 
 The live-state layer is part of the operating context.
