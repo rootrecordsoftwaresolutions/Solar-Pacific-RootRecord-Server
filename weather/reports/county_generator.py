@@ -112,13 +112,41 @@ def generate(base_dir: str) -> list[Path]:
     for key, county_cfg in counties.items():
         name = str(county_cfg.get("display_name") or county_cfg.get("speech") or key.title())
         sections = sorted(buckets[key], key=lambda x: (x[1].lower(), x[0].lower()))
+        county_dir = level1 / key
+        county_dir.mkdir(parents=True, exist_ok=True)
+
+        # Every Level-1 source gets its own current/archived lifecycle.
+        # This prevents the county layer from collapsing distinct products
+        # into one irreversible file.
+        for rid, title, source, scope, body in sections:
+            lines = [
+                f"# {title} — {name}", "",
+                "> **Level 1 county report — deterministically derived from Level 0.**", "",
+                f"- **Generated:** {now} HST",
+                f"- **Report created:** {now} HST",
+                f"- **County:** {name}",
+                f"- **Resource ID:** {rid}",
+                f"- **Source:** {source or 'Level 0 report metadata'}",
+                f"- **County assignment:** {scope}",
+                f"- **Source level:** {LEVEL0}",
+                "- **Processing:** deterministic rules only; no AI/LLM classification.",
+                "- **Level 0:** untouched; its current and archived reports remain intact.",
+                "", "---", "", fence + "text", body, fence, ""
+            ]
+            path = county_dir / f"{rid}_current.md"
+            _write(path, "\n".join(lines), archive, now)
+            outputs.append(path)
+
+        # County aggregate is also its own Level-1 report with the same
+        # archive lifecycle.
         lines = [
             f"# {name} Weather Report", "",
-            "> **Level 1 county report — deterministically derived from Level 0.**", "",
+            "> **Level 1 county aggregate — deterministically derived from Level 0.**", "",
             f"- **Generated:** {now} HST",
             f"- **Report created:** {now} HST",
             f"- **County:** {name}",
             f"- **Source level:** {LEVEL0}",
+            f"- **Current report sections:** {len(sections)}",
             "- **Processing:** deterministic rules only; no AI/LLM classification.",
             "- **Level 0:** untouched; its current and archived reports remain intact.",
             "", "---", ""
@@ -131,7 +159,7 @@ def generate(base_dir: str) -> list[Path]:
                 f"- **County assignment:** {scope}", "",
                 fence + "text", body, fence, "", "---", ""
             ]
-        path = level1 / f"{key}_County_Weather_Report_current.md"
-        _write(path, "\n".join(lines), archive, now)
-        outputs.append(path)
+        aggregate_path = level1 / f"{key}_County_Weather_Report_current.md"
+        _write(aggregate_path, "\n".join(lines), archive, now)
+        outputs.append(aggregate_path)
     return outputs
