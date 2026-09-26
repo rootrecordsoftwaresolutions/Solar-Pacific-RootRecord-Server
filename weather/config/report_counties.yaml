@@ -3,18 +3,23 @@
 counties:
   - key: honolulu
     display_name: "Honolulu County"
+    same: HIC003
     aliases: ["Honolulu County", "Honolulu", "Oahu", "O'ahu", "Oʻahu"]
   - key: hawaii
     display_name: "Hawaii County"
+    same: HIC001
     aliases: ["Hawaii County", "Hawai'i County", "Hawaiʻi County", "Big Island", "Hilo", "Kona"]
   - key: maui
     display_name: "Maui County"
+    same: HIC009
     aliases: ["Maui County", "Maui", "Molokai", "Moloka'i", "Molokaʻi", "Lanai", "Lana'i", "Lānaʻi", "Kahoolawe", "Kahoʻolawe"]
   - key: kauai
     display_name: "Kauai County"
+    same: HIC007
     aliases: ["Kauai County", "Kaua'i County", "Kauaʻi County", "Kauai", "Kaua'i", "Kauaʻi", "Niihau", "Niʻihau"]
   - key: kalawao
     display_name: "Kalawao County"
+    same: HIC005
     aliases: ["Kalawao County", "Kalawao"]
 
 statewide_resource_ids:
