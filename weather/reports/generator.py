@@ -15,7 +15,7 @@ from core import hst_time
 from core.manifest import Manifest
 
 REPORTS_DIRNAME = "reports"
-AGGREGATE_FILENAME = "Hawaii_State_Weather_Report.md"
+AGGREGATE_FILENAME = "Hawaii_State_Weather_Report_current.md"
 _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhistory_")
 _EXCLUDED_IDS = {"rain_summary_graphical"}
 
