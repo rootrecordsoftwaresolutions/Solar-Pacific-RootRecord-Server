@@ -90,3 +90,18 @@ contradicted the live-only requirement: AWS should never receive a delayed
 dump of what it missed. If you find yourself wanting that behavior back,
 that's a real design conversation to have again, not something to
 silently restore.
+
+## AWS feed retention / disk safety
+
+`hawaii.ndjson` is a live feed, not a permanent archive. The collector now bounds it at 64 MiB by default and trims it back to a 48 MiB complete-record window when needed.
+
+The collector deliberately closes the SSH append stream before invoking `maintain-hawaii-feed.sh` on AWS. The maintenance script rewrites the **same inode**, then resets only the byte offset in `hawaii-offset.json`. It does not rename the live feed, preserving the reader's expected pathname and avoiding an open-file/renamed-file leak.
+
+The thresholds are configurable with:
+
+- `AWS_FEED_MAX_BYTES` — default `67108864` (64 MiB)
+- `AWS_FEED_TARGET_BYTES` — default `50331648` (48 MiB)
+- `AWS_FEED_MAINTENANCE_MS` — default 15 minutes
+- `AWS_FEED_MAINTENANCE_SCRIPT` — default `/home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh`
+
+The AWS-side script should be deployed to that path. It is intentionally kept separate from the collector so mainland maintenance can be inspected and backed up independently.
