@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T10:29:33-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T10:38:33-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3454,7 +3454,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T10:14:53.623481-10:00 HST |
+| **Collected** | 2026-09-26T10:31:53.111686-10:00 HST |
 
 ```text
                         
@@ -4255,7 +4255,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-26T09:19:33.130348-10:00 HST |
+| **Collected** | 2026-09-26T10:36:33.086304-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4269,7 +4269,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-26T09:12:32.990309-10:00 HST |
+| **Collected** | 2026-09-26T10:37:32.967132-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4325,7 +4325,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-26T09:18:32.968440-10:00 HST |
+| **Collected** | 2026-09-26T10:35:33.371834-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4339,7 +4339,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T10:29:33.017986-10:00 HST |
+| **Collected** | 2026-09-26T10:38:32.921167-10:00 HST |
 
 ```text
 Home
@@ -4463,15 +4463,11 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 20:21:47 UTC
+Last update Sat, 26 Sep 2026 20:38:11 UTC
 
 NHC issuing advisories for the Atlantic on
 
 TD Fay
-
-and
-
-TS Gonzalo
 
 NHC issuing advisories for the Eastern Pacific on
 
@@ -4484,6 +4480,9 @@ Hurricane Polo
 NHC issuing advisories for the Central Pacific on
 
 Hurricane Nolo
+
+Last advisory issued on
+Gonzalo
 
 Marine warnings are in effect for the Eastern Pacific
 
@@ -4773,20 +4772,21 @@ Tropical Weather Discussion
 
 1815 UTC Sat Sep 26 2026
 
-Tropical Storm Gonzalo
+Post-Tropical Cyclone Gonzalo
 
 Satellite |
 Buoys |
 Grids |
 Storm Archive
 
-...GONZALO MOVING NORTH OF THE CABO VERDE ISLANDS AND EXPECTED TO DEGENERATE INTO A REMNANT LOW BY SUNDAY...
+...GONZALO NO LONGER A TROPICAL CYCLONE...
+...THIS IS THE FINAL ADVISORY...
 
-2:00 PM CVT Sat Sep 26
+8:00 PM CVT Sat Sep 26
 
-Location: 18.8°N 23.0°W
+Location: 19.3°N 23.3°W
 
-Moving: NNW at 10 mph
+Moving: NNW at 7 mph
 
 Min pressure: 1005 mb
 
@@ -4796,17 +4796,17 @@ Public
 
 Advisory
 
-#7
+#8
 
-200 PM CVT
+800 PM CVT
 
 Forecast
 
 Advisory
 
-#7
+#8
 
-1500 UTC
+2100 UTC
 
 Forecast
 
@@ -4820,9 +4820,9 @@ Wind Speed
 
 Probabilities
 
-#7
+#8
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -4873,13 +4873,13 @@ Buoys |
 Grids |
 Storm Archive
 
-...FAY DRIFTS TOWARDS THE WEST-SOUTHWEST...
+...FAY SLOWLY MOVING SOUTHWARD...
 
-3:00 PM GMT Sat Sep 26
+9:00 PM GMT Sat Sep 26
 
-Location: 29.6°N 44.0°W
+Location: 29.8°N 43.9°W
 
-Moving: WSW at 5 mph
+Moving: S at 2 mph
 
 Min pressure: 1009 mb
 
@@ -4889,17 +4889,17 @@ Public
 
 Advisory
 
-#26
+#27
 
-300 PM GMT
+900 PM GMT
 
 Forecast
 
 Advisory
 
-#26
+#27
 
-1500 UTC
+2100 UTC
 
 Forecast
 
@@ -4979,16 +4979,16 @@ Buoys |
 Grids |
 Storm Archive
 
-...POLO STILL A POWERFUL CATEGORY 4 HURRICANE...
-...FORECAST TO MAKE LANDFALL IN BAJA CALIFORNIA SUR ON MONDAY AS A STRONG HURRICANE...
+...POLO TURNS NORTHWESTWARD AS A POWERFUL HURRICANE...
+...FORECAST TO APPROACH BAJA CALIFORNIA SUR ON MONDAY...
 
-11:00 AM MST Sat Sep 26
+2:00 PM MST Sat Sep 26
 
-Location: 18.3°N 112.2°W
+Location: 18.7°N 112.5°W
 
-Moving: WNW at 9 mph
+Moving: NW at 10 mph
 
-Min pressure: 936 mb
+Min pressure: 938 mb
 
 Max sustained: 145 mph
 
@@ -4996,33 +4996,33 @@ Public
 
 Advisory
 
-#24A
+#25
 
-1100 AM MST
+200 PM MST
 
 Forecast
 
 Advisory
 
-#24
+#25
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#24
+#25
 
-800 AM MST
+200 PM MST
 
 Wind Speed
 
 Probabilities
 
-#24
+#25
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -5082,49 +5082,49 @@ Buoys |
 Grids |
 Storm Archive
 
-...ODALYS EXPECTED TO RAPIDLY WEAKEN OVER THE OPEN EAST PACIFIC...
+...ODALYS CONTINUES TO QUICKLY WEAKEN...
 
-8:00 AM PDT Sat Sep 26
+2:00 PM PDT Sat Sep 26
 
-Location: 19.8°N 123.7°W
+Location: 20.5°N 123.6°W
 
 Moving: N at 7 mph
 
-Min pressure: 965 mb
+Min pressure: 973 mb
 
-Max sustained: 105 mph
+Max sustained: 90 mph
 
 Public
 
 Advisory
 
-#27
+#28
 
-800 AM PDT
+200 PM PDT
 
 Forecast
 
 Advisory
 
-#27
+#28
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#27
+#28
 
-800 AM PDT
+200 PM PDT
 
 Wind Speed
 
 Probabilities
 
-#27
+#28
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
