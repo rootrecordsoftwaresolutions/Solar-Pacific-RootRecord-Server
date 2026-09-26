@@ -53,6 +53,7 @@ from fetch import (
     satellite,
     text_products,
     misc,
+    gis,
 )
 from alerts import county_map, severity, dedupe
 from hurricanes.scripts import sources as hurricane_sources
@@ -86,6 +87,7 @@ FETCH_MODULES: dict[str, Callable] = {
     "maps": maps.fetch_all,
     "ndfd_gridpoint": ndfd_gridpoint.fetch_all,
     "misc": misc.fetch_all,
+    "gis": gis.fetch_all,
 }
 
 # HURRICANES_CADENCE_SECONDS: the plan (hurricanes/SKILL.md) never states
