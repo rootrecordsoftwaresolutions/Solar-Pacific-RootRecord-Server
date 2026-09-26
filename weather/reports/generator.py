@@ -5,7 +5,10 @@ under Database/WEATHER/Hawai'i/reports.
 """
 from __future__ import annotations
 
+import html
 import json
+import re
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
@@ -61,11 +64,71 @@ def _is_reportable(resource_id: str, state_url: str, path: Path) -> bool:
     return True
 
 
+class _VisibleTextParser(HTMLParser):
+    """Extract visible HTML text while preserving useful line structure."""
+
+    _BLOCK_TAGS = {
+        "address", "article", "aside", "blockquote", "br", "dd", "div", "dl",
+        "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2",
+        "h3", "h4", "h5", "h6", "header", "hr", "li", "main", "nav", "ol",
+        "p", "pre", "section", "table", "td", "th", "tr", "ul",
+    }
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "template"}:
+            self._skip_depth += 1
+            return
+        if not self._skip_depth and tag in self._BLOCK_TAGS:
+            self.parts.append("\n")
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "template"}:
+            self._skip_depth = max(0, self._skip_depth - 1)
+            return
+        if not self._skip_depth and tag in self._BLOCK_TAGS:
+            self.parts.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if not self._skip_depth:
+            self.parts.append(data)
+
+
+def _html_to_text(raw: str) -> str:
+    """Extract the actual visible NWS report from an HTML response."""
+    pre_matches = re.findall(r"<pre\\b[^>]*>(.*?)</pre\\s*>", raw, flags=re.I | re.S)
+    if pre_matches:
+        return html.unescape(re.sub(r"<[^>]+>", "", pre_matches[-1])).strip()
+
+    parser = _VisibleTextParser()
+    try:
+        parser.feed(raw)
+        parser.close()
+        text = html.unescape("".join(parser.parts))
+    except Exception:
+        text = html.unescape(re.sub(r"<[^>]+>", "", raw))
+
+    lines = [re.sub(r"[ \\t]+", " ", line).strip() for line in text.splitlines()]
+    return "\n".join(lines).strip()
+
+
 def _extract_report_text(path: Path) -> str | None:
     try:
         raw = path.read_text(encoding="utf-8", errors="replace")
     except OSError:
         return None
+
+    if not raw.strip():
+        return None
+
+    if path.suffix.lower() == ".html":
+        return _html_to_text(raw) or None
 
     if path.suffix.lower() != ".json":
         return raw.strip() or None
@@ -109,8 +172,10 @@ def _header(title: str, source_url: str, fetched_at: str | None) -> str:
     ])
 
 
-def _as_indented_text(body: str) -> str:
-    return "\n".join("    " + line if line else "    " for line in body.splitlines())
+def _as_markdown_report(body: str) -> str:
+    """Preserve fixed-width NWS formatting without Markdown mangling it."""
+    body = body.replace(fence, "[NWS-FENCE]")
+    return fence + "text\n" + body.rstrip() + "\n" + fence
 
 
 def generate(base_dir: str) -> list[Path]:
@@ -152,7 +217,7 @@ def generate(base_dir: str) -> list[Path]:
         title = _display_name(resource_id, names)
         report = (
             _header(title, state.url, state.current_fetch_timestamp_hst)
-            + _as_indented_text(body)
+            + _as_markdown_report(body)
             + "\n"
         )
         (reports_dir / "{}_current.md".format(resource_id)).write_text(report, encoding="utf-8")
