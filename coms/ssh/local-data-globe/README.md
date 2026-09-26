@@ -40,21 +40,17 @@ previous version of this collector.
 
 - `ss` (iproute2) — flow observation
 - `tcpdump` — optional, only used if running as root
-- `ssh`, and `cloudflared` at `/home/rootrecord/.local/bin/cloudflared`
-  (or update the hardcoded path in `sshArgs()`) — for the
-  `ssh.rootrecord.cloud` proxy path
+- `ssh` — plain direct SSH transport to the Mainland AWS host
 - `zip` (CLI) — used by `telegram-relay.js` to build the insurance
   packs; not an npm dependency, needs to be installed on the box
 - Node 18+ (uses built-in `fetch`, `FormData`, `Blob`, `AbortSignal.timeout`)
 
 ## AWS transport
 
-Default AWS endpoint is **`ssh.rootrecord.cloud`**, not a raw IP — the SSH
-connection is proxied through Cloudflare Access
-(`cloudflared access ssh --hostname %h`) specifically because AWS's IP is
-dynamic. Confirm `cloudflared` is actually installed and authenticated at
-`/home/rootrecord/.local/bin/cloudflared` on whatever box runs this before
-relying on it — that path is hardcoded in `sshArgs()`.
+The collector now uses plain SSH to the Mainland endpoint by default:
+`18.118.30.226:22`. No Cloudflare proxy is involved.
+
+Override with `AWS_HOST` and `AWS_PORT` if the AWS public IP changes.
 
 The default SSH key is `/home/rootrecord/.ssh/rootrecordkey.pem`. The key
 path is explicit because `start.sh` runs the collector with sudo, so the
@@ -117,3 +113,4 @@ ssh rr-aws 'chmod 0755 /home/ubuntu/network-globe/network-globe/scripts/maintain
 ```
 
 The first deployment is intentionally one-shot. The collector owns the cadence thereafter; it probes the remote feed size every 15 minutes and only interrupts its SSH stream when the 64 MiB ceiling is exceeded.
+\n## Mainland live feed\n\nHawaii only sends. It does **not** poll Mainland data. Mainland owns the live `hawaii.ndjson` file and exposes it to the Globe HTML reader as NDJSON:\n\n`http://18.118.30.226:8787/hawaii.ndjson`\n\nThe reader should poll with `?from=<byte-offset>` and continue from the `X-Next-Offset` response header. The response body remains NDJSON; no database or API transformation is required.\n
