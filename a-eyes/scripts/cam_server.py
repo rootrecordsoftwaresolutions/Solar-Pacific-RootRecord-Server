@@ -21,6 +21,7 @@ import hashlib
 import hmac
 import json
 import sys
+import threading
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -28,7 +29,7 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from grab_frame import FramesBusy, grab_jpeg, load_master_key  # noqa: E402
+from grab_frame import DB_FRAMES, FramesBusy, grab_jpeg, load_master_key  # noqa: E402
 
 HOST = "127.0.0.1"
 PORT = 8791
@@ -42,13 +43,17 @@ STILL_ROUTES = {
     "current_ch4.jpg": 4,
 }
 
+# Last successful JPEG per channel — served when RTSP/lock is busy so the
+# browser always gets image/jpeg (never JSON) for <img> tags.
+_last_jpeg: dict[int, bytes] = {}
+_last_lock = threading.Lock()
+
 
 def _password() -> str:
     return load_master_key("AEYES_PUBLIC_PASSWORD")
 
 
 def _session_token(password: str) -> str:
-    # Stable token derived from password; no server-side session store needed.
     return hmac.new(
         b"aeyes-public-v1",
         password.encode("utf-8"),
@@ -58,6 +63,18 @@ def _session_token(password: str) -> str:
 
 def _expected_token() -> str:
     return _session_token(_password())
+
+
+def _disk_latest(channel: int) -> bytes | None:
+    """Newest frame file for this channel already on disk (from grab_all)."""
+    try:
+        files = sorted(DB_FRAMES.glob(f"ch{channel}-*.jpg"), key=lambda p: p.stat().st_mtime)
+        if not files:
+            return None
+        data = files[-1].read_bytes()
+        return data if len(data) > 500 else None
+    except OSError:
+        return None
 
 
 LOGIN_HTML = """<!DOCTYPE html>
@@ -112,8 +129,10 @@ LIVE_HTML = """<!DOCTYPE html>
   @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
   .cell { background: #141a22; border: 1px solid #243041; border-radius: 10px; overflow: hidden; }
   .label { padding: 0.4rem 0.65rem; font-size: 0.8rem; color: #8b9bb0;
-           border-bottom: 1px solid #1c2533; }
-  .cell img { display: block; width: 100%; height: auto; background: #000; min-height: 120px; }
+           border-bottom: 1px solid #1c2533; display: flex; justify-content: space-between; }
+  .label .st { font-size: 0.75rem; opacity: 0.7; }
+  .cell img { display: block; width: 100%; height: auto; background: #000; min-height: 140px;
+              object-fit: contain; }
 </style>
 </head>
 <body>
@@ -122,23 +141,39 @@ LIVE_HTML = """<!DOCTYPE html>
     <a href="/aeyes/logout">Log out</a>
   </header>
   <div class="grid">
-    <div class="cell"><div class="label">Channel 1</div><img id="c1" alt="ch1"/></div>
-    <div class="cell"><div class="label">Channel 2</div><img id="c2" alt="ch2"/></div>
-    <div class="cell"><div class="label">Channel 3</div><img id="c3" alt="ch3"/></div>
-    <div class="cell"><div class="label">Channel 4</div><img id="c4" alt="ch4"/></div>
+    <div class="cell"><div class="label"><span>Channel 1</span><span class="st" id="s1"></span></div><img id="c1" alt="ch1"/></div>
+    <div class="cell"><div class="label"><span>Channel 2</span><span class="st" id="s2"></span></div><img id="c2" alt="ch2"/></div>
+    <div class="cell"><div class="label"><span>Channel 3</span><span class="st" id="s3"></span></div><img id="c3" alt="ch3"/></div>
+    <div class="cell"><div class="label"><span>Channel 4</span><span class="st" id="s4"></span></div><img id="c4" alt="ch4"/></div>
   </div>
 <script>
 (function () {
+  // One channel at a time — RTSP grabs take 1–5s each; firing all four every
+  // 2s starved the frames lock and returned 503 JSON into <img> tags.
   const ids = [1, 2, 3, 4];
-  function tick() {
-    const t = Date.now();
-    ids.forEach(function (n) {
-      var el = document.getElementById('c' + n);
-      if (el) el.src = '/aeyes/live/ch' + n + '.jpg?t=' + t;
-    });
+  let i = 0;
+  function loadOne(n) {
+    var el = document.getElementById('c' + n);
+    var st = document.getElementById('s' + n);
+    if (!el) return;
+    if (st) st.textContent = '…';
+    var img = new Image();
+    img.onload = function () {
+      el.src = img.src;
+      if (st) st.textContent = new Date().toLocaleTimeString();
+    };
+    img.onerror = function () {
+      if (st) st.textContent = 'retry';
+    };
+    img.src = '/aeyes/live/ch' + n + '.jpg?t=' + Date.now();
   }
-  tick();
-  setInterval(tick, 2000);
+  function tick() {
+    loadOne(ids[i % ids.length]);
+    i += 1;
+  }
+  // Initial pass: stagger so all four fill within ~6s without overlapping.
+  ids.forEach(function (n, idx) { setTimeout(function () { loadOne(n); }, idx * 1500); });
+  setInterval(tick, 4000);
 })();
 </script>
 </body>
@@ -147,7 +182,7 @@ LIVE_HTML = """<!DOCTYPE html>
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "AEyesCamServer/2.0"
+    server_version = "AEyesCamServer/2.1"
 
     def log_message(self, fmt: str, *args) -> None:
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
@@ -172,6 +207,14 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_header(k, v)
         self.end_headers()
         self.wfile.write(raw)
+
+    def _jpeg(self, data: bytes) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", "image/jpeg")
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(data)
 
     def _cookies(self) -> SimpleCookie:
         c = SimpleCookie()
@@ -198,10 +241,9 @@ class Handler(BaseHTTPRequestHandler):
             self._json(200, {"ok": True, "service": "a-eyes-cam-server"})
             return
 
-        # Legacy still routes (local only / optional auth not required on LAN)
         name = path.lstrip("/")
         if name in STILL_ROUTES:
-            self._still(STILL_ROUTES[name])
+            self._still(STILL_ROUTES[name], require_auth=False)
             return
 
         if path in ("/aeyes",):
@@ -234,7 +276,7 @@ class Handler(BaseHTTPRequestHandler):
             if ch not in (1, 2, 3, 4):
                 self._json(404, {"ok": False, "error": "not_found"})
                 return
-            self._still(ch)
+            self._still(ch, require_auth=False)  # already checked
             return
 
         self._json(404, {"ok": False, "error": "not_found"})
@@ -283,20 +325,57 @@ class Handler(BaseHTTPRequestHandler):
             ],
         )
 
-    def _still(self, channel: int) -> None:
+    def _still(self, channel: int, *, require_auth: bool = False) -> None:
+        if require_auth and not self._authed():
+            self._json(401, {"ok": False, "error": "unauthorized"})
+            return
+
+        data: bytes | None = None
         try:
             path = grab_jpeg(channel=channel)
             data = path.read_bytes()
-            self.send_response(200)
-            self.send_header("Content-Type", "image/jpeg")
-            self.send_header("Content-Length", str(len(data)))
-            self.send_header("Cache-Control", "no-store")
-            self.end_headers()
-            self.wfile.write(data)
+            if data and len(data) > 500:
+                with _last_lock:
+                    _last_jpeg[channel] = data
         except FramesBusy:
-            self._json(503, {"ok": False, "error": f"Ch{channel} busy — try again"})
-        except Exception as e:
-            self._json(503, {"ok": False, "error": f"Ch{channel} failed: {str(e)[:250]}"})
+            data = None
+        except Exception:
+            data = None
+
+        if not data:
+            with _last_lock:
+                data = _last_jpeg.get(channel)
+        if not data:
+            data = _disk_latest(channel)
+            if data:
+                with _last_lock:
+                    _last_jpeg[channel] = data
+
+        if data:
+            self._jpeg(data)
+            return
+
+        # Nothing to show yet — still return a tiny valid JPEG-ish failure as JSON
+        # only for non-img clients; for live UI we prefer empty 1x1 so <img> doesn't
+        # spam broken-icon. Use a minimal 1x1 black JPEG.
+        # 1x1 black JPEG:
+        tiny = bytes([
+            0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10, 0x4A, 0x46, 0x49, 0x46, 0x00, 0x01,
+            0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, 0xFF, 0xDB, 0x00, 0x43,
+            0x00, 0x08, 0x06, 0x06, 0x07, 0x06, 0x05, 0x08, 0x07, 0x07, 0x07, 0x09,
+            0x09, 0x08, 0x0A, 0x0C, 0x14, 0x0D, 0x0C, 0x0B, 0x0B, 0x0C, 0x19, 0x12,
+            0x13, 0x0F, 0x14, 0x1D, 0x1A, 0x1F, 0x1E, 0x1D, 0x1A, 0x1C, 0x1C, 0x20,
+            0x24, 0x2E, 0x27, 0x20, 0x22, 0x2C, 0x23, 0x1C, 0x1C, 0x28, 0x37, 0x29,
+            0x2C, 0x30, 0x31, 0x34, 0x34, 0x34, 0x1F, 0x27, 0x39, 0x3D, 0x38, 0x32,
+            0x3C, 0x2E, 0x33, 0x34, 0x32, 0xFF, 0xC0, 0x00, 0x0B, 0x08, 0x00, 0x01,
+            0x00, 0x01, 0x01, 0x01, 0x11, 0x00, 0xFF, 0xC4, 0x00, 0x14, 0x00, 0x01,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x08, 0xFF, 0xC4, 0x00, 0x14, 0x10, 0x01, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0xFF, 0xDA, 0x00, 0x08, 0x01, 0x01, 0x00, 0x00, 0x3F, 0x00,
+            0x7F, 0xFF, 0xD9,
+        ])
+        self._jpeg(tiny)
 
 
 def main() -> None:
