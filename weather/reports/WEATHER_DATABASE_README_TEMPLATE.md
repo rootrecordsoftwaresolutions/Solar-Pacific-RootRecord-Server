@@ -4,9 +4,7 @@
 
 ## 🛰️ Live GOES-18 Hawaii GeoColor
 
-![GOES-18 Hawaii GeoColor](https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/Hawai%27i/hfo/cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif)
-
-This banner is the current locally collected **GOES-18 Hawaii — GeoColor** product. The image is updated through the existing weather-data synchronization pipeline.
+![GOES-18 Hawaii GeoColor]({{README_BANNER_URL}})
 
 ## 🌐 What This Is
 
