@@ -39,11 +39,11 @@ Raw collected source data remains the authoritative record. Generated reports ar
 
 | Location | Conditions | Temp | Dew point | RH | Wind | Pressure |
 |---|---|---:|---:|---:|---|---:|
-| Honolulu | Partly cloudy | 80°F | 68°F | 66% | Northeast 21 gusts to 31 | 29.87R |
-| Lihue | Light rain | 78°F | 71°F | 79% | Northeast 22 gusts to 33 | 29.91F |
-| Kahului | Mostly cloudy | 78°F | 70°F | 76% | Northeast 18 gusts to 37 | 29.83S |
-| Hilo | Light rain | 76°F | 73°F | 91% | East 10 | 29.87S |
-| Kona | Cloudy | 81°F | 77°F | 88% | Southeast 7 | 29.74R |
+| Honolulu | Partly sunny | 86°F | 68°F | 54% | East 25 gusts to 35 | 29.92S |
+| Lihue | Light rain | 82°F | 72°F | 71% | Northeast 23 gusts to 33 | 29.98S |
+| Kahului | Partly sunny | 83°F | 72°F | 69% | Northeast 26 gusts to 40 | 29.89F |
+| Hilo | Cloudy | 80°F | 72°F | 76% | East 8 gusts to 20 | 29.93S |
+| Kona | Partly sunny | 87°F | 76°F | 69% | Northwest 7 | 29.79R |
 
 _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °F._
 
@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T11:29:33-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T11:37:33-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3150,7 +3150,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-26T11:13:48.658622-10:00 HST |
+| **Collected** | 2026-09-26T11:31:21.525441-10:00 HST |
 
 ```text
 335
@@ -3423,7 +3423,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T11:22:53.628774-10:00 HST |
+| **Collected** | 2026-09-26T11:31:23.919492-10:00 HST |
 
 ```text
                         
@@ -3618,7 +3618,7 @@ TO 11N BETWEEN 160W AND 178W.
 |---|---|
 | **Resource ID** | oso_hourly_obs |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OSO&issuedby=HFO |
-| **Collected** | 2026-09-26T05:11:13.226316-10:00 HST |
+| **Collected** | 2026-09-26T11:32:51.545003-10:00 HST |
 
 ```text
 583
@@ -8216,7 +8216,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-26T11:13:33.703732-10:00 HST |
+| **Collected** | 2026-09-26T11:30:51.552857-10:00 HST |
 
 ```text
 National Weather Service
@@ -8265,9 +8265,9 @@ INFORMATION
 
 Wireless Emergency Alerts
 
-Weather-Ready Nation
-
 Brochures
+
+Weather-Ready Nation
 
 Cooperative Observers
 
