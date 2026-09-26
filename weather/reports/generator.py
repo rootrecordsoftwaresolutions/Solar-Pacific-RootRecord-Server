@@ -27,7 +27,17 @@ REPORTING_README = Path(__file__).resolve().parent / "README.md"
 DATABASE_README_TEMPLATE = Path(__file__).resolve().parent / "WEATHER_DATABASE_README_TEMPLATE.md"
 AGGREGATE_FILENAME = "Hawaii_State_Weather_Report_current.md"
 _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhistory_")
-_EXCLUDED_IDS = {"rain_summary_graphical"}
+_EXCLUDED_IDS = {
+    "rain_summary_graphical",
+    "nhc_source_index",
+    "noaa_solar_calculation_table",
+    "nws_cwa_boundaries_catalog",
+    "nws_fire_zones_catalog",
+    "nws_marine_zones_catalog",
+    "nws_public_counties_catalog",
+    "nws_public_zones_catalog",
+    "nws_zone_county_catalog",
+}
 
 
 def _load_resource_names() -> dict[str, str]:
