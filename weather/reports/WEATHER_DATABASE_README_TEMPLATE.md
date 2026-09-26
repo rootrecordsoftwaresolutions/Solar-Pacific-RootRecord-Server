@@ -4,11 +4,7 @@
 
 ## 🛰️ Live GOES-18 Hawaii GeoColor
 
-<p align="center">
-  <img src="{{README_BANNER_URL}}" width="1122" height="359" alt="GOES-18 Hawaii GeoColor" />
-</p>
-
-<p align="center"><em>Processed GOES-18 Hawaii — GeoColor (presentation copy; raw source is never modified).</em></p>
+<img src="{{README_BANNER_URL}}" width="100%" alt="GOES-18 Hawaii GeoColor" />
 
 ## 🌐 What This Is
 

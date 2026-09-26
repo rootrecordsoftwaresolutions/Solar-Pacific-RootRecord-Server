@@ -18,10 +18,11 @@ SOURCE_RELATIVE = Path(
 )
 OUTPUT_RELATIVE = Path("reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif")
 
-# Horizontal band through the Hawaiian Islands from the 600x600 HI sector.
-# Excludes the bottom NESDIS label strip. Aspect matches the locked target.
-CROP_BOX = (0, 145, 600, 337)  # 600 x 192
-# Locked README presentation size (wide, short — does not dominate the page).
+# Full-width horizontal band through the Hawaiian Islands (600x600 HI sector).
+# Shifted down ~50% from the previous crop so the Big Island is fully visible.
+# Excludes the bottom NESDIS label strip. X spans edge-to-edge (0..600).
+CROP_BOX = (0, 241, 600, 433)  # 600 x 192
+# Locked presentation size (wide, short). Displayed at 100% width in README.
 TARGET_SIZE = (1122, 359)
 EXPECTED_SOURCE_SIZE = (600, 600)
 

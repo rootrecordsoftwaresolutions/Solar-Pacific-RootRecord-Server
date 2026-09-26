@@ -40,7 +40,7 @@ def test_banner_is_locked_size_and_preserves_animation():
             assert original.size == (600, 600)
             assert banner.size == TARGET_SIZE
             assert TARGET_SIZE == (1122, 359)
-            assert CROP_BOX == (0, 145, 600, 337)
+            assert CROP_BOX == (0, 241, 600, 433)
             assert getattr(banner, "n_frames", 1) == 3
             assert banner.info.get("loop") == 0
 
