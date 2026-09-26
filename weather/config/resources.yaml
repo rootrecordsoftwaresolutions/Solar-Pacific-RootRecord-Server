@@ -240,54 +240,6 @@ satellite:
     method: image
     url: "https://www.weather.gov/images/hfo/satellite/Hawaii_IR_loop.gif"
 
-  - id: state_vis_latest
-    name: "State of Hawaii — Visible (latest frame)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/State_VIS.gif"
-
-  - id: state_vis_loop
-    name: "State of Hawaii — Visible (loop)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/State_VIS_loop.gif"
-
-  - id: kauai_vis_latest
-    name: "Kauai — Visible (latest frame)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Kauai_VIS.gif"
-
-  - id: kauai_vis_loop
-    name: "Kauai — Visible (loop)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Kauai_VIS_loop.gif"
-
-  - id: oahu_maui_vis_latest
-    name: "Oahu–Maui — Visible (latest frame)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Oahu-Maui_VIS.gif"
-
-  - id: oahu_maui_vis_loop
-    name: "Oahu–Maui — Visible (loop)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Oahu-Maui_VIS_loop.gif"
-
-  - id: hawaii_vis_latest
-    name: "Big Island — Visible (latest frame)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Hawaii_VIS.gif"
-
-  - id: hawaii_vis_loop
-    name: "Big Island — Visible (loop)"
-    tier: 2
-    method: image
-    url: "https://www.weather.gov/images/hfo/satellite/Hawaii_VIS_loop.gif"
-
   - id: goes18_hi_geocolor
     name: "GOES-18 Hawaii sector, GeoColor (full-res, NESDIS)"
     tier: 2
