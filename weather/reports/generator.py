@@ -18,6 +18,8 @@ from core import hst_time
 from core.manifest import Manifest
 
 REPORTS_DIRNAME = "reports"
+LEVEL0_DIRNAME = "0 Level Processing"
+ARCHIVE_DIRNAME = "archived"
 AGGREGATE_FILENAME = "Hawaii_State_Weather_Report_current.md"
 _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhistory_")
 _EXCLUDED_IDS = {"rain_summary_graphical"}
@@ -157,7 +159,7 @@ def _extract_report_text(path: Path) -> str | None:
     return find_product_text(obj)
 
 
-def _header(title: str, source_url: str, fetched_at: str | None) -> str:
+def _header(title: str, source_url: str, fetched_at: str | None, created_at: str) -> str:
     return "\n".join([
         "# {}".format(title),
         "",
@@ -165,6 +167,7 @@ def _header(title: str, source_url: str, fetched_at: str | None) -> str:
         "",
         "- **Source:** {}".format(source_url),
         "- **Collected:** {} HST".format(fetched_at or "Unknown"),
+        "- **Report created:** {} HST".format(created_at),
         "- **Raw source:** retained separately in the weather data tree.",
         "",
         "---",
@@ -179,10 +182,55 @@ def _as_markdown_report(body: str) -> str:
     return fence + "text\n" + body.rstrip() + "\n" + fence
 
 
+def _existing_created_at(path: Path) -> str | None:
+    """Read the report creation timestamp before it is replaced."""
+    try:
+        raw = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return None
+    match = re.search(r"^- \\*\\*Report created:\\*\\* (.+?) HST$", raw, flags=re.M)
+    return match.group(1).strip() if match else None
+
+
+def _archive_current(current_path: Path, archive_dir: Path, fallback_created_at: str) -> None:
+    """Archive an existing current report using its original creation timestamp."""
+    if not current_path.is_file():
+        return
+    created_at = _existing_created_at(current_path) or fallback_created_at
+    safe_timestamp = re.sub(r"[^0-9A-Za-z:+-]", "-", created_at).strip("-")
+    stem = current_path.name.removesuffix("_current.md")
+    archive_path = archive_dir / (stem + "_" + safe_timestamp + ".md")
+    if archive_path.exists():
+        index = 2
+        while True:
+            candidate = archive_dir / (stem + "_" + safe_timestamp + "_" + str(index) + ".md")
+            if not candidate.exists():
+                archive_path = candidate
+                break
+            index += 1
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    current_path.replace(archive_path)
+
+
+def _write_current(current_path: Path, content: str, archive_dir: Path, created_at: str) -> None:
+    """Write current, archiving the previous version only when content changed."""
+    if current_path.is_file():
+        try:
+            if current_path.read_text(encoding="utf-8", errors="replace") == content:
+                return
+        except OSError:
+            pass
+        _archive_current(current_path, archive_dir, created_at)
+    current_path.parent.mkdir(parents=True, exist_ok=True)
+    current_path.write_text(content, encoding="utf-8")
+
+
 def generate(base_dir: str) -> list[Path]:
-    """Generate per-product Markdown reports and one statewide aggregate."""
+    """Generate level-0 per-product Markdown reports and one statewide aggregate."""
     base = Path(base_dir)
-    reports_dir = base.parent / REPORTS_DIRNAME
+    reports_root = base.parent / REPORTS_DIRNAME
+    reports_dir = reports_root / LEVEL0_DIRNAME
+    archive_dir = reports_dir / ARCHIVE_DIRNAME
     reports_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = Manifest(base_dir).load()
@@ -197,6 +245,7 @@ def generate(base_dir: str) -> list[Path]:
         if old.name not in expected:
             old.unlink()
     sections: list[tuple[str, str, str, str | None, str]] = []
+    now = hst_time.hst_now().isoformat(timespec="seconds")
 
     for resource_id, state in manifest.all_states().items():
         local_dir = base / state.local_resource_dir
@@ -216,23 +265,26 @@ def generate(base_dir: str) -> list[Path]:
             continue
 
         title = _display_name(resource_id, names)
+        current_path = reports_dir / "{}_current.md".format(resource_id)
+        created_at = _existing_created_at(current_path) or now
         report = (
-            _header(title, state.url, state.current_fetch_timestamp_hst)
+            _header(title, state.url, state.current_fetch_timestamp_hst, created_at)
             + _as_markdown_report(body)
             + "\n"
         )
-        (reports_dir / "{}_current.md".format(resource_id)).write_text(report, encoding="utf-8")
+        _write_current(current_path, report, archive_dir, now)
         sections.append((resource_id, title, state.url, state.current_fetch_timestamp_hst, body))
 
     sections.sort(key=lambda item: (item[1].lower(), item[0].lower()))
 
-    now = hst_time.hst_now().isoformat(timespec="seconds")
+    aggregate_created_at = _existing_created_at(reports_dir / AGGREGATE_FILENAME) or now
     aggregate: list[str] = [
         "# Hawaii State Weather Report",
         "",
         "> **Official NWS Hawaii/HFO statewide collection — generated automatically from locally collected current reports.**",
         "",
         "- **Generated:** {} HST".format(now),
+        "- **Report created:** {} HST".format(aggregate_created_at),
         "- **Current report sections:** {}".format(len(sections)),
         "- **Raw source data:** retained separately; this document is derived and may be regenerated at any time.",
         "",
@@ -255,5 +307,5 @@ def generate(base_dir: str) -> list[Path]:
         ])
 
     aggregate_path = reports_dir / AGGREGATE_FILENAME
-    aggregate_path.write_text("\n".join(aggregate), encoding="utf-8")
+    _write_current(aggregate_path, "\n".join(aggregate), archive_dir, now)
     return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path]
