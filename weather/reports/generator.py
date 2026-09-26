@@ -21,6 +21,7 @@ REPORTS_DIRNAME = "reports"
 LEVEL0_DIRNAME = "0 Level Processing"
 ARCHIVE_DIRNAME = "archived"
 REPORTING_README = Path(__file__).resolve().parent / "README.md"
+DATABASE_README_TEMPLATE = Path(__file__).resolve().parent / "WEATHER_DATABASE_README_TEMPLATE.md"
 AGGREGATE_FILENAME = "Hawaii_State_Weather_Report_current.md"
 _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhistory_")
 _EXCLUDED_IDS = {"rain_summary_graphical"}
@@ -366,4 +367,19 @@ def generate(base_dir: str) -> list[Path]:
     if "{{LIVE_REPORT}}" in readme_content:
         raise RuntimeError("README template placeholder was not rendered")
     REPORTING_README.write_text(readme_content.rstrip() + "\n", encoding="utf-8")
-    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README]
+
+    # The data/media repository has its own root README. Keep it synchronized
+    # with the same live statewide report while preserving the repository's
+    # source/data documentation separately from the code repository README.
+    database_root = base.parent.parent
+    database_readme = database_root / "README.md"
+    if DATABASE_README_TEMPLATE.is_file():
+        database_template = DATABASE_README_TEMPLATE.read_text(encoding="utf-8")
+    else:
+        database_template = "# 🌺 RootRecord Weather Database\n\n{{LIVE_REPORT}}\n"
+    database_readme_content = database_template.replace("{{LIVE_REPORT}}", live_report)
+    if "{{LIVE_REPORT}}" in database_readme_content:
+        raise RuntimeError("weather database README template placeholder was not rendered")
+    database_readme.write_text(database_readme_content.rstrip() + "\n", encoding="utf-8")
+
+    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README, database_readme]
