@@ -59,6 +59,7 @@ from alerts import county_map, severity, dedupe
 from hurricanes.scripts import sources as hurricane_sources
 from reports import generator as weather_reports
 from reports import county_generator as county_reports
+from reports import official_generator as official_reports
 
 
 def _log(msg: str) -> None:
@@ -254,6 +255,8 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
     aggregate_path = reports_dir / weather_reports.AGGREGATE_FILENAME
     county_root = reports_root / county_reports.LEVEL1_DIRNAME
     county_missing = not county_root.is_dir() or not any(county_root.glob("*_County_Weather_Report_current.md"))
+    official_root = reports_root / official_reports.OFFICIAL
+    official_missing = not official_root.is_dir() or not any(official_root.glob("*/*_current.md"))
     if data_changed or not aggregate_path.is_file():
         try:
             weather_reports.generate(base_dir)
@@ -267,6 +270,12 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
             _log("reports: regenerated Level 1 county Markdown reports")
         except Exception:
             _log(f"county reports ERROR\n{traceback.format_exc()}")
+    if data_changed or official_missing:
+        try:
+            official_reports.generate(base_dir)
+            _log("reports: updated source-isolated official report mirrors")
+        except Exception:
+            _log(f"official reports ERROR\n{traceback.format_exc()}")
 
     try:
         _check_midnight_rollover(state, base_dir)
