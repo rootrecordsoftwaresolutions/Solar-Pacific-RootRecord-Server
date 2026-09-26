@@ -71,8 +71,12 @@ SECONDS_PER_HOUR_CHUNK = TARGET_TOTAL_SECONDS / WINDOW_HOURS       # 10.58s
 
 
 def log(msg: str) -> None:
-    ts = datetime.now().strftime("%H:%M:%S")
+    ts = datetime.now(LOCAL_TZ).strftime("%H:%M:%S")
     print(f"  {ts}  \U0001F3AC  a-eyes-timelapse  {msg}", flush=True)
+
+
+def _now_local() -> datetime:
+    return datetime.now(LOCAL_TZ)
 
 
 def _frame_local_dt(p: Path) -> datetime | None:
@@ -98,6 +102,15 @@ def _hour_frames(date_str: str, hour: int) -> list[Path]:
             out.append((local_dt, p))
     out.sort(key=lambda t: t[0])
     return [p for _, p in out]
+
+
+def _run_ffmpeg(cmd: list[str], *, timeout: int = 900) -> tuple[int, str]:
+    """Run ffmpeg; return (returncode, short error text)."""
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    err = (r.stderr or r.stdout or "").strip()
+    if r.returncode != 0 and not err:
+        err = "ffmpeg failed with no stderr (exit {})".format(r.returncode)
+    return r.returncode, err[:500]
 
 
 def compile_hour(date_str: str, hour: int, *, force: bool = False) -> Path | None:
@@ -149,11 +162,10 @@ def compile_hour(date_str: str, hour: int, *, force: bool = False) -> Path | Non
         "-r", str(MASTER_FPS),
         str(tmp_out),
     ]
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+    code, err = _run_ffmpeg(cmd, timeout=600)
     concat_list.unlink(missing_ok=True)
-    if r.returncode != 0 or not tmp_out.is_file():
-        err = (r.stderr or r.stdout or "ffmpeg failed").strip()[:300]
-        log(f"hour {hour:02d} FAILED: {err}")
+    if code != 0 or not tmp_out.is_file():
+        log(f"hour {hour:02d} FAILED: {err or 'ffmpeg failed'}")
         tmp_out.unlink(missing_ok=True)
         return None
     tmp_out.replace(out_path)
@@ -192,6 +204,52 @@ def _retire_frames(date_str: str, hour: int, frames: list[Path]) -> None:
         log(f"hour {hour:02d} frames wiped ({len(frames)} files)")
 
 
+def _export_web_gif(master: Path, gif: Path) -> bool:
+    """Export optimized_web_timelapse.gif via a two-pass palette (more reliable).
+
+    Single-graph palettegen|paletteuse with semicolons is correct in a Python
+    argv list, but fails if someone pastes the same string unquoted in a shell
+    (bash treats `;` as a command separator). Two discrete ffmpeg passes avoid
+    that class of failure and give clearer errors.
+    """
+    tmp_gif = gif.with_suffix(".tmp.gif")
+    palette = FINAL_OUTPUT / ".palette.png"
+    tmp_gif.unlink(missing_ok=True)
+    palette.unlink(missing_ok=True)
+
+    # Pass 1: build palette from the scaled/fps-normalized stream.
+    gen_cmd = [
+        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+        "-i", str(master),
+        "-vf", f"fps={GIF_FPS},scale={GIF_WIDTH}:-1:flags=lanczos,palettegen=stats_mode=full",
+        str(palette),
+    ]
+    code, err = _run_ffmpeg(gen_cmd, timeout=900)
+    if code != 0 or not palette.is_file():
+        log(f"gif palettegen FAILED: {err or 'no palette written'}")
+        palette.unlink(missing_ok=True)
+        return False
+
+    # Pass 2: apply palette.
+    use_cmd = [
+        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+        "-i", str(master),
+        "-i", str(palette),
+        "-lavfi", f"fps={GIF_FPS},scale={GIF_WIDTH}:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=5",
+        "-loop", "0",
+        str(tmp_gif),
+    ]
+    code, err = _run_ffmpeg(use_cmd, timeout=900)
+    palette.unlink(missing_ok=True)
+    if code != 0 or not tmp_gif.is_file():
+        log(f"gif paletteuse FAILED: {err or 'no gif written'}")
+        tmp_gif.unlink(missing_ok=True)
+        return False
+
+    tmp_gif.replace(gif)
+    return True
+
+
 def daily_render(date_str: str, *, force: bool = False) -> Path | None:
     """Stitch all of a day's hour_HH.mp4 chunks into the master + GIF."""
     FINAL_OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -218,33 +276,19 @@ def daily_render(date_str: str, *, force: bool = False) -> Path | None:
         "-c", "copy",
         str(tmp_master),
     ]
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+    code, err = _run_ffmpeg(cmd, timeout=600)
     concat_list.unlink(missing_ok=True)
-    if r.returncode != 0 or not tmp_master.is_file():
-        err = (r.stderr or r.stdout or "ffmpeg failed").strip()[:300]
-        log(f"daily render FAILED (master): {err}")
+    if code != 0 or not tmp_master.is_file():
+        log(f"daily render FAILED (master): {err or 'ffmpeg failed'}")
         tmp_master.unlink(missing_ok=True)
         return None
     tmp_master.replace(master)
     log(f"master \u2192 {master.name}  ({len(chunks)} hourly chunks)")
 
-    tmp_gif = gif.with_suffix(".tmp.gif")
-    palette_cmd = [
-        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-        "-i", str(master),
-        "-vf",
-        f"fps={GIF_FPS},scale={GIF_WIDTH}:-1:flags=lanczos,split[s0][s1];"
-        f"[s0]palettegen[p];[s1][p]paletteuse",
-        str(tmp_gif),
-    ]
-    r = subprocess.run(palette_cmd, capture_output=True, text=True, timeout=600)
-    if r.returncode != 0 or not tmp_gif.is_file():
-        err = (r.stderr or r.stdout or "ffmpeg failed").strip()[:300]
-        log(f"daily render FAILED (gif): {err}")
-        tmp_gif.unlink(missing_ok=True)
-        return master
-    tmp_gif.replace(gif)
-    log(f"gif \u2192 {gif.name}")
+    if _export_web_gif(master, gif):
+        log(f"gif \u2192 {gif.name}")
+    else:
+        log("daily render: master OK, GIF export failed (master kept)")
     return master
 
 
@@ -253,9 +297,9 @@ def catchup() -> None:
     a chunk, and run the daily render if the window has already closed and
     it hasn't run yet. Safe to call any time — every step is a no-op if
     already done."""
-    now = datetime.now()
+    now = _now_local()
     date_str = now.strftime("%Y%m%d")
-    log(f"catchup: checking {date_str}, now={now.strftime('%H:%M')}")
+    log(f"catchup: checking {date_str}, now={now.strftime('%H:%M')} HST")
 
     last_completed_hour = min(now.hour, WINDOW_END_HOUR) - 1
     for hour in range(WINDOW_START_HOUR, last_completed_hour + 1):
@@ -285,7 +329,7 @@ def cli() -> None:
     sub.add_parser("catchup", help="boot-time: do whatever was missed")
 
     args = ap.parse_args()
-    now = datetime.now()
+    now = _now_local()
 
     if args.cmd == "hourly":
         date_str = args.date or now.strftime("%Y%m%d")
