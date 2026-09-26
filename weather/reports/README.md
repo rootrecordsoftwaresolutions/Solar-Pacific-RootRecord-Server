@@ -39,11 +39,11 @@ Raw collected source data remains the authoritative record. Generated reports ar
 
 | Location | Conditions | Temp | Dew point | RH | Wind | Pressure |
 |---|---|---:|---:|---:|---|---:|
-| Honolulu | Partly cloudy | 80°F | 67°F | 64% | Northeast 22 gusts to 32 | 29.86S |
-| Lihue | Light rain | 79°F | 72°F | 79% | Northeast 22 gusts to 30 | 29.92S |
-| Kahului | Mostly cloudy | 79°F | 70°F | 74% | Northeast 20 gusts to 33 | 29.83F |
-| Hilo | Light rain | 75°F | 73°F | 93% | East 9 | 29.87S |
-| Kona | Cloudy | 82°F | 77°F | 84% | South 10 | 29.74R |
+| Honolulu | Partly cloudy | 80°F | 68°F | 66% | Northeast 21 gusts to 31 | 29.87R |
+| Lihue | Light rain | 78°F | 71°F | 79% | Northeast 22 gusts to 33 | 29.91F |
+| Kahului | Mostly cloudy | 78°F | 70°F | 76% | Northeast 18 gusts to 37 | 29.83S |
+| Hilo | Light rain | 76°F | 73°F | 91% | East 10 | 29.87S |
+| Kona | Cloudy | 81°F | 77°F | 88% | Southeast 7 | 29.74R |
 
 _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °F._
 
@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T05:15:57-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T05:32:58-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3181,7 +3181,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-26T05:09:27.995098-10:00 HST |
+| **Collected** | 2026-09-26T05:26:28.483171-10:00 HST |
 
 ```text
 087
@@ -3454,7 +3454,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T05:09:30.313437-10:00 HST |
+| **Collected** | 2026-09-26T05:26:30.764377-10:00 HST |
 
 ```text
                         
@@ -4347,7 +4347,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T05:15:30.963290-10:00 HST |
+| **Collected** | 2026-09-26T05:32:31.484940-10:00 HST |
 
 ```text
 Home
@@ -4471,7 +4471,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 15:10:11 UTC
+Last update Sat, 26 Sep 2026 15:30:07 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -4700,7 +4700,7 @@ NWS Local
 
 Products
 
-459 AM HST
+516 AM HST
 
 Productos en español:
 
@@ -7938,16 +7938,16 @@ Global Monitoring Laboratory
 |---|---|
 | **Resource ID** | off_offshore_forecast |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OFF&issuedby=HFO |
-| **Collected** | 2026-09-25T23:16:41.129828-10:00 HST |
+| **Collected** | 2026-09-26T05:23:58.979026-10:00 HST |
 
 ```text
-442
-FZHW60 PHFO 260909
+001
+FZHW60 PHFO 261518
 OFFHFO
 
 Offshore Waters Forecast for Hawaii
 National Weather Service Honolulu HI
-1109 PM HST Fri Sep 25 2026
+518 AM HST Sat Sep 26 2026
 
 Hawaiian offshore waters beyond 40 nautical miles out to 240
 nautical miles including the portion of the Papahanaumokuakea
@@ -7957,49 +7957,46 @@ Seas given as significant wave height, which is the average height
 of the highest 1/3 of the waves. Individual waves may be more than
 twice the significant wave height.
 
-PHZ105-261630-
-1109 PM HST Fri Sep 25 2026
+PHZ105-262230-
+518 AM HST Sat Sep 26 2026
 
 .Synopsis for the Hawaiian offshore waters...
 Strong winds and hazardous seas will accompany Hurricane Nolo as
 it advances west across area waters through this weekend, then
-turns northwest early next week and weakens to a tropical storm by
-Wednesday.
+turns northwest early next week and weakens to a tropical storm
+by Wednesday.
 
-AT 1100 PM HST HURRICANE NOLO WAS CENTERED AT 16.9N
-155.3W...NEARLY STATIONARY
+AT 500 AM HST HURRICANE NOLO WAS CENTERED AT 16.9N 155.5W...NEARLY
+STATIONARY
 
 NOLO FORECAST POSITIONS
-800 AM HST SATURDAY 17.0N 155.7W
-800 PM HST SATURDAY 16.8N 156.9W
-800 AM HST SUNDAY 16.8N 158.7W
-800 PM HST SUNDAY 17.2N 160.6W
-800 AM HST MONDAY 18.4N 162.3W
-800 PM HST MONDAY 20.1N 163.4W
-800 PM HST TUESDAY 22.9N 165.0W
-800 PM HST MONDAY 23.3N 167.2W
-800 PM HST TUESDAY 23.5N 170.0W
-800 PM HST WEDNESDAY 23.5N 173.0W
+200 PM HST SATURDAY 16.9N 156.2W
+200 AM HST SUNDAY 16.8N 157.8W
+200 PM HST SUNDAY 16.8N 159.7W
+200 AM HST MONDAY 17.7N 161.5W
+200 PM HST MONDAY 19.3N 163.0W
+200 AM HST TUESDAY 21.0N 163.9W
+200 AM HST WEDNESDAY 23.3N 165.3W
+200 AM HST TUESDAY 23.5N 168.0W
+200 AM HST WEDNESDAY 23.0N 170.5W
+200 AM HST THURSDAY 22.5N 173.0W
 
-PHZ180-261630-
+PHZ180-262230-
 Hawaiian Offshore Waters-
-1109 PM HST Fri Sep 25 2026
+518 AM HST Sat Sep 26 2026
 
 ...HURRICANE WARNING IN EFFECT...
 
-.REST OF TONIGHT...Hurricane conditions expected S of 19N.
-Elsewhere, NE to E winds 15 to 25 kt. Seas 9 to 16 ft. Isolated
-thunderstorms S of 19N.
-.SATURDAY...Hurricane conditions expected S of 19N. Elsewhere, NE
+.TODAY...Hurricane conditions expected S of 19N. Elsewhere, NE
 to E winds 20 to 30 kt. Seas 9 to 15 ft. Isolated thunderstorms
 S of 19N.
-.SATURDAY NIGHT...Hurricane conditions expected S of 19N. Elsewhere,
+.TONIGHT...Hurricane conditions expected S of 19N. Elsewhere,
 NE to E winds 20 to 30 kt. Seas 11 to 15 ft. Isolated
 thunderstorms S of 19N.
 .SUNDAY...Hurricane conditions expected S of 20N. Elsewhere, E
 winds 20 to 30 kt. Seas 10 to 14 ft. Isolated thunderstorms S of
 20N.
-.SUNDAY NIGHT...Hurricane conditions possible SW waters.
+.SUNDAY NIGHT...Hurricane conditions expected SW waters.
 Elsewhere, E winds 15 to 25 kt. Seas 9 to 14 ft. Isolated
 thunderstorms SW waters.
 .MONDAY...Hurricane conditions possible W of 160W. Elsewhere, E
@@ -8243,7 +8240,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-26T05:08:43.215597-10:00 HST |
+| **Collected** | 2026-09-26T05:25:43.468673-10:00 HST |
 
 ```text
 National Weather Service
