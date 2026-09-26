@@ -33,3 +33,33 @@ The report layer never deletes or rewrites raw source data.
 Level 0 is the first organized report layer extracted from the raw weather data. It intentionally remains broad and unclassified; later processing levels can consume these readable reports without changing the raw-data layer.
 
 Current reports remain named with `_current.md`. When a report actually changes, the previous current version is moved into `archived/` using the timestamp recorded when that version was created. Unchanged reports are not re-archived.
+
+
+## Level 1 county processing
+
+Level 1 consumes Level 0 only; it never modifies or replaces Level 0.
+
+Reports are written under:
+
+`/home/rootrecord/Database/WEATHER/Hawai'i/reports/1 County Processing`
+
+The county layer is deterministic and uses explicit geographic rules, resource
+routing, county aliases, and later geographic datasets such as NWS shapefiles.
+It does not use AI/LLM classification.
+
+Each county gets:
+
+- a directory containing an individual `<resource_id>_current.md` for every
+  Level-0 source assigned to that county;
+- a county aggregate named
+  `<county>_County_Weather_Report_current.md`;
+- previous versions are archived in the Level-1 `archived/` directory using
+  the original report-creation timestamp.
+
+Statewide resources are included in every county. If a source cannot expose
+geography deterministically yet, Level 1 preserves it in every county and
+marks the assignment as unresolved/statewide-source rather than silently
+dropping information.
+
+This makes every processing level independently reproducible and independently
+archivable.
