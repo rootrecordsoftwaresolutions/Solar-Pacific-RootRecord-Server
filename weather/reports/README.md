@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T10:46:33-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T10:55:34-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3454,7 +3454,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T10:39:53.159729-10:00 HST |
+| **Collected** | 2026-09-26T10:48:53.213778-10:00 HST |
 
 ```text
                         
@@ -4255,7 +4255,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-26T10:44:33.244683-10:00 HST |
+| **Collected** | 2026-09-26T10:53:33.189026-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4269,7 +4269,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-26T10:45:33.175727-10:00 HST |
+| **Collected** | 2026-09-26T10:54:32.929588-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4283,7 +4283,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-26T10:40:33.107506-10:00 HST |
+| **Collected** | 2026-09-26T10:49:33.310578-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4297,7 +4297,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-26T10:41:33.172845-10:00 HST |
+| **Collected** | 2026-09-26T10:50:32.955072-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4311,7 +4311,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-26T10:42:32.902362-10:00 HST |
+| **Collected** | 2026-09-26T10:51:32.958212-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4325,7 +4325,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-26T10:43:33.049080-10:00 HST |
+| **Collected** | 2026-09-26T10:52:32.944687-10:00 HST |
 
 ```text
 462 ACCA62 KNHC 261736TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT sábado 26 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Tormenta Tropical Gonzalo, ubicada al norte delas Islas de Cabo Verde, y sobre la Depresión Tropical Fay, ubicadaal oeste-suroeste de las Azores.Atlántico Subtropical Central: Una vaguada en la superficie de bajapresión ubicada a varios cientos de millas al sureste de lasBermudas está produciendo actualmente un área de aguaceros ytormentas desorganizadas. Las condiciones ambientales parecen algofavorables para el desarrollo gradual de este sistema, a medida quese mueve hacia el norte este fin de semana y luego gira hacia eleste a principios o mediados de la próxima semana.* Probabilidad de formación hasta 48 horas...baja...10 por ciento.* Probabilidad de formación hasta 7 días...baja...20 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4339,7 +4339,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T10:46:32.893941-10:00 HST |
+| **Collected** | 2026-09-26T10:55:33.344552-10:00 HST |
 
 ```text
 Home
@@ -4463,7 +4463,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 20:45:08 UTC
+Last update Sat, 26 Sep 2026 20:53:17 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -4659,49 +4659,49 @@ Grids |
 Storm Archive
 
 ...NOLO MOVING SLOWLY WESTWARD...
-...ADDITIONAL HEAVY RAINFALL, GUSTY WINDS, AND LARGE WAVES EXPECTED FOR PORTIONS OF THE HAWAIIAN ISLANDS...
+...GUSTY WINDS, HEAVY RAIN, AND LARGE WAVES CONTINUE FOR PORTIONS OF THE HAWAIIAN ISLANDS...
 
-8:00 AM HST Sat Sep 26
+11:00 AM HST Sat Sep 26
 
-Location: 16.8°N 155.7°W
+Location: 16.7°N 156.0°W
 
-Moving: W at 3 mph
+Moving: W at 5 mph
 
 Min pressure: 977 mb
 
-Max sustained: 100 mph
+Max sustained: 90 mph
 
 Public
 
 Advisory
 
-#24A
+#25
 
-800 AM HST
+1100 AM HST
 
 Forecast
 
 Advisory
 
-#24
+#25
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#24
+#25
 
-500 AM HST
+1100 AM HST
 
 Wind Speed
 
 Probabilities
 
-#24
+#25
 
-1500 UTC
+2100 UTC
 
 NWS Local
 
@@ -4753,9 +4753,6 @@ Messages
 
 Mensajes
 Claves
-
-Peak
-Surge
 
 Rainfall
 Potential
