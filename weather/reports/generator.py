@@ -218,13 +218,13 @@ def _current_conditions(base: Path) -> str:
     rows: list[str] = []
     for station, label in stations:
         match = re.search(
-            r"<tr\\b[^>]*>.*?href=[\"'][^\"']*/" + re.escape(station) + r"\\.html[\"'][^>]*>.*?</tr>",
+            r"<tr\b[^>]*>.*?href=[\"'][^\"']*/" + re.escape(station) + r"\.html[\"'][^>]*>.*?</tr>",
             raw,
             flags=re.I | re.S,
         )
         if not match:
             continue
-        cells = re.findall(r"<td\\b[^>]*>(.*?)</td>", match.group(0), flags=re.I | re.S)
+        cells = re.findall(r"<td\b[^>]*>(.*?)</td>", match.group(0), flags=re.I | re.S)
         values = [_html_to_text(cell).replace("|", "\\|").strip() for cell in cells]
         if len(values) >= 7:
             rows.append("| {} | {} | {}°F | {}°F | {}% | {} | {} |".format(
