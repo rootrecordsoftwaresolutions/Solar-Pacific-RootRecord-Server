@@ -186,6 +186,53 @@ def _as_markdown_report(body: str) -> str:
     return fence + "text\n" + body.rstrip() + "\n" + fence
 
 
+def _current_conditions(base: Path) -> str:
+    """Build a compact current-conditions table from the collected HFO RWR page."""
+    source = base / "weather.gov" / "hfo" / "RWR" / "raw" / "RWR_raw_current.html"
+    if not source.is_file():
+        return "Current conditions are unavailable from the latest collected HFO observations."
+
+    try:
+        raw = source.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return "Current conditions are unavailable from the latest collected HFO observations."
+
+    stations = [
+        ("PHNL", "Honolulu"),
+        ("PHLI", "Lihue"),
+        ("PHOG", "Kahului"),
+        ("PHTO", "Hilo"),
+        ("PHKO", "Kona"),
+    ]
+    rows: list[str] = []
+    for station, label in stations:
+        match = re.search(
+            r"<tr\\b[^>]*>.*?href=[\"'][^\"']*/" + re.escape(station) + r"\\.html[\"'][^>]*>.*?</tr>",
+            raw,
+            flags=re.I | re.S,
+        )
+        if not match:
+            continue
+        cells = re.findall(r"<td\\b[^>]*>(.*?)</td>", match.group(0), flags=re.I | re.S)
+        values = [_html_to_text(cell).replace("|", "\\|").strip() for cell in cells]
+        if len(values) >= 7:
+            rows.append("| {} | {} | {}°F | {}°F | {}% | {} | {} |".format(
+                label, values[1] or "—", values[2] or "—", values[3] or "—",
+                values[4] or "—", values[5] or "—", values[6] or "—"
+            ))
+
+    if not rows:
+        return "Current conditions are unavailable from the latest collected HFO observations."
+
+    return "\n".join([
+        "| Location | Conditions | Temp | Dew point | RH | Wind | Pressure |",
+        "|---|---|---:|---:|---:|---|---:|",
+        *rows,
+        "",
+        "_Source: locally collected NWS-HFO Regional Weather Roundup (RWR)._",
+    ])
+
+
 def _existing_created_at(path: Path) -> str | None:
     """Read the report creation timestamp before it is replaced."""
     try:
@@ -328,63 +375,36 @@ def generate(base_dir: str) -> list[Path]:
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
     generate_readme_banner(base)
-    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + OUTPUT_RELATIVE.as_posix()
+    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + __import__("urllib.parse").parse.quote(base.parent.name) + "/" + OUTPUT_RELATIVE.as_posix()
 
-    # Build the repository README from a stable documentation template plus the
-    # exact same live sections used by the statewide aggregate.
+    current_conditions = _current_conditions(base)
+
     template_path = REPORTING_README.with_name("README_TEMPLATE.md")
     template = template_path.read_text(encoding="utf-8") if template_path.is_file() else (
-        "# 🌺 Hawaiʻi State Weather Database\n\n{{LIVE_REPORT}}\n"
+        "# 🌺 Hawaiʻi State Weather Database\\n\\n{{CURRENT_CONDITIONS}}\\n"
     )
+    readme_content = (
+        template
+        .replace("{{CURRENT_CONDITIONS}}", current_conditions)
+        .replace("{{README_BANNER_URL}}", banner_url)
+    )
+    if "{{CURRENT_CONDITIONS}}" in readme_content:
+        raise RuntimeError("README current-conditions placeholder was not rendered")
+    REPORTING_README.write_text(readme_content.rstrip() + "\\n", encoding="utf-8")
 
-    live_lines = [
-        "## 🌦️ Live Hawaiʻi Statewide Weather Report",
-        "",
-        "> **Automatically regenerated from the latest locally collected official weather products.**",
-        "",
-        "| Status | Coverage | Updated | Sections |",
-        "|---|---|---|---:|",
-        "| 🟢 Active | Hawaiʻi statewide | {} HST | {} |".format(now, len(sections)),
-        "",
-        "The report below is generated from the same current product sections as `0 Level Processing/Hawaii_State_Weather_Report_current.md`. It is a presentation layer only; official-source records and raw source data remain preserved separately.",
-        "",
-        "---",
-        "",
-    ]
-    for index, (resource_id, title, source_url, fetched_at, body) in enumerate(sections, 1):
-        live_lines.extend([
-            "### {}. {}".format(index, title),
-            "",
-            "| Field | Value |",
-            "|---|---|",
-            "| **Resource ID** | {} |".format(resource_id),
-            "| **Official source** | {} |".format(source_url),
-            "| **Collected** | {} HST |".format(fetched_at or "Unknown"),
-            "",
-            _as_markdown_report(body),
-            "",
-            "---",
-            "",
-        ])
-
-    live_report = "\n".join(live_lines).rstrip()
-    readme_content = template.replace("{{LIVE_REPORT}}", live_report).replace("{{README_BANNER_URL}}", banner_url)
-    if "{{LIVE_REPORT}}" in readme_content:
-        raise RuntimeError("README template placeholder was not rendered")
-    REPORTING_README.write_text(readme_content.rstrip() + "\n", encoding="utf-8")
-
-    # The data/media repository has its own root README. Keep it synchronized
-    # with the same live statewide report while preserving the repository's
-    # source/data documentation separately from the code repository README.
     database_root = base.parent.parent
     database_readme = database_root / "README.md"
     if DATABASE_README_TEMPLATE.is_file():
         database_template = DATABASE_README_TEMPLATE.read_text(encoding="utf-8")
     else:
-        database_template = "# 🌺 RootRecord Weather Database\n\n{{LIVE_REPORT}}\n"
-    database_readme_content = database_template.replace("{{LIVE_REPORT}}", live_report).replace("{{README_BANNER_URL}}", banner_url)
-    if "{{LIVE_REPORT}}" in database_readme_content:
-        raise RuntimeError("weather database README template placeholder was not rendered")
-    database_readme.write_text(database_readme_content.rstrip() + "\n", encoding="utf-8")
+        database_template = "# 🌺 RootRecord Weather Database\\n\\n{{CURRENT_CONDITIONS}}\\n"
+    database_readme_content = (
+        database_template
+        .replace("{{CURRENT_CONDITIONS}}", current_conditions)
+        .replace("{{README_BANNER_URL}}", banner_url)
+    )
+    if "{{CURRENT_CONDITIONS}}" in database_readme_content:
+        raise RuntimeError("weather database README current-conditions placeholder was not rendered")
+    database_readme.write_text(database_readme_content.rstrip() + "\\n", encoding="utf-8")
 
     return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README, database_readme]
