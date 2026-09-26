@@ -105,3 +105,15 @@ The thresholds are configurable with:
 - `AWS_FEED_MAINTENANCE_SCRIPT` — default `/home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh`
 
 The AWS-side script should be deployed to that path. It is intentionally kept separate from the collector so mainland maintenance can be inspected and backed up independently.
+
+### Mainland deployment
+
+From the Hawaii machine, after syncing `main`, deploy the maintenance helper to AWS with:
+
+```bash
+ssh rr-aws 'mkdir -p /home/ubuntu/network-globe/network-globe/scripts /home/ubuntu/network-globe/backups && if [ -f /home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh ]; then cp -a /home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh /home/ubuntu/network-globe/backups/maintain-hawaii-feed.sh.bak-$(date +%Y%m%d-%H%M%S); fi && if [ -f /home/ubuntu/network-globe/network-globe/data/hawaii-offset.json ]; then cp -a /home/ubuntu/network-globe/network-globe/data/hawaii-offset.json /home/ubuntu/network-globe/backups/hawaii-offset.json.bak-$(date +%Y%m%d-%H%M%S); fi' && \
+ssh rr-aws 'cat > /home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh' < coms/ssh/local-data-globe/maintain-hawaii-feed.sh && \
+ssh rr-aws 'chmod 0755 /home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh && /home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh 67108864 50331648'
+```
+
+The first deployment is intentionally one-shot. The collector owns the cadence thereafter; it probes the remote feed size every 15 minutes and only interrupts its SSH stream when the 64 MiB ceiling is exceeded.
