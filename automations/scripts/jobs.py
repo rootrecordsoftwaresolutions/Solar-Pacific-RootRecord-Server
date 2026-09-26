@@ -185,6 +185,19 @@ ON_BOOT = [
         "cwd": "/home/rootrecord/.ollama/skills/weather",
         "env": {},
     },
+    # --- priority 9: Hawaii Network Globe live SSH collector ----------------------
+    {
+        "id": "network_globe_hawaii",
+        "enabled": True,
+        "priority": 9,
+        "description": "Ensure the live Hawaii Network Globe SSH collector is running for this poller session.",
+        "builtin": "",
+        "command": "bash /home/rootrecord/.ollama/skills/automations/scripts/ensure-network-globe-hawaii.sh",
+        "timeout_sec": 30,
+        "needs_internet": False,
+        "cwd": "/home/rootrecord/.ollama/skills/coms/ssh/local-data-globe",
+        "env": {},
+    },
     # --- TEMPLATE (on boot) — copy from here -------------------------------------
     # {
     #     "id": "example_on_boot_p3",
