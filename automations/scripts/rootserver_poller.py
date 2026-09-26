@@ -62,6 +62,7 @@ def heartbeat_line() -> str:
 
 
 def internet_ok(force: bool = False) -> bool:
+    """TCP reachability — does not use local DNS stub."""
     global _internet_ok
     for host, port in (("1.1.1.1", 443), ("8.8.8.8", 53), ("1.0.0.1", 443)):
         try:
@@ -216,7 +217,6 @@ def _energy_log_line() -> str:
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt: str, *args) -> None:
         return
-
     def _send(self, code: int, body: str, ctype: str = "text/plain; charset=utf-8") -> None:
         data = body.encode("utf-8")
         self.send_response(code)
@@ -291,6 +291,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         self._send(404, "not found\n")
 
+
     def do_POST(self) -> None:
         if self.path.startswith("/aeyes"):
             self._proxy_aeyes()
@@ -338,3 +339,297 @@ def _cloudflared_interesting(text: str) -> str | None:
     if "Connected to Cloudflare" in t:
         return "tunnel connected to Cloudflare"
     return None
+
+
+def start_tunnel() -> bool:
+    global _tunnel_proc
+    if not ENABLE_TUNNEL:
+        log(f"{full_timestamp()}Tunnel disabled (POLLER_ENABLE_TUNNEL=0).")
+        _tunnel_ready.set()
+        return False
+    if not Path(CLOUDFLARED_BIN).is_file():
+        log(f"{full_timestamp()}Tunnel DOWN — cloudflared missing at {CLOUDFLARED_BIN}")
+        return False
+    if not TOKEN_FILE.is_file():
+        log(f"{full_timestamp()}Tunnel DOWN — token file missing: {TOKEN_FILE}")
+        return False
+    token = TOKEN_FILE.read_text(encoding="utf-8").strip()
+    if not token:
+        log(f"{full_timestamp()}Tunnel DOWN — empty token file")
+        return False
+    mode = os.environ.get("POLLER_TUNNEL_MODE", "token").lower()
+    if mode == "quick":
+        cmd = [CLOUDFLARED_BIN, "tunnel", "--no-autoupdate", "--url", f"http://{HOST}:{PORT}"]
+        popen_kwargs: dict = {}
+    else:
+        cmd = [CLOUDFLARED_BIN, "tunnel", "--no-autoupdate", "run"]
+        env = os.environ.copy()
+        env["TUNNEL_TOKEN"] = token
+        popen_kwargs = {"env": env}
+    log(f"{full_timestamp()}Starting cloudflared mode={mode} public_host={HOSTNAME}")
+    _tunnel_proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1, **popen_kwargs)
+
+    def pump() -> None:
+        assert _tunnel_proc is not None and _tunnel_proc.stdout is not None
+        for line in _tunnel_proc.stdout:
+            text = line.rstrip()
+            interesting = _cloudflared_interesting(text)
+            if interesting:
+                log(f"{full_timestamp()}{interesting}")
+            if "Registered tunnel connection" in text or "Connected to Cloudflare" in text:
+                if not _tunnel_ready.is_set():
+                    log(f"{full_timestamp()}Tunnel READY — first connection registered.")
+                    _tunnel_ready.set()
+            if _stop.is_set():
+                break
+        if _tunnel_proc.poll() is not None and not _tunnel_ready.is_set():
+            log(f"{full_timestamp()}Tunnel DOWN — cloudflared exited before ready (code={_tunnel_proc.returncode}).")
+
+    threading.Thread(target=pump, name="cloudflared-log", daemon=True).start()
+    return True
+
+
+def wait_for_tunnel_ready() -> None:
+    if not ENABLE_TUNNEL or _tunnel_ready.is_set():
+        return
+    log(f"{full_timestamp()}Waiting for tunnel register (timeout={TUNNEL_READY_TIMEOUT_SEC:.0f}s)…")
+    if not _tunnel_ready.wait(timeout=TUNNEL_READY_TIMEOUT_SEC):
+        log(f"{full_timestamp()}Tunnel WAITING — no register within {TUNNEL_READY_TIMEOUT_SEC:.0f}s; continuing.")
+
+
+def _is_ecoflow_job(jid: str) -> bool:
+    return jid.startswith("ecoflow_") or jid in ("delta2_read", "river2pro_read")
+
+
+def run_command_job(job: dict) -> None:
+    jid = job.get("id", "?")
+    cmd = (job.get("command") or "").strip()
+    if not cmd:
+        log(f"{full_timestamp()}job:{jid} SKIP — empty command")
+        return
+    timeout = float(job.get("timeout_sec") or 120)
+    cwd = (job.get("cwd") or "").strip() or None
+    env = os.environ.copy()
+    extra = job.get("env") or {}
+    if isinstance(extra, dict):
+        env.update({str(k): str(v) for k, v in extra.items()})
+    quiet = jid in ("github_sync_all", "github_setup_remotes", "github_autopush")
+    eco = _is_ecoflow_job(jid)
+    # EcoFlow: no RUN spam — only the final SUMMARY line (or a quiet FAIL)
+    if not quiet and not eco:
+        log(f"{full_timestamp()}job:{jid} RUN  {cmd}")
+    try:
+        r = subprocess.run(["bash", "-lc", cmd], cwd=cwd, env=env, timeout=timeout, capture_output=True, text=True)
+        out = (r.stdout or "").strip()
+        err = (r.stderr or "").strip()
+        if r.returncode == 0:
+            if eco:
+                # One clean line: prefer SUMMARY=; fold INTERNAL= the same way.
+                # Skip STATUS= (redundant when SUMMARY is present).
+                summary = None
+                for ln in out.splitlines():
+                    s = ln.strip()
+                    if s.startswith("SUMMARY=") or s.startswith("INTERNAL="):
+                        summary = s
+                        break
+                if summary:
+                    log(f"{full_timestamp()}  ▸  {summary}")
+                else:
+                    log(f"{full_timestamp()}  ▸  {jid} OK")
+            elif out:
+                for line in out.splitlines()[:40]:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    if quiet and any(line.startswith(p) for p in ("[ok]", "[skip]", "[clone]", "Updated", "Added", "Done.")):
+                        continue
+                    log(f"{full_timestamp()}job:{jid} | {line}")
+            elif not quiet:
+                log(f"{full_timestamp()}job:{jid} OK")
+        else:
+            if eco:
+                # Only log real failures (both BLE and API down) — one line
+                reason = ""
+                for ln in (out or err).splitlines():
+                    s = ln.strip()
+                    if s.startswith("No data") or s.startswith("WAITING"):
+                        reason = s
+                        break
+                if reason:
+                    log(f"{full_timestamp()}  ✗  {jid}  {reason}")
+                else:
+                    log(f"{full_timestamp()}  ✗  {jid} FAIL code={r.returncode}")
+            else:
+                log(f"{full_timestamp()}job:{jid} FAIL code={r.returncode}")
+                for line in (err or out).splitlines()[:20]:
+                    log(f"{full_timestamp()}job:{jid} ! {line}")
+    except subprocess.TimeoutExpired:
+        log(f"{full_timestamp()}job:{jid} TIMEOUT after {timeout:.0f}s")
+    except Exception as e:
+        log(f"{full_timestamp()}job:{jid} ERROR {e}")
+
+
+def run_builtin(job: dict) -> None:
+    global _latest, HOSTNAME, TOKEN_FILE, CLOUDFLARED_BIN, TUNNEL_READY_TIMEOUT_SEC
+    jid = job.get("id", "?")
+    name = (job.get("builtin") or "").strip()
+    if name == "heartbeat":
+        line = heartbeat_line()
+        with _lock:
+            _latest = line
+        log(line)
+        return
+    if name == "self_process":
+        log(f"{full_timestamp()}boot:p0 self_process pid={os.getpid()}")
+        return
+    if name == "tunnel_start":
+        if job.get("public_host"):
+            HOSTNAME = str(job["public_host"])
+        if job.get("token_file"):
+            TOKEN_FILE = Path(str(job["token_file"]))
+        if job.get("cloudflared_bin"):
+            CLOUDFLARED_BIN = str(job["cloudflared_bin"])
+        if job.get("timeout_sec"):
+            TUNNEL_READY_TIMEOUT_SEC = float(job["timeout_sec"])
+        log(f"{full_timestamp()}boot:p1 cloudflare_tunnel host={HOSTNAME}")
+        if not internet_ok(force=True):
+            log(f"{full_timestamp()}internet DOWN at boot — tunnel DEFERRED; local jobs continue; retry every minute")
+            return
+        log(f"{full_timestamp()}internet OK at boot — starting tunnel")
+        if start_tunnel():
+            wait_for_tunnel_ready()
+        elif ENABLE_TUNNEL:
+            log(f"{full_timestamp()}Tunnel DOWN — continuing with local jobs only.")
+        return
+    if name == "ensure_tunnel_online":
+        ensure_tunnel_online()
+        return
+    log(f"{full_timestamp()}job:{jid} UNKNOWN builtin={name!r}")
+
+
+def run_job(job: dict) -> None:
+    if not job.get("enabled"):
+        return
+    if job.get("needs_internet") and not internet_ok(force=True):
+        log(f"{full_timestamp()}job:{job.get('id', '?')} SKIP — offline (will retry when internet is up)")
+        return
+    builtin = (job.get("builtin") or "").strip()
+    if builtin:
+        run_builtin(job)
+        return
+    run_command_job(job)
+
+
+def enabled_jobs(section: list) -> list:
+    return [j for j in section if isinstance(j, dict) and j.get("enabled")]
+
+
+def _normalize_hhmm(raw: object) -> str | None:
+    if not isinstance(raw, str) or ":" not in raw:
+        return None
+    try:
+        hh, mm = (int(x) for x in raw.strip().split(":", 1))
+    except ValueError:
+        return None
+    if not (0 <= hh <= 23 and 0 <= mm <= 59):
+        return None
+    return f"{hh:02d}:{mm:02d}"
+
+
+def scheduler_loop() -> None:
+    sec_jobs = enabled_jobs(getattr(jobmod, "EVERY_SECONDS", []))
+    min_jobs = enabled_jobs(getattr(jobmod, "EVERY_MINUTE", []))
+    hour_jobs = enabled_jobs(getattr(jobmod, "EVERY_HOUR", []))
+    at_jobs = enabled_jobs(getattr(jobmod, "ON_AT", []))
+    next_due: dict[str, float] = {}
+    now = time.monotonic()
+    for j in sec_jobs:
+        next_due[j["id"]] = now
+    last_minute: int | None = None
+    last_hour: int | None = None
+    fired_at: set[str] = set()
+    log(f"{full_timestamp()}scheduler  every_seconds={len(sec_jobs)}  every_minute={len(min_jobs)}  every_hour={len(hour_jobs)}  on_at={len(at_jobs)}")
+    while not _stop.is_set():
+        wall = datetime.now().astimezone()
+        mono = time.monotonic()
+        for j in sec_jobs:
+            jid = j["id"]
+            if mono >= next_due.get(jid, 0):
+                run_job(j)
+                interval = float(j.get("interval_sec") or INTERVAL_FALLBACK)
+                next_due[jid] = mono + max(0.2, interval)
+        minute, hour = wall.minute, wall.hour
+        hm = f"{hour:02d}:{minute:02d}"
+        day = wall.date().isoformat()
+        if last_minute is None:
+            last_minute, last_hour = minute, hour
+        else:
+            if minute != last_minute:
+                for j in min_jobs:
+                    only = j.get("only_at_minutes") or []
+                    if only and minute not in only:
+                        continue
+                    run_job(j)
+                for j in at_jobs:
+                    times = {t for raw in (j.get("at_times") or []) if (t := _normalize_hhmm(raw))}
+                    if hm not in times:
+                        continue
+                    key = f"{j['id']}|{day}|{hm}"
+                    if key in fired_at:
+                        continue
+                    run_job(j)
+                    fired_at.add(key)
+                last_minute = minute
+            if hour != last_hour and minute == 0:
+                for j in hour_jobs:
+                    only = j.get("only_at_hours") or []
+                    if only and hour not in only:
+                        continue
+                    run_job(j)
+                last_hour = hour
+            elif hour != last_hour:
+                last_hour = hour
+            if fired_at:
+                fired_at = {k for k in fired_at if f"|{day}|" in k}
+        _stop.wait(0.25)
+
+
+def shutdown(*_args) -> None:
+    _stop.set()
+    _tunnel_ready.set()
+    global _tunnel_proc
+    if _tunnel_proc and _tunnel_proc.poll() is None:
+        _tunnel_proc.terminate()
+        try:
+            _tunnel_proc.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            _tunnel_proc.kill()
+
+
+def run_on_boot() -> None:
+    boot = [j for j in enabled_jobs(getattr(jobmod, "ON_BOOT", [])) if isinstance(j, dict)]
+    boot.sort(key=lambda j: int(j.get("priority", 100)))
+    log(f"{full_timestamp()}boot:start  jobs={len(boot)}")
+    for j in boot:
+        log(f"{full_timestamp()}boot:run  priority={j.get('priority', '?')}  id={j.get('id', '?')}")
+        run_job(j)
+    log(f"{full_timestamp()}boot:done")
+
+
+def main() -> int:
+    signal.signal(signal.SIGTERM, shutdown)
+    signal.signal(signal.SIGINT, shutdown)
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+    threading.Thread(target=server.serve_forever, name="http", daemon=True).start()
+    log(f"{full_timestamp()}HTTP listening on http://{HOST}:{PORT} (open access on bind)")
+    run_on_boot()
+    for j in enabled_jobs(getattr(jobmod, "ONCE_AT_START", [])):
+        run_job(j)
+    scheduler_loop()
+    server.shutdown()
+    shutdown()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
