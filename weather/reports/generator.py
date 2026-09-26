@@ -38,6 +38,13 @@ _EXCLUDED_IDS = {
     "nws_public_zones_catalog",
     "nws_zone_county_catalog",
 }
+_README_PLACEHOLDERS = (
+    "{{CURRENT_CONDITIONS}}",
+    "{{README_BANNER_URL}}",
+    "{{REPORT_UPDATED}}",
+    "{{REPORT_SECTION_COUNT}}",
+    "{{REPORT_SECTIONS}}",
+)
 
 
 def _load_resource_names() -> dict[str, str]:
@@ -131,7 +138,7 @@ def _html_to_text(raw: str) -> str:
     except Exception:
         text = html.unescape(re.sub(r"<[^>]+>", "", raw))
 
-    lines = [re.sub(r"[ \\t]+", " ", line).strip() for line in text.splitlines()]
+    lines = [re.sub(r"[ \t]+", " ", line).strip() for line in text.splitlines()]
     return "\n".join(lines).strip()
 
 
@@ -171,7 +178,26 @@ def _extract_report_text(path: Path) -> str | None:
                     return found
         return None
 
-    return find_product_text(obj)
+    product_text = find_product_text(obj)
+    if product_text:
+        return product_text
+
+    # Some api.weather.gov product list/detail captures only include metadata.
+    # Prefer a compact readable summary over dumping the entire JSON blob.
+    if isinstance(obj, dict):
+        keys = (
+            "productName", "productCode", "issuingOffice", "issuanceTime",
+            "wmoCollectiveId", "id", "@id",
+        )
+        lines = []
+        for key in keys:
+            value = obj.get(key)
+            if value is not None and str(value).strip():
+                lines.append("{}: {}".format(key, value))
+        if lines:
+            return "\n".join(lines)
+
+    return None
 
 
 def _header(title: str, source_url: str, fetched_at: str | None, created_at: str) -> str:
@@ -250,7 +276,7 @@ def _existing_created_at(path: Path) -> str | None:
         raw = path.read_text(encoding="utf-8", errors="replace")
     except OSError:
         return None
-    match = re.search(r"^- \\*\\*Report created:\\*\\* (.+?) HST$", raw, flags=re.M)
+    match = re.search(r"^- \*\*Report created:\*\* (.+?) HST$", raw, flags=re.M)
     return match.group(1).strip() if match else None
 
 
@@ -280,13 +306,13 @@ def _write_current(current_path: Path, content: str, archive_dir: Path, created_
         try:
             existing = current_path.read_text(encoding="utf-8", errors="replace")
             comparable_existing = re.sub(
-                r"^- \\*\\*Generated:\\*\\* .+? HST$",
+                r"^- \*\*Generated:\*\* .+? HST$",
                 "- **Generated:** <timestamp> HST",
                 existing,
                 flags=re.M,
             )
             comparable_content = re.sub(
-                r"^- \\*\\*Generated:\\*\\* .+? HST$",
+                r"^- \*\*Generated:\*\* .+? HST$",
                 "- **Generated:** <timestamp> HST",
                 content,
                 flags=re.M,
@@ -298,6 +324,41 @@ def _write_current(current_path: Path, content: str, archive_dir: Path, created_
         _archive_current(current_path, archive_dir, created_at)
     current_path.parent.mkdir(parents=True, exist_ok=True)
     current_path.write_text(content, encoding="utf-8")
+
+
+def _build_readme_sections(
+    sections: list[tuple[str, str, str, str | None, str]],
+) -> str:
+    """Build the human-readable statewide section body used by README templates."""
+    parts: list[str] = []
+    for index, (resource_id, title, source_url, fetched_at, body) in enumerate(sections, 1):
+        parts.extend([
+            "### {}. {}".format(index, title),
+            "",
+            "| Field | Value |",
+            "|---|---|",
+            "| **Resource ID** | {} |".format(resource_id),
+            "| **Official source** | {} |".format(source_url),
+            "| **Collected** | {} HST |".format(fetched_at or "Unknown"),
+            "",
+            _as_markdown_report(body),
+            "",
+            "---",
+            "",
+        ])
+    return "\n".join(parts).rstrip()
+
+
+def _render_readme(template: str, replacements: dict[str, str]) -> str:
+    content = template
+    for key, value in replacements.items():
+        content = content.replace(key, value)
+    missing = [key for key in _README_PLACEHOLDERS if key in content]
+    if missing:
+        raise RuntimeError(
+            "README placeholder(s) were not rendered: {}".format(", ".join(missing))
+        )
+    return content.rstrip() + "\n"
 
 
 def generate(base_dir: str) -> list[Path]:
@@ -340,14 +401,14 @@ def generate(base_dir: str) -> list[Path]:
             continue
 
         title = _display_name(resource_id, names)
-        current_path = reports_dir / "{}_current.md".format(resource_id)
+        report_path = reports_dir / "{}_current.md".format(resource_id)
         created_at = now
         report = (
             _header(title, state.url, state.current_fetch_timestamp_hst, created_at)
             + _as_markdown_report(body)
             + "\n"
         )
-        _write_current(current_path, report, archive_dir, now)
+        _write_current(report_path, report, archive_dir, now)
         sections.append((resource_id, title, state.url, state.current_fetch_timestamp_hst, body))
 
     sections.sort(key=lambda item: (item[1].lower(), item[0].lower()))
@@ -385,37 +446,65 @@ def generate(base_dir: str) -> list[Path]:
     aggregate_content = "\n".join(aggregate)
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
-    generate_readme_banner(base)
-    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + quote(base.parent.name) + "/" + OUTPUT_RELATIVE.as_posix()
+    # Presentation-only banner. Raw GOES product remains untouched.
+    try:
+        generate_readme_banner(base)
+        banner_url = (
+            "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/"
+            "RootRecord-Weather-Database/main/"
+            + quote(base.parent.name)
+            + "/"
+            + OUTPUT_RELATIVE.as_posix()
+        )
+    except (FileNotFoundError, ValueError, RuntimeError):
+        # Fall back to the raw collected current GIF if the processed banner
+        # cannot be produced in this cycle.
+        banner_url = (
+            "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/"
+            "RootRecord-Weather-Database/main/"
+            + quote(base.parent.name + "/hfo/")
+            + quote(
+                "cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/"
+                "GOES18-HI-GEOCOLOR-600x600/GOES18-HI-GEOCOLOR-600x600_current.gif",
+                safe="/",
+            )
+        )
 
     current_conditions = _current_conditions(base)
+    report_sections = _build_readme_sections(sections)
+    replacements = {
+        "{{CURRENT_CONDITIONS}}": current_conditions,
+        "{{README_BANNER_URL}}": banner_url,
+        "{{REPORT_UPDATED}}": "{} HST".format(now),
+        "{{REPORT_SECTION_COUNT}}": str(len(sections)),
+        "{{REPORT_SECTIONS}}": report_sections,
+    }
 
     template_path = REPORTING_README.with_name("README_TEMPLATE.md")
-    template = template_path.read_text(encoding="utf-8") if template_path.is_file() else (
-        "# 🌺 Hawaiʻi State Weather Database\\n\\n{{CURRENT_CONDITIONS}}\\n"
-    )
-    readme_content = (
-        template
-        .replace("{{CURRENT_CONDITIONS}}", current_conditions)
-        .replace("{{README_BANNER_URL}}", banner_url)
-    )
-    if "{{CURRENT_CONDITIONS}}" in readme_content:
-        raise RuntimeError("README current-conditions placeholder was not rendered")
-    REPORTING_README.write_text(readme_content.rstrip() + "\\n", encoding="utf-8")
+    if template_path.is_file():
+        template = template_path.read_text(encoding="utf-8")
+    else:
+        template = (
+            "# 🌺 Hawaiʻi State Weather Database\n\n"
+            "{{CURRENT_CONDITIONS}}\n\n{{REPORT_SECTIONS}}\n"
+        )
+    REPORTING_README.write_text(_render_readme(template, replacements), encoding="utf-8")
 
     database_root = base.parent.parent
     database_readme = database_root / "README.md"
     if DATABASE_README_TEMPLATE.is_file():
         database_template = DATABASE_README_TEMPLATE.read_text(encoding="utf-8")
     else:
-        database_template = "# 🌺 RootRecord Weather Database\\n\\n{{CURRENT_CONDITIONS}}\\n"
-    database_readme_content = (
-        database_template
-        .replace("{{CURRENT_CONDITIONS}}", current_conditions)
-        .replace("{{README_BANNER_URL}}", banner_url)
+        database_template = (
+            "# 🌺 RootRecord Weather Database\n\n"
+            "{{CURRENT_CONDITIONS}}\n\n{{REPORT_SECTIONS}}\n"
+        )
+    database_readme.write_text(
+        _render_readme(database_template, replacements),
+        encoding="utf-8",
     )
-    if "{{CURRENT_CONDITIONS}}" in database_readme_content:
-        raise RuntimeError("weather database README current-conditions placeholder was not rendered")
-    database_readme.write_text(database_readme_content.rstrip() + "\\n", encoding="utf-8")
 
-    return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README, database_readme]
+    return [
+        reports_dir / "{}_current.md".format(resource_id)
+        for resource_id, *_ in sections
+    ] + [aggregate_path, REPORTING_README, database_readme]
