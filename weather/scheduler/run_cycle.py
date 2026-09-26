@@ -108,6 +108,12 @@ class SchedulerState:
 
 def _run_module(name: str, fetch_fn: Callable, manifest: Manifest, base_dir: str) -> None:
     outcomes = fetch_fn(manifest, base_dir)
+    for outcome in outcomes:
+        if outcome.status in ("failed", "invalid"):
+            _log(
+                f"module:{name} resource:{outcome.resource_id} "
+                f"{outcome.status.upper()} -- {outcome.detail}"
+            )
     if name == "alerts":
         _run_alerts_processing(outcomes, base_dir)
 
