@@ -164,3 +164,15 @@ Authoritative NWS GIS sources confirm that public forecast zones are polygon
 data and may be subsets of counties, while the Zone/County correlation file
 provides the county/FIPS relationship. The current Level 1 routing therefore
 has an authoritative UGC/zone-correlation path before text/resource fallbacks.
+
+
+## 2026-09-25 — provenance cleanup and test-harness clarification
+
+- Corrected official-source classification for legacy relative NWS URLs such as `/hfo/surfreports` and `/hfo/FTM`: these normalize to `NWS-HFO` instead of `unknown-source`.
+- Added the `NOAA-GML` source group for `gml.noaa.gov` products, keeping those records separate from generic `NOAA` material.
+- Added regression tests for both source-classification boundaries.
+- Corrected Level 1 provenance wording: county reports can use a matching Official Sources record directly, with Level 0 as the fallback processing-layer input. Level 1 therefore records the actual `Source layer` rather than claiming every record is derived only from Level 0.
+- Confirmed unresolved geography is a safety boundary: unresolved products are preserved under `1 County Processing/unresolved/` and are excluded from county directories and county aggregates. Only explicitly statewide resources are copied to every county.
+- The stdlib test runner now suppresses scheduler logging while tests execute. The scheduler's production error handling is unchanged; expected smoke-test exceptions remain asserted by the tests, but their intentional log tracebacks no longer clutter the test summary.
+- The current verified test baseline immediately before this documentation checkpoint was **82/82 passing, 0 failed, 0 errored**. A fresh run should be performed after these latest test-harness/source-provenance commits.
+- NWS GIS provenance remains grounded in the current official Zone/County correlation and Public Forecast Zone datasets. NWS documents that public zones can be county subsets, while the correlation file provides county/FIPS relationships.
