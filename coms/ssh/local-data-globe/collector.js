@@ -17,6 +17,10 @@ const AWS_REMOTE_DIR = process.env.AWS_REMOTE_DIR || '/home/ubuntu/network-globe
 const SSH_KEY = process.env.SSH_KEY || '/home/rootrecord/.ssh/rootrecordkey.pem';
 const SSH_CONNECT_TIMEOUT = Number(process.env.SSH_CONNECT_TIMEOUT || 8);
 const ORIGIN_LABEL = process.env.ORIGIN_LABEL || 'Hawaii';
+const AWS_FEED_MAX_BYTES = Number(process.env.AWS_FEED_MAX_BYTES || 64 * 1024 * 1024);
+const AWS_FEED_TARGET_BYTES = Number(process.env.AWS_FEED_TARGET_BYTES || 48 * 1024 * 1024);
+const AWS_FEED_MAINTENANCE_MS = Number(process.env.AWS_FEED_MAINTENANCE_MS || 15 * 60 * 1000);
+const AWS_FEED_MAINTENANCE_SCRIPT = process.env.AWS_FEED_MAINTENANCE_SCRIPT || '/home/ubuntu/network-globe/network-globe/scripts/maintain-hawaii-feed.sh';
 
 // NOTE: intentionally no on-disk outbox/ledger and no MAX_BUFFERED cap.
 // This collector is a live-state pusher, not a store-and-forward system:
@@ -35,6 +39,8 @@ let sshProc = null;
 let sshReady = false;
 let sshConnecting = false;
 let shuttingDown = false;
+let maintenanceRunning = false;
+let lastFeedMaintenance = 0;
 
 function isPrivateIp(ip) {
   if (!ip) return true;
@@ -275,6 +281,80 @@ function sshArgs() {
 
 function shellQuote(s) { return `'${String(s).replace(/'/g, `'\\''`)}'`; }
 
+function baseSshArgs() {
+  const args = [
+    '-T',
+    '-o', 'BatchMode=yes',
+    '-o', `ConnectTimeout=${SSH_CONNECT_TIMEOUT}`,
+    '-o', 'ServerAliveInterval=15',
+    '-o', 'ServerAliveCountMax=3',
+    '-o', 'StrictHostKeyChecking=accept-new'
+  ];
+  if (SSH_KEY) args.push('-i', SSH_KEY);
+  if (AWS_HOST === 'ssh.rootrecord.cloud') {
+    args.push(
+      '-o', 'ProxyCommand=/home/rootrecord/.local/bin/cloudflared access ssh --hostname %h'
+    );
+  }
+  return args;
+}
+
+function stopSshStream() {
+  const p = sshProc;
+  sshReady = false;
+  sshConnecting = false;
+  sshProc = null;
+  if (!p) return Promise.resolve();
+  return new Promise(resolve => {
+    try { p.stdin?.end(); } catch {}
+    try { p.kill('SIGTERM'); } catch {}
+    const timer = setTimeout(resolve, 1000);
+    p.once('close', () => {
+      clearTimeout(timer);
+      resolve();
+    });
+  });
+}
+
+function maintainAwsFeed() {
+  if (shuttingDown || maintenanceRunning) return;
+  const now = Date.now();
+  if (now - lastFeedMaintenance < AWS_FEED_MAINTENANCE_MS) return;
+
+  maintenanceRunning = true;
+  lastFeedMaintenance = now;
+
+  stopSshStream().then(() => new Promise(resolve => {
+    const args = baseSshArgs();
+    args.push(
+      `${AWS_USER}@${AWS_HOST}`,
+      `bash ${shellQuote(AWS_FEED_MAINTENANCE_SCRIPT)} ${AWS_FEED_MAX_BYTES} ${AWS_FEED_TARGET_BYTES}`
+    );
+    const p = spawn('ssh', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    p.stdout.setEncoding('utf8');
+    p.stderr.setEncoding('utf8');
+    p.stdout.on('data', chunk => {
+      const msg = chunk.trim();
+      if (msg) console.log(`AWS feed maintenance: ${msg}`);
+    });
+    p.stderr.on('data', chunk => {
+      const msg = chunk.trim();
+      if (msg) console.error(`AWS feed maintenance: ${msg}`);
+    });
+    p.on('error', err => {
+      console.error(`AWS feed maintenance error: ${err.message}`);
+      resolve();
+    });
+    p.on('close', code => {
+      if (code !== 0) console.error(`AWS feed maintenance exited code=${code}`);
+      resolve();
+    });
+  })).finally(() => {
+    maintenanceRunning = false;
+    if (!shuttingDown) setTimeout(connectSsh, 250);
+  });
+}
+
 function connectSsh() {
   if (shuttingDown || sshProc || sshConnecting) return;
 
@@ -335,6 +415,7 @@ async function collect() {
   await refreshLocalAddresses();
   updateFlows(await runSs());
   for (const flow of flows.values()) queueRecord(makeRecord(flow));
+  maintainAwsFeed();
 }
 
 async function boot() {
