@@ -24,13 +24,19 @@ ARCHIVE = "archived"
 
 
 def _source_name(url: str) -> str:
-    host = urlsplit(url).netloc.lower()
+    normalized = str(url or "").strip()
+    if normalized.startswith("/"):
+        normalized = "https://www.weather.gov" + normalized
+    parsed = urlsplit(normalized)
+    host = parsed.netloc.lower()
     if host in {"api.weather.gov", "www.weather.gov", "forecast.weather.gov"}:
         return "NWS-HFO"
     if host in {"www.nhc.noaa.gov", "nhc.noaa.gov"}:
         return "NHC"
     if host in {"www.noaa.gov", "noaa.gov"}:
         return "NOAA"
+    if "gml.noaa.gov" in host:
+        return "NOAA-GML"
     if "nesdis.noaa.gov" in host:
         return "NOAA-NESDIS"
     return re.sub(r"[^A-Za-z0-9._-]+", "_", host or "unknown-source")
