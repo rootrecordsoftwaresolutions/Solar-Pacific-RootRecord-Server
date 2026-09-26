@@ -324,30 +324,30 @@ def generate(base_dir: str) -> list[Path]:
     aggregate_content = "\n".join(aggregate)
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
-    # Keep the repository README itself as the public-facing live statewide
-    # report. It is generated from the same sections as Level 0 so it cannot
-    # drift into a separately maintained copy of the report.
-    readme_lines = [
-        "# 🌺 Hawaiʻi State Weather Report",
+    # Build the repository README from a stable documentation template plus the
+    # exact same live sections used by the statewide aggregate.
+    template_path = REPORTING_README.with_name("README_TEMPLATE.md")
+    template = template_path.read_text(encoding="utf-8") if template_path.is_file() else (
+        "# 🌺 Hawaiʻi State Weather Database\n\n{{LIVE_REPORT}}\n"
+    )
+
+    live_lines = [
+        "## 🌦️ Live Hawaiʻi Statewide Weather Report",
         "",
-        "> **Live statewide report — automatically regenerated from the latest locally collected official weather products.**",
+        "> **Automatically regenerated from the latest locally collected official weather products.**",
         "",
         "| Status | Coverage | Updated | Sections |",
         "|---|---|---|---:|",
         "| 🟢 Active | Hawaiʻi statewide | {} HST | {} |".format(now, len(sections)),
         "",
-        "## 📡 Current Conditions & Official Products",
-        "",
-        "This README is intentionally a **living report**, not a static project description. Each scheduler report cycle regenerates the statewide data and refreshes this document when the underlying report content changes.",
-        "",
-        "**Data boundary:** official-source content is preserved separately; this page is a readable statewide presentation derived from that collected data. No AI/LLM is used to decide geographic ownership of products.",
+        "The report below is generated from the same current product sections as `0 Level Processing/Hawaii_State_Weather_Report_current.md`. It is a presentation layer only; official-source records and raw source data remain preserved separately.",
         "",
         "---",
         "",
     ]
     for index, (resource_id, title, source_url, fetched_at, body) in enumerate(sections, 1):
-        readme_lines.extend([
-            "## {}. {}".format(index, title),
+        live_lines.extend([
+            "### {}. {}".format(index, title),
             "",
             "| Field | Value |",
             "|---|---|",
@@ -360,18 +360,10 @@ def generate(base_dir: str) -> list[Path]:
             "---",
             "",
         ])
-    readme_lines.extend([
-        "## 🧭 Report Integrity",
-        "",
-        "- Official source identity is retained.",
-        "- Raw source data is retained separately from this presentation layer.",
-        "- Current reports are archived when substantive content changes.",
-        "- Geographic processing is deterministic and auditable.",
-        "- Products with unresolved geography are not silently copied into counties.",
-        "",
-        "_Generated automatically by the RootRecord weather reporting pipeline._",
-        "",
-    ])
-    REPORTING_README.write_text("\n".join(readme_lines), encoding="utf-8")
 
+    live_report = "\n".join(live_lines).rstrip()
+    readme_content = template.replace("{{LIVE_REPORT}}", live_report)
+    if "{{LIVE_REPORT}}" in readme_content:
+        raise RuntimeError("README template placeholder was not rendered")
+    REPORTING_README.write_text(readme_content.rstrip() + "\n", encoding="utf-8")
     return [reports_dir / "{}_current.md".format(resource_id) for resource_id, *_ in sections] + [aggregate_path, REPORTING_README]
