@@ -136,6 +136,10 @@ def run_resource(
         cleaned_obj = text_cleaner.clean_json_text_fields(obj) if clean_text_body else obj
         body_bytes = (json.dumps(cleaned_obj, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
 
+    elif method == "binary":
+        # Binary/static source: preserve exact bytes without text/image validation.
+        body_bytes = raw_content
+
     elif method == "text":
         if extract_text:
             # extract_text is arbitrary, category-specific code (see e.g.
