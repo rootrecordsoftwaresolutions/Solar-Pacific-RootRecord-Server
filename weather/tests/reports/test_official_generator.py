@@ -14,3 +14,11 @@ def test_nhc_isolated():
 def test_noaa_nesdis_isolated():
     assert _source_name("https://www.noaa.gov/") == "NOAA"
     assert _source_name("https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/") == "NOAA-NESDIS"
+
+
+def test_relative_hfo_source_normalizes_to_nws():
+    assert _source_name("/hfo/surfreports") == "NWS-HFO"
+
+
+def test_gml_source_isolated():
+    assert _source_name("https://gml.noaa.gov/grad/solcalc/table.php?lat=21.3&lon=-157.85") == "NOAA-GML"
