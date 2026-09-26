@@ -324,34 +324,75 @@ function maintainAwsFeed() {
   maintenanceRunning = true;
   lastFeedMaintenance = now;
 
-  stopSshStream().then(() => new Promise(resolve => {
-    const args = baseSshArgs();
-    args.push(
-      `${AWS_USER}@${AWS_HOST}`,
-      `bash ${shellQuote(AWS_FEED_MAINTENANCE_SCRIPT)} ${AWS_FEED_MAX_BYTES} ${AWS_FEED_TARGET_BYTES}`
-    );
-    const p = spawn('ssh', args, { stdio: ['ignore', 'pipe', 'pipe'] });
-    p.stdout.setEncoding('utf8');
-    p.stderr.setEncoding('utf8');
-    p.stdout.on('data', chunk => {
-      const msg = chunk.trim();
-      if (msg) console.log(`AWS feed maintenance: ${msg}`);
-    });
-    p.stderr.on('data', chunk => {
-      const msg = chunk.trim();
-      if (msg) console.error(`AWS feed maintenance: ${msg}`);
-    });
-    p.on('error', err => {
-      console.error(`AWS feed maintenance error: ${err.message}`);
-      resolve();
-    });
-    p.on('close', code => {
-      if (code !== 0) console.error(`AWS feed maintenance exited code=${code}`);
-      resolve();
-    });
-  })).finally(() => {
+  const args = baseSshArgs();
+  args.push(
+    `${AWS_USER}@${AWS_HOST}`,
+    `stat -c '%s' ${shellQuote(AWS_REMOTE_DIR + '/data/hawaii.ndjson')} 2>/dev/null || echo 0`
+  );
+
+  const probe = spawn('ssh', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+  let stdout = '';
+  probe.stdout.setEncoding('utf8');
+  probe.stderr.setEncoding('utf8');
+  probe.stdout.on('data', chunk => { stdout += chunk; });
+  probe.stderr.on('data', chunk => {
+    const msg = chunk.trim();
+    if (msg) console.error(`AWS feed size check: ${msg}`);
+  });
+
+  const finish = () => {
     maintenanceRunning = false;
-    if (!shuttingDown) setTimeout(connectSsh, 250);
+  };
+
+  probe.on('error', err => {
+    console.error(`AWS feed size check error: ${err.message}`);
+    finish();
+  });
+
+  probe.on('close', code => {
+    if (code !== 0) {
+      console.error(`AWS feed size check exited code=${code}`);
+      finish();
+      return;
+    }
+
+    const size = Number(stdout.trim());
+    if (!Number.isFinite(size) || size <= AWS_FEED_MAX_BYTES) {
+      finish();
+      return;
+    }
+
+    console.log(`AWS feed is ${size} bytes; starting bounded-feed maintenance`);
+
+    stopSshStream().then(() => new Promise(resolve => {
+      const maintArgs = baseSshArgs();
+      maintArgs.push(
+        `${AWS_USER}@${AWS_HOST}`,
+        `bash ${shellQuote(AWS_FEED_MAINTENANCE_SCRIPT)} ${AWS_FEED_MAX_BYTES} ${AWS_FEED_TARGET_BYTES}`
+      );
+      const p = spawn('ssh', maintArgs, { stdio: ['ignore', 'pipe', 'pipe'] });
+      p.stdout.setEncoding('utf8');
+      p.stderr.setEncoding('utf8');
+      p.stdout.on('data', chunk => {
+        const msg = chunk.trim();
+        if (msg) console.log(`AWS feed maintenance: ${msg}`);
+      });
+      p.stderr.on('data', chunk => {
+        const msg = chunk.trim();
+        if (msg) console.error(`AWS feed maintenance: ${msg}`);
+      });
+      p.on('error', err => {
+        console.error(`AWS feed maintenance error: ${err.message}`);
+        resolve();
+      });
+      p.on('close', exitCode => {
+        if (exitCode !== 0) console.error(`AWS feed maintenance exited code=${exitCode}`);
+        resolve();
+      });
+    })).finally(() => {
+      finish();
+      if (!shuttingDown) setTimeout(connectSsh, 250);
+    });
   });
 }
 
