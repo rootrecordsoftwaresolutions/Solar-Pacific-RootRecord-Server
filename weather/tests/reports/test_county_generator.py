@@ -3,11 +3,11 @@ from reports.county_generator import _targets
 def cfg():
     return {
         "counties": [
-            {"key": "honolulu", "aliases": ["Honolulu", "Oahu"]},
-            {"key": "hawaii", "aliases": ["Hawaii", "Big Island"]},
-            {"key": "maui", "aliases": ["Maui"]},
-            {"key": "kauai", "aliases": ["Kauai"]},
-            {"key": "kalawao", "aliases": ["Kalawao"]},
+            {"key": "honolulu", "same": "HIC003", "aliases": ["Honolulu", "Oahu"]},
+            {"key": "hawaii", "same": "HIC001", "aliases": ["Hawaii", "Big Island"]},
+            {"key": "maui", "same": "HIC009", "aliases": ["Maui"]},
+            {"key": "kauai", "same": "HIC007", "aliases": ["Kauai"]},
+            {"key": "kalawao", "same": "HIC005", "aliases": ["Kalawao"]},
         ],
         "statewide_resource_ids": ["state_report"],
         "resource_routing": {"county_patterns": {"hawaii": ["hilo"]}},
@@ -32,3 +32,15 @@ def test_unknown_preserved():
     found, scope = _targets("unknown", "No geography here", cfg())
     assert found == {"honolulu", "hawaii", "maui", "kauai", "kalawao"}
     assert scope == "unresolved/statewide-source"
+
+
+def test_county_ugc_route():
+    found, scope = _targets("local", "HIC003", cfg())
+    assert found == {"honolulu"}
+    assert scope == "NWS-county-UGC"
+
+
+def test_zone_ugc_route():
+    found, scope = _targets("local", "HIZ301", cfg(), {"HIZ301": "003"})
+    assert found == {"honolulu"}
+    assert scope == "NWS-zone-county-correlation"
