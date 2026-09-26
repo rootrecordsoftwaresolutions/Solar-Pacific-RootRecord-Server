@@ -244,7 +244,7 @@ def run_once(state: SchedulerState, base_dir: str, hurricanes_base_dir: str) -> 
             for f in futures:
                 data_changed = f.result() or data_changed
 
-    reports_dir = Path(base_dir).parent / "reports"
+    reports_dir = Path(base_dir).parent / "reports" / weather_reports.LEVEL0_DIRNAME
     aggregate_path = reports_dir / weather_reports.AGGREGATE_FILENAME
     if data_changed or not aggregate_path.is_file():
         try:
