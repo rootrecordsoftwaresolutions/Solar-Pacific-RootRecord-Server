@@ -11,8 +11,8 @@ Reports are written beside that source tree:
 
 ## Outputs
 
-- \`Hawaii_State_Weather_Report.md\` — one combined statewide report.
-- \`<resource_id>.md\` — one readable Markdown report per current official
+- \`Hawaii_State_Weather_Report_current.md\` — one combined statewide report.
+- \`<resource_id>_current.md\` — one readable Markdown report per current official
   text product.
 
 The scheduler regenerates these reports after each dispatch pass.
