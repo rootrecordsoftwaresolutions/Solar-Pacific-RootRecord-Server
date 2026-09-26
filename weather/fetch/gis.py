@@ -6,6 +6,7 @@ the resource does not become stale when NWS changes its publication date.
 """
 from __future__ import annotations
 import re
+from datetime import datetime
 from urllib.parse import urljoin
 from core.manifest import Manifest
 from core import http_client
@@ -24,9 +25,18 @@ def _latest(html: str, pattern: str) -> str | None:
     matches = re.findall(pattern, html, flags=re.I)
     if not matches:
         return None
-    # Prefer versioned filenames (date suffix); catalog ordering is not trusted.
-    dated = [m for m in matches if re.search(r'\d{2}[a-z]{2}\d{2}', m, re.I)]
-    return sorted(dated or matches)[-1]
+
+    def key(value: str):
+        # NWS versioned GIS files use ddmonyy (for example c_16ap26.zip).
+        m = re.search(r"(?:^|[_-])(\d{2}[a-z]{3}\d{2})(?:\.|$)", value, re.I)
+        if not m:
+            return (0, datetime.min, value.lower())
+        try:
+            return (1, datetime.strptime(m.group(1).lower(), "%d%b%y"), value.lower())
+        except ValueError:
+            return (0, datetime.min, value.lower())
+
+    return max(matches, key=key)
 
 def fetch_all(manifest: Manifest, base_dir: str):
     outcomes = []
@@ -36,6 +46,13 @@ def fetch_all(manifest: Manifest, base_dir: str):
             href = _latest(html.decode("utf-8", errors="replace"), pattern)
         except Exception:
             href = None
+        # Preserve the authoritative catalog page itself. The catalog
+        # is evidence for which version was selected and is archived
+        # separately from the downloaded GIS artifact.
+        outcomes.append(_engine.run_resource(
+            manifest, base_dir, f"{resource_id}_catalog", catalog_url,
+            method="binary", expected_ext="html"
+        ))
         if not href:
             continue
         url = urljoin(catalog_url, href)
