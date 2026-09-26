@@ -102,7 +102,7 @@ class _VisibleTextParser(HTMLParser):
 
 def _html_to_text(raw: str) -> str:
     """Extract the actual visible NWS report from an HTML response."""
-    pre_matches = re.findall(r"<pre\\b[^>]*>(.*?)</pre\\s*>", raw, flags=re.I | re.S)
+    pre_matches = re.findall(r"<pre\b[^>]*>(.*?)</pre\s*>", raw, flags=re.I | re.S)
     if pre_matches:
         return html.unescape(re.sub(r"<[^>]+>", "", pre_matches[-1])).strip()
 
@@ -174,8 +174,9 @@ def _header(title: str, source_url: str, fetched_at: str | None) -> str:
 
 def _as_markdown_report(body: str) -> str:
     """Preserve fixed-width NWS formatting without Markdown mangling it."""
+    fence = "`" * 3
     body = body.replace(fence, "[NWS-FENCE]")
-    return fence + "text\n" + body.rstrip() + "\n" + fence
+    return fence + "text\\n" + body.rstrip() + "\\n" + fence
 
 
 def generate(base_dir: str) -> list[Path]:
@@ -247,7 +248,7 @@ def generate(base_dir: str) -> list[Path]:
             "- **Source:** {}".format(source_url),
             "- **Collected:** {} HST".format(fetched_at or "Unknown"),
             "",
-            _as_indented_text(body),
+            _as_markdown_report(body),
             "",
             "---",
             "",
