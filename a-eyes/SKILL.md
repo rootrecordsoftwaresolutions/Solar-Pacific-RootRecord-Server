@@ -1,55 +1,37 @@
 ---
 name: a-eyes
-description: Camera views only. Local server serves live stills from the DVR channels; grab_frame.py writes them to the Database. Use for cam stills, current.jpg, health check.
+description: Camera views only. Local server serves live stills from the DVR channels; grab_frame.py writes them to the Database. Use for cam stills, current.jpg, health check, public /aeyes live page.
 ---
 
 # a-eyes
 
-Simple version. Cameras only — no automations, no power sessions, no solar logic.
+Cameras only — live stills, local server, optional public web UI.
 
 ## INFO — MUST HAVE
 
 - Never invent a frame. No stream means an error response, not a fake image.
 - Real DVR credentials go in `store/CONNECTION.json` (never in git).
-- Frames are written ONLY to `/home/rootrecord/Database/A-EYES/frames/` —
-  no local skill-store mirror, no second copy anywhere.
-- `cam_server.py` binds `127.0.0.1:8791` and should be the ONLY process
-  serving camera views on this box. If something else is listening on a
-  camera/gateway port, it's a leftover from the old setup — find and stop it.
+- Public web password: `AEYES_PUBLIC_PASSWORD` in `/home/rootrecord/master/master-key.env`.
+- Frames are written ONLY to `/home/rootrecord/Database/A-EYES/frames/`.
+- `cam_server.py` binds `127.0.0.1:8791`. Public path is
+  `https://rootserver.rootrecord.cloud/aeyes` via poller reverse-proxy.
 
-## Layout
+## Live web UI
 
-- `scripts/grab_frame.py` — grabs one JPEG for a channel, saves to Database. Does nothing else.
-- `scripts/cam_server.py` — local HTTP server that broadcasts the current stills.
-- `scripts/timelapse_engine.py` — compiles `frames/` into hourly `video_chunks/hour_HH.mp4`,
-  stitches the day into `final_output/master_stitched_timelapse.mp4` (MP4 only — no GIF),
-  and catches up on boot if the poller wasn't running when a trigger fired. All paths are
-  derived from `grab_frame.DB_FRAMES` — nothing is re-typed by hand.
-- `scripts/timelapse_hourly.sh` / `timelapse_daily.sh` / `timelapse_catchup.sh` — thin
-  wrappers `jobs.py` calls (EVERY_HOUR, ON_AT 19:01, ON_BOOT).
-- `store/CONNECTION.json` — DVR IP / RTSP credentials.
-- `references/CAMERAS.md` — how the cameras work.
+- URL: `https://rootserver.rootrecord.cloud/aeyes`
+- Single password from `AEYES_PUBLIC_PASSWORD` (master-key.env)
+- Channels 1–4, live JPEG refresh (~2s), not archived stills
+- Install / wire proxy: `bash a-eyes/scripts/install_aeyes_web.sh`
 
-## Timelapse layout
+## Timelapse
 
-```
-Database/A-EYES/
-├── frames/          # grab_frame.py writes here (already timestamped — no staging step needed)
-├── video_chunks/    # hour_05.mp4 ... hour_18.mp4  (14 hours)
-├── final_output/    # master_stitched_timelapse.mp4 only
-└── _archive/YYYYMMDD/hour_HH/   # frames moved here after a successful hourly compile (not deleted)
-```
-
-Window **05:00–19:00 HST** (14 hours: 05–18), ch1, target ~3 min / 68 fps master —
-overridable via `A_EYES_TIMELAPSE_*` env vars. Daily stitch fires at **19:01 HST**.
-See `scripts/timelapse_engine.py` docstring for the full list.
+Window **05:00–19:00 HST** (14 hours), MP4 only → `final_output/master_stitched_timelapse.mp4`.
+Daily stitch at **19:01**. Crop is applied at grab time (right edge pct + 20px).
 
 ## Run
 
 ```bash
 python3 scripts/cam_server.py
+# or
+bash scripts/ensure_cam_server.sh
 ```
-
-Then:
-- `curl http://127.0.0.1:8791/health`
-- `curl http://127.0.0.1:8791/current.jpg -o test.jpg`
