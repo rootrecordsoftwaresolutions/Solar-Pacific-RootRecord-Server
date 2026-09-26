@@ -180,7 +180,7 @@ def generate(base_dir: str) -> list[Path]:
         for rid, title, source, scope, source_layer, body in sections:
             lines = [
                 f"# {title} — {name}", "",
-                "> **Level 1 county report — deterministically derived from Level 0.**", "",
+                "> **Level 1 county report — deterministically routed from preserved official-source data.**", "",
                 f"- **Generated:** {now} HST",
                 f"- **Report created:** {now} HST",
                 f"- **County:** {name}",
@@ -201,7 +201,7 @@ def generate(base_dir: str) -> list[Path]:
         # archive lifecycle.
         lines = [
             f"# {name} Weather Report", "",
-            "> **Level 1 county aggregate — deterministically derived from Level 0.**", "",
+            "> **Level 1 county aggregate — deterministically assembled from preserved source-layer records.**", "",
             f"- **Generated:** {now} HST",
             f"- **Report created:** {now} HST",
             f"- **County:** {name}",
