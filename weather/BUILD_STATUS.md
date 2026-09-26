@@ -103,6 +103,11 @@ every checkpoint.
 - **`hurricanes/DAILY.md`** — still a template/stub, unchanged.
 - Text-cleaning raw-copy question and daily-zip retention policy
   (`nws_plan.md` Section 9, open items 1 and 3) — still open, unchanged.
+- **api.weather.gov product bodies**: some stored product captures contain
+  metadata only (no `productText`). Report generation now falls back to a
+  compact metadata summary instead of dumping opaque JSON, but the fetch
+  layer should eventually store the full product detail payload when the
+  listing endpoint does not include text.
 
 ## Next steps for whoever continues this
 
@@ -117,6 +122,10 @@ every checkpoint.
 3. Cleanup pass: dead/duplicate logic vs. the old flat skills.
 4. Full deployment checklist (not scoped yet — see `nextagent.md` Section 10
    step 6 for what "deployment ready" probably needs to mean here).
+5. Run one full report-generation cycle on the live host so
+   `RootRecord-Weather-Database` publishes the processed README banner
+   under `Hawai'i/reports/assets/` and regenerates both READMEs from the
+   updated templates.
 
 ## Source material this build is derived from
 
@@ -184,3 +193,34 @@ has an authoritative UGC/zone-correlation path before text/resource fallbacks.
 - Each report generation cycle rebuilds the README from the same current product sections used by `Hawaii_State_Weather_Report_current.md`, so the README cannot become a separately maintained/stale copy of the statewide report.
 - The README is a presentation layer: official-source records and raw data remain preserved separately, while the README provides the current human-readable statewide view.
 - This is intentionally local-first. Updating the README on disk does not itself imply a Git push; publication/synchronization can be added separately without coupling data generation to Git operations.
+
+
+## 2026-09-25 — README / banner alignment fix
+
+Problem found during review:
+
+- Live `RootRecord-Weather-Database` README was long-form (status table +
+  full statewide sections) and used the **raw** GOES-18 GIF.
+- Templates had been reduced to short-form (`CURRENT_CONDITIONS` only).
+- `generator.py` only replaced `CURRENT_CONDITIONS` and `README_BANNER_URL`,
+  so it could no longer reproduce the published long-form README.
+- Processed banner logic in `banner.py` existed, but the published README
+  did not use `Hawai'i/reports/assets/GOES18-HI-GEOCOLOR-README-banner.gif`.
+
+Fixed:
+
+- `WEATHER_DATABASE_README_TEMPLATE.md` and `README_TEMPLATE.md` restored to
+  long-form with placeholders:
+  `README_BANNER_URL`, `CURRENT_CONDITIONS`, `REPORT_UPDATED`,
+  `REPORT_SECTION_COUNT`, `REPORT_SECTIONS`.
+- `generator.py` now builds and injects the full statewide section body,
+  status fields, current-conditions table, and processed banner URL.
+- Banner generation still never modifies the raw GOES product; on banner
+  failure the generator falls back to the raw collected current GIF URL.
+- JSON product extraction prefers `productText`; metadata-only captures get
+  a compact readable summary instead of a raw JSON dump.
+- Added `tests/reports/test_generator_readme.py` for placeholder rendering.
+
+**Required on the live host (not done from this sandbox):** run one report
+generation cycle so the weather database publishes the processed banner
+asset and regenerates both READMEs from the fixed pipeline.
