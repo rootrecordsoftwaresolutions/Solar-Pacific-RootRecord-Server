@@ -1,6 +1,8 @@
 """Minimal stdlib pytest-alike: discovers test_*.py files, runs top-level
 functions named test_*, reports pass/fail without needing pytest installed."""
-import importlib.util, sys, traceback, pathlib, os
+import importlib.util, sys, traceback, pathlib, os, logging
+
+# Scheduler smoke tests intentionally exercise exception paths. Suppress the\n# scheduler logger here so expected simulated failures do not drown out the\n# actual PASS/FAIL result; real test failures still produce tracebacks below.\nlogging.disable(logging.CRITICAL)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
