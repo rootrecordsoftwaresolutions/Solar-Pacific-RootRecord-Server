@@ -83,6 +83,31 @@ def run_resource(
 
     raw_content = result.content or b""
 
+    # Preserve the exact official HTML response alongside the parsed/cleaned
+    # artifact. The raw copy is intentionally independent of parsed-product
+    # change detection so the live source remains available for inspection.
+    if "text/html" in result.headers.get("content-type", "").lower():
+        raw_dir = Path(resolved.current_path(base_dir)).parent / "raw"
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        raw_current = raw_dir / f"{resolved.name}_raw_current.html"
+        raw_archive = (
+            raw_dir
+            / "archive"
+            / hst_time.hst_date_folder(now)
+            / f"{resolved.name}_raw_{hst_time.hst_archive_timestamp(now)}.html"
+        )
+        raw_unchanged = False
+        if raw_current.is_file():
+            try:
+                raw_unchanged = raw_current.read_bytes() == raw_content
+            except OSError:
+                raw_unchanged = False
+        if not raw_unchanged:
+            if raw_current.is_file():
+                raw_archive.parent.mkdir(parents=True, exist_ok=True)
+                raw_current.replace(raw_archive)
+            raw_current.write_bytes(raw_content)
+
     # Build the exact byte stream that will be archived FIRST.  Change
     # detection must hash this post-processed representation, not the raw
     # HTTP response.  product.php pages commonly contain HTML generation
