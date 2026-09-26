@@ -76,19 +76,22 @@ def run_resource(
         int(result.headers["content-length"]) if "content-length" in result.headers else None
     )
 
-    verdict = change_detection.detect(
-        state, was_304=result.not_modified, response_etag=response_etag,
-        response_last_modified=response_last_modified,
-        response_content_length=response_content_length,
-        content=result.content,
-    )
-
-    if not verdict.changed:
+    # A 304 is authoritative and needs no body processing.
+    if result.not_modified:
         manifest.record_unchanged(resource_id, confirmed_at_hst_iso=now.isoformat())
-        return FetchOutcome(resource_id, "unchanged", verdict.reason)
+        return FetchOutcome(resource_id, "unchanged", "304 Not Modified (conditional GET)")
 
     raw_content = result.content or b""
 
+    # Build the exact byte stream that will be archived FIRST.  Change
+    # detection must hash this post-processed representation, not the raw
+    # HTTP response.  product.php pages commonly contain HTML generation
+    # noise that changes between requests even when the extracted <pre>
+    # product text is identical.
+    #
+    # This ordering is the correctness boundary: the hash must describe
+    # what is actually stored on disk.
+    #
     # Method-specific handling: pull out the real body to write to disk.
     if method == "image":
         body_bytes = raw_content
@@ -138,6 +141,17 @@ def run_resource(
 
     else:
         raise ValueError(f"unknown fetch method: {method!r}")
+
+    verdict = change_detection.detect(
+        state, was_304=False, response_etag=response_etag,
+        response_last_modified=response_last_modified,
+        response_content_length=response_content_length,
+        content=body_bytes,
+    )
+
+    if not verdict.changed:
+        manifest.record_unchanged(resource_id, confirmed_at_hst_iso=now.isoformat())
+        return FetchOutcome(resource_id, "unchanged", verdict.reason)
 
     written_path = archiver.age_out_and_write(base_dir, resolved, state, body_bytes, now)
 
