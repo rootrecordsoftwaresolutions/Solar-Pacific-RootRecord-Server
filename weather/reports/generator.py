@@ -10,6 +10,7 @@ import json
 import re
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
 from typing import Any
 
 import yaml
@@ -375,7 +376,7 @@ def generate(base_dir: str) -> list[Path]:
     _write_current(aggregate_path, aggregate_content, archive_dir, now)
 
     generate_readme_banner(base)
-    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + __import__("urllib.parse").parse.quote(base.parent.name) + "/" + OUTPUT_RELATIVE.as_posix()
+    banner_url = "https://raw.githubusercontent.com/rootrecordsoftwaresolutions/RootRecord-Weather-Database/main/" + quote(base.parent.name) + "/" + OUTPUT_RELATIVE.as_posix()
 
     current_conditions = _current_conditions(base)
 
