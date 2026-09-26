@@ -26,7 +26,12 @@ trap cleanup_temp_files EXIT
 
 cd "$REPO"
 
-git fetch "$REMOTE" "$BRANCH" --quiet
+# GitHub may be unreachable during off-grid/network outages.
+# Treat that as a deferred sync, not a failed automation.
+if ! git fetch "$REMOTE" "$BRANCH" --quiet; then
+    echo "Weather database sync: GitHub unavailable; will retry on next scheduled cycle."
+    exit 0
+fi
 
 if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
     git add -A
@@ -69,4 +74,7 @@ if ! git diff --cached --quiet; then
     git commit -m "Update weather database"
 fi
 
-git push "$REMOTE" "$BRANCH" --quiet
+if ! git push "$REMOTE" "$BRANCH" --quiet; then
+    echo "Weather database sync: GitHub push unavailable; will retry on next scheduled cycle."
+    exit 0
+fi
