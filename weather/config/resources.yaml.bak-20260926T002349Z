@@ -26,7 +26,7 @@ text_products:
     tier: 1
     method: api
     url: "https://api.weather.gov/products/types/SFP/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/SFP"
+    fallback_url: "/hfo/SFP"
     clean_text: true
 
   - id: sft_tabular_forecast
@@ -43,7 +43,7 @@ text_products:
     tier: 4
     method: api
     url: "https://api.weather.gov/products/types/ZFP/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/ZFP"
+    fallback_url: "/hfo/ZFP"
     clean_text: true
 
   - id: afd_area_forecast_discussion
@@ -52,7 +52,7 @@ text_products:
     tier: 1
     method: api
     url: "https://api.weather.gov/products/types/AFD/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/AFD"
+    fallback_url: "/hfo/AFD"
     clean_text: true
 
   - id: pfm_point_forecast_matrix
@@ -69,7 +69,7 @@ text_products:
     tier: 1
     method: api
     url: "https://api.weather.gov/products/types/NOW/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/NOWHI"
+    fallback_url: "/hfo/NOWHI"
     clean_text: true
 
   - id: fwf_fire_weather_forecast
@@ -86,7 +86,7 @@ text_products:
     tier: 1
     method: api
     url: "https://api.weather.gov/products/types/HWO/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/watchwarn"
+    fallback_url: "/hfo/watchwarn"
     clean_text: true
 
   - id: pns_public_information_statement
@@ -94,7 +94,7 @@ text_products:
     name: "Public Information Statement"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/pns"
+    url: "/hfo/pns"
     rss_url: "/source/hfo/xml/PNSHFO.xml"
     clean_text: true
 
@@ -103,7 +103,7 @@ text_products:
     name: "Local Storm Reports"
     tier: 1
     method: scrape
-    url: "https://www.weather.gov/hfo/lsr"
+    url: "/hfo/lsr"
     rss_url: "/source/hfo/xml/LSRHFO.xml"
     clean_text: true
 
@@ -112,7 +112,7 @@ text_products:
     name: "Record Event Reports"
     tier: 5
     method: scrape
-    url: "https://www.weather.gov/hfo/rer"
+    url: "/hfo/rer"
     rss_url: "/source/hfo/xml/RERHFO.xml"
     clean_text: true
 
@@ -205,12 +205,12 @@ hurricanes_reference_only:
   - id: tcsnp_central_npac_summary
     name: "Central N. Pacific Tropical Cyclone Summary (satellite fix)"
     method: scrape
-    url: "https://www.weather.gov/hfo/TCSNP"
+    url: "/hfo/TCSNP"
 
   - id: tcssp_south_pacific_summary
     name: "South Pacific Tropical Cyclone Summary"
     method: scrape
-    url: "https://www.weather.gov/hfo/TCSSP"
+    url: "/hfo/TCSSP"
 
   - id: cphc_landing_page
     name: "CPHC landing page (all active storms)"
@@ -409,7 +409,7 @@ radar:
     name: "Radar status/outage text messages"
     tier: 5
     method: scrape
-    url: "https://www.weather.gov/hfo/FTM"
+    url: "/hfo/FTM"
     clean_text: true
 
   interactive_reference_only:
@@ -430,7 +430,7 @@ marine:
     tier: 4
     method: api
     url: "https://api.weather.gov/products/types/CWF/locations/HFO"
-    fallback_url: "https://www.weather.gov/hfo/CWF"
+    fallback_url: "/hfo/CWF"
     clean_text: true
 
   - id: off_offshore_forecast
@@ -458,14 +458,14 @@ marine:
     name: "Marine Forecast Matrix (Hawaiian Waters)"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/MFM"
+    url: "/hfo/MFM"
     clean_text: true
 
   - id: srf_statewide_surf_forecast
     name: "Statewide Surf Forecast (+discussion)"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/SRF"
+    url: "/hfo/SRF"
     rss_url: "/source/hfo/xml/SurfState.xml"
     clean_text: true
 
@@ -473,7 +473,7 @@ marine:
     name: "Statewide Surf Observations"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/surfreports"
+    url: "/hfo/surfreports"
     clean_text: true
 
   - id: mww_marine_weather_message
@@ -509,7 +509,7 @@ aviation:
     name: "TAFs (HNL, LIH, OGG, ITO, KOA, MKK, JHM, LNY, MDY, PPG)"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/TAFPA"
+    url: "/hfo/TAFPA"
     clean_text: true
 
   - id: fa0_area_forecast
@@ -530,7 +530,7 @@ aviation:
     name: "SIGMETs / Tropical Cyclone SIGMETs / Volcanic Ash SIGMETs"
     tier: 4
     method: scrape
-    url: "https://www.weather.gov/hfo/aviation"
+    url: "/hfo/aviation"
     clean_text: true
 
 # ---------------------------------------------------------------------------
@@ -579,26 +579,26 @@ climate:
     name: "State Weather Roundup + Buoy Reports"
     tier: 5
     method: scrape
-    url: "https://www.weather.gov/hfo/RWR"
+    url: "/hfo/RWR"
     clean_text: true
 
   - id: hrs_archive_90day_rainfall
     name: "90-day rainfall archive"
     tier: 5
     method: scrape
-    url: "https://www.weather.gov/hfo/HRS_archive"
+    url: "/hfo/HRS_archive"
 
   - id: rain_summary_graphical
     name: "Graphical rainfall summary"
     tier: 5
     method: image
-    url: "https://www.weather.gov/hfo/rain_summary"
+    url: "/hfo/rain_summary"
 
   - id: rr5_archive_hydromet
     name: "Hydro-Met Data Report Pt.5 (72hr archive)"
     tier: 5
     method: scrape
-    url: "https://www.weather.gov/hfo/RR5_archive"
+    url: "/hfo/RR5_archive"
 
   full_catalog_reference_only:
     name: "Full text-product catalog (275+ AWIPS IDs, includes obscure ones)"
@@ -615,7 +615,7 @@ observations:
   obhistory_url_template: "http://www.weather.gov/data/obhistory/{icao}.html"
   rss_url_template: "http://www.weather.gov/xml/current_obs/{icao}.rss"
   xml_url_template: "http://www.weather.gov/xml/current_obs/{icao}.xml"
-  interactive_map_reference_only: "https://www.weather.gov/hfo/obs"
+  interactive_map_reference_only: "/hfo/obs"
 
 # ---------------------------------------------------------------------------
 # 11. GFE GRAPHICAL FORECASTS — fetch/maps.py, Tier 6 (self-reported broken)
@@ -625,7 +625,7 @@ gfe_graphics:
     name: "GFE local graphical forecasts (max/min temp, sky, PoP, QPF, wind)"
     tier: 6
     method: scrape
-    url: "https://www.weather.gov/hfo/gfe_graphics"
+    url: "/hfo/gfe_graphics"
     note: >
       HFO self-reported this page as broken ("images are not updating").
       JS/AJAX-driven; underlying image paths not recoverable via plain
