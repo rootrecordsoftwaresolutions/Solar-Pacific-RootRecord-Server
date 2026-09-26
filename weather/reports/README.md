@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-26T00:12:46-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-26T00:21:47-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3447,7 +3447,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-25T23:58:43.147540-10:00 HST |
+| **Collected** | 2026-09-26T00:15:05.072652-10:00 HST |
 
 ```text
 229
@@ -3720,7 +3720,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-26T00:06:04.406971-10:00 HST |
+| **Collected** | 2026-09-26T00:15:07.931162-10:00 HST |
 
 ```text
                         
@@ -4599,7 +4599,7 @@ T INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-26T00:12:46.408592-10:00 HST |
+| **Collected** | 2026-09-26T00:21:46.520049-10:00 HST |
 
 ```text
 Home
@@ -4723,7 +4723,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Sat, 26 Sep 2026 10:10:14 UTC
+Last update Sat, 26 Sep 2026 10:20:14 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -5214,7 +5214,7 @@ Tropical Weather Outlook
 
 Tropical Weather Discussion
 
-0405 UTC Sat Sep 26 2026
+1005 UTC Sat Sep 26 2026
 
 Hurricane Polo
 
