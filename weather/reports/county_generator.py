@@ -65,8 +65,43 @@ def _matches(text: str, counties: dict[str, Any]) -> set[str]:
                 break
     return found
 
-def _targets(resource_id: str, body: str, cfg: dict[str, Any]) -> tuple[set[str], str]:
+def _load_ugc_map(base_dir: Path) -> dict[str, str]:
+    """Read the newest locally archived NWS Zone/County DBX without GIS libraries."""
+    rows = []
+    for path in base_dir.rglob("*.dbx"):
+        try:
+            text = path.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for line in text.splitlines():
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) < 7:
+                continue
+            # NWS ZoneCounty records: STATE|ZONE|CWA|NAME|STATE_ZONE|COUNTY|FIPS|...
+            if parts[0].upper() != "HI":
+                continue
+            zone, county, fips = parts[1], parts[5], parts[6]
+            if zone and county:
+                rows.append((path.stat().st_mtime, f"HIZ{zone}", county, fips))
+    rows.sort(key=lambda x: x[0])
+    mapping = {}
+    for _, ugc, county, fips in rows:
+        if fips:
+            mapping[ugc] = fips[-3:]
+    return mapping
+
+def _targets(resource_id: str, body: str, cfg: dict[str, Any], ugc_map: dict[str, str] | None = None) -> tuple[set[str], str]:
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
+    same_to_key = {str(c.get("same", ""))[-3:]: str(c["key"]) for c in cfg.get("counties", [])}
+    if ugc_map:
+        found = {same_to_key.get(code[-3:]) for code in re.findall(r"\bHIZ\d{3}\b", body, re.I)}
+        found.discard(None)
+        if found:
+            return set(found), "NWS-zone-county-correlation"
+    found_county_ugc = {same_to_key.get(code[-3:]) for code in re.findall(r"\bHIC\d{3}\b", body, re.I)}
+    found_county_ugc.discard(None)
+    if found_county_ugc:
+        return set(found_county_ugc), "NWS-county-UGC"
     statewide = set(cfg.get("statewide_resource_ids", []))
     if resource_id in statewide:
         return set(counties), "statewide"
@@ -86,6 +121,7 @@ def generate(base_dir: str) -> list[Path]:
     archive = level1 / ARCHIVE
     level1.mkdir(parents=True, exist_ok=True)
     cfg = _config()
+    ugc_map = _load_ugc_map(base)
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
     buckets = {key: [] for key in counties}
     now = hst_time.hst_now().isoformat(timespec="seconds")
@@ -103,7 +139,7 @@ def generate(base_dir: str) -> list[Path]:
         source = source_m.group(1).strip() if source_m else ""
         title = title_m.group(1).strip() if title_m else resource_id.replace("_", " ").title()
         body = _body(raw)
-        targets, scope = _targets(resource_id, body, cfg)
+        targets, scope = _targets(resource_id, body, cfg, ugc_map)
         for county in targets:
             buckets[county].append((resource_id, title, source, scope, body))
 
