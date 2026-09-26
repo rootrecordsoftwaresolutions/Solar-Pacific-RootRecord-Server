@@ -1,20 +1,103 @@
-# 🌺 Hawaiʻi State Weather Report
+# 🌺 Hawaiʻi State Weather Database
 
-> **Live statewide report — automatically regenerated from the latest locally collected official weather products.**
+> **RootRecord's continuously updated, source-preserving weather database and reporting layer for Hawaiʻi.**
 
-| Status | Coverage | Updated | Sections |
-|---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-25T20:41:28-10:00 HST | 35 |
+## 🌐 What This Is
 
-## 📡 Current Conditions & Official Products
+This directory is the human-readable reporting layer built from the locally collected Hawaiʻi weather database.
 
-This README is intentionally a **living report**, not a static project description. Each scheduler report cycle regenerates the statewide data and refreshes this document when the underlying report content changes.
+The system is designed around a strict separation between:
 
-**Data boundary:** official-source content is preserved separately; this page is a readable statewide presentation derived from that collected data. No AI/LLM is used to decide geographic ownership of products.
+- **Raw collected data** — the original fetched source material remains authoritative.
+- **Official Sources** — readable copies preserved by issuing source, without processing-level mixing.
+- **0 Level Processing** — statewide readable reports.
+- **1 County Processing** — deterministic county/geographic reports.
+- **Archives** — prior report versions are retained when substantive source content changes.
+
+The live report below is regenerated automatically from the current statewide report data. It is not manually maintained.
+
+## 🛰️ Imagery
+
+A GOES imagery banner will be selected from the live GOES-18 Hawaii or GOES-19 East Pacific products once the imagery feed is confirmed working. The banner choice is intentionally left open so the most useful current visualization can be selected from the collected products.
+
+The imagery pipeline uses stable NOAA/NESDIS product URLs. The stable URL is fetched repeatedly; when the returned image changes, the previous version is archived and the current product keeps its real source filename followed by `_current`.
+
+## 🧭 Data Architecture
+
+```text
+Official / NOAA / NWS / NESDIS sources
+                │
+                ▼
+        Raw Weather Database
+                │
+                ├──────────────► Official Sources
+                │                    │
+                ▼                    ▼
+          0 Level Processing ───► 1 County Processing
+                │                    │
+                └──────────────┬─────┘
+                               ▼
+                     Live README / Reports
+```
+
+### Source integrity
+
+- Original source identity is retained.
+- Raw source material is not replaced by generated reports.
+- Official-source records remain isolated from processing levels.
+- County routing uses deterministic geographic rules.
+- Products without authoritative geographic assignment are not silently copied into counties.
+- Current reports are archived when substantive content changes.
+- The live README and statewide report are generated from the same current product sections.
+
+## 📚 Report Layers
+
+| Layer | Purpose |
+|---|---|
+| **Official Sources** | Preserve readable official-source products grouped by issuing source |
+| **0 Level Processing** | Statewide Hawaiʻi reporting |
+| **1 County Processing** | Deterministically routed county reporting |
+| **Archives** | Historical versions of changed reports |
+
+## 🔄 Automatic Updating
+
+Each scheduler/report-generation cycle can regenerate this README locally from the latest collected data.
+
+The README update is intentionally **local-first**. Generating a new report does not automatically commit or push to GitHub. Publication can be synchronized separately so data collection remains independent from Git operations.
+
+## 🤖 Machine / LLM Use
+
+The database is structured so a local model can consume:
+
+1. raw source material,
+2. source-preserved official records,
+3. statewide processing,
+4. county-level processing,
+5. historical archives,
+
+without treating a generated summary as the original source.
+
+## 🛡️ Integrity Boundary
+
+Generated reports are presentation/processing artifacts. The raw collected weather data remains the authoritative local record.
+
+No AI/LLM is used to decide geographic ownership of weather products.
 
 ---
 
-## 1. 7-Day Zone Forecasts (all islands)
+## 🌦️ Live Hawaiʻi Statewide Weather Report
+
+> **Automatically regenerated from the latest locally collected official weather products.**
+
+| Status | Coverage | Updated | Sections |
+|---|---|---|---:|
+| 🟢 Active | Hawaiʻi statewide | 2026-09-25T21:06:48-10:00 HST | 35 |
+
+The report below is generated from the same current product sections as `0 Level Processing/Hawaii_State_Weather_Report_current.md`. It is a presentation layer only; official-source records and raw source data remain preserved separately.
+
+---
+
+### 1. 7-Day Zone Forecasts (all islands)
 
 | Field | Value |
 |---|---|
@@ -28,7 +111,7 @@ This README is intentionally a **living report**, not a static project descripti
 
 ---
 
-## 2. AIRMETs
+### 2. AIRMETs
 
 | Field | Value |
 |---|---|
@@ -72,7 +155,7 @@ FZLVL...159.
 
 ---
 
-## 3. Area Forecast Discussion
+### 3. Area Forecast Discussion
 
 | Field | Value |
 |---|---|
@@ -86,7 +169,7 @@ FZLVL...159.
 
 ---
 
-## 4. Coastal Waters Forecast (within 40nm)
+### 4. Coastal Waters Forecast (within 40nm)
 
 | Field | Value |
 |---|---|
@@ -100,7 +183,7 @@ FZLVL...159.
 
 ---
 
-## 5. Daily Climate Summary — HNL
+### 5. Daily Climate Summary — HNL
 
 | Field | Value |
 |---|---|
@@ -194,7 +277,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 6. Daily Climate Summary — ITO
+### 6. Daily Climate Summary — ITO
 
 | Field | Value |
 |---|---|
@@ -291,7 +374,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 7. Daily Climate Summary — LIH
+### 7. Daily Climate Summary — LIH
 
 | Field | Value |
 |---|---|
@@ -383,7 +466,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 8. Daily Climate Summary — OGG
+### 8. Daily Climate Summary — OGG
 
 | Field | Value |
 |---|---|
@@ -474,25 +557,25 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 9. Hawaii Rainfall Summary direct product
+### 9. Hawaii Rainfall Summary direct product
 
 | Field | Value |
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-25T20:34:57.619665-10:00 HST |
+| **Collected** | 2026-09-25T21:00:43.960572-10:00 HST |
 
 ```text
-194
-SRHW80 PHFO 260546
+325
+SRHW80 PHFO 260646
 RRAHFO
 
 Hawaii Rainfall Summary
 National Weather Service Honolulu HI
-745 PM HST Fri Sep 25 2026
+845 PM HST Fri Sep 25 2026
 
 :
-.B HFO  0925 H  DH19 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
+.B HFO  0925 H  DH20 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
 :
 :Automated rain gage reports from around the State of Hawaii.
 :These are provisional reports that have not been quality
@@ -500,40 +583,40 @@ National Weather Service Honolulu HI
 :
 :T=Trace Rainfall, M=Missing Data
 :
-:Precipitation totals ending  7 PM HST
+:Precipitation totals ending  8 PM HST
 :
 :Island of Kauai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward/Mauka Sites
 MKAH1 : Makaha Ridge (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-PLRH1 : Puu Lua (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
-WKRH1 : Waiakoali (USGS)            :    0.17  /  0.18  /  0.20  /  0.25
-KLOH1 : Kilohana (USGS)             :    0.60  /  0.67  /  1.16  /  1.43
-MCRH1 : Mohihi Crossing (USGS)      :    0.11  /  0.12  /  0.16  /  0.22
-WLGH1 : Waialae (USGS)              :    0.01  /  0.01  /  0.01  /  0.03
-LLMH1 : Lower Limahuli (UHM)        :    0.07  /  0.08  /  0.08  /  0.12
-WNHH1 : Wainiha (12010)             :    0.12  /  0.13  /  0.14  /  0.23
-WIPH1 : Waipa (UHM)                 :    0.14  /  0.14  /  0.15  /  0.24
-HNIH1 : Hanalei (12009)             :    0.10  /  0.10  /  0.12  /  0.18
+PLRH1 : Puu Lua (RAWS)              :    0.02  /  0.02  /  0.02  /  0.02
+WKRH1 : Waiakoali (USGS)            :    0.27  /  0.32  /  0.33  /  0.37
+KLOH1 : Kilohana (USGS)             :    0.73  /  0.90  /  1.34  /  1.54
+MCRH1 : Mohihi Crossing (USGS)      :    0.23  /  0.25  /  0.28  /  0.32
+WLGH1 : Waialae (USGS)              :    0.06  /  0.06  /  0.06  /  0.07
+LLMH1 : Lower Limahuli (UHM)        :    0.09  /  0.10  /  0.10  /  0.14
+WNHH1 : Wainiha (12010)             :    0.18  /  0.21  /  0.22  /  0.31
+WIPH1 : Waipa (UHM)                 :    0.14  /  0.15  /  0.16  /  0.25
+HNIH1 : Hanalei (12009)             :    0.14  /  0.18  /  0.20  /  0.26
 WLLH1 : Mount Waialeale (USGS)      :      M   /    M   /    M   /    M
-PRIH1 : Princeville Airport (12011) :    0.04  /  0.04  /  0.04  /  0.06
+PRIH1 : Princeville Airport (12011) :    0.03  /  0.05  /  0.05  /  0.07
 CMGH1 : Common Ground (UHM)         :    0.09  /  0.09  /  0.09  /  0.11
-HLIH1 : Hanalei (RAWS)              :    0.11  /  0.12  /  0.13  /  0.16
+HLIH1 : Hanalei (RAWS)              :    0.12  /  0.17  /  0.18  /  0.20
 MLDH1 : Moloaa Dairy (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-ANHH1 : Anahola (12001)             :    0.00  /  0.00  /  0.00  /  0.00
-KPIH1 : Kapahi (12003)              :    0.05  /  0.05  /  0.07  /  0.08
-WLDH1 : N Wailua Ditch (USGS)       :    0.04  /  0.04  /  0.08  /  0.11
-WUHH1 : Wailua (12005)              :    0.08  /  0.13  /  0.19  /  0.19
-WIRH1 : Waiahi Rain Gage (USGS)     :    0.10  /  0.10  /  0.25  /  0.27
-LIHH1 : Lihue Var. Stn. (12006)     :    0.15  /  0.15  /  0.19  /  0.19
-HNMH1 : Hanamaulu (UHM)             :    0.16  /  0.17  /  0.22  /  0.23
-HLI   : Lihue Airport (ASOS)        :    0.01  /  0.03  /  0.04  /  0.05
+ANHH1 : Anahola (12001)             :    0.02  /  0.02  /  0.02  /  0.02
+KPIH1 : Kapahi (12003)              :    0.13  /  0.14  /  0.15  /  0.17
+WLDH1 : N Wailua Ditch (USGS)       :    0.12  /  0.12  /  0.16  /  0.19
+WUHH1 : Wailua (12005)              :    0.21  /  0.27  /  0.27  /  0.33
+WIRH1 : Waiahi Rain Gage (USGS)     :    0.11  /  0.17  /  0.30  /  0.33
+LIHH1 : Lihue Var. Stn. (12006)     :    0.20  /  0.21  /  0.21  /  0.25
+HNMH1 : Hanamaulu (UHM)             :    0.15  /  0.17  /  0.22  /  0.23
+HLI   : Lihue Airport (ASOS)        :    0.01  /  0.03  /  0.03  /  0.04
 :       Leeward Sites
-OMAH1 : Omao (12004)                :    0.07  /  0.07  /  0.10  /  0.11
-LNTH1 : Lawai NTBG (UHM)            :    0.05  /  0.05  /  0.06  /  0.06
-KHEH1 : Kalaheo (12008)             :    0.04  /  0.05  /  0.06  /  0.07
+OMAH1 : Omao (12004)                :    0.18  /  0.18  /  0.21  /  0.21
+LNTH1 : Lawai NTBG (UHM)            :    0.11  /  0.11  /  0.12  /  0.12
+KHEH1 : Kalaheo (12008)             :    0.08  /  0.09  /  0.10  /  0.10
 PAKH1 : Port Allen (HSOIS)          :    0.00  /  0.00  /  0.00  /  0.00
-HNPH1 : Hanapepe (12002)            :    0.00  /  0.00  /  0.00  /  0.00
+HNPH1 : Hanapepe (12002)            :    0.01  /  0.01  /  0.01  /  0.01
 POPH1 : Puu Opae (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 WHGH1 : Waimea Heights (RAWS)       :    0.00  /  0.00  /  0.00  /  0.00
 WMTH1 : Waimea Tank (12007)         :    0.00  /  0.00  /  0.00  /  0.00
@@ -542,51 +625,51 @@ MNRH1 : Mana (RAWS)                 :    0.00  /  0.00  /  0.00  /  0.00
 :Island of Oahu                                    Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward/Mauka Sites
-KAHH1 : Kahuku (13027)              :    0.00  /  0.00  /  0.00  /  0.00
+KAHH1 : Kahuku (13027)              :    0.02  /  0.02  /  0.02  /  0.02
 KTAH1 : Kahuku Training Area (RAWS) :    0.00  /  0.00  /  0.00  /  0.00
 KFWH1 : Kii (RAWS)                  :    0.00  /  0.00  /  0.00  /  0.00
-PUNH1 : Punaluu Pump (13013)        :    0.05  /  0.05  /  0.10  /  0.14
-PNSH1 : Punaluu Stream (USGS)       :    0.02  /  0.07  /  0.18  /  0.23
-KNRH1 : Kahana (USGS)               :    0.06  /  0.06  /  0.19  /  0.31
-HAKH1 : Hakipuu Mauka (13004)       :    0.01  /  0.01  /  0.13  /  0.31
-WPPH1 : Waihee Pump (13002)         :    0.02  /  0.04  /  0.06  /  0.12
-WHSH1 : Waiahole (USGS)             :    0.03  /  0.04  /  0.06  /  0.10
-OFRH1 : Oahu Forest NWR (USFWS)     :    0.01  /  0.01  /  0.06  /  0.09
-AHUH1 : Ahuimanu Loop (13005)       :    0.01  /  0.03  /  0.05  /  0.06
+PUNH1 : Punaluu Pump (13013)        :    0.04  /  0.06  /  0.07  /  0.15
+PNSH1 : Punaluu Stream (USGS)       :    0.02  /  0.08  /  0.18  /  0.24
+KNRH1 : Kahana (USGS)               :    0.03  /  0.06  /  0.17  /  0.31
+HAKH1 : Hakipuu Mauka (13004)       :    0.02  /  0.02  /  0.06  /  0.32
+WPPH1 : Waihee Pump (13002)         :    0.01  /  0.04  /  0.05  /  0.12
+WHSH1 : Waiahole (USGS)             :    0.02  /  0.04  /  0.06  /  0.10
+OFRH1 : Oahu Forest NWR (USFWS)     :    0.03  /  0.03  /  0.06  /  0.11
+AHUH1 : Ahuimanu Loop (13005)       :    0.02  /  0.04  /  0.05  /  0.07
 HRRH1 : Heeia NERR (NOAA/NOS)       :    0.01  /  0.05  /  0.07  /  0.12
 LULH1 : Luluku (13016)              :    0.00  /  0.00  /  0.00  /  0.00
 NRSH1 : Nuuanu Res No. 1 (UHM)      :    0.00  /  0.00  /  0.02  /  0.09
 KWIH1 : Kalawahine (UHM)            :    0.01  /  0.01  /  0.06  /  0.23
-LYOH1 : Lyon (UHM)                  :    0.00  /  0.00  /  0.09  /  0.33
-MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.01  /  0.08  /  0.33
-STVH1 : St. Stephens (13006)        :    0.00  /  0.02  /  0.05  /  0.16
+LYOH1 : Lyon (UHM)                  :    0.00  /  0.00  /  0.08  /  0.33
+MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.01  /  0.03  /  0.27
+STVH1 : St. Stephens (13006)        :    0.00  /  0.02  /  0.04  /  0.16
 MAUH1 : Maunawili (13008)           :      M   /    M   /    M   /    M
 OFSH1 : Olomana Fire Station (13009):    0.00  /  0.00  /  0.00  /  0.04
-WMLH1 : Waimanalo (13011)           :    0.00  /  0.00  /  0.04  /  0.07
+WMLH1 : Waimanalo (13011)           :    0.00  /  0.00  /  0.01  /  0.07
 BELH1 : Bellows AFS (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.00
-KMHH1 : Kamehame (13012)            :    0.00  /  0.00  /  0.02  /  0.08
-HAJH1 : Hawaii Kai Golf Crse (13015):    0.00  /  0.00  /  0.01  /  0.17
+KMHH1 : Kamehame (13012)            :    0.00  /  0.00  /  0.00  /  0.08
+HAJH1 : Hawaii Kai Golf Crse (13015):    0.00  /  0.00  /  0.00  /  0.17
 :       Leeward/Central Sites
 KUXH1 : Kaluanui (UHM)              :    0.00  /  0.01  /  0.04  /  0.13
-NIUH1 : Niu Valley (13001)          :    0.00  /  0.00  /  0.11  /  0.24
-PFSH1 : Palolo Fire Station (13010) :    0.00  /  0.00  /  0.06  /  0.17
+NIUH1 : Niu Valley (13001)          :    0.00  /  0.00  /  0.02  /  0.24
+PFSH1 : Palolo Fire Station (13010) :    0.00  /  0.00  /  0.03  /  0.15
 HNL   : Honolulu Airport (ASOS)             See note at bottom  :
-MOAH1 : Moanalua (13003)            :    0.00  /  0.01  /  0.03  /  0.09
-MOGH1 : Moanalua RG (USGS)          :    0.04  /  0.15  /  0.18  /  0.39
-TNLH1 : Tunnel RG (USGS)            :    0.07  /  0.12  /  0.26  /  0.39
-PACH1 : Palisades (13020)           :    0.01  /  0.02  /  0.03  /  0.05
-WAWH1 : Waiawa C.F. (13025)         :    0.01  /  0.01  /  0.02  /  0.02
+MOAH1 : Moanalua (13003)            :    0.01  /  0.02  /  0.03  /  0.10
+MOGH1 : Moanalua RG (USGS)          :    0.04  /  0.15  /  0.16  /  0.39
+TNLH1 : Tunnel RG (USGS)            :    0.01  /  0.11  /  0.19  /  0.39
+PACH1 : Palisades (13020)           :    0.01  /  0.02  /  0.02  /  0.05
+WAWH1 : Waiawa C.F. (13025)         :    0.02  /  0.02  /  0.03  /  0.03
 MITH1 : Mililani (13022)            :    0.01  /  0.01  /  0.01  /  0.01
 SCBH1 : Schofield Barracks (RAWS)   :    0.00  /  0.00  /  0.00  /  0.00
 SCEH1 : Schofield East (RAWS)       :      M   /    M   /    M   /    M
-WAFH1 : Wheeler Airfield            :    0.00  /  0.00  /  0.00  /  0.00
+WAFH1 : Wheeler Airfield            :    0.04  /  0.04  /  0.04  /  0.04
 POAH1 : Poamoho (13018)             :    0.00  /  0.00  /  0.00  /  0.00
-KRGH1 : Kalahee Ridge (UHM)         :    0.02  /  0.02  /  0.05  /  0.05
-KMRH1 : Kamananui Stream (USGS)     :    0.06  /  0.07  /  0.16  /  0.17
-PPRH1 : Pupukea Road (USGS)         :    0.07  /  0.07  /  0.13  /  0.15
-PMHH1 : Poamoho RG 1 (USGS)         :    0.03  /  0.07  /  0.19  /  0.40
+KRGH1 : Kalahee Ridge (UHM)         :    0.03  /  0.03  /  0.06  /  0.06
+KMRH1 : Kamananui Stream (USGS)     :    0.14  /  0.17  /  0.20  /  0.27
+PPRH1 : Pupukea Road (USGS)         :    0.11  /  0.13  /  0.16  /  0.21
+PMHH1 : Poamoho RG 1 (USGS)         :    0.04  /  0.07  /  0.15  /  0.41
 DLGH1 : Dillingham (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
-AALH1 : Kaala (UHM)                 :    0.06  /  0.13  /  0.24  /  0.28
+AALH1 : Kaala (UHM)                 :    0.06  /  0.14  /  0.25  /  0.29
 PECH1 : Waipio (13019)              :    0.00  /  0.00  /  0.00  /  0.00
 KUNH1 : Kunia Substation (13021)    :    0.00  /  0.00  /  0.00  /  0.00
 HOFH1 : Honouliuli (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
@@ -603,14 +686,14 @@ KKRH1 : Kuaokala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 :
 :Island of Molokai                                 Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
-KOPH1 : Keopukaloa (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
+KOPH1 : Keopukaloa (UHM)            :    0.01  /  0.01  /  0.01  /  0.01
 HOMH1 : Honolimaloo (UHM)           :    0.04  /  0.04  /  0.04  /  0.10
 KMLH1 : Kamalo (14013)              :    0.00  /  0.00  /  0.00  /  0.00
 MKPH1 : Makapulapai (RAWS)          :    0.00  /  0.00  /  0.00  /  0.02
-PAFH1 : Puu Alii (RAWS)             :    0.04  /  0.04  /  0.15  /  0.56
+PAFH1 : Puu Alii (RAWS)             :    0.06  /  0.07  /  0.08  /  0.59
 MLKH1 : Molokai 1 (RAWS)            :      M   /    M   /    M   /    M
 KACH1 : Kaunakakai Mauka (14004)    :    0.00  /  0.00  /  0.00  /  0.00
-HMK   : Molokai Airport (ASOS)      :    0.00  /  0.00  /    T   /    T
+HMK   : Molokai Airport (ASOS)      :    0.00  /  0.00  /  0.00  /    T
 :
 :Island of Lanai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
@@ -626,18 +709,18 @@ KAOH1 : Kaneloa (RAWS)              :      M   /    M   /    M   /    M
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
 HNAH1 : Hana Airport (HSOIS)        :      M   /    M   /    M   /    M
-WWKH1 : West Wailuaiki (USGS)       :    0.24  /  0.51  /  0.94  /  1.81
+WWKH1 : West Wailuaiki (USGS)       :    0.15  /  0.51  /  0.86  /  1.85
 EBYH1 : EMI Baseyard (UHM)          :    0.02  /  0.04  /  0.04  /  0.31
 AIKH1 : Haiku (14001)               :    0.01  /  0.01  /  0.01  /  0.08
 HOG   : Kahului Airport (ASOS)      :    0.00  /  0.00  /  0.00  /    T
 WUKH1 : Wailuku (14007)             :    0.00  /  0.00  /  0.00  /  0.00
 KHKH1 : Kahakuloa (14002)           :    0.00  /  0.00  /  0.00  /  0.00
-PKKH1 : Puu Kukui (USGS)            :    0.07  /  0.08  /  1.13  /  2.42
+PKKH1 : Puu Kukui (USGS)            :    0.11  /  0.16  /  0.90  /  2.50
 :       Leeward/Upcountry Sites
 NKUH1 : Na Kula (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KPNH1 : Kepuni (USGS)               :    0.00  /  0.00  /  0.00  /  0.00
-PILH1 : Piiholo (UHM)               :    0.06  /  0.06  /  0.08  /  0.18
-WKTH1 : Waikamoi Treeline (UHM)     :    0.20  /  0.21  /  0.23  /  0.52
+PILH1 : Piiholo (UHM)               :    0.07  /  0.07  /  0.09  /  0.19
+WKTH1 : Waikamoi Treeline (UHM)     :    0.21  /  0.22  /  0.24  /  0.53
 PUKH1 : Pukalani (14006)            :    0.00  /  0.00  /  0.00  /  0.00
 KBSH1 : Kula Branch Station (14008) :      M   /    M   /    M   /    M
 KLGH1 : Kula Ag (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
@@ -662,45 +745,45 @@ HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.05
 :Island of Hawaii                                  Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
-UPLH1 : Upolu Airport (HSOIS)       :    0.03  /  0.07  /  0.20  /  0.20
-KMMH1 : Kaluamakani (UHM)           :    0.18  /  0.30  /  0.30  /  0.30
-KWSH1 : Kawainui Stream (USGS)      :    1.23  /  1.62  /  2.50  /  3.94
-KUUH1 : Kamuela Upper (15002)       :    0.43  /  0.63  /  1.03  /  1.55
-KMUH1 : Kamuela (15005)             :    0.23  /  0.37  /  0.39  /  0.49
-HNKH1 : Honokaa (15010)             :    0.86  /  1.14  /  1.28  /  1.95
-PMLH1 : Puu Mali (RAWS)             :    0.22  /  0.41  /  0.42  /  0.42
-WPNH1 : Waipunalei (UHM)            :      M   /    M   /  0.21  /    M
-KNKH1 : Kanakaleonui (UHM)          :    0.92  /  1.82  /  2.06  /  2.07
-LPHH1 : Laupahoehoe PD (15001)      :    0.04  /  0.94  /  1.44  /  1.85
-LAUH1 : Laupahoehoe (UHM)           :    1.92  /  3.53  /  4.04  /  4.80
-SPNH1 : Spencer (UHM)               :    0.20  /  1.24  /  2.03  /  4.62
-HKUH1 : Hakalau (RAWS)              :    1.21  /  1.79  /  2.09  /  2.18
-KLXH1 : Kulaimano (UHM)             :    0.00  /  0.35  /  0.91  /  1.27
-NLIH1 : Honolii Stream (USGS)       :    0.32  /  0.79  /  1.47  /  2.40
-SDQH1 : Saddle Quarry (USGS)        :    1.05  /  1.58  /  2.08  /  2.38
-PIOH1 : Piihonua (UHM)              :    0.43  /  0.93  /  1.70  /  2.84
+UPLH1 : Upolu Airport (HSOIS)       :    0.02  /  0.05  /  0.16  /  0.20
+KMMH1 : Kaluamakani (UHM)           :    0.15  /  0.30  /  0.30  /  0.30
+KWSH1 : Kawainui Stream (USGS)      :    1.37  /  1.91  /  2.74  /  4.20
+KUUH1 : Kamuela Upper (15002)       :    0.45  /  0.74  /  1.06  /  1.67
+KMUH1 : Kamuela (15005)             :    0.21  /  0.45  /  0.46  /  0.56
+HNKH1 : Honokaa (15010)             :    1.01  /  1.58  /  1.71  /  2.39
+PMLH1 : Puu Mali (RAWS)             :    0.17  /  0.45  /  0.47  /  0.47
+WPNH1 : Waipunalei (UHM)            :      M   /    M   /  0.20  /    M
+KNKH1 : Kanakaleonui (UHM)          :    0.85  /  1.86  /  2.12  /  2.14
+LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.83  /  1.35  /  1.82
+LAUH1 : Laupahoehoe (UHM)           :    1.86  /  3.67  /  4.19  /  4.96
+SPNH1 : Spencer (UHM)               :    0.17  /  1.22  /  2.02  /  4.60
+HKUH1 : Hakalau (RAWS)              :    1.07  /  2.10  /  2.32  /  2.49
+KLXH1 : Kulaimano (UHM)             :    0.00  /  0.31  /  0.89  /  1.23
+NLIH1 : Honolii Stream (USGS)       :    0.09  /  0.72  /  1.47  /  2.31
+SDQH1 : Saddle Quarry (USGS)        :    0.98  /  1.71  /  2.28  /  2.67
+PIOH1 : Piihonua (UHM)              :    0.44  /  0.94  /  1.75  /  2.89
 PIIH1 : Piihonua (15016)            :    0.00  /  0.00  /  0.01  /  0.03
-IPIH1 : IPIF (UHM)                  :    0.00  /  0.38  /  1.20  /  1.54
-WKAH1 : Waiakea Uka (15017)         :    0.02  /  0.31  /  1.19  /  1.71
+IPIH1 : IPIF (UHM)                  :    0.00  /  0.35  /  1.13  /  1.54
+WKAH1 : Waiakea Uka (15017)         :    0.04  /  0.30  /  1.20  /  1.70
 WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.25  /  0.72  /  0.83
 HTO   : Hilo Airport (ASOS)         :      T   /  0.08  /  0.89  /  1.18
-PHAH1 : Pahoa (15015)               :    0.00  /  0.53  /  1.43  /  1.80
-PAOH1 : Pahoa (UHM)                 :    0.02  /  0.45  /  1.14  /  1.42
-MTVH1 : Mountain View (15014)       :    0.07  /  0.62  /  1.69  /  2.05
-GLNH1 : Glenwood (15013)            :    1.04  /  1.30  /  2.01  /  2.82
+PHAH1 : Pahoa (15015)               :    0.00  /  0.29  /  1.36  /  1.78
+PAOH1 : Pahoa (UHM)                 :    0.01  /  0.44  /  1.12  /  1.40
+MTVH1 : Mountain View (15014)       :    0.15  /  0.63  /  1.76  /  2.18
+GLNH1 : Glenwood (15013)            :    0.86  /  1.56  /  2.23  /  3.09
 :       Leeward Sites
-MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.34  /  0.50  /  0.53  /  0.53
-NHKH1 : Nahuku (UHM)                :    0.86  /  1.49  /  1.92  /  2.21
-KKUH1 : Keaumo (RAWS)               :    0.45  /  0.87  /  0.89  /  0.89
-KMOH1 : Kealakomo (RAWS)            :    0.01  /  0.17  /  0.19  /  0.20
-PLIH1 : Pali 2 (RAWS)               :    0.07  /  0.11  /  0.11  /  0.11
-KPRH1 : Kapapala (RAWS)             :    0.02  /  0.02  /  0.02  /  0.04
+MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.21  /  0.46  /  0.56  /  0.56
+NHKH1 : Nahuku (UHM)                :    0.67  /  1.52  /  1.95  /  2.24
+KKUH1 : Keaumo (RAWS)               :    0.35  /  0.99  /  1.02  /  1.02
+KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.17  /  0.19  /  0.20
+PLIH1 : Pali 2 (RAWS)               :    0.06  /  0.13  /  0.13  /  0.13
+KPRH1 : Kapapala (RAWS)             :    0.00  /  0.02  /  0.02  /  0.04
 KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.00
-PPLH1 : Pahala (15004)              :    0.03  /  0.06  /  0.06  /  0.13
+PPLH1 : Pahala (15004)              :    0.00  /  0.06  /  0.06  /  0.13
 KIOH1 : Kaiholena (UHM)             :      M   /    M   /    M   /    M
-NENH1 : Nene Cabin (RAWS)           :    0.40  /  0.69  /  0.70  /  0.70
-SOPH1 : South Point (HSOIS)         :    0.14  /  0.17  /  0.17  /  0.18
-LKHH1 : Lower Kahuku (RAWS)         :    0.36  /  0.66  /  0.66  /  0.67
+NENH1 : Nene Cabin (RAWS)           :    0.29  /  0.64  /  0.70  /  0.70
+SOPH1 : South Point (HSOIS)         :    0.10  /  0.17  /  0.18  /  0.19
+LKHH1 : Lower Kahuku (RAWS)         :    0.23  /  0.66  /  0.68  /  0.69
 KRCH1 : Kahuku Ranch (RAWS)         :    0.01  /  0.01  /  0.01  /  0.01
 KOMH1 : Kona Hema (UHM)             :    0.00  /  0.01  /  0.01  /  0.02
 PHRH1 : Puho CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
@@ -724,13 +807,13 @@ PKWH1 : Pohakuloa West (RAWS)       :    0.00  /  0.00  /  0.00  /  0.00
 PKMH1 : Pohakuloa Keamuku (RAWS)    :    0.00  /  0.00  /  0.00  /  0.00
 AHMH1 : Ahumoa (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
 WHIH1 : Waikii (15011)              :    0.00  /  0.00  /  0.00  /  0.00
-LLAH1 : Lalamilo (UHM)              :    0.09  /  0.12  /  0.17  /  0.22
+LLAH1 : Lalamilo (UHM)              :    0.09  /  0.13  /  0.17  /  0.23
 WKVH1 : Waikoloa (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 PERH1 : Puhe CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KHRH1 : Kohala Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-KASH1 : Kahua Ranch (15006)         :    0.21  /  0.30  /  0.42  /  0.55
-KEHH1 : Kehena (UHM)                :    0.80  /  1.13  /  1.64  /  2.24
-PLAH1 : Puuloa (UHM)                :    0.22  /  0.28  /  0.28  /  0.28
+KASH1 : Kahua Ranch (15006)         :    0.22  /  0.39  /  0.50  /  0.64
+KEHH1 : Kehena (UHM)                :    0.82  /  1.18  /  1.69  /  2.29
+PLAH1 : Puuloa (UHM)                :    0.22  /  0.30  /  0.30  /  0.30
 .END
 
 Service Note
@@ -747,13 +830,13 @@ $$
 
 ---
 
-## 10. HFO statewide surf observations direct page
+### 10. HFO statewide surf observations direct page
 
 | Field | Value |
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-25T20:35:07.653742-10:00 HST |
+| **Collected** | 2026-09-25T21:00:47.557730-10:00 HST |
 
 ```text
 948
@@ -840,7 +923,7 @@ $$
 
 ---
 
-## 11. High Seas Forecast N. Pacific
+### 11. High Seas Forecast N. Pacific
 
 | Field | Value |
 |---|---|
@@ -935,13 +1018,13 @@ AND 150W.
 
 ---
 
-## 12. Hourly Wind/Precip Observations
+### 12. Hourly Wind/Precip Observations
 
 | Field | Value |
 |---|---|
 | **Resource ID** | oso_hourly_obs |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OSO&issuedby=HFO |
-| **Collected** | 2026-09-25T20:37:43.003830-10:00 HST |
+| **Collected** | 2026-09-25T20:53:12.372940-10:00 HST |
 
 ```text
 583
@@ -1145,7 +1228,7 @@ ID Loca ion Da e Time DIR SPD GUST
 
 ---
 
-## 13. Monthly Climate Summary — HNL
+### 13. Monthly Climate Summary — HNL
 
 | Field | Value |
 |---|---|
@@ -1246,7 +1329,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 14. Monthly Climate Summary — ITO
+### 14. Monthly Climate Summary — ITO
 
 | Field | Value |
 |---|---|
@@ -1342,7 +1425,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 15. Monthly Climate Summary — LIH
+### 15. Monthly Climate Summary — LIH
 
 | Field | Value |
 |---|---|
@@ -1440,7 +1523,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 16. Monthly Climate Summary — OGG
+### 16. Monthly Climate Summary — OGG
 
 | Field | Value |
 |---|---|
@@ -1541,7 +1624,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 17. NHC Atlantic Tropical Weather Outlook — 2 day
+### 17. NHC Atlantic Tropical Weather Outlook — 2 day
 
 | Field | Value |
 |---|---|
@@ -1555,7 +1638,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 18. NHC Atlantic Tropical Weather Outlook — 7 day
+### 18. NHC Atlantic Tropical Weather Outlook — 7 day
 
 | Field | Value |
 |---|---|
@@ -1569,7 +1652,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 19. NHC Central Pacific Tropical Weather Outlook — 2 day
+### 19. NHC Central Pacific Tropical Weather Outlook — 2 day
 
 | Field | Value |
 |---|---|
@@ -1583,7 +1666,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 20. NHC Central Pacific Tropical Weather Outlook — 7 day
+### 20. NHC Central Pacific Tropical Weather Outlook — 7 day
 
 | Field | Value |
 |---|---|
@@ -1597,7 +1680,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 21. NHC Eastern Pacific Tropical Weather Outlook — 2 day
+### 21. NHC Eastern Pacific Tropical Weather Outlook — 2 day
 
 | Field | Value |
 |---|---|
@@ -1611,7 +1694,7 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 22. NHC Eastern Pacific Tropical Weather Outlook — 7 day
+### 22. NHC Eastern Pacific Tropical Weather Outlook — 7 day
 
 | Field | Value |
 |---|---|
@@ -1625,13 +1708,13 @@ T INDICATES TRACE AMOUNT.
 
 ---
 
-## 23. NHC source index
+### 23. NHC source index
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-25T20:41:27.796653-10:00 HST |
+| **Collected** | 2026-09-25T21:06:48.464923-10:00 HST |
 
 ```text
 Home
@@ -1991,7 +2074,7 @@ view pas news
 
 
 
-Las upda e Sa , 26 Sep 2026 06:40:22 UTC
+Las upda e Sa , 26 Sep 2026 07:00:17 UTC
 
 
 
@@ -6083,7 +6166,7 @@ Career Oppor uni ies
 
 ---
 
-## 24. NOAA solar calculation table
+### 24. NOAA solar calculation table
 
 | Field | Value |
 |---|---|
@@ -9516,13 +9599,13 @@ Take Our Survey
 
 ---
 
-## 25. Nws Cwa Boundaries Catalog
+### 25. Nws Cwa Boundaries Catalog
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nws_cwa_boundaries_catalog |
 | **Official source** | https://www.weather.gov/gis/CWABounds |
-| **Collected** | 2026-09-25T20:34:39.310055-10:00 HST |
+| **Collected** | 2026-09-25T20:59:06.493581-10:00 HST |
 
 ```text
 Coun y Warning Area Boundaries
@@ -9747,12 +9830,12 @@ Wireless Emergency Aler s
 
 
 
-Brochures
-
-
-
-
 Wea her-Ready Na ion
+
+
+
+
+Brochures
 
 
 
@@ -10474,13 +10557,13 @@ Career Oppor uni ies
 
 ---
 
-## 26. Nws Fire Zones Catalog
+### 26. Nws Fire Zones Catalog
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nws_fire_zones_catalog |
 | **Official source** | https://www.weather.gov/gis/firezones |
-| **Collected** | 2026-09-25T20:34:55.263983-10:00 HST |
+| **Collected** | 2026-09-25T20:59:18.561412-10:00 HST |
 
 ```text
 NWS Fire Wea her Zones
@@ -11406,13 +11489,13 @@ Career Oppor uni ies
 
 ---
 
-## 27. Nws Marine Zones Catalog
+### 27. Nws Marine Zones Catalog
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nws_marine_zones_catalog |
 | **Official source** | https://www.weather.gov/gis/MarineZones |
-| **Collected** | 2026-09-25T20:35:09.189434-10:00 HST |
+| **Collected** | 2026-09-25T20:50:14.912559-10:00 HST |
 
 ```text
 NWS Coas al, Offshore and High Seas Zones
@@ -11637,12 +11720,12 @@ Wireless Emergency Aler s
 
 
 
-Brochures
-
-
-
-
 Wea her-Ready Na ion
+
+
+
+
+Brochures
 
 
 
@@ -12440,7 +12523,7 @@ Career Oppor uni ies
 
 ---
 
-## 28. Nws Public Counties Catalog
+### 28. Nws Public Counties Catalog
 
 | Field | Value |
 |---|---|
@@ -12462,13 +12545,13 @@ nn northern         ss southern         ea east
 
 ---
 
-## 29. Nws Public Zones Catalog
+### 29. Nws Public Zones Catalog
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nws_public_zones_catalog |
 | **Official source** | https://www.weather.gov/gis/publiczones |
-| **Collected** | 2026-09-25T20:34:03.346057-10:00 HST |
+| **Collected** | 2026-09-25T20:49:26.887031-10:00 HST |
 
 ```text
 NWS Public Forecas Zones
@@ -12693,12 +12776,12 @@ Wireless Emergency Aler s
 
 
 
-Brochures
-
-
-
-
 Wea her-Ready Na ion
+
+
+
+
+Brochures
 
 
 
@@ -13422,13 +13505,13 @@ Career Oppor uni ies
 
 ---
 
-## 30. Nws Zone County Catalog
+### 30. Nws Zone County Catalog
 
 | Field | Value |
 |---|---|
 | **Resource ID** | nws_zone_county_catalog |
 | **Official source** | https://www.weather.gov/gis/ZoneCounty |
-| **Collected** | 2026-09-25T20:29:04.845592-10:00 HST |
+| **Collected** | 2026-09-25T20:58:54.560234-10:00 HST |
 
 ```text
 Zone-coun y Correla ion File
@@ -14299,7 +14382,7 @@ Career Oppor uni ies
 
 ---
 
-## 31. Offshore Forecast (40-240nm)
+### 31. Offshore Forecast (40-240nm)
 
 | Field | Value |
 |---|---|
@@ -14383,7 +14466,7 @@ NW Half, E 15 o 25 k SE Half. Seas 6 o 11 f .
 
 ---
 
-## 32. Radar status/outage text messages
+### 32. Radar status/outage text messages
 
 | Field | Value |
 |---|---|
@@ -14431,7 +14514,7 @@ No outage message at this time.
 
 ---
 
-## 33. State Forecast for Hawaii
+### 33. State Forecast for Hawaii
 
 | Field | Value |
 |---|---|
@@ -14445,7 +14528,7 @@ No outage message at this time.
 
 ---
 
-## 34. Statewide Surf Observations
+### 34. Statewide Surf Observations
 
 | Field | Value |
 |---|---|
@@ -14538,13 +14621,13 @@ $$
 
 ---
 
-## 35. Tsunami Bulletin product type reference
+### 35. Tsunami Bulletin product type reference
 
 | Field | Value |
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-25T20:30:12.565220-10:00 HST |
+| **Collected** | 2026-09-25T20:59:57.983508-10:00 HST |
 
 ```text
 Na ional Wea her Service
@@ -14727,12 +14810,12 @@ Wireless Emergency Aler s
 
 
 
-Wea her-Ready Na ion
-
-
-
-
 Brochures
+
+
+
+
+Wea her-Ready Na ion
 
 
 
@@ -17060,12 +17143,6 @@ Career Oppor uni ies
 
 ---
 
-## 🧭 Report Integrity
-
-- Official source identity is retained.
-- Raw source data is retained separately from this presentation layer.
-- Current reports are archived when substantive content changes.
-- Geographic processing is deterministic and auditable.
-- Products with unresolved geography are not silently copied into counties.
+---
 
 _Generated automatically by the RootRecord weather reporting pipeline._
