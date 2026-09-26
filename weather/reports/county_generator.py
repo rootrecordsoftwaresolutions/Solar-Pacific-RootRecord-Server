@@ -94,7 +94,7 @@ def _targets(resource_id: str, body: str, cfg: dict[str, Any], ugc_map: dict[str
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
     same_to_key = {str(c.get("same", ""))[-3:]: str(c["key"]) for c in cfg.get("counties", [])}
     if ugc_map:
-        found = {same_to_key.get(code[-3:]) for code in re.findall(r"\bHIZ\d{3}\b", body, re.I)}
+        found = {same_to_key.get(ugc_map.get(code.upper(), "")[-3:]) for code in re.findall(r"\bHIZ\d{3}\b", body, re.I)}
         found.discard(None)
         if found:
             return set(found), "NWS-zone-county-correlation"
@@ -111,7 +111,7 @@ def _targets(resource_id: str, body: str, cfg: dict[str, Any], ugc_map: dict[str
     found = _matches(body, counties)
     if found:
         return found, "explicit-text"
-    return set(counties), "unresolved/statewide-source"
+    return set(), "unresolved/no-geographic-assignment"
 
 def generate(base_dir: str) -> list[Path]:
     base = Path(base_dir)
@@ -124,6 +124,7 @@ def generate(base_dir: str) -> list[Path]:
     ugc_map = _load_ugc_map(base)
     counties = {str(c["key"]): c for c in cfg.get("counties", [])}
     buckets = {key: [] for key in counties}
+    unresolved = []
     now = hst_time.hst_now().isoformat(timespec="seconds")
 
     for path in sorted(level0.glob("*_current.md")):
@@ -140,6 +141,9 @@ def generate(base_dir: str) -> list[Path]:
         title = title_m.group(1).strip() if title_m else resource_id.replace("_", " ").title()
         body = _body(raw)
         targets, scope = _targets(resource_id, body, cfg, ugc_map)
+        if not targets:
+            unresolved.append((resource_id, title, source, scope, body))
+            continue
         for county in targets:
             buckets[county].append((resource_id, title, source, scope, body))
 
@@ -198,4 +202,24 @@ def generate(base_dir: str) -> list[Path]:
         aggregate_path = level1 / f"{key}_County_Weather_Report_current.md"
         _write(aggregate_path, "\n".join(lines), archive, now)
         outputs.append(aggregate_path)
+    if unresolved:
+        unresolved_dir = level1 / "unresolved"
+        unresolved_dir.mkdir(parents=True, exist_ok=True)
+        for rid, title, source, scope, body in unresolved:
+            lines = [
+                f"# {title} — Geographic Scope Unresolved", "",
+                "> **Level 1 unresolved-source record.** This product was not assigned to a county by an authoritative geographic rule and is intentionally excluded from county reports.",
+                "",
+                f"- **Generated:** {now} HST",
+                f"- **Report created:** {now} HST",
+                f"- **Resource ID:** {rid}",
+                f"- **Source:** {source or 'Level 0 report metadata'}",
+                f"- **County assignment:** {scope}",
+                "- **Processing:** deterministic rules only; no AI/LLM classification.",
+                "- **Safety boundary:** not copied into any county report.",
+                "", "---", "", fence + "text", body, fence, ""
+            ]
+            path = unresolved_dir / f"{rid}_current.md"
+            _write(path, "\n".join(lines), archive, now)
+            outputs.append(path)
     return outputs
