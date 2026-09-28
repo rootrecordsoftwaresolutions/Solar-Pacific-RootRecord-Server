@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T04:59:19-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T05:08:19-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -1692,170 +1692,131 @@ FZLVL...164-169.
 |---|---|
 | **Resource ID** | afd_area_forecast_discussion |
 | **Official source** | https://api.weather.gov/products/types/AFD/locations/HFO |
-| **Collected** | 2026-09-27T23:00:53.752204-10:00 HST |
+| **Collected** | 2026-09-28T05:02:21.062282-10:00 HST |
 
 ```text
 000
-FXHW60 PHFO 280651
+FXHW60 PHFO 281452
 AFDHFO
 
 Area Forecast Discussion
 National Weather Service Honolulu HI
-851 PM HST Sun Sep 27 2026
+452 AM HST Mon Sep 28 2026
 
 .SYNOPSIS...
-Strong trades will diminish during the next 24 hours and turn
-southeasterly Monday night into Tuesday. Showers increase over and
-around Kauai during midweek.
+Deepening high pressure north of the state will produce drier and
+fair conditions across the region through Tuesday. Major hurricane
+Nolo will continue to move west away from the state. Nolo is 
+expected to turn toward the northwest on Tuesday and Wednesday, 
+passing west of Kauai and Niihau. Trailing moisture associated 
+with the eastern part of Nolo's circulation will bring an 
+increase in shower activity beginning on Tuesday night and 
+continuing into Thursday. High pressure system will re-establish 
+again by the end of the week. 
 
-.SHORT TERM UPDATE...
-Radar images this evening are showing trade wind showers moving 
-quickly mainly across Maui and north of Molokai. Rest of the state
-has remained dry but breezy. Quite night with pleasant weather 
-conditions expected to prevail through Monday evening. Other than 
-the aviation section, no updates are needed to forecast package 
-tonight. Trade wind showers will continue to move from time to 
-time overnight into Monday morning. 
+.DISCUSSION...
+Radar images detected an increase in trade wind showers across 
+the coastal waters. These showers were moving mainly northeast of
+the islands with some making its way into Molokai and Oahu from
+time to time. Rainfall accumulation were minimal. A relatively 
+dry weather pattern is expected to continue statewide through 
+Tuesday as a high pressure system briefly dominates the area.
+Winds have diminished since yesterday. As a result, the wind
+advisory which was in effect for portions of Maui, Molokai, Oahu,
+and the Big Island was cancelled.
 
-.PREV DISCUSSION...
-Issued at 305 PM HST Sun Sep 27 2026
+Major hurricane Nolo continues to move west away from the local
+region. However, by Tuesday Nolo is expected to turn northwest
+passing around 200 miles west of Niihau and Kauai. Although the
+core of the hurricane will pass at a safe distance from the
+islands,trailing moisture associated with Nolo's circulation is 
+expected to affect both islands, and possible Oahu from Tuesday 
+night into Wednesday. Latest model guidance are projecting 
+rainfall accumulation between one to two inches. Although no 
+significant flooding is expected at this time, we will closely 
+monitor the evolution of Nolo as latest guidance are showing deep
+tropical moisture moving over the islands from Tuesday through 
+Thursday which could enhance the amount of rainfall expected. 
+Precipitable water values are expected to increase from 1.10 
+inches up to 2.4 inches by Tuesday night and Wednesday. 
 
-Regional satellite shows Hurricane Nolo advancing westward well 
-south of the Hawaiian Islands. Veered SE mid-level flow is piling up 
-clouds over the SE-facing slopes of the Big Island, but moisture 
-quality is rapidly diminishing as drier air works into the area. 
-Widespread light to moderate showers this morning have diminished in 
-coverage and mixed upslope and will eventually clear out tonight. A 
-band of showery low clouds aligned parallel to the trades is taking 
-aim on Kauai this afternoon where some enhanced coverage of showers 
-late this evening. However, veering mid-level winds will eventually 
-steer this moisture northwestward and away from the island.
-
-Winds are diminishing as the pressure gradient over the islands 
-gradually eases. Select zones in Maui County and on the Big Island 
-are still experiencing gusts in excess of 50 mph, so the HWW has 
-been transitioned to a Wind Advisory that will run through tonight. 
-For remaining zones, wind headlines have been allowed to expire.
-
-Attention for mid-week focuses on rainfall potential over Kauai, 
-particularly the south and southeast facing slopes. A band of 
-moisture presently on the NE side of Nolo extends southeastward into 
-the deep tropics per visible imagery. This band will be drawn over 
-Kauai Tuesday through Friday. Elevated moisture initially moves over 
-the island on Monday, but dry low-levels and lack of ascent preclude 
-an increase in pops as this likely amounts to nothing more than 
-increased cloud cover.
-
-PWATs are then poised to rise from around 1" tonight to 2+" by 
-Monday night as rich low-level moisture characterized by dewpoints 
-firmly in the low 70s becomes established over the island. Weak but 
-deep cyclonic flow coupled with gentle ascent caused by moisture 
-advection will support increased showers over and around Kauai on 
-Tuesday. Model cross-sections indicate rapidly diminishing boundary 
-layer stability by late Tuesday which, combined with enhanced SE 
-flow around the eastern periphery of Nolo should maximize orographic 
-assistance. Coverage and persistence of rain is subject to some 
-uncertainty, but given the broad/weak ascent field and lack of low-
-level forcing mechanism, suspect this will likely manifest as an 
-enhanced coverage of quick-moving showers from the south and 
-southeast. Waves of moisture advection then maintain some degree of 
-enhanced shower activity over Kauai through Friday, but peak forcing 
-and moisture depth will be late Tuesday through Wednesday with 
-diminishing coverage likely thereafter.
-
-Worth noting that this moisture will lift over the remainder of 
-state by Wednesday perhaps supporting some increase in showers, 
-though taken at face value decreased SE winds in the shadow of the 
-Big Island and Maui may set the stage for some afternoon convection 
-over Oahu Wednesday through Friday, becoming more likely each day as 
-the gradient continues its weakening trend.
-
-Guidance indicates the first cold front of the season reaching the 
-western islands early next week. Southward progress of such fronts 
-are generally overestimated by the models this early in the season, 
-but indications are that it could be rather strongly forced, so it 
-may nonetheless work into the area bringing with it decreased 
-dewpoints and a modest increase in showers.
+In the long term, no significant weather events are forecast to 
+affect the state as a high pressure system builds north and 
+northeast of the region. 
 
 .AVIATION...
-Gusty winds will continue tonight but will gradually decrease 
-Monday as Hurricane Nolo moves further away. Shower activity has 
-significantly decreased statewide, and only a few light showers 
-embedded within the gusty trades remain. These will favor windward
-and mountain areas, but VFR conditions will prevail at most 
-locations.
+Breezy to locally strong trades will prevail today but will be
+noticeably less than the past couple of days as Hurricane Nolo 
+moves further away from the state and the pressure gradient over
+the islands begins to relax. Showers will be fairly limited 
+today, with just a few light showers embedded within the trades 
+favoring windward and mountain locations. 
 
-AIRMET Tango remains in effect for moderate to isolated severe 
-turbulence below 9,000 feet over and immediately downwind of 
-island terrain.
-
-AIRMET Tango also remains in effect for sustained surface winds 
-of 30 kt or greater across Maui County and the Big Island. This 
-AIRMET will likely be on Monday as winds decrease.
+AIRMET Tango remains in effect for moderate turbulence below 
+9,000 feet over and immediately downwind of island terrain. This
+AIRMET will likely be needed through mid-week.
 
 .MARINE...
-Issued at 305 PM HST Sun Sep 27 2026
-
 Strong to near gale force trade winds and large, rough seas will 
-gradually diminish tonight and Monday as the center of Hurricane 
-Nolo moves northwestward roughly 275 to 325 nm south and southwest
-of Kauai. During this time, high pressure far north of the state
-will erode, and as Nolo moves farther west, the pressure gradient
-over the islands between the ridge and Nolo will weaken and allow
-the trades to ease. As a result, the Gale Warning that was in 
-place for all waters has been downgraded to a Small Craft
-Advisory (SCA). Monday night through Tuesday night, the official 
-National Hurricane Center forecast calls for Nolo to move toward 
-the north-northwest and remain over 200 nm west of Kauai. Expect 
-moderate to locally strong winds to veer out of the east- 
-southeast to southeast during this time, requiring a SCA for 
-exposed waters near some islands. Winds will gradually ease and 
-back more easterly Wednesday and Thursday as Nolo moves westward 
-away from the islands.
-
-The broad area of strong to near gale force trade winds north of 
-Hurricane Nolo has generated large and rough seas across the 
-region. This fetch of winds and east swell/seas is weakening from
-east to west, and seas at the PacIOOS Hilo buoy, which have been 
-dropping rapidly since midnight, fell below 10 feet at midday. A 
-similar steep decline is anticipated at the Pauwela buoy north of
-Maui this afternoon, followed by Oahu and Kauai overnight. As a 
-result, the High Surf Advisory (HSA) for east-facing shores of Big
-Island and Maui County has been cancelled, and the HSA remains in
-place for Oahu and Kauai through tonight. East shore surf will 
-slowly decline Monday through Wednesday, though small, medium- 
-period swells from distant east Pacific hurricanes will maintain 
-moderate surf during the remainder of the week.
+gradually diminish through tonight as high pressure far north of 
+the state begins to weaken and Hurricane Nolo, several hundred
+miles southwest of the Hawaiian Islands, moves farther west. The 
+Small Craft Advisory (SCA) for all Hawaiian coastal waters (with
+the exception of Maalaea Bay) has been extended through tonight.
+Beyond that point, trade winds are expected to weaken below small
+craft advisory for most waters. Higher seas and strong winds may
+persist for favored channels and waters near Kauai, where the
+current National Hurricane Center forecast has Nolo tracking
+around 230 nautical miles west of on Wednesday. Expect moderate 
+to locally strong winds to veer out of the east-southeast to 
+southeast during this time. Winds will gradually ease and back 
+more easterly by Thursday as Nolo moves westward away from the 
+islands.
 
 A mix of long to medium period south-southwest swell and building
-short to medium period south swell from Hurricane Nolo will keep
-surf along south facing shores elevated during the next couple of
-days. The longer period swell alone would produce surf near 
-seasonal average, but the hurricane swell may push heights to the 
-HSA level Monday. Given uncertainty, we will have held off on 
-issuing an advisory for now, even though we are forecasting HSA
-level surf Monday. As Nolo makes a turn toward the north-
-northwest, the likelihood of advisory level surf from the shifting
-southwest swell will increase late Monday and Tuesday, especially
-across Kauai and Oahu. By Wednesday, the swell will switch out of
-the west.
+short to medium south swell from a powerful Hurricane Nolo now 
+located southwest of the Hawaiian Islands will bring advisory level 
+surf to south facing shores of all islands and west facing shores of 
+the Big Island today. The hurricane-generated swell will gradually 
+shift southwest, then west, as Nolo tracks northwest roughly parallel
+to the islands through Wednesday. While the forecast currently shows 
+this swell gradually decreasing, and in particular, falling below 
+advisory criteria tonight, Nolo is forecast to remain a major 
+hurricane through Tuesday, which could maintain advisory level surf 
+for longer than currently depicted. By mid-week, these swells will
+originate from the west and be diminishing as the hurricane will be
+weaker and it begins to track away from the islands.
 
-On north facing shores, a small medium period swell will maintain
-small surf through Monday, followed by a decline Tuesday. Some
-wrapping west swell from Hurricane Nolo is possible by Wednesday.
+East shore surf will slowly decline through Wednesday as trade winds
+diminish. However, small, medium period swells from distant East 
+Pacific hurricanes will maintain moderate surf during the remainder of
+the week. On north facing shores, a small medium period swell will 
+fade through Wednesday. Some wrapping west swell from Hurricane Nolo 
+is possible by Wednesday.
+
+.FIRE WEATHER...
+Issued at 342 AM HST Mon Sep 28 2026
+
+Dry weather conditions are expected to prevail across the state
+today into Tuesday. An increase in shower activity is expected on
+Tuesday and Wednesday as deep tropical moisture makes its way
+towards the islands as Hurricane Nolo pass west of the area. 
+Fire concern will remain low for now as relative humidity values 
+will remain above critical levels and winds have diminished as 
+well.
 
 .HFO WATCHES/WARNINGS/ADVISORIES...
-Wind Advisory until 6 AM HST Monday for Big Island North-Central 
-Oahu-East Honolulu-Honolulu Metro-Kipahulu-Kohala-Koolau Leeward-
-Maui Central Valley North-Maui Central Valley South-Maui Leeward 
-West-Maui Windward West-Molokai Leeward South-Molokai North-
-Molokai Southeast-Molokai West-Molokai Windward-Oahu North Shore-
-South Haleakala.
+Wind Advisory until 6 AM HST early this morning for Big Island 
+North-Central Oahu-East Honolulu-Honolulu Metro-Kipahulu-Kohala-
+Koolau Leeward-Maui Central Valley North-Maui Central Valley 
+South-Maui Leeward West-Maui Windward West-Molokai Leeward South-
+Molokai North-Molokai Southeast-Molokai West-Molokai Windward-
+Oahu North Shore-South Haleakala.
 
-High Surf Advisory until 6 AM HST Monday for Kauai East-Kauai 
-South-Koolau Windward-Olomana.
+High Surf Advisory until 6 AM HST early this morning for Kauai 
+East-Kauai South-Koolau Windward-Olomana.
 
-Small Craft Advisory until 6 PM HST Monday for Alenuihaha 
+Small Craft Advisory until 6 PM HST this evening for Alenuihaha 
 Channel-Big Island Leeward Waters-Big Island Southeast Waters-
 Big Island Windward Waters-Kaiwi Channel-Kauai Channel-Kauai 
 Leeward Waters-Kauai Northwest Waters-Kauai Windward Waters-Maui 
@@ -1865,6 +1826,7 @@ Waters-Oahu Windward Waters-Pailolo Channel.
 DISCUSSION...Castro
 AVIATION...Vaughan
 MARINE...Quesada
+Fire....Castro
 ```
 
 ---
@@ -2824,7 +2786,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-28T04:52:34.540638-10:00 HST |
+| **Collected** | 2026-09-28T05:01:36.407446-10:00 HST |
 
 ```text
 689
@@ -3097,7 +3059,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T04:52:37.582998-10:00 HST |
+| **Collected** | 2026-09-28T05:01:38.766569-10:00 HST |
 
 ```text
                         
@@ -3889,7 +3851,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-28T04:57:18.409019-10:00 HST |
+| **Collected** | 2026-09-28T05:06:18.527040-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3903,7 +3865,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-28T04:58:18.579501-10:00 HST |
+| **Collected** | 2026-09-28T05:07:18.533489-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3917,7 +3879,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-28T04:53:18.623716-10:00 HST |
+| **Collected** | 2026-09-28T05:02:18.497047-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3931,7 +3893,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-28T04:54:18.613124-10:00 HST |
+| **Collected** | 2026-09-28T05:03:18.612277-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3945,7 +3907,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-28T04:55:18.606977-10:00 HST |
+| **Collected** | 2026-09-28T05:04:18.699384-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3959,7 +3921,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-28T04:56:18.461023-10:00 HST |
+| **Collected** | 2026-09-28T05:05:18.390977-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -3973,7 +3935,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T04:59:18.695873-10:00 HST |
+| **Collected** | 2026-09-28T05:08:18.531260-10:00 HST |
 
 ```text
 Home
@@ -4097,11 +4059,15 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 14:56:09 UTC
+Last update Mon, 28 Sep 2026 15:06:14 UTC
 
 NHC issuing advisories for the Atlantic on
 
 TD Fay
+
+and
+
+TS Hanna
 
 NHC issuing advisories for the Eastern Pacific on
 
@@ -4153,27 +4119,11 @@ Atlantic
 
 Disturbances:
 
-ALL
-
-1
+None
 
 Disturbances:
 
-ALL
-
-1
-
-Disturbances:
-
-ALL
-
-1
-
-Disturbances:
-
-ALL
-
-1
+None
 
 Disturbances:
 
@@ -4608,6 +4558,99 @@ Wind Speed
 Probabilities
 
 #34
+
+1500 UTC
+
+Productos en español:
+
+(más información)
+
+Aviso
+
+Publico
+
+Pronóstico
+
+Discusión
+
+Wind Speed
+Probabilities
+
+Arrival Time
+of Winds
+
+Wind
+History
+
+Interactive
+Cone
+
+Warnings/Cone
+Static Images
+
+Warnings/Cone
+Interactive Map
+
+Experimental Cone
+Static Images
+
+Experimental Cone
+Interactive Map
+
+Warnings and
+Surface Wind
+
+Rip
+Currents
+
+Tropical Storm Hanna
+
+Satellite |
+Buoys |
+Grids |
+Storm Archive
+
+...TROPICAL STORM HANNA FORMS IN THE CENTRAL SUBTROPICAL ATLANTIC...
+
+11:00 AM AST Mon Sep 28
+
+Location: 36.6°N 50.4°W
+
+Moving: E at 17 mph
+
+Min pressure: 1006 mb
+
+Max sustained: 45 mph
+
+Public
+
+Advisory
+
+#1
+
+1100 AM AST
+
+Forecast
+
+Advisory
+
+#1
+
+1500 UTC
+
+Forecast
+
+Discussion
+
+#1
+
+1100 AM AST
+
+Wind Speed
+
+Probabilities
+
+#1
 
 1500 UTC
 
@@ -7732,7 +7775,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-28T04:44:21.267155-10:00 HST |
+| **Collected** | 2026-09-28T05:01:21.351757-10:00 HST |
 
 ```text
 National Weather Service
@@ -7781,9 +7824,9 @@ INFORMATION
 
 Wireless Emergency Alerts
 
-Weather-Ready Nation
-
 Brochures
+
+Weather-Ready Nation
 
 Cooperative Observers
 
