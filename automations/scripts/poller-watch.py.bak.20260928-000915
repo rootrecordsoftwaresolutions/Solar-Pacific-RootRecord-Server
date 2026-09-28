@@ -373,8 +373,6 @@ def format_line(raw: str) -> str | None:
             # ------------------------------------------------
             if (
                 "a_eyes_frame_grab" in body.lower()
-                or "a-eyes" in body.lower()
-                or "a_eyes" in body.lower()
                 or "Connection to tcp://" in rest
                 or "No route to host" in rest
                 or "grab failed" in rest.lower()
