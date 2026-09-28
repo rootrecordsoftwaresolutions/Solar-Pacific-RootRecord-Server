@@ -15,70 +15,6 @@ import sys
 import time
 from pathlib import Path
 
-
-def aeyes_solar_state():
-    """
-    Solar-aware A-EYES display state from generated NOAA report.
-    """
-    from pathlib import Path
-    from datetime import datetime, timedelta
-    from zoneinfo import ZoneInfo
-    import re
-
-    tz = ZoneInfo("Pacific/Honolulu")
-
-    report = Path(
-        "/home/rootrecord/Database/WEATHER/Hawai'i/reports/"
-        "0 Level Processing/solar_calculation_table_current.md"
-    )
-
-    if not report.exists():
-        return None
-
-    text = report.read_text(errors="ignore")
-    now = datetime.now(tz)
-
-    month_day = now.strftime("%b %-d")
-
-    sunrise = None
-    sunset = None
-
-    for line in text.splitlines():
-        if month_day in line and "|" in line:
-            parts = [x.strip() for x in line.split("|")]
-            clocks = [
-                x for x in parts
-                if re.match(r"^\d{1,2}:\d{2}", x)
-            ]
-            if len(clocks) >= 2:
-                sunrise = clocks[0]
-                sunset = clocks[1]
-                break
-
-    if not sunrise or not sunset:
-        return None
-
-    def parse_clock(v):
-        h, m = map(int, v.split(":"))
-        return now.replace(hour=h, minute=m, second=0, microsecond=0)
-
-    sr = parse_clock(sunrise)
-    ss = parse_clock(sunset)
-
-    if now < sr:
-        return f"waiting — sunrise {sunrise} HST"
-
-    if now > ss:
-        tomorrow_sr = sr + timedelta(days=1)
-        return (
-            f"complete — sunset {sunset} HST · "
-            f"sunrise {tomorrow_sr.strftime('%H:%M')} HST"
-        )
-
-    return f"daylight active — sunset {sunset} HST"
-
-
-
 SCRIPTS = Path(__file__).resolve().parent
 STOP = SCRIPTS / "stop-poller-stack.sh"
 LOG = Path(
@@ -361,8 +297,6 @@ def format_line(raw: str) -> str | None:
                     f"src={src_mark}"
                 )
 
-
-
             # ------------------------------------------------
             # A-EYES owns its own display identity.
             # Do NOT route camera failures through "github".
@@ -373,20 +307,9 @@ def format_line(raw: str) -> str | None:
                 or "a-eyes" in payload.lower()
             ):
                 if "FAILED" in rest or "FAIL" in rest or "grab failed" in rest.lower():
-                    solar = aeyes_solar_state()
-
-                    if solar and (
-                        solar.startswith("waiting")
-                        or solar.startswith("complete")
-                    ):
-                        return (
-                            f"  {DIM}{t}{RST}  {DIM}📷{RST}  "
-                            f"{DIM}A-EYES {solar}{RST}"
-                        )
-
                     return (
                         f"  {DIM}{t}{RST}  {RED}📷{RST}  "
-                        f"{RED}A-EYES offline — DVR unreachable{RST}"
+                        f"{RED}A-EYES offline — camera unreachable{RST}"
                     )
                 short = rest
                 if len(short) > 90:
