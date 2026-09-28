@@ -397,6 +397,12 @@ analyses:
     tier: 3
     method: image
     url: "https://www.weather.gov/images/hfo/graphics/seastate_12.gif"
+  - id: sat_altimetry_swh
+    name: "Satellite Altimetry Sig. Wave Height"
+    tier: 3
+    method: image
+    url: "https://www.weather.gov/images/hfo/graphics/allSatellites_sgwh_latest.png"
+
   cycle_gif_families:
     tier: 3
     # Cycle-based series: {stem}_{cycle}.gif for cycle in [00,06,12,18]
@@ -658,6 +664,19 @@ observations:
 # 11. GFE GRAPHICAL FORECASTS — fetch/maps.py, Tier 6 (self-reported broken)
 # ---------------------------------------------------------------------------
 gfe_graphics:
+  - id: gfe_graphics_page
+    name: "GFE local graphical forecasts (max/min temp, sky, PoP, QPF, wind)"
+    tier: 6
+    method: scrape
+    url: "https://www.weather.gov/hfo/gfe_graphics"
+    note: >
+      HFO self-reported this page as broken ("images are not updating").
+      JS/AJAX-driven; underlying image paths not recoverable via plain
+      HTML fetch. May need a headless-browser approach, or may simply stay
+      down at the source — attempted every Tier 6 cycle regardless, a
+      failure here is informative, not a blocker.
+    sub_sectors: ["Short Term", "7 Day", "Fire Weather", "Volcano Nat'l Park", "Marine", "7-Day Marine", "Big Island", "Kauai", "Oahu", "Maui County"]
+
 # ---------------------------------------------------------------------------
 # 12. NDFD GRIDPOINT — fetch/ndfd_gridpoint.py
 # ---------------------------------------------------------------------------
