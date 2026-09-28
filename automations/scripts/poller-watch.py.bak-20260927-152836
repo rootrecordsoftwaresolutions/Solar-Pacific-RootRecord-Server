@@ -256,7 +256,6 @@ def format_line(raw: str) -> str | None:
             payload = body.split(" | ", 1)[1].strip()
             repo = ""
             rest = payload
-
             if "] [" in payload:
                 try:
                     after = payload.split("] ", 1)[1]
@@ -265,123 +264,40 @@ def format_line(raw: str) -> str | None:
                         rest = after[after.index("]") + 1 :].strip()
                 except Exception:
                     rest = payload
-
-            # ------------------------------------------------
-            # EcoFlow summaries
-            # ------------------------------------------------
-            if "SUMMARY=" in rest:
-                summary = rest.split("SUMMARY=", 1)[1].strip()
-                fields = dict(
-                    part.split("=", 1)
-                    for part in summary.split()
-                    if "=" in part
-                )
-                device = summary.split()[0] if summary else "unknown"
-                soc = fields.get("soc", "—")
-                solar = fields.get("solar", "—")
-                ac = fields.get("ac_out", "—")
-                usbc = fields.get("usbc", "—")
-                src = fields.get("src", "—")
-                src_mark = "✓" if src == "api" else src
-
-                return (
-                    f"  {DIM}{t}{RST}  {YELLOW}⚡{RST}  "
-                    f"{YELLOW}ECOFLOW{RST}  {BOLD}{device}{RST}  "
-                    f"SOC={soc}  solar={solar}  AC={ac}  USB-C={usbc}  "
-                    f"src={src_mark}"
-                )
-
-            # ------------------------------------------------
-            # A-EYES owns its own display identity.
-            # Do NOT route camera failures through "github".
-            # ------------------------------------------------
-            if (
-                "a_eyes" in rest.lower()
-                or "a-eyes" in rest.lower()
-                or "a-eyes" in payload.lower()
-            ):
-                if "FAILED" in rest or "FAIL" in rest or "grab failed" in rest.lower():
-                    return (
-                        f"  {DIM}{t}{RST}  {RED}📷{RST}  "
-                        f"{RED}A-EYES offline — camera unreachable{RST}"
-                    )
-                short = rest
-                if len(short) > 90:
-                    short = short[:87] + "…"
-                return (
-                    f"  {DIM}{t}{RST}  {DIM}📷{RST}  "
-                    f"{DIM}A-EYES  {short}{RST}"
-                )
-
-            # ------------------------------------------------
-            # Only GitHub jobs get GitHub formatting.
-            # ------------------------------------------------
-            is_github_job = any(
-                key in body.lower()
-                for key in (
-                    "github_sync_all",
-                    "github_setup_remotes",
-                    "github_autopush",
-                    "github repo",
-                )
-            )
-
-            if is_github_job:
-                if "worklog" in rest.lower() or "WORKLOG" in rest or "worklog_current" in rest:
-                    short = rest
-                    if len(short) > 90:
-                        short = short[:87] + "…"
-                    return f"  {DIM}{t}{RST}  {BRIGHT_GREEN}📓{RST}  {GREEN}{short}{RST}"
-
-                if "no changes" in rest or rest.startswith("—"):
-                    if repo:
-                        return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {DIM}github {repo} · no changes{RST}"
-                    return None
-
-                if rest.startswith("↑") or " files" in rest or "pushed" in rest.lower():
-                    n = ""
-                    for tok in rest.replace("file(s)", "files").split():
-                        if tok.isdigit():
-                            n = tok
-                            break
-                    label = repo or "repo"
-                    if n:
-                        return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}↑ {n} files{RST}"
-                    return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}{rest}{RST}"
-
-                if rest.startswith("✗") or "FAIL" in rest or "ERROR" in rest:
-                    label = repo or "repo"
-                    return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}github {label}{RST}  {DIM}{rest}{RST}"
-
-            # Generic non-GitHub job output.
-            if rest.startswith("✗") or "FAIL" in rest or "ERROR" in rest:
-                short = rest
-                if len(short) > 100:
-                    short = short[:97] + "…"
-                return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{short}{RST}"
-
-            if "worklog" in rest.lower() or "WORKLOG" in rest:
+            # Worklog success — green notebook
+            if "worklog" in rest.lower() or "WORKLOG" in rest or "worklog_current" in rest:
                 short = rest
                 if len(short) > 90:
                     short = short[:87] + "…"
                 return f"  {DIM}{t}{RST}  {BRIGHT_GREEN}📓{RST}  {GREEN}{short}{RST}"
-
+            if "no changes" in rest or rest.startswith("—"):
+                if repo:
+                    return f"  {DIM}{t}{RST}  {DIM}▸{RST}  {DIM}github {repo} · no changes{RST}"
+                return None
+            if rest.startswith("↑") or " files" in rest or "pushed" in rest.lower():
+                n = ""
+                for tok in rest.replace("file(s)", "files").split():
+                    if tok.isdigit():
+                        n = tok
+                        break
+                label = repo or "repo"
+                if n:
+                    return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}↑ {n} files{RST}"
+                return f"  {DIM}{t}{RST}  {GREEN}▸{RST}  {GREEN}github {label}{RST}  {DIM}{rest}{RST}"
+            if rest.startswith("✗") or "FAIL" in rest or "ERROR" in rest:
+                label = repo or "repo"
+                return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}github {label}{RST}  {DIM}{rest}{RST}"
             if len(rest) > 80:
                 return None
-
             return f"  {DIM}{t}{RST}  {DIM}▸  {rest}{RST}"
-
         if " FAIL" in body or " ERROR" in body or " TIMEOUT" in body:
             short = body.split("job:", 1)[-1]
             if len(short) > 60:
                 short = short[:57] + "…"
             return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{short}{RST}"
-
         if body.endswith(" OK") or " RUN  " in body:
             return None
-
         return None
-
     if "ERR" in body or "DOWN" in body:
         return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{body}{RST}"
     if len(body) > 120:
