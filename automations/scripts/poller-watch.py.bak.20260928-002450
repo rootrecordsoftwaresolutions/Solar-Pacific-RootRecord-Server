@@ -234,18 +234,6 @@ def format_line(raw: str) -> str | None:
     body = rest
 
     # ------------------------------------------------
-    # A-EYES ffmpeg continuation stderr lines.
-    # The camera identity is on the previous line;
-    # ffmpeg emits follow-up errors separately.
-    # ------------------------------------------------
-    if (
-        "Error opening input:" in body
-        or ("[in#" in body and "No route" in body)
-        or "No route to host" in body
-    ):
-        return None
-
-    # ------------------------------------------------
     # A-EYES raw ffmpeg/DVR failures.
     # Hide noisy camera stderr and let solar state own display.
     # ------------------------------------------------
