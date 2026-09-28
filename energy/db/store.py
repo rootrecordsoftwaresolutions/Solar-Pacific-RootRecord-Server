@@ -293,6 +293,7 @@ def add_electrical_measurement(
     state: str = "measured",
 ) -> None:
     """Persist one electrical channel measurement."""
+    n, text, boolean, state = _coerce_state_value(value, state)
     conn.execute(
         """
         INSERT INTO electrical_measurement(
@@ -304,7 +305,7 @@ def add_electrical_measurement(
             unit=excluded.unit,
             state=excluded.state
         """,
-        (observation_id, channel, metric_key, value, unit, state),
+        (observation_id, channel, metric_key, n, unit, state),
     )
 
 
