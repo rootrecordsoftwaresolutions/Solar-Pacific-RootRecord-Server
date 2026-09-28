@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T01:27:17-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T01:35:16-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3274,7 +3274,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T01:20:38.636926-10:00 HST |
+| **Collected** | 2026-09-28T01:28:35.718226-10:00 HST |
 
 ```text
                         
@@ -4066,7 +4066,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-28T01:25:16.929592-10:00 HST |
+| **Collected** | 2026-09-28T01:33:17.317685-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4080,7 +4080,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-28T01:26:17.021105-10:00 HST |
+| **Collected** | 2026-09-28T01:34:17.013251-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4094,7 +4094,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-28T01:21:17.118812-10:00 HST |
+| **Collected** | 2026-09-28T01:29:17.061412-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4108,7 +4108,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-28T01:22:17.256811-10:00 HST |
+| **Collected** | 2026-09-28T01:30:17.195933-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4122,7 +4122,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-28T01:23:17.053860-10:00 HST |
+| **Collected** | 2026-09-28T01:31:17.100011-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4136,7 +4136,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-28T01:24:17.060660-10:00 HST |
+| **Collected** | 2026-09-28T01:32:17.065693-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
