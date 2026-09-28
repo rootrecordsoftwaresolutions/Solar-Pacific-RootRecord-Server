@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T00:53:17-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T01:01:17-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3274,7 +3274,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T00:46:37.598128-10:00 HST |
+| **Collected** | 2026-09-28T00:54:35.096549-10:00 HST |
 
 ```text
                         
@@ -4150,7 +4150,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T00:53:17.038766-10:00 HST |
+| **Collected** | 2026-09-28T01:01:16.907193-10:00 HST |
 
 ```text
 Home
@@ -4274,7 +4274,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 10:50:15 UTC
+Last update Mon, 28 Sep 2026 11:00:15 UTC
 
 NHC issuing advisories for the Atlantic on
 
