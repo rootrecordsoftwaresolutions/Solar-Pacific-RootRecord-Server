@@ -256,6 +256,12 @@ satellite:
     method: image
     url: "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/GEOCOLOR/GOES19-EEP-GEOCOLOR-900x540.gif"
 
+  - id: goes19_eep_glm_extent3
+    name: "GOES-19 East Pacific — GLM Extent3"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES19/GLM/SECTOR/eep/EXTENT3/GOES19-GLM-EEP-EXTENT3-900x540.gif"
+
   - id: goes19_eep_airmass
     name: "GOES-19 East Pacific — AirMass"
     tier: 2
@@ -304,6 +310,12 @@ satellite:
     tier: 2
     method: image
     url: "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600.gif"
+
+  - id: goes18_hi_glm_extent3
+    name: "GOES-18 Hawaii — GLM Extent3"
+    tier: 2
+    method: image
+    url: "https://cdn.star.nesdis.noaa.gov/GOES18/GLM/SECTOR/hi/EXTENT3/GOES18-GLM-HI-EXTENT3-600x600.gif"
 
   - id: goes18_hi_airmass
     name: "GOES-18 Hawaii — AirMass"

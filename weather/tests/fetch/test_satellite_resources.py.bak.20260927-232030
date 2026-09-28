@@ -8,6 +8,7 @@ CONFIG = Path(__file__).resolve().parents[2] / "config" / "resources.yaml"
 
 EXPECTED_GOES_URLS = {
     "goes19_eep_geocolor": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/GEOCOLOR/GOES19-EEP-GEOCOLOR-900x540.gif",
+    "goes19_eep_glm_extent3": "https://cdn.star.nesdis.noaa.gov/GOES19/GLM/SECTOR/eep/EXTENT3/GOES19-GLM-EEP-EXTENT3-900x540.gif",
     "goes19_eep_airmass": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/AirMass/GOES19-EEP-AirMass-900x540.gif",
     "goes19_eep_sandwich": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/Sandwich/GOES19-EEP-Sandwich-900x540.gif",
     "goes19_eep_fire_temperature": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/FireTemperature/GOES19-EEP-FireTemperature-900x540.gif",
@@ -16,6 +17,7 @@ EXPECTED_GOES_URLS = {
     "goes19_eep_13": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/13/GOES19-EEP-13-900x540.gif",
     "goes19_eep_14": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/eep/14/GOES19-EEP-14-900x540.gif",
     "goes18_hi_geocolor": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/GEOCOLOR/GOES18-HI-GEOCOLOR-600x600.gif",
+    "goes18_hi_glm_extent3": "https://cdn.star.nesdis.noaa.gov/GOES18/GLM/SECTOR/hi/EXTENT3/GOES18-GLM-HI-EXTENT3-600x600.gif",
     "goes18_hi_airmass": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/AirMass/GOES18-HI-AirMass-600x600.gif",
     "goes18_hi_sandwich": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/Sandwich/GOES18-HI-Sandwich-600x600.gif",
     "goes18_hi_daynight_cloud_micro_combo": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/hi/DayNightCloudMicroCombo/GOES18-HI-DayNightCloudMicroCombo-600x600.gif",
