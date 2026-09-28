@@ -5,7 +5,7 @@
 # (poller + cloudflared + systemd unit). Never "window only".
 # Data intake → /home/rootrecord/Database/intake/
 # Baks/logs  → /home/rootrecord/Database/GITHUB/
-# GitHub trio: skills + website + mainland (skills/us-mainland-server).
+# GitHub set: skills + website + mainland + library (repos.conf).
 # Pacific .gitignore excludes us-mainland-server/ (own repo). No rclone / aws-sync.
 # Inference: prefer FLM llama3.2:3b on NPU (:52625); Ollama dolphin lanes = CPU fallback.
 # Telegram council-relay via coms/telegram (one getUpdates). Plumbing single-flight.
@@ -90,7 +90,7 @@ ON_BOOT = [
         "id": "github_setup_remotes",
         "enabled": True,
         "priority": 2,
-        "description": "Ensure remotes for skills + website + mainland (repos.conf).",
+        "description": "Ensure remotes for skills + website + mainland + library (repos.conf).",
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/github/scripts/setup-all-remotes.sh",
         "timeout_sec": 180,
@@ -230,7 +230,7 @@ EVERY_SECONDS = [
     {
         "id": "github_sync_all",
         "enabled": True,
-        "description": "Push skills + website + mainland.",
+        "description": "Push skills + website + mainland + library.",
         "interval_sec": 300,
         "builtin": "",
         "command": "bash /home/rootrecord/.ollama/skills/github/scripts/sync-all.sh",
