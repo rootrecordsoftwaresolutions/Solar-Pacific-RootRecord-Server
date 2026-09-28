@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T01:52:18-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T02:01:17-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3001,19 +3001,19 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-28T01:45:32.721154-10:00 HST |
+| **Collected** | 2026-09-28T01:54:35.127394-10:00 HST |
 
 ```text
-206
-SRHW80 PHFO 281046
+380
+SRHW80 PHFO 281146
 RRAHFO
 
 Hawaii Rainfall Summary
 National Weather Service Honolulu HI
-1245 AM HST Mon Sep 28 2026
+145 AM HST Mon Sep 28 2026
 
 :
-.B HFO  0928 H  DH00 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
+.B HFO  0928 H  DH01 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
 :
 :Automated rain gage reports from around the State of Hawaii.
 :These are provisional reports that have not been quality
@@ -3021,7 +3021,7 @@ National Weather Service Honolulu HI
 :
 :T=Trace Rainfall, M=Missing Data
 :
-:Precipitation totals ending  12 AM HST
+:Precipitation totals ending  1 AM HST
 :
 :Island of Kauai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
@@ -3030,28 +3030,28 @@ MKAH1 : Makaha Ridge (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 PLRH1 : Puu Lua (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 WKRH1 : Waiakoali (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
 KLOH1 : Kilohana (USGS)             :    0.02  /  0.02  /  0.11  /  0.14
-MCRH1 : Mohihi Crossing (USGS)      :    0.01  /  0.01  /  0.01  /  0.02
-WLGH1 : Waialae (USGS)              :    0.01  /  0.01  /  0.01  /  0.01
-LLMH1 : Lower Limahuli (UHM)        :    0.03  /  0.03  /  0.06  /  0.07
+MCRH1 : Mohihi Crossing (USGS)      :    0.02  /  0.02  /  0.02  /  0.03
+WLGH1 : Waialae (USGS)              :    0.03  /  0.03  /  0.03  /  0.03
+LLMH1 : Lower Limahuli (UHM)        :    0.04  /  0.04  /  0.07  /  0.08
 WNHH1 : Wainiha (12010)             :    0.00  /  0.00  /  0.02  /  0.02
-WIPH1 : Waipa (UHM)                 :    0.01  /  0.02  /  0.13  /  0.13
-HNIH1 : Hanalei (12009)             :    0.02  /  0.02  /  0.13  /  0.13
+WIPH1 : Waipa (UHM)                 :    0.02  /  0.03  /  0.14  /  0.14
+HNIH1 : Hanalei (12009)             :    0.02  /  0.03  /  0.14  /  0.14
 WLLH1 : Mount Waialeale (USGS)      :      M   /    M   /    M   /    M
-PRIH1 : Princeville Airport (12011) :    0.01  /  0.02  /  0.02  /  0.02
-CMGH1 : Common Ground (UHM)         :    0.00  /  0.01  /  0.04  /  0.05
+PRIH1 : Princeville Airport (12011) :    0.01  /  0.01  /  0.02  /  0.02
+CMGH1 : Common Ground (UHM)         :    0.02  /  0.03  /  0.06  /  0.07
 HLIH1 : Hanalei (RAWS)              :    0.02  /  0.02  /  0.11  /  0.12
 MLDH1 : Moloaa Dairy (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 ANHH1 : Anahola (12001)             :    0.00  /  0.00  /  0.01  /  0.01
-KPIH1 : Kapahi (12003)              :    0.01  /  0.01  /  0.04  /  0.04
-WLDH1 : N Wailua Ditch (USGS)       :    0.02  /  0.02  /  0.02  /  0.03
-WUHH1 : Wailua (12005)              :    0.00  /  0.00  /  0.00  /  0.00
-WIRH1 : Waiahi Rain Gage (USGS)     :    0.01  /  0.01  /  0.08  /  0.11
-LIHH1 : Lihue Var. Stn. (12006)     :    0.02  /  0.02  /  0.04  /  0.05
-HNMH1 : Hanamaulu (UHM)             :    0.07  /  0.07  /  0.10  /  0.21
+KPIH1 : Kapahi (12003)              :    0.03  /  0.03  /  0.06  /  0.06
+WLDH1 : N Wailua Ditch (USGS)       :    0.04  /  0.04  /  0.04  /  0.05
+WUHH1 : Wailua (12005)              :    0.02  /  0.02  /  0.02  /  0.02
+WIRH1 : Waiahi Rain Gage (USGS)     :    0.03  /  0.03  /  0.10  /  0.13
+LIHH1 : Lihue Var. Stn. (12006)     :    0.03  /  0.03  /  0.05  /  0.06
+HNMH1 : Hanamaulu (UHM)             :    0.08  /  0.08  /  0.11  /  0.22
 HLI   : Lihue Airport (ASOS)        :      T   /    T   /  0.01  /  0.02
 :       Leeward Sites
 OMAH1 : Omao (12004)                :    0.00  /  0.00  /  0.00  /  0.01
-LNTH1 : Lawai NTBG (UHM)            :    0.00  /  0.00  /  0.03  /  0.03
+LNTH1 : Lawai NTBG (UHM)            :    0.01  /  0.01  /  0.04  /  0.04
 KHEH1 : Kalaheo (12008)             :    0.00  /  0.00  /  0.00  /  0.03
 PAKH1 : Port Allen (HSOIS)          :    0.00  /  0.00  /  0.00  /  0.00
 HNPH1 : Hanapepe (12002)            :    0.00  /  0.00  /  0.00  /  0.00
@@ -3066,18 +3066,18 @@ MNRH1 : Mana (RAWS)                 :    0.00  /  0.00  /  0.00  /  0.00
 KAHH1 : Kahuku (13027)              :    0.00  /  0.00  /  0.00  /  0.00
 KTAH1 : Kahuku Training Area (RAWS) :    0.00  /  0.00  /  0.00  /  0.00
 KFWH1 : Kii (RAWS)                  :    0.00  /  0.00  /  0.00  /  0.00
-PUNH1 : Punaluu Pump (13013)        :    0.00  /  0.00  /  0.01  /  0.01
+PUNH1 : Punaluu Pump (13013)        :    0.00  /  0.00  /  0.00  /  0.01
 PNSH1 : Punaluu Stream (USGS)       :    0.01  /  0.01  /  0.01  /  0.01
 KNRH1 : Kahana (USGS)               :    0.02  /  0.02  /  0.02  /  0.02
 HAKH1 : Hakipuu Mauka (13004)       :    0.00  /  0.00  /  0.00  /  0.00
-WPPH1 : Waihee Pump (13002)         :    0.00  /  0.00  /  0.01  /  0.05
+WPPH1 : Waihee Pump (13002)         :    0.00  /  0.00  /  0.00  /  0.05
 WHSH1 : Waiahole (USGS)             :    0.00  /  0.00  /  0.00  /  0.00
 OFRH1 : Oahu Forest NWR (USFWS)     :    0.00  /  0.00  /  0.00  /  0.00
 AHUH1 : Ahuimanu Loop (13005)       :    0.00  /  0.00  /  0.00  /  0.00
 HRRH1 : Heeia NERR (NOAA/NOS)       :    0.00  /  0.00  /  0.00  /  0.00
 LULH1 : Luluku (13016)              :    0.00  /  0.00  /  0.00  /  0.00
 NRSH1 : Nuuanu Res No. 1 (UHM)      :    0.00  /  0.00  /  0.00  /  0.00
-KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.00  /  0.07
+KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.00  /  0.06
 LYOH1 : Lyon (UHM)                  :    0.01  /  0.02  /  0.02  /  0.03
 MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.00  /  0.00  /  0.02
 STVH1 : St. Stephens (13006)        :    0.00  /  0.00  /  0.00  /  0.01
@@ -3105,9 +3105,9 @@ POAH1 : Poamoho (13018)             :    0.00  /  0.00  /  0.00  /  0.00
 KRGH1 : Kalahee Ridge (UHM)         :    0.00  /  0.00  /  0.00  /  0.00
 KMRH1 : Kamananui Stream (USGS)     :    0.00  /  0.00  /  0.00  /  0.03
 PPRH1 : Pupukea Road (USGS)         :    0.00  /  0.00  /  0.00  /  0.01
-PMHH1 : Poamoho RG 1 (USGS)         :    0.02  /  0.02  /  0.02  /  0.02
+PMHH1 : Poamoho RG 1 (USGS)         :    0.01  /  0.02  /  0.02  /  0.02
 DLGH1 : Dillingham (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
-AALH1 : Kaala (UHM)                 :    0.00  /  0.00  /  0.00  /  0.01
+AALH1 : Kaala (UHM)                 :    0.00  /  0.00  /  0.00  /  0.00
 PECH1 : Waipio (13019)              :    0.00  /  0.00  /  0.00  /  0.00
 KUNH1 : Kunia Substation (13021)    :    0.00  /  0.00  /  0.00  /  0.00
 HOFH1 : Honouliuli (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
@@ -3128,7 +3128,7 @@ KOPH1 : Keopukaloa (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
 HOMH1 : Honolimaloo (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
 KMLH1 : Kamalo (14013)              :    0.00  /  0.00  /  0.00  /  0.00
 MKPH1 : Makapulapai (RAWS)          :    0.00  /  0.00  /  0.00  /  0.00
-PAFH1 : Puu Alii (RAWS)             :    0.00  /  0.00  /  0.00  /  0.02
+PAFH1 : Puu Alii (RAWS)             :    0.00  /  0.00  /  0.00  /  0.01
 MLKH1 : Molokai 1 (RAWS)            :      M   /    M   /    M   /    M
 KACH1 : Kaunakakai Mauka (14004)    :    0.00  /  0.00  /  0.00  /  0.00
 HMK   : Molokai Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
@@ -3147,23 +3147,23 @@ KAOH1 : Kaneloa (RAWS)              :      M   /    M   /    M   /    M
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
 HNAH1 : Hana Airport (HSOIS)        :      M   /    M   /    M   /    M
-WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.01  /  1.43
-EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.00  /  0.06
-AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.01
+WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.01  /  0.92
+EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.00  /  0.04
+AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.00
 HOG   : Kahului Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
 WUKH1 : Wailuku (14007)             :    0.00  /  0.00  /  0.00  /  0.00
 KHKH1 : Kahakuloa (14002)           :    0.00  /  0.00  /  0.00  /  0.00
-PKKH1 : Puu Kukui (USGS)            :    0.02  /  0.04  /  0.07  /  0.30
+PKKH1 : Puu Kukui (USGS)            :    0.02  /  0.04  /  0.07  /  0.26
 :       Leeward/Upcountry Sites
 NKUH1 : Na Kula (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KPNH1 : Kepuni (USGS)               :    0.00  /  0.00  /  0.00  /  0.00
-PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.15
-WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.34
+PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.09
+WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.18
 PUKH1 : Pukalani (14006)            :    0.00  /  0.00  /  0.00  /  0.00
 KBSH1 : Kula Branch Station (14008) :      M   /    M   /    M   /    M
 KLGH1 : Kula Ag (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
-PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.08
-NNEH1 : Nene Nest (UHM)             :    0.00  /  0.00  /  0.00  /  0.02
+PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.03
+NNEH1 : Nene Nest (UHM)             :    0.00  /  0.00  /  0.00  /  0.01
 SUMH1 : Summit (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 KLFH1 : Kula 1 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
 KKNH1 : Kahikinui 1 (RAWS)          :    0.00  /  0.00  /  0.00  /  0.00
@@ -3171,7 +3171,7 @@ KMEH1 : Kamehamenui 1 (RAWS)        :    0.00  /  0.00  /  0.00  /  0.00
 KKEH1 : Keokea (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 ULUH1 : Ulupalakua (14003)          :    0.00  /  0.00  /  0.00  /  0.00
 LPOH1 : Lipoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.00
-KHIH1 : Kihei #2 (14009)            :      M   /    M   /  0.00  /  0.00
+KHIH1 : Kihei #2 (14009)            :      M   /    M   /    M   /  0.00
 KPDH1 : Kealia Pond (USFWS)         :    0.00  /  0.00  /  0.00  /  0.00
 WCCH1 : Waikapu Country Club (14005):    0.00  /  0.00  /  0.00  /  0.00
 HULH1 : Hanaula (UHM)               :    0.00  /  0.00  /  0.00  /  0.01
@@ -3183,56 +3183,56 @@ HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 :Island of Hawaii                                  Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
-UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.13
+UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.12
 KMMH1 : Kaluamakani (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
-KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.85
-KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.18
-KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.02
-HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.19
+KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.63
+KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.12
+KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.01
+HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.05
 PMLH1 : Puu Mali (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 WPNH1 : Waipunalei (UHM)            :      M   /    M   /  0.00  /  0.03
-KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.33
-LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.80
-LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /  0.00  /  1.16
-SPNH1 : Spencer (UHM)               :      M   /    M   /  0.00  /  0.88
-HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.76
-KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.97
-NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.01  /  2.03
-SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.03  /  1.79
-PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.01  /  1.56
+KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.21
+LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.54
+LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /  0.00  /  0.99
+SPNH1 : Spencer (UHM)               :      M   /    M   /  0.00  /  0.61
+HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.55
+KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.76
+NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.00  /  1.60
+SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.03  /  1.51
+PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.01  /  1.35
 PIIH1 : Piihonua (15016)            :    0.00  /  0.00  /  0.01  /  0.02
-IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.68
-WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.80
+IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.59
+WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.74
 WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.30
-HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  1.39
-PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.47
+HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  1.35
+PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.43
 PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.31
-MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.02  /  1.08
-GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.02  /  1.76
+MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.01  /  0.97
+GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.01  /  1.48
 :       Leeward Sites
 MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.00  /  0.00  /  0.00  /  0.01
-NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.03  /  0.94
-KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.16
-KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.32
-PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.02
-KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.18
-KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.11
-PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.07
+NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.03  /  0.82
+KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.12
+KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.27
+PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.01
+KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.09
+KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.08
+PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.06
 KIOH1 : Kaiholena (UHM)             :      M   /    M   /    M   /    M
-NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.21
-SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  1.05
-LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.01  /  0.76
+NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.16
+SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  1.01
+LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.01  /  0.71
 KRCH1 : Kahuku Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.01
-KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.02  /  0.03
-PHRH1 : Puho CS (RAWS)              :    0.01  /  0.01  /  0.01  /  0.01
-HAUH1 : Honaunau (15007)            :    0.05  /  0.05  /  0.73  /  0.73
-KLEH1 : Kealakekua (15008)          :    0.11  /  0.11  /  0.11  /  0.11
-WIHH1 : Waiaha Stream (15009)       :    0.43  /  0.43  /  0.44  /  0.44
-KOUH1 : Keahuolu (UHM)              :    0.47  /  0.48  /  0.68  /  0.69
+KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.01  /  0.03
+PHRH1 : Puho CS (RAWS)              :    0.00  /  0.01  /  0.01  /  0.01
+HAUH1 : Honaunau (15007)            :    0.03  /  0.05  /  0.73  /  0.73
+KLEH1 : Kealakekua (15008)          :    0.07  /  0.13  /  0.13  /  0.13
+WIHH1 : Waiaha Stream (15009)       :    0.05  /  0.45  /  0.45  /  0.46
+KOUH1 : Keahuolu (UHM)              :    0.06  /  0.51  /  0.51  /  0.72
 KHOH1 : Kaloko-Honokohau (RAWS)     :    0.00  /  0.00  /  0.00  /  0.00
 HKO   : Kona Intl Airport (ASOS)    :    0.00  /  0.00  /  0.00  /  0.00
 PLMH1 : Palamanui (UHM)             :    0.00  /  0.06  /  0.06  /  0.07
-KIRH1 : Kiholo RG (USGS)            :    0.02  /  0.02  /  0.02  /  0.02
+KIRH1 : Kiholo RG (USGS)            :    0.03  /  0.03  /  0.03  /  0.03
 KPLH1 : Kaupulehu (RAWS)            :    0.08  /  0.08  /  0.08  /  0.08
 PULH1 : Puuanahulu (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
 MMLH1 : Mamalahoa (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
@@ -3249,9 +3249,9 @@ LLAH1 : Lalamilo (UHM)              :    0.00  /  0.00  /  0.00  /  0.01
 WKVH1 : Waikoloa (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 PERH1 : Puhe CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KHRH1 : Kohala Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.21
-KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.49
-PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.06
+KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.15
+KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.36
+PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.04
 .END
 
 Service Note
@@ -3274,7 +3274,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T01:45:35.584803-10:00 HST |
+| **Collected** | 2026-09-28T01:54:38.507025-10:00 HST |
 
 ```text
                         
@@ -4066,7 +4066,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-28T01:50:17.129808-10:00 HST |
+| **Collected** | 2026-09-28T01:59:17.031503-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4080,7 +4080,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-28T01:51:16.987112-10:00 HST |
+| **Collected** | 2026-09-28T02:00:17.031992-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4094,7 +4094,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-28T01:46:17.056175-10:00 HST |
+| **Collected** | 2026-09-28T01:55:17.014834-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4108,7 +4108,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-28T01:47:17.165762-10:00 HST |
+| **Collected** | 2026-09-28T01:56:17.223556-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4122,7 +4122,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-28T01:48:17.271241-10:00 HST |
+| **Collected** | 2026-09-28T01:57:17.284547-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4136,7 +4136,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-28T01:49:17.261521-10:00 HST |
+| **Collected** | 2026-09-28T01:58:17.328446-10:00 HST |
 
 ```text
 733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
@@ -4150,7 +4150,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T01:52:17.409462-10:00 HST |
+| **Collected** | 2026-09-28T02:01:16.966272-10:00 HST |
 
 ```text
 Home
@@ -4274,7 +4274,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 11:51:15 UTC
+Last update Mon, 28 Sep 2026 12:00:06 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -4410,8 +4410,6 @@ View Full Graphical Tropical Weather Outlook
 Close (X)
 
 View Storm Details
-
-                                                            
 
 Central North Pacific
 (140°W to 180°)
@@ -7926,7 +7924,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-28T01:45:17.681150-10:00 HST |
+| **Collected** | 2026-09-28T01:54:20.707590-10:00 HST |
 
 ```text
 National Weather Service
