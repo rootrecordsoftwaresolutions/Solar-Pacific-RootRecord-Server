@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-27T23:53:17-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T00:02:23-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -3001,19 +3001,19 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-27T23:39:13.722124-10:00 HST |
+| **Collected** | 2026-09-27T23:55:35.029739-10:00 HST |
 
 ```text
-289
-SRHW80 PHFO 280846
+789
+SRHW80 PHFO 280946
 RRAHFO
 
 Hawaii Rainfall Summary
 National Weather Service Honolulu HI
-1045 PM HST Sun Sep 27 2026
+1145 PM HST Sun Sep 27 2026
 
 :
-.B HFO  0927 H  DH22 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
+.B HFO  0927 H  DH23 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
 :
 :Automated rain gage reports from around the State of Hawaii.
 :These are provisional reports that have not been quality
@@ -3021,7 +3021,7 @@ National Weather Service Honolulu HI
 :
 :T=Trace Rainfall, M=Missing Data
 :
-:Precipitation totals ending  10 PM HST
+:Precipitation totals ending  11 PM HST
 :
 :Island of Kauai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
@@ -3029,25 +3029,25 @@ National Weather Service Honolulu HI
 MKAH1 : Makaha Ridge (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 PLRH1 : Puu Lua (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 WKRH1 : Waiakoali (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
-KLOH1 : Kilohana (USGS)             :    0.00  /  0.07  /  0.09  /  0.12
+KLOH1 : Kilohana (USGS)             :    0.01  /  0.05  /  0.10  /  0.13
 MCRH1 : Mohihi Crossing (USGS)      :    0.00  /  0.00  /  0.00  /  0.01
-WLGH1 : Waialae (USGS)              :    0.00  /  0.00  /  0.00  /  0.00
-LLMH1 : Lower Limahuli (UHM)        :    0.00  /  0.01  /  0.03  /  0.04
-WNHH1 : Wainiha (12010)             :    0.00  /  0.02  /  0.02  /  0.03
-WIPH1 : Waipa (UHM)                 :    0.01  /  0.04  /  0.12  /  0.12
-HNIH1 : Hanalei (12009)             :    0.01  /  0.04  /  0.12  /  0.12
+WLGH1 : Waialae (USGS)              :    0.01  /  0.01  /  0.01  /  0.01
+LLMH1 : Lower Limahuli (UHM)        :    0.03  /  0.04  /  0.06  /  0.07
+WNHH1 : Wainiha (12010)             :    0.00  /  0.00  /  0.02  /  0.02
+WIPH1 : Waipa (UHM)                 :    0.02  /  0.05  /  0.13  /  0.13
+HNIH1 : Hanalei (12009)             :    0.02  /  0.05  /  0.13  /  0.13
 WLLH1 : Mount Waialeale (USGS)      :      M   /    M   /    M   /    M
-PRIH1 : Princeville Airport (12011) :    0.00  /  0.01  /  0.01  /  0.01
+PRIH1 : Princeville Airport (12011) :    0.01  /  0.02  /  0.02  /  0.02
 CMGH1 : Common Ground (UHM)         :    0.01  /  0.01  /  0.04  /  0.05
-HLIH1 : Hanalei (RAWS)              :    0.00  /  0.01  /  0.09  /  0.10
+HLIH1 : Hanalei (RAWS)              :    0.02  /  0.03  /  0.11  /  0.12
 MLDH1 : Moloaa Dairy (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 ANHH1 : Anahola (12001)             :    0.00  /  0.00  /  0.01  /  0.01
-KPIH1 : Kapahi (12003)              :    0.00  /  0.03  /  0.03  /  0.03
-WLDH1 : N Wailua Ditch (USGS)       :    0.00  /  0.00  /  0.00  /  0.03
+KPIH1 : Kapahi (12003)              :    0.00  /  0.00  /  0.03  /  0.03
+WLDH1 : N Wailua Ditch (USGS)       :    0.00  /  0.00  /  0.00  /  0.02
 WUHH1 : Wailua (12005)              :    0.00  /  0.00  /  0.00  /  0.00
 WIRH1 : Waiahi Rain Gage (USGS)     :    0.00  /  0.00  /  0.07  /  0.11
 LIHH1 : Lihue Var. Stn. (12006)     :    0.00  /  0.00  /  0.02  /  0.03
-HNMH1 : Hanamaulu (UHM)             :    0.00  /  0.00  /  0.03  /  0.14
+HNMH1 : Hanamaulu (UHM)             :    0.02  /  0.02  /  0.05  /  0.16
 HLI   : Lihue Airport (ASOS)        :      T   /  0.01  /  0.01  /  0.02
 :       Leeward Sites
 OMAH1 : Omao (12004)                :    0.00  /  0.00  /  0.00  /  0.01
@@ -3077,7 +3077,7 @@ AHUH1 : Ahuimanu Loop (13005)       :    0.00  /  0.00  /  0.00  /  0.00
 HRRH1 : Heeia NERR (NOAA/NOS)       :    0.00  /  0.00  /  0.00  /  0.00
 LULH1 : Luluku (13016)              :    0.00  /  0.00  /  0.00  /  0.00
 NRSH1 : Nuuanu Res No. 1 (UHM)      :    0.00  /  0.00  /  0.00  /  0.00
-KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.02  /  0.07
+KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.00  /  0.07
 LYOH1 : Lyon (UHM)                  :    0.01  /  0.01  /  0.01  /  0.02
 MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.00  /  0.00  /  0.02
 STVH1 : St. Stephens (13006)        :    0.00  /  0.00  /  0.00  /  0.01
@@ -3103,9 +3103,9 @@ SCEH1 : Schofield East (RAWS)       :    0.00  /  0.00  /  0.00  /  0.00
 WAFH1 : Wheeler Airfield            :    0.00  /  0.00  /  0.00  /  0.00
 POAH1 : Poamoho (13018)             :    0.00  /  0.00  /  0.00  /  0.00
 KRGH1 : Kalahee Ridge (UHM)         :    0.00  /  0.00  /  0.00  /  0.00
-KMRH1 : Kamananui Stream (USGS)     :    0.00  /  0.00  /  0.01  /  0.03
-PPRH1 : Pupukea Road (USGS)         :    0.00  /  0.00  /  0.00  /  0.02
-PMHH1 : Poamoho RG 1 (USGS)         :    0.01  /  0.01  /  0.01  /  0.01
+KMRH1 : Kamananui Stream (USGS)     :    0.00  /  0.00  /  0.00  /  0.03
+PPRH1 : Pupukea Road (USGS)         :    0.00  /  0.00  /  0.00  /  0.01
+PMHH1 : Poamoho RG 1 (USGS)         :    0.02  /  0.02  /  0.02  /  0.02
 DLGH1 : Dillingham (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
 AALH1 : Kaala (UHM)                 :    0.00  /  0.00  /  0.00  /  0.01
 PECH1 : Waipio (13019)              :    0.00  /  0.00  /  0.00  /  0.00
@@ -3128,7 +3128,7 @@ KOPH1 : Keopukaloa (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
 HOMH1 : Honolimaloo (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
 KMLH1 : Kamalo (14013)              :    0.00  /  0.00  /  0.00  /  0.00
 MKPH1 : Makapulapai (RAWS)          :    0.00  /  0.00  /  0.00  /  0.00
-PAFH1 : Puu Alii (RAWS)             :    0.00  /  0.00  /  0.00  /  0.07
+PAFH1 : Puu Alii (RAWS)             :    0.00  /  0.00  /  0.00  /  0.06
 MLKH1 : Molokai 1 (RAWS)            :      M   /    M   /    M   /    M
 KACH1 : Kaunakakai Mauka (14004)    :    0.00  /  0.00  /  0.00  /  0.00
 HMK   : Molokai Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
@@ -3147,22 +3147,22 @@ KAOH1 : Kaneloa (RAWS)              :      M   /    M   /    M   /    M
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
 HNAH1 : Hana Airport (HSOIS)        :      M   /    M   /    M   /    M
-WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.07  /  1.97
-EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.02  /  0.07
-AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.02
+WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.04  /  1.78
+EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.01  /  0.06
+AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.01
 HOG   : Kahului Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
 WUKH1 : Wailuku (14007)             :    0.00  /  0.00  /  0.00  /  0.00
 KHKH1 : Kahakuloa (14002)           :    0.00  /  0.00  /  0.00  /  0.00
-PKKH1 : Puu Kukui (USGS)            :    0.02  /  0.04  /  0.07  /  0.33
+PKKH1 : Puu Kukui (USGS)            :    0.03  /  0.05  /  0.07  /  0.32
 :       Leeward/Upcountry Sites
 NKUH1 : Na Kula (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KPNH1 : Kepuni (USGS)               :    0.00  /  0.00  /  0.00  /  0.00
-PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.22
-WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.50
+PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.19
+WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.44
 PUKH1 : Pukalani (14006)            :    0.00  /  0.00  /  0.00  /  0.00
 KBSH1 : Kula Branch Station (14008) :      M   /    M   /    M   /    M
 KLGH1 : Kula Ag (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
-PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.15
+PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.13
 NNEH1 : Nene Nest (UHM)             :    0.00  /  0.00  /  0.00  /  0.03
 SUMH1 : Summit (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 KLFH1 : Kula 1 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
@@ -3176,7 +3176,7 @@ KPDH1 : Kealia Pond (USFWS)         :    0.00  /  0.00  /  0.00  /  0.00
 WCCH1 : Waikapu Country Club (14005):    0.00  /  0.00  /  0.00  /  0.00
 HULH1 : Hanaula (UHM)               :    0.00  /  0.00  /  0.00  /  0.02
 OLUH1 : Olowalu (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
-LAHH1 : Lahainaluna (14011)         :    0.00  /  0.00  /  0.00  /  0.04
+LAHH1 : Lahainaluna (14011)         :    0.00  /  0.00  /  0.00  /  0.00
 LWTH1 : Lahaina WTP (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
 HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 :
@@ -3185,55 +3185,55 @@ HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 :       Windward Sites
 UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.14
 KMMH1 : Kaluamakani (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
-KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  1.32
-KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.32
-KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.06
-HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.01  /  0.42
+KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  1.13
+KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.23
+KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.03
+HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.01  /  0.29
 PMLH1 : Puu Mali (RAWS)             :    0.00  /  0.00  /  0.00  /  0.01
 WPNH1 : Waipunalei (UHM)            :      M   /    M   /  0.00  /  0.03
-KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.65
-LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  1.30
-LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /  0.00  /  1.77
-SPNH1 : Spencer (UHM)               :      M   /    M   /  0.00  /  1.22
-HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  1.10
-KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  1.99
-NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.01  /  2.85
-SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.01  /  0.13  /  2.35
-PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.01  /  2.32
+KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.52
+LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.99
+LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /  0.00  /  1.44
+SPNH1 : Spencer (UHM)               :      M   /    M   /  0.00  /  0.98
+HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.95
+KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  1.40
+NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.01  /  2.42
+SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.05  /  2.09
+PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.01  /  1.89
 PIIH1 : Piihonua (15016)            :    0.00  /  0.01  /  0.01  /  0.03
-IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.03  /  1.32
-WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  1.28
+IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.03  /  0.92
+WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.95
 WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.30
-HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.01  /  1.67
-PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.60
-PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.41
-MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.04  /  1.51
-GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.05  /  2.69
+HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.01  /  1.43
+PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.52
+PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.34
+MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.03  /  1.23
+GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.02  /  2.12
 :       Leeward Sites
-MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.00  /  0.00  /  0.00  /  0.03
-NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.06  /  1.54
-KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.35
-KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.62
-PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.17
-KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.63
-KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.43
-PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.42
+MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.00  /  0.00  /  0.00  /  0.02
+NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.03  /  1.25
+KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.23
+KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.56
+PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.08
+KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.43
+KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.29
+PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.25
 KIOH1 : Kaiholena (UHM)             :      M   /    M   /    M   /    M
-NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.41
-SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  1.10
-LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.01  /  0.01  /  1.02
+NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.30
+SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  1.07
+LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.01  /  0.85
 KRCH1 : Kahuku Ranch (RAWS)         :    0.00  /  0.00  /  0.01  /  0.01
 KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.03  /  0.03
 PHRH1 : Puho CS (RAWS)              :    0.01  /  0.01  /  0.01  /  0.01
-HAUH1 : Honaunau (15007)            :    0.02  /  0.67  /  0.70  /  0.70
-KLEH1 : Kealakekua (15008)          :    0.06  /  0.06  /  0.06  /  0.06
-WIHH1 : Waiaha Stream (15009)       :    0.40  /  0.40  /  0.41  /  0.41
-KOUH1 : Keahuolu (UHM)              :    0.45  /  0.45  /  0.66  /  0.66
+HAUH1 : Honaunau (15007)            :    0.05  /  0.09  /  0.73  /  0.73
+KLEH1 : Kealakekua (15008)          :    0.07  /  0.07  /  0.07  /  0.07
+WIHH1 : Waiaha Stream (15009)       :    0.41  /  0.41  /  0.42  /  0.42
+KOUH1 : Keahuolu (UHM)              :    0.47  /  0.47  /  0.68  /  0.68
 KHOH1 : Kaloko-Honokohau (RAWS)     :    0.00  /  0.00  /  0.00  /  0.00
 HKO   : Kona Intl Airport (ASOS)    :    0.00  /  0.00  /  0.00  /  0.00
 PLMH1 : Palamanui (UHM)             :    0.06  /  0.06  /  0.06  /  0.07
 KIRH1 : Kiholo RG (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
-KPLH1 : Kaupulehu (RAWS)            :    0.00  /  0.00  /  0.00  /  0.00
+KPLH1 : Kaupulehu (RAWS)            :    0.06  /  0.06  /  0.06  /  0.06
 PULH1 : Puuanahulu (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
 MMLH1 : Mamalahoa (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
 PWWH1 : Puu Waawaa (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
@@ -3245,13 +3245,13 @@ PKWH1 : Pohakuloa West (RAWS)       :    0.00  /  0.00  /  0.00  /  0.00
 PKMH1 : Pohakuloa Keamuku (RAWS)    :    0.00  /  0.00  /  0.00  /  0.00
 AHMH1 : Ahumoa (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
 WHIH1 : Waikii (15011)              :    0.00  /  0.00  /  0.00  /  0.00
-LLAH1 : Lalamilo (UHM)              :    0.00  /  0.00  /  0.00  /  0.02
+LLAH1 : Lalamilo (UHM)              :    0.00  /  0.00  /  0.00  /  0.01
 WKVH1 : Waikoloa (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 PERH1 : Puhe CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KHRH1 : Kohala Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.38
-KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.91
-PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.13
+KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.29
+KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.69
+PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.09
 .END
 
 Service Note
@@ -3274,7 +3274,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-27T23:46:38.046797-10:00 HST |
+| **Collected** | 2026-09-27T23:55:37.878176-10:00 HST |
 
 ```text
                         
@@ -3368,16 +3368,16 @@ $$
 |---|---|
 | **Resource ID** | hsf_high_seas_npac |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=HSF&issuedby=NP |
-| **Collected** | 2026-09-27T22:57:08.815757-10:00 HST |
+| **Collected** | 2026-09-27T23:54:05.017256-10:00 HST |
 
 ```text
-806
-FZPN40 PHFO 280331
+210
+FZPN40 PHFO 280933
 HSFNP
 
 HIGH SEAS FORECAST
 NATIONAL WEATHER SERVICE HONOLULU HI
-0500 UTC MON SEP 28 2026
+1100 UTC MON SEP 28 2026
 
 SUPERSEDED BY NEXT ISSUANCE IN 6 HOURS
 
@@ -3392,37 +3392,36 @@ SECURITE
 
 NORTH PACIFIC EQUATOR TO 30N BETWEEN 140W AND 180W
 
-SYNOPSIS VALID 0000 UTC SEP 28 2026.
-24 HOUR FORECAST VALID 0000 UTC SEP 29 2026.
-48 HOUR FORECAST VALID 0000 UTC SEP 30 2026.
+SYNOPSIS VALID 0600 UTC SEP 28 2026.
+24 HOUR FORECAST VALID 0600 UTC SEP 29 2026.
+48 HOUR FORECAST VALID 0600 UTC SEP 30 2026.
 
 .WARNINGS.
 
 ...HURRICANE WARNING...
-.HURRICANE NOLO NEAR 16.3N 160.3W 939 MB AT 0300 UTC SEP 28
-MOVING WNW OR 285 DEG AT 10 KT. MAXIMUM SUSTAINED WINDS 125 KT
-GUSTS 150 KT. TROPICAL STORM FORCE WINDS WITHIN 130 NM NE
-QUADRANT...100 NM SE QUADRANT...80 NM SW QUADRANT...AND 110 NM NW
-QUADRANT. WINDS 20 TO 34 KT ELSEWHERE FROM 19N TO 14N BETWEEN 163W
-AND 153W. SEAS 4 M OR GREATER WITHIN 360 NM NE QUADRANT...150 NM
-SE QUADRANT...180 NM SW QUADRANT...AND 330 NM NW QUADRANT WITH
-SEAS TO 11 M. SEAS 2.5 TO 4 M ELSEWHERE N OF 10N BETWEEN 170W AND
-152W. ISOLATED MODERATE TO STRONG TSTMS FROM 18N TO 13N BETWEEN
-162W AND 157W.
-.24 HOUR FORECAST HURRICANE NOLO NEAR 18.3N 163.1W. MAXIMUM
-SUSTAINED WINDS 130 KT GUSTS 160 KT. TROPICAL STORM FORCE WINDS
-WITHIN 100 NM NW AND SE QUADRANTS...130 NM NE QUADRANT AND 80 NM
-SW QUADRANT. WINDS 20 TO 34 KT ELSEWHERE FROM 22N TO 16N BETWEEN
-167W AND 159W. SEAS 4 M OR GREATER FROM 23N TO 15N BETWEEN 167W
-AND 157W WITH SEAS TO 11.5 M. SEAS 2.5 TO 4 M ELSEWHERE N OF LINE
-30N165W 22N178W 09N167W 15N153W 27N152W 30N163W.
-.48 HOUR FORECAST HURRICANE NOLO NEAR 21.9N 163.8W. MAXIMUM
-SUSTAINED WINDS 100 KT GUSTS 120 KT. TROPICAL STORM FORCE WINDS
-WITHIN 130 NM NE QUADRANT...110 NM SE QUADRANT...80 NM SW
-QUADRANT...AND 100 NM NW QUADRANT. WINDS 20 TO 34 KT ELSEWHERE
-FROM 26N TO 19N BETWEEN 167W AND 159W. SEAS 4 M OR GREATER FROM
-24N TO 18N BETWEEN 167W AND 161W WITH SEAS TO 11.5 M. SEAS 2.5 TO 4
-M ELSEWHERE FROM 27N TO 14N W OF 158W.
+.HURRICANE NOLO NEAR 16.5N 161.3W 929 MB AT 0900 UTC SEP 28
+MOVING WNW OR 290 DEG AT 10 KT. MAXIMUM SUSTAINED WINDS 135 KT
+GUSTS 165 KT. TROPICAL STORM FORCE WINDS WITHIN 130 NM NE
+QUADRANT...100 NM SE QUADRANT...80 NM SW QUADRANT AND 110 NM
+NW QUADRANT. WINDS 20 TO 30 KT ELSEWHERE FROM 15N TO 21N BETWEEN
+154W AND 166W. SEAS 4 M OR GREATER WITHIN 360 NM NE QUADRANT...
+150 NM SE QUADRANT...180 NM SW QUADRANT AND 330 NM NW QUADRANT
+WITH SEAS TO 10 M. SEAS 2.5 TO 3.5 M ELSEWHERE N OF 10N BETWEEN
+153W AND 175W. SCATTERED TO NUMEROUS MODERATE TSTMS WITHIN 85 NM
+FROM CENTER.
+.24 HOUR FORECAST HURRICANE NOLO NEAR 19.2N 163.5W. MAXIMUM
+SUSTAINED WINDS 135 KT GUSTS 165 KT. TROPICAL STORM FORCE WINDS
+WITHIN 120 NM NE QUADRANT...110 NM SE QUADRANT...80 NM SW
+QUADRANT...AND 100 NM NW QUADRANT. WINDS 20 TO 30 KT ELSEWHERE
+FROM 17N TO 25N BETWEEN 160W AND 167W. SEAS 4 M OR GREATER FROM
+17N TO 22N BETWEEN 160W AND 167W WITH SEAS TO 11 M. SEAS 2.5 TO
+3.5 M ELSEWHERE FROM 13N TO 29N BETWEEN 155W AND 178W.
+.48 HOUR FORECAST HURRICANE NOLO NEAR 22.4N 163.7W. MAXIMUM
+SUSTAINED WINDS 95 KT GUSTS 115 KT. LITTLE CHANGE IN RADIUS OF
+TROPICAL STORM FORCE WINDS. WINDS 20 TO 30 KT ELSEWHERE FROM 20N
+TO 27N BETWEEN 158W AND 168W. SEAS 4 M OR GREATER FROM 20N TO 25N
+BETWEEN 161W AND 166W WITH SEAS TO 9.5 M. SEAS 2.5 TO 3.5 M
+ELSEWHERE FROM 15N TO 28N BETWEEN 157W AND 170W.
 
 FORECAST WINDS IN AND NEAR ACTIVE TROPICAL CYCLONES SHOULD BE
 USED WITH CAUTION DUE TO UNCERTAINTY IN FORECAST TRACK...SIZE AND
@@ -3430,29 +3429,27 @@ INTENSITY.
 
 .SYNOPSIS AND FORECAST.
 
-.24 HOUR FORECAST NEW TROUGH 30N165W 25N170W.
-.48 HOUR FORECAST TROUGH 30N163W 27N166W.
+.24 HOUR FORECAST NEW TROUGH 24N167W TO 30N164W.
+.48 HOUR FORECAST TROUGH 26N164W TO 30N162W.
 
-.WINDS 20 TO 30 KT FROM 26N TO 19N BETWEEN 169W AND 150W...AND FROM
-09N TO 05N E OF 145W.
-.24 HOUR FORECAST WINDS 20 TO 25 KT FROM 25N TO 22N BETWEEN 167W
-AND 156W.
-.48 HOUR FORECAST WINDS EASED TO 20 KT OR LESS.
+.WINDS 20 TO 25 KT FROM 21N TO 27N W OF 152W...AND FROM 17N TO
+26N E OF 147W. SEAS 2.5 TO 3 M FROM 12N TO 29N E OF 153W...AND
+FROM 06N TO 12N E OF 146W.
+.24 HOUR FORECAST WINDS 20 TO 25 KT FROM 17N TO 24N BETWEEN 155W
+AND 160W. SEAS 2.5 TO 3 M FROM 16N TO 27N E OF 155W...AND FROM 07N
+TO 13N E OF 143W.
+.48 HOUR FORECAST WINDS 20 TO 25 KT N OF 29N BETWEEN 168W AND
+175W. SEAS 2.5 TO 3 M FROM 14N TO 24N E OF 144W...AND N OF 29N
+BETWEEN 171W AND 175W.
 
-.WINDS 20 KT OR LESS OVER REMAINDER OF FORECAST AREA.
+.WINDS 20 KT OR LESS AND SEAS 2.5 M OR LOWER OVER REMAINDER OF
+FORECAST AREA.
 
-.SEAS 2.5 TO 4 M FROM 27N TO 12N E OF 152W...AND FROM 12N TO 05N
-E OF 145W.
-.24 HOUR FORECAST SEAS 2.5 TO 3 M E OF LINE 30N144W 24N150W
-18N150W 08N145W 05N140W.
-.48 HOUR FORECAST SEAS 2.5 TO 3 M FROM 25N TO 12N E OF 146W.
+.MONSOON TROUGH 14N140W TO 12N157W...AND 14N165W TO 11N172W TO
+11N180. SCATTERED MODERATE TO ISOLATED STRONG TSTMS S OF TROUGH
+FROM 00N TO 07N E OF 159W.
 
-.SEAS 2.5 M OR LOWER OVER REMAINDER OF FORECAST AREA.
-
-.MONSOON TROUGH 11N140W 08N161W 05N173W 08N180W. ISOLATED
-MODERATE TSTMS S OF 13N E OF 155W.
-
-.FORECASTER TROTTER. HONOLULU HI.
+.FORECASTER CHAN. HONOLULU HI.
 ```
 
 ---
@@ -4153,7 +4150,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-27T23:53:17.103909-10:00 HST |
+| **Collected** | 2026-09-28T00:02:17.657768-10:00 HST |
 
 ```text
 Home
@@ -4277,7 +4274,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 09:50:05 UTC
+Last update Mon, 28 Sep 2026 10:00:06 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -7617,16 +7614,16 @@ Global Monitoring Laboratory
 |---|---|
 | **Resource ID** | off_offshore_forecast |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OFF&issuedby=HFO |
-| **Collected** | 2026-09-27T22:56:23.855514-10:00 HST |
+| **Collected** | 2026-09-27T23:53:50.061534-10:00 HST |
 
 ```text
-307
-FZHW60 PHFO 280307
+599
+FZHW60 PHFO 280945
 OFFHFO
 
 Offshore Waters Forecast for Hawaii
 National Weather Service Honolulu HI
-507 PM HST Sun Sep 27 2026
+1145 PM HST Sun Sep 27 2026
 
 Hawaiian offshore waters beyond 40 nautical miles out to 240
 nautical miles including the portion of the Papahanaumokuakea
@@ -7636,60 +7633,65 @@ Seas given as significant wave height, which is the average height
 of the highest 1/3 of the waves. Individual waves may be more than
 twice the significant wave height.
 
-PHZ105-281200-
-507 PM HST Sun Sep 27 2026
+PHZ105-281630-
+1145 PM HST Sun Sep 27 2026
 
 .Synopsis for the Hawaiian offshore waters...
 The center of Hurricane Nolo will pass just outside of the far SW
 offshore waters boundary as it turns toward the NW tonight and
 Monday. Strong high pressure N of the area will maintain fresh to
 strong trade winds outside of the Nolo wind field during this
-time. Nolo will reenter far W offshore waters late Monday and move
-toward the NNW through Tuesday night. Nolo will turn toward the W
-and exit far W offshore waters Wednesday.
+time. Nolo will reenter far W offshore waters late Monday and
+track N through Tuesday night. Nolo will then turn W and exit the
+offshore waters by Thursday.
 
-AT 500 PM HST HURRICANE NOLO WAS CENTERED AT 16.3N 160.3W AND
-MOVING WNW AT 10 KT.
+AT 1100 PM HST HURRICANE NOLO WAS CENTERED AT 16.5N 161.3W...MOVING
+WNW AT 10 KT
 
 NOLO FORECAST POSITIONS
-200 AM HST MONDAY 16.9N 161.7W
-200 PM HST MONDAY 18.3N 163.1W
-200 AM HST TUESDAY 20.2N 163.8W
-200 PM HST TUESDAY 21.9N 163.8W
-200 AM HST WEDNESDAY 22.8N 163.7W
-200 PM HST WEDNESDAY 23.0N 164.2W
-200 PM HST THURSDAY 23.7N 166.4W
-200 PM HST FRIDAY 24.3N 168.3W
+800 AM HST MONDAY 17.5N 162.5W
+800 PM HST MONDAY 19.2N 163.5W
+800 AM HST TUESDAY 21.0N 163.7W
+800 PM HST TUESDAY 22.4N 163.7W
+800 AM HST WEDNESDAY 22.8N 163.9W
+800 PM HST WEDNESDAY 23.0N 164.7W
+800 PM HST THURSDAY 23.6N 166.9W
+800 PM HST FRIDAY 24.0N 169.1W
+800 PM HST SATURDAY 24.6N 174.0W
+800 PM HST SUNDAY 26.3N 179.5W
 
-PHZ180-281200-
+PHZ180-281630-
 Hawaiian Offshore Waters-
-507 PM HST Sun Sep 27 2026
+1145 PM HST Sun Sep 27 2026
 
 ...HURRICANE WARNING IN EFFECT...
 
-.TONIGHT...Tropical storm conditions S of 19N W of 158W.
+.REST OF TONIGHT...Tropical storm conditions S of 20N W of 159W.
 Elsewhere, E winds 15 to 30 kt and seas 9 to 14 ft. Isolated
 thunderstorms near Hurricane Nolo.
-.MONDAY...Hurricane conditions S of 21N W of 160W. Elsewhere, E
-winds 15 to 30 kt, strongest W of 158W and seas 8 to 14 ft.
-Isolated thunderstorms near Hurricane Nolo.
-.MONDAY NIGHT...Hurricane conditions S of 22N W of 162W.
+.MONDAY...Hurricane conditions expected S of 22N W of 160W.
+Elsewhere, E winds 15 to 30 kt, strongest W of 158W and seas 8 to
+14 ft. Isolated thunderstorms near Hurricane Nolo.
+.MONDAY NIGHT...Hurricane conditions expected S of 24N W of 161W.
 Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
-SE half, E winds 10 to 15 kt and seas 7 to 8 ft. Isolated
+SE half, E to SE winds 10 to 15 kt and seas 7 to 8 ft. Isolated
 thunderstorms near Hurricane Nolo.
-.TUESDAY...Hurricane conditions expected S of 24N W of 162W.
-NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft. SE half,
-E winds 10 to 15 kt and seas 6 to 8 ft. Isolated thunderstorms
-near Hurricane Nolo.
-.WEDNESDAY...Tropical storm conditions possible W of 163W. Between
-160W and 163W, E to SE winds 20 to 30 kt and seas 8 to 12 ft. E
-of 160W, E to SE winds 10 to 20 kt and seas 6 to 8 ft. Isolated
-thunderstorms W of 163W.
-.THURSDAY...N of 20N W of 162W, E to SE winds 15 to 25 kt and
-seas 8 to 10 ft. Elsewhere, E to SE winds 10 to 15 kt and seas 5
-to 8 ft.
-.FRIDAY...NW half, SE winds 10 to 20 kt. SE half, E winds 10 to
-15 kt. Seas 5 to 7 ft.
+.TUESDAY...Hurricane conditions expected S of 25N W of 161W.
+Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
+SE half, E to SE winds 10 to 15 kt and seas 6 to 8 ft. Isolated
+thunderstorms near Hurricane Nolo.
+.TUESDAY NIGHT...Hurricane conditions expected N of 20N W of
+161W. Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
+SE half, E to SE winds 10 to 15 kt and seas 6 to 8 ft. Isolated
+thunderstorms near Hurricane Nolo.
+.WEDNESDAY...Hurricane conditions possible W of 162W. Elsewhere NW
+half, SE winds 15 to 30 kt and seas 8 to 12 ft. SE half, E to SE
+winds 10 to 15 kt and seas 6 to 8 ft. Isolated thunderstorms near
+Hurricane Nolo.
+.THURSDAY...N of 20N W of 162W, SE winds 15 to 25 kt and seas 8
+to 10 ft. Elsewhere, E to SE winds 10 to 15 kt and seas 5 to 8 ft.
+.FRIDAY...NW half, SE winds 10 to 20 kt. SE half, E to SE winds
+10 to 15 kt. Seas 5 to 7 ft.
 ```
 
 ---
@@ -7922,7 +7924,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-27T23:38:27.995716-10:00 HST |
+| **Collected** | 2026-09-27T23:55:20.381173-10:00 HST |
 
 ```text
 National Weather Service

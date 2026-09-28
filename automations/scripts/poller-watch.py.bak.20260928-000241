@@ -366,37 +366,6 @@ def format_line(raw: str) -> str | None:
 
 
 
-
-            # ------------------------------------------------
-            # Suppress noisy A-EYES frame-grab failures outside
-            # daylight. Solar state owns the display.
-            # ------------------------------------------------
-            if "a_eyes_frame_grab" in body.lower():
-                if (
-                    "FAILED" in rest
-                    or "FAIL" in rest
-                    or "grab failed" in rest.lower()
-                    or "No route to host" in rest
-                ):
-                    solar = aeyes_solar_state()
-
-                    if solar:
-                        if (
-                            solar.startswith("waiting")
-                            or solar.startswith("night")
-                        ):
-                            return (
-                                f"  {DIM}{t}{RST}  "
-                                f"{DIM}📷 A-EYES {solar}{RST}"
-                            )
-
-                        return (
-                            f"  {DIM}{t}{RST}  "
-                            f"{RED}📷 A-EYES offline — DVR unreachable{RST}"
-                        )
-
-                    return None
-
             # ------------------------------------------------
             # A-EYES owns its own display identity.
             # Do NOT route camera failures through "github".
