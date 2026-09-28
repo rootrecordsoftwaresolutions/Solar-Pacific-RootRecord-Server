@@ -66,17 +66,14 @@ def aeyes_solar_state():
     ss = parse_clock(sunset)
 
     if now < sr:
-        delta = sr - now
-        hours = int(delta.total_seconds() // 3600)
-        mins = int((delta.total_seconds() % 3600) // 60)
-        return f"waiting — sunrise {sunrise} HST ({hours:02d}h {mins:02d}m)"
+        return f"waiting — sunrise {sunrise} HST"
 
     if now > ss:
         tomorrow_sr = sr + timedelta(days=1)
-        delta = tomorrow_sr - now
-        hours = int(delta.total_seconds() // 3600)
-        mins = int((delta.total_seconds() % 3600) // 60)
-        return f"night — sunrise {tomorrow_sr.strftime('%H:%M')} HST ({hours:02d}h {mins:02d}m)"
+        return (
+            f"complete — sunset {sunset} HST · "
+            f"sunrise {tomorrow_sr.strftime('%H:%M')} HST"
+        )
 
     return f"daylight active — sunset {sunset} HST"
 
