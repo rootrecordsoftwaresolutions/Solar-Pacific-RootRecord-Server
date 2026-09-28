@@ -39,11 +39,11 @@ Raw collected source data remains the authoritative record. Generated reports ar
 
 | Location | Conditions | Temp | Dew point | RH | Wind | Pressure |
 |---|---|---:|---:|---:|---|---:|
-| Honolulu | Partly cloudy | 80°F | 69°F | 69% | Northeast 18 gusts to 31 | 29.92F |
-| Lihue | Partly cloudy | 79°F | 72°F | 79% | Northeast 17 | 29.97F |
-| Kahului | Clear | 80°F | 64°F | 58% | Northeast 24 gusts to 39 | 29.87F |
-| Hilo | Clear | 71°F | 56°F | 58% | Southwest 8 | 29.99S |
-| Kona | Cloudy | 83°F | 74°F | 74% | West 15 | — |
+| Honolulu | Partly cloudy | 79°F | 68°F | 69% | Northeast 15 gusts to 22 | 29.89S |
+| Lihue | Partly cloudy | 78°F | 73°F | 84% | Northeast 17 gusts to 26 | 29.93R |
+| Kahului | Clear | 70°F | 61°F | 73% | Calm | 29.87R |
+| Hilo | Clear | 68°F | 57°F | 68% | Southwest 8 | 29.93S |
+| Kona | Mostly cloudy | 80°F | 72°F | 76% | South 5 | — |
 
 _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °F._
 
@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T05:42:19-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T05:50:18-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -2402,21 +2402,20 @@ morning. Scattered showers through the day.
 |---|---|
 | **Resource ID** | cli_daily_climate_summary_HNL |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=CLI&issuedby=HNL |
-| **Collected** | 2026-09-27T22:56:38.603695-10:00 HST |
+| **Collected** | 2026-09-28T05:42:52.442725-10:00 HST |
 
 ```text
-508
-CDHW40 PHFO 280227
+331
+CDHW40 PHFO 281245
 CLIHNL
 
 CLIMATE REPORT
 NATIONAL WEATHER SERVICE HONOLULU HI
-427 PM HST SUN SEP 27 2026
+245 AM HST MON SEP 28 2026
 
 ...................................
 
 ...THE HONOLULU CLIMATE SUMMARY FOR SEPTEMBER 27 2026...
-VALID TODAY AS OF 0425 PM LOCAL TIME.
 
 CLIMATE NORMAL PERIOD 1991 TO 2020
 CLIMATE RECORD PERIOD 1940 TO 2026
@@ -2426,27 +2425,27 @@ WEATHER ITEM   OBSERVED TIME   RECORD YEAR NORMAL DEPARTURE LAST
                                                   NORMAL
 ...................................................................
 TEMPERATURE (F)
- TODAY
+ YESTERDAY
   MAXIMUM         89    154 PM  93    1987  88      1       90
   MINIMUM         79    639 AM  68    1945  75      4       75
                                       1996
   AVERAGE         84                        81      3       83
 
 PRECIPITATION (IN)
-  TODAY            0.00          0.29 2000   0.02  -0.02      T
+  YESTERDAY        0.00          0.29 2000   0.02  -0.02      T
   MONTH TO DATE    0.32                      0.80  -0.48     0.71
   SINCE SEP 1      0.32                      0.80  -0.48     0.71
   SINCE JAN 1     22.35                     10.39  11.96     9.59
 
 DEGREE DAYS
  HEATING
-  TODAY            0                         0      0        0
+  YESTERDAY        0                         0      0        0
   MONTH TO DATE    0                         0      0        0
   SINCE SEP 1      0                         0      0        0
   SINCE JUL 1      0                         0      0        0
 
  COOLING
-  TODAY           19                        16      3       18
+  YESTERDAY       19                        16      3       18
   MONTH TO DATE  491                       449     42      478
   SINCE SEP 1    491                       449     42      478
   SINCE JAN 1   3701                      3526    175     3963
@@ -2455,24 +2454,24 @@ DEGREE DAYS
 WIND (MPH)
   HIGHEST WIND SPEED    39   HIGHEST WIND DIRECTION     E (70)
   HIGHEST GUST SPEED    53   HIGHEST GUST DIRECTION     E (70)
-  AVERAGE WIND SPEED    22.9
+  AVERAGE WIND SPEED    21.9
 
 SKY COVER
   POSSIBLE SUNSHINE  MM
   AVERAGE SKY COVER 0.3
 
 WEATHER CONDITIONS
-THE FOLLOWING WEATHER WAS RECORDED TODAY.
+THE FOLLOWING WEATHER WAS RECORDED YESTERDAY.
   NO SIGNIFICANT WEATHER WAS OBSERVED.
 
 RELATIVE HUMIDITY (PERCENT)
- HIGHEST    65           600 AM
+ HIGHEST    69          1000 PM
  LOWEST     47           100 PM
- AVERAGE    56
+ AVERAGE    58
 
 ..........................................................
 
-THE HONOLULU CLIMATE NORMALS FOR TOMORROW
+THE HONOLULU CLIMATE NORMALS FOR TODAY
                          NORMAL    RECORD    YEAR
  MAXIMUM TEMPERATURE (F)   88        91      1988
                                              1995
@@ -2480,8 +2479,8 @@ THE HONOLULU CLIMATE NORMALS FOR TOMORROW
  MINIMUM TEMPERATURE (F)   75        68      1945
 
 SUNRISE AND SUNSET
-SEPTEMBER 27 2026.....SUNRISE   622 AM HST   SUNSET   623 PM HST
 SEPTEMBER 28 2026.....SUNRISE   622 AM HST   SUNSET   622 PM HST
+SEPTEMBER 29 2026.....SUNRISE   622 AM HST   SUNSET   621 PM HST
 
 -  INDICATES NEGATIVE NUMBERS.
 R  INDICATES RECORD WAS SET OR TIED.
@@ -2497,21 +2496,20 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | cli_daily_climate_summary_ITO |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=CLI&issuedby=ITO |
-| **Collected** | 2026-09-27T22:59:09.092780-10:00 HST |
+| **Collected** | 2026-09-28T05:43:52.393294-10:00 HST |
 
 ```text
-524
-CDHW43 PHFO 280227
+329
+CDHW43 PHFO 281245
 CLIITO
 
 CLIMATE REPORT
 NATIONAL WEATHER SERVICE HONOLULU HI
-427 PM HST SUN SEP 27 2026
+245 AM HST MON SEP 28 2026
 
 ...................................
 
 ...THE HILO/GEN.LYMAN FLD CLIMATE SUMMARY FOR SEPTEMBER 27 2026...
-VALID TODAY AS OF 0425 PM LOCAL TIME.
 
 CLIMATE NORMAL PERIOD 1991 TO 2020
 CLIMATE RECORD PERIOD 1949 TO 2026
@@ -2521,42 +2519,42 @@ WEATHER ITEM   OBSERVED TIME   RECORD YEAR NORMAL DEPARTURE LAST
                                                   NORMAL
 ...................................................................
 TEMPERATURE (F)
- TODAY
-  MAXIMUM         83    359 PM  92    2019  83      0       84
-  MINIMUM         71    539 AM  64    1950  70      1       71
-  AVERAGE         77                        76      1       78
+ YESTERDAY
+  MAXIMUM         83    415 PM  92    2019  83      0       84
+  MINIMUM         69   1159 PM  64    1950  70     -1       71
+  AVERAGE         76                        76      0       78
 
 PRECIPITATION (IN)
-  TODAY            1.49          5.82 1960   0.30   1.19     0.00
+  YESTERDAY        1.49          5.82 1960   0.30   1.19     0.00
   MONTH TO DATE   16.18                      7.82   8.36     2.73
   SINCE SEP 1     16.18                      7.82   8.36     2.73
   SINCE JAN 1    124.42                     82.81  41.61    38.11
 
 DEGREE DAYS
  HEATING
-  TODAY            0                         0      0        0
+  YESTERDAY        0                         0      0        0
   MONTH TO DATE    0                         0      0        0
   SINCE SEP 1      0                         0      0        0
   SINCE JUL 1      0                         0      0        0
 
  COOLING
-  TODAY           12                        11      1       13
-  MONTH TO DATE  355                       323     32      342
-  SINCE SEP 1    355                       323     32      342
-  SINCE JAN 1   2784                      2434    350     2843
+  YESTERDAY       11                        11      0       13
+  MONTH TO DATE  354                       323     31      342
+  SINCE SEP 1    354                       323     31      342
+  SINCE JAN 1   2783                      2434    349     2843
 ...................................................................
 
 WIND (MPH)
   HIGHEST WIND SPEED    15   HIGHEST WIND DIRECTION     E (90)
   HIGHEST GUST SPEED    20   HIGHEST GUST DIRECTION    SE (120)
-  AVERAGE WIND SPEED     6.6
+  AVERAGE WIND SPEED     6.3
 
 SKY COVER
   POSSIBLE SUNSHINE  MM
-  AVERAGE SKY COVER 0.9
+  AVERAGE SKY COVER 0.7
 
 WEATHER CONDITIONS
-THE FOLLOWING WEATHER WAS RECORDED TODAY.
+THE FOLLOWING WEATHER WAS RECORDED YESTERDAY.
   HEAVY RAIN
   RAIN
   LIGHT RAIN
@@ -2564,19 +2562,19 @@ THE FOLLOWING WEATHER WAS RECORDED TODAY.
 
 RELATIVE HUMIDITY (PERCENT)
  HIGHEST    97           200 AM
- LOWEST     63           300 PM
- AVERAGE    80
+ LOWEST     59          1100 PM
+ AVERAGE    78
 
 ..........................................................
 
-THE HILO/GEN.LYMAN FLD CLIMATE NORMALS FOR TOMORROW
+THE HILO/GEN.LYMAN FLD CLIMATE NORMALS FOR TODAY
                          NORMAL    RECORD    YEAR
  MAXIMUM TEMPERATURE (F)   83        90      2019
  MINIMUM TEMPERATURE (F)   70        64      1956
 
 SUNRISE AND SUNSET
-SEPTEMBER 27 2026.....SUNRISE   610 AM HST   SUNSET   612 PM HST
 SEPTEMBER 28 2026.....SUNRISE   610 AM HST   SUNSET   611 PM HST
+SEPTEMBER 29 2026.....SUNRISE   611 AM HST   SUNSET   610 PM HST
 
 -  INDICATES NEGATIVE NUMBERS.
 R  INDICATES RECORD WAS SET OR TIED.
@@ -2592,21 +2590,20 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | cli_daily_climate_summary_LIH |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=CLI&issuedby=LIH |
-| **Collected** | 2026-09-27T22:57:38.472615-10:00 HST |
+| **Collected** | 2026-09-28T05:43:07.398566-10:00 HST |
 
 ```text
-540
-CDHW41 PHFO 280227
+328
+CDHW41 PHFO 281245
 CLILIH
 
 CLIMATE REPORT
 NATIONAL WEATHER SERVICE HONOLULU HI
-427 PM HST SUN SEP 27 2026
+245 AM HST MON SEP 28 2026
 
 ...................................
 
 ...THE LIHUE CLIMATE SUMMARY FOR SEPTEMBER 27 2026...
-VALID TODAY AS OF 0425 PM LOCAL TIME.
 
 CLIMATE NORMAL PERIOD 1991 TO 2020
 CLIMATE RECORD PERIOD 1950 TO 2026
@@ -2616,27 +2613,27 @@ WEATHER ITEM   OBSERVED TIME   RECORD YEAR NORMAL DEPARTURE LAST
                                                   NORMAL
 ...................................................................
 TEMPERATURE (F)
- TODAY
+ YESTERDAY
   MAXIMUM         85    139 PM  88    1981  85      0       84
                                       2017
   MINIMUM         77    657 AM  66    1977  75      2       70
   AVERAGE         81                        80      1       77
 
 PRECIPITATION (IN)
-  TODAY            0.01          0.79 1987   0.07  -0.06     0.00
-  MONTH TO DATE    3.12                      1.93   1.19     3.49
-  SINCE SEP 1      3.12                      1.93   1.19     3.49
-  SINCE JAN 1     42.91                     24.03  18.88    14.95
+  YESTERDAY        0.02          0.79 1987   0.07  -0.05     0.00
+  MONTH TO DATE    3.13                      1.93   1.20     3.49
+  SINCE SEP 1      3.13                      1.93   1.20     3.49
+  SINCE JAN 1     42.92                     24.03  18.89    14.95
 
 DEGREE DAYS
  HEATING
-  TODAY            0                         0      0        0
+  YESTERDAY        0                         0      0        0
   MONTH TO DATE    0                         0      0        0
   SINCE SEP 1      0                         0      0        0
   SINCE JUL 1      0                         0      0        0
 
  COOLING
-  TODAY           16                        15      1       12
+  YESTERDAY       16                        15      1       12
   MONTH TO DATE  408                       405      3      416
   SINCE SEP 1    408                       405      3      416
   SINCE JAN 1   3111                      3039     72     3354
@@ -2645,14 +2642,14 @@ DEGREE DAYS
 WIND (MPH)
   HIGHEST WIND SPEED    29   HIGHEST WIND DIRECTION     E (70)
   HIGHEST GUST SPEED    38   HIGHEST GUST DIRECTION    NE (60)
-  AVERAGE WIND SPEED    22.6
+  AVERAGE WIND SPEED    20.7
 
 SKY COVER
   POSSIBLE SUNSHINE  MM
   AVERAGE SKY COVER 0.6
 
 WEATHER CONDITIONS
-THE FOLLOWING WEATHER WAS RECORDED TODAY.
+THE FOLLOWING WEATHER WAS RECORDED YESTERDAY.
   LIGHT RAIN
 
 RELATIVE HUMIDITY (PERCENT)
@@ -2662,7 +2659,7 @@ RELATIVE HUMIDITY (PERCENT)
 
 ..........................................................
 
-THE LIHUE CLIMATE NORMALS FOR TOMORROW
+THE LIHUE CLIMATE NORMALS FOR TODAY
                          NORMAL    RECORD    YEAR
  MAXIMUM TEMPERATURE (F)   85        89      1981
                                              2019
@@ -2670,8 +2667,8 @@ THE LIHUE CLIMATE NORMALS FOR TOMORROW
                                              1970
 
 SUNRISE AND SUNSET
-SEPTEMBER 27 2026.....SUNRISE   628 AM HST   SUNSET   628 PM HST
 SEPTEMBER 28 2026.....SUNRISE   628 AM HST   SUNSET   628 PM HST
+SEPTEMBER 29 2026.....SUNRISE   628 AM HST   SUNSET   627 PM HST
 
 -  INDICATES NEGATIVE NUMBERS.
 R  INDICATES RECORD WAS SET OR TIED.
@@ -2687,21 +2684,20 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | cli_daily_climate_summary_OGG |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=CLI&issuedby=OGG |
-| **Collected** | 2026-09-27T22:58:39.185287-10:00 HST |
+| **Collected** | 2026-09-28T05:43:22.844551-10:00 HST |
 
 ```text
-556
-CDHW42 PHFO 280227
+330
+CDHW42 PHFO 281245
 CLIOGG
 
 CLIMATE REPORT
 NATIONAL WEATHER SERVICE HONOLULU HI
-427 PM HST SUN SEP 27 2026
+245 AM HST MON SEP 28 2026
 
 ...................................
 
 ...THE KAHULUI/MAUI CLIMATE SUMMARY FOR SEPTEMBER 27 2026...
-VALID TODAY AS OF 0425 PM LOCAL TIME.
 
 CLIMATE NORMAL PERIOD 1991 TO 2020
 CLIMATE RECORD PERIOD 1954 TO 2026
@@ -2711,7 +2707,7 @@ WEATHER ITEM   OBSERVED TIME   RECORD YEAR NORMAL DEPARTURE LAST
                                                   NORMAL
 ...................................................................
 TEMPERATURE (F)
- TODAY
+ YESTERDAY
   MAXIMUM         89    228 PM  93    1972  90     -1       89
                                       1984
                                       2020
@@ -2719,20 +2715,20 @@ TEMPERATURE (F)
   AVERAGE         82                        80      2       81
 
 PRECIPITATION (IN)
-  TODAY            0.00          0.54 2000   0.02  -0.02     0.00
+  YESTERDAY        0.00          0.54 2000   0.02  -0.02     0.00
   MONTH TO DATE    0.60                      0.41   0.19     0.04
   SINCE SEP 1      0.60                      0.41   0.19     0.04
   SINCE JAN 1     30.28                     10.73  19.55     6.61
 
 DEGREE DAYS
  HEATING
-  TODAY            0                         0      0        0
+  YESTERDAY        0                         0      0        0
   MONTH TO DATE    0                         0      0        0
   SINCE SEP 1      0                         0      0        0
   SINCE JUL 1      0                         0      0        0
 
  COOLING
-  TODAY           17                        15      2       16
+  YESTERDAY       17                        15      2       16
   MONTH TO DATE  440                       427     13      425
   SINCE SEP 1    440                       427     13      425
   SINCE JAN 1   3224                      3274    -50     3280
@@ -2741,14 +2737,14 @@ DEGREE DAYS
 WIND (MPH)
   HIGHEST WIND SPEED    38   HIGHEST WIND DIRECTION     E (70)
   HIGHEST GUST SPEED    58   HIGHEST GUST DIRECTION     E (70)
-  AVERAGE WIND SPEED    25.0
+  AVERAGE WIND SPEED    24.5
 
 SKY COVER
   POSSIBLE SUNSHINE  MM
   AVERAGE SKY COVER 0.3
 
 WEATHER CONDITIONS
-THE FOLLOWING WEATHER WAS RECORDED TODAY.
+THE FOLLOWING WEATHER WAS RECORDED YESTERDAY.
   NO SIGNIFICANT WEATHER WAS OBSERVED.
 
 RELATIVE HUMIDITY (PERCENT)
@@ -2758,15 +2754,15 @@ RELATIVE HUMIDITY (PERCENT)
 
 ..........................................................
 
-THE KAHULUI/MAUI CLIMATE NORMALS FOR TOMORROW
+THE KAHULUI/MAUI CLIMATE NORMALS FOR TODAY
                          NORMAL    RECORD    YEAR
  MAXIMUM TEMPERATURE (F)   90        93      2019
  MINIMUM TEMPERATURE (F)   71        63      1965
                                              2010
 
 SUNRISE AND SUNSET
-SEPTEMBER 27 2026.....SUNRISE   616 AM HST   SUNSET   617 PM HST
 SEPTEMBER 28 2026.....SUNRISE   616 AM HST   SUNSET   616 PM HST
+SEPTEMBER 29 2026.....SUNRISE   616 AM HST   SUNSET   615 PM HST
 
 -  INDICATES NEGATIVE NUMBERS.
 R  INDICATES RECORD WAS SET OR TIED.
@@ -2782,7 +2778,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-28T05:26:34.441779-10:00 HST |
+| **Collected** | 2026-09-28T05:44:07.710798-10:00 HST |
 
 ```text
 689
@@ -3055,7 +3051,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T05:35:38.573681-10:00 HST |
+| **Collected** | 2026-09-28T05:44:10.573343-10:00 HST |
 
 ```text
                         
@@ -3246,206 +3242,206 @@ OF TROUGH FROM 00N TO 07N BETWEEN 146W AND 157W...AND FROM 06N TO
 |---|---|
 | **Resource ID** | oso_hourly_obs |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OSO&issuedby=HFO |
-| **Collected** | 2026-09-27T23:40:58.617900-10:00 HST |
+| **Collected** | 2026-09-28T05:45:37.615813-10:00 HST |
 
 ```text
-204
-SXHW50 PHFO 280926
+759
+SXHW50 PHFO 281543
 OSOHFO
 
 Hawaii Wind Data
 National Weather Service Honolulu HI
-1125 PM HST Sun Sep 27 2026
+543 AM HST Mon Sep 28 2026
 
                             W I N D        D A T A
                             ----------------------
                                                                    IN KNOTS
  ID                Location              Date     Time     DIR    SPD   GUST
 --------   -------------------------    -------  -(HST)-  ----   ----   ----
-0000LLMH1  Lower Limahuli     Kauai     27Sep26   23:00    340      3      8
-0000CMGH1  Common Ground      Kauai     27Sep26   23:00    120      5      9
-0000HLIH1  Hanalei            Kauai     27Sep26   22:41    110      6     14
-0000MLDH1  Moloaa Dairy       Kauai     27Sep26   22:45    120      6     14
-0000HNMH1  Hanamaulu          Kauai     27Sep26   23:00     50      5     10
-0000PHLI   Lihue              Kauai     27Sep26   23:00     60     15     25
-0000NWWH1  Nawiliwili NOS     Kauai     27Sep26   23:06     60     16     19
+0000LLMH1  Lower Limahuli     Kauai     28Sep26   05:15    340      3      8
+0000CMGH1  Common Ground      Kauai     28Sep26   05:15    120      5     10
+0000HLIH1  Hanalei            Kauai     28Sep26   04:41    100      7     15
+0000MLDH1  Moloaa Dairy       Kauai     28Sep26   04:45    110      7     15
+0000HNMH1  Hanamaulu          Kauai     28Sep26   05:15     10      2      7
+0000PHLI   Lihue              Kauai     28Sep26   05:00     60     15     23
+0000NWWH1  Nawiliwili NOS     Kauai     28Sep26   05:30     50     13     17
 0000POIH1  Poipu              Kauai                MSG    MSG    MSG    MSG
-0000LNTH1  Lawai NTBG         Kauai     27Sep26   23:00     90     12     24
-0000PAKH1  Port Allen         Kauai     27Sep26   23:00     90     16     27
-0000MKAH1  Makaha Ridge       Kauai     27Sep26   23:11     30      3      9
-0000MNRH1  Mana               Kauai     27Sep26   22:34     70      5     13
-0000PHBK   Barking Sands      Kauai     27Sep26   23:00      0      0    MSG
-0000PLRH1  Puu Lua            Kauai     27Sep26   22:35     70     14     24
-0000POPH1  Puu Opae           Kauai     27Sep26   22:34     90     10     28
-0000WHGH1  Waimea Heights     Kauai     27Sep26   22:35     30     12     27
+0000LNTH1  Lawai NTBG         Kauai     28Sep26   05:15     80     12     17
+0000PAKH1  Port Allen         Kauai     28Sep26   05:00     80     17     22
+0000MKAH1  Makaha Ridge       Kauai     28Sep26   05:11     40      2      8
+0000MNRH1  Mana               Kauai     28Sep26   05:34     80      2      5
+0000PHBK   Barking Sands      Kauai     28Sep26   05:00    130      4    MSG
+0000PLRH1  Puu Lua            Kauai     28Sep26   05:35     80      9     18
+0000POPH1  Puu Opae           Kauai     28Sep26   05:34    120      6     16
+0000WHGH1  Waimea Heights     Kauai     28Sep26   05:35     30      9     22
 
-0000KRGH1  Kalahee Ridge      Oahu      27Sep26   22:55     60      9     19
+0000KRGH1  Kalahee Ridge      Oahu      28Sep26   05:10    150      1      5
 0000KAHH1  Kahuku             Oahu                 MSG    MSG    MSG    MSG
-0000KTAH1  Kahuku Trng        Oahu      27Sep26   22:59    110      3     14
-0000KFWH1  Kii                Oahu      27Sep26   22:45     90     16     24
-0000OFRH1  Oahu Forest NWR    Oahu      27Sep26   22:36     90     12     37
-0000KWMH1  Kaaawa Makai       Oahu      27Sep26   22:45     50      5      9
-0000PHNG   Kaneohe MCBH       Oahu      27Sep26   23:12     80     12     25
-0000MOKH1  Mokuoloe Is NOS    Oahu      27Sep26   23:06     90     11     16
-0000BELH1  Bellows AFS        Oahu      27Sep26   23:15     70     15    MSG
-0000KUXH1  Kaluanui           Oahu      27Sep26   23:00    160      5     18
-0000LYOH1  Lyon               Oahu      27Sep26   22:55    290      3      8
-0000NRSH1  Nuuanu Res No 1    Oahu      27Sep26   23:00     10      6     13
-0000PHNL   Honolulu AP        Oahu      27Sep26   23:00     60     16     27
-0000OOUH1  Honolulu Hbr NOS   Oahu      27Sep26   23:00     70      5     16
-0000HOFH1  Honouliuli PHB     Oahu      27Sep26   22:41     60     14     21
-0000SCBH1  Schofield Brks     Oahu      27Sep26   22:57     90      5     22
-0000SCEH1  Schofield East     Oahu      27Sep26   22:58     90      8     17
-0000HWLH1  HECO Wilikina      Oahu      27Sep26   23:10    110      4      7
-0000PHJR   Kalaeloa           Oahu      27Sep26   23:00     80     12     21
-0000HFHH1  HECO Farrington    Oahu      27Sep26   23:10     70     12     22
-0000HPLH1  HECO Palehua       Oahu      27Sep26   23:10     80     14     24
-0000HPDH1  HECO Palehua 2     Oahu      27Sep26   23:10     60     19     27
-0000HPHH1  HECO Palehua 3     Oahu      27Sep26   23:10     60     13     24
-0000HPRH1  HECO Paakea        Oahu      27Sep26   23:10     30      5     19
-0000HLRH1  HECO Lualualei     Oahu      27Sep26   23:10     40      6     26
-0000HWVH1  HECO Waianae Vly   Oahu                 MSG    MSG    MSG    MSG
-0000PLHH1  Palehua            Oahu      27Sep26   22:36     50      0      0
-0000WNVH1  Waianae Valley     Oahu      27Sep26   22:37     50     13     30
-0000HHSH1  HECO Ala Hema St   Oahu      27Sep26   23:10     90     10     21
+0000KTAH1  Kahuku Trng        Oahu      28Sep26   04:59    120      2      7
+0000KFWH1  Kii                Oahu      28Sep26   04:45    100     15     23
+0000OFRH1  Oahu Forest NWR    Oahu      28Sep26   05:36     80     11     31
+0000KWMH1  Kaaawa Makai       Oahu      28Sep26   05:15     90      2      8
+0000PHNG   Kaneohe MCBH       Oahu      28Sep26   05:30     90      8     16
+0000MOKH1  Mokuoloe Is NOS    Oahu      28Sep26   05:30    110      7     11
+0000BELH1  Bellows AFS        Oahu      28Sep26   05:15     70     15    MSG
+0000KUXH1  Kaluanui           Oahu      28Sep26   05:15    200      4     11
+0000LYOH1  Lyon               Oahu      28Sep26   04:55    200      4      9
+0000NRSH1  Nuuanu Res No 1    Oahu      28Sep26   05:15     10      4     16
+0000PHNL   Honolulu AP        Oahu      28Sep26   05:00     60     13     19
+0000OOUH1  Honolulu Hbr NOS   Oahu      28Sep26   05:24     70      8     16
+0000HOFH1  Honouliuli PHB     Oahu      28Sep26   05:41     60      7     11
+0000SCBH1  Schofield Brks     Oahu      28Sep26   04:57    190      2      9
+0000SCEH1  Schofield East     Oahu      28Sep26   04:58    100      6     18
+0000HWLH1  HECO Wilikina      Oahu      28Sep26   05:30    140      2      5
+0000PHJR   Kalaeloa           Oahu      28Sep26   05:00     70      5     16
+0000HFHH1  HECO Farrington    Oahu      28Sep26   05:30     60      5     10
+0000HPLH1  HECO Palehua       Oahu      28Sep26   05:30     80      8     17
+0000HPDH1  HECO Palehua 2     Oahu      28Sep26   05:30     60     13     19
+0000HPHH1  HECO Palehua 3     Oahu      28Sep26   05:30     60      8     16
+0000HPRH1  HECO Paakea        Oahu      28Sep26   05:30    290      5     17
+0000HLRH1  HECO Lualualei     Oahu      28Sep26   05:30     70      7     16
+0000HWVH1  HECO Waianae Vly   Oahu      28Sep26   05:30     50      8     18
+0000PLHH1  Palehua            Oahu      28Sep26   05:36     50      0      0
+0000WNVH1  Waianae Valley     Oahu      28Sep26   05:37     70      5     24
+0000HHSH1  HECO Ala Hema St   Oahu      28Sep26   05:30     70      6     12
 0000WBHH1  Waianae Harbor     Oahu                 MSG    MSG    MSG    MSG
-0000HKRH1  HECO Kili Dr       Oahu      27Sep26   23:10     90      6     16
-0000HMVH1  HECO Makaha Vly    Oahu      27Sep26   23:10    100      5     19
-0000MKRH1  Makua Range        Oahu      27Sep26   22:58     80      8     18
-0000KKRH1  Kuaokala           Oahu      27Sep26   22:36     30      7     23
-0000AALH1  Kaala              Oahu      27Sep26   23:00    100      7     17
-0000HFRH1  HECO Farrington2   Oahu      27Sep26   23:10     70      7     12
-0000HFYH1  HECO Farrington3   Oahu      27Sep26   23:10     80     15     22
-0000DLGH1  Dillingham         Oahu      27Sep26   22:49     80      3     10
+0000HKRH1  HECO Kili Dr       Oahu      28Sep26   05:30     80      7     12
+0000HMVH1  HECO Makaha Vly    Oahu      28Sep26   05:30     70      4     11
+0000MKRH1  Makua Range        Oahu      28Sep26   04:58    100      5     15
+0000KKRH1  Kuaokala           Oahu      28Sep26   05:36     30      7     16
+0000AALH1  Kaala              Oahu      28Sep26   05:15    110      5     13
+0000HFRH1  HECO Farrington2   Oahu      28Sep26   05:30    170      0      1
+0000HFYH1  HECO Farrington3   Oahu      28Sep26   05:30     90      6     10
+0000DLGH1  Dillingham         Oahu      28Sep26   04:49     60      0      5
 
-0000MKPH1  Makapulapai        Molokai   27Sep26   23:15     90     23     38
-0000PAFH1  Puu Alii           Molokai   27Sep26   23:22    300      3     16
-0000HOMH1  Honolimaloo        Molokai   27Sep26   23:00    110      7     14
-0000KOPH1  Keopukaloa         Molokai   27Sep26   23:00    130      8     15
+0000MKPH1  Makapulapai        Molokai   28Sep26   05:15     90     19     30
+0000PAFH1  Puu Alii           Molokai   28Sep26   05:22    110      3     16
+0000HOMH1  Honolimaloo        Molokai   28Sep26   05:15    100      5     11
+0000KOPH1  Keopukaloa         Molokai   28Sep26   05:15    140     10     16
 0000MLKH1  Molokai 1          Molokai              MSG    MSG    MSG    MSG
-0000MMPH1  MECO Makaena       Molokai   27Sep26   23:10    340      1      4
-0000MKYH1  MECO Kalae Hwy     Molokai   27Sep26   23:10     30      7     10
-0000PHMK   Molokai AP         Molokai   27Sep26   23:00     50     10     24
-0000ANPH1  Anapuka            Molokai   27Sep26   23:00     80     11     19
+0000MMPH1  MECO Makaena       Molokai   28Sep26   05:30    320      7      9
+0000MKYH1  MECO Kalae Hwy     Molokai   28Sep26   05:30     30      5      9
+0000PHMK   Molokai AP         Molokai   28Sep26   05:00     40      8     17
+0000ANPH1  Anapuka            Molokai   28Sep26   05:15     70      8     16
 
-0000LNIH1  Lanai 1            Lanai     27Sep26   22:37     60      0      0
+0000LNIH1  Lanai 1            Lanai     28Sep26   05:37     60      0      0
 
 0000KAOH1  Kaneloa            Kahoolawe            MSG    MSG    MSG    MSG
 
-0000PHOG   Kahului AP         Maui      27Sep26   23:00     60     21     34
-0000KLIH1  Kahului Hbr NOS    Maui      27Sep26   23:06    120      8     23
-0000MHRH1  MECO Hansen Rd     Maui      27Sep26   23:10    210      4      7
-0000MHKH1  MECO Haleakala Hwy Maui      27Sep26   23:10     70      5     10
-0000MMKH1  MECO Makawao       Maui      27Sep26   23:10    150      5     10
-0000MKTH1  MECO Kula 2        Maui      27Sep26   21:50    130      4      7
-0000PILH1  Piiholo            Maui      27Sep26   23:00    130      4     15
-0000EBYH1  EMI Baseyard       Maui      27Sep26   23:00    120      2      6
+0000PHOG   Kahului AP         Maui      28Sep26   05:00      0      0    MSG
+0000KLIH1  Kahului Hbr NOS    Maui      28Sep26   05:24      0     10     14
+0000MHRH1  MECO Hansen Rd     Maui      28Sep26   05:30     80      1      4
+0000MHKH1  MECO Haleakala Hwy Maui      28Sep26   05:30    100      1      3
+0000MMKH1  MECO Makawao       Maui      28Sep26   05:30    170      4      6
+0000MKTH1  MECO Kula 2        Maui      28Sep26   05:30    150      3      6
+0000PILH1  Piiholo            Maui      28Sep26   05:15    140      4     12
+0000EBYH1  EMI Baseyard       Maui      28Sep26   05:10    120      1      5
 0000HNAH1  Hana               Maui                 MSG    MSG    MSG    MSG
-0000NKUH1  Na Kula            Maui      27Sep26   22:35     70     23     44
+0000NKUH1  Na Kula            Maui      28Sep26   05:35     80     22     30
 0000AWAH1  Auwahi             Maui                 MSG    MSG    MSG    MSG
-0000KLFH1  Kula 1             Maui      27Sep26   22:48     50      3      6
-0000KKNH1  Kahikinui 1        Maui      27Sep26   22:34     70      5     16
-0000KMEH1  Kamehamenui 1      Maui      27Sep26   22:48    120     23     32
-0000SUMH1  Summit             Maui      27Sep26   23:00    100     16     22
-0000NNEH1  Nene Nest          Maui      27Sep26   23:00    140      9     15
-0000PHQH1  Park HQ            Maui      27Sep26   23:00    130     11     18
-0000WKTH1  Waikamoi Treeline  Maui      27Sep26   23:00    170      6     18
-0000MCTH1  MECO Crater Rd     Maui      27Sep26   23:10    120      3      8
-0000KLGH1  Kula Ag            Maui      27Sep26   23:00    100      1      2
-0000MWAH1  MECO Waipoli Rd    Maui      27Sep26   23:10    100      2      4
-0000KKEH1  Keokea             Maui      27Sep26   23:00    130      2      3
-0000MKUH1  MECO Kula          Maui      27Sep26   23:10     60      5      7
-0000PHUH1  Pulehu             Maui      27Sep26   23:00    120      3      6
-0000MNDH1  MECO Naalaea Rd    Maui      27Sep26   23:10    100      3      5
-0000MURH1  MECO Ulupalakua    Maui      27Sep26   23:10     80      3      4
-0000LPOH1  Lipoa              Maui      27Sep26   23:00    140      3      3
-0000MVHH1  MECO Veterans Hwy  Maui      27Sep26   23:10      0      3      4
-0000KPDH1  Kealia Pond        Maui      27Sep26   23:20     50      3      6
-0000MMAH1  MECO Maalaea       Maui      27Sep26   23:20    350      8     15
-00000P36   Maalaea Bay        Maui      27Sep26   22:15      0      0      0
-0000HULH1  Hanaula            Maui      27Sep26   22:55     60      7     17
-0000OLUH1  Olowalu            Maui      27Sep26   23:00     70      5     12
-0000MMMH1  MECO Mamane Pl     Maui      27Sep26   23:10    290     12     17
-0000MHOH1  MECO Honoapiilani  Maui      27Sep26   23:10    360     12     18
-0000MHHH1  MECO Honoapiilani2 Maui      27Sep26   23:10    330      9     16
-0000MKEH1  MECO Kealaloloa Rg Maui      27Sep26   23:20    340     10     19
-0000MUGH1  MECO Ukumehame Gul Maui      27Sep26   23:10     10     11     21
-0000MOOH1  MECO Olowalu       Maui      27Sep26   23:20     30      6     15
-0000OLUH1  Olowalu            Maui      27Sep26   23:00     70      5     12
-0000MLPH1  MECO Launiupoko    Maui      27Sep26   23:20     40      5      7
-0000MLTH1  MECO Launiupoko 2  Maui      27Sep26   23:10     30      6     12
-0000MLRH1  MECO Lahainaluna   Maui      27Sep26   20:50     80      5      6
-0000LWTH1  Lahaina WTP        Maui      27Sep26   23:00    100      3      5
-0000MKNH1  MECO Kaanapali     Maui      27Sep26   23:20     90      6      7
+0000KLFH1  Kula 1             Maui      28Sep26   04:48    330      3     16
+0000KKNH1  Kahikinui 1        Maui      28Sep26   05:34     60      8     16
+0000KMEH1  Kamehamenui 1      Maui      28Sep26   04:48    120     13     31
+0000SUMH1  Summit             Maui      28Sep26   05:15    110     17     21
+0000NNEH1  Nene Nest          Maui      28Sep26   05:15    160     12     19
+0000PHQH1  Park HQ            Maui      28Sep26   05:15    110      9     18
+0000WKTH1  Waikamoi Treeline  Maui      28Sep26   05:15    180      7     14
+0000MCTH1  MECO Crater Rd     Maui      28Sep26   05:30    150      5      8
+0000KLGH1  Kula Ag            Maui      28Sep26   05:15    100      2      2
+0000MWAH1  MECO Waipoli Rd    Maui      28Sep26   05:30    130      2      4
+0000KKEH1  Keokea             Maui      28Sep26   05:15    130      2      3
+0000MKUH1  MECO Kula          Maui      28Sep26   05:30     80      5      6
+0000PHUH1  Pulehu             Maui      28Sep26   05:15    120      3      6
+0000MNDH1  MECO Naalaea Rd    Maui      28Sep26   05:30    120      4      7
+0000MURH1  MECO Ulupalakua    Maui      28Sep26   05:30     50      2      5
+0000LPOH1  Lipoa              Maui      28Sep26   05:15     90      4      6
+0000MVHH1  MECO Veterans Hwy  Maui      28Sep26   05:30     20      2      3
+0000KPDH1  Kealia Pond        Maui      28Sep26   05:20     60      4      7
+0000MMAH1  MECO Maalaea       Maui      28Sep26   05:30     40      4      7
+00000P36   Maalaea Bay        Maui      28Sep26   05:15      0      0      0
+0000HULH1  Hanaula            Maui      28Sep26   05:10     30      5     13
+0000OLUH1  Olowalu            Maui      28Sep26   05:15     90      2      2
+0000MMMH1  MECO Mamane Pl     Maui      28Sep26   05:30    310      9     14
+0000MHOH1  MECO Honoapiilani  Maui      28Sep26   05:30    330      5      7
+0000MHHH1  MECO Honoapiilani2 Maui      28Sep26   05:30    350      7     12
+0000MKEH1  MECO Kealaloloa Rg Maui      28Sep26   05:30     10      2     10
+0000MUGH1  MECO Ukumehame Gul Maui      28Sep26   05:30     10      4      7
+0000MOOH1  MECO Olowalu       Maui      28Sep26   05:30     80      2      3
+0000OLUH1  Olowalu            Maui      28Sep26   05:15     90      2      2
+0000MLPH1  MECO Launiupoko    Maui      28Sep26   05:30     60      4      7
+0000MLTH1  MECO Launiupoko 2  Maui      28Sep26   05:30     30      6      8
+0000MLRH1  MECO Lahainaluna   Maui      28Sep26   05:30     50      4      7
+0000LWTH1  Lahaina WTP        Maui      28Sep26   05:15     90      5      7
+0000MKNH1  MECO Kaanapali     Maui      28Sep26   05:30     80      4      6
 0000PHJH   Kapalua-W Maui     Maui                 MSG    MSG    MSG    MSG
-0000HOOH1  Honolua            Maui      27Sep26   23:00     60      6     19
+0000HOOH1  Honolua            Maui      28Sep26   05:15    110      9     22
 
-0000UPLH1  Upolu Airport      Hawaii    27Sep26   22:15     80     17     30
-0000KMMH1  Kaluamakani        Hawaii    27Sep26   23:00    150      4      4
-0000PMLH1  Puu Mali           Hawaii    27Sep26   23:00    200      3      5
-0000KNKH1  Kanakaleonui       Hawaii    27Sep26   23:00    200      9     12
+0000UPLH1  Upolu Airport      Hawaii    28Sep26   05:15    110     11     20
+0000KMMH1  Kaluamakani        Hawaii    28Sep26   05:10    160      6      7
+0000PMLH1  Puu Mali           Hawaii    28Sep26   05:00    180      8     10
+0000KNKH1  Kanakaleonui       Hawaii    28Sep26   05:15    210      8     11
 0000WPNH1  Waipunalei         Hawaii               MSG    MSG    MSG    MSG
 0000LAUH1  Laupahoehoe        Hawaii               MSG    MSG    MSG    MSG
 0000SPNH1  Spencer            Hawaii               MSG    MSG    MSG    MSG
-0000HKUH1  Hakalau            Hawaii    27Sep26   22:45    200      3     10
-0000KLXH1  Kulaimano          Hawaii    27Sep26   23:00    190      4      7
-0000PIOH1  Piihonua           Hawaii    27Sep26   23:00    260      4      6
-0000PHTO   Hilo AP            Hawaii    27Sep26   23:00    240      7    MSG
-0000ILOH1  Hilo Hbr NOS       Hawaii    27Sep26   23:06    220      3      6
-0000IPIH1  IPIF               Hawaii    27Sep26   23:00    230      2      5
-0000WEXH1  Waiakea Exp Stn    Hawaii    27Sep26   23:00    MSG      0      3
-0000KEUH1  Keaau              Hawaii    27Sep26   23:00    250      0      2
-0000PAOH1  Pahoa              Hawaii    27Sep26   23:00    190      0      1
-0000NHKH1  Nahuku             Hawaii    27Sep26   23:00     20     10     16
-0000KKUH1  Keaumo             Hawaii    27Sep26   22:34    350      7     14
-0000MOBH1  Mauna Loa Obs      Hawaii    27Sep26   23:00    MSG     10     15
-0000PLIH1  Pali 2             Hawaii    27Sep26   23:01     20     11     17
-0000KMOH1  Kealakomo          Hawaii    27Sep26   22:44     10     13     24
-0000KPRH1  Kapapala           Hawaii    27Sep26   22:48     10      4      8
-0000NENH1  Nene Cabin         Hawaii    27Sep26   23:23     60      8     15
-0000KIOH1  Kaiholena          Hawaii    27Sep26   23:00    320      8     10
-0000LKHH1  Lower Kahuku       Hawaii    27Sep26   23:23    350      3     15
-0000SOPH1  South Point        Hawaii    27Sep26   23:00     70     17     23
-0000KOMH1  Kona Hema          Hawaii    27Sep26   23:00      0      1      4
-0000KRCH1  Kahuku Ranch       Hawaii    27Sep26   22:29     30      7     19
-0000PHRH1  Puho CS            Hawaii    27Sep26   23:22     60      3      6
-0000HLNH1  HELCO Lolo Ln      Hawaii    27Sep26   23:20    360      2      3
-0000HHUH1  HELCO Hualalai Rd  Hawaii    27Sep26   23:20     10      2      4
-0000KOUH1  Keahuolu           Hawaii    27Sep26   23:00     30      0      3
-0000PHKO   Kona Intl AP       Hawaii    27Sep26   23:00    280     13    MSG
-0000KHOH1  Kaloko-Honokohau   Hawaii    27Sep26   23:15    280      6     10
-0000PLMH1  Palamanui          Hawaii    27Sep26   23:00    220      0      1
-0000PWAH1  Puu Waawaa (UHM)   Hawaii    27Sep26   23:00    170      4      5
-0000KIUH1  Kaiaulu Puu Waawaa Hawaii    27Sep26   23:00    300      9     11
-0000KPLH1  Kaupulehu          Hawaii    27Sep26   22:36    260      3      5
-0000PWWH1  Puu Waawaa         Hawaii    27Sep26   22:37    180      2      8
-0000HMHH1  HELCO Mamalahoa 2  Hawaii    27Sep26   23:20    190      5      7
-0000MMLH1  Mamalahoa          Hawaii    27Sep26   23:00    160      0      1
-0000HMWH1  HELCO Mamalahoa 3  Hawaii    27Sep26   23:20    210      6      9
-0000PULH1  Puuanahulu         Hawaii    27Sep26   22:37    130     13     30
-0000AHMH1  Ahumoa             Hawaii    27Sep26   22:35     60      6      8
-0000AIPH1  Aipaloa            Hawaii    27Sep26   23:00    130      7      9
-0000HSRH1  HELCO Saddle Rd    Hawaii    27Sep26   23:20     50      6      7
-0000HMYH1  HELCO Mamalahoa    Hawaii    27Sep26   23:20     80      4      9
-0000HHCH1  HELCO Hokuloa UCC  Hawaii    27Sep26   23:20     90      8      9
-0000HWRH1  HELCO Waikoloa Rd  Hawaii    27Sep26   23:20     70      9     13
-0000HWXH1  HELCO Waikoloa 2   Hawaii    27Sep26   23:20    100     12     15
-0000WKVH1  Waikoloa           Hawaii    27Sep26   22:35     70      6     14
-0000HLOH1  HELCO Lalamilo     Hawaii    27Sep26   23:20     40     12     14
-0000LLAH1  Lalamilo           Hawaii    27Sep26   23:00    350      2      7
-0000HKWH1  HELCO Kawaihae Rd  Hawaii    27Sep26   23:20     20     16     23
-0000PKAH1  PTA Kipuka Alala   Hawaii    27Sep26   22:55    120      5      8
-0000PKWH1  PTA West           Hawaii    27Sep26   22:56    100     16     32
-0000PKMH1  PTA Keamuku        Hawaii    27Sep26   22:50    110      0      0
-0000PTRH1  PTA Range 17       Hawaii    27Sep26   22:49    140     22     31
-0000PERH1  Puhe CS            Hawaii    27Sep26   22:24     70      3      6
+0000HKUH1  Hakalau            Hawaii    28Sep26   04:45    200      5     10
+0000KLXH1  Kulaimano          Hawaii    28Sep26   05:15    220      3      5
+0000PIOH1  Piihonua           Hawaii    28Sep26   05:15    250      4      6
+0000PHTO   Hilo AP            Hawaii    28Sep26   05:00    220      7    MSG
+0000ILOH1  Hilo Hbr NOS       Hawaii    28Sep26   05:24    210      3      5
+0000IPIH1  IPIF               Hawaii    28Sep26   05:15    240      3      7
+0000WEXH1  Waiakea Exp Stn    Hawaii    28Sep26   05:00    MSG      0      1
+0000KEUH1  Keaau              Hawaii    28Sep26   05:15    260      2      3
+0000PAOH1  Pahoa              Hawaii    28Sep26   05:15      0      0      0
+0000NHKH1  Nahuku             Hawaii    28Sep26   05:15     20     10     14
+0000KKUH1  Keaumo             Hawaii    28Sep26   05:34    320      6      9
+0000MOBH1  Mauna Loa Obs      Hawaii    28Sep26   05:00    MSG     10     13
+0000PLIH1  Pali 2             Hawaii    28Sep26   05:01     10      7     12
+0000KMOH1  Kealakomo          Hawaii    28Sep26   04:44     10      8     16
+0000KPRH1  Kapapala           Hawaii    28Sep26   04:48     20      5     10
+0000NENH1  Nene Cabin         Hawaii    28Sep26   05:23     60      7     15
+0000KIOH1  Kaiholena          Hawaii    28Sep26   05:15    310      6      9
+0000LKHH1  Lower Kahuku       Hawaii    28Sep26   05:23    350      3     10
+0000SOPH1  South Point        Hawaii    28Sep26   05:00     60     13     20
+0000KOMH1  Kona Hema          Hawaii    28Sep26   05:15    330      0      3
+0000KRCH1  Kahuku Ranch       Hawaii    28Sep26   05:29    290      2     12
+0000PHRH1  Puho CS            Hawaii    28Sep26   05:22     50      3      6
+0000HLNH1  HELCO Lolo Ln      Hawaii    28Sep26   05:30     30      2      4
+0000HHUH1  HELCO Hualalai Rd  Hawaii    28Sep26   05:30     30      3      5
+0000KOUH1  Keahuolu           Hawaii    28Sep26   05:15     60      0      1
+0000PHKO   Kona Intl AP       Hawaii    28Sep26   05:00    160      4    MSG
+0000KHOH1  Kaloko-Honokohau   Hawaii    28Sep26   05:15     50      3      5
+0000PLMH1  Palamanui          Hawaii    28Sep26   05:15    130      1      2
+0000PWAH1  Puu Waawaa (UHM)   Hawaii    28Sep26   05:15    190      4      5
+0000KIUH1  Kaiaulu Puu Waawaa Hawaii    28Sep26   05:15    310      4      5
+0000KPLH1  Kaupulehu          Hawaii    28Sep26   05:36    210      5      8
+0000PWWH1  Puu Waawaa         Hawaii    28Sep26   05:37    130      3      5
+0000HMHH1  HELCO Mamalahoa 2  Hawaii    28Sep26   05:30    140      2      4
+0000MMLH1  Mamalahoa          Hawaii    28Sep26   05:15    130      0      1
+0000HMWH1  HELCO Mamalahoa 3  Hawaii    28Sep26   05:30    160      6      8
+0000PULH1  Puuanahulu         Hawaii    28Sep26   05:37    160      6     11
+0000AHMH1  Ahumoa             Hawaii    28Sep26   05:35     80      8     10
+0000AIPH1  Aipaloa            Hawaii    28Sep26   05:15    120      8     10
+0000HSRH1  HELCO Saddle Rd    Hawaii    28Sep26   05:30     70      7     11
+0000HMYH1  HELCO Mamalahoa    Hawaii    28Sep26   05:30    100      9     10
+0000HHCH1  HELCO Hokuloa UCC  Hawaii    28Sep26   05:30    110      6      8
+0000HWRH1  HELCO Waikoloa Rd  Hawaii    28Sep26   05:30     80      8     13
+0000HWXH1  HELCO Waikoloa 2   Hawaii    28Sep26   05:30    140      5     10
+0000WKVH1  Waikoloa           Hawaii    28Sep26   05:35    100      5     10
+0000HLOH1  HELCO Lalamilo     Hawaii    28Sep26   05:30     40     12     15
+0000LLAH1  Lalamilo           Hawaii    28Sep26   05:15     70      1      2
+0000HKWH1  HELCO Kawaihae Rd  Hawaii    28Sep26   05:30      0     10     11
+0000PKAH1  PTA Kipuka Alala   Hawaii    28Sep26   04:55    180      3      4
+0000PKWH1  PTA West           Hawaii    28Sep26   04:56    170      6     16
+0000PKMH1  PTA Keamuku        Hawaii    28Sep26   04:50    150      0      0
+0000PTRH1  PTA Range 17       Hawaii    28Sep26   04:49    140     13     21
+0000PERH1  Puhe CS            Hawaii    28Sep26   05:24     70      5      9
 0000KWHH1  Kawaihae NOS       Hawaii               MSG    MSG    MSG    MSG
-0000HHKH1  HELCO Hulukupuna   Hawaii    27Sep26   23:20     60      5      7
-0000PLAH1  Puuloa             Hawaii    27Sep26   23:00    320     13     22
+0000HHKH1  HELCO Hulukupuna   Hawaii    28Sep26   05:30     80      7      9
+0000PLAH1  Puuloa             Hawaii    28Sep26   05:15    290      5      7
 0000HMLH1  HELCO Maluokalani  Hawaii               MSG    MSG    MSG    MSG
-0000HKDH1  HELCO Ala Kahua    Hawaii    27Sep26   23:20    210      6      8
-0000KHRH1  Kohala Ranch       Hawaii    27Sep26   22:35     60      5     10
-0000KEHH1  Kehena             Hawaii    27Sep26   23:00    140      7     16
+0000HKDH1  HELCO Ala Kahua    Hawaii    28Sep26   05:30    220      7     10
+0000KHRH1  Kohala Ranch       Hawaii    28Sep26   05:35     60      5     10
+0000KEHH1  Kehena             Hawaii    28Sep26   05:15    180      2      4
 ```
 
 ---
@@ -3936,7 +3932,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T05:42:18.961042-10:00 HST |
+| **Collected** | 2026-09-28T05:50:18.503734-10:00 HST |
 
 ```text
 Home
@@ -4060,7 +4056,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 15:41:49 UTC
+Last update Mon, 28 Sep 2026 15:48:08 UTC
 
 NHC issuing advisories for the Atlantic on
 
