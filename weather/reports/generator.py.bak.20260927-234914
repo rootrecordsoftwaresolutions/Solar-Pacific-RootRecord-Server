@@ -30,6 +30,7 @@ _EXCLUDED_PREFIXES = ("alerts_", "wwamap_", "nhc_current_storms", "ndfd_", "obhi
 _EXCLUDED_IDS = {
     "rain_summary_graphical",
     "nhc_source_index",
+    "noaa_solar_calculation_table",
     "nws_cwa_boundaries_catalog",
     "nws_fire_zones_catalog",
     "nws_marine_zones_catalog",
