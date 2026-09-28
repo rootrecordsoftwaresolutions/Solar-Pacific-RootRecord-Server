@@ -258,6 +258,8 @@ def format_line(raw: str) -> str | None:
     if body.startswith("job:"):
         if " | " in body:
             payload = body.split(" | ", 1)[1].strip()
+            if "FAIL" in payload or "ERROR" in payload or "failed" in payload.lower():
+                return f"  {DIM}{t}{RST}  {RED}✗{RST}  {RED}{payload}{RST}"
             repo = ""
             rest = payload
 
