@@ -26,20 +26,16 @@ LOG = Path(
 HOST = os.environ.get("POLLER_PUBLIC_HOST", "rootserver.rootrecord.cloud")
 LOCAL = os.environ.get("POLLER_LOCAL", "http://127.0.0.1:8799/")
 
-# Solarized Dark palette — truecolor ANSI
 RST = "\033[0m"
 BOLD = "\033[1m"
 DIM = "\033[2m"
-GREEN = "\033[38;2;133;153;0m"       # solarized green
-BRIGHT_GREEN = "\033[38;2;133;153;0m"
-CYAN = "\033[38;2;42;161;152m"      # solarized cyan
-YELLOW = "\033[38;2;181;137;0m"      # solarized yellow
-RED = "\033[38;2;220;50;47m"         # solarized red
-MAGENTA = "\033[38;2;211;54;130m"    # solarized magenta
-WHITE = "\033[38;2;238;232;213m"     # solarized base2
-BLUE = "\033[38;2;38;139;210m"       # solarized blue
-ORANGE = "\033[38;2;203;75;22m"      # solarized orange
-BASE0 = "\033[38;2;131;148;150m"     # solarized base0
+GREEN = "\033[32m"
+BRIGHT_GREEN = "\033[92m"
+CYAN = "\033[36m"
+YELLOW = "\033[33m"
+RED = "\033[31m"
+MAGENTA = "\033[35m"
+WHITE = "\033[97m"
 
 _stop_done = False
 
