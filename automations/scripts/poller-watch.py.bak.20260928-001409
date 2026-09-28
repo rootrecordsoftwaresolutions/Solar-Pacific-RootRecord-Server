@@ -233,29 +233,6 @@ def format_line(raw: str) -> str | None:
     t = clock(ts)
     body = rest
 
-    # ------------------------------------------------
-    # A-EYES raw ffmpeg/DVR failures.
-    # Hide noisy camera stderr and let solar state own display.
-    # ------------------------------------------------
-    if (
-        "a-eyes" in body.lower()
-        and (
-            "FAILED" in body
-            or "No route to host" in body
-            or "grab failed" in body.lower()
-            or "Connection to tcp://" in body
-        )
-    ):
-        solar = aeyes_solar_state()
-
-        if solar:
-            return (
-                f"  {DIM}{t}{RST}  "
-                f"{DIM}📷 A-EYES {solar}{RST}"
-            )
-
-        return None
-
     noise = (
         "CONNECTIVITY PRE-CHECKS",
         "precheck ",
