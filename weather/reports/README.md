@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T04:00:19-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T04:08:19-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -2029,587 +2029,564 @@ MARINE...Quesada
 |---|---|
 | **Resource ID** | cwf_coastal_waters |
 | **Official source** | https://api.weather.gov/products/types/CWF/locations/HFO |
-| **Collected** | 2026-09-27T23:04:53.763749-10:00 HST |
+| **Collected** | 2026-09-28T04:05:21.206973-10:00 HST |
 
 ```text
 000
-FZHW50 PHFO 280105
+FZHW50 PHFO 281358
 CWFHFO
 
 Coastal Waters Forecast
 National Weather Service Honolulu HI
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
 Hawaiian coastal waters within 40 nautical miles including the
 Hawaiian Islands Humpback Whale National Marine Sanctuary.
 
-PHZ100-281330-
-305 PM HST Sun Sep 27 2026
+PHZ100-290215-
+358 AM HST Mon Sep 28 2026
 
 .Synopsis for Hawaiian coastal waters...
-Strong to near gale force trade winds and large, rough seas will
-gradually decrease tonight as Hurricane Nolo moves westward over 
-300 n mi south of Kauai. Winds and seas will continue to gradually
-decline on Monday as Nolo turns toward the northwest. Fresh to 
-strong winds will veer out of the southeast Monday night through 
-Tuesday night as Nolo passes west of Kauai. Nolo is forecast to 
-move farther away to the west on Wednesday and Thursday, allowing 
-winds to diminish and back out of the east. 
+Strong to near gale force trade winds and rough seas will 
+gradually decline today as Hurricane Nolo remains several hundred
+miles southwest of the Hawaiian Islands, tracking northwest. 
+Fresh to strong winds will veer out of the southeast tonight 
+through Tuesday night as Nolo begins to pass west of Kauai. Nolo 
+is forecast to move farther away to the west beginning Wednesday,
+allowing winds to diminish and back out of the east for the latter
+half of the week.
 
-PHZ110-281330-
+PHZ110-290215-
 Kauai Northwest Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East northeast winds 20 to 25 knots, becoming east
-25 to 30 knots after midnight. Seas 10 to 12 feet. Wave Detail:
-East 11 feet at 9 seconds, south southwest 5 feet at 10 seconds
-and north northwest 3 feet at 16 seconds. Scattered showers. 
-.MONDAY...East winds 25 to 30 knots, easing to 20 to 25 knots in
-the afternoon. Seas 10 to 12 feet. Wave Detail: East 10 feet at
-8 seconds, south southwest 5 feet at 9 seconds and north
-northwest 3 feet at 14 seconds. Scattered showers. 
-.MONDAY NIGHT...East winds 20 to 25 knots. Seas 9 to 11 feet.
-Wave Detail: East 10 feet at 8 seconds and south southwest 5 feet
-at 9 seconds. Scattered showers. 
+.TODAY...East winds 25 to 30 knots, easing to 20 to 25 knots this
+afternoon. Seas 8 to 10 feet. Wave Detail: East 9 feet at
+8 seconds, south southwest 5 feet at 10 seconds and north
+northwest 3 feet at 12 seconds. Scattered showers. 
+.TONIGHT...East winds 20 to 25 knots. Seas 8 to 10 feet. Wave
+Detail: East 8 feet at 7 seconds and south southwest 5 feet at
+11 seconds. Scattered showers. 
 .TUESDAY...East southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: East 9 feet at 8 seconds and south
-southwest 4 feet at 6 seconds. Scattered showers in the morning,
-then occasional showers in the afternoon. 
+11 feet. Wave Detail: Southeast 9 feet at 7 seconds and southwest
+5 feet at 9 seconds. Scattered showers in the morning, then
+occasional showers in the afternoon. 
 .TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: East southeast 9 feet at 7 seconds and
-south southwest 4 feet at 15 seconds. Occasional showers. 
+11 feet. Wave Detail: Southeast 9 feet at 7 seconds, west
+northwest 4 feet at 11 seconds and south southwest 4 feet at
+15 seconds. Occasional showers. 
 .WEDNESDAY...Southeast winds 25 to 30 knots, easing to 20 to
-25 knots in the afternoon. Seas 7 to 10 feet. Wave Detail: East
-southeast 9 feet at 7 seconds. Numerous showers. 
+25 knots in the afternoon. Seas 7 to 10 feet. Wave Detail:
+Southeast 9 feet at 7 seconds, west northwest 4 feet at
+10 seconds and south southwest 4 feet at 15 seconds. Numerous
+showers. 
 .WEDNESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 6 to
-9 feet. Wave Detail: East 8 feet at 7 seconds. Numerous showers. 
+9 feet. Wave Detail: Southeast 8 feet at 7 seconds and south
+southwest 3 feet at 14 seconds. Numerous showers. 
 .THURSDAY...Southeast winds 15 to 20 knots. Seas 5 to 8 feet.
-Wave Detail: East 7 feet at 7 seconds. Numerous showers, mainly
-in the morning. 
-.FRIDAY...Southeast winds 10 to 15 knots. Seas 4 to 6 feet. Wave
-Detail: East 5 feet at 7 seconds. Scattered showers.  
+Wave Detail: East southeast 7 feet at 6 seconds. Numerous
+showers, mainly in the morning. 
+.FRIDAY...Southeast winds 10 to 15 knots. Seas 5 to 6 feet. Wave
+Detail: East 5 feet at 6 seconds and south southwest 3 feet at
+12 seconds. Scattered showers.  
 
-PHZ111-281330-
+PHZ111-290215-
 Kauai Windward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 20 to 25 knots. Seas 11 to 13 feet. Wave
-Detail: East southeast 12 feet at 9 seconds, south 5 feet at
-9 seconds and north northwest 3 feet at 16 seconds. Numerous
-showers. 
-.MONDAY...East winds 20 to 25 knots. Seas 10 to 13 feet. Wave
-Detail: East 11 feet at 9 seconds, south southwest 5 feet at
-9 seconds and north northwest 3 feet at 14 seconds. Numerous
-showers. 
-.MONDAY NIGHT...East southeast winds 20 to 25 knots. Seas 9 to
-10 feet. Wave Detail: East 9 feet at 8 seconds and south
+.TODAY...East winds 20 to 25 knots. Seas 8 to 11 feet. Wave
+Detail: East southeast 9 feet at 8 seconds, south southwest
+5 feet at 9 seconds and north northwest 3 feet at 14 seconds.
+Scattered showers this morning, then numerous showers this
+afternoon. 
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 8 to
+10 feet. Wave Detail: East 8 feet at 7 seconds and south
 southwest 4 feet at 7 seconds. Scattered showers. 
-.TUESDAY...East southeast winds 20 to 25 knots. Seas 8 to
-10 feet. Wave Detail: East 9 feet at 8 seconds and south 4 feet
-at 12 seconds. Scattered showers in the morning, then numerous
-showers in the afternoon. 
+.TUESDAY...East southeast winds 20 to 25 knots. Seas 7 to 9 feet.
+Wave Detail: South southeast 8 feet at 7 seconds. Scattered
+showers in the morning, then numerous showers in the afternoon. 
 .TUESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 7 to
-9 feet. Wave Detail: East 8 feet at 7 seconds and south 4 feet at
-16 seconds. Occasional showers. 
+8 feet. Wave Detail: East 7 feet at 7 seconds and south 4 feet at
+15 seconds. Occasional showers. 
 .WEDNESDAY...Southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 7 to 8 feet. Wave Detail: East
-7 feet at 7 seconds and south 3 feet at 15 seconds. Numerous
+20 knots in the afternoon. Seas 6 to 8 feet. Wave Detail: East
+7 feet at 7 seconds and south 4 feet at 15 seconds. Numerous
 showers. 
 .WEDNESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
-7 feet. Wave Detail: East 7 feet at 7 seconds. Numerous showers. 
+7 feet. Wave Detail: East 6 feet at 6 seconds and south 3 feet at
+14 seconds. Numerous showers. 
 .THURSDAY...East southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 7 seconds. Numerous showers,
+7 feet. Wave Detail: East 6 feet at 6 seconds. Numerous showers,
 mainly in the morning. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 5 to 7 feet.
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 5 to 6 feet.
 Wave Detail: East 5 feet at 6 seconds and south 3 feet at
 13 seconds. Isolated showers through the night, then scattered
 showers through the day.  
 
-PHZ112-281330-
+PHZ112-290215-
 Kauai Leeward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 20 to 25 knots. Seas 10 to 14 feet. Wave
-Detail: East southeast 13 feet at 9 seconds and south 6 feet at
-10 seconds. Isolated showers. 
-.MONDAY...East winds 20 to 25 knots. Seas 10 to 13 feet,
-subsiding to 9 to 11 feet in the afternoon. Wave Detail: East
-11 feet at 9 seconds and south southwest 6 feet at 9 seconds.
-Isolated showers. 
-.MONDAY NIGHT...East southeast winds 20 to 25 knots, rising to
-25 to 30 knots after midnight. Seas 8 to 10 feet. Wave Detail:
-East 9 feet at 8 seconds and southwest 5 feet at 8 seconds.
-Numerous showers. 
+.TODAY...East winds 20 to 25 knots. Seas 9 to 10 feet. Wave
+Detail: East southeast 9 feet at 8 seconds and south southwest
+5 feet at 9 seconds. Isolated showers. 
+.TONIGHT...East southeast winds 20 to 25 knots, rising to 25 to
+30 knots after midnight. Seas 9 to 10 feet. Wave Detail:
+Southeast 9 feet at 8 seconds and south southwest 5 feet at
+11 seconds. Numerous showers. 
 .TUESDAY...Southeast winds 25 to 30 knots. Seas 8 to 11 feet.
-Wave Detail: East southeast 8 feet at 7 seconds and south
-southwest 5 feet at 16 seconds. Occasional showers. 
-.TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: Southeast 8 feet at 7 seconds, south 4 feet
-at 16 seconds and west northwest 3 feet at 10 seconds. Occasional
-showers. 
-.WEDNESDAY...South southeast winds 25 to 30 knots. Seas 7 to
-10 feet. Wave Detail: East southeast 7 feet at 6 seconds, west
-northwest 3 feet at 9 seconds and south 3 feet at 15 seconds.
-Occasional showers. 
-.WEDNESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 5 to
-8 feet. Wave Detail: East 6 feet at 6 seconds and south 3 feet at
+Wave Detail: Southeast 9 feet at 8 seconds and southwest 5 feet
+at 7 seconds. Occasional showers. 
+.TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 9 to
+12 feet. Wave Detail: Southeast 9 feet at 7 seconds, west
+northwest 6 feet at 11 seconds and south southwest 4 feet at
+15 seconds. Occasional showers. 
+.WEDNESDAY...South southeast winds 25 to 30 knots. Seas 8 to
+11 feet. Wave Detail: Southeast 7 feet at 7 seconds, west
+northwest 6 feet at 10 seconds and south southwest 4 feet at
+15 seconds. Occasional showers. 
+.WEDNESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 7 to
+9 feet. Wave Detail: Southeast 6 feet at 6 seconds, west
+northwest 4 feet at 9 seconds and south southwest 3 feet at
 14 seconds. Occasional showers. 
 .THURSDAY...Southeast winds 25 to 30 knots, easing to 20 to
-25 knots. Seas 5 to 7 feet. Wave Detail: East 5 feet at 6 seconds
-and south 3 feet at 13 seconds. Occasional showers through the
-night, then scattered showers through the day. 
+25 knots. Seas 5 to 8 feet. Wave Detail: East southeast 5 feet at
+6 seconds, northwest 3 feet at 9 seconds and south southwest
+3 feet at 13 seconds. Occasional showers through the night, then
+scattered showers through the day. 
 .FRIDAY...Southeast winds 15 to 20 knots, easing to 10 to
 15 knots. In the Kaulakahi Channel, southeast winds 25 to
 30 knots, becoming east southeast 10 to 15 knots. Seas 4 to
-6 feet. Wave Detail: East 5 feet at 6 seconds and south 3 feet at
-13 seconds. Scattered showers.  
+6 feet. Wave Detail: East southeast 5 feet at 6 seconds and south
+southwest 4 feet at 12 seconds. Scattered showers.  
 
-PHZ113-281330-
+PHZ113-290215-
 Kauai Channel-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 20 to 25 knots. Seas 11 to 14 feet. Wave
-Detail: East 13 feet at 9 seconds and south southwest 6 feet at
-9 seconds. Scattered showers. 
-.MONDAY...East winds 20 to 25 knots. Seas 10 to 13 feet,
-subsiding to 9 to 11 feet in the afternoon. Wave Detail: East
-11 feet at 8 seconds and south southwest 6 feet at 9 seconds.
-Scattered showers in the morning. 
-.MONDAY NIGHT...East winds 20 to 25 knots, becoming east
-southeast 15 to 20 knots after midnight. Seas 8 to 10 feet. Wave
-Detail: East 9 feet at 7 seconds and south southwest 5 feet at
-6 seconds. Isolated showers. 
-.TUESDAY...Southeast winds 15 to 20 knots. Seas 7 to 10 feet.
-Wave Detail: East 8 feet at 7 seconds and south 5 feet at
-12 seconds. Scattered showers in the morning, then occasional
-showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds to 20 knots. Seas 6 to 8 feet.
-Wave Detail: East southeast 7 feet at 7 seconds and south
-southwest 4 feet at 16 seconds. Occasional showers. 
-.WEDNESDAY...South southeast winds 15 to 20 knots. Seas 6 to
-8 feet. Wave Detail: East southeast 7 feet at 6 seconds and south
-southwest 3 feet at 15 seconds. Occasional showers. 
-.WEDNESDAY NIGHT...Southeast winds to 15 knots. Seas 5 to 7 feet.
-Wave Detail: East southeast 6 feet at 6 seconds and south 3 feet
-at 14 seconds. Occasional showers. 
+.TODAY...East winds 20 to 25 knots. Seas 9 to 10 feet. Wave
+Detail: East southeast 9 feet at 8 seconds and south southwest
+5 feet at 9 seconds. 
+.TONIGHT...East winds 20 to 25 knots, becoming east southeast
+15 to 20 knots after midnight. Seas 7 to 10 feet. Wave Detail:
+East northeast 8 feet at 7 seconds and southwest 5 feet at
+7 seconds. Isolated showers. 
+.TUESDAY...Southeast winds 15 to 20 knots. Seas 7 to 9 feet. Wave
+Detail: South 7 feet at 7 seconds. Scattered showers in the
+morning, then occasional showers in the afternoon. 
+.TUESDAY NIGHT...Southeast winds to 20 knots. Seas 7 to 9 feet.
+Wave Detail: Southeast 7 feet at 7 seconds, south southwest
+4 feet at 15 seconds and west northwest 3 feet at 11 seconds.
+Occasional showers. 
+.WEDNESDAY...South southeast winds 15 to 20 knots. Seas 7 to
+9 feet, subsiding to 6 to 7 feet in the afternoon. Wave Detail:
+Southeast 7 feet at 6 seconds, south southwest 4 feet at
+15 seconds and west northwest 3 feet at 10 seconds. Occasional
+showers. 
+.WEDNESDAY NIGHT...Southeast winds to 15 knots. Seas 6 to 7 feet.
+Wave Detail: Southeast 6 feet at 6 seconds and south southwest
+3 feet at 14 seconds. Occasional showers. 
 .THURSDAY...East southeast winds to 15 knots. Seas 5 to 6 feet.
-Wave Detail: East 5 feet at 6 seconds and south 3 feet at
+Wave Detail: Southeast 5 feet at 6 seconds and south 3 feet at
 13 seconds. Numerous showers, mainly in the morning. 
 .FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 6 feet.
 Wave Detail: East 5 feet at 6 seconds and south 3 feet at
 13 seconds. Scattered showers.  
 
-PHZ114-281330-
+PHZ114-290215-
 Oahu Windward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 20 to 25 knots, rising to 25 to 30 knots
-after midnight. Seas 10 to 13 feet. Wave Detail: East 12 feet at
-9 seconds, south southwest 4 feet at 12 seconds and north
-northwest 3 feet at 16 seconds. Scattered showers this evening,
-then numerous showers after midnight. 
-.MONDAY...East winds 20 to 25 knots. Seas 9 to 12 feet. Wave
-Detail: East 10 feet at 8 seconds, south southwest 5 feet at
-9 seconds and north northwest 3 feet at 14 seconds. Numerous
-showers, mainly in the morning. 
-.MONDAY NIGHT...East winds 20 to 25 knots. Seas 8 to 10 feet.
-Wave Detail: East 9 feet at 8 seconds and south southwest 4 feet
-at 6 seconds. Isolated showers. 
-.TUESDAY...East southeast winds to 20 knots. Seas 7 to 9 feet.
-Wave Detail: East 8 feet at 8 seconds and south southwest 3 feet
-at 15 seconds. Isolated showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
-8 feet. Wave Detail: East 7 feet at 7 seconds. Scattered showers.
-.WEDNESDAY...Southeast winds 15 to 20 knots. Seas 6 to 7 feet.
-Wave Detail: East 7 feet at 7 seconds. Scattered showers in the
+.TODAY...East winds 20 to 25 knots. Seas 8 to 11 feet. Wave
+Detail: East southeast 9 feet at 7 seconds, south southwest
+4 feet at 9 seconds and north northwest 3 feet at 14 seconds.
+Scattered showers. 
+.TONIGHT...East winds 20 to 25 knots. Seas 6 to 8 feet. Wave
+Detail: East 7 feet at 7 seconds and south southwest 4 feet at
+8 seconds. Isolated showers. 
+.TUESDAY...East southeast winds to 20 knots. Seas 6 to 8 feet.
+Wave Detail: East 7 feet at 7 seconds and south southwest 3 feet
+at 13 seconds. Isolated showers in the afternoon. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 5 to
+7 feet. Wave Detail: East 6 feet at 6 seconds. Scattered showers.
+.WEDNESDAY...Southeast winds 15 to 20 knots. Seas 5 to 7 feet.
+Wave Detail: East 6 feet at 6 seconds. Scattered showers in the
 morning. 
 .WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 6 seconds. Scattered showers.
+6 feet. Wave Detail: East southeast 6 feet at 6 seconds.
+Scattered showers. 
 .THURSDAY...East southeast winds 15 to 20 knots. Seas 5 to
-6 feet. Wave Detail: East 6 feet at 6 seconds. Scattered showers
+6 feet. Wave Detail: East 5 feet at 6 seconds. Scattered showers
 in the morning. Isolated showers through the day. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 6 feet.
+.FRIDAY...East southeast winds 10 to 15 knots. Seas to 5 feet.
 Wave Detail: East 5 feet at 6 seconds. Isolated showers through
 the night, then scattered showers through the day.  
 
-PHZ115-281330-
+PHZ115-290215-
 Oahu Leeward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 20 to 25 knots, rising to 25 to 30 knots
-after midnight. Seas 12 to 13 feet, subsiding to 10 to 12 feet
-after midnight. Wave Detail: East southeast 12 feet at 9 seconds
-and south southwest 5 feet at 8 seconds. 
-.MONDAY...East winds 15 to 20 knots. Seas 8 to 11 feet. Wave
-Detail: East southeast 10 feet at 8 seconds and south southwest
-5 feet at 9 seconds. 
-.MONDAY NIGHT...East southeast winds 15 to 20 knots. Seas 7 to
-9 feet. Wave Detail: East southeast 7 feet at 7 seconds and south
-southwest 5 feet at 12 seconds. Isolated showers. 
+.TODAY...East winds 15 to 20 knots. Seas 9 to 10 feet, subsiding
+to 7 to 9 feet this afternoon. Wave Detail: East southeast 9 feet
+at 8 seconds and south southwest 5 feet at 9 seconds. 
+.TONIGHT...East southeast winds 15 to 20 knots. Seas 7 to 9 feet.
+Wave Detail: East southeast 7 feet at 7 seconds and south
+southwest 5 feet at 7 seconds. Isolated showers. 
 .TUESDAY...Southeast winds 15 to 20 knots. Seas 6 to 8 feet. Wave
-Detail: Southeast 6 feet at 7 seconds and south southwest 4 feet
-at 14 seconds. Scattered showers. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 4 feet at 16 seconds. Scattered showers. 
+Detail: Southeast 7 feet at 7 seconds and south southwest 4 feet
+at 16 seconds. Scattered showers. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
+7 feet, building to 7 to 9 feet after midnight. Wave Detail:
+Southeast 5 feet at 6 seconds, west northwest 5 feet at
+11 seconds and south southwest 4 feet at 15 seconds. Scattered
+showers. 
 .WEDNESDAY...Southeast winds 15 to 20 knots, becoming south
-southeast 10 to 15 knots in the afternoon. Seas 5 to 7 feet. Wave
-Detail: Southeast 5 feet at 6 seconds, west northwest 3 feet at
-9 seconds and south southwest 3 feet at 15 seconds. Numerous
+southeast 10 to 15 knots in the afternoon. Seas 6 to 8 feet. Wave
+Detail: Southeast 6 feet at 6 seconds, west northwest 4 feet at
+10 seconds and south southwest 4 feet at 15 seconds. Numerous
 showers. 
 .WEDNESDAY NIGHT...Southeast winds 10 to 15 knots. Seas 5 to
-6 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 3 feet at 14 seconds. Numerous showers. 
-.THURSDAY...East southeast winds 10 to 15 knots. Seas 4 to
-6 feet. Wave Detail: Southeast 4 feet at 6 seconds. Numerous
-showers through the night. Scattered showers through the day. 
-.FRIDAY...East southeast winds to 10 knots. Seas 3 to 5 feet.
-Wave Detail: East 4 feet at 5 seconds and south 3 feet at
-13 seconds. Isolated showers.  
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds, west
+northwest 3 feet at 9 seconds and south southwest 3 feet at
+14 seconds. Numerous showers. 
+.THURSDAY...East southeast winds 10 to 15 knots. Seas 5 to
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 3 feet at 13 seconds. Numerous showers through the
+night. Scattered showers through the day. 
+.FRIDAY...East southeast winds to 10 knots. Seas 4 to 5 feet.
+Wave Detail: Southeast 4 feet at 5 seconds and south southwest
+3 feet at 13 seconds. Isolated showers.  
 
-PHZ116-281330-
+PHZ116-290215-
 Kaiwi Channel-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 25 to 30 knots. Seas 12 to 14 feet,
-subsiding to 10 to 12 feet after midnight. Wave Detail: East
-12 feet at 8 seconds and south southwest 4 feet at 8 seconds. 
-.MONDAY...East winds 25 to 30 knots, easing to 20 to 25 knots in
-the afternoon. Seas 9 to 12 feet. Wave Detail: East 10 feet at
-8 seconds and southwest 5 feet at 9 seconds. 
-.MONDAY NIGHT...East winds 20 to 25 knots. Seas 7 to 9 feet. Wave
-Detail: East 8 feet at 7 seconds and south southwest 5 feet at
+.TODAY...East winds 25 to 30 knots, easing to 20 to 25 knots this
+afternoon. Seas 8 to 11 feet, subsiding to 8 to 9 feet this
+afternoon. Wave Detail: East 10 feet at 7 seconds and south
+southwest 5 feet at 9 seconds. 
+.TONIGHT...East winds 20 to 25 knots. Seas 7 to 9 feet. Wave
+Detail: East 7 feet at 7 seconds and south southwest 4 feet at
 12 seconds. 
-.TUESDAY...East southeast winds 15 to 20 knots. Seas 6 to 9 feet.
-Wave Detail: East southeast 8 feet at 7 seconds and south
-southwest 4 feet at 12 seconds. 
+.TUESDAY...East southeast winds 15 to 20 knots. Seas 6 to 8 feet.
+Wave Detail: Southeast 6 feet at 7 seconds and south southwest
+4 feet at 12 seconds. 
 .TUESDAY NIGHT...Southeast winds 15 to 20 knots, easing to 10 to
-15 knots after midnight. Seas 6 to 8 feet. Wave Detail: East
-southeast 6 feet at 6 seconds and south southwest 4 feet at
-16 seconds. Scattered showers. 
+15 knots after midnight. Seas 6 to 8 feet. Wave Detail: Southeast
+5 feet at 6 seconds, south southwest 4 feet at 16 seconds and
+northwest 3 feet at 11 seconds. Scattered showers. 
 .WEDNESDAY...Southeast winds 10 to 15 knots, rising to 15 to
-20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail: East
-southeast 6 feet at 6 seconds and south southwest 3 feet at
-15 seconds. Scattered showers in the morning. 
-.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 5 to
-6 feet. Wave Detail: East southeast 6 feet at 6 seconds.
-Scattered showers. 
-.THURSDAY...East southeast winds 15 to 20 knots, becoming east
-10 to 15 knots. Seas 4 to 6 feet. Wave Detail: East southeast
-5 feet at 6 seconds. Scattered showers in the morning. Isolated
-showers through the day. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 6 feet.
-Wave Detail: East 5 feet at 6 seconds and south 3 feet at
-13 seconds. Isolated showers through the night. Scattered showers
-through the day.  
-
-PHZ117-281330-
-Maui County Windward Waters-
-305 PM HST Sun Sep 27 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
-
-.TONIGHT...East winds 25 to 30 knots. Seas 9 to 11 feet. Wave
-Detail: East 10 feet at 8 seconds and north northwest 3 feet at
-16 seconds. Scattered showers. 
-.MONDAY...East southeast winds 25 to 30 knots, easing to 20 to
-25 knots in the afternoon. Seas 8 to 10 feet. Wave Detail: East
-9 feet at 7 seconds and north northwest 3 feet at 15 seconds.
-Scattered showers. 
-.MONDAY NIGHT...East southeast winds 20 to 25 knots. Seas 6 to
-8 feet. Wave Detail: East 8 feet at 7 seconds and north northwest
-3 feet at 13 seconds. Isolated showers. 
-.TUESDAY...East southeast winds to 20 knots. Seas 6 to 8 feet.
-Wave Detail: East 7 feet at 6 seconds. 
-.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 6 seconds. Isolated showers. 
-.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 5 to
-6 feet. Wave Detail: East 6 feet at 6 seconds. Isolated showers
+20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail:
+Southeast 5 feet at 6 seconds, south southwest 4 feet at
+15 seconds and northwest 3 feet at 10 seconds. Scattered showers
 in the morning. 
-.WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 5 to
-6 feet. Wave Detail: East 6 feet at 6 seconds. Isolated showers. 
+.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 5 to
+6 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 3 feet at 14 seconds. Scattered showers. 
+.THURSDAY...East southeast winds 15 to 20 knots, becoming east
+10 to 15 knots. Seas 5 to 6 feet. Wave Detail: Southeast 5 feet
+at 6 seconds and south 3 feet at 13 seconds. Scattered showers in
+the morning. Isolated showers through the day. 
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 5 feet.
+Wave Detail: East 4 feet at 5 seconds and south southwest 3 feet
+at 13 seconds. Isolated showers through the night. Scattered
+showers through the day.  
+
+PHZ117-290215-
+Maui County Windward Waters-
+358 AM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TODAY...East southeast winds 25 to 30 knots, easing to 20 to
+25 knots this afternoon. Seas 7 to 10 feet, subsiding to 6 to
+8 feet this afternoon. Wave Detail: Southeast 8 feet at 7 seconds
+and north northwest 3 feet at 15 seconds. Scattered showers. 
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 5 to 7 feet.
+Wave Detail: Southeast 6 feet at 6 seconds and north northwest
+3 feet at 12 seconds. Isolated showers. 
+.TUESDAY...East southeast winds to 20 knots. Seas 5 to 6 feet.
+Wave Detail: East southeast 5 feet at 6 seconds. 
+.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
+5 feet. Wave Detail: Southeast 5 feet at 5 seconds. Isolated
+showers. 
+.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 4 to
+5 feet. Wave Detail: East southeast 5 feet at 5 seconds. Isolated
+showers in the morning. 
+.WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
+5 feet. Wave Detail: East southeast 5 feet at 5 seconds. Isolated
+showers. 
 .THURSDAY...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: East 5 feet at 6 seconds. Isolated showers
+5 feet. Wave Detail: East 4 feet at 5 seconds. Isolated showers
 in the morning. Isolated showers through the day. 
 .FRIDAY...East southeast winds 15 to 20 knots, easing to 10 to
 15 knots after midnight. Seas 4 to 5 feet. Wave Detail: East
-5 feet at 6 seconds. Scattered showers through the day.  
+northeast 4 feet at 5 seconds. Scattered showers through the day.
 
-PHZ118-281330-
+PHZ118-290215-
 Maui County Leeward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East winds 25 to 30 knots. Seas 10 to 14 feet. Wave
-Detail: East southeast 12 feet at 9 seconds and south southwest
-5 feet at 9 seconds. 
-.MONDAY...East southeast winds 25 to 30 knots, backing to east
-20 to 25 knots in the afternoon. Seas 8 to 11 feet. Wave Detail:
-East southeast 10 feet at 8 seconds and southwest 5 feet at
+.TODAY...East southeast winds 25 to 30 knots, backing to east
+20 to 25 knots this afternoon. Seas 8 to 11 feet. Wave Detail:
+East southeast 10 feet at 8 seconds and south southwest 5 feet at
 9 seconds. 
-.MONDAY NIGHT...East winds 20 to 25 knots, rising to 25 to
-30 knots after midnight. Seas 6 to 9 feet. Wave Detail: East
-southeast 7 feet at 7 seconds and south southwest 4 feet at
-12 seconds. Isolated showers. 
+.TONIGHT...East winds 20 to 25 knots, rising to 25 to 30 knots
+after midnight. Seas 7 to 10 feet. Wave Detail: East southeast
+8 feet at 7 seconds and south southwest 4 feet at 12 seconds.
+Isolated showers. 
 .TUESDAY...East southeast winds 20 to 25 knots, becoming
-southeast 15 to 20 knots in the afternoon. Seas 6 to 9 feet,
-subsiding to 5 to 7 feet in the afternoon. Wave Detail: East
-southeast 7 feet at 7 seconds and south southwest 4 feet at
-12 seconds. Isolated showers in the morning. Scattered showers in
-the afternoon. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 4 feet at 16 seconds. Scattered showers. 
+southeast 15 to 20 knots in the afternoon. Seas 7 to 10 feet,
+subsiding to 6 to 8 feet in the afternoon. Wave Detail: Southeast
+8 feet at 7 seconds and south southwest 4 feet at 12 seconds.
+Isolated showers in the morning. Scattered showers in the
+afternoon. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
+8 feet. Wave Detail: South southeast 5 feet at 6 seconds, west
+northwest 4 feet at 11 seconds and south southwest 4 feet at
+16 seconds. Scattered showers. 
 .WEDNESDAY...Southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail:
-Southeast 5 feet at 6 seconds and south southwest 3 feet at
-15 seconds. Scattered showers in the morning. 
-.WEDNESDAY NIGHT...East southeast winds 20 to 25 knots. Seas 4 to
-6 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-3 feet at 14 seconds. Scattered showers. 
+20 knots in the afternoon. Seas 5 to 8 feet. Wave Detail: South
+southeast 5 feet at 6 seconds, west northwest 4 feet at
+10 seconds and south southwest 4 feet at 15 seconds. Scattered
+showers in the morning. 
+.WEDNESDAY NIGHT...East southeast winds 20 to 25 knots. Seas 5 to
+7 feet. Wave Detail: South southeast 5 feet at 6 seconds and
+south southwest 3 feet at 14 seconds. Scattered showers. 
 .THURSDAY...East southeast winds 15 to 20 knots, becoming east
 10 to 15 knots in the evening, rising to 15 to 20 knots after
-midnight. Seas 4 to 6 feet. Wave Detail: Southeast 5 feet at
-6 seconds and south 3 feet at 13 seconds. Scattered showers in
-the morning. Scattered showers through the day. 
+midnight. Seas 4 to 6 feet. Wave Detail: South southeast 5 feet
+at 6 seconds and south southwest 3 feet at 13 seconds. Scattered
+showers in the morning. Scattered showers through the day. 
 .FRIDAY...East southeast winds 15 to 20 knots, easing to 10 to
-15 knots. Seas 3 to 5 feet. Wave Detail: Southeast 4 feet at
-5 seconds and south 3 feet at 13 seconds. Isolated showers
-through the night. Isolated showers after midnight.  
+15 knots. Seas 3 to 5 feet. Wave Detail: South southeast 4 feet
+at 5 seconds and south southwest 3 feet at 13 seconds. Isolated
+showers through the night. Isolated showers after midnight.  
 
-PHZ119-281330-
+PHZ119-290215-
 Maalaea Bay-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-.TONIGHT...South winds 10 to 15 knots, veering to north northwest
-after midnight. Seas 3 to 4 feet. Wave Detail: South 4 feet at
-4 seconds and south southwest 4 feet at 10 seconds. 
-.MONDAY...North winds 15 to 20 knots. Seas 3 to 4 feet. Wave
-Detail: Southeast 4 feet at 4 seconds and south southwest 4 feet
-at 9 seconds. 
-.MONDAY NIGHT...North northeast winds 15 to 20 knots. Seas to
-3 feet. Wave Detail: South southeast 3 feet at 5 seconds. 
+.TODAY...North winds 15 to 20 knots. Seas to 3 feet this morning,
+then to 2 feet or less. Wave Detail: South southeast 3 feet at
+8 seconds and south southwest 3 feet at 9 seconds. 
+.TONIGHT...North northeast winds 15 to 20 knots. Seas to 2 feet
+or less. Wave Detail: South southeast 2 feet at 7 seconds. 
 .TUESDAY...East southeast winds to 10 knots, rising to 15 knots
-in the afternoon. Seas to 2 feet or less. 
+in the afternoon. Seas to 2 feet or less, then to 3 feet in the
+afternoon. Wave Detail: South southeast 3 feet at 6 seconds. 
 .TUESDAY NIGHT...East southeast winds 7 to 10 knots. Seas to
 3 feet in the evening, then to 2 feet or less. Wave Detail: South
 southeast 3 feet at 6 seconds. 
 .WEDNESDAY...Southeast winds to 10 knots. Seas to 2 feet or less.
+Wave Detail: South 2 feet at 6 seconds. 
 .WEDNESDAY NIGHT...East winds to 10 knots. Seas to 2 feet or
-less. 
+less. Wave Detail: South 2 feet at 6 seconds. 
 .THURSDAY...East winds 10 to 15 knots, becoming 7 to 10 knots.
 Seas to 2 feet or less. 
 .FRIDAY...East southeast winds 7 to 10 knots, becoming variable
 less than 10 knots. Seas to 2 feet or less.  
 
-PHZ120-281330-
+PHZ120-290215-
 Pailolo Channel-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East northeast winds to 30 knots. Seas 8 to 11 feet.
-Wave Detail: East 10 feet at 7 seconds and south southwest 4 feet
-at 9 seconds. 
-.MONDAY...East winds 25 to 30 knots. Seas 6 to 9 feet. Wave
-Detail: East 8 feet at 6 seconds and southwest 4 feet at
+.TODAY...East winds 25 to 30 knots. Seas 5 to 8 feet. Wave
+Detail: East 8 feet at 6 seconds and south southwest 3 feet at
 12 seconds. 
-.MONDAY NIGHT...East northeast winds 20 to 25 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 5 seconds. 
-.TUESDAY...East northeast winds 10 to 15 knots. Seas 4 to 6 feet.
-Wave Detail: East 5 feet at 7 seconds. 
+.TONIGHT...East northeast winds 20 to 25 knots. Seas 5 to 7 feet,
+subsiding to 3 to 5 feet after midnight. Wave Detail: East
+northeast 6 feet at 6 seconds. 
+.TUESDAY...East northeast winds 10 to 15 knots. Seas 3 to 5 feet.
+Wave Detail: East 4 feet at 6 seconds. 
 .TUESDAY NIGHT...East southeast winds 7 to 10 knots in the
 evening, becoming variable less than 10 knots. Seas 3 to 5 feet.
-Wave Detail: East 4 feet at 6 seconds. Scattered showers. 
+Wave Detail: East southeast 3 feet at 6 seconds. Scattered
+showers. 
 .WEDNESDAY...East winds 7 to 10 knots. Seas 3 to 5 feet. Wave
-Detail: East southeast 3 feet at 6 seconds. Isolated showers in
-the morning. 
-.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 5 feet.
-Wave Detail: East 3 feet at 6 seconds. Isolated showers. 
+Detail: Southeast 3 feet at 6 seconds. Isolated showers in the
+morning. 
+.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 4 feet.
+Wave Detail: Southeast 3 feet at 5 seconds. Isolated showers. 
 .THURSDAY...East northeast winds 10 to 15 knots. Seas 3 to
-4 feet. Wave Detail: East 3 feet at 6 seconds. Isolated showers
+4 feet. Wave Detail: East 3 feet at 5 seconds. Isolated showers
 in the morning. 
 .FRIDAY...East northeast winds 10 to 15 knots. Seas 3 to 4 feet.
-Wave Detail: East 3 feet at 6 seconds. Scattered showers through
+Wave Detail: East 3 feet at 5 seconds. Scattered showers through
 the day.  
 
-PHZ121-281330-
+PHZ121-290215-
 Alenuihaha Channel-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East northeast winds 25 to 30 knots. Seas 11 to
-15 feet. Wave Detail: East northeast 14 feet at 8 seconds and
-south southwest 4 feet at 13 seconds. 
-.MONDAY...East northeast winds 25 to 30 knots. Seas 9 to 13 feet,
-subsiding to 7 to 10 feet in the afternoon. Wave Detail: East
-northeast 11 feet at 7 seconds and south southwest 4 feet at
-13 seconds. 
-.MONDAY NIGHT...East winds 25 to 30 knots. Seas 7 to 10 feet.
-Wave Detail: East northeast 8 feet at 7 seconds and south
-southwest 4 feet at 12 seconds. Isolated showers. 
-.TUESDAY...East winds 20 to 25 knots. Seas 6 to 9 feet, subsiding
-to 6 to 7 feet in the afternoon. Wave Detail: East 7 feet at
-6 seconds and south southwest 4 feet at 12 seconds. Isolated
-showers in the afternoon. 
+.TODAY...East northeast winds 25 to 30 knots. Seas 9 to 12 feet,
+subsiding to 7 to 10 feet this afternoon. Wave Detail: East
+11 feet at 7 seconds and southwest 4 feet at 12 seconds. 
+.TONIGHT...East winds 25 to 30 knots. Seas 6 to 9 feet. Wave
+Detail: East 7 feet at 6 seconds and south southwest 4 feet at
+12 seconds. Isolated showers. 
+.TUESDAY...East winds 20 to 25 knots. Seas 5 to 8 feet. Wave
+Detail: East 6 feet at 5 seconds and south southwest 4 feet at
+16 seconds. Isolated showers in the afternoon. 
 .TUESDAY NIGHT...East southeast winds 15 to 20 knots, easing to
-10 to 15 knots after midnight. Seas 5 to 7 feet. Wave Detail:
-East 6 feet at 6 seconds and south southwest 4 feet at
-16 seconds. Scattered showers. 
+10 to 15 knots after midnight. Seas 5 to 8 feet. Wave Detail:
+Southeast 5 feet at 5 seconds, west northwest 4 feet at
+11 seconds and south southwest 4 feet at 16 seconds. Scattered
+showers. 
 .WEDNESDAY...East southeast winds 10 to 15 knots, becoming east
-15 to 20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail:
-East 5 feet at 6 seconds and south southwest 3 feet at
-15 seconds. Scattered showers. 
-.WEDNESDAY NIGHT...East winds 15 to 20 knots. Seas 4 to 6 feet.
-Wave Detail: East 5 feet at 6 seconds and south southwest 3 feet
-at 14 seconds. Scattered showers. 
-.THURSDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave
-Detail: East 5 feet at 5 seconds and south southwest 3 feet at
+15 to 20 knots in the afternoon. Seas 5 to 8 feet. Wave Detail:
+Southeast 5 feet at 5 seconds, west northwest 4 feet at
+10 seconds and south southwest 4 feet at 15 seconds. Scattered
+showers. 
+.WEDNESDAY NIGHT...East winds 15 to 20 knots. Seas 5 to 7 feet.
+Wave Detail: South southeast 5 feet at 6 seconds and south
+southwest 4 feet at 14 seconds. Scattered showers. 
+.THURSDAY...East winds 15 to 20 knots. Seas 5 to 7 feet. Wave
+Detail: East 4 feet at 5 seconds and south southwest 3 feet at
 13 seconds. Scattered showers in the morning. Scattered showers
 through the day. 
 .FRIDAY...East winds 15 to 20 knots, easing to 10 to 15 knots
-after midnight. Seas 4 to 5 feet. Wave Detail: East 4 feet at
-5 seconds and south southwest 3 feet at 13 seconds. Isolated
-showers.  
+after midnight. Seas 4 to 5 feet. Wave Detail: East northeast
+4 feet at 5 seconds and south southwest 3 feet at 13 seconds.
+Isolated showers.  
 
-PHZ122-281330-
+PHZ122-290215-
 Big Island Windward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East southeast winds 25 to 30 knots. Seas 6 to 9 feet.
-Wave Detail: East 7 feet at 9 seconds, south southwest 4 feet at
-13 seconds and north northwest 3 feet at 16 seconds. Isolated
-showers. 
-.MONDAY...East southeast winds 20 to 25 knots. Seas 5 to 8 feet.
-Wave Detail: East 7 feet at 9 seconds, south southwest 3 feet at
+.TODAY...East southeast winds 20 to 25 knots. Seas 5 to 7 feet.
+Wave Detail: East 5 feet at 5 seconds, south southwest 4 feet at
 13 seconds and north northwest 3 feet at 15 seconds. Isolated
-showers. 
-.MONDAY NIGHT...East southeast winds 20 to 25 knots. Seas 5 to
-7 feet. Wave Detail: East 5 feet at 9 seconds and south southwest
-3 feet at 12 seconds. Scattered showers. 
+showers this afternoon. 
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 4 to 5 feet.
+Wave Detail: East northeast 4 feet at 4 seconds and south
+southwest 3 feet at 12 seconds. Scattered showers. 
 .TUESDAY...East southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 5 to 6 feet. Wave Detail: East
-5 feet at 9 seconds and south southwest 3 feet at 12 seconds.
-Isolated showers. 
-.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
-6 feet. Wave Detail: East 5 feet at 13 seconds. Isolated showers.
-.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: East 5 feet at 12 seconds. 
-.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 4 to
-5 feet. Wave Detail: East 5 feet at 13 seconds. Isolated showers.
-.THURSDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 12 seconds. Isolated showers through the
-day. 
-.FRIDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 11 seconds. Isolated showers in the
+20 knots in the afternoon. Seas 3 to 5 feet. Wave Detail:
+Southeast 4 feet at 4 seconds and south southwest 3 feet at
+12 seconds. Isolated showers. 
+.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 3 to
+4 feet. Wave Detail: Southeast 4 feet at 4 seconds. Isolated
+showers. 
+.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 3 to
+4 feet. Wave Detail: Southeast 4 feet at 4 seconds. 
+.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to
+4 feet. Wave Detail: Southeast 3 feet at 4 seconds. Isolated
+showers. 
+.THURSDAY...East winds 10 to 15 knots. Seas 3 to 4 feet. Wave
+Detail: East southeast 3 feet at 4 seconds. Isolated showers
+through the day. 
+.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave
+Detail: East 3 feet at 4 seconds. Isolated showers in the
 morning. Isolated showers through the day.  
 
-PHZ123-281330-
+PHZ123-290215-
 Big Island Leeward Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...West of the Big Island, east southeast winds 10 to
-15 knots, veering to southwest after midnight. Near South Point,
-east winds 25 to 30 knots. Seas 8 to 11 feet. Wave Detail: East
-11 feet at 8 seconds and south southwest 5 feet at 13 seconds. 
-.MONDAY...West of the Big Island, northwest winds 10 to 15 knots,
-becoming 7 to 10 knots in the afternoon. Near South Point, east
-winds 25 to 30 knots. Seas 7 to 10 feet. Wave Detail: East 9 feet
-at 7 seconds and south southwest 4 feet at 13 seconds. 
-.MONDAY NIGHT...West of the Big Island, north winds 7 to
-10 knots. Near South Point, east winds to 25 knots, becoming
-20 to 25 knots after midnight. Seas 5 to 8 feet. Wave Detail:
-East southeast 6 feet at 6 seconds and south southwest 4 feet at
-12 seconds. 
+.TODAY...West of the Big Island, northwest winds 10 to 15 knots,
+becoming 7 to 10 knots this afternoon. Near South Point, east
+winds 25 to 30 knots. Seas 6 to 9 feet. Wave Detail: East
+southeast 8 feet at 6 seconds and south southwest 5 feet at
+13 seconds. 
+.TONIGHT...West of the Big Island, north winds 7 to 10 knots.
+Near South Point, east winds to 25 knots, becoming 20 to 25 knots
+after midnight. Seas 5 to 8 feet. Wave Detail: East southeast
+6 feet at 6 seconds and south southwest 4 feet at 12 seconds. 
 .TUESDAY...West of the Big Island, northwest winds 7 to 10 knots,
 becoming southwest 15 to 20 knots in the afternoon. Near South
 Point, east southeast winds 20 to 25 knots. Seas 5 to 7 feet.
-Wave Detail: East southeast 6 feet at 5 seconds and south
-southwest 4 feet at 12 seconds. Isolated showers in the
-afternoon. 
+Wave Detail: Southeast 5 feet at 6 seconds and south southwest
+4 feet at 16 seconds. Isolated showers in the afternoon. 
 .TUESDAY NIGHT...Winds east northeast winds 10 to 15 knots. Seas
-5 to 7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 4 feet at 16 seconds. Isolated showers. 
+5 to 8 feet. Wave Detail: Southeast 5 feet at 6 seconds, west
+northwest 5 feet at 11 seconds and south southwest 4 feet at
+16 seconds. Isolated showers. 
 .WEDNESDAY...West of the Big Island, southwest winds 15 to
 20 knots, rising to 20 to 25 knots in the afternoon. Near
-Kawaihae, north northeast winds 7 to 10 knots. Seas 4 to 6 feet.
-Wave Detail: Southeast 4 feet at 5 seconds and south 3 feet at
-15 seconds. Isolated showers. 
+Kawaihae, north northeast winds 7 to 10 knots. Seas 5 to 8 feet.
+Wave Detail: West northwest 5 feet at 11 seconds, southeast
+4 feet at 5 seconds and south southwest 4 feet at 15 seconds.
+Isolated showers. 
 .WEDNESDAY NIGHT...West of the Big Island, south southeast winds
 15 to 20 knots, easing to 10 to 15 knots after midnight. Near
-Kawaihae, east northeast winds 7 to 10 knots. Seas 4 to 6 feet.
-Wave Detail: Southeast 4 feet at 5 seconds and south 3 feet at
-14 seconds. Scattered showers. 
+Kawaihae, east northeast winds 7 to 10 knots. Seas 5 to 8 feet.
+Wave Detail: Southeast 5 feet at 5 seconds, south southwest
+4 feet at 14 seconds and west northwest 3 feet at 9 seconds.
+Scattered showers. 
 .THURSDAY...West of the Big Island, north northeast winds 10 to
 15 knots, backing to west southwest in the afternoon, backing to
 south in the evening, veering to north northwest 7 to 10 knots
 after midnight. Near South Point, east winds 15 to 20 knots,
 rising to 20 to 25 knots in the afternoon, easing to 15 knots.
-Seas 3 to 5 feet. Wave Detail: East southeast 4 feet at 5 seconds
-and south 3 feet at 13 seconds. Scattered showers in the morning.
-Isolated showers in the afternoon, then scattered showers through
-the day. 
+Seas 5 to 7 feet. Wave Detail: Southeast 4 feet at 5 seconds,
+west northwest 3 feet at 9 seconds and south southwest 3 feet at
+13 seconds. Scattered showers in the morning. Isolated showers in
+the afternoon, then scattered showers through the day. 
 .FRIDAY...West of the Big Island, winds variable less than
 10 knots, becoming southwest 7 to 10 knots in the afternoon,
 backing to south southeast. Near South Point, east winds to
 15 knots, easing to 10 knots. Seas 3 to 5 feet. Wave Detail: East
-3 feet at 4 seconds and south 3 feet at 13 seconds. Isolated
-showers.  
+southeast 3 feet at 4 seconds and south southwest 3 feet at
+13 seconds. Isolated showers.  
 
-PHZ124-281330-
+PHZ124-290215-
 Big Island Southeast Waters-
-305 PM HST Sun Sep 27 2026
+358 AM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TONIGHT...East northeast winds 20 to 25 knots. Seas 8 to
-11 feet. Wave Detail: East 9 feet at 7 seconds and south
-southwest 4 feet at 13 seconds. Isolated showers this evening,
-then scattered showers after midnight. 
-.MONDAY...East northeast winds 20 to 25 knots. Seas 6 to 9 feet,
-subsiding to 6 to 7 feet in the afternoon. Wave Detail: East
-7 feet at 7 seconds and south southwest 4 feet at 13 seconds.
-Scattered showers in the morning. Isolated showers in the
-afternoon. 
-.MONDAY NIGHT...East winds 15 to 20 knots. Seas 5 to 6 feet. Wave
-Detail: East 5 feet at 10 seconds and south southwest 3 feet at
+.TODAY...East northeast winds 20 to 25 knots. Seas 5 to 7 feet.
+Wave Detail: East 5 feet at 5 seconds and south southwest 4 feet
+at 13 seconds. Isolated showers this afternoon. 
+.TONIGHT...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave
+Detail: East 4 feet at 4 seconds and south southwest 3 feet at
 12 seconds. Scattered showers. 
-.TUESDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave
-Detail: East 5 feet at 10 seconds and south southwest 3 feet at
-12 seconds. Isolated showers in the morning, then scattered
-showers in the afternoon. 
-.TUESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 5 feet.
-Wave Detail: East 4 feet at 13 seconds and south southwest 3 feet
-at 16 seconds. Scattered showers. 
-.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 12 seconds. Isolated showers. 
-.WEDNESDAY NIGHT...East winds to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 13 seconds. Isolated showers. 
-.THURSDAY...East winds to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 12 seconds. Isolated showers in the
-morning. Isolated showers through the day. 
-.FRIDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East 4 feet at 5 seconds. Isolated showers in the
+.TUESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East southeast 3 feet at 4 seconds, west northwest 3 feet
+at 10 seconds and south southwest 3 feet at 16 seconds. Isolated
+showers in the morning, then scattered showers in the afternoon. 
+.TUESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 6 feet.
+Wave Detail: West northwest 4 feet at 11 seconds, east southeast
+3 feet at 4 seconds and south southwest 3 feet at 16 seconds.
+Scattered showers. 
+.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave
+Detail: West northwest 4 feet at 11 seconds, east 3 feet at
+4 seconds and south southwest 3 feet at 15 seconds. Isolated
+showers. 
+.WEDNESDAY NIGHT...East winds to 15 knots. Seas 3 to 5 feet. Wave
+Detail: West northwest 3 feet at 9 seconds and south southwest
+3 feet at 14 seconds. Isolated showers. 
+.THURSDAY...East winds to 15 knots. Seas 3 to 5 feet. Wave
+Detail: East northeast 3 feet at 4 seconds and west northwest
+3 feet at 9 seconds. Isolated showers in the morning. Isolated
+showers through the day. 
+.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave
+Detail: East 3 feet at 4 seconds. Isolated showers in the
 morning. Scattered showers through the day.
 ```
 
@@ -3001,19 +2978,19 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-28T03:44:34.594529-10:00 HST |
+| **Collected** | 2026-09-28T04:01:34.699703-10:00 HST |
 
 ```text
-075
-SRHW80 PHFO 281246
+250
+SRHW80 PHFO 281346
 RRAHFO
 
 Hawaii Rainfall Summary
 National Weather Service Honolulu HI
-245 AM HST Mon Sep 28 2026
+345 AM HST Mon Sep 28 2026
 
 :
-.B HFO  0928 H  DH02 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
+.B HFO  0928 H  DH03 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
 :
 :Automated rain gage reports from around the State of Hawaii.
 :These are provisional reports that have not been quality
@@ -3021,7 +2998,7 @@ National Weather Service Honolulu HI
 :
 :T=Trace Rainfall, M=Missing Data
 :
-:Precipitation totals ending  2 AM HST
+:Precipitation totals ending  3 AM HST
 :
 :Island of Kauai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
@@ -3030,24 +3007,24 @@ MKAH1 : Makaha Ridge (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 PLRH1 : Puu Lua (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 WKRH1 : Waiakoali (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
 KLOH1 : Kilohana (USGS)             :    0.02  /  0.03  /  0.12  /  0.14
-MCRH1 : Mohihi Crossing (USGS)      :    0.03  /  0.03  /  0.03  /  0.04
-WLGH1 : Waialae (USGS)              :    0.05  /  0.06  /  0.06  /  0.06
-LLMH1 : Lower Limahuli (UHM)        :    0.01  /  0.04  /  0.07  /  0.08
-WNHH1 : Wainiha (12010)             :    0.01  /  0.01  /  0.03  /  0.03
-WIPH1 : Waipa (UHM)                 :    0.01  /  0.03  /  0.14  /  0.14
-HNIH1 : Hanalei (12009)             :    0.01  /  0.03  /  0.13  /  0.14
+MCRH1 : Mohihi Crossing (USGS)      :    0.02  /  0.03  /  0.03  /  0.04
+WLGH1 : Waialae (USGS)              :    0.09  /  0.10  /  0.10  /  0.10
+LLMH1 : Lower Limahuli (UHM)        :    0.03  /  0.06  /  0.07  /  0.10
+WNHH1 : Wainiha (12010)             :    0.05  /  0.05  /  0.07  /  0.07
+WIPH1 : Waipa (UHM)                 :    0.04  /  0.05  /  0.10  /  0.17
+HNIH1 : Hanalei (12009)             :    0.06  /  0.08  /  0.13  /  0.19
 WLLH1 : Mount Waialeale (USGS)      :      M   /    M   /    M   /    M
 PRIH1 : Princeville Airport (12011) :    0.01  /  0.02  /  0.03  /  0.03
-CMGH1 : Common Ground (UHM)         :    0.02  /  0.03  /  0.05  /  0.07
-HLIH1 : Hanalei (RAWS)              :    0.03  /  0.05  /  0.14  /  0.15
+CMGH1 : Common Ground (UHM)         :    0.04  /  0.04  /  0.05  /  0.09
+HLIH1 : Hanalei (RAWS)              :    0.04  /  0.06  /  0.14  /  0.16
 MLDH1 : Moloaa Dairy (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 ANHH1 : Anahola (12001)             :    0.00  /  0.00  /  0.01  /  0.01
 KPIH1 : Kapahi (12003)              :    0.03  /  0.03  /  0.06  /  0.06
-WLDH1 : N Wailua Ditch (USGS)       :    0.09  /  0.09  /  0.09  /  0.10
-WUHH1 : Wailua (12005)              :    0.03  /  0.03  /  0.03  /  0.03
-WIRH1 : Waiahi Rain Gage (USGS)     :    0.04  /  0.04  /  0.10  /  0.14
-LIHH1 : Lihue Var. Stn. (12006)     :    0.03  /  0.03  /  0.04  /  0.06
-HNMH1 : Hanamaulu (UHM)             :    0.08  /  0.08  /  0.11  /  0.22
+WLDH1 : N Wailua Ditch (USGS)       :    0.10  /  0.12  /  0.12  /  0.13
+WUHH1 : Wailua (12005)              :    0.04  /  0.04  /  0.04  /  0.04
+WIRH1 : Waiahi Rain Gage (USGS)     :    0.03  /  0.04  /  0.04  /  0.14
+LIHH1 : Lihue Var. Stn. (12006)     :    0.01  /  0.03  /  0.03  /  0.06
+HNMH1 : Hanamaulu (UHM)             :    0.01  /  0.08  /  0.08  /  0.22
 HLI   : Lihue Airport (ASOS)        :      T   /    T   /  0.01  /  0.02
 :       Leeward Sites
 OMAH1 : Omao (12004)                :    0.00  /  0.00  /  0.00  /  0.01
@@ -3068,7 +3045,7 @@ KTAH1 : Kahuku Training Area (RAWS) :    0.00  /  0.00  /  0.00  /  0.00
 KFWH1 : Kii (RAWS)                  :    0.00  /  0.00  /  0.00  /  0.00
 PUNH1 : Punaluu Pump (13013)        :    0.00  /  0.00  /  0.00  /  0.01
 PNSH1 : Punaluu Stream (USGS)       :    0.01  /  0.02  /  0.02  /  0.02
-KNRH1 : Kahana (USGS)               :    0.02  /  0.02  /  0.02  /  0.02
+KNRH1 : Kahana (USGS)               :    0.01  /  0.03  /  0.03  /  0.03
 HAKH1 : Hakipuu Mauka (13004)       :    0.00  /  0.00  /  0.00  /  0.00
 WPPH1 : Waihee Pump (13002)         :    0.00  /  0.00  /  0.00  /  0.05
 WHSH1 : Waiahole (USGS)             :    0.00  /  0.00  /  0.00  /  0.00
@@ -3078,7 +3055,7 @@ HRRH1 : Heeia NERR (NOAA/NOS)       :    0.00  /  0.00  /  0.00  /  0.00
 LULH1 : Luluku (13016)              :    0.00  /  0.00  /  0.00  /  0.00
 NRSH1 : Nuuanu Res No. 1 (UHM)      :    0.00  /  0.00  /  0.00  /  0.00
 KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.00  /  0.06
-LYOH1 : Lyon (UHM)                  :    0.01  /  0.02  /  0.02  /  0.03
+LYOH1 : Lyon (UHM)                  :    0.01  /  0.01  /  0.02  /  0.03
 MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.00  /  0.00  /  0.02
 STVH1 : St. Stephens (13006)        :    0.00  /  0.00  /  0.00  /  0.01
 MAUH1 : Maunawili (13008)           :      M   /    M   /    M   /    M
@@ -3147,22 +3124,22 @@ KAOH1 : Kaneloa (RAWS)              :      M   /    M   /    M   /    M
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
 HNAH1 : Hana Airport (HSOIS)        :      M   /    M   /    M   /    M
-WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.01  /  0.55
+WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.01  /  0.37
 EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.00  /  0.02
 AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.00
 HOG   : Kahului Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
 WUKH1 : Wailuku (14007)             :    0.00  /  0.00  /  0.00  /  0.00
 KHKH1 : Kahakuloa (14002)           :    0.00  /  0.00  /  0.00  /  0.00
-PKKH1 : Puu Kukui (USGS)            :    0.01  /  0.04  /  0.06  /  0.23
+PKKH1 : Puu Kukui (USGS)            :    0.01  /  0.03  /  0.06  /  0.19
 :       Leeward/Upcountry Sites
 NKUH1 : Na Kula (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KPNH1 : Kepuni (USGS)               :    0.00  /  0.00  /  0.00  /  0.00
-PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.07
-WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.12
+PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.02
+WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.04
 PUKH1 : Pukalani (14006)            :    0.00  /  0.00  /  0.00  /  0.00
 KBSH1 : Kula Branch Station (14008) :      M   /    M   /    M   /    M
 KLGH1 : Kula Ag (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
-PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.02
+PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 NNEH1 : Nene Nest (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
 SUMH1 : Summit (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 KLFH1 : Kula 1 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
@@ -3174,7 +3151,7 @@ LPOH1 : Lipoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.00
 KHIH1 : Kihei #2 (14009)            :      M   /    M   /    M   /  0.00
 KPDH1 : Kealia Pond (USFWS)         :    0.00  /  0.00  /  0.00  /  0.00
 WCCH1 : Waikapu Country Club (14005):    0.00  /  0.00  /  0.00  /  0.00
-HULH1 : Hanaula (UHM)               :    0.00  /  0.00  /  0.00  /  0.01
+HULH1 : Hanaula (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 OLUH1 : Olowalu (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 LAHH1 : Lahainaluna (14011)         :    0.00  /  0.00  /  0.00  /  0.00
 LWTH1 : Lahaina WTP (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
@@ -3183,61 +3160,61 @@ HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 :Island of Hawaii                                  Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
-UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.09
+UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.01
 KMMH1 : Kaluamakani (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
-KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.44
-KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.09
+KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.31
+KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.08
 KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.01
-HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.04
+HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.03
 PMLH1 : Puu Mali (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 WPNH1 : Waipunalei (UHM)            :      M   /    M   /    M   /  0.03
-KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.17
-LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.38
-LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /    M   /  0.85
-SPNH1 : Spencer (UHM)               :      M   /    M   /    M   /  0.38
-HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.39
-KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.68
-NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.00  /  1.29
-SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.03  /  1.28
-PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.01  /  1.28
+KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.11
+LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.24
+LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /    M   /  0.59
+SPNH1 : Spencer (UHM)               :      M   /    M   /    M   /  0.15
+HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.31
+KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.19
+NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.00  /  1.19
+SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.02  /  1.13
+PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.00  /  1.04
 PIIH1 : Piihonua (15016)            :    0.00  /  0.00  /  0.01  /  0.02
-IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.52
-WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.65
-WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.30
-HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  1.35
-PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.36
-PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.26
-MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.00  /  0.84
-GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.00  /  1.26
+IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.36
+WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.43
+WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.13
+HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  0.77
+PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.19
+PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.09
+MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.00  /  0.62
+GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.00  /  1.09
 :       Leeward Sites
 MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.00  /  0.00  /  0.00  /  0.01
-NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.03  /  0.77
-KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.10
-KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.21
+NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.01  /  0.61
+KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.07
+KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.17
 PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.01
-KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.08
-KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.07
-PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.05
+KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.07
+KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.06
+PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.02
 KIOH1 : Kaiholena (UHM)             :      M   /    M   /    M   /    M
-NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.10
-SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.98
-LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.01  /  0.57
+NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.07
+SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.77
+LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.01  /  0.41
 KRCH1 : Kahuku Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.01
-KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.01  /  0.03
-PHRH1 : Puho CS (RAWS)              :    0.02  /  0.03  /  0.03  /  0.03
+KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.00  /  0.03
+PHRH1 : Puho CS (RAWS)              :    0.03  /  0.04  /  0.04  /  0.04
 HAUH1 : Honaunau (15007)            :    0.00  /  0.05  /  0.73  /  0.73
-KLEH1 : Kealakekua (15008)          :    0.06  /  0.13  /  0.13  /  0.13
-WIHH1 : Waiaha Stream (15009)       :    0.05  /  0.46  /  0.46  /  0.47
-KOUH1 : Keahuolu (UHM)              :    0.04  /  0.51  /  0.51  /  0.72
+KLEH1 : Kealakekua (15008)          :    0.02  /  0.13  /  0.13  /  0.13
+WIHH1 : Waiaha Stream (15009)       :    0.03  /  0.46  /  0.46  /  0.47
+KOUH1 : Keahuolu (UHM)              :    0.03  /  0.50  /  0.51  /  0.72
 KHOH1 : Kaloko-Honokohau (RAWS)     :    0.00  /  0.00  /  0.00  /  0.00
 HKO   : Kona Intl Airport (ASOS)    :    0.00  /  0.00  /  0.00  /  0.00
-PLMH1 : Palamanui (UHM)             :    0.00  /  0.06  /  0.06  /  0.07
-KIRH1 : Kiholo RG (USGS)            :    0.03  /  0.03  /  0.03  /  0.03
-KPLH1 : Kaupulehu (RAWS)            :    0.02  /  0.08  /  0.08  /  0.08
+PLMH1 : Palamanui (UHM)             :    0.00  /  0.00  /  0.06  /  0.07
+KIRH1 : Kiholo RG (USGS)            :    0.01  /  0.03  /  0.03  /  0.03
+KPLH1 : Kaupulehu (RAWS)            :    0.00  /  0.08  /  0.08  /  0.08
 PULH1 : Puuanahulu (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
 MMLH1 : Mamalahoa (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
 PWWH1 : Puu Waawaa (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
-PWAH1 : Puu Waawaa (UHM)            :    0.00  /  0.00  /  0.01  /  0.01
+PWAH1 : Puu Waawaa (UHM)            :    0.00  /  0.00  /  0.00  /  0.01
 KIUH1 : Kaiaulu Puu Waawaa (UHM)    :    0.00  /  0.00  /  0.00  /  0.00
 PKAH1 : Pohakuloa Kipuka Alala RAWS :    0.00  /  0.00  /  0.00  /  0.00
 PTRH1 : Pohakuloa Range 17 (RAWS)   :    0.00  /  0.00  /  0.00  /  0.00
@@ -3249,9 +3226,9 @@ LLAH1 : Lalamilo (UHM)              :    0.00  /  0.00  /  0.00  /  0.01
 WKVH1 : Waikoloa (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 PERH1 : Puhe CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KHRH1 : Kohala Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.11
-KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.31
-PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.03
+KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.09
+KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.20
+PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.02
 .END
 
 Service Note
@@ -3274,7 +3251,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T03:53:38.435964-10:00 HST |
+| **Collected** | 2026-09-28T04:01:37.258348-10:00 HST |
 
 ```text
                         
@@ -4150,7 +4127,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T04:00:18.819436-10:00 HST |
+| **Collected** | 2026-09-28T04:08:18.532492-10:00 HST |
 
 ```text
 Home
@@ -4274,7 +4251,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 13:56:06 UTC
+Last update Mon, 28 Sep 2026 14:06:03 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -7914,7 +7891,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-28T03:53:21.032681-10:00 HST |
+| **Collected** | 2026-09-28T04:01:19.650166-10:00 HST |
 
 ```text
 National Weather Service
