@@ -12,17 +12,11 @@ from fetch import _engine
 
 def fetch_all(manifest: Manifest, base_dir: str) -> list[_engine.FetchOutcome]:
     config = _engine.load_resources_yaml()
-
-    gfe_items = config.get("gfe_graphics") or []
-
-    if not gfe_items:
-        return []
-
-    gfe = gfe_items[0]
-
+    gfe = config["gfe_graphics"][0]  # single entry today; kept as a list in YAML for future sub-sector expansion
     outcome = _engine.run_resource(
         manifest, base_dir, gfe["id"], gfe["url"],
         method="text", clean_text_body=False,
     )
-
+    # A failure here is expected and informative, not a bug -- see
+    # config/resources.yaml's note on this resource and tiers.yaml Tier 6.
     return [outcome]
