@@ -39,11 +39,11 @@ Raw collected source data remains the authoritative record. Generated reports ar
 
 | Location | Conditions | Temp | Dew point | RH | Wind | Pressure |
 |---|---|---:|---:|---:|---|---:|
-| Honolulu | Partly cloudy | 79°F | 68°F | 69% | Northeast 15 gusts to 22 | 29.89S |
-| Lihue | Partly cloudy | 78°F | 73°F | 84% | Northeast 17 gusts to 26 | 29.93R |
-| Kahului | Clear | 70°F | 61°F | 73% | Calm | 29.87R |
-| Hilo | Clear | 68°F | 57°F | 68% | Southwest 8 | 29.93S |
-| Kona | Mostly cloudy | 80°F | 72°F | 76% | South 5 | — |
+| Honolulu | Mostly sunny | 89°F | 68°F | 49% | East 15 gusts to 29 | 29.95S |
+| Lihue | Mostly sunny | 83°F | 74°F | 74% | East 16 | 29.98F |
+| Kahului | Sunny | 90°F | 62°F | 39% | Northeast 18 gusts to 25 | 29.92F |
+| Hilo | Mostly sunny | 84°F | 69°F | 60% | Southeast 12 | 29.98F |
+| Kona | Mostly sunny | 87°F | 70°F | 56% | West 10 | 29.93S |
 
 _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °F._
 
@@ -55,7 +55,7 @@ _Source: locally collected NWS-HFO Regional Weather Roundup (RWR). Values are °
 
 | Status | Coverage | Updated | Sections |
 |---|---|---|---:|
-| 🟢 Active | Hawaiʻi statewide | 2026-09-28T06:07:19-10:00 HST | 29 |
+| 🟢 Active | Hawaiʻi statewide | 2026-09-28T16:11:45-10:00 HST | 29 |
 
 The report below is generated from the same current product sections as `Hawaii_State_Weather_Report_current.md`.
 
@@ -67,168 +67,168 @@ The report below is generated from the same current product sections as `Hawaii_
 |---|---|
 | **Resource ID** | zfp_zone_forecast |
 | **Official source** | https://api.weather.gov/products/types/ZFP/locations/HFO |
-| **Collected** | 2026-09-28T04:53:20.741084-10:00 HST |
+| **Collected** | 2026-09-28T15:05:46.951962-10:00 HST |
 
 ```text
 000
-FPHW50 PHFO 281446
+FPHW50 PHFO 290102
 ZFPHFO
 
 Zone Forecast Product for Hawaii
 National Weather Service Honolulu HI
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-HIZ001-290715-
+HIZ001-291930-
 Niihau-
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
+...HIGH SURF ADVISORY IN EFFECT UNTIL 6 AM HST TUESDAY...
 
-.TODAY...Sunny and windy. Highs 81 to 87. East winds 15 to
-30 mph. 
-.TONIGHT...Windy. Mostly cloudy with scattered showers. Lows
-72 to 79. East winds 20 to 30 mph. Chance of rain 50 percent. 
-.TUESDAY...Windy. Numerous showers in the morning, then
-occasional showers in the afternoon. Highs 80 to 85. Southeast
-winds 25 to 35 mph with gusts to 55 mph. Chance of rain near
-100 percent. 
-.TUESDAY NIGHT...Windy. Mostly cloudy with occasional showers.
-Lows 71 to 78. Southeast winds 20 to 35 mph with gusts to 55 mph.
-Chance of rain 90 percent. 
-.WEDNESDAY...Windy. Mostly cloudy with numerous showers. Highs
-80 to 85. Southeast winds 20 to 35 mph with gusts to 55 mph.
-Chance of rain 70 percent. 
-.WEDNESDAY NIGHT...Windy. Mostly cloudy with numerous showers.
-Lows 72 to 78. Southeast winds 15 to 35 mph with gusts to 55 mph.
-Chance of rain 70 percent. 
-.THURSDAY...Partly sunny. Windy. Numerous showers in the morning,
-then scattered showers in the afternoon. Highs 80 to 85.
-Southeast winds 15 to 35 mph. Gusts up to 55 mph in the morning.
-Chance of rain 60 percent. 
-.THURSDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Breezy. Scattered showers. Lows 71 to 78.
-Southeast winds 15 to 25 mph. Chance of rain 40 percent. 
-.FRIDAY...Breezy. Mostly sunny with isolated showers. Highs 79 to
-85. Southeast winds 10 to 25 mph. Chance of rain 20 percent. 
+.TONIGHT...Mostly cloudy. Windy. Scattered showers after
+midnight. Lows 72 to 78. East winds 20 to 30 mph. Chance of rain
+40 percent. 
+.TUESDAY...Windy. Cloudy with frequent showers. Highs 80 to 85.
+Southeast winds 20 to 30 mph. Chance of rain 90 percent. 
+.TUESDAY NIGHT...Windy. Frequent showers. Lows 71 to 77. South
+winds 20 to 30 mph. Chance of rain near 100 percent. 
+.WEDNESDAY...Breezy. Cloudy with frequent showers. Highs 79 to
+85. Southeast winds around 25 mph. Chance of rain 90 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with frequent showers.
+Lows 71 to 78. Southeast winds 20 to 25 mph. Chance of rain
+80 percent. 
+.THURSDAY...Mostly cloudy. Breezy. Numerous showers in the
+morning, then scattered showers in the afternoon. Highs 80 to 85.
+Southeast winds 20 to 25 mph. Chance of rain 70 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Breezy. Scattered showers in the
+evening, then numerous showers after midnight. Lows 71 to 78.
+Southeast winds 20 to 25 mph. Chance of rain 60 percent. 
+.FRIDAY...Partly sunny in the morning then becoming mostly sunny.
+Breezy. Scattered showers. Highs 80 to 85. Southeast winds 15 to
+25 mph. Chance of rain 40 percent. 
 .FRIDAY NIGHT...Partly cloudy. Isolated showers in the evening,
-then scattered showers after midnight. Lows 71 to 77. East winds
-10 to 15 mph. Chance of rain 30 percent. 
-.SATURDAY...Mostly sunny. Breezy. Isolated showers in the
-morning. Highs 79 to 85. East winds 10 to 25 mph. Chance of rain
-20 percent. 
-.SATURDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
-evening, then scattered showers after midnight. Lows 71 to 77.
-Northeast winds 10 to 20 mph. Chance of rain 30 percent. 
+then scattered showers after midnight. Lows 71 to 78. Southeast
+winds around 15 mph. Chance of rain 30 percent. 
+.SATURDAY...Mostly sunny. Isolated showers in the morning. Highs
+79 to 85. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 71 to
+77. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 .SUNDAY...Mostly sunny. Breezy. Isolated showers in the morning.
-Highs 79 to 85. Northeast winds 10 to 15 mph increasing to 10 to
-25 mph in the afternoon. Chance of rain 20 percent. 
+Highs 79 to 85. East winds 10 to 20 mph. Chance of rain
+20 percent. 
+.SUNDAY NIGHT...Breezy. Partly cloudy with isolated showers. Lows
+71 to 77. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 79 to 85.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ029-290715-
+HIZ029-291930-
 Kauai North-
 Including Princeville, Hanalei, Na Pali State Park
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Breezy. Mostly sunny with scattered showers. Highs 72 to
-89. East winds up to 20 mph. Chance of rain 50 percent. 
 .TONIGHT...Breezy. Mostly cloudy with isolated showers. Lows
-67 to 77. East winds up to 15 mph increasing to 10 to 20 mph
-after midnight. Chance of rain 20 percent. 
-.TUESDAY...Partly sunny with scattered showers. Highs 72 to 88.
-Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 67 to
-76. Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Mostly cloudy with scattered showers. Highs 72 to
-87. Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with isolated showers. Lows
-67 to 76. Southeast winds up to 10 mph. Chance of rain
+67 to 77. Southeast winds 10 to 20 mph. Chance of rain
 20 percent. 
-.THURSDAY...Partly sunny with isolated showers. Highs 72 to 87.
-East winds around 10 mph. Chance of rain 20 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 66 to
-76. East winds up to 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 72 to 87. East winds
-around 10 mph. Chance of rain 50 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 66 to
-75. Light winds. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 72 to 87.
-East winds around 10 mph shifting to the northeast in the
-afternoon. Chance of rain 50 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-65 to 75. Northeast winds up to 10 mph. Chance of rain
+.TUESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 71 to 87.
+Southeast winds 10 to 20 mph. Gusts up to 40 mph in the
+afternoon. Chance of rain 70 percent. 
+.TUESDAY NIGHT...Mostly cloudy. Breezy. Numerous showers in the
+evening, then frequent showers after midnight. Lows 67 to 76.
+Southeast winds 10 to 25 mph with gusts to 45 mph. Chance of rain
+80 percent. 
+.WEDNESDAY...Partly sunny. Breezy. Numerous showers in the
+morning, then scattered showers in the afternoon. Highs 72 to 87.
+Southeast winds 10 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+67 to 76. Southeast winds 10 to 15 mph. Chance of rain
 50 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 72 to 87.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 67 to
+76. Southeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 72 to 87.
+Southeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 66 to
+75. Southeast winds around 10 mph. Chance of rain 50 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 72 to 87.
+East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
+66 to 75. East winds 10 to 15 mph. Chance of rain 40 percent. 
 .SUNDAY...Partly sunny with scattered showers. Highs 71 to 87.
-Northeast winds up to 10 mph increasing to 10 to 15 mph in the
-afternoon. Chance of rain 50 percent. 
+East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers. Lows 65 to
+75. Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 70 to 86.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ030-290715-
+HIZ030-291930-
 Kauai East-
 Including Lihue, Kapaa, Anahola
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Mostly sunny with scattered showers. Highs 78 to 86.
-East winds 10 to 15 mph. Chance of rain 50 percent. 
-.TONIGHT...Mostly cloudy with isolated showers. Lows 68 to 78.
-East winds 10 to 15 mph. Chance of rain 20 percent. 
-.TUESDAY...Mostly cloudy. Numerous showers in the morning, then
-occasional showers in the afternoon. Highs 77 to 86. Southeast
-winds 10 to 15 mph. Chance of rain 90 percent. 
-.TUESDAY NIGHT...Mostly cloudy with occasional showers. Lows
-68 to 77. Southeast winds 10 to 15 mph. Chance of rain
+.TONIGHT...Breezy. Mostly cloudy with isolated showers. Lows
+69 to 78. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.TUESDAY...Cloudy and breezy. Scattered showers in the morning,
+then frequent showers in the afternoon. Highs 77 to 86. Southeast
+winds 10 to 15 mph increasing to 15 to 25 mph in the afternoon.
+Chance of rain 90 percent. 
+.TUESDAY NIGHT...Breezy. Frequent showers. Lows 68 to 77.
+Southeast winds 15 to 25 mph. Chance of rain near 100 percent. 
+.WEDNESDAY...Breezy. Mostly cloudy with frequent showers. Highs
+77 to 86. South winds 15 to 20 mph. Chance of rain 90 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with frequent showers.
+Lows 68 to 77. Southeast winds 10 to 20 mph. Chance of rain
 90 percent. 
-.WEDNESDAY...Mostly cloudy with numerous showers. Highs 77 to 86.
-Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
-68 to 77. Southeast winds up to 10 mph. Chance of rain
+.THURSDAY...Breezy. Mostly cloudy with numerous showers. Highs
+77 to 86. Southeast winds 10 to 20 mph. Chance of rain
 70 percent. 
-.THURSDAY...Mostly cloudy with scattered showers. Highs 78 to 86.
-East winds around 10 mph. Chance of rain 50 percent. 
-.THURSDAY NIGHT...Mostly cloudy with scattered showers. Lows
-67 to 77. East winds around 10 mph in the evening becoming light.
-Chance of rain 30 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 78 to 86. East winds
-around 10 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Scattered showers in the
+evening, then numerous showers after midnight. Lows 68 to 77.
+Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
+.FRIDAY...Partly sunny in the morning then becoming mostly sunny.
+Scattered showers. Highs 78 to 86. Southeast winds 10 to 15 mph.
+Chance of rain 50 percent. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 67 to
-77. Light winds. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 78 to 86.
-East winds around 10 mph. Chance of rain 50 percent. 
+77. East winds around 10 mph. Chance of rain 50 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 78 to 87.
+East winds 10 to 15 mph. Chance of rain 50 percent. 
 .SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-66 to 76. Northeast winds up to 10 mph. Chance of rain
+66 to 77. Northeast winds 10 to 15 mph. Chance of rain
 50 percent. 
 .SUNDAY...Partly sunny with scattered showers. Highs 78 to 86.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 50 percent. 
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers. Lows 66 to
+76. Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 77 to 85.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ031-290715-
+HIZ031-291930-
 Kauai South-
 Including Poipu, Kalaheo, Koloa
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
+...HIGH SURF ADVISORY IN EFFECT UNTIL 6 AM HST TUESDAY...
 
-.TODAY...Breezy. Mostly sunny with scattered showers. Highs 81 to
-90. East winds 15 to 20 mph. Chance of rain 40 percent. 
 .TONIGHT...Breezy. Mostly cloudy with isolated showers. Lows
-72 to 78. East winds 10 to 20 mph. Chance of rain 20 percent. 
-.TUESDAY...Mostly cloudy. Numerous showers in the morning, then
-occasional showers in the afternoon. Highs 80 to 89. Southeast
-winds 10 to 15 mph. Chance of rain 90 percent. 
-.TUESDAY NIGHT...Cloudy with occasional showers. Lows 72 to 77.
+73 to 78. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.TUESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then frequent showers in the afternoon. Highs 80 to 88.
+Southeast winds 10 to 25 mph. Chance of rain 80 percent. 
+.TUESDAY NIGHT...Breezy. Frequent showers. Lows 72 to 77.
+Southeast winds 15 to 25 mph. Chance of rain near 100 percent. 
+.WEDNESDAY...Breezy. Cloudy with frequent showers. Highs 79 to
+87. South winds 15 to 20 mph. Chance of rain 90 percent. 
+.WEDNESDAY NIGHT...Cloudy with frequent showers. Lows 72 to 77.
 Southeast winds 10 to 15 mph. Chance of rain 90 percent. 
-.WEDNESDAY...Mostly cloudy. Occasional showers in the morning,
-then numerous showers in the afternoon. Highs 80 to 88. Southeast
+.THURSDAY...Mostly cloudy. Frequent showers in the morning, then
+numerous showers in the afternoon. Highs 79 to 88. Southeast
 winds 10 to 15 mph. Chance of rain 80 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
-72 to 78. East winds 10 to 15 mph. Chance of rain 70 percent. 
-.THURSDAY...Mostly cloudy. Numerous showers in the morning, then
-scattered showers in the afternoon. Highs 80 to 89. East winds
-10 to 15 mph. Chance of rain 60 percent. 
-.THURSDAY NIGHT...Mostly cloudy with scattered showers. Lows
-71 to 77. East winds around 10 mph. Chance of rain 30 percent. 
-.FRIDAY...Partly sunny with isolated showers. Highs 79 to 89.
-East winds 10 to 15 mph. Chance of rain 20 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 70 to
+.THURSDAY NIGHT...Mostly cloudy with numerous showers. Lows 72 to
+77. Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
+.FRIDAY...Partly sunny with scattered showers. Highs 79 to 89.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 71 to
 77. East winds around 10 mph. Chance of rain 50 percent. 
 .SATURDAY...Partly sunny with scattered showers. Highs 79 to 89.
 East winds 10 to 15 mph. Chance of rain 50 percent. 
@@ -237,1411 +237,1622 @@ East winds 10 to 15 mph. Chance of rain 50 percent.
 50 percent. 
 .SUNDAY...Partly sunny with scattered showers. Highs 79 to 89.
 Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers. Lows 70 to
+76. Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 78 to 88.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ003-290715-
+HIZ003-291930-
 Kauai Southwest-
 Including Waimea, Waimea Canyon State Park, Hanapepe, Kekaha, 
 Barking Sands
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
+...HIGH SURF ADVISORY IN EFFECT UNTIL 6 AM HST TUESDAY...
 
-.TODAY...Sunny and breezy. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 87 to 92 near the shore
-to around 79 above 3000 feet. East winds up to 25 mph increasing
-to 10 to 25 mph in the afternoon. Chance of rain 50 percent. 
-.TONIGHT...Windy. Mostly cloudy with isolated showers. Lows
-around 76 near the shore to around 67 above 3000 feet. East winds
-10 to 30 mph. Chance of rain 20 percent. 
-.TUESDAY...Partly sunny. Breezy. Numerous showers in the morning,
-then occasional showers in the afternoon. Highs around 87 near
-the shore to around 77 above 3000 feet. Southeast winds 10 to
-25 mph. Chance of rain 90 percent. 
-.TUESDAY NIGHT...Breezy. Mostly cloudy with occasional showers.
-Lows 65 to 77. Southeast winds 15 to 20 mph. Chance of rain
-90 percent. 
-.WEDNESDAY...Breezy. Partly sunny with numerous showers. Highs
-76 to 88. Southeast winds 10 to 25 mph. Chance of rain
+.TONIGHT...Mostly cloudy. Breezy. Lows around 76 near the shore
+to around 67 above 3000 feet. East winds 10 to 25 mph. 
+.TUESDAY...Mostly cloudy. Windy. Numerous showers in the morning,
+then frequent showers in the afternoon. Highs around 87 near the
+shore to around 77 above 3000 feet. East winds 10 to 30 mph
+shifting to the southeast 20 to 30 mph in the afternoon. Chance
+of rain 90 percent. 
+.TUESDAY NIGHT...Windy. Frequent showers. Lows around 75 near the
+shore to around 66 above 3000 feet. Southeast winds 15 to 30 mph
+with gusts to 50 mph. Chance of rain near 100 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Frequent showers in the
+morning, then numerous showers in the afternoon. Highs 75 to 88.
+Southeast winds 15 to 20 mph. Chance of rain 90 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with numerous showers.
+Lows 65 to 77. Southeast winds 10 to 20 mph. Chance of rain
 70 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-65 to 77. Southeast winds 10 to 15 mph. Chance of rain
-50 percent. 
-.THURSDAY...Partly sunny with scattered showers. Highs 77 to 89.
-Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Isolated showers. Lows 64 to 77. East winds around
-10 mph in the evening becoming light. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny with isolated showers. Highs 76 to 89.
-Southeast winds up to 10 mph. Chance of rain 20 percent. 
-.FRIDAY NIGHT...Mostly cloudy with isolated showers. Lows 64 to
-76. Light winds. Chance of rain 20 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 76 to 89.
-Light winds becoming east around 10 mph in the afternoon. Chance
-of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Isolated showers. Lows 63 to 76. Light winds.
-Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 76 to 90.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 20 percent. 
+.THURSDAY...Breezy. Mostly cloudy with numerous showers. Highs
+76 to 89. Southeast winds 10 to 20 mph. Chance of rain
+70 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Scattered showers in the
+evening, then numerous showers after midnight. Lows 65 to 77.
+Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
+.FRIDAY...Partly sunny in the morning then becoming mostly sunny.
+Scattered showers. Highs 76 to 89. Southeast winds 10 to 15 mph.
+Chance of rain 50 percent. 
+.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Scattered showers. Lows 64 to 76. Southeast winds around
+10 mph. Chance of rain 50 percent. 
+.SATURDAY...Mostly sunny with scattered showers. Highs 76 to 90.
+East winds around 10 mph. Chance of rain 50 percent. 
+.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 64 to
+76. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY...Mostly sunny. Isolated showers in the morning, then
+scattered showers in the afternoon. Highs 76 to 90. Northeast
+winds 10 to 15 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Partly cloudy with isolated showers. Lows 63 to
+76. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny with isolated showers in the morning, then
+partly sunny with scattered showers in the afternoon. Highs 75 to
+89. Northeast winds around 10 mph. Chance of rain 40 percent. 
 
-HIZ004-290715-
+HIZ004-291930-
 Kauai Mountains-
 Including Kokee State Park
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Mostly sunny. Breezy. Scattered showers in the morning,
-then numerous showers in the afternoon. Highs 71 to 83. East
-winds 10 to 20 mph. Chance of rain 60 percent. 
-.TONIGHT...Windy. Mostly cloudy with isolated showers. Lows
+.TONIGHT...Breezy. Mostly cloudy with scattered showers. Lows
 around 71 in the valleys to around 63 above 4000 feet. East winds
-10 to 30 mph. Chance of rain 20 percent. 
-.TUESDAY...Breezy. Mostly cloudy with occasional showers. Highs
-75 to 82 in the valleys to around 74 above 4000 feet. Southeast
-winds 10 to 25 mph. Chance of rain 90 percent. 
-.TUESDAY NIGHT...Breezy. Mostly cloudy with occasional showers.
-Lows 62 to 73. Southeast winds 10 to 25 mph with gusts to 45 mph.
-Chance of rain 90 percent. 
-.WEDNESDAY...Breezy. Mostly cloudy with scattered showers. Highs
-70 to 83. Southeast winds 10 to 20 mph. Gusts up to 40 mph in the
-morning. Chance of rain 50 percent. 
+10 to 25 mph. Chance of rain 50 percent. 
+.TUESDAY...Cloudy and windy. Numerous showers in the morning,
+then frequent showers in the afternoon. Highs 74 to 82 in the
+valleys to around 68 above 4000 feet. Southeast winds 10 to
+20 mph increasing to 15 to 30 mph in the afternoon. Chance of
+rain 90 percent. 
+.TUESDAY NIGHT...Windy. Frequent showers. Lows around 71 in the
+valleys to around 63 above 4000 feet. South winds 10 to 30 mph
+with gusts to 50 mph. Chance of rain near 100 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Frequent showers in the
+morning, then scattered showers in the afternoon. Highs 66 to 83.
+Southeast winds 15 to 20 mph. Chance of rain 90 percent. 
 .WEDNESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
 Lows 62 to 73. Southeast winds 10 to 20 mph. Chance of rain
 50 percent. 
-.THURSDAY...Mostly cloudy with scattered showers. Highs 71 to 83.
-East winds 10 to 15 mph. Chance of rain 50 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 61 to
-72. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.FRIDAY...Mostly cloudy. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 70 to 83. East winds
-around 10 mph. Chance of rain 50 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 61 to
-72. East winds up to 10 mph. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 70 to 83.
-East winds 10 to 15 mph. Chance of rain 50 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-60 to 71. Northeast winds up to 10 mph. Chance of rain
+.THURSDAY...Breezy. Mostly cloudy with scattered showers. Highs
+66 to 83. Southeast winds 10 to 20 mph. Chance of rain
 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 70 to 82.
-Northeast winds up to 10 mph increasing to 10 to 15 mph in the
-afternoon. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Mostly cloudy with scattered showers. Lows
+61 to 73. Southeast winds 10 to 15 mph. Chance of rain
+50 percent. 
+.FRIDAY...Partly sunny with scattered showers. Highs 67 to 83.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 61 to
+72. Southeast winds around 10 mph. Chance of rain 50 percent. 
+.SATURDAY...Mostly cloudy with scattered showers. Highs 67 to 83.
+East winds 10 to 15 mph. Chance of rain 50 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 60 to 72. Northeast winds 10 to 20 mph. Chance of rain
+50 percent. 
+.SUNDAY...Breezy. Mostly cloudy with scattered showers. Highs
+67 to 83. East winds 10 to 20 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers. Lows 60 to
+71. Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.MONDAY...Mostly cloudy with scattered showers. Highs 65 to 82.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ032-290715-
+HIZ032-291930-
 East Honolulu-
 Including Hawaii Kai, Aina Haina, Kahala
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-82 to 89. East winds 15 to 25 mph. Chance of rain 20 percent. 
 .TONIGHT...Partly cloudy. Breezy. Lows around 78. East winds
-10 to 20 mph. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 83 to 89. East winds around 10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 78. Southeast winds around 10 mph. Chance of rain
-50 percent. 
-.WEDNESDAY...Mostly cloudy. Scattered showers in the morning.
-Highs 82 to 88. Southeast winds around 10 mph. Chance of rain
-50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 77. East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny. Scattered showers in the morning. Highs
-81 to 88. East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows
-around 77. East winds around 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Highs 81 to 88. East winds around 10 mph
-in the morning becoming light. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows around
-77. Light winds. Chance of rain 40 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 81 to 87.
-Light winds. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 77. Light winds. Chance of rain 40 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 81 to 87.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 40 percent. 
+15 to 25 mph decreasing to 10 to 15 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 83 to 89. Southeast winds 10 to
+15 mph. 
+.TUESDAY NIGHT...Mostly cloudy. Breezy. Scattered showers in the
+evening, then numerous showers after midnight. Lows around 78.
+Southeast winds 10 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 82 to 88.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
+around 77. Southeast winds 10 to 15 mph. Chance of rain
+70 percent. 
+.THURSDAY...Partly sunny. Numerous showers in the morning, then
+scattered showers in the afternoon. Highs 81 to 88. Southeast
+winds 10 to 15 mph. Chance of rain 70 percent. 
+.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Scattered showers. Lows around 77. East winds
+10 to 15 mph. Chance of rain 30 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 81 to 88.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Scattered showers. Lows around 77. East winds 10 to
+15 mph. Chance of rain 30 percent. 
+.SATURDAY...Mostly sunny with scattered showers. Highs 81 to 87.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.SATURDAY NIGHT...Breezy. Partly cloudy with scattered showers.
+Lows around 77. Northeast winds 15 to 20 mph. Chance of rain
+30 percent. 
+.SUNDAY...Breezy. Mostly sunny with scattered showers. Highs
+81 to 87. Northeast winds around 20 mph. Chance of rain
+30 percent. 
+.SUNDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
+evening, then scattered showers after midnight. Lows around 76.
+Northeast winds 15 to 20 mph. Chance of rain 30 percent. 
+.MONDAY...Breezy. Partly sunny with scattered showers. Highs
+80 to 87. Northeast winds 10 to 20 mph. Chance of rain
+40 percent. 
 
-HIZ033-290715-
+HIZ033-291930-
 Honolulu Metro-
 Including Honolulu, Waikiki
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-85 to 90. East winds 10 to 20 mph. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy in the evening then becoming mostly
-cloudy. Lows around 77. East winds 10 to 15 mph. 
-.TUESDAY...Mostly sunny. Highs 85 to 90. Southeast winds around
-10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 77. Light winds. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 84 to 89.
-Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 77. Light winds. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny with scattered showers in the morning,
-then mostly sunny in the afternoon. Highs around 86. East winds
-around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows
-around 76. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny in the morning then becoming mostly sunny.
-Highs around 86. East winds around 10 mph. 
-.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows around
-76. Light winds. Chance of rain 20 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs around 86.
-East winds around 10 mph. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows
-around 76. Light winds. Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 83 to 88.
-Light winds becoming east around 10 mph in the afternoon. Chance
-of rain 20 percent. 
-
-HIZ034-290715-
-Ewa Plain-
-Including Kapolei
-446 AM HST Mon Sep 28 2026
-
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Highs 85 to 91. East winds up to
-20 mph increasing to 15 to 20 mph in the afternoon. 
-.TONIGHT...Partly cloudy. Lows around 76. East winds 10 to
-15 mph. 
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows around 78. East winds 10 to 20 mph. 
 .TUESDAY...Mostly sunny. Highs 85 to 90. Southeast winds 10 to
 15 mph. 
-.TUESDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Scattered showers. Lows around 77. Southeast winds
-around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 84 to 89.
-Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Partly cloudy with scattered showers. Lows
-around 76. East winds around 10 mph. Chance of rain 50 percent. 
-.THURSDAY...Partly sunny with scattered showers in the morning,
-then mostly sunny with isolated showers in the afternoon. Highs
-84 to 89. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows
-around 75. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Scattered showers in the afternoon. Highs
-84 to 89. East winds around 10 mph. Chance of rain 30 percent. 
-.FRIDAY NIGHT...Partly cloudy. Lows around 75. Light winds. 
-.SATURDAY...Mostly sunny. Highs 84 to 89. East winds around
-10 mph. 
-.SATURDAY NIGHT...Mostly clear. Lows around 74. Light winds. 
-.SUNDAY...Mostly sunny. Highs 83 to 89. Light winds becoming east
-around 10 mph in the afternoon. 
+.TUESDAY NIGHT...Mostly cloudy. Breezy. Scattered showers in the
+evening, then numerous showers after midnight. Lows around 77.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY...Breezy. Mostly cloudy with numerous showers. Highs
+83 to 88. Southeast winds 15 to 20 mph. Chance of rain
+70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
+around 76. Southeast winds 10 to 15 mph. Chance of rain
+70 percent. 
+.THURSDAY...Mostly cloudy. Numerous showers in the morning, then
+scattered showers in the afternoon. Highs around 86. Southeast
+winds 10 to 15 mph. Chance of rain 70 percent. 
+.THURSDAY NIGHT...Partly cloudy. Scattered showers in the
+evening, then isolated showers after midnight. Lows around 76.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs around 86.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows around
+76. East winds around 10 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs around 86.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Breezy. Partly cloudy with isolated showers.
+Lows around 76. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 83 to
+88. Northeast winds 15 to 20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Breezy. Partly cloudy with isolated showers. Lows
+around 76. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.MONDAY...Mostly sunny with scattered showers. Highs 83 to 88.
+Northeast winds 10 to 15 mph. Chance of rain 30 percent. 
 
-HIZ006-290715-
+HIZ034-291930-
+Ewa Plain-
+Including Kapolei
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows around 76. East winds 10 to 20 mph. 
+.TUESDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+around 88. Southeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.TUESDAY NIGHT...Mostly cloudy. Breezy. Scattered showers in the
+evening, then numerous showers after midnight. Lows around 76.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 83 to 88.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
+around 76. Southeast winds 10 to 15 mph. Chance of rain
+70 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 84 to 89.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows
+around 76. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny. Isolated showers in the morning. Highs
+84 to 89. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows around
+75. East winds around 10 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny. Isolated showers in the morning. Highs
+84 to 89. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy. Isolated showers after midnight.
+Lows around 75. Northeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.SUNDAY...Mostly sunny. Isolated showers in the morning. Highs
+84 to 89. Northeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.SUNDAY NIGHT...Partly cloudy. Isolated showers after midnight.
+Lows around 75. Northeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 83 to 88.
+Northeast winds around 10 mph. Chance of rain 20 percent. 
+
+HIZ006-291930-
 Waianae Coast-
 Including Nanakuli, Waianae, Makaha
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Highs 87 to 94. East winds 15 to
-25 mph. 
-.TONIGHT...Partly cloudy. Breezy. Lows 71 to 79. East winds 10 to
-20 mph. 
-.TUESDAY...Mostly sunny. Highs 86 to 93. Southeast winds around
-10 mph. 
-.TUESDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Scattered showers. Lows 72 to 79. Southeast winds
-around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 84 to 91.
-Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Partly cloudy with scattered showers. Lows
-71 to 78. East winds around 10 mph in the evening becoming light.
-Chance of rain 50 percent. 
-.THURSDAY...Mostly sunny with scattered showers. Highs 85 to 91.
-Southeast winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 71 to
-78. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Highs 84 to 91. Southeast winds around
-10 mph. 
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows 71 to 79. East winds 10 to 25 mph. 
+.TUESDAY...Mostly sunny. Breezy. Isolated showers in the
+afternoon. Highs 86 to 93. Southeast winds 10 to 20 mph. Chance
+of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 71 to 79. Southeast winds 15 to 25 mph. Chance of rain
+50 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 84 to 91.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with numerous showers.
+Lows 72 to 78. Southeast winds 15 to 20 mph. Chance of rain
+70 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 84 to 91.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Partly cloudy. Scattered showers in the
+evening, then isolated showers after midnight. Lows 71 to 78.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+84 to 91. Southeast winds 10 to 15 mph. Chance of rain
+20 percent. 
 .FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
-78. Light winds. Chance of rain 20 percent. 
+77. East winds around 10 mph. Chance of rain 20 percent. 
 .SATURDAY...Mostly sunny with isolated showers. Highs 84 to 91.
-Northeast winds around 10 mph. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
-77. Light winds. Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 84 to 91.
-Light winds becoming northeast around 10 mph in the afternoon.
+East winds around 10 mph shifting to the south in the afternoon.
 Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
+77. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY...Mostly sunny with isolated showers. Highs 84 to 91.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
+77. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 83 to 91.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ007-290715-
+HIZ007-291930-
 Oahu North Shore-
 Including Waialua, Haleiwa, Pupukea
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-81 to 89. East winds 10 to 25 mph. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy. Breezy. Lows 71 to 77. East winds 10 to
-25 mph. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 82 to 89. Southeast winds around 10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 71 to
-77. Southeast winds up to 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 81 to 88.
-Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-71 to 77. East winds up to 10 mph. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny. Scattered showers in the morning, then
-isolated showers in the afternoon. Highs 81 to 88. East winds
-around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Partly cloudy. Lows 70 to 77. East winds up to
-10 mph. 
-.FRIDAY...Partly sunny. Scattered showers in the afternoon. Highs
-81 to 88. East winds around 10 mph. Chance of rain 30 percent. 
-.FRIDAY NIGHT...Partly cloudy with scattered showers. Lows 70 to
-77. Light winds. Chance of rain 40 percent. 
-.SATURDAY...Mostly sunny with scattered showers. Highs 81 to 87.
-Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Partly cloudy with scattered showers. Lows
-70 to 76. Northeast winds up to 10 mph. Chance of rain
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows 71 to 77. East winds 10 to 25 mph decreasing
+to 10 to 15 mph after midnight. 
+.TUESDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 83 to 90. Southeast
+winds 10 to 15 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 71 to 77. Southeast winds 10 to 20 mph. Chance of rain
 50 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 81 to 88.
+Southeast winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 71 to 77. Southeast winds 10 to 20 mph. Chance of rain
+50 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 81 to 88.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
+77. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 81 to 88.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Partly cloudy with scattered showers. Lows 70 to
+77. East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY...Mostly sunny with scattered showers. Highs 81 to 87.
+East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Partly cloudy with scattered showers. Lows
+70 to 76. Northeast winds 10 to 15 mph. Chance of rain
+40 percent. 
 .SUNDAY...Mostly sunny with scattered showers. Highs 80 to 87.
-Northeast winds up to 10 mph increasing to 10 to 15 mph in the
-afternoon. Chance of rain 40 percent. 
+Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Partly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows 70 to 76. Northeast
+winds 10 to 15 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny in the morning then becoming mostly sunny.
+Scattered showers. Highs 79 to 86. Northeast winds 10 to 15 mph.
+Chance of rain 50 percent. 
 
-HIZ035-290715-
+HIZ035-291930-
 Koolau Windward-
 Including Kahuku, Laie, Punaluu, Kahaluu, Ahuimanu
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Scattered showers in the morning.
-Highs 77 to 87. East winds 10 to 25 mph. Chance of rain
+.TONIGHT...Breezy. Mostly cloudy with isolated showers. Lows
+69 to 79. East winds 10 to 25 mph. Chance of rain 20 percent. 
+.TUESDAY...Partly sunny with isolated showers. Highs 77 to 88.
+Southeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 69 to 79. Southeast winds 10 to 20 mph. Chance of rain
+50 percent. 
+.WEDNESDAY...Breezy. Mostly cloudy with numerous showers. Highs
+76 to 86. Southeast winds 15 to 20 mph. Chance of rain
+70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
+69 to 79. Southeast winds 10 to 15 mph. Chance of rain
+70 percent. 
+.THURSDAY...Mostly cloudy. Numerous showers in the morning, then
+scattered showers in the afternoon. Highs 76 to 86. Southeast
+winds 10 to 15 mph. Chance of rain 70 percent. 
+.THURSDAY NIGHT...Mostly cloudy with scattered showers in the
+evening, then partly cloudy with isolated showers after midnight.
+Lows 69 to 78. East winds 10 to 15 mph. Chance of rain
 40 percent. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 69 to 79. East winds 10 to
-25 mph. 
-.TUESDAY...Mostly cloudy. Highs 77 to 88. East winds 10 to
-15 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 69 to
-79. Southeast winds 10 to 15 mph. Chance of rain 40 percent. 
-.WEDNESDAY...Mostly cloudy with scattered showers. Highs 76 to
-86. Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-69 to 79. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.THURSDAY...Mostly cloudy. Scattered showers in the morning, then
-isolated showers in the afternoon. Highs 76 to 86. East winds
-10 to 15 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 69 to
-78. East winds around 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 76 to 86. East winds
-around 10 mph. Chance of rain 40 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 76 to 86.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 68 to
-78. East winds up to 10 mph in the evening becoming light. Chance
-of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 76 to 86.
-East winds up to 10 mph. Chance of rain 50 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-68 to 77. Light winds. Chance of rain 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 75 to 85.
-Light winds becoming northeast up to 10 mph in the afternoon.
-Chance of rain 50 percent. 
-
-HIZ036-290715-
-Koolau Leeward-
-Including Nuuanu, Manoa, Palolo
-446 AM HST Mon Sep 28 2026
-
-.TODAY...Sunny and windy. Scattered showers in the morning. Highs
-77 to 87. East winds 15 to 30 mph. Chance of rain 40 percent. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 68 to 77. East winds 10 to
-25 mph. 
-.TUESDAY...Partly sunny. Highs 77 to 88. Southeast winds 10 to
-15 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 68 to
-77. Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Mostly cloudy with scattered showers. Highs 76 to
-86. Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-67 to 77. East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY...Mostly cloudy with scattered showers. Highs 76 to 86.
-East winds 10 to 15 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 67 to
-76. East winds around 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 76 to 86. East winds
-around 10 mph. Chance of rain 40 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 67 to
-76. East winds up to 10 mph. Chance of rain 50 percent. 
+78. East winds 10 to 15 mph. Chance of rain 50 percent. 
 .SATURDAY...Partly sunny with scattered showers. Highs 75 to 86.
 East winds 10 to 15 mph. Chance of rain 50 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-66 to 75. Northeast winds up to 10 mph. Chance of rain
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 68 to 78. Northeast winds 10 to 20 mph. Chance of rain
 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 75 to 86.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 50 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+75 to 85. East winds 15 to 20 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers. Lows 68 to
+78. Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 74 to 85.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ009-290715-
+HIZ036-291930-
+Koolau Leeward-
+Including Nuuanu, Manoa, Palolo
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Windy. Mostly cloudy with isolated showers. Lows 67 to
+77. East winds 10 to 30 mph. Chance of rain 20 percent. 
+.TUESDAY...Partly sunny with isolated showers. Highs 76 to 88.
+East winds around 10 mph shifting to the southeast in the
+afternoon. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with numerous showers.
+Lows 68 to 77. Southeast winds 10 to 25 mph. Chance of rain
+70 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Numerous showers in the
+morning, then frequent showers in the afternoon. Highs 74 to 86.
+South winds 15 to 25 mph. Chance of rain 80 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy. Breezy. Frequent showers in the
+evening, then numerous showers after midnight. Lows 68 to 76.
+Southeast winds 10 to 20 mph. Chance of rain 80 percent. 
+.THURSDAY...Mostly cloudy with numerous showers. Highs 73 to 86.
+Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
+.THURSDAY NIGHT...Partly cloudy. Scattered showers in the
+evening, then isolated showers after midnight. Lows 67 to 76.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 73 to 86.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 66 to
+76. East winds 10 to 15 mph. Chance of rain 50 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 73 to 86.
+East winds 10 to 15 mph. Chance of rain 50 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 67 to 76. Northeast winds 10 to 20 mph. Chance of rain
+50 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+73 to 86. Northeast winds 15 to 20 mph. Chance of rain
+50 percent. 
+.SUNDAY NIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Breezy. Scattered showers. Lows 67 to 75. Northeast winds
+10 to 20 mph. Chance of rain 50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 72 to 85.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
+
+HIZ009-291930-
 Olomana-
 Including Kailua, Kaneohe, Waimanalo
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-80 to 86. East winds up to 20 mph increasing to 10 to 20 mph in
-the afternoon. Chance of rain 20 percent. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 73 to 79. East winds 10 to
-20 mph. 
-.TUESDAY...Partly sunny. Highs 80 to 87. East winds around
-10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 72 to
-78. Southeast winds around 10 mph in the evening becoming light.
-Chance of rain 50 percent. 
-.WEDNESDAY...Mostly cloudy. Scattered showers in the morning.
-Highs 80 to 85. Southeast winds around 10 mph. Chance of rain
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows 72 to 79. East winds 10 to 20 mph. 
+.TUESDAY...Mostly sunny. Isolated showers in the morning. Highs
+80 to 87. Southeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 72 to 78. Southeast winds 10 to 20 mph. Chance of rain
 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-72 to 78. East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny. Scattered showers in the morning. Highs
-79 to 85. East winds around 10 mph in the morning becoming light.
-Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 72 to
-78. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny with isolated showers. Highs 79 to 85.
-East winds around 10 mph in the morning becoming light. Chance of
-rain 20 percent. 
+.WEDNESDAY...Mostly cloudy. Breezy. Scattered showers in the
+morning, then numerous showers in the afternoon. Highs 79 to 85.
+South winds 15 to 20 mph. Chance of rain 70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with numerous showers. Lows
+72 to 78. Southeast winds 10 to 15 mph. Chance of rain
+70 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 78 to 85.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Scattered showers. Lows 72 to 78. East winds 10 to
+15 mph. Chance of rain 40 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 78 to 85.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 72 to
-78. Light winds. Chance of rain 40 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 79 to 85.
-Light winds. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-71 to 77. Light winds. Chance of rain 40 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 79 to 84.
-Light winds. Chance of rain 40 percent. 
+78. East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY...Partly sunny in the morning then becoming mostly
+sunny. Scattered showers. Highs 78 to 85. East winds around
+15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 72 to 77. Northeast winds 15 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+78 to 84. Northeast winds 15 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY NIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Breezy. Scattered showers. Lows 71 to 77. Northeast winds
+15 to 20 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 77 to 84.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ010-290715-
+HIZ010-291930-
 Central Oahu-
 Including Mililani, Wahiawa, Pearl City
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-81 to 88. East winds 10 to 25 mph. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy. Breezy. Lows 70 to 76. East winds 10 to
-25 mph. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 81 to 89. Southeast winds around 10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-around 73. Light winds. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 80 to 86.
-Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-70 to 75. Light winds. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny with scattered showers. Highs 80 to 86.
-East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Isolated showers. Lows 69 to 74. Light winds.
-Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Scattered showers in the afternoon. Highs
-80 to 87. East winds around 10 mph. Chance of rain 30 percent. 
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows 70 to 76. East winds 10 to 25 mph. 
+.TUESDAY...Partly sunny. Breezy. Isolated showers in the
+afternoon. Highs 82 to 89. Southeast winds 10 to 20 mph. Chance
+of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Mostly cloudy with numerous showers.
+Lows around 73. Southeast winds 15 to 25 mph. Chance of rain
+70 percent. 
+.WEDNESDAY...Breezy. Mostly cloudy with numerous showers. Highs
+79 to 86. Southeast winds 15 to 20 mph. Chance of rain
+70 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy. Numerous showers in the
+evening, then scattered showers after midnight. Lows 70 to 75.
+Southeast winds 10 to 15 mph. Chance of rain 70 percent. 
+.THURSDAY...Mostly cloudy with scattered showers. Highs 80 to 86.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Partly cloudy. Isolated showers in the evening.
+Lows around 72. East winds 10 to 15 mph. Chance of rain
+20 percent. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+80 to 86. East winds 10 to 15 mph. Chance of rain 20 percent. 
 .FRIDAY NIGHT...Partly cloudy. Scattered showers in the evening,
-then isolated showers after midnight. Lows 69 to 74. Light winds.
-Chance of rain 40 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 80 to 86.
+then isolated showers after midnight. Lows 69 to 74. East winds
+around 10 mph. Chance of rain 40 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 79 to 86.
 East winds around 10 mph. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows
-around 71. Light winds. Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 79 to 86.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows around 71. Northeast
+winds 10 to 15 mph. Chance of rain 40 percent. 
+.SUNDAY...Mostly sunny. Scattered showers in the morning, then
+isolated showers in the afternoon. Highs 79 to 86. Northeast
+winds 10 to 15 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Partly cloudy with isolated showers. Lows around
+71. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny in the morning then becoming partly sunny.
+Scattered showers. Highs 78 to 85. Northeast winds 10 to 15 mph.
+Chance of rain 40 percent. 
 
-HIZ011-290715-
+HIZ011-291930-
 Waianae Mountains-
 Including Makakilo
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Highs 80 to 94. East winds 15 to
-25 mph. 
-.TONIGHT...Partly cloudy. Breezy. Lows 66 to 76. East winds 10 to
-20 mph. 
-.TUESDAY...Mostly sunny. Highs 78 to 93. Southeast winds around
-10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 67 to
-76. Southeast winds around 10 mph. Chance of rain 50 percent. 
-.WEDNESDAY...Partly sunny with scattered showers. Highs 76 to 91.
-Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
-66 to 76. East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY...Partly sunny with scattered showers. Highs 76 to 91.
-East winds around 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Lows 65 to 75. East winds around 10 mph. 
-.FRIDAY...Partly sunny. Scattered showers in the afternoon. Highs
-76 to 91. East winds around 10 mph. Chance of rain 30 percent. 
-.FRIDAY NIGHT...Partly cloudy with scattered showers. Lows 65 to
-75. East winds around 10 mph in the evening becoming light.
-Chance of rain 40 percent. 
-.SATURDAY...Mostly sunny with scattered showers. Highs 76 to 91.
-Northeast winds around 10 mph. Chance of rain 30 percent. 
-.SATURDAY NIGHT...Partly cloudy with scattered showers. Lows
-65 to 74. Northeast winds up to 10 mph in the evening becoming
-light. Chance of rain 40 percent. 
-.SUNDAY...Mostly sunny with scattered showers. Highs 76 to 91.
-Light winds becoming northeast 10 to 15 mph in the afternoon.
-Chance of rain 30 percent. 
+.TONIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Lows 66 to 76. East winds 10 to 25 mph. 
+.TUESDAY...Breezy. Partly sunny in the morning, then mostly sunny
+with isolated showers in the afternoon. Highs 78 to 93. Southeast
+winds 10 to 20 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy. Breezy. Scattered showers in the
+evening, then numerous showers after midnight. Lows 66 to 76.
+Southeast winds 15 to 25 mph. Chance of rain 70 percent. 
+.WEDNESDAY...Breezy. Mostly cloudy with numerous showers. Highs
+76 to 91. Southeast winds 15 to 25 mph. Chance of rain
+70 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with numerous showers.
+Lows 66 to 75. Southeast winds 10 to 20 mph. Chance of rain
+70 percent. 
+.THURSDAY...Breezy. Mostly cloudy with numerous showers. Highs
+76 to 91. Southeast winds 10 to 20 mph. Chance of rain
+70 percent. 
+.THURSDAY NIGHT...Mostly cloudy with scattered showers in the
+evening, then partly cloudy with isolated showers after midnight.
+Lows 66 to 75. East winds 10 to 15 mph. Chance of rain
+40 percent. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+76 to 91. Southeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 65 to
+75. East winds around 10 mph. Chance of rain 40 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 76 to 91.
+East winds around 10 mph shifting to the southeast in the
+afternoon. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 65 to 74. Northeast winds 10 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+76 to 91. Northeast winds 10 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
+evening, then scattered showers after midnight. Lows 65 to 74.
+Northeast winds 10 to 20 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 76 to 90.
+Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
 
-HIZ037-290715-
+HIZ037-291930-
 Molokai Windward-
 Including Kalaupapa, Halawa Valley
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-73 to 85. East winds 10 to 25 mph. Chance of rain 20 percent. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 62 to 77. East winds 10 to
-25 mph. 
-.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
-73 to 86. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy with isolated showers. Lows 62 to
-77. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Partly sunny. Isolated showers in the morning. Highs
-73 to 85. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with isolated showers. Lows
-62 to 77. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.THURSDAY...Partly sunny. Breezy. Highs 72 to 84. East winds
-10 to 20 mph. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 61 to 77. East winds 10 to
-15 mph. 
-.FRIDAY...Partly sunny. Highs 72 to 84. East winds 10 to 15 mph. 
+.TONIGHT...Breezy. Partly cloudy with isolated showers. Lows
+61 to 77. East winds 10 to 25 mph. Chance of rain 20 percent. 
+.TUESDAY...Mostly sunny. Isolated showers in the morning. Highs
+69 to 86. Southeast winds up to 15 mph shifting to the east in
+the afternoon. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Isolated showers. Lows 62 to 77. Southeast winds
+10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny in the morning then becoming partly
+sunny. Scattered showers. Highs 69 to 85. Southeast winds 10 to
+15 mph. Chance of rain 50 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+62 to 77. Southeast winds 10 to 15 mph. Chance of rain
+40 percent. 
+.THURSDAY...Mostly sunny with scattered showers. Highs 68 to 85.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 61 to
+77. East winds around 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 68 to 84.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 61 to
-76. East winds 10 to 15 mph. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 72 to 83.
-East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-60 to 76. East winds 10 to 15 mph. Chance of rain 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 72 to 83.
-Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
+76. East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY...Breezy. Partly sunny with scattered showers. Highs
+67 to 83. East winds 15 to 20 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 60 to 76. East winds 15 to 25 mph. Chance of rain
+40 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+67 to 83. East winds 20 to 25 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 60 to 76. Northeast winds 15 to 25 mph. Chance of rain
+50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 67 to 83.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ038-290715-
+HIZ038-291930-
 Molokai Southeast-
 Including Pukoo
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and windy. Isolated showers in the morning. Highs
-80 to 86. East winds 15 to 30 mph. Chance of rain 20 percent. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 62 to 78. East winds 10 to
-25 mph. 
-.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
-80 to 86. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy. Lows 62 to 78. East winds 10 to
-15 mph. 
-.WEDNESDAY...Partly sunny. Isolated showers in the morning. Highs
-79 to 85. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 62 to 77. East winds 10 to
-15 mph. 
-.THURSDAY...Partly sunny. Breezy. Highs 79 to 84. East winds
-15 to 20 mph. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 61 to 77. East winds 10 to
-15 mph. 
-.FRIDAY...Partly sunny. Highs 79 to 84. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 61 to
+.TONIGHT...Breezy. Partly cloudy with isolated showers. Lows
+61 to 78. East winds 10 to 25 mph. Chance of rain 20 percent. 
+.TUESDAY...Mostly sunny. Isolated showers in the morning. Highs
+68 to 86. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 62 to
+78. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+68 to 86. Southeast winds 10 to 15 mph. Chance of rain
+40 percent. 
+.WEDNESDAY NIGHT...Partly cloudy with scattered showers. Lows
+62 to 77. East winds 10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY...Mostly sunny with scattered showers. Highs 67 to 85.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 61 to
+77. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny with isolated showers. Highs 67 to 84.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 60 to
 77. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 79 to 84.
+.SATURDAY...Partly sunny with scattered showers. Highs 66 to 84.
 East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-61 to 77. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 78 to 84.
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 60 to 77. Northeast winds 15 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+66 to 84. Northeast winds 15 to 25 mph. Chance of rain
+40 percent. 
+.SUNDAY NIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Breezy. Scattered showers. Lows 60 to 76. Northeast winds
+10 to 25 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 66 to 83.
 Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
 
-HIZ039-290715-
+HIZ039-291930-
 Molokai North-
 Including Hoolehua
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and windy. Highs 77 to 88. East winds 10 to
-30 mph. 
-.TONIGHT...Partly cloudy. Breezy. Lows 67 to 78. East winds 10 to
-25 mph decreasing to 10 to 15 mph after midnight. 
-.TUESDAY...Mostly sunny. Highs 78 to 88. East winds 10 to 15 mph.
-.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 68 to
-79. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Partly sunny. Scattered showers in the morning.
-Highs 77 to 87. East winds 10 to 15 mph. Chance of rain
+.TONIGHT...Partly cloudy. Windy. Lows 67 to 78. East winds 10 to
+30 mph decreasing to 10 to 20 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 76 to 88. Southeast winds 10 to
+15 mph. 
+.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 67 to
+78. Southeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Partly sunny with scattered showers. Highs 76 to 87.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+67 to 78. Southeast winds 10 to 15 mph. Chance of rain
 40 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Isolated showers. Lows 67 to 78. East winds 10 to
-15 mph. Chance of rain 20 percent. 
-.THURSDAY...Breezy. Mostly sunny with isolated showers in the
-morning, then partly sunny in the afternoon. Highs 77 to 86. East
-winds 15 to 20 mph. Chance of rain 20 percent. 
-.THURSDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Lows 67 to 77. East winds 10 to 15 mph. 
-.FRIDAY...Partly sunny in the morning then becoming mostly sunny.
-Breezy. Highs 77 to 85. East winds 10 to 20 mph. 
-.FRIDAY NIGHT...Partly cloudy with scattered showers. Lows 66 to
-77. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY...Breezy. Mostly sunny with scattered showers. Highs
-76 to 85. Northeast winds 10 to 20 mph. Chance of rain
-40 percent. 
-.SATURDAY NIGHT...Breezy. Partly cloudy with scattered showers.
-Lows 66 to 77. East winds 10 to 20 mph. Chance of rain
-40 percent. 
-.SUNDAY...Breezy. Mostly sunny with scattered showers. Highs
-76 to 84. Northeast winds 10 to 20 mph. Chance of rain
-40 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 74 to 86.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 67 to
+78. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny. Breezy. Isolated showers in the morning.
+Highs 74 to 85. East winds 10 to 20 mph. Chance of rain
+20 percent. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 67 to
+77. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY...Breezy. Mostly sunny with isolated showers. Highs
+73 to 85. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Breezy. Partly cloudy with isolated showers.
+Lows 66 to 77. East winds 15 to 25 mph. Chance of rain
+20 percent. 
+.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 72 to
+84. Northeast winds 20 to 25 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Breezy. Partly cloudy with isolated showers. Lows
+66 to 77. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 72 to 84.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ040-290715-
+HIZ040-291930-
 Molokai West-
 Including Kepuhi
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Highs 83 to 89. East winds 10 to
-25 mph with gusts to 45 mph. 
 .TONIGHT...Partly cloudy. Breezy. Lows around 76. East winds
-10 to 25 mph decreasing to 10 to 15 mph after midnight. 
-.TUESDAY...Mostly sunny. Highs 83 to 89. East winds around
+10 to 25 mph decreasing to up to 15 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 84 to 89. Southeast winds up to
 10 mph. 
-.TUESDAY NIGHT...Partly cloudy with scattered showers. Lows
-around 77. Southeast winds around 10 mph. Chance of rain
+.TUESDAY NIGHT...Partly cloudy with isolated showers in the
+evening, then mostly cloudy with scattered showers after
+midnight. Lows around 77. Southeast winds 10 to 15 mph. Chance of
+rain 40 percent. 
+.WEDNESDAY...Partly sunny with scattered showers. Highs 82 to 88.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+around 77. Southeast winds 10 to 15 mph. Chance of rain
 40 percent. 
-.WEDNESDAY...Mostly sunny with scattered showers in the morning,
-then partly sunny in the afternoon. Highs 82 to 88. Southeast
-winds 10 to 15 mph. Chance of rain 40 percent. 
-.WEDNESDAY NIGHT...Partly cloudy with scattered showers. Lows
-around 76. East winds 10 to 15 mph. Chance of rain 30 percent. 
-.THURSDAY...Mostly sunny. Isolated showers in the morning. Highs
-81 to 88. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.THURSDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Lows around 76. East winds 10 to 15 mph. 
-.FRIDAY...Mostly sunny. Highs 81 to 87. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Partly cloudy. Isolated showers in the evening,
-then scattered showers after midnight. Lows around 76. East winds
-10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 82 to 88.
+Southeast winds around 10 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows
+around 76. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny. Isolated showers in the morning. Highs
+81 to 87. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows around
+76. East winds 10 to 15 mph. Chance of rain 20 percent. 
 .SATURDAY...Breezy. Mostly sunny with isolated showers. Highs
-81 to 87. Northeast winds 10 to 20 mph. Chance of rain
+81 to 87. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Breezy. Mostly clear with isolated showers.
+Lows around 76. Northeast winds 15 to 20 mph. Chance of rain
 20 percent. 
-.SATURDAY NIGHT...Partly cloudy. Isolated showers in the evening,
-then scattered showers after midnight. Lows around 76. Northeast
-winds 10 to 15 mph. Chance of rain 30 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 80 to 86.
+.SUNDAY...Breezy. Sunny with isolated showers. Highs 80 to 86.
+Northeast winds 15 to 20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Lows around 76. Northeast
+winds 10 to 20 mph. 
+.MONDAY...Mostly sunny with isolated showers. Highs 80 to 86.
 Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ041-290715-
+HIZ041-291930-
 Molokai Leeward South-
 Including Kaunakakai, Maunaloa
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Highs 78 to 91. East winds up to
-25 mph increasing to 10 to 25 mph in the afternoon. 
-.TONIGHT...Partly cloudy. Lows 63 to 78. East winds 10 to 15 mph.
-.TUESDAY...Mostly sunny. Highs 78 to 92. East winds around
-10 mph. 
+.TONIGHT...Partly cloudy. Breezy. Lows 63 to 78. East winds up to
+20 mph shifting to the northeast up to 10 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 72 to 92. Light winds becoming
+south around 10 mph in the afternoon. 
 .TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 64 to
-78. East winds up to 10 mph in the evening becoming light. Chance
-of rain 20 percent. 
-.WEDNESDAY...Mostly sunny with scattered showers in the morning,
-then partly sunny in the afternoon. Highs 78 to 91. East winds up
-to 10 mph. Chance of rain 30 percent. 
-.WEDNESDAY NIGHT...Partly cloudy with isolated showers. Lows
-64 to 78. East winds around 10 mph. Chance of rain 20 percent. 
-.THURSDAY...Mostly sunny. Isolated showers in the morning. Highs
-77 to 90. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.THURSDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Lows 63 to 77. East winds around 10 mph. 
-.FRIDAY...Mostly sunny. Highs 77 to 90. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Partly cloudy. Scattered showers in the evening,
-then isolated showers after midnight. Lows 63 to 77. East winds
-up to 10 mph. Chance of rain 40 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 76 to 90.
+78. Southeast winds around 10 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Partly sunny with scattered showers. Highs 72 to 91.
+Southeast winds 10 to 15 mph. Chance of rain 50 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+64 to 78. Southeast winds around 10 mph. Chance of rain
+40 percent. 
+.THURSDAY...Mostly sunny in the morning then becoming partly
+sunny. Scattered showers. Highs 71 to 91. Southeast winds around
+10 mph. Chance of rain 40 percent. 
+.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 63 to
+77. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY...Mostly sunny. Highs 71 to 90. East winds 10 to 15 mph. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 63 to
+77. East winds around 10 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 70 to 90.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Breezy. Partly cloudy with isolated showers.
+Lows 63 to 77. East winds 10 to 20 mph. Chance of rain
+20 percent. 
+.SUNDAY...Breezy. Sunny with isolated showers. Highs 70 to 89.
+East winds 15 to 20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Isolated showers after
+midnight. Lows 62 to 77. Northeast winds 10 to 20 mph. Chance of
+rain 20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 69 to 89.
 Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 63 to
-77. Northeast winds up to 10 mph. Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 76 to 89.
-Northeast winds up to 10 mph increasing to 10 to 15 mph in the
-afternoon. Chance of rain 20 percent. 
 
-HIZ042-290715-
+HIZ042-291930-
 Lanai Windward-
 Including Shipwreck Beach
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Highs 79 to 87. Northeast winds up to
-25 mph. 
-.TONIGHT...Mostly clear. Breezy. Lows 67 to 77. Northeast winds
-up to 25 mph decreasing to up to 15 mph after midnight. 
-.TUESDAY...Mostly sunny. Highs 79 to 87. East winds 10 to 15 mph.
-.TUESDAY NIGHT...Partly cloudy. Lows 67 to 78. East winds 10 to
+.TONIGHT...Partly cloudy. Breezy. Lows 67 to 77. Northeast winds
+10 to 20 mph shifting to the north 10 to 15 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 78 to 87. Northeast winds up to
+10 mph. 
+.TUESDAY NIGHT...Partly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows 67 to 78. Southeast
+winds 10 to 15 mph. Chance of rain 30 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers. Highs 77 to 85.
+South winds 10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy in the evening then becoming
+mostly cloudy. Scattered showers. Lows 67 to 78. Southeast winds
+10 to 15 mph shifting to the northeast after midnight. Chance of
+rain 40 percent. 
+.THURSDAY...Partly sunny in the morning then becoming mostly
+sunny. Scattered showers. Highs 77 to 85. Southeast winds around
+10 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Mostly clear. Lows 67 to 77. East winds around
+10 mph. 
+.FRIDAY...Sunny. Highs 76 to 85. East winds around 10 mph. 
+.FRIDAY NIGHT...Partly cloudy. Lows 66 to 77. Northeast winds
+around 10 mph. 
+.SATURDAY...Mostly sunny. Highs 76 to 84. East winds 10 to
 15 mph. 
-.WEDNESDAY...Mostly sunny. Isolated showers in the morning. Highs
-78 to 86. Southeast winds 10 to 15 mph. Chance of rain
-20 percent. 
-.WEDNESDAY NIGHT...Mostly clear. Lows 67 to 77. East winds 10 to
-15 mph. 
-.THURSDAY...Mostly sunny. Breezy. Highs 77 to 86. Northeast winds
-10 to 20 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 66 to 77. Northeast winds
+.SATURDAY NIGHT...Mostly clear. Lows 66 to 77. Northeast winds
 10 to 15 mph. 
-.FRIDAY...Mostly sunny. Highs 77 to 86. Northeast winds 10 to
-15 mph. 
-.FRIDAY NIGHT...Mostly clear. Lows 66 to 77. Northeast winds
-10 to 15 mph. 
-.SATURDAY...Breezy. Mostly sunny with isolated showers. Highs
-77 to 85. Northeast winds 10 to 20 mph. Chance of rain
-20 percent. 
-.SATURDAY NIGHT...Mostly clear. Lows 66 to 76. Northeast winds
-10 to 15 mph. 
-.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 77 to
-85. Northeast winds 10 to 15 mph increasing to 15 to 25 mph with
-gusts to 45 mph in the afternoon. Chance of rain 20 percent. 
+.SUNDAY...Sunny and breezy. Highs 76 to 84. East winds 10 to
+20 mph. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Lows 66 to 77. Northeast
+winds 10 to 20 mph. 
+.MONDAY...Sunny. Highs 76 to 84. Northeast winds 10 to 15 mph. 
 
-HIZ043-290715-
+HIZ043-291930-
 Lanai Leeward-
 Including Kaumalapau Harbor
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and breezy. Highs 82 to 88. Northeast winds up to
-15 mph shifting to the southwest in the afternoon. 
-.TONIGHT...Mostly clear. Breezy. Lows 72 to 78. Northeast winds
-up to 20 mph becoming around 10 mph after midnight. 
-.TUESDAY...Mostly sunny. Highs 82 to 88. Southeast winds 10 to
+.TONIGHT...Partly cloudy. Lows 72 to 78. Northeast winds 10 to
 15 mph. 
-.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 73 to
-78. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Mostly sunny. Isolated showers in the morning. Highs
-81 to 87. Southeast winds 10 to 15 mph. Chance of rain
+.TUESDAY...Mostly sunny. Highs 82 to 88. Light winds becoming
+southwest 10 to 15 mph in the afternoon. 
+.TUESDAY NIGHT...Partly cloudy with isolated showers in the
+evening, then mostly cloudy with scattered showers after
+midnight. Lows 73 to 78. Southeast winds 10 to 15 mph. Chance of
+rain 30 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers. Highs 81 to 87.
+South winds around 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy in the evening then becoming
+mostly cloudy. Scattered showers. Lows 72 to 78. Southeast winds
+10 to 15 mph. Chance of rain 40 percent. 
+.THURSDAY...Partly sunny in the morning then becoming mostly
+sunny. Scattered showers. Highs 80 to 86. Southeast winds 10 to
+15 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Mostly clear. Isolated showers in the evening.
+Lows 72 to 77. East winds around 10 mph. Chance of rain
 20 percent. 
-.WEDNESDAY NIGHT...Mostly clear with isolated showers. Lows 72 to
-78. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.THURSDAY...Mostly sunny. Highs 81 to 87. East winds 10 to
-15 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 71 to 77. East winds 10 to
-15 mph. 
-.FRIDAY...Mostly sunny. Highs 80 to 86. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Mostly clear. Lows 71 to 77. East winds 10 to
-15 mph. 
-.SATURDAY...Breezy. Mostly sunny with isolated showers. Highs
-80 to 86. Northeast winds 10 to 20 mph. Chance of rain
+.FRIDAY...Sunny. Highs 80 to 86. Southeast winds around 10 mph in
+the morning becoming light. 
+.FRIDAY NIGHT...Partly cloudy. Lows 71 to 77. Light winds
+becoming northeast around 10 mph after midnight. 
+.SATURDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 80 to 86. Southeast winds around 10 mph. Chance of rain
 20 percent. 
 .SATURDAY NIGHT...Mostly clear. Lows 71 to 77. Northeast winds
 10 to 15 mph. 
-.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 80 to
-86. Northeast winds 10 to 15 mph increasing to 15 to 25 mph in
-the afternoon. Chance of rain 20 percent. 
+.SUNDAY...Sunny and breezy. Isolated showers in the afternoon.
+Highs 80 to 86. East winds 10 to 20 mph. Chance of rain
+20 percent. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Lows 71 to 77. Northeast
+winds 10 to 20 mph. 
+.MONDAY...Sunny. Highs 79 to 85. East winds around 10 mph
+shifting to the south in the afternoon. 
 
-HIZ044-290715-
+HIZ044-291930-
 Lanai South-
 Including Manele
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny. Highs around 83. Light winds becoming southwest
-around 10 mph in the afternoon. 
-.TONIGHT...Mostly clear. Lows around 76. Light winds becoming
-east up to 15 mph after midnight. 
-.TUESDAY...Mostly sunny. Breezy. Highs 80 to 85. East winds
-around 10 mph shifting to the southeast 15 to 20 mph in the
-afternoon. 
-.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows around
-76. Southeast winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Mostly sunny. Isolated showers in the morning. Highs
-around 81. Southeast winds 10 to 15 mph. Chance of rain
-20 percent. 
-.WEDNESDAY NIGHT...Mostly clear. Lows 73 to 78. East winds around
-10 mph. 
-.THURSDAY...Mostly sunny. Highs around 81. East winds around
-10 mph. 
+.TONIGHT...Partly cloudy. Lows around 76. Southeast winds 10 to
+15 mph decreasing to up to 10 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs around 82. Light winds becoming
+southeast 10 to 15 mph in the afternoon. 
+.TUESDAY NIGHT...Partly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows around 76. Southeast
+winds 10 to 15 mph. Chance of rain 30 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers. Highs 79 to 84.
+South winds 10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy in the evening then becoming
+mostly cloudy. Scattered showers. Lows around 76. Southeast winds
+10 to 15 mph. Chance of rain 40 percent. 
+.THURSDAY...Partly sunny with scattered showers in the morning,
+then mostly sunny with isolated showers in the afternoon. Highs
+around 81. Southeast winds around 10 mph. Chance of rain
+30 percent. 
 .THURSDAY NIGHT...Mostly clear. Lows 73 to 78. East winds around
 10 mph. 
-.FRIDAY...Mostly sunny. Highs around 81. East winds around
-10 mph. 
-.FRIDAY NIGHT...Mostly clear. Lows around 75. East winds around
-10 mph in the evening becoming light. 
-.SATURDAY...Sunny with isolated showers. Highs 78 to 83. East
-winds 10 to 15 mph. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Mostly clear. Lows 72 to 77. Northeast winds
+.FRIDAY...Sunny. Highs around 81. Southeast winds around 10 mph
+shifting to the south in the afternoon. 
+.FRIDAY NIGHT...Mostly clear. Lows around 75. Light winds. 
+.SATURDAY...Mostly sunny. Highs around 81. East winds around
+10 mph shifting to the south in the afternoon. 
+.SATURDAY NIGHT...Mostly clear. Lows around 75. Northeast winds
 10 to 15 mph. 
-.SUNDAY...Breezy. Sunny with isolated showers. Highs around 81.
-Northeast winds 10 to 15 mph shifting to the north 15 to 25 mph
-with gusts to 45 mph in the afternoon. Chance of rain 20 percent.
+.SUNDAY...Sunny. Highs around 81. East winds 10 to 15 mph
+shifting to the south in the afternoon. 
+.SUNDAY NIGHT...Mostly clear. Lows 72 to 77. Northeast winds
+10 to 15 mph. 
+.MONDAY...Sunny. Highs around 80. East winds around 10 mph in the
+morning becoming light. 
 
-HIZ015-290715-
+HIZ015-291930-
 Lanai Mauka-
 Including Lanai City
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny. Highs 79 to 86. Light winds becoming west up to
-10 mph in the afternoon. 
-.TONIGHT...Mostly clear. Lows 69 to 74. North winds up to 10 mph.
-.TUESDAY...Mostly sunny. Breezy. Highs 79 to 85. Southeast winds
-around 10 mph increasing to 15 to 20 mph in the afternoon. 
-.TUESDAY NIGHT...Partly cloudy with isolated showers. Lows 69 to
-74. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Mostly sunny. Breezy. Isolated showers in the
-morning. Highs 78 to 84. Southeast winds 15 to 20 mph. Chance of
-rain 20 percent. 
-.WEDNESDAY NIGHT...Mostly clear. Lows around 71. East winds
-around 10 mph. 
-.THURSDAY...Mostly sunny. Highs 77 to 84. Northeast winds 10 to
-15 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 68 to 73. Northeast winds
-around 10 mph. 
-.FRIDAY...Mostly sunny. Highs 77 to 83. Northeast winds 10 to
-15 mph. 
-.FRIDAY NIGHT...Mostly clear. Lows 68 to 73. Northeast winds
-around 10 mph. 
-.SATURDAY...Mostly sunny. Breezy. Isolated showers in the
-morning, then scattered showers in the afternoon. Highs 77 to 83.
-East winds 10 to 15 mph shifting to the northeast 15 to 25 mph in
-the afternoon. Chance of rain 30 percent. 
-.SATURDAY NIGHT...Mostly clear. Lows 68 to 73. Northeast winds
-10 to 15 mph. 
-.SUNDAY...Mostly sunny. Windy. Isolated showers in the morning,
-then scattered showers in the afternoon. Highs 77 to 83.
-Northeast winds 10 to 15 mph increasing to 20 to 30 mph in the
-afternoon. Chance of rain 30 percent. 
-
-HIZ016-290715-
-Kahoolawe-
-446 AM HST Mon Sep 28 2026
-
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and windy. Highs 81 to 88. East winds 25 to
-30 mph. 
-.TONIGHT...Mostly clear. Windy. Lows 72 to 77. East winds 25 to
-30 mph. 
-.TUESDAY...Mostly sunny. Windy. Highs 80 to 87. East winds 15 to
-20 mph increasing to 20 to 30 mph in the afternoon. 
-.TUESDAY NIGHT...Breezy. Mostly clear with isolated showers. Lows
-72 to 77. East winds 15 to 25 mph. Chance of rain 20 percent. 
-.WEDNESDAY...Sunny and breezy. Highs 80 to 86. East winds 10 to
-15 mph increasing to 20 to 25 mph in the afternoon. 
-.WEDNESDAY NIGHT...Mostly clear. Breezy. Lows 72 to 77. East
-winds 10 to 20 mph. 
-.THURSDAY...Sunny and breezy. Highs 79 to 85. East winds 10 to
-15 mph increasing to 15 to 25 mph in the afternoon. 
-.THURSDAY NIGHT...Mostly clear. Lows 71 to 76. East winds 10 to
-15 mph. 
-.FRIDAY...Sunny. Highs 79 to 85. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds around
+.TONIGHT...Partly cloudy. Lows 69 to 74. East winds around 10 mph
+in the evening becoming light. 
+.TUESDAY...Mostly sunny. Highs 74 to 83. Light winds becoming
+south around 10 mph in the afternoon. 
+.TUESDAY NIGHT...Partly cloudy with isolated showers in the
+evening, then mostly cloudy with scattered showers after
+midnight. Lows 69 to 74. Southeast winds 10 to 15 mph. Chance of
+rain 30 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers. Highs 73 to 82.
+South winds around 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy in the evening then becoming
+mostly cloudy. Scattered showers. Lows 69 to 74. Southeast winds
+10 to 15 mph. Chance of rain 40 percent. 
+.THURSDAY...Partly sunny in the morning then becoming mostly
+sunny. Scattered showers. Highs 73 to 82. Southeast winds around
+10 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Mostly clear. Lows 68 to 73. East winds around
 10 mph. 
-.SATURDAY...Sunny. Highs 79 to 85. East winds 10 to 15 mph. 
-.SATURDAY NIGHT...Mostly clear. Lows 70 to 76. Light winds. 
-.SUNDAY...Sunny. Highs 79 to 85. Light winds becoming east around
-10 mph in the afternoon. 
+.FRIDAY...Sunny. Highs 72 to 82. Light winds. 
+.FRIDAY NIGHT...Partly cloudy. Lows 68 to 73. North winds around
+10 mph. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 72 to 81.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Mostly clear. Breezy. Lows 68 to 73. Northeast
+winds 10 to 20 mph. 
+.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 72 to
+82. East winds 10 to 25 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Lows 68 to 73. Northeast
+winds 10 to 25 mph. 
+.MONDAY...Sunny. Isolated showers in the afternoon. Highs 72 to
+81. East winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ017-290715-
+HIZ016-291930-
+Kahoolawe-
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Partly cloudy. Windy. Lows 72 to 77. East winds 15 to
+30 mph. 
+.TUESDAY...Mostly sunny. Breezy. Highs 80 to 86. East winds 10 to
+25 mph. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Breezy. Lows 72 to 77. East winds 10 to 20 mph. 
+.WEDNESDAY...Sunny. Isolated showers in the afternoon. Highs
+80 to 86. Southeast winds around 15 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Breezy. Partly cloudy with isolated showers.
+Lows 72 to 77. East winds 15 to 20 mph. Chance of rain
+20 percent. 
+.THURSDAY...Sunny and breezy. Highs 79 to 85. East winds 15 to
+20 mph. 
+.THURSDAY NIGHT...Mostly clear. Breezy. Lows 71 to 76. East winds
+15 to 20 mph. 
+.FRIDAY...Sunny. Highs 79 to 85. East winds 10 to 15 mph. 
+.FRIDAY NIGHT...Mostly clear. Lows 71 to 76. East winds 10 to
+15 mph. 
+.SATURDAY...Sunny. Highs 79 to 85. East winds 10 to 15 mph. 
+.SATURDAY NIGHT...Mostly clear. Lows 70 to 75. Northeast winds
+10 to 15 mph. 
+.SUNDAY...Sunny. Highs 79 to 85. Northeast winds 10 to 15 mph. 
+.SUNDAY NIGHT...Mostly clear. Lows 70 to 75. Northeast winds
+10 to 15 mph. 
+.MONDAY...Sunny. Highs 79 to 84. Northeast winds 10 to 15 mph. 
+
+HIZ017-291930-
 Maui Windward West-
 Including Wailuku
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Isolated showers in the morning. Highs
-around 84 makai to around 77 mauka. Northeast winds up to 20 mph.
-Chance of rain 20 percent. 
 .TONIGHT...Partly cloudy. Breezy. Lows 68 to 76 makai to around
-60 mauka. Northeast winds up to 20 mph. 
-.TUESDAY...Partly sunny. Highs around 84 makai to around
-77 mauka. East winds 10 to 15 mph. 
-.TUESDAY NIGHT...Mostly cloudy. Lows 61 to 76. East winds around
-10 mph in the evening becoming light. 
-.WEDNESDAY...Partly sunny. Highs 73 to 87. East winds 10 to
-15 mph. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 60 to 76. East winds
-around 10 mph. 
-.THURSDAY...Partly sunny. Highs 72 to 86. East winds 10 to
-15 mph. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 59 to 75. East winds 10 to
-15 mph. 
-.FRIDAY...Partly sunny. Highs 72 to 86. East winds up to 10 mph
-shifting to the northeast in the afternoon. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 59 to
-75. East winds up to 10 mph. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 72 to 85.
-Northeast winds up to 10 mph increasing to 10 to 15 mph in the
-afternoon. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-59 to 75. East winds around 10 mph. Chance of rain 40 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 72 to 85.
-East winds up to 10 mph shifting to the northeast in the
-afternoon. Chance of rain 40 percent. 
+59 mauka. Northeast winds 10 to 25 mph becoming north after
+midnight. 
+.TUESDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+around 84 makai to around 66 mauka. Northwest winds up to 10 mph
+shifting to the northeast in the afternoon. Chance of rain
+20 percent. 
+.TUESDAY NIGHT...Partly cloudy. Lows 70 to 76 makai to around
+60 mauka. North winds up to 10 mph shifting to the south after
+midnight. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the morning, then
+scattered showers in the afternoon. Highs 65 to 86. Southeast
+winds 10 to 15 mph. Chance of rain 30 percent. 
+.WEDNESDAY NIGHT...Partly cloudy with isolated showers. Lows
+60 to 76. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY...Mostly sunny with isolated showers. Highs 64 to 86.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Isolated showers in the evening.
+Lows 60 to 76. East winds 10 to 15 mph. Chance of rain
+20 percent. 
+.FRIDAY...Mostly sunny. Highs 64 to 85. East winds 10 to 15 mph. 
+.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Scattered showers. Lows 59 to 75. East winds 10 to
+15 mph. Chance of rain 40 percent. 
+.SATURDAY...Mostly sunny with scattered showers. Highs 66 to 85.
+East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Partly cloudy with scattered showers.
+Lows 59 to 75. Northeast winds 10 to 15 mph increasing to 10 to
+25 mph after midnight. Chance of rain 40 percent. 
+.SUNDAY...Breezy. Mostly sunny with scattered showers. Highs
+63 to 85. East winds 10 to 25 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
+evening, then scattered showers after midnight. Lows 59 to 75.
+Northeast winds 10 to 25 mph. Chance of rain 40 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 62 to 84.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ018-290715-
+HIZ018-291930-
 Maui Leeward West-
 Including Lahaina, Kaanapali
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny. Highs 82 to 90. Southwest winds up to 15 mph. 
-.TONIGHT...Partly cloudy. Lows 71 to 79. Northeast winds up to
+.TONIGHT...Partly cloudy. Lows 71 to 78. Northeast winds 10 to
+15 mph shifting to the northwest after midnight. 
+.TUESDAY...Mostly sunny. Highs 82 to 89. West winds up to 10 mph.
+.TUESDAY NIGHT...Partly cloudy. Lows 72 to 79. Southwest winds up
+to 10 mph shifting to the southeast after midnight. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 81 to 87. Southeast winds around 10 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy with isolated showers. Lows
+71 to 78. Southeast winds around 10 mph shifting to the northeast
+after midnight. Chance of rain 20 percent. 
+.THURSDAY...Mostly sunny with isolated showers. Highs 80 to 87.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 71 to 77. East winds around
+10 mph. 
+.FRIDAY...Mostly sunny. Highs 79 to 86. Northeast winds 10 to
 15 mph. 
-.TUESDAY...Mostly sunny. Highs 82 to 89. East winds up to 10 mph.
-.TUESDAY NIGHT...Partly cloudy. Lows 71 to 79. Light winds. 
-.WEDNESDAY...Mostly sunny. Highs 82 to 88. East winds up to
-10 mph. 
-.WEDNESDAY NIGHT...Partly cloudy. Lows 71 to 78. East winds up to
-10 mph. 
-.THURSDAY...Mostly sunny. Highs 80 to 87. East winds up to 10 mph
-increasing to 10 to 15 mph in the afternoon. 
-.THURSDAY NIGHT...Partly cloudy. Lows 70 to 77. East winds up to
-10 mph. 
-.FRIDAY...Mostly sunny. Highs 80 to 86. Northeast winds around
-10 mph. 
-.FRIDAY NIGHT...Partly cloudy with scattered showers. Lows 70 to
-77. Northeast winds up to 10 mph. Chance of rain 30 percent. 
-.SATURDAY...Mostly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 79 to 86. Northeast
-winds up to 10 mph increasing to 10 to 15 mph in the afternoon.
-Chance of rain 30 percent. 
-.SATURDAY NIGHT...Partly cloudy. Isolated showers in the evening,
-then scattered showers after midnight. Lows 70 to 77. Northeast
-winds up to 10 mph. Chance of rain 30 percent. 
-.SUNDAY...Mostly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 79 to 86. Northeast
-winds up to 10 mph increasing to 10 to 15 mph in the afternoon.
-Chance of rain 30 percent. 
-
-HIZ045-290715-
-Maui Central Valley North-
-Including Kahului
-446 AM HST Mon Sep 28 2026
-
-.TODAY...Sunny and breezy. Highs 83 to 91. East winds up to
-20 mph. 
-.TONIGHT...Partly cloudy. Breezy. Lows 70 to 76. East winds up to
-20 mph. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Breezy. Highs 83 to 90. East winds 10 to 20 mph. 
-.TUESDAY NIGHT...Partly cloudy. Lows around 74. East winds around
-10 mph in the evening becoming light. 
-.WEDNESDAY...Mostly sunny. Highs 83 to 89. Northeast winds 10 to
-15 mph. 
-.WEDNESDAY NIGHT...Partly cloudy. Lows 71 to 76. East winds
-around 10 mph in the evening becoming light. 
-.THURSDAY...Mostly sunny. Breezy. Highs 82 to 88. Northeast winds
-10 to 20 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 70 to 75. East winds around
-10 mph in the evening becoming light. 
-.FRIDAY...Mostly sunny. Scattered showers in the afternoon. Highs
-82 to 88. Northeast winds 10 to 15 mph. Chance of rain
-30 percent. 
 .FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
-75. East winds around 10 mph in the evening becoming light.
-Chance of rain 20 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 82 to 88.
+77. Northeast winds around 10 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 79 to 86.
 Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 .SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
-75. Northeast winds around 10 mph in the evening becoming light.
-Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 81 to 88.
-Light winds becoming northeast 10 to 15 mph in the afternoon.
-Chance of rain 20 percent. 
+76. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 78 to
+86. Northeast winds 10 to 20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Breezy. Mostly clear with isolated showers. Lows
+70 to 76. Northeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 78 to 85.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ046-290715-
+HIZ045-291930-
+Maui Central Valley North-
+Including Kahului
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Partly cloudy. Breezy. Lows 70 to 76. East winds 10 to
+20 mph becoming south up to 10 mph after midnight. 
+.TUESDAY...Mostly sunny. Highs 83 to 90. Southwest winds up to
+10 mph shifting to the north around 10 mph in the afternoon. 
+.TUESDAY NIGHT...Partly cloudy. Lows around 74. Northwest winds
+up to 10 mph shifting to the east after midnight. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 83 to 89. Southeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Lows around 74. East winds
+10 to 15 mph shifting to the northeast after midnight. 
+.THURSDAY...Mostly sunny in the morning then becoming partly
+sunny. Highs 82 to 88. Northeast winds 10 to 15 mph. 
+.THURSDAY NIGHT...Partly cloudy. Lows around 73. Northeast winds
+10 to 15 mph. 
+.FRIDAY...Mostly sunny. Highs 82 to 88. Northeast winds around
+10 mph. 
+.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 70 to
+75. Northeast winds around 10 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 82 to 88.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Mostly clear with isolated showers. Lows around
+73. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY...Sunny with isolated showers. Highs 81 to 88. Northeast
+winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly clear. Lows 70 to 75. Northeast winds
+10 to 15 mph. 
+.MONDAY...Mostly sunny with isolated showers. Highs 81 to 87.
+Northeast winds around 10 mph. Chance of rain 20 percent. 
+
+HIZ046-291930-
 Maui Central Valley South-
 Including Maalaea
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
+.TONIGHT...Partly cloudy. Lows 71 to 80. Northwest winds 10 to
+15 mph. 
+.TUESDAY...Mostly sunny. Highs 88 to 93. West winds up to 10 mph.
+.TUESDAY NIGHT...Partly cloudy. Lows 73 to 81. North winds up to
+10 mph. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 87 to 92. Southeast winds around 10 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Breezy. Lows 73 to 81.
+Southeast winds 10 to 20 mph shifting to the north after
+midnight. 
+.THURSDAY...Mostly sunny in the morning then becoming partly
+sunny. Breezy. Highs 86 to 91. North winds 10 to 20 mph. 
+.THURSDAY NIGHT...Partly cloudy. Breezy. Lows 71 to 80. North
+winds 10 to 20 mph. 
+.FRIDAY...Mostly sunny. Highs around 88. North winds 10 to
+15 mph. 
+.FRIDAY NIGHT...Partly cloudy. Lows 71 to 79. North winds 10 to
+15 mph. 
+.SATURDAY...Mostly sunny. Breezy. Highs around 88. North winds
+10 to 20 mph. 
+.SATURDAY NIGHT...Mostly clear. Breezy. Lows 71 to 79. North
+winds 10 to 20 mph. 
+.SUNDAY...Sunny and breezy. Highs around 88. North winds 10 to
+25 mph. 
+.SUNDAY NIGHT...Mostly clear. Breezy. Lows 71 to 79. North winds
+10 to 25 mph. 
+.MONDAY...Mostly sunny. Highs 85 to 90. North winds 10 to 15 mph.
 
-.TODAY...Sunny. Highs around 91. Northwest winds up to 10 mph
-shifting to the west in the afternoon. 
-.TONIGHT...Mostly clear. Lows 70 to 80. Northwest winds up to
-15 mph shifting to the northeast after midnight. 
-.TUESDAY...Sunny in the morning then becoming partly sunny. Highs
-around 90. East winds 10 to 15 mph. 
-.TUESDAY NIGHT...Partly cloudy. Lows 72 to 81. East winds up to
-10 mph. 
-.WEDNESDAY...Mostly sunny. Highs around 90. East winds 10 to
-15 mph. 
-.WEDNESDAY NIGHT...Mostly clear. Lows 72 to 80. East winds 10 to
-15 mph. 
-.THURSDAY...Mostly sunny. Highs around 89. Northeast winds 10 to
-15 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 70 to 80. East winds around
-10 mph. 
-.FRIDAY...Mostly sunny in the morning then becoming partly sunny.
-Highs around 88. Northeast winds 10 to 15 mph. 
-.FRIDAY NIGHT...Mostly clear. Lows 70 to 80. East winds up to
-10 mph. 
-.SATURDAY...Sunny. Highs around 88. Northeast winds 10 to 15 mph.
-.SATURDAY NIGHT...Mostly clear. Lows 70 to 79. Northeast winds
-around 10 mph. 
-.SUNDAY...Sunny. Highs around 88. Northeast winds 10 to 15 mph. 
-
-HIZ047-290715-
+HIZ047-291930-
 Windward Haleakala-
 Including Haiku, Makawao, Hana
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny and breezy. Highs 80 to 85 near the shore to
-around 71 near 5000 feet. Southeast winds up to 25 mph. 
-.TONIGHT...Mostly cloudy. Breezy. Lows around 73 near the shore
-to around 56 near 5000 feet. Southeast winds up to 20 mph. 
-.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
-around 82 near the shore to around 70 near 5000 feet. East winds
+.TONIGHT...Partly cloudy. Breezy. Isolated showers after
+midnight. Lows around 74 near the shore to around 57 near
+5000 feet. Southeast winds 10 to 25 mph decreasing to up to
+15 mph after midnight. Chance of rain 20 percent. 
+.TUESDAY...Mostly sunny with isolated showers. Highs 80 to
+85 near the shore to around 69 near 5000 feet. Southeast winds up
+to 15 mph shifting to the east in the afternoon. Chance of rain
+20 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening, then partly cloudy
+with isolated showers after midnight. Lows around 74 near the
+shore to around 58 near 5000 feet. Southeast winds up to 15 mph.
+Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+68 to 85. Southeast winds 10 to 15 mph. Chance of rain
+40 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Isolated showers. Lows 57 to 76. Southeast winds
 10 to 15 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 57 to
-76. Southeast winds up to 10 mph. Chance of rain 40 percent. 
-.WEDNESDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 68 to 85. East winds
-around 10 mph. Chance of rain 40 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 57 to 76. East winds
-around 10 mph. 
-.THURSDAY...Partly sunny. Scattered showers in the afternoon.
-Highs 67 to 84. East winds around 10 mph. Chance of rain
-30 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 56 to
-76. East winds around 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 67 to 84. East winds up
-to 10 mph. Chance of rain 30 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 55 to
-76. East winds up to 10 mph in the evening becoming light. Chance
-of rain 50 percent. 
+.THURSDAY...Mostly sunny with isolated showers. Highs 67 to 84.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 56 to 76. East winds 10 to
+15 mph. 
+.FRIDAY...Mostly sunny. Highs 66 to 83. East winds 10 to 15 mph. 
+.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 56 to
+76. East winds 10 to 15 mph. Chance of rain 40 percent. 
 .SATURDAY...Partly sunny with scattered showers. Highs 66 to 83.
-Light winds. Chance of rain 50 percent. 
+East winds 10 to 15 mph. Chance of rain 40 percent. 
 .SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-55 to 75. Light winds. Chance of rain 40 percent. 
+55 to 75. Northeast winds 10 to 15 mph. Chance of rain
+40 percent. 
 .SUNDAY...Partly sunny with scattered showers. Highs 66 to 83.
-Light winds becoming northeast up to 10 mph in the afternoon.
-Chance of rain 50 percent. 
+Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Partly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows 55 to 75. Northeast
+winds 10 to 15 mph. Chance of rain 50 percent. 
+.MONDAY...Mostly sunny with scattered showers. Highs 65 to 83.
+Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
 
-HIZ048-290715-
+HIZ048-291930-
 Kipahulu-
 Including Hamoa
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny. Highs 75 to 84. East winds 10 to 15 mph. 
-.TONIGHT...Mostly cloudy. Breezy. Lows 64 to 77. East winds 10 to
-15 mph increasing to 10 to 25 mph after midnight. 
-.TUESDAY...Partly sunny. Breezy. Isolated showers in the
-afternoon. Highs 75 to 84. East winds 10 to 20 mph. Chance of
-rain 20 percent. 
-.TUESDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
-Lows 65 to 77. East winds 10 to 20 mph. Chance of rain
-40 percent. 
-.WEDNESDAY...Partly sunny. Breezy. Scattered showers in the
-afternoon. Highs 75 to 84. East winds 10 to 20 mph. Chance of
-rain 30 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Breezy. Lows 65 to 76. East
-winds 10 to 20 mph. 
-.THURSDAY...Partly sunny. Breezy. Scattered showers in the
-afternoon. Highs 75 to 84. East winds 10 to 20 mph. Chance of
-rain 30 percent. 
-.THURSDAY NIGHT...Breezy. Mostly cloudy with isolated showers.
-Lows 64 to 76. East winds 10 to 20 mph. Chance of rain
-20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 74 to 83. East winds
+.TONIGHT...Partly cloudy in the evening then becoming mostly
+cloudy. Isolated showers. Lows 64 to 77. East winds 10 to 15 mph.
+Chance of rain 20 percent. 
+.TUESDAY...Mostly sunny with scattered showers in the morning,
+then partly sunny with isolated showers in the afternoon. Highs
+70 to 84. East winds around 10 mph. Chance of rain 30 percent. 
+.TUESDAY NIGHT...Mostly cloudy. Isolated showers in the evening,
+then scattered showers after midnight. Lows 65 to 77. East winds
 10 to 15 mph. Chance of rain 30 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+70 to 84. Southeast winds 10 to 15 mph. Chance of rain
+40 percent. 
+.WEDNESDAY NIGHT...Breezy. Mostly cloudy with isolated showers.
+Lows 65 to 76. Southeast winds 10 to 20 mph. Chance of rain
+20 percent. 
+.THURSDAY...Partly sunny in the morning then becoming mostly
+sunny. Breezy. Isolated showers. Highs 69 to 84. East winds 10 to
+20 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 64 to 76. East winds 10 to
+15 mph. 
+.FRIDAY...Mostly sunny. Highs 69 to 83. East winds 10 to 15 mph. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 64 to
 76. East winds 10 to 15 mph. Chance of rain 40 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 74 to 83.
-East winds around 10 mph becoming up to 15 mph in the afternoon.
-Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-64 to 76. East winds up to 15 mph. Chance of rain 40 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 74 to 83.
-Northeast winds around 10 mph. Chance of rain 40 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 69 to 83.
+East winds 10 to 15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 64 to 76. Northeast winds 15 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+69 to 83. Northeast winds 15 to 20 mph. Chance of rain
+40 percent. 
+.SUNDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 64 to 75. Northeast winds 10 to 20 mph. Chance of rain
+50 percent. 
+.MONDAY...Partly sunny with scattered showers. Highs 68 to 83.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 
-HIZ049-290715-
+HIZ049-291930-
 South Maui/Upcountry-
 Including Kihei, Makena, Pukalani, Kula, Ulupalakua
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny. Highs around 90 near the shore to around 78 near
-4000 feet. North winds up to 10 mph shifting to the west in the
-afternoon. 
-.TONIGHT...Partly cloudy. Lows 71 to 76 near the shore to around
-58 near 4000 feet. North winds up to 10 mph shifting to the
-northeast after midnight. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs around 89 near the shore to around 77 near
-4000 feet. East winds up to 15 mph. 
-.TUESDAY NIGHT...Partly cloudy. Lows 57 to 77. East winds up to
-10 mph in the evening becoming light. 
-.WEDNESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 71 to 90. Light winds becoming east up to 10 mph in
-the afternoon. 
-.WEDNESDAY NIGHT...Partly cloudy. Lows 57 to 76. Light winds. 
-.THURSDAY...Mostly sunny. Highs 70 to 89. East winds up to
-10 mph. 
-.THURSDAY NIGHT...Partly cloudy. Lows 55 to 75. Light winds. 
-.FRIDAY...Mostly sunny in the morning, then partly sunny with
-scattered showers in the afternoon. Highs 70 to 89. Light winds
-becoming east up to 10 mph in the afternoon. Chance of rain
-30 percent. 
-.FRIDAY NIGHT...Partly cloudy. Lows 56 to 75. Light winds. 
-.SATURDAY...Mostly sunny. Highs 70 to 89. Light winds becoming
-northeast up to 10 mph in the afternoon. 
-.SATURDAY NIGHT...Mostly clear. Lows 56 to 75. Light winds. 
-.SUNDAY...Mostly sunny. Highs 70 to 89. Light winds becoming
-northeast up to 10 mph in the afternoon. 
-
-HIZ050-290715-
-South Haleakala-
-Including Kipahulu, Kaupo
-446 AM HST Mon Sep 28 2026
-
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny and windy. Highs 78 to 88. East winds 10 to
-30 mph. 
-.TONIGHT...Partly cloudy. Windy. Lows 57 to 76. East winds 10 to
-30 mph. 
-.TUESDAY...Breezy. Mostly sunny in the morning, then partly sunny
-with isolated showers in the afternoon. Highs 77 to 86. East
-winds 10 to 25 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Breezy. Partly cloudy with scattered showers.
-Lows 59 to 77. East winds 10 to 20 mph. Chance of rain
-40 percent. 
-.WEDNESDAY...Mostly sunny in the morning, then partly sunny with
-isolated showers in the afternoon. Highs 77 to 86. East winds
-10 to 15 mph. Chance of rain 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Breezy. Lows 58 to 76. East winds 10 to 20 mph. 
-.THURSDAY...Mostly sunny in the morning then becoming partly
-sunny. Breezy. Highs 76 to 85. East winds 10 to 20 mph. 
-.THURSDAY NIGHT...Partly cloudy with isolated showers. Lows 57 to
-75. East winds 10 to 15 mph. Chance of rain 20 percent. 
-.FRIDAY...Mostly sunny with isolated showers. Highs 75 to 84.
-East winds 10 to 15 mph. Chance of rain 20 percent. 
-.FRIDAY NIGHT...Partly cloudy with isolated showers. Lows 56 to
-75. East winds around 10 mph. Chance of rain 20 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 75 to 84.
-East winds around 10 mph becoming up to 15 mph in the afternoon.
-Chance of rain 20 percent. 
-.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 56 to
-75. East winds up to 10 mph in the evening becoming light. Chance
-of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 75 to 84.
-Light winds becoming east up to 15 mph in the afternoon. Chance
-of rain 20 percent. 
-
-HIZ022-290715-
-Haleakala Summit-
-Including Haleakala National Park Above 6000 feet
-446 AM HST Mon Sep 28 2026
-
-.TODAY...Sunny and breezy. Highs 65 to 84. East winds up to
-25 mph decreasing to up to 15 mph in the afternoon. 
-.TONIGHT...Partly cloudy. Lows around 53 at the visitor center to
-around 48 at the summit. East winds up to 15 mph. 
-.TUESDAY...Mostly sunny in the morning, then partly sunny with
-isolated showers in the afternoon. Highs around 71 at the visitor
-center to around 68 at the summit. Light winds. Chance of rain
-20 percent. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 46 to
-65. Light winds. Chance of rain 40 percent. 
-.WEDNESDAY...Partly sunny. Scattered showers in the afternoon.
-Highs 63 to 82. Light winds. Chance of rain 40 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 49 to 65. Light winds. 
-.THURSDAY...Partly sunny. Scattered showers in the afternoon.
-Highs 63 to 81. Light winds. Chance of rain 30 percent. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 48 to
-64. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning, then
-scattered showers in the afternoon. Highs 64 to 81. Light winds.
-Chance of rain 30 percent. 
-.FRIDAY NIGHT...Mostly cloudy with isolated showers. Lows 47 to
-63. Light winds. Chance of rain 20 percent. 
-.SATURDAY...Mostly sunny with isolated showers. Highs 64 to 81.
-Light winds. Chance of rain 20 percent. 
-.SATURDAY NIGHT...Mostly clear in the evening then becoming
-mostly cloudy. Isolated showers. Lows 47 to 63. Light winds.
-Chance of rain 20 percent. 
-.SUNDAY...Mostly sunny with isolated showers. Highs 64 to 81.
-North winds up to 10 mph. Chance of rain 20 percent. 
-
-HIZ023-290715-
-Kona-
-Including Kailua-Kona, Kealakekua, Milolii
-446 AM HST Mon Sep 28 2026
-
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny in the morning, then mostly cloudy with isolated
-showers in the afternoon. Highs 85 to 90 near the shore to around
-72 near 5000 feet. Light winds. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy. Lows 70 to 76 near the shore to around
-56 near 5000 feet. Light winds becoming northeast up to 10 mph
+.TONIGHT...Mostly clear. Lows 71 to 76 near the shore to around
+59 near 4000 feet. South winds up to 15 mph shifting to the east
 after midnight. 
 .TUESDAY...Mostly sunny. Scattered showers in the afternoon.
-Highs 85 to 90 near the shore to around 72 near 5000 feet. West
-winds up to 10 mph. Chance of rain 40 percent. 
-.TUESDAY NIGHT...Partly cloudy. Lows 54 to 79. Light winds
-becoming northeast around 10 mph after midnight. 
-.WEDNESDAY...Mostly sunny. Scattered showers in the afternoon.
-Highs 69 to 90. West winds up to 10 mph. Chance of rain
-40 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 54 to 79. Light winds
-becoming northeast around 10 mph after midnight. 
-.THURSDAY...Partly sunny. Scattered showers in the afternoon.
-Highs 68 to 89. West winds around 10 mph. Chance of rain
-40 percent. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 54 to 78. Light winds. 
-.FRIDAY...Partly sunny. Highs 67 to 89. West winds around 10 mph
-in the morning becoming light. 
-.FRIDAY NIGHT...Mostly cloudy. Lows 53 to 78. Light winds. 
-.SATURDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 67 to 89. Light winds. 
-.SATURDAY NIGHT...Mostly cloudy. Lows 53 to 78. Light winds. 
-.SUNDAY...Mostly sunny. Highs 68 to 89. Light winds. 
+Highs around 89 near the shore to around 78 near 4000 feet. Light
+winds becoming west around 10 mph in the afternoon. Chance of
+rain 30 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows around 74 near the shore to around 61 near
+4000 feet. Northwest winds up to 10 mph shifting to the northeast
+after midnight. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+72 to 91. Southeast winds around 10 mph. Chance of rain
+50 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Isolated showers in the
+evening. Lows 58 to 76. Southeast winds 10 to 15 mph shifting to
+the northeast after midnight. Chance of rain 20 percent. 
+.THURSDAY...Mostly sunny in the morning then becoming partly
+sunny. Isolated showers. Highs 71 to 89. Northeast winds 10 to
+15 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 57 to 76. Northeast winds
+around 10 mph. 
+.FRIDAY...Sunny in the morning, then partly sunny with isolated
+showers in the afternoon. Highs 70 to 89. Northeast winds around
+10 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Lows 56 to 75. Northeast winds around 10 mph. 
+.SATURDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 70 to 89. Northeast
+winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy. Lows 56 to 75. Northeast winds
+10 to 15 mph. 
+.SUNDAY...Sunny. Isolated showers in the afternoon. Highs 70 to
+89. Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly clear. Lows 55 to 74. Northeast winds
+10 to 15 mph. 
+.MONDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+70 to 89. Northeast winds 10 to 15 mph. Chance of rain
+20 percent. 
 
-HIZ051-290715-
+HIZ050-291930-
+South Haleakala-
+Including Kipahulu, Kaupo
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Partly cloudy. Windy. Lows 58 to 77. East winds 10 to
+30 mph. 
+.TUESDAY...Breezy. Mostly sunny with isolated showers. Highs
+77 to 86. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Breezy. Isolated showers. Lows 59 to 77. East
+winds 10 to 20 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+77 to 86. Southeast winds 10 to 15 mph. Chance of rain
+50 percent. 
+.WEDNESDAY NIGHT...Partly cloudy with isolated showers. Lows
+59 to 76. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY...Mostly sunny with isolated showers. Highs 76 to 85.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 58 to 76. East winds 10 to
+15 mph. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+75 to 84. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with isolated showers. Lows 57 to
+75. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny with isolated showers. Highs 75 to 84.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy with isolated showers. Lows 58 to
+75. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY...Breezy. Mostly sunny with isolated showers. Highs 75 to
+84. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Breezy. Partly cloudy with isolated showers. Lows
+56 to 75. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 75 to 84.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+
+HIZ022-291930-
+Haleakala Summit-
+Including Haleakala National Park Above 6000 feet
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Partly cloudy. Lows around 53 at the visitor center to
+around 48 at the summit. Southeast winds 10 to 15 mph. 
+.TUESDAY...Partly sunny with isolated showers. Highs 62 to 83.
+Light winds. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy with isolated showers. Lows around
+55 at the visitor center to around 47 at the summit. South winds
+up to 10 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny in the morning then becoming partly
+sunny. Isolated showers. Highs 62 to 82. South winds around
+10 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with isolated showers. Lows
+49 to 66. Southeast winds around 10 mph. Chance of rain
+20 percent. 
+.THURSDAY...Partly sunny with isolated showers. Highs 61 to 81.
+Northeast winds around 10 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Lows 48 to 64. East winds around
+10 mph. 
+.FRIDAY...Mostly sunny in the morning then becoming partly sunny.
+Highs 59 to 81. Northeast winds 10 to 15 mph. 
+.FRIDAY NIGHT...Breezy. Mostly cloudy with isolated showers. Lows
+47 to 64. East winds 10 to 20 mph. Chance of rain 20 percent. 
+.SATURDAY...Partly sunny with isolated showers. Highs 59 to 81.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Breezy. Isolated showers. Lows 47 to 63. Northeast
+winds 10 to 15 mph increasing to 10 to 25 mph after midnight.
+Chance of rain 20 percent. 
+.SUNDAY...Mostly sunny. Breezy. Scattered showers in the morning,
+then isolated showers in the afternoon. Highs 61 to 81. Northeast
+winds 15 to 25 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Partly cloudy. Breezy. Scattered showers in the
+evening, then isolated showers after midnight. Lows 47 to 63.
+East winds 10 to 25 mph. Chance of rain 40 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 60 to 80.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+
+HIZ023-291930-
+Kona-
+Including Kailua-Kona, Kealakekua, Milolii
+302 PM HST Mon Sep 28 2026
+
+.TONIGHT...Partly cloudy. Lows 70 to 77 near the shore to around
+56 near 5000 feet. Northwest winds up to 10 mph in the evening
+becoming light. 
+.TUESDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 85 to 90 near the shore
+to around 72 near 5000 feet. Light winds. Chance of rain
+20 percent. 
+.TUESDAY NIGHT...Partly cloudy. Lows 69 to 76 near the shore to
+around 56 near 5000 feet. Light winds becoming east up to 10 mph
+after midnight. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 69 to 90. Southwest winds around 10 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Lows 54 to 79. North winds
+around 10 mph. 
+.THURSDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 68 to 89. West winds
+around 10 mph. Chance of rain 20 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Lows 55 to 78. North winds
+around 10 mph. 
+.FRIDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 67 to 89. Northwest
+winds around 10 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy. Isolated showers in the evening.
+Lows 54 to 78. North winds around 10 mph in the evening becoming
+light. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 67 to 89. Light winds.
+Chance of rain 20 percent. 
+.SATURDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 53 to 78. Northeast winds around 10 mph. 
+.SUNDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+68 to 89. Light winds. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly cloudy with isolated showers in the
+evening, then partly cloudy after midnight. Lows 53 to 78. Light
+winds. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+68 to 89. North winds around 10 mph shifting to the northwest in
+the afternoon. Chance of rain 20 percent. 
+
+HIZ051-291930-
 Big Island South-
 Including Ocean View
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Mostly sunny. Windy. Highs around 85 near the shore to
-around 71 near 5000 feet. East winds up to 30 mph. 
 .TONIGHT...Partly cloudy. Breezy. Lows around 76 near the shore
-to around 59 near 5000 feet. East winds up to 25 mph increasing
-to 10 to 25 mph after midnight. 
-.TUESDAY...Mostly sunny. Breezy. Highs around 85 near the shore
-to around 70 near 5000 feet. East winds 10 to 20 mph. 
-.TUESDAY NIGHT...Partly cloudy. Lows 60 to 79. East winds 10 to
-15 mph. 
-.WEDNESDAY...Sunny in the morning then becoming partly sunny.
-Highs 69 to 85. East winds 10 to 15 mph. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 60 to 79. East winds 10 to
-15 mph. 
-.THURSDAY...Partly sunny. Scattered showers in the afternoon.
-Highs 69 to 85. East winds 10 to 15 mph. Chance of rain
-40 percent. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 59 to 78. East winds 10 to
-15 mph. 
-.FRIDAY...Partly sunny. Highs 68 to 85. East winds 10 to 15 mph. 
-.FRIDAY NIGHT...Mostly cloudy. Lows 59 to 78. East winds around
-10 mph. 
-.SATURDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 68 to 85. East winds up to 10 mph in the morning
-becoming light. 
-.SATURDAY NIGHT...Mostly cloudy. Lows 59 to 78. Light winds
-becoming northeast up to 10 mph after midnight. 
-.SUNDAY...Partly sunny. Highs 69 to 85. Northeast winds up to
-10 mph in the morning becoming light. 
+to around 59 near 5000 feet. East winds 10 to 25 mph decreasing
+to up to 25 mph after midnight. 
+.TUESDAY...Mostly sunny. Breezy. Isolated showers in the
+afternoon. Highs around 84 near the shore to around 70 near
+5000 feet. East winds up to 20 mph increasing to 10 to 20 mph in
+the afternoon. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Breezy. Partly cloudy with isolated showers.
+Lows around 76 near the shore to around 60 near 5000 feet. East
+winds up to 20 mph. Chance of rain 20 percent. 
+.WEDNESDAY...Breezy. Mostly sunny with isolated showers in the
+morning, then partly sunny with scattered showers in the
+afternoon. Highs 69 to 85. East winds 10 to 20 mph. Chance of
+rain 40 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Breezy. Isolated showers in the
+evening, then scattered showers after midnight. Lows 60 to 79.
+East winds 10 to 20 mph. Chance of rain 30 percent. 
+.THURSDAY...Mostly sunny in the morning then becoming partly
+sunny. Breezy. Scattered showers. Highs 68 to 85. East winds
+10 to 20 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 60 to 78. East winds 10 to 15 mph. 
+.FRIDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 68 to 84. East winds
+10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy. Isolated showers in the evening.
+Lows 59 to 78. Northeast winds 10 to 15 mph. Chance of rain
+20 percent. 
+.SATURDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 68 to 85. East winds
+10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy. Lows 60 to 78. Northeast winds
+10 to 15 mph. 
+.SUNDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 68 to 84. East winds
+10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly cloudy with isolated showers in the
+evening, then partly cloudy after midnight. Lows 59 to 78.
+Northeast winds 10 to 15 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny. Scattered showers in the afternoon. Highs
+68 to 84. Northeast winds around 10 mph in the morning becoming
+light. Chance of rain 40 percent. 
 
-HIZ052-290715-
+HIZ052-291930-
 Big Island Southeast-
 Including South Point, Pahala
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Mostly sunny. Isolated showers in the morning. Highs
-83 to 91 near the shore to 70 to 75 near 4000 feet. Northeast
-winds up to 15 mph shifting to the east in the afternoon. Chance
-of rain 20 percent. 
-.TONIGHT...Partly cloudy. Lows 69 to 75 near the shore to 57 to
-62 near 4000 feet. Northeast winds up to 15 mph. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 82 to 88 near the shore to 68 to 74 near 4000 feet.
-East winds up to 10 mph. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 58 to
-78. Northeast winds up to 10 mph. Chance of rain 40 percent. 
-.WEDNESDAY...Mostly sunny in the morning, then partly sunny with
-isolated showers in the afternoon. Highs 68 to 88. East winds up
+.TONIGHT...Partly cloudy with isolated showers in the evening,
+then mostly cloudy with scattered showers after midnight. Lows
+69 to 75 near the shore to 57 to 62 near 4000 feet. East winds
+10 to 15 mph shifting to the northeast after midnight. Chance of
+rain 40 percent. 
+.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
+82 to 88 near the shore to 69 to 74 near 4000 feet. East winds up
 to 10 mph. Chance of rain 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy with isolated showers. Lows
-58 to 77. Northeast winds up to 10 mph. Chance of rain
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Isolated showers. Lows 69 to 75 near the shore to
+around 60 near 4000 feet. East winds up to 10 mph. Chance of rain
 20 percent. 
-.THURSDAY...Partly sunny. Highs 67 to 88. East winds around
-10 mph. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 57 to
-77. Northeast winds up to 10 mph. Chance of rain 20 percent. 
-.FRIDAY...Mostly sunny with isolated showers in the morning, then
-partly sunny in the afternoon. Highs 67 to 88. East winds around
-10 mph. Chance of rain 20 percent. 
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 57 to
-77. Northeast winds up to 10 mph. Chance of rain 50 percent. 
-.SATURDAY...Mostly sunny in the morning then becoming partly
-sunny. Scattered showers. Highs 68 to 89. East winds up to
+.WEDNESDAY...Partly sunny. Isolated showers in the morning, then
+scattered showers in the afternoon. Highs 69 to 88. East winds
+around 10 mph. Chance of rain 40 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with scattered showers. Lows
+58 to 78. East winds 10 to 15 mph. Chance of rain 40 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 68 to 87.
+East winds 10 to 15 mph. Chance of rain 50 percent. 
+.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 57 to 77. Northeast winds around 10 mph. 
+.FRIDAY...Mostly sunny in the morning then becoming partly sunny.
+Highs 68 to 88. East winds 10 to 15 mph. 
+.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Scattered showers. Lows 58 to 77. Northeast winds around
 10 mph. Chance of rain 40 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-57 to 77. Northeast winds up to 10 mph. Chance of rain
-50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 68 to 89.
-East winds up to 15 mph. Chance of rain 40 percent. 
+.SATURDAY...Mostly sunny in the morning then becoming partly
+sunny. Isolated showers. Highs 68 to 88. East winds 10 to 15 mph.
+Chance of rain 20 percent. 
+.SATURDAY NIGHT...Partly cloudy with scattered showers. Lows
+57 to 77. Northeast winds 10 to 15 mph. Chance of rain
+40 percent. 
+.SUNDAY...Mostly sunny in the morning then becoming partly sunny.
+Breezy. Isolated showers. Highs 68 to 89. Northeast winds 10 to
+20 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Breezy. Isolated showers. Lows 57 to 77. Northeast winds
+10 to 20 mph. Chance of rain 20 percent. 
+.MONDAY...Mostly sunny with isolated showers. Highs 69 to 88.
+East winds 10 to 15 mph. Chance of rain 20 percent. 
 
-HIZ053-290715-
+HIZ053-291930-
 Big Island East-
 Including Hilo, Volcano, Pahoa, Mountain View, Laupahoehoe
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny in the morning then becoming partly sunny.
-Isolated showers. Highs around 84 near the shore to around 70 at
-4000 feet. South winds up to 10 mph shifting to the east in the
-afternoon. Gusts up to 30 mph. Chance of rain 20 percent. 
-.TONIGHT...Mostly cloudy. Lows 67 to 73 near the shore to around
-59 at 4000 feet. South winds up to 10 mph. 
+.TONIGHT...Mostly cloudy. Scattered showers in the evening, then
+isolated showers after midnight. Lows 67 to 74 near the shore to
+around 59 at 4000 feet. Southeast winds 10 to 15 mph shifting to
+the south after midnight. Chance of rain 40 percent. 
 .TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
-around 84 near the shore to around 70 at 4000 feet. Southeast
-winds around 10 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy with scattered showers. Lows 57 to
-78. South winds up to 10 mph. Chance of rain 40 percent. 
-.WEDNESDAY...Partly sunny. Isolated showers in the afternoon.
-Highs 67 to 85. East winds around 10 mph. Chance of rain
+around 84 near the shore to around 70 at 4000 feet. South winds
+up to 10 mph shifting to the southeast in the afternoon. Chance
+of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Isolated showers. Lows 68 to 74 near the shore to
+around 60 at 4000 feet. South winds up to 15 mph. Chance of rain
 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 56 to 77. Light winds. 
-.THURSDAY...Partly sunny. Highs 66 to 85. East winds up to
-10 mph. 
-.THURSDAY NIGHT...Mostly cloudy with isolated showers. Lows 55 to
-77. Light winds. Chance of rain 20 percent. 
-.FRIDAY...Partly sunny. Isolated showers in the morning. Highs
-66 to 85. Light winds becoming east around 10 mph in the
-afternoon. Chance of rain 20 percent. 
+.WEDNESDAY...Mostly sunny with isolated showers in the morning,
+then partly sunny with scattered showers in the afternoon. Highs
+67 to 84. Southeast winds 10 to 15 mph. Chance of rain
+30 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy with isolated showers in the
+evening, then partly cloudy with scattered showers after
+midnight. Lows 57 to 78. Southeast winds 10 to 15 mph. Chance of
+rain 30 percent. 
+.THURSDAY...Partly sunny with scattered showers. Highs 66 to 84.
+East winds 10 to 15 mph. Chance of rain 30 percent. 
+.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 56 to 77. East winds around 10 mph shifting
+to the southeast after midnight. 
+.FRIDAY...Mostly sunny in the morning then becoming partly sunny.
+Highs 66 to 84. East winds around 10 mph. 
 .FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 55 to
-77. Light winds. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 66 to 85.
-Light winds. Chance of rain 50 percent. 
+77. East winds around 10 mph. Chance of rain 50 percent. 
+.SATURDAY...Partly sunny with scattered showers. Highs 66 to 84.
+Northeast winds 10 to 15 mph. Chance of rain 50 percent. 
 .SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-55 to 77. Light winds. Chance of rain 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 66 to 84.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 50 percent. 
+55 to 77. North winds 10 to 15 mph. Chance of rain 50 percent. 
+.SUNDAY...Breezy. Partly sunny with scattered showers. Highs
+66 to 84. North winds 10 to 20 mph. Chance of rain 50 percent. 
+.SUNDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 55 to 77. North winds 10 to 20 mph. Chance of rain
+50 percent. 
+.MONDAY...Partly sunny with scattered showers in the morning,
+then mostly sunny with isolated showers in the afternoon. Highs
+66 to 84. Northeast winds 10 to 15 mph. Chance of rain
+50 percent. 
 
-HIZ054-290715-
+HIZ054-291930-
 Big Island North-
 Including Honokaa, Kamuela, Waipio Valley, Hawi
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny in the morning then becoming partly sunny. Breezy.
-Highs around 84 near the shore to 74 to 83 near 3000 feet. East
-winds up to 20 mph. 
-.TONIGHT...Mostly cloudy. Lows 67 to 75 near the shore to 61 to
-68 near 3000 feet. East winds up to 15 mph. 
-.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
-around 84 near the shore to 74 to 82 near 3000 feet. East winds
-around 10 mph. Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy. Lows 56 to 76. Light winds. 
-.WEDNESDAY...Partly sunny. Highs 68 to 85. Northeast winds around
-10 mph. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 55 to 76. East winds up to
-10 mph in the evening becoming light. 
-.THURSDAY...Partly sunny. Highs 67 to 85. East winds around
-10 mph. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 54 to 75. East winds up to
-10 mph in the evening becoming light. 
-.FRIDAY...Partly sunny. Highs 65 to 84. East winds around 10 mph.
-.FRIDAY NIGHT...Mostly cloudy with scattered showers. Lows 54 to
-75. Light winds. Chance of rain 50 percent. 
-.SATURDAY...Partly sunny with scattered showers. Highs 66 to 84.
-Northeast winds around 10 mph. Chance of rain 50 percent. 
-.SATURDAY NIGHT...Mostly cloudy with scattered showers. Lows
-53 to 75. East winds up to 10 mph in the evening becoming light.
-Chance of rain 50 percent. 
-.SUNDAY...Partly sunny with scattered showers. Highs 65 to 84.
-Light winds becoming northeast around 10 mph in the afternoon.
-Chance of rain 50 percent. 
+.TONIGHT...Partly cloudy. Breezy. Isolated showers in the
+evening. Lows 67 to 75 near the shore to 61 to 68 near 3000 feet.
+East winds up to 20 mph shifting to the south up to 10 mph after
+midnight. Chance of rain 20 percent. 
+.TUESDAY...Mostly sunny in the morning, then partly sunny with
+scattered showers in the afternoon. Highs around 83 near the
+shore to 72 to 81 near 3000 feet. Northeast winds up to 10 mph.
+Chance of rain 40 percent. 
+.TUESDAY NIGHT...Partly cloudy. Lows 68 to 75 near the shore to
+62 to 69 near 3000 feet. South winds up to 10 mph. 
+.WEDNESDAY...Sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 67 to 85. Southeast
+winds around 10 mph shifting to the northeast in the afternoon.
+Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Lows 56 to 76. East winds 10 to
+15 mph. 
+.THURSDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 65 to 84. East winds 10 to 15 mph. Chance of rain
+20 percent. 
+.THURSDAY NIGHT...Partly cloudy. Lows 54 to 75. East winds 10 to
+15 mph. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+65 to 83. East winds 10 to 15 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
+cloudy. Scattered showers. Lows 54 to 75. East winds 10 to
+15 mph. Chance of rain 50 percent. 
+.SATURDAY...Mostly sunny in the morning then becoming partly
+sunny. Scattered showers. Highs 64 to 83. East winds 10 to
+15 mph. Chance of rain 40 percent. 
+.SATURDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 53 to 74. East winds 10 to 20 mph. Chance of rain
+50 percent. 
+.SUNDAY...Partly sunny in the morning then becoming mostly sunny.
+Breezy. Scattered showers. Highs 64 to 84. East winds 10 to
+20 mph. Chance of rain 40 percent. 
+.SUNDAY NIGHT...Breezy. Mostly cloudy with scattered showers.
+Lows 53 to 74. East winds 10 to 20 mph. Chance of rain
+50 percent. 
+.MONDAY...Mostly sunny. Scattered showers in the morning, then
+isolated showers in the afternoon. Highs 64 to 83. Northeast
+winds 10 to 15 mph. Chance of rain 40 percent. 
 
-HIZ026-290715-
+HIZ026-291930-
 Kohala-
 Including Kawaihae, Waikoloa, Waikii, Puuanahulu
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY IN EFFECT UNTIL 6 PM HST THIS EVENING...
-
-.TODAY...Sunny. Highs 86 to 92 near the shore to 71 to 77 above
-4000 feet. Northeast winds up to 10 mph shifting to the northwest
-in the afternoon. 
 .TONIGHT...Partly cloudy. Lows 72 to 77 near the shore to 56 to
-61 above 4000 feet. Light winds. 
-.TUESDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 86 to 91 near the shore to 71 to 76 above 4000 feet.
-Northwest winds up to 10 mph. 
-.TUESDAY NIGHT...Partly cloudy. Lows 55 to 77. Light winds. 
-.WEDNESDAY...Mostly sunny. Highs 68 to 92. Northwest winds up to
-15 mph. 
-.WEDNESDAY NIGHT...Partly cloudy. Lows 55 to 77. East winds up to
-10 mph in the evening becoming light. 
-.THURSDAY...Mostly sunny. Highs 68 to 91. Northwest winds 10 to
-15 mph. 
+61 above 4000 feet. Northwest winds up to 10 mph in the evening
+becoming light. 
+.TUESDAY...Mostly sunny in the morning, then partly sunny with
+scattered showers in the afternoon. Highs 85 to 91 near the shore
+to 69 to 76 above 4000 feet. Northeast winds up to 10 mph
+shifting to the northwest around 10 mph in the afternoon. Chance
+of rain 40 percent. 
+.TUESDAY NIGHT...Partly cloudy. Lows 72 to 77 near the shore to
+around 58 above 4000 feet. Light winds. 
+.WEDNESDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 68 to 92. Northwest winds around 10 mph. Chance of rain
+20 percent. 
+.WEDNESDAY NIGHT...Partly cloudy. Lows 55 to 77. North winds
+around 10 mph shifting to the northeast after midnight. 
+.THURSDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 68 to 91. Northwest winds around 10 mph. Chance of rain
+20 percent. 
 .THURSDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Lows 54 to 77. East winds up to 10 mph in the
-evening becoming light. 
-.FRIDAY...Mostly sunny. Highs 67 to 90. Northwest winds 10 to
-15 mph. 
-.FRIDAY NIGHT...Partly cloudy. Lows 54 to 76. East winds up to
-10 mph in the evening becoming light. 
-.SATURDAY...Mostly sunny. Highs 67 to 91. Northwest winds 10 to
-15 mph. 
-.SATURDAY NIGHT...Partly cloudy. Lows 53 to 76. East winds up to
-10 mph. 
-.SUNDAY...Mostly sunny. Highs 67 to 91. Light winds becoming
-northwest 10 to 15 mph in the afternoon. 
+partly cloudy. Lows 55 to 77. Light winds. 
+.FRIDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+67 to 90. Northwest winds around 10 mph. Chance of rain
+20 percent. 
+.FRIDAY NIGHT...Mostly cloudy with isolated showers in the
+evening, then partly cloudy after midnight. Lows 54 to 76. Light
+winds. Chance of rain 20 percent. 
+.SATURDAY...Mostly sunny. Isolated showers in the afternoon.
+Highs 67 to 91. North winds around 10 mph. Chance of rain
+20 percent. 
+.SATURDAY NIGHT...Partly cloudy. Lows 53 to 76. North winds
+around 10 mph. 
+.SUNDAY...Sunny with isolated showers. Highs 67 to 91. North
+winds 10 to 15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Partly cloudy. Isolated showers in the evening.
+Lows 53 to 76. Northeast winds 10 to 15 mph shifting to the
+southeast after midnight. Chance of rain 20 percent. 
+.MONDAY...Sunny. Isolated showers in the afternoon. Highs 67 to
+90. Northwest winds around 10 mph. Chance of rain 20 percent. 
 
-HIZ027-290715-
+HIZ027-291930-
 Big Island Interior-
 Including Bradshaw Field, Saddle Road Above 5000 feet
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Mostly sunny. Isolated showers in the afternoon. Highs
-67 to 76 near 5000 feet to 62 to 69 near 8000 feet. East winds up
-to 10 mph. Chance of rain 20 percent. 
-.TONIGHT...Partly cloudy. Lows 53 to 59 near 5000 feet to around
-51 near 8000 feet. East winds up to 10 mph in the evening
-becoming light. 
-.TUESDAY...Mostly sunny in the morning, then mostly cloudy with
-isolated showers in the afternoon. Highs 67 to 75 near 5000 feet
-to 62 to 68 near 8000 feet. North winds up to 10 mph. Chance of
-rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy. Lows 49 to 60. Light winds. 
-.WEDNESDAY...Mostly sunny in the morning, then mostly cloudy with
-scattered showers in the afternoon. Highs 60 to 76. North winds
-up to 10 mph. Chance of rain 40 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 48 to 60. Light winds. 
-.THURSDAY...Mostly sunny in the morning, then mostly cloudy with
-scattered showers in the afternoon. Highs 60 to 75. North winds
-up to 10 mph. Chance of rain 40 percent. 
-.THURSDAY NIGHT...Mostly cloudy. Lows 47 to 59. Light winds. 
-.FRIDAY...Mostly sunny in the morning then becoming partly sunny.
-Highs 59 to 75. North winds up to 10 mph. 
-.FRIDAY NIGHT...Mostly cloudy. Lows 46 to 59. Light winds. 
-.SATURDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 60 to 75. North winds up to 10 mph. 
-.SATURDAY NIGHT...Partly cloudy in the evening then becoming
-mostly cloudy. Lows 46 to 59. Light winds. 
-.SUNDAY...Mostly sunny. Highs 60 to 76. Light winds becoming
-north around 10 mph in the afternoon. 
+.TONIGHT...Partly cloudy. Isolated showers in the evening. Lows
+53 to 59 near 5000 feet to around 51 near 8000 feet. Light winds.
+Chance of rain 20 percent. 
+.TUESDAY...Mostly cloudy. Isolated showers in the afternoon.
+Highs 67 to 75 near 5000 feet to 62 to 68 near 8000 feet. West
+winds up to 10 mph. Chance of rain 20 percent. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 52 to 60 near 5000 feet to 49 to 54 near
+8000 feet. Light winds becoming southwest up to 10 mph after
+midnight. 
+.WEDNESDAY...Mostly sunny in the morning then becoming mostly
+cloudy. Isolated showers. Highs 61 to 76. Southwest winds around
+10 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy. Isolated showers after
+midnight. Lows 49 to 60. Light winds. Chance of rain 20 percent. 
+.THURSDAY...Mostly sunny with scattered showers in the morning,
+then mostly cloudy with isolated showers in the afternoon. Highs
+60 to 74. Light winds. Chance of rain 40 percent. 
+.THURSDAY NIGHT...Mostly cloudy. Lows 48 to 60. Light winds. 
+.FRIDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 59 to 75. North winds
+around 10 mph. Chance of rain 20 percent. 
+.FRIDAY NIGHT...Mostly cloudy. Isolated showers in the evening.
+Lows 47 to 59. North winds around 10 mph. Chance of rain
+20 percent. 
+.SATURDAY...Mostly sunny in the morning, then partly sunny with
+isolated showers in the afternoon. Highs 60 to 75. Northeast
+winds 10 to 15 mph. Chance of rain 20 percent. 
+.SATURDAY NIGHT...Mostly cloudy in the evening then becoming
+partly cloudy. Lows 46 to 59. Northeast winds 10 to 15 mph. 
+.SUNDAY...Sunny in the morning, then partly sunny with isolated
+showers in the afternoon. Highs 60 to 76. North winds 10 to
+15 mph. Chance of rain 20 percent. 
+.SUNDAY NIGHT...Mostly cloudy with scattered showers in the
+evening, then partly cloudy after midnight. Lows 46 to 59.
+Northeast winds 10 to 15 mph. Chance of rain 40 percent. 
+.MONDAY...Mostly sunny. Isolated showers in the afternoon. Highs
+60 to 75. North winds around 10 mph. Chance of rain 20 percent. 
 
-HIZ028-290715-
+HIZ028-291930-
 Big Island Summits-
 Including Mauna Loa and Mauna Kea Above 8000 feet
-446 AM HST Mon Sep 28 2026
+302 PM HST Mon Sep 28 2026
 
-.TODAY...Sunny. Highs around 61 at the visitor information
-station to around 51 near the summits. East winds up to 10 mph. 
-.TONIGHT...Partly cloudy. Lows around 47 at the visitor
-information station to around 40 near the summits. Light winds. 
-.TUESDAY...Mostly sunny in the morning, then mostly cloudy with
-isolated showers in the afternoon. Highs around 60 at the visitor
-information station to around 49 near the summits. Light winds.
-Chance of rain 20 percent. 
-.TUESDAY NIGHT...Mostly cloudy. Lows 37 to 54. Light winds
-becoming west up to 10 mph after midnight. 
-.WEDNESDAY...Mostly sunny in the morning, then mostly cloudy with
-isolated showers in the afternoon. Highs 49 to 72. Northwest
-winds up to 10 mph in the morning becoming light. Chance of rain
+.TONIGHT...Partly cloudy. Isolated showers and snow showers in
+the evening. Lows around 47 at the visitor information station to
+around 40 near the summits. Light winds becoming west up to
+10 mph after midnight. Chance of snow 20 percent. 
+.TUESDAY...Mostly cloudy. Isolated showers in the afternoon.
+Highs around 60 at the visitor information station to around
+50 near the summits. West winds up to 10 mph. Chance of rain
 20 percent. 
-.WEDNESDAY NIGHT...Mostly cloudy. Lows 39 to 54. Light winds. 
-.THURSDAY...Mostly sunny in the morning then becoming partly
-sunny. Highs 51 to 71. Light winds becoming north around 10 mph
-in the afternoon. 
-.THURSDAY NIGHT...Mostly cloudy in the evening then becoming
-partly cloudy. Lows 38 to 53. Northwest winds up to 10 mph in the
-evening becoming light. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then becoming
+mostly clear. Lows around 45 at the visitor information station
+to around 39 near the summits. Southwest winds up to 15 mph. 
+.WEDNESDAY...Mostly sunny in the morning, then mostly cloudy with
+isolated showers in the afternoon. Highs 49 to 72. West winds
+10 to 15 mph. Chance of rain 20 percent. 
+.WEDNESDAY NIGHT...Mostly cloudy. Lows 39 to 55. Northwest winds
+around 10 mph. 
+.THURSDAY...Mostly sunny in the morning then becoming mostly
+cloudy. Highs 51 to 71. Northwest winds around 10 mph. 
+.THURSDAY NIGHT...Mostly cloudy. Lows 39 to 53. Light winds
+becoming northwest around 10 mph after midnight. 
 .FRIDAY...Mostly sunny in the morning then becoming partly sunny.
-Highs 51 to 71. Light winds. 
-.FRIDAY NIGHT...Mostly cloudy in the evening then becoming partly
-cloudy. Lows 39 to 52. Light winds. 
-.SATURDAY...Mostly sunny. Highs 51 to 71. Light winds becoming
-north up to 10 mph in the afternoon. 
-.SATURDAY NIGHT...Partly cloudy. Lows 40 to 52. East winds up to
-10 mph shifting to the west after midnight. 
-.SUNDAY...Mostly sunny. Highs 50 to 72. Northeast winds up to
-10 mph in the morning becoming light.
+Highs 47 to 71. North winds around 10 mph. 
+.FRIDAY NIGHT...Mostly cloudy. Lows 41 to 53. North winds 10 to
+15 mph. 
+.SATURDAY...Sunny in the morning then becoming partly sunny.
+Highs 48 to 71. Northeast winds 10 to 15 mph. 
+.SATURDAY NIGHT...Partly cloudy. Breezy. Lows 42 to 52. Northeast
+winds 10 to 20 mph. 
+.SUNDAY...Sunny in the morning then becoming partly sunny.
+Breezy. Highs 48 to 71. Northeast winds 10 to 20 mph. 
+.SUNDAY NIGHT...Mostly cloudy in the evening then becoming mostly
+clear. Breezy. Lows 41 to 52. East winds 10 to 20 mph shifting to
+the northeast 10 to 15 mph after midnight. 
+.MONDAY...Mostly sunny. Highs 49 to 71. East winds 10 to 15 mph
+shifting to the north in the afternoon.
 ```
 
 ---
@@ -1652,32 +1863,32 @@ north up to 10 mph in the afternoon.
 |---|---|
 | **Resource ID** | wa0_airmets |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=WA0&issuedby=HI |
-| **Collected** | 2026-09-28T05:34:52.083441-10:00 HST |
+| **Collected** | 2026-09-28T11:31:51.246464-10:00 HST |
 
 ```text
-971
-WAHW31 PHFO 281529
+802
+WAHW31 PHFO 282130
 WA0HI
 
-HNLS WA 281600
-AIRMET SIERRA UPDATE 2 FOR IFR VALID UNTIL 282200
+HNLS WA 282200
+AIRMET SIERRA UPDATE 3 FOR IFR VALID UNTIL 290400
 .
 NO SIGNIFICANT IFR EXP.
 
-=HNLT WA 281600
-AIRMET TANGO UPDATE 2 FOR TURB VALID UNTIL 282200
+=HNLT WA 282200
+AIRMET TANGO UPDATE 3 FOR TURB VALID UNTIL 290400
 .
 AIRMET TURB...HI
 OVER AND IMT S THRU W OF MTN.
 TEMPO MOD TURB BLW 090.
-COND CONT BEYOND 2200Z.
+COND CONT BEYOND 0400Z.
 
-=HNLZ WA 281600
-AIRMET ZULU UPDATE 2 FOR ICE AND FZLVL VALID UNTIL 282200
+=HNLZ WA 282200
+AIRMET ZULU UPDATE 3 FOR ICE AND FZLVL VALID UNTIL 290400
 .
 NO SIGNIFICANT ICE EXP.
 .
-FZLVL...162 PHLI SLOPING TO 169 PHTO.
+FZLVL...156 PHLI SLOPING TO 169 PHTO.
 ```
 
 ---
@@ -1688,141 +1899,139 @@ FZLVL...162 PHLI SLOPING TO 169 PHTO.
 |---|---|
 | **Resource ID** | afd_area_forecast_discussion |
 | **Official source** | https://api.weather.gov/products/types/AFD/locations/HFO |
-| **Collected** | 2026-09-28T05:02:21.062282-10:00 HST |
+| **Collected** | 2026-09-28T15:06:47.320518-10:00 HST |
 
 ```text
 000
-FXHW60 PHFO 281452
+FXHW60 PHFO 290103
 AFDHFO
 
 Area Forecast Discussion
 National Weather Service Honolulu HI
-452 AM HST Mon Sep 28 2026
+303 PM HST Mon Sep 28 2026
 
 .SYNOPSIS...
-Deepening high pressure north of the state will produce drier and
-fair conditions across the region through Tuesday. Major hurricane
-Nolo will continue to move west away from the state. Nolo is 
-expected to turn toward the northwest on Tuesday and Wednesday, 
-passing west of Kauai and Niihau. Trailing moisture associated 
-with the eastern part of Nolo's circulation will bring an 
-increase in shower activity beginning on Tuesday night and 
-continuing into Thursday. High pressure system will re-establish 
-again by the end of the week. 
+Breezy east southeast winds with a drier airmass will limit clouds
+and showers through tonight. Clouds and showers will increase 
+Tuesday through Thursday as Nolo passes to the west with rain 
+bands along the east side of the storm encroaching Kauai and Oahu.
+Nolo moves away to the northwest by this weekend with trades 
+filling in.
 
 .DISCUSSION...
-Radar images detected an increase in trade wind showers across 
-the coastal waters. These showers were moving mainly northeast of
-the islands with some making its way into Molokai and Oahu from
-time to time. Rainfall accumulation were minimal. A relatively 
-dry weather pattern is expected to continue statewide through 
-Tuesday as a high pressure system briefly dominates the area.
-Winds have diminished since yesterday. As a result, the wind
-advisory which was in effect for portions of Maui, Molokai, Oahu,
-and the Big Island was cancelled.
+Breezy east southeast winds with a drier airmass will limit clouds
+and showers tonight. Major Hurricane Nolo (cat. 4) is around 415 
+miles west southwest of Honolulu this afternoon and has made it's
+turn to the northwest. Main impacts in the short-term will be the
+breezy, but weakening winds across the state due to the pressure 
+difference between Nolo and the subtropical high far to the 
+northeast, and the southwest swell directed towards Kauai. Nolo 
+will weaken down to a cat. 1 hurricane and stall around 250 to 300
+miles west of Kauai on Tuesday night and Wednesday, then continue
+on a more west northwesterly track away from the state through 
+the second half of the week.
 
-Major hurricane Nolo continues to move west away from the local
-region. However, by Tuesday Nolo is expected to turn northwest
-passing around 200 miles west of Niihau and Kauai. Although the
-core of the hurricane will pass at a safe distance from the
-islands,trailing moisture associated with Nolo's circulation is 
-expected to affect both islands, and possible Oahu from Tuesday 
-night into Wednesday. Latest model guidance are projecting 
-rainfall accumulation between one to two inches. Although no 
-significant flooding is expected at this time, we will closely 
-monitor the evolution of Nolo as latest guidance are showing deep
-tropical moisture moving over the islands from Tuesday through 
-Thursday which could enhance the amount of rainfall expected. 
-Precipitable water values are expected to increase from 1.10 
-inches up to 2.4 inches by Tuesday night and Wednesday. 
+Winds will remain brisk and gradually veer southeasterly as Nolo 
+gains latitude. Rain bands along Nolo's eastern flank will bring
+an increase in rainfall across Kauai beginning Tuesday and Oahu 
+by Tuesday night, as the southeasterly flow directs showers over 
+populated areas of both islands. Guidance shows varying amounts 
+and lengths of time that the bands will impact the western end of 
+the state, and will ultimately depend on Nolo's eventual path over
+the next few days. QPF has been adjusted for the Tuesday to 
+Thursday period with 3 to 6 inches of additional rain on Kauai and
+Niihau, and up to 4 inches on Oahu. Not considering a Flood Watch
+at this time with the anticipation these rainfall amounts will be
+spread out over several days and showers should be moving along 
+quickly.
 
-In the long term, no significant weather events are forecast to 
-affect the state as a high pressure system builds north and 
-northeast of the region. 
+East southeasterly winds will continue, but gradually weaken, 
+through the second half of the week as Nolo tracks away. By this 
+weekend, trade winds are forecast to build in bringing drier and 
+more stable conditions again.
 
 .AVIATION...
-Breezy to locally strong trades will prevail today but will be
-noticeably less than the past couple of days as Hurricane Nolo 
-moves further away from the state and the pressure gradient over
-the islands begins to relax. Showers will be fairly limited 
-today, with just a few light showers embedded within the trades 
-favoring windward and mountain locations. 
+Breezy trade winds continue through this evening before winds 
+decrease overnight. Trade winds are generally expected to be 
+lighter tomorrow as Hurricane Nolo continues to move away from the
+state. Trade showers continue to the east of the islands and 
+across windward and mountain locations. Tuesday afternoon into 
+Wednesday, there will be an increase in moisture being transported
+towards Kauai and Oahu which will bring an increased likelihood 
+of shower chances there. Showers are most likely across Kauai 
+starting late Tuesday morning with shower chances gradually 
+increasing for Oahu late Tuesday into Wednesday.
 
 AIRMET Tango remains in effect for moderate turbulence below 
-9,000 feet over and immediately downwind of island terrain. This
-AIRMET will likely be needed through mid-week.
+9,000 feet over and immediately downwind of island terrain. This 
+AIRMET will likely be needed through mid- week.
 
 .MARINE...
-Strong to near gale force trade winds and large, rough seas will 
-gradually diminish through tonight as high pressure far north of 
-the state begins to weaken and Hurricane Nolo, several hundred
-miles southwest of the Hawaiian Islands, moves farther west. The 
-Small Craft Advisory (SCA) for all Hawaiian coastal waters (with
-the exception of Maalaea Bay) has been extended through tonight.
-Beyond that point, trade winds are expected to weaken below small
-craft advisory for most waters. Higher seas and strong winds may
-persist for favored channels and waters near Kauai, where the
-current National Hurricane Center forecast has Nolo tracking
-around 230 nautical miles west of on Wednesday. Expect moderate 
-to locally strong winds to veer out of the east-southeast to 
-southeast during this time. Winds will gradually ease and back 
-more easterly by Thursday as Nolo moves westward away from the 
-islands.
+Strong E trades become moderate to breezy out of the SE tonight 
+in response to Hurricane Nolo advancing northwestward. The 
+exception will be around Kauai where proximity to Nolo will allow 
+for the gradient to remain strong. Near gales will be possible 
+immediately west of Kauai tonight through Wednesday, particularly 
+in the channel between Kauai and Niihau. Here, the Small Craft 
+Advisory (SCA) has been extended through Wednesday for both winds 
+and seas. Elsewhere, the SCA remains in place and is still 
+scheduled to expire Tuesday morning. Moderate easterlies 
 
-A mix of long to medium period south-southwest swell and building
-short to medium south swell from a powerful Hurricane Nolo now 
-located southwest of the Hawaiian Islands will bring advisory level 
-surf to south facing shores of all islands and west facing shores of 
-the Big Island today. The hurricane-generated swell will gradually 
-shift southwest, then west, as Nolo tracks northwest roughly parallel
-to the islands through Wednesday. While the forecast currently shows 
-this swell gradually decreasing, and in particular, falling below 
-advisory criteria tonight, Nolo is forecast to remain a major 
-hurricane through Tuesday, which could maintain advisory level surf 
-for longer than currently depicted. By mid-week, these swells will
-originate from the west and be diminishing as the hurricane will be
-weaker and it begins to track away from the islands.
+Tiny long period energy out of the S is noted on the Barber's
+Point PacIOOS Buoy this afternoon. This energy represents the
+initial forerunners of a rather small (about 1 foot), long period
+swell that will maintain elevated surf for S shores through mid- 
+week. This is separate from the more substantial short to medium 
+period fresh swell emanating from Nolo which has prompted today's 
+High Surf Advisories (HSA) for S shores and W facing shores of the
+Big Island. Uncertainty related to the size of Nolo's swell 
+coupled with its slow forward motion Tuesday night through 
+Wednesday will be a theme in the forecast for the next couple of
+days. The latest observations support expiring the HSA for all but
+Kauai and Niihau where the bulk of the SW energy is directed. For
+Kauai/Niihau in particular, high surf may linger into midweek 
+conditional on the exact size of Nolo's swell. Likewise, as Nolo 
+lifts north, it's westerly swell influence will increase 
+potentially supporting an HSA for Big Island-West during the 
+middle of this week.
 
-East shore surf will slowly decline through Wednesday as trade winds
-diminish. However, small, medium period swells from distant East 
-Pacific hurricanes will maintain moderate surf during the remainder of
-the week. On north facing shores, a small medium period swell will 
-fade through Wednesday. Some wrapping west swell from Hurricane Nolo 
-is possible by Wednesday.
+Surf along E shores slowly declines as trades veer to SE and 
+diminish then return as light to moderate easterlies this weekend.
+A small, long period S swell originating east of New Zealand is 
+poised to arrive early next week in maintenance of elevated surf
+along S facing shores.
+
+For N facing shores, the existing small medium period swell fades
+through Wednesday. Multiple rounds of tiny swell originating out 
+of the NW quadrant will reach N and select W facing exposures next
+week as the storm track in the vicinity of the Aleutian Islands 
+becomes increasingly active.
 
 .FIRE WEATHER...
-Issued at 342 AM HST Mon Sep 28 2026
-
-Dry weather conditions are expected to prevail across the state
-today into Tuesday. An increase in shower activity is expected on
-Tuesday and Wednesday as deep tropical moisture makes its way
-towards the islands as Hurricane Nolo pass west of the area. 
-Fire concern will remain low for now as relative humidity values 
-will remain above critical levels and winds have diminished as 
-well.
+Dry and stable with breezy east southeast winds expected through
+through tonight, with a gradual increase in humidity through 
+midweek. Moisture drawn northward along the eastern sides of Nolo
+will increase rain chances across the western part of the state. 
+Fire conditions will improve statewide over the next couple days 
+as winds weaken and humidity levels rise.
 
 .HFO WATCHES/WARNINGS/ADVISORIES...
-Wind Advisory until 6 AM HST early this morning for Big Island 
-North-Central Oahu-East Honolulu-Honolulu Metro-Kipahulu-Kohala-
-Koolau Leeward-Maui Central Valley North-Maui Central Valley 
-South-Maui Leeward West-Maui Windward West-Molokai Leeward South-
-Molokai North-Molokai Southeast-Molokai West-Molokai Windward-
-Oahu North Shore-South Haleakala.
+High Surf Advisory until 6 AM HST Tuesday for Niihau-Kauai 
+Leeward-Kauai South.
 
-High Surf Advisory until 6 AM HST early this morning for Kauai 
-East-Kauai South-Koolau Windward-Olomana.
+Small Craft Advisory until 6 PM HST Wednesday for Kauai 
+Northwest Waters-Kauai Leeward Waters.
 
-Small Craft Advisory until 6 PM HST this evening for Alenuihaha 
-Channel-Big Island Leeward Waters-Big Island Southeast Waters-
-Big Island Windward Waters-Kaiwi Channel-Kauai Channel-Kauai 
-Leeward Waters-Kauai Northwest Waters-Kauai Windward Waters-Maui 
-County Leeward Waters-Maui County Windward Waters-Oahu Leeward 
-Waters-Oahu Windward Waters-Pailolo Channel.
+Small Craft Advisory until 6 AM HST Tuesday for Kauai Windward 
+Waters-Kauai Channel-Oahu Windward Waters-Oahu Leeward Waters-
+Kaiwi Channel-Maui County Windward Waters-Maui County Leeward 
+Waters-Pailolo Channel-Alenuihaha Channel-Big Island Windward 
+Waters-Big Island Leeward Waters-Big Island Southeast Waters.
 
-DISCUSSION...Castro
-AVIATION...Vaughan
-MARINE...Quesada
-Fire....Castro
+DISCUSSION...Foster
+AVIATION...Kennedy
+MARINE...JVC
+FIRE WEATHER...Foster
 ```
 
 ---
@@ -1833,565 +2042,604 @@ Fire....Castro
 |---|---|
 | **Resource ID** | cwf_coastal_waters |
 | **Official source** | https://api.weather.gov/products/types/CWF/locations/HFO |
-| **Collected** | 2026-09-28T04:05:21.206973-10:00 HST |
+| **Collected** | 2026-09-28T15:08:46.975261-10:00 HST |
 
 ```text
 000
-FZHW50 PHFO 281358
+FZHW50 PHFO 290101
 CWFHFO
 
 Coastal Waters Forecast
 National Weather Service Honolulu HI
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 Hawaiian coastal waters within 40 nautical miles including the
 Hawaiian Islands Humpback Whale National Marine Sanctuary.
 
-PHZ100-290215-
-358 AM HST Mon Sep 28 2026
+PHZ100-291415-
+301 PM HST Mon Sep 28 2026
 
 .Synopsis for Hawaiian coastal waters...
-Strong to near gale force trade winds and rough seas will 
+Strong to near gale force trade winds and rough seas will
 gradually decline today as Hurricane Nolo remains several hundred
-miles southwest of the Hawaiian Islands, tracking northwest. 
-Fresh to strong winds will veer out of the southeast tonight 
-through Tuesday night as Nolo begins to pass west of Kauai. Nolo 
+miles southwest of the Hawaiian Islands, tracking northwest.
+Fresh to strong winds will veer out of the southeast tonight
+through Tuesday night as Nolo begins to pass west of Kauai. Nolo
 is forecast to move farther away to the west beginning Wednesday,
-allowing winds to diminish and back out of the east for the latter
-half of the week.
+allowing winds to diminish and back out of the east for the
+latter half of the week. 
 
-PHZ110-290215-
+PHZ110-291415-
 Kauai Northwest Waters-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH WEDNESDAY AFTERNOON...
 
-.TODAY...East winds 25 to 30 knots, easing to 20 to 25 knots this
-afternoon. Seas 8 to 10 feet. Wave Detail: East 9 feet at
-8 seconds, south southwest 5 feet at 10 seconds and north
-northwest 3 feet at 12 seconds. Scattered showers. 
-.TONIGHT...East winds 20 to 25 knots. Seas 8 to 10 feet. Wave
-Detail: East 8 feet at 7 seconds and south southwest 5 feet at
-11 seconds. Scattered showers. 
-.TUESDAY...East southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: Southeast 9 feet at 7 seconds and southwest
-5 feet at 9 seconds. Scattered showers in the morning, then
-occasional showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: Southeast 9 feet at 7 seconds, west
-northwest 4 feet at 11 seconds and south southwest 4 feet at
-15 seconds. Occasional showers. 
-.WEDNESDAY...Southeast winds 25 to 30 knots, easing to 20 to
-25 knots in the afternoon. Seas 7 to 10 feet. Wave Detail:
-Southeast 9 feet at 7 seconds, west northwest 4 feet at
-10 seconds and south southwest 4 feet at 15 seconds. Numerous
+.TONIGHT...East winds 20 to 25 knots. Seas 9 to 11 feet. Wave
+Detail: East 9 feet at 8 seconds, south southwest 5 feet at
+11 seconds and north northwest 3 feet at 12 seconds. Scattered
 showers. 
-.WEDNESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 6 to
-9 feet. Wave Detail: Southeast 8 feet at 7 seconds and south
-southwest 3 feet at 14 seconds. Numerous showers. 
-.THURSDAY...Southeast winds 15 to 20 knots. Seas 5 to 8 feet.
-Wave Detail: East southeast 7 feet at 6 seconds. Numerous
-showers, mainly in the morning. 
-.FRIDAY...Southeast winds 10 to 15 knots. Seas 5 to 6 feet. Wave
-Detail: East 5 feet at 6 seconds and south southwest 3 feet at
-12 seconds. Scattered showers.  
-
-PHZ111-290215-
-Kauai Windward Waters-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East winds 20 to 25 knots. Seas 8 to 11 feet. Wave
-Detail: East southeast 9 feet at 8 seconds, south southwest
-5 feet at 9 seconds and north northwest 3 feet at 14 seconds.
-Scattered showers this morning, then numerous showers this
+.TUESDAY...East southeast winds 25 to 30 knots. Seas 9 to
+12 feet. Wave Detail: East 10 feet at 7 seconds, west southwest
+6 feet at 11 seconds and north northwest 3 feet at 11 seconds.
+Scattered showers in the morning, then occasional showers in the
 afternoon. 
-.TONIGHT...East southeast winds 20 to 25 knots. Seas 8 to
-10 feet. Wave Detail: East 8 feet at 7 seconds and south
-southwest 4 feet at 7 seconds. Scattered showers. 
-.TUESDAY...East southeast winds 20 to 25 knots. Seas 7 to 9 feet.
-Wave Detail: South southeast 8 feet at 7 seconds. Scattered
-showers in the morning, then numerous showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 7 to
-8 feet. Wave Detail: East 7 feet at 7 seconds and south 4 feet at
-15 seconds. Occasional showers. 
-.WEDNESDAY...Southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 6 to 8 feet. Wave Detail: East
-7 feet at 7 seconds and south 4 feet at 15 seconds. Numerous
+.TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 9 to
+12 feet. Wave Detail: East southeast 10 feet at 7 seconds and
+west southwest 6 feet at 11 seconds. Occasional showers. 
+.WEDNESDAY...Southeast winds 25 to 30 knots, easing to 20 to
+25 knots in the afternoon. Seas 8 to 11 feet. Wave Detail: East
+southeast 10 feet at 7 seconds and west southwest 5 feet at
+11 seconds. Numerous showers. 
+.WEDNESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 7 to
+9 feet. Wave Detail: East 8 feet at 7 seconds and west southwest
+5 feet at 11 seconds. Numerous showers. 
+.THURSDAY...Southeast winds 15 to 20 knots. Seas 7 to 9 feet.
+Wave Detail: East 8 feet at 7 seconds and west southwest 5 feet
+at 11 seconds. Numerous showers, mainly in the morning. 
+.THURSDAY NIGHT...East southeast winds 15 to 20 knots. Seas 7 to
+9 feet. Wave Detail: East 7 feet at 7 seconds, west southwest
+5 feet at 11 seconds and north northwest 3 feet at 10 seconds.
+Scattered showers. 
+.FRIDAY...Southeast winds 10 to 15 knots. Seas 6 to 8 feet. Wave
+Detail: East 6 feet at 7 seconds, west southwest 5 feet at
+11 seconds and north northwest 3 feet at 9 seconds. Scattered
 showers. 
-.WEDNESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
-7 feet. Wave Detail: East 6 feet at 6 seconds and south 3 feet at
-14 seconds. Numerous showers. 
-.THURSDAY...East southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 6 seconds. Numerous showers,
-mainly in the morning. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 5 to 6 feet.
-Wave Detail: East 5 feet at 6 seconds and south 3 feet at
-13 seconds. Isolated showers through the night, then scattered
-showers through the day.  
+.SATURDAY...East southeast winds 10 to 15 knots, becoming east
+northeast 15 to 20 knots after midnight. Seas 7 to 9 feet. Wave
+Detail: Northwest 6 feet at 10 seconds, east 5 feet at 6 seconds
+and west southwest 5 feet at 11 seconds. Scattered showers.  
 
-PHZ112-290215-
-Kauai Leeward Waters-
-358 AM HST Mon Sep 28 2026
+PHZ111-291415-
+Kauai Windward Waters-
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East winds 20 to 25 knots. Seas 9 to 10 feet. Wave
-Detail: East southeast 9 feet at 8 seconds and south southwest
-5 feet at 9 seconds. Isolated showers. 
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 9 to
+11 feet. Wave Detail: East 9 feet at 8 seconds, south southwest
+5 feet at 11 seconds and north northwest 3 feet at 12 seconds.
+Scattered showers. 
+.TUESDAY...East southeast winds 20 to 25 knots. Seas 8 to
+10 feet. Wave Detail: East 9 feet at 8 seconds and southwest
+4 feet at 11 seconds. Scattered showers in the morning, then
+numerous showers in the afternoon. 
+.TUESDAY NIGHT...Southeast winds 20 to 25 knots. Seas 8 to
+9 feet. Wave Detail: East 8 feet at 7 seconds and southwest
+5 feet at 11 seconds. Occasional showers. 
+.WEDNESDAY...Southeast winds 20 to 25 knots, easing to 15 to
+20 knots in the afternoon. Seas 7 to 9 feet. Wave Detail: East
+8 feet at 7 seconds and southwest 4 feet at 11 seconds. Numerous
+showers. 
+.WEDNESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 7 to
+9 feet. Wave Detail: East 7 feet at 7 seconds and southwest
+4 feet at 11 seconds. Numerous showers. 
+.THURSDAY...East southeast winds 15 to 20 knots. Seas 7 to
+8 feet. Wave Detail: East 7 feet at 7 seconds and southwest
+4 feet at 11 seconds. Numerous showers, mainly in the morning. 
+.THURSDAY NIGHT...East southeast winds 15 to 20 knots. Seas 7 to
+9 feet. Wave Detail: East 7 feet at 7 seconds, southwest 4 feet
+at 11 seconds and north northwest 3 feet at 10 seconds. Scattered
+showers. 
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 6 to 8 feet.
+Wave Detail: East 6 feet at 7 seconds, southwest 4 feet at
+11 seconds and north 3 feet at 9 seconds. Isolated showers
+through the night, then scattered showers through the day. 
+.SATURDAY...East southeast winds to 10 knots. Seas 6 to 8 feet.
+Wave Detail: East 5 feet at 6 seconds, west northwest 5 feet at
+10 seconds and southwest 4 feet at 11 seconds. Scattered showers.
+
+PHZ112-291415-
+Kauai Leeward Waters-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH WEDNESDAY AFTERNOON...
+
 .TONIGHT...East southeast winds 20 to 25 knots, rising to 25 to
-30 knots after midnight. Seas 9 to 10 feet. Wave Detail:
-Southeast 9 feet at 8 seconds and south southwest 5 feet at
-11 seconds. Numerous showers. 
-.TUESDAY...Southeast winds 25 to 30 knots. Seas 8 to 11 feet.
-Wave Detail: Southeast 9 feet at 8 seconds and southwest 5 feet
-at 7 seconds. Occasional showers. 
+30 knots after midnight. Seas 9 to 11 feet. Wave Detail: East
+southeast 9 feet at 8 seconds, south southwest 5 feet at
+11 seconds and north northwest 3 feet at 12 seconds. Numerous
+showers. 
+.TUESDAY...Southeast winds 25 to 30 knots. Seas 9 to 12 feet.
+Wave Detail: Southeast 9 feet at 8 seconds and southwest 6 feet
+at 11 seconds. Occasional showers. 
 .TUESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 9 to
-12 feet. Wave Detail: Southeast 9 feet at 7 seconds, west
-northwest 6 feet at 11 seconds and south southwest 4 feet at
-15 seconds. Occasional showers. 
-.WEDNESDAY...South southeast winds 25 to 30 knots. Seas 8 to
-11 feet. Wave Detail: Southeast 7 feet at 7 seconds, west
-northwest 6 feet at 10 seconds and south southwest 4 feet at
-15 seconds. Occasional showers. 
+12 feet, subsiding to 8 to 10 feet after midnight. Wave Detail:
+Southeast 9 feet at 7 seconds and west southwest 5 feet at
+11 seconds. Occasional showers. 
+.WEDNESDAY...South southeast winds 25 to 30 knots. Seas 7 to
+10 feet. Wave Detail: East southeast 7 feet at 7 seconds and west
+southwest 5 feet at 11 seconds. Occasional showers. 
 .WEDNESDAY NIGHT...Southeast winds 25 to 30 knots. Seas 7 to
-9 feet. Wave Detail: Southeast 6 feet at 6 seconds, west
-northwest 4 feet at 9 seconds and south southwest 3 feet at
-14 seconds. Occasional showers. 
-.THURSDAY...Southeast winds 25 to 30 knots, easing to 20 to
-25 knots. Seas 5 to 8 feet. Wave Detail: East southeast 5 feet at
-6 seconds, northwest 3 feet at 9 seconds and south southwest
-3 feet at 13 seconds. Occasional showers through the night, then
-scattered showers through the day. 
+9 feet. Wave Detail: East southeast 7 feet at 6 seconds and west
+southwest 5 feet at 11 seconds. Occasional showers. 
+.THURSDAY...Southeast winds 25 to 30 knots. Seas 6 to 9 feet.
+Wave Detail: East southeast 6 feet at 6 seconds, west southwest
+5 feet at 11 seconds and north northwest 3 feet at 10 seconds.
+Occasional showers. 
+.THURSDAY NIGHT...Southeast winds 20 to 25 knots. Seas 7 to
+9 feet. Wave Detail: East 6 feet at 6 seconds, west southwest
+5 feet at 11 seconds and north northwest 3 feet at 10 seconds.
+Scattered showers. 
 .FRIDAY...Southeast winds 15 to 20 knots, easing to 10 to
 15 knots. In the Kaulakahi Channel, southeast winds 25 to
-30 knots, becoming east southeast 10 to 15 knots. Seas 4 to
-6 feet. Wave Detail: East southeast 5 feet at 6 seconds and south
-southwest 4 feet at 12 seconds. Scattered showers.  
-
-PHZ113-290215-
-Kauai Channel-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East winds 20 to 25 knots. Seas 9 to 10 feet. Wave
-Detail: East southeast 9 feet at 8 seconds and south southwest
-5 feet at 9 seconds. 
-.TONIGHT...East winds 20 to 25 knots, becoming east southeast
-15 to 20 knots after midnight. Seas 7 to 10 feet. Wave Detail:
-East northeast 8 feet at 7 seconds and southwest 5 feet at
-7 seconds. Isolated showers. 
-.TUESDAY...Southeast winds 15 to 20 knots. Seas 7 to 9 feet. Wave
-Detail: South 7 feet at 7 seconds. Scattered showers in the
-morning, then occasional showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds to 20 knots. Seas 7 to 9 feet.
-Wave Detail: Southeast 7 feet at 7 seconds, south southwest
-4 feet at 15 seconds and west northwest 3 feet at 11 seconds.
-Occasional showers. 
-.WEDNESDAY...South southeast winds 15 to 20 knots. Seas 7 to
-9 feet, subsiding to 6 to 7 feet in the afternoon. Wave Detail:
-Southeast 7 feet at 6 seconds, south southwest 4 feet at
-15 seconds and west northwest 3 feet at 10 seconds. Occasional
-showers. 
-.WEDNESDAY NIGHT...Southeast winds to 15 knots. Seas 6 to 7 feet.
-Wave Detail: Southeast 6 feet at 6 seconds and south southwest
-3 feet at 14 seconds. Occasional showers. 
-.THURSDAY...East southeast winds to 15 knots. Seas 5 to 6 feet.
-Wave Detail: Southeast 5 feet at 6 seconds and south 3 feet at
-13 seconds. Numerous showers, mainly in the morning. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 6 feet.
-Wave Detail: East 5 feet at 6 seconds and south 3 feet at
-13 seconds. Scattered showers.  
-
-PHZ114-290215-
-Oahu Windward Waters-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East winds 20 to 25 knots. Seas 8 to 11 feet. Wave
-Detail: East southeast 9 feet at 7 seconds, south southwest
-4 feet at 9 seconds and north northwest 3 feet at 14 seconds.
+30 knots, becoming east southeast 10 to 15 knots. Seas 6 to
+8 feet. Wave Detail: East 5 feet at 6 seconds, west southwest
+5 feet at 11 seconds and north northwest 3 feet at 9 seconds.
 Scattered showers. 
-.TONIGHT...East winds 20 to 25 knots. Seas 6 to 8 feet. Wave
-Detail: East 7 feet at 7 seconds and south southwest 4 feet at
-8 seconds. Isolated showers. 
+.SATURDAY...East southeast winds 15 to 20 knots. Seas 6 to
+9 feet. Wave Detail: Northwest 6 feet at 10 seconds, west
+southwest 5 feet at 11 seconds and east 4 feet at 5 seconds.
+Scattered showers in the morning, then isolated showers in the
+afternoon. Scattered showers through the day.  
+
+PHZ113-291415-
+Kauai Channel-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TONIGHT...East winds 20 to 25 knots, becoming east southeast
+15 to 20 knots after midnight. Seas 8 to 11 feet. Wave Detail:
+East 8 feet at 7 seconds, southwest 5 feet at 11 seconds and
+north 3 feet at 12 seconds. Isolated showers. 
+.TUESDAY...Southeast winds 15 to 20 knots. Seas 7 to 10 feet.
+Wave Detail: East southeast 8 feet at 8 seconds and west
+southwest 5 feet at 11 seconds. Scattered showers in the morning,
+then occasional showers in the afternoon. 
+.TUESDAY NIGHT...Southeast winds to 20 knots. Seas 7 to 9 feet.
+Wave Detail: East southeast 8 feet at 7 seconds and west
+southwest 5 feet at 11 seconds. Occasional showers. 
+.WEDNESDAY...South southeast winds 15 to 20 knots. Seas 7 to
+8 feet. Wave Detail: East southeast 7 feet at 7 seconds and
+southwest 4 feet at 11 seconds. Occasional showers. 
+.WEDNESDAY NIGHT...Southeast winds to 15 knots. Seas 6 to 8 feet.
+Wave Detail: East southeast 6 feet at 6 seconds and west
+southwest 5 feet at 11 seconds. Occasional showers. 
+.THURSDAY...Southeast winds to 15 knots. Seas 6 to 8 feet. Wave
+Detail: East southeast 6 feet at 6 seconds and west southwest
+5 feet at 11 seconds. Numerous showers, mainly in the morning. 
+.THURSDAY NIGHT...East southeast winds to 15 knots. Seas 6 to
+8 feet. Wave Detail: East 6 feet at 6 seconds, west southwest
+5 feet at 11 seconds and north northwest 3 feet at 10 seconds.
+Scattered showers. 
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 6 to 8 feet.
+Wave Detail: East 5 feet at 6 seconds, west southwest 5 feet at
+11 seconds and north 3 feet at 9 seconds. Scattered showers. 
+.SATURDAY...East winds 10 to 15 knots. Seas 6 to 7 feet. Wave
+Detail: East 4 feet at 5 seconds, southwest 4 feet at 11 seconds
+and northwest 3 feet at 9 seconds. Scattered showers.  
+
+PHZ114-291415-
+Oahu Windward Waters-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TONIGHT...East winds 20 to 25 knots. Seas 8 to 10 feet. Wave
+Detail: East 8 feet at 7 seconds, southwest 5 feet at 11 seconds
+and north northwest 3 feet at 12 seconds. Isolated showers. 
+.TUESDAY...East southeast winds to 20 knots. Seas 7 to 10 feet.
+Wave Detail: East 8 feet at 7 seconds and west southwest 5 feet
+at 11 seconds. Isolated showers in the afternoon. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 7 to
+9 feet. Wave Detail: East 7 feet at 7 seconds and west southwest
+4 feet at 11 seconds. Scattered showers. 
+.WEDNESDAY...Southeast winds 15 to 20 knots. Seas 6 to 8 feet.
+Wave Detail: East 7 feet at 7 seconds and west southwest 4 feet
+at 11 seconds. Scattered showers in the morning. 
+.WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 6 to
+8 feet. Wave Detail: East 7 feet at 7 seconds and west southwest
+4 feet at 11 seconds. Scattered showers. 
+.THURSDAY...East southeast winds 15 to 20 knots. Seas 6 to
+8 feet. Wave Detail: East 7 feet at 7 seconds and west southwest
+4 feet at 11 seconds. Scattered showers in the morning. 
+.THURSDAY NIGHT...East southeast winds to 15 knots. Seas 6 to
+8 feet. Wave Detail: East 6 feet at 7 seconds, west southwest
+4 feet at 11 seconds and north northwest 3 feet at 10 seconds.
+Isolated showers. 
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 5 to 8 feet.
+Wave Detail: East 6 feet at 6 seconds, west southwest 4 feet at
+11 seconds and north 3 feet at 9 seconds. Isolated showers
+through the night, then scattered showers through the day. 
+.SATURDAY...East southeast winds 10 to 15 knots, becoming east
+15 to 20 knots in the afternoon, easing to 10 to 15 knots. Seas
+5 to 8 feet. Wave Detail: East 5 feet at 6 seconds, west
+northwest 4 feet at 10 seconds and southwest 4 feet at
+11 seconds. Scattered showers.  
+
+PHZ115-291415-
+Oahu Leeward Waters-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TONIGHT...East southeast winds 15 to 20 knots. Seas 8 to 9 feet.
+Wave Detail: East southeast 7 feet at 7 seconds and southwest
+5 feet at 11 seconds. Isolated showers. 
+.TUESDAY...Southeast winds 15 to 20 knots. Seas 6 to 9 feet. Wave
+Detail: Southeast 7 feet at 8 seconds and west southwest 5 feet
+at 11 seconds. Scattered showers. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
+7 feet. Wave Detail: Southeast 6 feet at 6 seconds and southwest
+4 feet at 11 seconds. Scattered showers. 
+.WEDNESDAY...Southeast winds 15 to 20 knots, becoming south
+southeast 10 to 15 knots in the afternoon. Seas 6 to 7 feet. Wave
+Detail: Southeast 6 feet at 6 seconds and south southwest 4 feet
+at 11 seconds. Numerous showers. 
+.WEDNESDAY NIGHT...Southeast winds 10 to 15 knots. Seas to
+6 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 4 feet at 11 seconds. Numerous showers. 
+.THURSDAY...East southeast winds 10 to 15 knots. Seas 6 to
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds and southwest
+4 feet at 11 seconds. Numerous showers. 
+.THURSDAY NIGHT...East southeast winds 10 to 15 knots. Seas 6 to
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds, west
+southwest 4 feet at 11 seconds and north northwest 3 feet at
+10 seconds. Scattered showers. 
+.FRIDAY...East southeast winds to 10 knots. Seas 5 to 6 feet.
+Wave Detail: East southeast 4 feet at 5 seconds, southwest 4 feet
+at 11 seconds and north northwest 3 feet at 9 seconds. Isolated
+showers. 
+.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave
+Detail: South southwest 4 feet at 11 seconds, east 3 feet at
+5 seconds and west northwest 3 feet at 9 seconds. Isolated
+showers in the morning. Isolated showers through the day.  
+
+PHZ116-291415-
+Kaiwi Channel-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TONIGHT...East winds 20 to 25 knots. Seas 7 to 10 feet. Wave
+Detail: East 8 feet at 7 seconds, southwest 5 feet at 11 seconds
+and north 3 feet at 12 seconds. 
+.TUESDAY...East southeast winds 15 to 20 knots. Seas 6 to 9 feet.
+Wave Detail: East southeast 7 feet at 7 seconds and west
+southwest 5 feet at 11 seconds. 
+.TUESDAY NIGHT...Southeast winds 15 to 20 knots, easing to 10 to
+15 knots after midnight. Seas 6 to 8 feet. Wave Detail: East
+southeast 7 feet at 6 seconds and southwest 4 feet at 11 seconds.
+Scattered showers. 
+.WEDNESDAY...Southeast winds 10 to 15 knots, rising to 15 to
+20 knots in the afternoon. Seas 6 to 7 feet. Wave Detail: East
+southeast 6 feet at 6 seconds and south southwest 4 feet at
+11 seconds. Scattered showers in the morning. 
+.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 6 to
+7 feet. Wave Detail: East southeast 6 feet at 6 seconds and south
+southwest 4 feet at 11 seconds. Scattered showers. 
+.THURSDAY...East southeast winds 15 to 20 knots, becoming east
+10 to 15 knots in the afternoon. Seas 6 to 7 feet. Wave Detail:
+East southeast 6 feet at 6 seconds and southwest 4 feet at
+11 seconds. Scattered showers in the morning. 
+.THURSDAY NIGHT...East winds 10 to 15 knots. Seas 6 to 7 feet.
+Wave Detail: East southeast 5 feet at 6 seconds, southwest 4 feet
+at 11 seconds and north northwest 3 feet at 10 seconds. Isolated
+showers. 
+.FRIDAY...East southeast winds 10 to 15 knots. Seas 5 to 7 feet.
+Wave Detail: East southeast 5 feet at 6 seconds, southwest 4 feet
+at 11 seconds and north northwest 3 feet at 9 seconds. Isolated
+showers through the night. Scattered showers through the day. 
+.SATURDAY...East northeast winds 10 to 15 knots. Seas 4 to
+6 feet. Wave Detail: East 4 feet at 5 seconds and south southwest
+4 feet at 11 seconds. Scattered showers.  
+
+PHZ117-291415-
+Maui County Windward Waters-
+301 PM HST Mon Sep 28 2026
+
+...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
+
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 7 to 9 feet.
+Wave Detail: East 8 feet at 7 seconds and north northwest 3 feet
+at 12 seconds. Isolated showers. 
 .TUESDAY...East southeast winds to 20 knots. Seas 6 to 8 feet.
-Wave Detail: East 7 feet at 7 seconds and south southwest 3 feet
-at 13 seconds. Isolated showers in the afternoon. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 5 to
-7 feet. Wave Detail: East 6 feet at 6 seconds. Scattered showers.
-.WEDNESDAY...Southeast winds 15 to 20 knots. Seas 5 to 7 feet.
-Wave Detail: East 6 feet at 6 seconds. Scattered showers in the
+Wave Detail: East 7 feet at 6 seconds and north northwest 3 feet
+at 12 seconds. 
+.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 6 to
+7 feet. Wave Detail: East 7 feet at 6 seconds. Isolated showers. 
+.WEDNESDAY...East southeast winds 15 to 20 knots. Seas to 6 feet.
+Wave Detail: East 6 feet at 6 seconds. Isolated showers in the
 morning. 
 .WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 5 to
-6 feet. Wave Detail: East southeast 6 feet at 6 seconds.
-Scattered showers. 
+6 feet. Wave Detail: East 6 feet at 6 seconds. Isolated showers. 
 .THURSDAY...East southeast winds 15 to 20 knots. Seas 5 to
-6 feet. Wave Detail: East 5 feet at 6 seconds. Scattered showers
-in the morning. Isolated showers through the day. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas to 5 feet.
-Wave Detail: East 5 feet at 6 seconds. Isolated showers through
-the night, then scattered showers through the day.  
-
-PHZ115-290215-
-Oahu Leeward Waters-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East winds 15 to 20 knots. Seas 9 to 10 feet, subsiding
-to 7 to 9 feet this afternoon. Wave Detail: East southeast 9 feet
-at 8 seconds and south southwest 5 feet at 9 seconds. 
-.TONIGHT...East southeast winds 15 to 20 knots. Seas 7 to 9 feet.
-Wave Detail: East southeast 7 feet at 7 seconds and south
-southwest 5 feet at 7 seconds. Isolated showers. 
-.TUESDAY...Southeast winds 15 to 20 knots. Seas 6 to 8 feet. Wave
-Detail: Southeast 7 feet at 7 seconds and south southwest 4 feet
-at 16 seconds. Scattered showers. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
-7 feet, building to 7 to 9 feet after midnight. Wave Detail:
-Southeast 5 feet at 6 seconds, west northwest 5 feet at
-11 seconds and south southwest 4 feet at 15 seconds. Scattered
-showers. 
-.WEDNESDAY...Southeast winds 15 to 20 knots, becoming south
-southeast 10 to 15 knots in the afternoon. Seas 6 to 8 feet. Wave
-Detail: Southeast 6 feet at 6 seconds, west northwest 4 feet at
-10 seconds and south southwest 4 feet at 15 seconds. Numerous
-showers. 
-.WEDNESDAY NIGHT...Southeast winds 10 to 15 knots. Seas 5 to
-7 feet. Wave Detail: Southeast 5 feet at 6 seconds, west
-northwest 3 feet at 9 seconds and south southwest 3 feet at
-14 seconds. Numerous showers. 
-.THURSDAY...East southeast winds 10 to 15 knots. Seas 5 to
-7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 3 feet at 13 seconds. Numerous showers through the
-night. Scattered showers through the day. 
-.FRIDAY...East southeast winds to 10 knots. Seas 4 to 5 feet.
-Wave Detail: Southeast 4 feet at 5 seconds and south southwest
-3 feet at 13 seconds. Isolated showers.  
-
-PHZ116-290215-
-Kaiwi Channel-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East winds 25 to 30 knots, easing to 20 to 25 knots this
-afternoon. Seas 8 to 11 feet, subsiding to 8 to 9 feet this
-afternoon. Wave Detail: East 10 feet at 7 seconds and south
-southwest 5 feet at 9 seconds. 
-.TONIGHT...East winds 20 to 25 knots. Seas 7 to 9 feet. Wave
-Detail: East 7 feet at 7 seconds and south southwest 4 feet at
-12 seconds. 
-.TUESDAY...East southeast winds 15 to 20 knots. Seas 6 to 8 feet.
-Wave Detail: Southeast 6 feet at 7 seconds and south southwest
-4 feet at 12 seconds. 
-.TUESDAY NIGHT...Southeast winds 15 to 20 knots, easing to 10 to
-15 knots after midnight. Seas 6 to 8 feet. Wave Detail: Southeast
-5 feet at 6 seconds, south southwest 4 feet at 16 seconds and
-northwest 3 feet at 11 seconds. Scattered showers. 
-.WEDNESDAY...Southeast winds 10 to 15 knots, rising to 15 to
-20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail:
-Southeast 5 feet at 6 seconds, south southwest 4 feet at
-15 seconds and northwest 3 feet at 10 seconds. Scattered showers
+6 feet. Wave Detail: East 6 feet at 14 seconds. Isolated showers
 in the morning. 
-.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 5 to
-6 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
-southwest 3 feet at 14 seconds. Scattered showers. 
-.THURSDAY...East southeast winds 15 to 20 knots, becoming east
-10 to 15 knots. Seas 5 to 6 feet. Wave Detail: Southeast 5 feet
-at 6 seconds and south 3 feet at 13 seconds. Scattered showers in
-the morning. Isolated showers through the day. 
-.FRIDAY...East southeast winds 10 to 15 knots. Seas 4 to 5 feet.
-Wave Detail: East 4 feet at 5 seconds and south southwest 3 feet
-at 13 seconds. Isolated showers through the night. Scattered
-showers through the day.  
-
-PHZ117-290215-
-Maui County Windward Waters-
-358 AM HST Mon Sep 28 2026
-
-...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
-
-.TODAY...East southeast winds 25 to 30 knots, easing to 20 to
-25 knots this afternoon. Seas 7 to 10 feet, subsiding to 6 to
-8 feet this afternoon. Wave Detail: Southeast 8 feet at 7 seconds
-and north northwest 3 feet at 15 seconds. Scattered showers. 
-.TONIGHT...East southeast winds 20 to 25 knots. Seas 5 to 7 feet.
-Wave Detail: Southeast 6 feet at 6 seconds and north northwest
-3 feet at 12 seconds. Isolated showers. 
-.TUESDAY...East southeast winds to 20 knots. Seas 5 to 6 feet.
-Wave Detail: East southeast 5 feet at 6 seconds. 
-.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: Southeast 5 feet at 5 seconds. Isolated
-showers. 
-.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: East southeast 5 feet at 5 seconds. Isolated
-showers in the morning. 
-.WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: East southeast 5 feet at 5 seconds. Isolated
-showers. 
-.THURSDAY...East southeast winds 15 to 20 knots. Seas 4 to
-5 feet. Wave Detail: East 4 feet at 5 seconds. Isolated showers
-in the morning. Isolated showers through the day. 
+.THURSDAY NIGHT...East southeast winds to 15 knots. Seas 5 to
+6 feet. Wave Detail: East 5 feet at 6 seconds and north northwest
+3 feet at 10 seconds. Isolated showers. 
 .FRIDAY...East southeast winds 15 to 20 knots, easing to 10 to
-15 knots after midnight. Seas 4 to 5 feet. Wave Detail: East
-northeast 4 feet at 5 seconds. Scattered showers through the day.
+15 knots after midnight. Seas 4 to 6 feet. Wave Detail: East
+5 feet at 6 seconds and north 3 feet at 9 seconds. Scattered
+showers through the day. 
+.SATURDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave
+Detail: East 4 feet at 5 seconds and west northwest 4 feet at
+10 seconds. Scattered showers.  
 
-PHZ118-290215-
+PHZ118-291415-
 Maui County Leeward Waters-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East southeast winds 25 to 30 knots, backing to east
-20 to 25 knots this afternoon. Seas 8 to 11 feet. Wave Detail:
-East southeast 10 feet at 8 seconds and south southwest 5 feet at
-9 seconds. 
 .TONIGHT...East winds 20 to 25 knots, rising to 25 to 30 knots
 after midnight. Seas 7 to 10 feet. Wave Detail: East southeast
-8 feet at 7 seconds and south southwest 4 feet at 12 seconds.
+8 feet at 7 seconds and west southwest 5 feet at 11 seconds.
 Isolated showers. 
 .TUESDAY...East southeast winds 20 to 25 knots, becoming
-southeast 15 to 20 knots in the afternoon. Seas 7 to 10 feet,
-subsiding to 6 to 8 feet in the afternoon. Wave Detail: Southeast
-8 feet at 7 seconds and south southwest 4 feet at 12 seconds.
-Isolated showers in the morning. Scattered showers in the
-afternoon. 
+southeast 15 to 20 knots in the afternoon. Seas 7 to 10 feet.
+Wave Detail: East southeast 8 feet at 7 seconds and west
+southwest 4 feet at 11 seconds. Isolated showers in the morning.
+Scattered showers in the afternoon. 
 .TUESDAY NIGHT...Southeast winds 15 to 20 knots. Seas 6 to
-8 feet. Wave Detail: South southeast 5 feet at 6 seconds, west
-northwest 4 feet at 11 seconds and south southwest 4 feet at
-16 seconds. Scattered showers. 
+7 feet. Wave Detail: Southeast 6 feet at 6 seconds and south
+southwest 4 feet at 11 seconds. Scattered showers. 
 .WEDNESDAY...Southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 5 to 8 feet. Wave Detail: South
-southeast 5 feet at 6 seconds, west northwest 4 feet at
-10 seconds and south southwest 4 feet at 15 seconds. Scattered
-showers in the morning. 
+20 knots in the afternoon. Seas 5 to 7 feet. Wave Detail: South
+southeast 6 feet at 6 seconds and south southwest 4 feet at
+11 seconds. Scattered showers in the morning. 
 .WEDNESDAY NIGHT...East southeast winds 20 to 25 knots. Seas 5 to
-7 feet. Wave Detail: South southeast 5 feet at 6 seconds and
-south southwest 3 feet at 14 seconds. Scattered showers. 
-.THURSDAY...East southeast winds 15 to 20 knots, becoming east
-10 to 15 knots in the evening, rising to 15 to 20 knots after
-midnight. Seas 4 to 6 feet. Wave Detail: South southeast 5 feet
-at 6 seconds and south southwest 3 feet at 13 seconds. Scattered
-showers in the morning. Scattered showers through the day. 
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 3 feet at 11 seconds. Scattered showers. 
+.THURSDAY...East southeast winds 15 to 20 knots. Seas 5 to
+7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 4 feet at 11 seconds. Scattered showers in the morning.
+.THURSDAY NIGHT...East winds 10 to 15 knots, rising to 15 to
+20 knots after midnight. Seas 4 to 6 feet. Wave Detail: Southeast
+5 feet at 6 seconds and south southwest 4 feet at 11 seconds.
+Scattered showers. 
 .FRIDAY...East southeast winds 15 to 20 knots, easing to 10 to
-15 knots. Seas 3 to 5 feet. Wave Detail: South southeast 4 feet
-at 5 seconds and south southwest 3 feet at 13 seconds. Isolated
-showers through the night. Isolated showers after midnight.  
+15 knots. Seas 4 to 6 feet. Wave Detail: Southeast 4 feet at
+5 seconds and south southwest 4 feet at 11 seconds. Isolated
+showers through the night. Isolated showers after midnight. 
+.SATURDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave
+Detail: East southeast 3 feet at 4 seconds and south southwest
+3 feet at 11 seconds. Isolated showers after midnight.  
 
-PHZ119-290215-
+PHZ119-291415-
 Maalaea Bay-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
-.TODAY...North winds 15 to 20 knots. Seas to 3 feet this morning,
-then to 2 feet or less. Wave Detail: South southeast 3 feet at
-8 seconds and south southwest 3 feet at 9 seconds. 
-.TONIGHT...North northeast winds 15 to 20 knots. Seas to 2 feet
-or less. Wave Detail: South southeast 2 feet at 7 seconds. 
+.TONIGHT...North northeast winds 15 to 20 knots. Seas 3 to
+4 feet. Wave Detail: West southwest 4 feet at 11 seconds. 
 .TUESDAY...East southeast winds to 10 knots, rising to 15 knots
-in the afternoon. Seas to 2 feet or less, then to 3 feet in the
-afternoon. Wave Detail: South southeast 3 feet at 6 seconds. 
+in the afternoon. Seas to 3 feet. Wave Detail: South southeast
+3 feet at 5 seconds and west southwest 3 feet at 11 seconds. 
 .TUESDAY NIGHT...East southeast winds 7 to 10 knots. Seas to
 3 feet in the evening, then to 2 feet or less. Wave Detail: South
-southeast 3 feet at 6 seconds. 
+southeast 3 feet at 5 seconds. 
 .WEDNESDAY...Southeast winds to 10 knots. Seas to 2 feet or less.
-Wave Detail: South 2 feet at 6 seconds. 
 .WEDNESDAY NIGHT...East winds to 10 knots. Seas to 2 feet or
 less. Wave Detail: South 2 feet at 6 seconds. 
-.THURSDAY...East winds 10 to 15 knots, becoming 7 to 10 knots.
-Seas to 2 feet or less. 
+.THURSDAY...East winds 10 to 15 knots. Seas to 2 feet or less. 
+.THURSDAY NIGHT...East winds 7 to 10 knots. Seas to 2 feet or
+less. 
 .FRIDAY...East southeast winds 7 to 10 knots, becoming variable
-less than 10 knots. Seas to 2 feet or less.  
+less than 10 knots. Seas to 2 feet or less. 
+.SATURDAY...East winds 7 to 10 knots, becoming variable less than
+10 knots. Seas to 2 feet or less.  
 
-PHZ120-290215-
+PHZ120-291415-
 Pailolo Channel-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East winds 25 to 30 knots. Seas 5 to 8 feet. Wave
-Detail: East 8 feet at 6 seconds and south southwest 3 feet at
-12 seconds. 
-.TONIGHT...East northeast winds 20 to 25 knots. Seas 5 to 7 feet,
-subsiding to 3 to 5 feet after midnight. Wave Detail: East
-northeast 6 feet at 6 seconds. 
-.TUESDAY...East northeast winds 10 to 15 knots. Seas 3 to 5 feet.
-Wave Detail: East 4 feet at 6 seconds. 
+.TONIGHT...East northeast winds 20 to 25 knots. Seas 5 to 8 feet.
+Wave Detail: East 6 feet at 5 seconds and southwest 4 feet at
+11 seconds. 
+.TUESDAY...East northeast winds 10 to 15 knots. Seas 4 to 6 feet.
+Wave Detail: East 4 feet at 7 seconds and west southwest 4 feet
+at 11 seconds. 
 .TUESDAY NIGHT...East southeast winds 7 to 10 knots in the
 evening, becoming variable less than 10 knots. Seas 3 to 5 feet.
-Wave Detail: East southeast 3 feet at 6 seconds. Scattered
-showers. 
+Wave Detail: East 4 feet at 6 seconds and southwest 3 feet at
+11 seconds. Scattered showers. 
 .WEDNESDAY...East winds 7 to 10 knots. Seas 3 to 5 feet. Wave
-Detail: Southeast 3 feet at 6 seconds. Isolated showers in the
+Detail: East southeast 4 feet at 6 seconds. Isolated showers in
+the morning. 
+.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 5 feet.
+Wave Detail: East southeast 4 feet at 6 seconds. Isolated
+showers. 
+.THURSDAY...East northeast winds to 15 knots. Seas 3 to 5 feet.
+Wave Detail: East 3 feet at 6 seconds. Isolated showers in the
 morning. 
-.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 4 feet.
-Wave Detail: Southeast 3 feet at 5 seconds. Isolated showers. 
-.THURSDAY...East northeast winds 10 to 15 knots. Seas 3 to
-4 feet. Wave Detail: East 3 feet at 5 seconds. Isolated showers
-in the morning. 
-.FRIDAY...East northeast winds 10 to 15 knots. Seas 3 to 4 feet.
-Wave Detail: East 3 feet at 5 seconds. Scattered showers through
-the day.  
+.THURSDAY NIGHT...East northeast winds 10 to 15 knots. Seas 3 to
+5 feet. Wave Detail: East 3 feet at 6 seconds. 
+.FRIDAY...East northeast winds 10 to 15 knots. Seas 3 to 5 feet.
+Wave Detail: East 3 feet at 6 seconds. Scattered showers through
+the day. 
+.SATURDAY...East northeast winds 10 to 15 knots. Seas 3 to
+4 feet. Wave Detail: East 3 feet at 6 seconds. Scattered showers.
 
-PHZ121-290215-
+PHZ121-291415-
 Alenuihaha Channel-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East northeast winds 25 to 30 knots. Seas 9 to 12 feet,
-subsiding to 7 to 10 feet this afternoon. Wave Detail: East
-11 feet at 7 seconds and southwest 4 feet at 12 seconds. 
-.TONIGHT...East winds 25 to 30 knots. Seas 6 to 9 feet. Wave
-Detail: East 7 feet at 6 seconds and south southwest 4 feet at
-12 seconds. Isolated showers. 
-.TUESDAY...East winds 20 to 25 knots. Seas 5 to 8 feet. Wave
-Detail: East 6 feet at 5 seconds and south southwest 4 feet at
-16 seconds. Isolated showers in the afternoon. 
+.TONIGHT...East winds 25 to 30 knots. Seas 8 to 10 feet,
+subsiding to 6 to 9 feet after midnight. Wave Detail: East
+northeast 8 feet at 7 seconds and west southwest 5 feet at
+11 seconds. Isolated showers. 
+.TUESDAY...East winds 20 to 25 knots. Seas 6 to 8 feet. Wave
+Detail: East 6 feet at 6 seconds and south southwest 4 feet at
+11 seconds. Isolated showers in the afternoon. 
 .TUESDAY NIGHT...East southeast winds 15 to 20 knots, easing to
-10 to 15 knots after midnight. Seas 5 to 8 feet. Wave Detail:
-Southeast 5 feet at 5 seconds, west northwest 4 feet at
-11 seconds and south southwest 4 feet at 16 seconds. Scattered
-showers. 
+10 to 15 knots after midnight. Seas 6 to 7 feet. Wave Detail:
+East southeast 6 feet at 6 seconds and south southwest 4 feet at
+11 seconds. Scattered showers. 
 .WEDNESDAY...East southeast winds 10 to 15 knots, becoming east
-15 to 20 knots in the afternoon. Seas 5 to 8 feet. Wave Detail:
-Southeast 5 feet at 5 seconds, west northwest 4 feet at
-10 seconds and south southwest 4 feet at 15 seconds. Scattered
-showers. 
+15 to 20 knots in the afternoon. Seas 5 to 6 feet. Wave Detail:
+East southeast 5 feet at 6 seconds and south southwest 4 feet at
+11 seconds. Scattered showers. 
 .WEDNESDAY NIGHT...East winds 15 to 20 knots. Seas 5 to 7 feet.
-Wave Detail: South southeast 5 feet at 6 seconds and south
-southwest 4 feet at 14 seconds. Scattered showers. 
-.THURSDAY...East winds 15 to 20 knots. Seas 5 to 7 feet. Wave
-Detail: East 4 feet at 5 seconds and south southwest 3 feet at
-13 seconds. Scattered showers in the morning. Scattered showers
-through the day. 
+Wave Detail: East southeast 5 feet at 6 seconds and south
+southwest 3 feet at 11 seconds. Scattered showers. 
+.THURSDAY...East winds 15 to 20 knots. Seas 5 to 6 feet. Wave
+Detail: East southeast 5 feet at 6 seconds and south southwest
+3 feet at 11 seconds. Scattered showers in the morning. 
+.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 5 to 6 feet.
+Wave Detail: East 5 feet at 6 seconds and south southwest 3 feet
+at 11 seconds. Scattered showers. 
 .FRIDAY...East winds 15 to 20 knots, easing to 10 to 15 knots
-after midnight. Seas 4 to 5 feet. Wave Detail: East northeast
-4 feet at 5 seconds and south southwest 3 feet at 13 seconds.
-Isolated showers.  
+after midnight. Seas to 5 feet. Wave Detail: East 4 feet at
+5 seconds and south southwest 3 feet at 11 seconds. Isolated
+showers. 
+.SATURDAY...East winds 15 to 20 knots. Seas 4 to 5 feet. Wave
+Detail: East northeast 4 feet at 5 seconds and south southwest
+3 feet at 11 seconds. Isolated showers through the night.
+Scattered showers in the evening, then isolated showers after
+midnight.  
 
-PHZ122-290215-
+PHZ122-291415-
 Big Island Windward Waters-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East southeast winds 20 to 25 knots. Seas 5 to 7 feet.
-Wave Detail: East 5 feet at 5 seconds, south southwest 4 feet at
-13 seconds and north northwest 3 feet at 15 seconds. Isolated
-showers this afternoon. 
-.TONIGHT...East southeast winds 20 to 25 knots. Seas 4 to 5 feet.
-Wave Detail: East northeast 4 feet at 4 seconds and south
-southwest 3 feet at 12 seconds. Scattered showers. 
+.TONIGHT...East southeast winds 20 to 25 knots. Seas 5 to 8 feet.
+Wave Detail: East 5 feet at 9 seconds, southwest 4 feet at
+11 seconds and north northwest 3 feet at 13 seconds. Scattered
+showers. 
 .TUESDAY...East southeast winds 20 to 25 knots, easing to 15 to
-20 knots in the afternoon. Seas 3 to 5 feet. Wave Detail:
-Southeast 4 feet at 4 seconds and south southwest 3 feet at
-12 seconds. Isolated showers. 
-.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 3 to
-4 feet. Wave Detail: Southeast 4 feet at 4 seconds. Isolated
-showers. 
-.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 3 to
-4 feet. Wave Detail: Southeast 4 feet at 4 seconds. 
-.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to
-4 feet. Wave Detail: Southeast 3 feet at 4 seconds. Isolated
-showers. 
-.THURSDAY...East winds 10 to 15 knots. Seas 3 to 4 feet. Wave
-Detail: East southeast 3 feet at 4 seconds. Isolated showers
-through the day. 
-.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave
-Detail: East 3 feet at 4 seconds. Isolated showers in the
-morning. Isolated showers through the day.  
+20 knots in the afternoon. Seas 4 to 6 feet. Wave Detail: East
+5 feet at 9 seconds, southwest 3 feet at 11 seconds and north
+northwest 3 feet at 12 seconds. Isolated showers. 
+.TUESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to
+6 feet. Wave Detail: East 5 feet at 13 seconds and south
+southwest 3 feet at 11 seconds. Isolated showers. 
+.WEDNESDAY...East southeast winds 15 to 20 knots. Seas 4 to
+5 feet. Wave Detail: East 5 feet at 12 seconds and south
+southwest 3 feet at 11 seconds. 
+.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 4 to
+5 feet. Wave Detail: East 5 feet at 14 seconds and south
+southwest 3 feet at 11 seconds. Isolated showers. 
+.THURSDAY...East winds to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East 4 feet at 14 seconds. 
+.THURSDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 5 feet.
+Wave Detail: East 4 feet at 13 seconds. Isolated showers. 
+.FRIDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East 4 feet at 12 seconds. Isolated showers in the
+morning. Isolated showers through the day. 
+.SATURDAY...East winds 10 to 15 knots, rising to 15 to 20 knots
+in the afternoon, easing to 10 to 15 knots. Seas 3 to 4 feet.
+Wave Detail: East 3 feet at 10 seconds. Isolated showers through
+the night, then scattered showers in the evening. Isolated
+showers after midnight.  
 
-PHZ123-290215-
+PHZ123-291415-
 Big Island Leeward Waters-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...West of the Big Island, northwest winds 10 to 15 knots,
-becoming 7 to 10 knots this afternoon. Near South Point, east
-winds 25 to 30 knots. Seas 6 to 9 feet. Wave Detail: East
-southeast 8 feet at 6 seconds and south southwest 5 feet at
-13 seconds. 
 .TONIGHT...West of the Big Island, north winds 7 to 10 knots.
 Near South Point, east winds to 25 knots, becoming 20 to 25 knots
-after midnight. Seas 5 to 8 feet. Wave Detail: East southeast
-6 feet at 6 seconds and south southwest 4 feet at 12 seconds. 
+after midnight. Seas 6 to 9 feet. Wave Detail: East southeast
+7 feet at 6 seconds and west southwest 5 feet at 11 seconds. 
 .TUESDAY...West of the Big Island, northwest winds 7 to 10 knots,
 becoming southwest 15 to 20 knots in the afternoon. Near South
 Point, east southeast winds 20 to 25 knots. Seas 5 to 7 feet.
-Wave Detail: Southeast 5 feet at 6 seconds and south southwest
-4 feet at 16 seconds. Isolated showers in the afternoon. 
+Wave Detail: Southeast 5 feet at 5 seconds and south southwest
+4 feet at 11 seconds. Isolated showers in the afternoon. 
 .TUESDAY NIGHT...Winds east northeast winds 10 to 15 knots. Seas
-5 to 8 feet. Wave Detail: Southeast 5 feet at 6 seconds, west
-northwest 5 feet at 11 seconds and south southwest 4 feet at
-16 seconds. Isolated showers. 
+5 to 7 feet. Wave Detail: Southeast 5 feet at 6 seconds and south
+southwest 4 feet at 11 seconds. Isolated showers. 
 .WEDNESDAY...West of the Big Island, southwest winds 15 to
 20 knots, rising to 20 to 25 knots in the afternoon. Near
-Kawaihae, north northeast winds 7 to 10 knots. Seas 5 to 8 feet.
-Wave Detail: West northwest 5 feet at 11 seconds, southeast
-4 feet at 5 seconds and south southwest 4 feet at 15 seconds.
-Isolated showers. 
+Kawaihae, north northeast winds 7 to 10 knots. Seas 4 to 6 feet.
+Wave Detail: Southeast 5 feet at 5 seconds and south southwest
+4 feet at 11 seconds. Isolated showers. 
 .WEDNESDAY NIGHT...West of the Big Island, south southeast winds
 15 to 20 knots, easing to 10 to 15 knots after midnight. Near
-Kawaihae, east northeast winds 7 to 10 knots. Seas 5 to 8 feet.
-Wave Detail: Southeast 5 feet at 5 seconds, south southwest
-4 feet at 14 seconds and west northwest 3 feet at 9 seconds.
-Scattered showers. 
+Kawaihae, east northeast winds 7 to 10 knots. Seas 5 to 7 feet.
+Wave Detail: Southeast 5 feet at 6 seconds and south southwest
+3 feet at 11 seconds. Scattered showers. 
 .THURSDAY...West of the Big Island, north northeast winds 10 to
-15 knots, backing to west southwest in the afternoon, backing to
-south in the evening, veering to north northwest 7 to 10 knots
-after midnight. Near South Point, east winds 15 to 20 knots,
-rising to 20 to 25 knots in the afternoon, easing to 15 knots.
-Seas 5 to 7 feet. Wave Detail: Southeast 4 feet at 5 seconds,
-west northwest 3 feet at 9 seconds and south southwest 3 feet at
-13 seconds. Scattered showers in the morning. Isolated showers in
-the afternoon, then scattered showers through the day. 
+15 knots, backing to west southwest in the afternoon. Near South
+Point, east winds 15 to 20 knots, rising to 20 to 25 knots in the
+afternoon. Seas 5 to 7 feet. Wave Detail: Southeast 5 feet at
+6 seconds, west northwest 3 feet at 9 seconds and south southwest
+3 feet at 11 seconds. Scattered showers in the morning. Isolated
+showers in the afternoon. 
+.THURSDAY NIGHT...West of the Big Island, south winds to
+10 knots, veering to north northwest 7 to 10 knots after
+midnight. Near South Point, east winds to 15 knots. Seas 5 to
+7 feet. Wave Detail: Southeast 4 feet at 5 seconds, west
+northwest 3 feet at 9 seconds and south southwest 3 feet at
+11 seconds. Scattered showers. 
 .FRIDAY...West of the Big Island, winds variable less than
 10 knots, becoming southwest 7 to 10 knots in the afternoon,
 backing to south southeast. Near South Point, east winds to
-15 knots, easing to 10 knots. Seas 3 to 5 feet. Wave Detail: East
-southeast 3 feet at 4 seconds and south southwest 3 feet at
-13 seconds. Isolated showers.  
+15 knots, easing to 10 knots. Seas 4 to 5 feet. Wave Detail: East
+southeast 3 feet at 5 seconds and south southwest 3 feet at
+11 seconds. Isolated showers. 
+.SATURDAY...West of the Big Island, winds variable less than
+10 knots, becoming south 7 to 10 knots in the afternoon, backing
+to southeast in the evening, backing to north northeast after
+midnight. Near Kawaihae, northeast winds 10 to 15 knots, veering
+to east 7 to 10 knots. Seas 4 to 5 feet. Wave Detail: East
+northeast 3 feet at 4 seconds, northwest 3 feet at 10 seconds and
+south southwest 3 feet at 11 seconds. Scattered showers in the
+evening. Isolated showers after midnight.  
 
-PHZ124-290215-
+PHZ124-291415-
 Big Island Southeast Waters-
-358 AM HST Mon Sep 28 2026
+301 PM HST Mon Sep 28 2026
 
 ...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY TUESDAY MORNING...
 
-.TODAY...East northeast winds 20 to 25 knots. Seas 5 to 7 feet.
-Wave Detail: East 5 feet at 5 seconds and south southwest 4 feet
-at 13 seconds. Isolated showers this afternoon. 
-.TONIGHT...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave
-Detail: East 4 feet at 4 seconds and south southwest 3 feet at
-12 seconds. Scattered showers. 
-.TUESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
-Detail: East southeast 3 feet at 4 seconds, west northwest 3 feet
-at 10 seconds and south southwest 3 feet at 16 seconds. Isolated
-showers in the morning, then scattered showers in the afternoon. 
-.TUESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 6 feet.
-Wave Detail: West northwest 4 feet at 11 seconds, east southeast
-3 feet at 4 seconds and south southwest 3 feet at 16 seconds.
-Scattered showers. 
-.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave
-Detail: West northwest 4 feet at 11 seconds, east 3 feet at
-4 seconds and south southwest 3 feet at 15 seconds. Isolated
-showers. 
-.WEDNESDAY NIGHT...East winds to 15 knots. Seas 3 to 5 feet. Wave
-Detail: West northwest 3 feet at 9 seconds and south southwest
-3 feet at 14 seconds. Isolated showers. 
-.THURSDAY...East winds to 15 knots. Seas 3 to 5 feet. Wave
-Detail: East northeast 3 feet at 4 seconds and west northwest
-3 feet at 9 seconds. Isolated showers in the morning. Isolated
-showers through the day. 
-.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave
-Detail: East 3 feet at 4 seconds. Isolated showers in the
-morning. Scattered showers through the day.
+.TONIGHT...East winds 15 to 20 knots. Seas 6 to 8 feet. Wave
+Detail: East 5 feet at 9 seconds and west southwest 5 feet at
+11 seconds. Scattered showers. 
+.TUESDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave
+Detail: East 5 feet at 10 seconds and south southwest 4 feet at
+11 seconds. Isolated showers in the morning, then scattered
+showers in the afternoon. 
+.TUESDAY NIGHT...East winds 10 to 15 knots. Seas 5 to 6 feet.
+Wave Detail: East 5 feet at 13 seconds and south southwest 3 feet
+at 11 seconds. Scattered showers. 
+.WEDNESDAY...East winds 10 to 15 knots. Seas to 5 feet. Wave
+Detail: East 4 feet at 12 seconds and south southwest 3 feet at
+11 seconds. Isolated showers. 
+.WEDNESDAY NIGHT...East winds to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East 4 feet at 15 seconds and south southwest 3 feet at
+11 seconds. Isolated showers. 
+.THURSDAY...East winds to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East 4 feet at 14 seconds, west northwest 3 feet at
+9 seconds and south southwest 3 feet at 11 seconds. Isolated
+showers in the morning. 
+.THURSDAY NIGHT...East northeast winds to 15 knots. Seas 4 to
+5 feet. Wave Detail: East 4 feet at 12 seconds and west northwest
+3 feet at 9 seconds. Isolated showers. 
+.FRIDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave
+Detail: East 3 feet at 12 seconds. Isolated showers in the
+morning. Scattered showers through the day. 
+.SATURDAY...East northeast winds 10 to 15 knots. Seas 4 to
+5 feet. Wave Detail: East 4 feet at 5 seconds. Scattered showers.
 ```
 
 ---
@@ -2778,19 +3026,19 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | hfo_rra_direct |
 | **Official source** | https://forecast.weather.gov/product.php?issuedby=HFO&product=RRA&site=hfo |
-| **Collected** | 2026-09-28T06:00:34.326995-10:00 HST |
+| **Collected** | 2026-09-28T15:56:00.387125-10:00 HST |
 
 ```text
-140
-SRHW80 PHFO 281546
+101
+SRHW80 PHFO 290146
 RRAHFO
 
 Hawaii Rainfall Summary
 National Weather Service Honolulu HI
-545 AM HST Mon Sep 28 2026
+345 PM HST Mon Sep 28 2026
 
 :
-.B HFO  0928 H  DH05 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
+.B HFO  0928 H  DH15 /DRH-03/PPT/DRH-06/PPQ/DRH-12/PPK/DRH-24/PPD
 :
 :Automated rain gage reports from around the State of Hawaii.
 :These are provisional reports that have not been quality
@@ -2798,7 +3046,7 @@ National Weather Service Honolulu HI
 :
 :T=Trace Rainfall, M=Missing Data
 :
-:Precipitation totals ending  5 AM HST
+:Precipitation totals ending  3 PM HST
 :
 :Island of Kauai                                   Inches
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
@@ -2806,30 +3054,30 @@ National Weather Service Honolulu HI
 MKAH1 : Makaha Ridge (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
 PLRH1 : Puu Lua (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 WKRH1 : Waiakoali (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
-KLOH1 : Kilohana (USGS)             :    0.00  /  0.02  /  0.07  /  0.14
-MCRH1 : Mohihi Crossing (USGS)      :    0.02  /  0.04  /  0.04  /  0.05
-WLGH1 : Waialae (USGS)              :    0.04  /  0.09  /  0.10  /  0.10
-LLMH1 : Lower Limahuli (UHM)        :    0.02  /  0.03  /  0.07  /  0.10
-WNHH1 : Wainiha (12010)             :    0.04  /  0.05  /  0.05  /  0.07
-WIPH1 : Waipa (UHM)                 :    0.06  /  0.07  /  0.12  /  0.20
-HNIH1 : Hanalei (12009)             :    0.08  /  0.09  /  0.14  /  0.22
+KLOH1 : Kilohana (USGS)             :    0.00  /  0.00  /  0.02  /  0.12
+MCRH1 : Mohihi Crossing (USGS)      :    0.00  /  0.00  /  0.02  /  0.05
+WLGH1 : Waialae (USGS)              :    0.00  /  0.01  /  0.02  /  0.12
+LLMH1 : Lower Limahuli (UHM)        :    0.00  /  0.01  /  0.04  /  0.11
+WNHH1 : Wainiha (12010)             :    0.00  /  0.01  /  0.01  /  0.08
+WIPH1 : Waipa (UHM)                 :    0.01  /  0.09  /  0.16  /  0.26
+HNIH1 : Hanalei (12009)             :    0.00  /  0.10  /  0.18  /  0.31
 WLLH1 : Mount Waialeale (USGS)      :      M   /    M   /    M   /    M
-PRIH1 : Princeville Airport (12011) :    0.02  /  0.03  /  0.05  /  0.05
-CMGH1 : Common Ground (UHM)         :    0.04  /  0.07  /  0.08  /  0.12
-HLIH1 : Hanalei (RAWS)              :    0.03  /  0.06  /  0.09  /  0.18
+PRIH1 : Princeville Airport (12011) :    0.00  /  0.07  /  0.14  /  0.17
+CMGH1 : Common Ground (UHM)         :    0.00  /  0.08  /  0.37  /  0.42
+HLIH1 : Hanalei (RAWS)              :    0.02  /  0.14  /  0.41  /  0.55
 MLDH1 : Moloaa Dairy (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-ANHH1 : Anahola (12001)             :      M   /    M   /  0.00  /  0.01
-KPIH1 : Kapahi (12003)              :    0.03  /  0.03  /  0.06  /  0.06
-WLDH1 : N Wailua Ditch (USGS)       :    0.07  /  0.16  /  0.16  /  0.17
-WUHH1 : Wailua (12005)              :    0.03  /  0.06  /  0.06  /  0.06
-WIRH1 : Waiahi Rain Gage (USGS)     :    0.06  /  0.10  /  0.10  /  0.20
-LIHH1 : Lihue Var. Stn. (12006)     :    0.00  /  0.03  /  0.03  /  0.06
-HNMH1 : Hanamaulu (UHM)             :    0.04  /  0.10  /  0.12  /  0.26
-HLI   : Lihue Airport (ASOS)        :      T   /    T   /  0.01  /  0.02
+ANHH1 : Anahola (12001)             :    0.00  /  0.11  /  0.18  /  0.18
+KPIH1 : Kapahi (12003)              :    0.01  /  0.03  /  0.09  /  0.15
+WLDH1 : N Wailua Ditch (USGS)       :    0.00  /  0.38  /  0.54  /  0.66
+WUHH1 : Wailua (12005)              :    0.00  /  0.02  /  0.09  /  0.13
+WIRH1 : Waiahi Rain Gage (USGS)     :    0.01  /  0.10  /  0.25  /  0.29
+LIHH1 : Lihue Var. Stn. (12006)     :    0.00  /  0.01  /  0.09  /  0.12
+HNMH1 : Hanamaulu (UHM)             :    0.00  /  0.06  /  0.20  /  0.28
+HLI   : Lihue Airport (ASOS)        :      T   /    T   /    T   /  0.01
 :       Leeward Sites
-OMAH1 : Omao (12004)                :    0.01  /  0.01  /  0.01  /  0.02
-LNTH1 : Lawai NTBG (UHM)            :    0.01  /  0.03  /  0.03  /  0.06
-KHEH1 : Kalaheo (12008)             :    0.03  /  0.04  /  0.04  /  0.06
+OMAH1 : Omao (12004)                :    0.00  /  0.00  /  0.02  /  0.02
+LNTH1 : Lawai NTBG (UHM)            :    0.00  /  0.00  /  0.01  /  0.06
+KHEH1 : Kalaheo (12008)             :    0.00  /  0.00  /  0.05  /  0.06
 PAKH1 : Port Allen (HSOIS)          :    0.00  /  0.00  /  0.00  /  0.00
 HNPH1 : Hanapepe (12002)            :    0.00  /  0.00  /  0.00  /  0.00
 POPH1 : Puu Opae (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
@@ -2843,23 +3091,23 @@ MNRH1 : Mana (RAWS)                 :    0.00  /  0.00  /  0.00  /  0.00
 KAHH1 : Kahuku (13027)              :    0.00  /  0.00  /  0.00  /  0.00
 KTAH1 : Kahuku Training Area (RAWS) :    0.00  /  0.00  /  0.00  /  0.00
 KFWH1 : Kii (RAWS)                  :    0.00  /  0.00  /  0.00  /  0.00
-PUNH1 : Punaluu Pump (13013)        :    0.00  /  0.00  /  0.00  /  0.01
-PNSH1 : Punaluu Stream (USGS)       :    0.00  /  0.01  /  0.02  /  0.02
-KNRH1 : Kahana (USGS)               :    0.01  /  0.03  /  0.03  /  0.03
-HAKH1 : Hakipuu Mauka (13004)       :    0.00  /  0.00  /  0.00  /  0.00
-WPPH1 : Waihee Pump (13002)         :    0.00  /  0.00  /  0.00  /  0.05
+PUNH1 : Punaluu Pump (13013)        :    0.00  /  0.00  /  0.01  /  0.01
+PNSH1 : Punaluu Stream (USGS)       :    0.00  /  0.00  /  0.13  /  0.15
+KNRH1 : Kahana (USGS)               :    0.00  /  0.01  /  0.05  /  0.08
+HAKH1 : Hakipuu Mauka (13004)       :    0.00  /  0.01  /  0.03  /  0.03
+WPPH1 : Waihee Pump (13002)         :    0.00  /  0.00  /  0.09  /  0.09
 WHSH1 : Waiahole (USGS)             :    0.00  /  0.00  /  0.00  /  0.00
-OFRH1 : Oahu Forest NWR (USFWS)     :    0.00  /  0.00  /  0.00  /  0.00
-AHUH1 : Ahuimanu Loop (13005)       :    0.00  /  0.00  /  0.00  /  0.00
-HRRH1 : Heeia NERR (NOAA/NOS)       :    0.00  /  0.00  /  0.00  /  0.00
+OFRH1 : Oahu Forest NWR (USFWS)     :    0.00  /  0.00  /  0.01  /  0.01
+AHUH1 : Ahuimanu Loop (13005)       :    0.00  /  0.00  /  0.02  /  0.02
+HRRH1 : Heeia NERR (NOAA/NOS)       :    0.00  /  0.00  /  0.01  /  0.01
 LULH1 : Luluku (13016)              :    0.00  /  0.00  /  0.00  /  0.00
 NRSH1 : Nuuanu Res No. 1 (UHM)      :    0.00  /  0.00  /  0.00  /  0.00
-KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.00  /  0.06
-LYOH1 : Lyon (UHM)                  :    0.00  /  0.01  /  0.02  /  0.03
-MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.00  /  0.00  /  0.02
-STVH1 : St. Stephens (13006)        :    0.00  /  0.00  /  0.00  /  0.01
+KWIH1 : Kalawahine (UHM)            :    0.00  /  0.00  /  0.01  /  0.01
+LYOH1 : Lyon (UHM)                  :    0.00  /  0.00  /  0.00  /  0.02
+MNLH1 : Manoa Lyon Arboretum (13023):    0.00  /  0.00  /  0.00  /  0.00
+STVH1 : St. Stephens (13006)        :    0.00  /  0.00  /  0.01  /  0.01
 MAUH1 : Maunawili (13008)           :      M   /    M   /    M   /    M
-OFSH1 : Olomana Fire Station (13009):    0.00  /  0.00  /  0.00  /  0.00
+OFSH1 : Olomana Fire Station (13009):    0.00  /  0.00  /  0.02  /  0.02
 WMLH1 : Waimanalo (13011)           :    0.00  /  0.00  /  0.00  /  0.00
 BELH1 : Bellows AFS (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.00
 KMHH1 : Kamehame (13012)            :    0.00  /  0.00  /  0.00  /  0.00
@@ -2869,22 +3117,22 @@ KUXH1 : Kaluanui (UHM)              :    0.00  /  0.00  /  0.00  /  0.00
 NIUH1 : Niu Valley (13001)          :    0.00  /  0.00  /  0.00  /  0.00
 PFSH1 : Palolo Fire Station (13010) :    0.00  /  0.00  /  0.00  /  0.00
 HNL   : Honolulu Airport (ASOS)             See note at bottom  :
-MOAH1 : Moanalua (13003)            :    0.00  /  0.00  /  0.00  /  0.00
-MOGH1 : Moanalua RG (USGS)          :    0.00  /  0.00  /  0.00  /  0.00
-TNLH1 : Tunnel RG (USGS)            :    0.00  /  0.00  /  0.00  /  0.00
+MOAH1 : Moanalua (13003)            :    0.00  /  0.01  /  0.01  /  0.01
+MOGH1 : Moanalua RG (USGS)          :    0.00  /  0.00  /  0.07  /  0.07
+TNLH1 : Tunnel RG (USGS)            :    0.00  /  0.00  /  0.10  /  0.10
 PACH1 : Palisades (13020)           :    0.00  /  0.00  /  0.00  /  0.00
-WAWH1 : Waiawa C.F. (13025)         :    0.00  /  0.00  /  0.00  /  0.00
+WAWH1 : Waiawa C.F. (13025)         :    0.00  /  0.00  /  0.01  /  0.01
 MITH1 : Mililani (13022)            :    0.00  /  0.00  /  0.00  /  0.00
 SCBH1 : Schofield Barracks (RAWS)   :    0.00  /  0.00  /  0.00  /  0.00
 SCEH1 : Schofield East (RAWS)       :    0.00  /  0.00  /  0.00  /  0.00
 WAFH1 : Wheeler Airfield            :    0.00  /  0.00  /  0.00  /  0.00
 POAH1 : Poamoho (13018)             :    0.00  /  0.00  /  0.00  /  0.00
 KRGH1 : Kalahee Ridge (UHM)         :    0.00  /  0.00  /  0.00  /  0.00
-KMRH1 : Kamananui Stream (USGS)     :    0.00  /  0.00  /  0.00  /  0.02
-PPRH1 : Pupukea Road (USGS)         :    0.00  /  0.00  /  0.00  /  0.01
-PMHH1 : Poamoho RG 1 (USGS)         :    0.00  /  0.01  /  0.03  /  0.03
+KMRH1 : Kamananui Stream (USGS)     :    0.00  /  0.00  /  0.01  /  0.01
+PPRH1 : Pupukea Road (USGS)         :    0.00  /  0.00  /  0.01  /  0.01
+PMHH1 : Poamoho RG 1 (USGS)         :    0.00  /  0.00  /  0.04  /  0.07
 DLGH1 : Dillingham (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
-AALH1 : Kaala (UHM)                 :    0.01  /  0.01  /  0.01  /  0.01
+AALH1 : Kaala (UHM)                 :    0.00  /  0.00  /  0.02  /  0.02
 PECH1 : Waipio (13019)              :    0.00  /  0.00  /  0.00  /  0.00
 KUNH1 : Kunia Substation (13021)    :    0.00  /  0.00  /  0.00  /  0.00
 HOFH1 : Honouliuli (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
@@ -2905,7 +3153,7 @@ KOPH1 : Keopukaloa (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
 HOMH1 : Honolimaloo (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
 KMLH1 : Kamalo (14013)              :    0.00  /  0.00  /  0.00  /  0.00
 MKPH1 : Makapulapai (RAWS)          :    0.00  /  0.00  /  0.00  /  0.00
-PAFH1 : Puu Alii (RAWS)             :    0.01  /  0.01  /  0.01  /  0.01
+PAFH1 : Puu Alii (RAWS)             :    0.00  /  0.00  /  0.01  /  0.01
 MLKH1 : Molokai 1 (RAWS)            :      M   /    M   /    M   /    M
 KACH1 : Kaunakakai Mauka (14004)    :    0.00  /  0.00  /  0.00  /  0.00
 HMK   : Molokai Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
@@ -2924,19 +3172,19 @@ KAOH1 : Kaneloa (RAWS)              :      M   /    M   /    M   /    M
 :ID     Location                         3-Hr    6-Hr   12-Hr   24-Hr
 :       Windward Sites
 HNAH1 : Hana Airport (HSOIS)        :      M   /    M   /    M   /    M
-WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.00  /  0.15
-EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.00  /  0.02
+WWKH1 : West Wailuaiki (USGS)       :    0.00  /  0.00  /  0.01  /  0.02
+EBYH1 : EMI Baseyard (UHM)          :    0.00  /  0.00  /  0.00  /  0.00
 AIKH1 : Haiku (14001)               :    0.00  /  0.00  /  0.00  /  0.00
 HOG   : Kahului Airport (ASOS)      :    0.00  /  0.00  /  0.00  /  0.00
 WUKH1 : Wailuku (14007)             :    0.00  /  0.00  /  0.00  /  0.00
 KHKH1 : Kahakuloa (14002)           :    0.00  /  0.00  /  0.00  /  0.00
-PKKH1 : Puu Kukui (USGS)            :    0.00  /  0.01  /  0.06  /  0.14
+PKKH1 : Puu Kukui (USGS)            :    0.00  /  0.00  /  0.00  /  0.06
 :       Leeward/Upcountry Sites
 NKUH1 : Na Kula (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KPNH1 : Kepuni (USGS)               :    0.00  /  0.00  /  0.00  /  0.00
-PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.01
-WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.02
-PUKH1 : Pukalani (14006)            :      M   /    M   /  0.00  /  0.00
+PILH1 : Piiholo (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
+WKTH1 : Waikamoi Treeline (UHM)     :    0.00  /  0.00  /  0.00  /  0.00
+PUKH1 : Pukalani (14006)            :    0.00  /  0.00  /    M   /  0.00
 KBSH1 : Kula Branch Station (14008) :      M   /    M   /    M   /    M
 KLGH1 : Kula Ag (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 PHQH1 : Park HQ (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
@@ -2948,7 +3196,7 @@ KMEH1 : Kamehamenui 1 (RAWS)        :    0.00  /  0.00  /  0.00  /  0.00
 KKEH1 : Keokea (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 ULUH1 : Ulupalakua (14003)          :    0.00  /  0.00  /  0.00  /  0.00
 LPOH1 : Lipoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.00
-KHIH1 : Kihei #2 (14009)            :      M   /    M   /    M   /  0.00
+KHIH1 : Kihei #2 (14009)            :    0.00  /  0.00  /  0.00  /  0.00
 KPDH1 : Kealia Pond (USFWS)         :    0.00  /  0.00  /  0.00  /  0.00
 WCCH1 : Waikapu Country Club (14005):    0.00  /  0.00  /  0.00  /  0.00
 HULH1 : Hanaula (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
@@ -2962,59 +3210,59 @@ HOOH1 : Honolua (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
 :       Windward Sites
 UPLH1 : Upolu Airport (HSOIS)       :    0.00  /  0.00  /  0.00  /  0.00
 KMMH1 : Kaluamakani (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
-KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.08
-KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.01
+KWSH1 : Kawainui Stream (USGS)      :    0.00  /  0.00  /  0.00  /  0.00
+KUUH1 : Kamuela Upper (15002)       :    0.00  /  0.00  /  0.00  /  0.00
 KMUH1 : Kamuela (15005)             :    0.00  /  0.00  /  0.00  /  0.00
-HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.01
+HNKH1 : Honokaa (15010)             :    0.00  /  0.00  /  0.00  /  0.00
 PMLH1 : Puu Mali (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
-WPNH1 : Waipunalei (UHM)            :      M   /    M   /    M   /  0.03
-KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.04
-LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.03
-LAUH1 : Laupahoehoe (UHM)           :      M   /    M   /    M   /  0.30
-SPNH1 : Spencer (UHM)               :      M   /    M   /    M   /  0.04
-HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.18
-KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.08
-NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.00  /  0.00  /  0.58
-SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.00  /  0.78
-PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.00  /  0.53
-PIIH1 : Piihonua (15016)            :    0.00  /  0.00  /  0.01  /  0.02
-IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.12
-WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.19
-WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.05
-HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  0.32
-PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.12
-PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.02
-MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.00  /  0.26
-GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.00  /  0.63
+WPNH1 : Waipunalei (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
+KNKH1 : Kanakaleonui (UHM)          :    0.00  /  0.00  /  0.00  /  0.00
+LPHH1 : Laupahoehoe PD (15001)      :    0.00  /  0.00  /  0.00  /  0.00
+LAUH1 : Laupahoehoe (UHM)           :    0.00  /  0.00  /  0.00  /  0.00
+SPNH1 : Spencer (UHM)               :    0.00  /  0.00  /  0.00  /  0.00
+HKUH1 : Hakalau (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
+KLXH1 : Kulaimano (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
+NLIH1 : Honolii Stream (USGS)       :    0.00  /  0.01  /  0.01  /  0.01
+SDQH1 : Saddle Quarry (USGS)        :    0.00  /  0.00  /  0.00  /  0.02
+PIOH1 : Piihonua (UHM)              :    0.00  /  0.00  /  0.00  /  0.00
+PIIH1 : Piihonua (15016)            :    0.00  /  0.00  /  0.00  /  0.01
+IPIH1 : IPIF (UHM)                  :    0.00  /  0.00  /  0.00  /  0.00
+WKAH1 : Waiakea Uka (15017)         :    0.00  /  0.00  /  0.00  /  0.00
+WEXH1 : Waiakea Exp Stn (NOAA/CRN)  :    0.00  /  0.00  /  0.00  /  0.00
+HTO   : Hilo Airport (ASOS)         :    0.00  /  0.00  /  0.00  /  0.00
+PHAH1 : Pahoa (15015)               :    0.00  /  0.00  /  0.00  /  0.00
+PAOH1 : Pahoa (UHM)                 :    0.00  /  0.00  /  0.00  /  0.00
+MTVH1 : Mountain View (15014)       :    0.00  /  0.00  /  0.00  /  0.00
+GLNH1 : Glenwood (15013)            :    0.00  /  0.00  /  0.00  /  0.00
 :       Leeward Sites
 MOBH1 : Mauna Loa Ob Stn (NOAA/CRN) :    0.00  /  0.00  /  0.00  /  0.00
-NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.00  /  0.38
-KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.01
-KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.05
-PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.01
-KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.02
-KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.02
+NHKH1 : Nahuku (UHM)                :    0.00  /  0.00  /  0.00  /  0.01
+KKUH1 : Keaumo (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
+KMOH1 : Kealakomo (RAWS)            :    0.00  /  0.00  /  0.00  /  0.00
+PLIH1 : Pali 2 (RAWS)               :    0.00  /  0.00  /  0.00  /  0.00
+KPRH1 : Kapapala (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
+KAYH1 : Kapapala Ranch (15003)      :    0.00  /  0.00  /  0.00  /  0.00
 PPLH1 : Pahala (15004)              :    0.00  /  0.00  /  0.00  /  0.00
 KIOH1 : Kaiholena (UHM)             :      M   /    M   /    M   /    M
-NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.03
-SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.57
-LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.00  /  0.18
-KRCH1 : Kahuku Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.01
-KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.00  /  0.03
-PHRH1 : Puho CS (RAWS)              :    0.14  /  0.16  /  0.17  /  0.17
-HAUH1 : Honaunau (15007)            :    0.00  /  0.00  /  0.09  /  0.73
-KLEH1 : Kealakekua (15008)          :    0.00  /  0.06  /  0.13  /  0.13
-WIHH1 : Waiaha Stream (15009)       :    0.00  /  0.05  /  0.46  /  0.47
-KOUH1 : Keahuolu (UHM)              :    0.00  /  0.04  /  0.51  /  0.72
+NENH1 : Nene Cabin (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
+SOPH1 : South Point (HSOIS)         :    0.00  /  0.00  /  0.00  /  0.00
+LKHH1 : Lower Kahuku (RAWS)         :    0.00  /  0.00  /  0.00  /  0.01
+KRCH1 : Kahuku Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
+KOMH1 : Kona Hema (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
+PHRH1 : Puho CS (RAWS)              :    0.00  /  0.00  /  0.13  /  0.17
+HAUH1 : Honaunau (15007)            :    0.00  /  0.00  /  0.00  /  0.73
+KLEH1 : Kealakekua (15008)          :    0.00  /  0.00  /  0.00  /  0.13
+WIHH1 : Waiaha Stream (15009)       :    0.00  /  0.00  /  0.00  /  0.46
+KOUH1 : Keahuolu (UHM)              :    0.00  /  0.00  /  0.00  /  0.51
 KHOH1 : Kaloko-Honokohau (RAWS)     :    0.00  /  0.00  /  0.00  /  0.00
 HKO   : Kona Intl Airport (ASOS)    :    0.00  /  0.00  /  0.00  /  0.00
-PLMH1 : Palamanui (UHM)             :    0.00  /  0.00  /  0.06  /  0.07
-KIRH1 : Kiholo RG (USGS)            :    0.00  /  0.03  /  0.03  /  0.03
-KPLH1 : Kaupulehu (RAWS)            :    0.00  /  0.02  /  0.08  /  0.08
+PLMH1 : Palamanui (UHM)             :    0.00  /  0.00  /  0.00  /  0.06
+KIRH1 : Kiholo RG (USGS)            :    0.00  /  0.00  /  0.00  /  0.03
+KPLH1 : Kaupulehu (RAWS)            :    0.00  /  0.00  /  0.00  /  0.08
 PULH1 : Puuanahulu (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
 MMLH1 : Mamalahoa (UHM)             :    0.00  /  0.00  /  0.00  /  0.00
 PWWH1 : Puu Waawaa (RAWS)           :    0.00  /  0.00  /  0.00  /  0.00
-PWAH1 : Puu Waawaa (UHM)            :    0.00  /  0.00  /  0.00  /  0.01
+PWAH1 : Puu Waawaa (UHM)            :    0.00  /  0.00  /  0.00  /  0.00
 KIUH1 : Kaiaulu Puu Waawaa (UHM)    :    0.00  /  0.00  /  0.00  /  0.00
 PKAH1 : Pohakuloa Kipuka Alala RAWS :    0.00  /  0.00  /  0.00  /  0.00
 PTRH1 : Pohakuloa Range 17 (RAWS)   :    0.00  /  0.00  /  0.00  /  0.00
@@ -3026,8 +3274,8 @@ LLAH1 : Lalamilo (UHM)              :    0.00  /  0.00  /  0.00  /  0.00
 WKVH1 : Waikoloa (RAWS)             :    0.00  /  0.00  /  0.00  /  0.00
 PERH1 : Puhe CS (RAWS)              :    0.00  /  0.00  /  0.00  /  0.00
 KHRH1 : Kohala Ranch (RAWS)         :    0.00  /  0.00  /  0.00  /  0.00
-KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.03
-KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.03
+KASH1 : Kahua Ranch (15006)         :    0.00  /  0.00  /  0.00  /  0.00
+KEHH1 : Kehena (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 PLAH1 : Puuloa (UHM)                :    0.00  /  0.00  /  0.00  /  0.00
 .END
 
@@ -3051,76 +3299,76 @@ $$
 |---|---|
 | **Resource ID** | hfo_surf_reports_direct |
 | **Official source** | https://www.weather.gov/hfo/surfreports |
-| **Collected** | 2026-09-28T06:00:37.101258-10:00 HST |
+| **Collected** | 2026-09-28T16:05:05.140629-10:00 HST |
 
 ```text
                         
-522
-SXHW80 PHFO 280115
+325
+SXHW80 PHFO 290115
 OMRHFO
 
 SURF OBSERVATIONS
 NATIONAL WEATHER SERVICE HONOLULU HI
-315 PM HST SUN SEP 27 2026
+315 PM HST MON SEP 28 2026
 
 FULL FACE SURF OBSERVATIONS ARE TAKEN BY COUNTY LIFE GUARDS AND
 COOPERATIVE OBSERVERS AND RELAYED TO THE NATIONAL WEATHER SERVICE
 FOR DISSEMINATION. THESE OBSERVATIONS ARE NOT QUALITY CONTROLLED.
 
-HIZ003-004-029>031-280100-
+HIZ003-004-029>031-290100-
 KAUAI-
 
 LOCATION        TIME   SURF HEIGHT DIR   PER                  REMARKS
 KEE
-HAENA        1200 PM           4-5  NE    10
-HANALEI      1200 PM           2-4  NE    10
-ANAHOLA      1000 AM           4-6   E    12
-KEALIA       1000 AM           6-8   E    12
-LYDGATE      1000 AM           4-7   E    12
-POIPU        1000 AM           6-8  SE     8
-SALT POND    1000 AM           6-8   S     8
-KEKAHA       1000 AM           6-8   S     8
+HAENA        1230 PM           4-8  NE    10
+HANALEI      1230 PM           3-5 NNE    10
+ANAHOLA
+KEALIA
+LYDGATE
+POIPU
+SALT POND
+KEKAHA
 $$
 
-HIZ006-007-009>011-032>036-280100-
+HIZ006-007-009>011-032>036-290100-
 OAHU-
 
 LOCATION        TIME   SURF HEIGHT DIR PER         WIND      REMARKS
 DIAMOND HEAD
 SUNSET
-WAIKIKI      1000 AM           4-5                            CANOES
-SANDY BEACH  1000 AM           6-8                       SHORE BREAK
-MAKAPUU      1000 AM          8-12
-EHUKAI       1000 AM           1-2
-MAKAHA       1000 AM           1-2
+WAIKIKI       123 PM           3-4             NE 15-20       CANOES
+SANDY BEACH   123 PM           4-6             NE 20-25  SHORE BREAK
+MAKAPUU       123 PM           3-5             NE 15-25
+EHUKAI        123 PM           3-4             NE 10-15
+MAKAHA        123 PM           2-3             NE 20-25
 $$
 
-HIZ015>018-022-045>050-280100-
+HIZ015>018-022-045>050-290100-
 MAUI-MOLOKAI-LANAI-KAHOOLAWE-
 
 LOCATION        TIME   SURF HEIGHT   DIR         WIND      REMARKS
-KANAHA       1045 AM           0-1    NE      E 15-25
-BALDWIN SHOR 1045 AM           0-1     E         E 25
-BALDWIN OUTE 1045 AM           2-3     E
-HOOKIPA
-KAMAOLE I
-KAMAOLE III
-HANAKAOO
+KANAHA        135 PM           2-3            E 15-25  PARTLY CLDY
+BALDWIN SHOR  137 PM           2-4           NE 15-30 MOSTLY SUNNY
+BALDWIN OUTE  137 PM           6-8           NE 15-30 MOSTLY SUNNY
+HOOKIPA       151 PM          8-10        TRADE 15-20        SUNNY
+KAMAOLE I     149 PM           2-4           VRB 5-10  PARTLY CLDY
+KAMAOLE III   150 PM           2-4             S 5-10        SUNNY
+HANAKAOO      153 PM           2-3     S        S 5-1  PARTLY CLDY
 FLEMING
 $$
 
-HIZ023-026>028-051>054-280100-
+HIZ023-026>028-051>054-290100-
 BIG ISLAND OF HAWAII-
 
 LOCATION        TIME   SURF HEIGHT   DIR         WIND      REMARKS
-RICHARDSONS  1045 AM           3-4    NE         NE 5      -DZ OVC
-HONOLII
+RICHARDSONS   127 PM           3-4            NE 5-10  PARTLY CLDY
+HONOLII       129 PM           2-3           SE 10-20        SUNNY
 PUNALU`U
-ISAAC HALE   1045 AM           5-7     E      E 10-20        SUNNY
-HAPUNA
-KAHALUU      1045 AM           3-5     S        VRB 5          P/C
-MAGIC SANDS  1045 AM           2-3    SW         SW 7        SUNNY
-KUA BAY
+ISAAC HALE    130 PM    4-5 CHOPPY           L/V 5-10        SUNNY
+HAPUNA        131 PM           3-5            L/V 0-5        SUNNY
+KAHALUU       132 PM           3-4           NW 10-15        SUNNY
+MAGIC SANDS   133 PM    4-5 OCNL 6           NW 10-15 MOSTLY SUNNY
+KUA BAY       134 PM           1-3               W 10 MOSTLY SUNNY
 $$
 
 LEGEND
@@ -3145,16 +3393,16 @@ $$
 |---|---|
 | **Resource ID** | hsf_high_seas_npac |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=HSF&issuedby=NP |
-| **Collected** | 2026-09-28T05:34:07.134639-10:00 HST |
+| **Collected** | 2026-09-28T12:39:47.366272-10:00 HST |
 
 ```text
-666
-FZPN40 PHFO 281526 RRA
+115
+FZPN40 PHFO 282232
 HSFNP
 
-HIGH SEAS FORECAST...RESENT
+HIGH SEAS FORECAST
 NATIONAL WEATHER SERVICE HONOLULU HI
-1700 UTC MON SEP 28 2026
+2300 UTC MON SEP 28 2026
 
 SUPERSEDED BY NEXT ISSUANCE IN 6 HOURS
 
@@ -3169,69 +3417,70 @@ SECURITE
 
 NORTH PACIFIC EQUATOR TO 30N BETWEEN 140W AND 180W
 
-SYNOPSIS VALID 1200 UTC SEP 28 2026.
-24 HOUR FORECAST VALID 1200 UTC SEP 29 2026.
-48 HOUR FORECAST VALID 1200 UTC SEP 30 2026.
+SYNOPSIS VALID 1800 UTC SEP 28 2026.
+24 HOUR FORECAST VALID 1800 UTC SEP 29 2026.
+48 HOUR FORECAST VALID 1800 UTC SEP 30 2026.
 
 .WARNINGS.
 
 ...HURRICANE WARNING...
-.HURRICANE NOLO NEAR 17.1N 162.3W 929 MB AT 1500 UTC SEP 28
-MOVING WNW OR 290 DEG AT 11 KT. MAXIMUM SUSTAINED WINDS 135 KT
-GUSTS 165 KT. TROPICAL STORM FORCE WINDS WITHIN 130 NM NE
-QUADRANT...100 NM SE QUADRANT...80 NM SW QUADRANT AND 110 NM NW
-QUADRANT. WINDS 20 TO 30 KT ELSEWHERE FROM 15N TO 21N BETWEEN 155W
-AND 165W. SEAS 4 M OR GREATER WITHIN 300 NM NE QUADRANT...150 NM
-SE QUADRANT...180 NM SW QUADRANT...AND 420 NM NW QUADRANT WITH
-SEAS TO 11 M. SEAS 2.5 TO 3.5 M ELSEWHERE N OF 11N BETWEEN 154W
-AND 177W. SCATTERED TO NUMEROUS MODERATE TSTMS WITHIN 120 NM SW
-SEMICIRCLE AND 70 NM NE SEMICIRCLE.
-.24 HOUR FORECAST HURRICANE NOLO NEAR 20.0N 163.9W. MAXIMUM
-SUSTAINED WINDS 120 KT GUSTS 145 KT. TROPICAL STORM FORCE WINDS
-WITHIN 130 NM NE QUADRANT...110 NM SE QUADRANT...80 NM SW QUADRANT
-AND 100 NM NW QUADRANT. WINDS 20 TO 30 KT ELSEWHERE FROM 18N TO
-25N BETWEEN 160W AND 167W. SEAS 4 M OR GREATER FROM 18N TO 22N
-BETWEEN 157W AND 170W WITH SEAS TO 11 M. SEAS 2.5 TO 3.5 M
-ELSEWHERE FROM 12N TO 27N BETWEEN 156W AND 170W.
-.48 HOUR FORECAST HURRICANE NOLO NEAR 22.6N 164.0W. MAXIMUM
+.HURRICANE NOLO NEAR 17.7N 163.1W 933 MB AT 2100 UTC SEP 28
+MOVING WNW OR 300 DEG AT 10 KT. MAXIMUM SUSTAINED WINDS 125 KT
+GUSTS 150 KT. TROPICAL STORM FORCE WINDS WITHIN 130 NM NE
+QUADRANT...100 NM SE QUADRANT...80 NM SW QUADRANT...AND 110 NM NW
+QUADRANT. WINDS 20 TO 34 KT ELSEWHERE FROM 21N TO 15N BETWEEN 166W
+AND 157W. SEAS 4 M OR GREATER WITHIN 270 NM NE QUADRANT...120 NM
+SE QUADRANT...210 NM SW QUADRANT...AND 390 NM NW QUADRANT WITH
+SEAS TO 11 M. SEAS 2.5 TO 4 M ELSEWHERE N OF 11N BETWEEN 176W AND
+150W. ISOLATED MODERATE TSTMS FROM 20N TO 14N BETWEEN 165W AND
+160W.
+.24 HOUR FORECAST HURRICANE NOLO NEAR 20.8N 164.0W. MAXIMUM
+SUSTAINED WINDS 110 KT GUSTS 135 KT. TROPICAL STORM FORCE WINDS
+WITHIN 130 NM NE QUADRANT...110 NM SE QUADRANT...80 NM SW
+QUADRANT...AND 100 NM NW QUADRANT. WINDS 20 TO 34 KT ELSEWHERE
+FROM 25N TO 19N BETWEEN 166W AND 158W. SEAS 4 M OR GREATER FROM
+24N TO 18N BETWEEN 168W AND 160W WITH SEAS TO 10.5 M. SEAS 2.5 TO
+4 M ELSEWHERE 27N TO 13N W OF 156W.
+.48 HOUR FORECAST HURRICANE NOLO NEAR 22.4N 164.2W. MAXIMUM
 SUSTAINED WINDS 75 KT GUSTS 90 KT. TROPICAL STORM FORCE WINDS
-WITHIN 130 NM NE QUADRANT...100 NM SE QUADRANT...80 NM SW QUADRANT
-AND 110 NM NW QUADRANT. WINDS 20 TO 30 KT ELSEWHERE FROM 20N TO
-27N BETWEEN 157W AND 168W. SEAS 4 M OR GREATER FROM 20N TO 25N
-BETWEEN 161W AND 167W WITH SEAS TO 9 M. SEAS 2.5 TO 3.5 M
-ELSEWHERE FROM 16N TO 29N BETWEEN 158W AND 170W.
+WITHIN 120 NM NE QUADRANT...90 NM SE QUADRANT...80 NM SW
+QUADRANT...AND 110 NM NW QUADRANT. WINDS 20 TO 34 KT ELSEWHERE
+FROM 27N TO 19N BETWEEN 169W AND 158W. SEAS 4 M OR GREATER FROM
+25N TO 19N BETWEEN 169W AND 162W WITH SEAS TO 8 M. SEAS 2.5 TO 4 M
+ELSEWHERE FROM 27N TO 17N W OF 160W.
 
 FORECAST WINDS IN AND NEAR ACTIVE TROPICAL CYCLONES SHOULD BE
-USED WITH CAUTION DUE TO UNCERTAINTY IN FORECAST TRACK...SIZE
-AND INTENSITY.
+USED WITH CAUTION DUE TO UNCERTAINTY IN FORECAST TRACK...SIZE AND
+INTENSITY.
 
 .SYNOPSIS AND FORECAST.
 
-.48 HOUR FORECAST NEW COLD FRONT 30N162W TO 27N174W. WINDS 20 TO
-25 KT UP TO 110 NM NW OF FRONT. SEAS 2.5 TO 3 M N OF 27N BETWEEN
-165W AND 177W.
+.24 HOUR FORECAST NEW TROUGH 30N164W 26N168W.
+.48 HOUR FORECAST TROUGH 30N159W 28N160W.
 
-.24 HOUR FORECAST NEW TROUGH 22N166W TO 30N166W.
-.48 HOUR FORECAST TROUGH 26N163W TO 29N161W.
+.48 HOUR FORECAST NEW COLD FRONT 30N161W 27N172W. WINDS 20 TO 25
+KT FROM 30N TO 27N BETWEEN 175W AND 164W. SEAS 2.5 TO 3 M N OF 27N
+BETWEEN 176W AND 162W.
 
-.WINDS 20 TO 25 KT FROM 21N TO 27N BETWEEN 153W AND 173W...AND
-FROM 05N TO 10N E OF 147W. SEAS 2.5 TO 3 M N OF 15N AND E OF
-154W...AND FROM 06N TO 15N E OF 146W.
-.24 HOUR FORECAST WINDS 20 TO 25 KT FROM 18N TO 24N BETWEEN 156W
-AND 160W. SEAS 2.5 TO 3 M FROM 14N TO 27N E OF 156W.
-.48 HOUR FORECAST WINDS EASED BELOW 20 KT. SEAS 2.5 TO 3 M FROM
-16N TO 27N W OF 170W.
+.WINDS 20 TO 25 KT FROM 26N TO 21N BETWEEN 169W AND 153W...AND
+FROM 10N TO 06N E OF 145W.
+.24 HOUR FORECAST WINDS EASED TO 20 KT OR LESS.
 
-.WINDS 20 KT OR LESS AND SEAS 2.5 M OR LOWER OVER REMAINDER OF
-FORECAST AREA.
+.WINDS 20 KT OR LESS OVER REMAINDER OF FORECAST AREA.
 
-.MONSOON TROUGH 12N140W TO 12N144W TO 13N156W...AND 15N165W TO
-12N173W TO 11N180. SCATTERED MODERATE TO ISOLATED STRONG TSTMS S
-OF TROUGH FROM 00N TO 07N BETWEEN 146W AND 157W...AND FROM 06N TO
-08N BETWEEN 164W AND 176W. ISOLATED MODERATE TSTMS FROM 07N TO
-10N BETWEEN 140W AND 164W.
+.SEAS 2.5 TO 3 M N OF 15N E OF 150W...AND FROM 15N TO 06N E OF 144W.
+.24 HOUR FORECAST SEAS 2.5 TO 3 M FROM 28N TO 12N E OF 153W.
+.48 HOUR FORECAST SEAS LOWERED TO 2.5 M OR LOWER.
 
-.FORECASTER CHAN. HONOLULU HI.
+.SEAS 2.5 M OR LOWER OVER REMAINDER OF FORECAST AREA.
+
+.MONSOON TROUGH 13N140W 11N147W 11N152W...AND 12N165W 09N170W 08N180W.
+ISOLATED MODERATE TSTMS FROM 10N TO 07N E OF 147W...AND FROM 08N
+TO 05N BETWEEN 174W AND 165W.
+
+.ISOLATED MODERATE TSTMS FROM 09N TO 01N BETWEEN 157W AND 150W.
+
+.FORECASTER TROTTER. HONOLULU HI.
 ```
 
 ---
@@ -3242,206 +3491,206 @@ OF TROUGH FROM 00N TO 07N BETWEEN 146W AND 157W...AND FROM 06N TO
 |---|---|
 | **Resource ID** | oso_hourly_obs |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OSO&issuedby=HFO |
-| **Collected** | 2026-09-28T05:45:37.615813-10:00 HST |
+| **Collected** | 2026-09-28T11:52:06.522097-10:00 HST |
 
 ```text
-759
-SXHW50 PHFO 281543
+633
+SXHW50 PHFO 282144
 OSOHFO
 
 Hawaii Wind Data
 National Weather Service Honolulu HI
-543 AM HST Mon Sep 28 2026
+1143 AM HST Mon Sep 28 2026
 
                             W I N D        D A T A
                             ----------------------
                                                                    IN KNOTS
  ID                Location              Date     Time     DIR    SPD   GUST
 --------   -------------------------    -------  -(HST)-  ----   ----   ----
-0000LLMH1  Lower Limahuli     Kauai     28Sep26   05:15    340      3      8
-0000CMGH1  Common Ground      Kauai     28Sep26   05:15    120      5     10
-0000HLIH1  Hanalei            Kauai     28Sep26   04:41    100      7     15
-0000MLDH1  Moloaa Dairy       Kauai     28Sep26   04:45    110      7     15
-0000HNMH1  Hanamaulu          Kauai     28Sep26   05:15     10      2      7
-0000PHLI   Lihue              Kauai     28Sep26   05:00     60     15     23
-0000NWWH1  Nawiliwili NOS     Kauai     28Sep26   05:30     50     13     17
+0000LLMH1  Lower Limahuli     Kauai     28Sep26   11:15      0      3     10
+0000CMGH1  Common Ground      Kauai     28Sep26   11:15    110      5     11
+0000HLIH1  Hanalei            Kauai     28Sep26   10:41    100     10     15
+0000MLDH1  Moloaa Dairy       Kauai     28Sep26   09:45    120      9     16
+0000HNMH1  Hanamaulu          Kauai     28Sep26   11:15     50      5     14
+0000PHLI   Lihue              Kauai     28Sep26   11:00     70     14     21
+0000NWWH1  Nawiliwili NOS     Kauai     28Sep26   11:30     70     16     20
 0000POIH1  Poipu              Kauai                MSG    MSG    MSG    MSG
-0000LNTH1  Lawai NTBG         Kauai     28Sep26   05:15     80     12     17
-0000PAKH1  Port Allen         Kauai     28Sep26   05:00     80     17     22
-0000MKAH1  Makaha Ridge       Kauai     28Sep26   05:11     40      2      8
-0000MNRH1  Mana               Kauai     28Sep26   05:34     80      2      5
-0000PHBK   Barking Sands      Kauai     28Sep26   05:00    130      4    MSG
-0000PLRH1  Puu Lua            Kauai     28Sep26   05:35     80      9     18
-0000POPH1  Puu Opae           Kauai     28Sep26   05:34    120      6     16
-0000WHGH1  Waimea Heights     Kauai     28Sep26   05:35     30      9     22
+0000LNTH1  Lawai NTBG         Kauai     28Sep26   11:15     80     13     19
+0000PAKH1  Port Allen         Kauai     28Sep26   11:00     80     18     25
+0000MKAH1  Makaha Ridge       Kauai     28Sep26   11:11    260      2      6
+0000MNRH1  Mana               Kauai     28Sep26   11:34    130      4     12
+0000PHBK   Barking Sands      Kauai     28Sep26   11:00    110      7    MSG
+0000PLRH1  Puu Lua            Kauai     28Sep26   11:35     80     10     17
+0000POPH1  Puu Opae           Kauai     28Sep26   11:34    120      8     21
+0000WHGH1  Waimea Heights     Kauai     28Sep26   11:35     30     10     23
 
-0000KRGH1  Kalahee Ridge      Oahu      28Sep26   05:10    150      1      5
+0000KRGH1  Kalahee Ridge      Oahu      28Sep26   11:10    130      6     15
 0000KAHH1  Kahuku             Oahu                 MSG    MSG    MSG    MSG
-0000KTAH1  Kahuku Trng        Oahu      28Sep26   04:59    120      2      7
-0000KFWH1  Kii                Oahu      28Sep26   04:45    100     15     23
-0000OFRH1  Oahu Forest NWR    Oahu      28Sep26   05:36     80     11     31
-0000KWMH1  Kaaawa Makai       Oahu      28Sep26   05:15     90      2      8
-0000PHNG   Kaneohe MCBH       Oahu      28Sep26   05:30     90      8     16
-0000MOKH1  Mokuoloe Is NOS    Oahu      28Sep26   05:30    110      7     11
-0000BELH1  Bellows AFS        Oahu      28Sep26   05:15     70     15    MSG
-0000KUXH1  Kaluanui           Oahu      28Sep26   05:15    200      4     11
-0000LYOH1  Lyon               Oahu      28Sep26   04:55    200      4      9
-0000NRSH1  Nuuanu Res No 1    Oahu      28Sep26   05:15     10      4     16
-0000PHNL   Honolulu AP        Oahu      28Sep26   05:00     60     13     19
-0000OOUH1  Honolulu Hbr NOS   Oahu      28Sep26   05:24     70      8     16
-0000HOFH1  Honouliuli PHB     Oahu      28Sep26   05:41     60      7     11
-0000SCBH1  Schofield Brks     Oahu      28Sep26   04:57    190      2      9
-0000SCEH1  Schofield East     Oahu      28Sep26   04:58    100      6     18
-0000HWLH1  HECO Wilikina      Oahu      28Sep26   05:30    140      2      5
-0000PHJR   Kalaeloa           Oahu      28Sep26   05:00     70      5     16
-0000HFHH1  HECO Farrington    Oahu      28Sep26   05:30     60      5     10
-0000HPLH1  HECO Palehua       Oahu      28Sep26   05:30     80      8     17
-0000HPDH1  HECO Palehua 2     Oahu      28Sep26   05:30     60     13     19
-0000HPHH1  HECO Palehua 3     Oahu      28Sep26   05:30     60      8     16
-0000HPRH1  HECO Paakea        Oahu      28Sep26   05:30    290      5     17
-0000HLRH1  HECO Lualualei     Oahu      28Sep26   05:30     70      7     16
-0000HWVH1  HECO Waianae Vly   Oahu      28Sep26   05:30     50      8     18
-0000PLHH1  Palehua            Oahu      28Sep26   05:36     50      0      0
-0000WNVH1  Waianae Valley     Oahu      28Sep26   05:37     70      5     24
-0000HHSH1  HECO Ala Hema St   Oahu      28Sep26   05:30     70      6     12
+0000KTAH1  Kahuku Trng        Oahu      28Sep26   10:59    120      2     13
+0000KFWH1  Kii                Oahu      28Sep26   10:45    110     17     23
+0000OFRH1  Oahu Forest NWR    Oahu      28Sep26   11:36     70      7     30
+0000KWMH1  Kaaawa Makai       Oahu      28Sep26   11:15     90      4     10
+0000PHNG   Kaneohe MCBH       Oahu      28Sep26   11:20     80     12     19
+0000MOKH1  Mokuoloe Is NOS    Oahu      28Sep26   11:30    100      7     15
+0000BELH1  Bellows AFS        Oahu      28Sep26   11:15     70     12    MSG
+0000KUXH1  Kaluanui           Oahu      28Sep26   11:15    180      4     10
+0000LYOH1  Lyon               Oahu      28Sep26   11:05    200      5     10
+0000NRSH1  Nuuanu Res No 1    Oahu      28Sep26   11:15     60      3      9
+0000PHNL   Honolulu AP        Oahu      28Sep26   11:00     80     13     25
+0000OOUH1  Honolulu Hbr NOS   Oahu      28Sep26   11:24     60      8     17
+0000HOFH1  Honouliuli PHB     Oahu      28Sep26   11:41     90     13     20
+0000SCBH1  Schofield Brks     Oahu      28Sep26   10:57    100     10     17
+0000SCEH1  Schofield East     Oahu      28Sep26   10:58    110      9     24
+0000HWLH1  HECO Wilikina      Oahu      28Sep26   11:30    110      9     16
+0000PHJR   Kalaeloa           Oahu      28Sep26   11:00    100      9     25
+0000HFHH1  HECO Farrington    Oahu      28Sep26   11:30     80     10     18
+0000HPLH1  HECO Palehua       Oahu      28Sep26   11:30     80     11     21
+0000HPDH1  HECO Palehua 2     Oahu      28Sep26   11:30     80     15     23
+0000HPHH1  HECO Palehua 3     Oahu      28Sep26   11:30     80      8     20
+0000HPRH1  HECO Paakea        Oahu      28Sep26   11:30    330      4      9
+0000HLRH1  HECO Lualualei     Oahu      28Sep26   11:30     80     11     19
+0000HWVH1  HECO Waianae Vly   Oahu      28Sep26   11:30    120      8     18
+0000PLHH1  Palehua            Oahu      28Sep26   11:36     80      0      0
+0000WNVH1  Waianae Valley     Oahu      28Sep26   11:37    160      7     21
+0000HHSH1  HECO Ala Hema St   Oahu      28Sep26   11:30    110      9     16
 0000WBHH1  Waianae Harbor     Oahu                 MSG    MSG    MSG    MSG
-0000HKRH1  HECO Kili Dr       Oahu      28Sep26   05:30     80      7     12
-0000HMVH1  HECO Makaha Vly    Oahu      28Sep26   05:30     70      4     11
-0000MKRH1  Makua Range        Oahu      28Sep26   04:58    100      5     15
-0000KKRH1  Kuaokala           Oahu      28Sep26   05:36     30      7     16
-0000AALH1  Kaala              Oahu      28Sep26   05:15    110      5     13
-0000HFRH1  HECO Farrington2   Oahu      28Sep26   05:30    170      0      1
-0000HFYH1  HECO Farrington3   Oahu      28Sep26   05:30     90      6     10
-0000DLGH1  Dillingham         Oahu      28Sep26   04:49     60      0      5
+0000HKRH1  HECO Kili Dr       Oahu      28Sep26   11:30    220      4     19
+0000HMVH1  HECO Makaha Vly    Oahu      28Sep26   11:30    310      5     12
+0000MKRH1  Makua Range        Oahu      28Sep26   10:58    270      5     10
+0000KKRH1  Kuaokala           Oahu      28Sep26   11:36     40      5     17
+0000AALH1  Kaala              Oahu      28Sep26   11:15    130      3     12
+0000HFRH1  HECO Farrington2   Oahu      28Sep26   11:30    100      8     16
+0000HFYH1  HECO Farrington3   Oahu      28Sep26   11:30     80     15     26
+0000DLGH1  Dillingham         Oahu      28Sep26   10:49     90      8     18
 
-0000MKPH1  Makapulapai        Molokai   28Sep26   05:15     90     19     30
-0000PAFH1  Puu Alii           Molokai   28Sep26   05:22    110      3     16
-0000HOMH1  Honolimaloo        Molokai   28Sep26   05:15    100      5     11
-0000KOPH1  Keopukaloa         Molokai   28Sep26   05:15    140     10     16
+0000MKPH1  Makapulapai        Molokai   28Sep26   11:15     90     17     26
+0000PAFH1  Puu Alii           Molokai   28Sep26   11:22    110      3     15
+0000HOMH1  Honolimaloo        Molokai   28Sep26   11:15    130      8     15
+0000KOPH1  Keopukaloa         Molokai   28Sep26   11:15    130     12     19
 0000MLKH1  Molokai 1          Molokai              MSG    MSG    MSG    MSG
-0000MMPH1  MECO Makaena       Molokai   28Sep26   05:30    320      7      9
-0000MKYH1  MECO Kalae Hwy     Molokai   28Sep26   05:30     30      5      9
-0000PHMK   Molokai AP         Molokai   28Sep26   05:00     40      8     17
-0000ANPH1  Anapuka            Molokai   28Sep26   05:15     70      8     16
+0000MMPH1  MECO Makaena       Molokai   28Sep26   11:30    130      8     17
+0000MKYH1  MECO Kalae Hwy     Molokai   28Sep26   11:30     20      7     15
+0000PHMK   Molokai AP         Molokai   28Sep26   11:00     50     10     20
+0000ANPH1  Anapuka            Molokai   28Sep26   11:15     70     12     17
 
-0000LNIH1  Lanai 1            Lanai     28Sep26   05:37     60      0      0
+0000LNIH1  Lanai 1            Lanai     28Sep26   11:37    130      0      0
 
 0000KAOH1  Kaneloa            Kahoolawe            MSG    MSG    MSG    MSG
 
-0000PHOG   Kahului AP         Maui      28Sep26   05:00      0      0    MSG
-0000KLIH1  Kahului Hbr NOS    Maui      28Sep26   05:24      0     10     14
-0000MHRH1  MECO Hansen Rd     Maui      28Sep26   05:30     80      1      4
-0000MHKH1  MECO Haleakala Hwy Maui      28Sep26   05:30    100      1      3
-0000MMKH1  MECO Makawao       Maui      28Sep26   05:30    170      4      6
-0000MKTH1  MECO Kula 2        Maui      28Sep26   05:30    150      3      6
-0000PILH1  Piiholo            Maui      28Sep26   05:15    140      4     12
-0000EBYH1  EMI Baseyard       Maui      28Sep26   05:10    120      1      5
+0000PHOG   Kahului AP         Maui      28Sep26   11:00     60     16     22
+0000KLIH1  Kahului Hbr NOS    Maui      28Sep26   11:24     60     21     26
+0000MHRH1  MECO Hansen Rd     Maui      28Sep26   11:30    120      4     12
+0000MHKH1  MECO Haleakala Hwy Maui      28Sep26   11:30     60      9     17
+0000MMKH1  MECO Makawao       Maui      28Sep26   11:30    290      4      9
+0000MKTH1  MECO Kula 2        Maui      28Sep26   11:30    330      2      6
+0000PILH1  Piiholo            Maui      28Sep26   11:15     90      6     12
+0000EBYH1  EMI Baseyard       Maui      28Sep26   11:10     60      2      6
 0000HNAH1  Hana               Maui                 MSG    MSG    MSG    MSG
-0000NKUH1  Na Kula            Maui      28Sep26   05:35     80     22     30
+0000NKUH1  Na Kula            Maui      28Sep26   11:35     90     21     38
 0000AWAH1  Auwahi             Maui                 MSG    MSG    MSG    MSG
-0000KLFH1  Kula 1             Maui      28Sep26   04:48    330      3     16
-0000KKNH1  Kahikinui 1        Maui      28Sep26   05:34     60      8     16
-0000KMEH1  Kamehamenui 1      Maui      28Sep26   04:48    120     13     31
-0000SUMH1  Summit             Maui      28Sep26   05:15    110     17     21
-0000NNEH1  Nene Nest          Maui      28Sep26   05:15    160     12     19
-0000PHQH1  Park HQ            Maui      28Sep26   05:15    110      9     18
-0000WKTH1  Waikamoi Treeline  Maui      28Sep26   05:15    180      7     14
-0000MCTH1  MECO Crater Rd     Maui      28Sep26   05:30    150      5      8
-0000KLGH1  Kula Ag            Maui      28Sep26   05:15    100      2      2
-0000MWAH1  MECO Waipoli Rd    Maui      28Sep26   05:30    130      2      4
-0000KKEH1  Keokea             Maui      28Sep26   05:15    130      2      3
-0000MKUH1  MECO Kula          Maui      28Sep26   05:30     80      5      6
-0000PHUH1  Pulehu             Maui      28Sep26   05:15    120      3      6
-0000MNDH1  MECO Naalaea Rd    Maui      28Sep26   05:30    120      4      7
-0000MURH1  MECO Ulupalakua    Maui      28Sep26   05:30     50      2      5
-0000LPOH1  Lipoa              Maui      28Sep26   05:15     90      4      6
-0000MVHH1  MECO Veterans Hwy  Maui      28Sep26   05:30     20      2      3
-0000KPDH1  Kealia Pond        Maui      28Sep26   05:20     60      4      7
-0000MMAH1  MECO Maalaea       Maui      28Sep26   05:30     40      4      7
-00000P36   Maalaea Bay        Maui      28Sep26   05:15      0      0      0
-0000HULH1  Hanaula            Maui      28Sep26   05:10     30      5     13
-0000OLUH1  Olowalu            Maui      28Sep26   05:15     90      2      2
-0000MMMH1  MECO Mamane Pl     Maui      28Sep26   05:30    310      9     14
-0000MHOH1  MECO Honoapiilani  Maui      28Sep26   05:30    330      5      7
-0000MHHH1  MECO Honoapiilani2 Maui      28Sep26   05:30    350      7     12
-0000MKEH1  MECO Kealaloloa Rg Maui      28Sep26   05:30     10      2     10
-0000MUGH1  MECO Ukumehame Gul Maui      28Sep26   05:30     10      4      7
-0000MOOH1  MECO Olowalu       Maui      28Sep26   05:30     80      2      3
-0000OLUH1  Olowalu            Maui      28Sep26   05:15     90      2      2
-0000MLPH1  MECO Launiupoko    Maui      28Sep26   05:30     60      4      7
-0000MLTH1  MECO Launiupoko 2  Maui      28Sep26   05:30     30      6      8
-0000MLRH1  MECO Lahainaluna   Maui      28Sep26   05:30     50      4      7
-0000LWTH1  Lahaina WTP        Maui      28Sep26   05:15     90      5      7
-0000MKNH1  MECO Kaanapali     Maui      28Sep26   05:30     80      4      6
+0000KLFH1  Kula 1             Maui      28Sep26   10:48    320      4      7
+0000KKNH1  Kahikinui 1        Maui      28Sep26   11:34    120      6     11
+0000KMEH1  Kamehamenui 1      Maui      28Sep26   10:48    340      4      7
+0000SUMH1  Summit             Maui      28Sep26   11:15    100     10     15
+0000NNEH1  Nene Nest          Maui      28Sep26   11:15    150      6     15
+0000PHQH1  Park HQ            Maui      28Sep26   11:15    360      4      9
+0000WKTH1  Waikamoi Treeline  Maui      28Sep26   11:15     50      5     10
+0000MCTH1  MECO Crater Rd     Maui      28Sep26   11:30    260      3      6
+0000KLGH1  Kula Ag            Maui      28Sep26   11:15    330      1      3
+0000MWAH1  MECO Waipoli Rd    Maui      28Sep26   11:30    260      2      7
+0000KKEH1  Keokea             Maui      28Sep26   11:15    290      4      7
+0000MKUH1  MECO Kula          Maui      28Sep26   11:30    190      5     10
+0000PHUH1  Pulehu             Maui      28Sep26   11:15    240      4      8
+0000MNDH1  MECO Naalaea Rd    Maui      28Sep26   11:30    230      6     11
+0000MURH1  MECO Ulupalakua    Maui      28Sep26   11:30    240      3      9
+0000LPOH1  Lipoa              Maui      28Sep26   11:15    210      4      8
+0000MVHH1  MECO Veterans Hwy  Maui      28Sep26   11:30    170      6     12
+0000KPDH1  Kealia Pond        Maui      28Sep26   11:20    210      9     14
+0000MMAH1  MECO Maalaea       Maui      28Sep26   11:30    140      5     10
+00000P36   Maalaea Bay        Maui      28Sep26   11:15      0      0      0
+0000HULH1  Hanaula            Maui      28Sep26   11:15     40      2      7
+0000OLUH1  Olowalu            Maui      28Sep26   11:15    260      4      6
+0000MMMH1  MECO Mamane Pl     Maui      28Sep26   11:30    310     10     17
+0000MHOH1  MECO Honoapiilani  Maui      28Sep26   11:30     20     13     18
+0000MHHH1  MECO Honoapiilani2 Maui      28Sep26   11:30    330     10     18
+0000MKEH1  MECO Kealaloloa Rg Maui      28Sep26   11:30    230      8     15
+0000MUGH1  MECO Ukumehame Gul Maui      28Sep26   11:30    220      6     10
+0000MOOH1  MECO Olowalu       Maui      28Sep26   11:30    260      5      8
+0000OLUH1  Olowalu            Maui      28Sep26   11:15    260      4      6
+0000MLPH1  MECO Launiupoko    Maui      28Sep26   11:30    220      5      9
+0000MLTH1  MECO Launiupoko 2  Maui      28Sep26   11:30    190      3      8
+0000MLRH1  MECO Lahainaluna   Maui      28Sep26   11:30    220      5      9
+0000LWTH1  Lahaina WTP        Maui      28Sep26   11:15    260      3      7
+0000MKNH1  MECO Kaanapali     Maui      28Sep26   11:30    220      5      9
 0000PHJH   Kapalua-W Maui     Maui                 MSG    MSG    MSG    MSG
-0000HOOH1  Honolua            Maui      28Sep26   05:15    110      9     22
+0000HOOH1  Honolua            Maui      28Sep26   11:15    130     10     25
 
-0000UPLH1  Upolu Airport      Hawaii    28Sep26   05:15    110     11     20
-0000KMMH1  Kaluamakani        Hawaii    28Sep26   05:10    160      6      7
-0000PMLH1  Puu Mali           Hawaii    28Sep26   05:00    180      8     10
-0000KNKH1  Kanakaleonui       Hawaii    28Sep26   05:15    210      8     11
-0000WPNH1  Waipunalei         Hawaii               MSG    MSG    MSG    MSG
+0000UPLH1  Upolu Airport      Hawaii    28Sep26   11:15     90     14     22
+0000KMMH1  Kaluamakani        Hawaii    28Sep26   11:15    280      4      8
+0000PMLH1  Puu Mali           Hawaii    28Sep26   11:00     30      5      9
+0000KNKH1  Kanakaleonui       Hawaii    28Sep26   11:15    150     11     17
+0000WPNH1  Waipunalei         Hawaii    28Sep26   11:15    110      5     14
 0000LAUH1  Laupahoehoe        Hawaii               MSG    MSG    MSG    MSG
 0000SPNH1  Spencer            Hawaii               MSG    MSG    MSG    MSG
-0000HKUH1  Hakalau            Hawaii    28Sep26   04:45    200      5     10
-0000KLXH1  Kulaimano          Hawaii    28Sep26   05:15    220      3      5
-0000PIOH1  Piihonua           Hawaii    28Sep26   05:15    250      4      6
-0000PHTO   Hilo AP            Hawaii    28Sep26   05:00    220      7    MSG
-0000ILOH1  Hilo Hbr NOS       Hawaii    28Sep26   05:24    210      3      5
-0000IPIH1  IPIF               Hawaii    28Sep26   05:15    240      3      7
-0000WEXH1  Waiakea Exp Stn    Hawaii    28Sep26   05:00    MSG      0      1
-0000KEUH1  Keaau              Hawaii    28Sep26   05:15    260      2      3
-0000PAOH1  Pahoa              Hawaii    28Sep26   05:15      0      0      0
-0000NHKH1  Nahuku             Hawaii    28Sep26   05:15     20     10     14
-0000KKUH1  Keaumo             Hawaii    28Sep26   05:34    320      6      9
-0000MOBH1  Mauna Loa Obs      Hawaii    28Sep26   05:00    MSG     10     13
-0000PLIH1  Pali 2             Hawaii    28Sep26   05:01     10      7     12
-0000KMOH1  Kealakomo          Hawaii    28Sep26   04:44     10      8     16
-0000KPRH1  Kapapala           Hawaii    28Sep26   04:48     20      5     10
-0000NENH1  Nene Cabin         Hawaii    28Sep26   05:23     60      7     15
-0000KIOH1  Kaiholena          Hawaii    28Sep26   05:15    310      6      9
-0000LKHH1  Lower Kahuku       Hawaii    28Sep26   05:23    350      3     10
-0000SOPH1  South Point        Hawaii    28Sep26   05:00     60     13     20
-0000KOMH1  Kona Hema          Hawaii    28Sep26   05:15    330      0      3
-0000KRCH1  Kahuku Ranch       Hawaii    28Sep26   05:29    290      2     12
-0000PHRH1  Puho CS            Hawaii    28Sep26   05:22     50      3      6
-0000HLNH1  HELCO Lolo Ln      Hawaii    28Sep26   05:30     30      2      4
-0000HHUH1  HELCO Hualalai Rd  Hawaii    28Sep26   05:30     30      3      5
-0000KOUH1  Keahuolu           Hawaii    28Sep26   05:15     60      0      1
-0000PHKO   Kona Intl AP       Hawaii    28Sep26   05:00    160      4    MSG
-0000KHOH1  Kaloko-Honokohau   Hawaii    28Sep26   05:15     50      3      5
-0000PLMH1  Palamanui          Hawaii    28Sep26   05:15    130      1      2
-0000PWAH1  Puu Waawaa (UHM)   Hawaii    28Sep26   05:15    190      4      5
-0000KIUH1  Kaiaulu Puu Waawaa Hawaii    28Sep26   05:15    310      4      5
-0000KPLH1  Kaupulehu          Hawaii    28Sep26   05:36    210      5      8
-0000PWWH1  Puu Waawaa         Hawaii    28Sep26   05:37    130      3      5
-0000HMHH1  HELCO Mamalahoa 2  Hawaii    28Sep26   05:30    140      2      4
-0000MMLH1  Mamalahoa          Hawaii    28Sep26   05:15    130      0      1
-0000HMWH1  HELCO Mamalahoa 3  Hawaii    28Sep26   05:30    160      6      8
-0000PULH1  Puuanahulu         Hawaii    28Sep26   05:37    160      6     11
-0000AHMH1  Ahumoa             Hawaii    28Sep26   05:35     80      8     10
-0000AIPH1  Aipaloa            Hawaii    28Sep26   05:15    120      8     10
-0000HSRH1  HELCO Saddle Rd    Hawaii    28Sep26   05:30     70      7     11
-0000HMYH1  HELCO Mamalahoa    Hawaii    28Sep26   05:30    100      9     10
-0000HHCH1  HELCO Hokuloa UCC  Hawaii    28Sep26   05:30    110      6      8
-0000HWRH1  HELCO Waikoloa Rd  Hawaii    28Sep26   05:30     80      8     13
-0000HWXH1  HELCO Waikoloa 2   Hawaii    28Sep26   05:30    140      5     10
-0000WKVH1  Waikoloa           Hawaii    28Sep26   05:35    100      5     10
-0000HLOH1  HELCO Lalamilo     Hawaii    28Sep26   05:30     40     12     15
-0000LLAH1  Lalamilo           Hawaii    28Sep26   05:15     70      1      2
-0000HKWH1  HELCO Kawaihae Rd  Hawaii    28Sep26   05:30      0     10     11
-0000PKAH1  PTA Kipuka Alala   Hawaii    28Sep26   04:55    180      3      4
-0000PKWH1  PTA West           Hawaii    28Sep26   04:56    170      6     16
-0000PKMH1  PTA Keamuku        Hawaii    28Sep26   04:50    150      0      0
-0000PTRH1  PTA Range 17       Hawaii    28Sep26   04:49    140     13     21
-0000PERH1  Puhe CS            Hawaii    28Sep26   05:24     70      5      9
+0000HKUH1  Hakalau            Hawaii    28Sep26   10:45    180      3      8
+0000KLXH1  Kulaimano          Hawaii    28Sep26   11:15    120      8     15
+0000PIOH1  Piihonua           Hawaii    28Sep26   11:15    140      2      7
+0000PHTO   Hilo AP            Hawaii    28Sep26   11:00    130     10     14
+0000ILOH1  Hilo Hbr NOS       Hawaii    28Sep26   11:24    140      9     13
+0000IPIH1  IPIF               Hawaii    28Sep26   11:15    110      3      7
+0000WEXH1  Waiakea Exp Stn    Hawaii    28Sep26   11:00    MSG      5      9
+0000KEUH1  Keaau              Hawaii    28Sep26   11:15     90      4      7
+0000PAOH1  Pahoa              Hawaii    28Sep26   11:15     60      1      3
+0000NHKH1  Nahuku             Hawaii    28Sep26   11:15     90      5      8
+0000KKUH1  Keaumo             Hawaii    28Sep26   11:34    180      5     16
+0000MOBH1  Mauna Loa Obs      Hawaii    28Sep26   11:00    MSG      6     11
+0000PLIH1  Pali 2             Hawaii    28Sep26   11:01    130     10     15
+0000KMOH1  Kealakomo          Hawaii    28Sep26   10:44     90     11     16
+0000KPRH1  Kapapala           Hawaii    28Sep26   10:48    100      4     12
+0000NENH1  Nene Cabin         Hawaii    28Sep26   11:23    110      7     14
+0000KIOH1  Kaiholena          Hawaii    28Sep26   11:15     90      7     10
+0000LKHH1  Lower Kahuku       Hawaii    28Sep26   11:23     90      3     13
+0000SOPH1  South Point        Hawaii    28Sep26   11:00     70     17     22
+0000KOMH1  Kona Hema          Hawaii    28Sep26   11:15    230      6     10
+0000KRCH1  Kahuku Ranch       Hawaii    28Sep26   11:29    230      5     11
+0000PHRH1  Puho CS            Hawaii    28Sep26   11:22    300      3     10
+0000HLNH1  HELCO Lolo Ln      Hawaii    28Sep26   11:30    250      4      8
+0000HHUH1  HELCO Hualalai Rd  Hawaii    28Sep26   11:30    260      4     10
+0000KOUH1  Keahuolu           Hawaii    28Sep26   11:15    270      2      4
+0000PHKO   Kona Intl AP       Hawaii    28Sep26   11:00    270      9    MSG
+0000KHOH1  Kaloko-Honokohau   Hawaii    28Sep26   11:15    270      7     11
+0000PLMH1  Palamanui          Hawaii    28Sep26   11:15    280      1      5
+0000PWAH1  Puu Waawaa (UHM)   Hawaii    28Sep26   11:15     10      3      7
+0000KIUH1  Kaiaulu Puu Waawaa Hawaii    28Sep26   11:15     40      6     11
+0000KPLH1  Kaupulehu          Hawaii    28Sep26   11:36    270     10     15
+0000PWWH1  Puu Waawaa         Hawaii    28Sep26   11:37    300      5     13
+0000HMHH1  HELCO Mamalahoa 2  Hawaii    28Sep26   11:30    280     10     13
+0000MMLH1  Mamalahoa          Hawaii    28Sep26   11:15    280      2      4
+0000HMWH1  HELCO Mamalahoa 3  Hawaii    28Sep26   11:30    300     10     16
+0000PULH1  Puuanahulu         Hawaii    28Sep26   11:37    310      7     18
+0000AHMH1  Ahumoa             Hawaii    28Sep26   11:35    340      6     10
+0000AIPH1  Aipaloa            Hawaii    28Sep26   11:15    340      5      8
+0000HSRH1  HELCO Saddle Rd    Hawaii    28Sep26   11:30    310      7     11
+0000HMYH1  HELCO Mamalahoa    Hawaii    28Sep26   11:30    290      7     11
+0000HHCH1  HELCO Hokuloa UCC  Hawaii    28Sep26   11:30    280      7     14
+0000HWRH1  HELCO Waikoloa Rd  Hawaii    28Sep26   11:30    280      7     12
+0000HWXH1  HELCO Waikoloa 2   Hawaii    28Sep26   11:30    280      8     15
+0000WKVH1  Waikoloa           Hawaii    28Sep26   11:35    300      6     12
+0000HLOH1  HELCO Lalamilo     Hawaii    28Sep26   11:30    240      7     12
+0000LLAH1  Lalamilo           Hawaii    28Sep26   11:15    230      3      6
+0000HKWH1  HELCO Kawaihae Rd  Hawaii    28Sep26   11:30    260      7     12
+0000PKAH1  PTA Kipuka Alala   Hawaii    28Sep26   10:55    320      6     10
+0000PKWH1  PTA West           Hawaii    28Sep26   10:56    330      8     11
+0000PKMH1  PTA Keamuku        Hawaii    28Sep26   10:50    330      0      0
+0000PTRH1  PTA Range 17       Hawaii    28Sep26   10:49    130     11     19
+0000PERH1  Puhe CS            Hawaii    28Sep26   11:24    260      3      7
 0000KWHH1  Kawaihae NOS       Hawaii               MSG    MSG    MSG    MSG
-0000HHKH1  HELCO Hulukupuna   Hawaii    28Sep26   05:30     80      7      9
-0000PLAH1  Puuloa             Hawaii    28Sep26   05:15    290      5      7
+0000HHKH1  HELCO Hulukupuna   Hawaii    28Sep26   11:30    260      6      9
+0000PLAH1  Puuloa             Hawaii    28Sep26   11:15    160      6     10
 0000HMLH1  HELCO Maluokalani  Hawaii               MSG    MSG    MSG    MSG
-0000HKDH1  HELCO Ala Kahua    Hawaii    28Sep26   05:30    220      7     10
-0000KHRH1  Kohala Ranch       Hawaii    28Sep26   05:35     60      5     10
-0000KEHH1  Kehena             Hawaii    28Sep26   05:15    180      2      4
+0000HKDH1  HELCO Ala Kahua    Hawaii    28Sep26   11:30    280      5      9
+0000KHRH1  Kohala Ranch       Hawaii    28Sep26   11:35    220      4     10
+0000KEHH1  Kehena             Hawaii    28Sep26   10:00     90      2      5
 ```
 
 ---
@@ -3848,10 +4097,10 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=2 |
-| **Collected** | 2026-09-28T05:06:18.527040-10:00 HST |
+| **Collected** | 2026-09-28T16:09:44.728236-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+814 ACCA62 KNHC 290208TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 PM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada aloeste-suroeste de las Azores, y sobre la Tormenta Tropical Hanna,ubicada al este-noreste de las Bermudas.No se espera la formación de ciclones tropicales durante lospróximos 7 días.&&Las Advertencias Públicas sobre la Tormenta Tropical Hanna se emitenbajo el encabezado de la OMM WTNT33 KNHC y bajo el encabezado deAWIPS MIATCPAT3. Pronóstico/Advertencias sobre la Tormenta TropicalHanna se emiten bajo el encabezado de la OMM WTNT23 KNHC y bajo elencabezado de AWIPS MIATCMAT3.$$Pronosticador Reinhart*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
 ```
 
 ---
@@ -3862,10 +4111,10 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_atlc_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=atlc&fdays=7 |
-| **Collected** | 2026-09-28T05:07:18.533489-10:00 HST |
+| **Collected** | 2026-09-28T16:10:44.705914-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+814 ACCA62 KNHC 290208TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 PM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada aloeste-suroeste de las Azores, y sobre la Tormenta Tropical Hanna,ubicada al este-noreste de las Bermudas.No se espera la formación de ciclones tropicales durante lospróximos 7 días.&&Las Advertencias Públicas sobre la Tormenta Tropical Hanna se emitenbajo el encabezado de la OMM WTNT33 KNHC y bajo el encabezado deAWIPS MIATCPAT3. Pronóstico/Advertencias sobre la Tormenta TropicalHanna se emiten bajo el encabezado de la OMM WTNT23 KNHC y bajo elencabezado de AWIPS MIATCMAT3.$$Pronosticador Reinhart*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
 ```
 
 ---
@@ -3876,10 +4125,10 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=2 |
-| **Collected** | 2026-09-28T05:02:18.497047-10:00 HST |
+| **Collected** | 2026-09-28T13:49:44.849642-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+701 ACCA62 KNHC 281738TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada aloeste-suroeste de las Azores y sobre la recién formada TormentaTropical Hanna, ubicada al este-noreste de las Bermudas.No se anticipa la formación de ciclones tropicales en los próximos 7días.&&Las Advertencias Públicas sobre la Tormenta Tropical Hanna se emitenbajo el encabezado de la OMM WTNT33 KNHC y bajo el encabezado deAWIPS MIATCPAT3. Pronóstico/Advertencias sobre la Tormenta TropicalHanna se emiten bajo el encabezado de la OMM WTNT23 KNHC y bajo elencabezado de AWIPS MIATCMAT3.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
 ```
 
 ---
@@ -3890,10 +4139,10 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_cpac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=cpac&fdays=7 |
-| **Collected** | 2026-09-28T05:03:18.612277-10:00 HST |
+| **Collected** | 2026-09-28T13:50:44.546500-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+701 ACCA62 KNHC 281738TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL200 PM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada aloeste-suroeste de las Azores y sobre la recién formada TormentaTropical Hanna, ubicada al este-noreste de las Bermudas.No se anticipa la formación de ciclones tropicales en los próximos 7días.&&Las Advertencias Públicas sobre la Tormenta Tropical Hanna se emitenbajo el encabezado de la OMM WTNT33 KNHC y bajo el encabezado deAWIPS MIATCPAT3. Pronóstico/Advertencias sobre la Tormenta TropicalHanna se emiten bajo el encabezado de la OMM WTNT23 KNHC y bajo elencabezado de AWIPS MIATCMAT3.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
 ```
 
 ---
@@ -3904,10 +4153,577 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_2day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=2 |
-| **Collected** | 2026-09-28T05:04:18.699384-10:00 HST |
+| **Collected** | 2026-09-28T16:07:44.728958-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+Graphical Tropical Weather Outlook
+
+Home
+
+Mobile Site
+
+Text Version
+
+RSS
+
+Local Forecast
+
+NATIONAL HURRICANE CENTER and
+CENTRAL PACIFIC HURRICANE CENTER
+
+National Oceanic and Atmospheric Administration
+
+Analysis & Forecasts
+
+Tropical Cyclone Products
+
+Tropical Weather Outlooks
+
+Marine Products
+
+Rip Currents Map
+
+RSS Feeds
+
+GIS Products
+
+Alternate Formats
+
+Tropical Cyclone Product Descriptions
+
+Tropical Cyclone Product Examples
+
+Marine Product Descriptions
+
+Data & Tools
+
+Satellite Imagery
+
+Radar Imagery
+
+Aircraft Reconnaissance
+
+Tropical Analysis Tools
+
+Experimental Products
+
+Lat/Lon Distance Calculator
+
+Blank Tracking Maps
+
+Educational Resources
+
+Be Prepared!
+NWS Hurricane Prep Week
+
+Outreach Documents
+
+TC Videos
+
+Rip Currents
+
+Storm Surge
+
+Watch/Warning Breakpoints
+
+Climatology
+
+Tropical Cyclone Names
+
+Wind Scale
+
+Records and Facts
+
+Historical Hurricane Summaries
+
+Forecast Models
+
+NHC Publications
+
+NHC Glossary
+
+Acronyms
+
+Frequent Questions
+
+Archives
+
+Tropical Cyclone Advisories
+
+Tropical Weather Outlooks
+
+Tropical Cyclone Reports and Season Summaries
+
+Tropical Cyclone Forecast Verification
+
+NHC News Archive
+
+Other Archives: HURDAT, Track Maps, Marine Products, and more
+
+About
+
+National Hurricane Center
+
+Central Pacific Hurricane Center
+
+Library
+
+Contact Us
+
+Search
+
+Search for
+
+Search
+
+Graphical Tropical Weather Outlook
+
+Archived Outlooks
+
+GIS Shapefiles
+
+Graphical Tropical Weather Outlook (Static Images)
+
+JavaScript is currently disabled in your browser or you are using an older browser that is incompatible with this map. To view the interactive map, please enable JavaScript or update your browser if possible. Direct links to the latest high-resolution forecast images are provided below:
+
+View Atlantic 2-Day Outlook
+
+View Atlantic 7-Day Outlook
+
+View Eastern Pacific 2-Day Outlook
+
+View Eastern Pacific 7-Day Outlook
+
+View Central Pacific 2-Day Outlook
+
+View Central Pacific 7-Day Outlook
+
+Central Pacific
+
+Pacific
+
+Atlantic
+
+2-Day Forecast
+
+7-Day Forecast
+
+Disturbances:
+
+None
+
+Disturbances:
+
+None
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Close (X)
+
+View Storm Details
+
+Tropical Weather Outlook Text
+
+Central Pacific
+
+Pacific
+
+Atlantic
+
+Select Language
+
+English
+
+Español
+
+English
+
+Español
+
+English
+
+Español (Unavailable)
+
+ZCZC HFOTWOCP ALL
+TTAA00 PHFO DDHHMM
+
+Tropical Weather Outlook
+NWS Central Pacific Hurricane Center Honolulu HI
+Issued by NWS National Hurricane Center Miami FL
+200 PM HST Mon Sep 28 2026
+
+For the central North Pacific...between 140W and 180W:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Hurricane
+Polo, located near Baja California Sur, on Hurricane Nolo, located
+several hundred miles southwest of the main Hawaiian Islands, and
+on Tropical Storm Rachel, located a couple of hundred miles
+south-southwest of Acapulco, Mexico.
+
+1. Well East-Southeast of the Hawaiian Islands (EP91):
+Showers and thunderstorms are limited and disorganized in
+association with an area of low pressure located well east-southeast
+of the Hawaiian Islands. Although the system has lost some
+organization today, it is still expected to become a tropical
+depression during the next day or two while it drifts northeastward.
+Environmental conditions are expected to become less conducive for
+development late this week.
+* Formation chance through 48 hours...high...90 percent.
+* Formation chance through 7 days...high...90 percent.
+
+Forecaster Cangialosi
+
+500
+
+ACPN51 PHFO 282336
+
+TWOSCP
+
+Perspectiva de tiempo tropical
+
+Centro de Huracanes del Pacífico Central del SNM Honolulu HI
+
+Emitido por el Centro Nacional de Huracanes del SNM Miami FL
+
+200 PM HST lunes 28 de septiembre de 2026
+
+Para el Pacífico Norte central…entre 140 y 180 longitud oeste
+
+Sistemas activos: El Centro Nacional de Huracanes está emitiendo
+
+advertencias sobre el Huracán Polo, ubicado cerca de Baja California
+
+Sur, sobre el Huracán Nolo, ubicado a varios cientos de millas al
+
+suroeste de las principales Islas Hawaii, y sobre la Tormenta
+
+Tropical Rachel, ubicada a un par de cientos de millas al suroeste
+
+de Acapulco, México.
+
+Bien este-sureste de las Islas Hawaii (EP91): Las lluvias y
+
+tormentas eléctricas son limitadas y desorganizadas en asociación
+
+con un área de baja presión ubicada en el este-sureste de las Islas
+
+Hawaii. Aunque el sistema ha perdido algo de organización hoy,
+
+todavía se espera que se convierta en una depresión tropical durante
+
+el próximo día o dos, mientras se desplaza hacia el noreste. Se
+
+espera que las condiciones ambientales se vuelvan menos propicias
+
+para el desarrollo a finales de esta semana.
+
+* Probabilidad de formación hasta 48 horas...alta...90 por ciento.
+
+* Probabilidad de formación hasta 7 días...alta...90 por ciento.
+
+$$
+
+Pronosticador Cangialosi
+
+*** Este producto ha sido procesado automáticamente utilizando un
+
+programa de traducción y puede contener omisiones y errores. El
+
+Servicio Nacional de Meteorología no puede garantizar la precisión
+
+del texto convertido. De haber alguna duda, el texto en inglés es
+
+siempre la versión autorizada. ***
+
+ZCZC MIATWOEP ALL
+TTAA00 KNHC DDHHMM
+
+Tropical Weather Outlook
+NWS National Hurricane Center Miami FL
+500 PM PDT Mon Sep 28 2026
+
+For the eastern and central North Pacific east of 180 longitude:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Hurricane
+Polo, located near Baja California Sur, on Hurricane Nolo, located
+several hundred miles southwest of the main Hawaiian Islands, and
+on Tropical Storm Rachel, located a couple of hundred miles
+south-southwest of Acapulco, Mexico.
+
+1. Well East-Southeast of the Hawaiian Islands (EP91):
+Showers and thunderstorms are limited and disorganized in
+association with an area of low pressure located well east-southeast
+of the Hawaiian Islands. Although the system has lost some
+organization today, it is still expected to become a tropical
+depression during the next day or two while it drifts northeastward.
+Environmental conditions are expected to become less conducive for
+development late this week.
+* Formation chance through 48 hours...high...90 percent.
+* Formation chance through 7 days...high...90 percent.
+
+Forecaster Cangialosi
+
+Tropical Weather Discussion
+
+499
+
+ABPZ21 KNHC 282336
+
+TWOSEP
+
+Perspectiva de tiempo tropical
+
+Centro Nacional de Huracanes del SNM Miami FL
+
+500 PM PDT lunes 28 de septiembre de 2026
+
+Para el Pacífico Norte oriental y central al este de 180 longitud
+
+Sistemas activos: El Centro Nacional de Huracanes está emitiendo
+
+advertencias sobre el Huracán Polo, ubicado cerca de Baja California
+
+Sur, sobre el Huracán Nolo, ubicado a varios cientos de millas al
+
+suroeste de las principales Islas Hawaii, y sobre la Tormenta
+
+Tropical Rachel, ubicada a un par de cientos de millas al suroeste
+
+de Acapulco, México.
+
+Bien este-sureste de las Islas Hawaii (EP91): Las lluvias y
+
+tormentas eléctricas son limitadas y desorganizadas en asociación
+
+con un área de baja presión ubicada en el este-sureste de las Islas
+
+Hawaii. Aunque el sistema ha perdido algo de organización hoy,
+
+todavía se espera que se convierta en una depresión tropical durante
+
+el próximo día o dos, mientras se desplaza hacia el noreste. Se
+
+espera que las condiciones ambientales se vuelvan menos propicias
+
+para el desarrollo a finales de esta semana.
+
+* Probabilidad de formación hasta 48 horas...alta...90 por ciento.
+
+* Probabilidad de formación hasta 7 días...alta...90 por ciento.
+
+$$
+
+Pronosticador Cangialosi
+
+*** Este producto ha sido procesado automáticamente utilizando un
+
+programa de traducción y puede contener omisiones y errores. El
+
+Servicio Nacional de Meteorología no puede garantizar la precisión
+
+del texto convertido. De haber alguna duda, el texto en inglés es
+
+siempre la versión autorizada. ***
+
+Tropical Weather Discussion
+
+ZCZC MIATWOAT ALL
+TTAA00 KNHC DDHHMM
+
+Tropical Weather Outlook
+NWS National Hurricane Center Miami FL
+800 PM EDT Mon Sep 28 2026
+
+For the North Atlantic...Caribbean Sea and the Gulf of America:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Tropical
+Depression Fay, located well to the west-southwest of the Azores,
+and on Tropical Storm Hanna, located well to the east-northeast of
+Bermuda.
+
+Tropical cyclone formation is not expected over the next 7 days.
+
+&&
+Public Advisories on Tropical Storm Hanna are issued under WMO
+header WTNT33 KNHC and under AWIPS header MIATCPAT3.
+Forecast/Advisories on Tropical Storm Hanna are issued under WMO
+header WTNT23 KNHC and under AWIPS header MIATCMAT3.
+
+$$
+Forecaster Reinhart
+NNNN
+
+Tropical Weather Discussion
+
+Tropical Weather Discussion
+
+Quick Links and Additional Resources
+
+Tropical Cyclone Forecasts
+
+Tropical Cyclone Advisories
+
+Tropical Weather Outlook
+
+Audio/Podcasts
+
+About Advisories
+
+Marine Forecasts
+
+Offshore Waters Forecasts
+
+Gridded Forecasts
+
+Graphicast
+
+About Marine
+
+Social Media
+
+NHC on Facebook
+
+NHC on X
+
+NHC on YouTube
+
+NHC Blog:
+"Inside the Eye"
+
+Hurricane Preparedness
+
+Preparedness Guide
+
+Hurricane Hazards
+
+Watches and Warnings
+
+Marine Safety
+
+Ready.gov Hurricanes
+
+Weather-Ready Nation
+
+Emergency Management Offices
+
+Research and Development
+
+NOAA Hurricane Research Division
+
+Hurricane and Ocean Testbed
+
+Hurricane Forecast Improvement Program
+
+Other Resources
+
+Q & A with NHC
+
+NHC/AOML Library Branch
+
+NOAA: Hurricane FAQs
+
+National Hurricane Operations Plan
+
+WX4NHC Amateur Radio
+
+NWS Forecast Offices
+
+Weather Prediction Center
+
+Storm Prediction Center
+
+Ocean Prediction Center
+
+Local Forecast Offices
+
+Worldwide Tropical Cyclone Centers
+
+Canadian Hurricane Centre
+
+Joint Typhoon Warning Center
+
+Other Tropical Cyclone Centers
+
+WMO Severe Weather Info Centre
+
+US Dept of Commerce
+
+National Oceanic and Atmospheric Administration
+
+National Hurricane Center
+
+11691 SW 17th Street
+
+Miami, FL, 33165
+
+nhcwebmaster@noaa.gov
+
+Central Pacific Hurricane Center
+
+2525 Correa Rd
+
+Suite 250
+
+Honolulu, HI 96822
+
+W-HFO.webmaster@noaa.gov
+
+Disclaimer
+
+Information Quality
+
+Help
+
+Glossary
 ```
 
 ---
@@ -3918,10 +4734,577 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_gtwo_epac_7day |
 | **Official source** | https://www.nhc.noaa.gov/gtwo.php?basin=epac&fdays=7 |
-| **Collected** | 2026-09-28T05:05:18.390977-10:00 HST |
+| **Collected** | 2026-09-28T16:08:44.584889-10:00 HST |
 
 ```text
-733 ACCA62 KNHC 281118TWOSATPerspectiva de tiempo tropicalCentro Nacional de Huracanes del SNM Miami FL800 AM EDT lunes 28 de septiembre de 2026Para el Atlántico Norte...Mar Caribe y el Golfo de AméricaSistemas activos: El Centro Nacional de Huracanes está emitiendoadvertencias sobre la Depresión Tropical Fay, ubicada al suroeste delas Azores.Atlántico Subtropical Central (AL91): Un área de baja presiónubicada al este-noreste de las Bermudas se está moviendo rápidamentehacia el este. Imágenes recientes de microondas sugieren que laactividad de aguaceros y tormentas está comenzando a mostrar signosde organización, aunque no está claro si el sistema ha desarrolladouna circulación bien definida dado su rápido movimiento de avance.Si bien las condiciones ambientales son actualmente solomarginalmente favorables, es probable que este sistema se conviertaen una depresión tropical o tormenta en el próximo día o dos, amedida que gire hacia el este-sureste y se ralentice sobre elAtlántico Subtropical central. Se anticipa que las condicionesambientales se vuelvan desfavorables para un mayor desarrollo afinales de esta semana.* Probabilidad de formación hasta 48 horas...alta...70 por ciento.* Probabilidad de formación hasta 7 días...alta...80 por ciento.$$Pronosticador Papin*** Este producto ha sido procesado automáticamente utilizando unprograma de traducción y puede contener omisiones y errores. ElServicio Nacional de Meteorología no puede garantizar la precisióndel texto convertido. De haber alguna duda, el texto en inglés essiempre la versión autorizada. ***
+Graphical Tropical Weather Outlook
+
+Home
+
+Mobile Site
+
+Text Version
+
+RSS
+
+Local Forecast
+
+NATIONAL HURRICANE CENTER and
+CENTRAL PACIFIC HURRICANE CENTER
+
+National Oceanic and Atmospheric Administration
+
+Analysis & Forecasts
+
+Tropical Cyclone Products
+
+Tropical Weather Outlooks
+
+Marine Products
+
+Rip Currents Map
+
+RSS Feeds
+
+GIS Products
+
+Alternate Formats
+
+Tropical Cyclone Product Descriptions
+
+Tropical Cyclone Product Examples
+
+Marine Product Descriptions
+
+Data & Tools
+
+Satellite Imagery
+
+Radar Imagery
+
+Aircraft Reconnaissance
+
+Tropical Analysis Tools
+
+Experimental Products
+
+Lat/Lon Distance Calculator
+
+Blank Tracking Maps
+
+Educational Resources
+
+Be Prepared!
+NWS Hurricane Prep Week
+
+Outreach Documents
+
+TC Videos
+
+Rip Currents
+
+Storm Surge
+
+Watch/Warning Breakpoints
+
+Climatology
+
+Tropical Cyclone Names
+
+Wind Scale
+
+Records and Facts
+
+Historical Hurricane Summaries
+
+Forecast Models
+
+NHC Publications
+
+NHC Glossary
+
+Acronyms
+
+Frequent Questions
+
+Archives
+
+Tropical Cyclone Advisories
+
+Tropical Weather Outlooks
+
+Tropical Cyclone Reports and Season Summaries
+
+Tropical Cyclone Forecast Verification
+
+NHC News Archive
+
+Other Archives: HURDAT, Track Maps, Marine Products, and more
+
+About
+
+National Hurricane Center
+
+Central Pacific Hurricane Center
+
+Library
+
+Contact Us
+
+Search
+
+Search for
+
+Search
+
+Graphical Tropical Weather Outlook
+
+Archived Outlooks
+
+GIS Shapefiles
+
+Graphical Tropical Weather Outlook (Static Images)
+
+JavaScript is currently disabled in your browser or you are using an older browser that is incompatible with this map. To view the interactive map, please enable JavaScript or update your browser if possible. Direct links to the latest high-resolution forecast images are provided below:
+
+View Atlantic 2-Day Outlook
+
+View Atlantic 7-Day Outlook
+
+View Eastern Pacific 2-Day Outlook
+
+View Eastern Pacific 7-Day Outlook
+
+View Central Pacific 2-Day Outlook
+
+View Central Pacific 7-Day Outlook
+
+Central Pacific
+
+Pacific
+
+Atlantic
+
+2-Day Forecast
+
+7-Day Forecast
+
+Disturbances:
+
+None
+
+Disturbances:
+
+None
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Disturbances:
+
+ALL
+
+1
+
+Close (X)
+
+View Storm Details
+
+Tropical Weather Outlook Text
+
+Central Pacific
+
+Pacific
+
+Atlantic
+
+Select Language
+
+English
+
+Español
+
+English
+
+Español
+
+English
+
+Español (Unavailable)
+
+ZCZC HFOTWOCP ALL
+TTAA00 PHFO DDHHMM
+
+Tropical Weather Outlook
+NWS Central Pacific Hurricane Center Honolulu HI
+Issued by NWS National Hurricane Center Miami FL
+200 PM HST Mon Sep 28 2026
+
+For the central North Pacific...between 140W and 180W:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Hurricane
+Polo, located near Baja California Sur, on Hurricane Nolo, located
+several hundred miles southwest of the main Hawaiian Islands, and
+on Tropical Storm Rachel, located a couple of hundred miles
+south-southwest of Acapulco, Mexico.
+
+1. Well East-Southeast of the Hawaiian Islands (EP91):
+Showers and thunderstorms are limited and disorganized in
+association with an area of low pressure located well east-southeast
+of the Hawaiian Islands. Although the system has lost some
+organization today, it is still expected to become a tropical
+depression during the next day or two while it drifts northeastward.
+Environmental conditions are expected to become less conducive for
+development late this week.
+* Formation chance through 48 hours...high...90 percent.
+* Formation chance through 7 days...high...90 percent.
+
+Forecaster Cangialosi
+
+500
+
+ACPN51 PHFO 282336
+
+TWOSCP
+
+Perspectiva de tiempo tropical
+
+Centro de Huracanes del Pacífico Central del SNM Honolulu HI
+
+Emitido por el Centro Nacional de Huracanes del SNM Miami FL
+
+200 PM HST lunes 28 de septiembre de 2026
+
+Para el Pacífico Norte central…entre 140 y 180 longitud oeste
+
+Sistemas activos: El Centro Nacional de Huracanes está emitiendo
+
+advertencias sobre el Huracán Polo, ubicado cerca de Baja California
+
+Sur, sobre el Huracán Nolo, ubicado a varios cientos de millas al
+
+suroeste de las principales Islas Hawaii, y sobre la Tormenta
+
+Tropical Rachel, ubicada a un par de cientos de millas al suroeste
+
+de Acapulco, México.
+
+Bien este-sureste de las Islas Hawaii (EP91): Las lluvias y
+
+tormentas eléctricas son limitadas y desorganizadas en asociación
+
+con un área de baja presión ubicada en el este-sureste de las Islas
+
+Hawaii. Aunque el sistema ha perdido algo de organización hoy,
+
+todavía se espera que se convierta en una depresión tropical durante
+
+el próximo día o dos, mientras se desplaza hacia el noreste. Se
+
+espera que las condiciones ambientales se vuelvan menos propicias
+
+para el desarrollo a finales de esta semana.
+
+* Probabilidad de formación hasta 48 horas...alta...90 por ciento.
+
+* Probabilidad de formación hasta 7 días...alta...90 por ciento.
+
+$$
+
+Pronosticador Cangialosi
+
+*** Este producto ha sido procesado automáticamente utilizando un
+
+programa de traducción y puede contener omisiones y errores. El
+
+Servicio Nacional de Meteorología no puede garantizar la precisión
+
+del texto convertido. De haber alguna duda, el texto en inglés es
+
+siempre la versión autorizada. ***
+
+ZCZC MIATWOEP ALL
+TTAA00 KNHC DDHHMM
+
+Tropical Weather Outlook
+NWS National Hurricane Center Miami FL
+500 PM PDT Mon Sep 28 2026
+
+For the eastern and central North Pacific east of 180 longitude:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Hurricane
+Polo, located near Baja California Sur, on Hurricane Nolo, located
+several hundred miles southwest of the main Hawaiian Islands, and
+on Tropical Storm Rachel, located a couple of hundred miles
+south-southwest of Acapulco, Mexico.
+
+1. Well East-Southeast of the Hawaiian Islands (EP91):
+Showers and thunderstorms are limited and disorganized in
+association with an area of low pressure located well east-southeast
+of the Hawaiian Islands. Although the system has lost some
+organization today, it is still expected to become a tropical
+depression during the next day or two while it drifts northeastward.
+Environmental conditions are expected to become less conducive for
+development late this week.
+* Formation chance through 48 hours...high...90 percent.
+* Formation chance through 7 days...high...90 percent.
+
+Forecaster Cangialosi
+
+Tropical Weather Discussion
+
+499
+
+ABPZ21 KNHC 282336
+
+TWOSEP
+
+Perspectiva de tiempo tropical
+
+Centro Nacional de Huracanes del SNM Miami FL
+
+500 PM PDT lunes 28 de septiembre de 2026
+
+Para el Pacífico Norte oriental y central al este de 180 longitud
+
+Sistemas activos: El Centro Nacional de Huracanes está emitiendo
+
+advertencias sobre el Huracán Polo, ubicado cerca de Baja California
+
+Sur, sobre el Huracán Nolo, ubicado a varios cientos de millas al
+
+suroeste de las principales Islas Hawaii, y sobre la Tormenta
+
+Tropical Rachel, ubicada a un par de cientos de millas al suroeste
+
+de Acapulco, México.
+
+Bien este-sureste de las Islas Hawaii (EP91): Las lluvias y
+
+tormentas eléctricas son limitadas y desorganizadas en asociación
+
+con un área de baja presión ubicada en el este-sureste de las Islas
+
+Hawaii. Aunque el sistema ha perdido algo de organización hoy,
+
+todavía se espera que se convierta en una depresión tropical durante
+
+el próximo día o dos, mientras se desplaza hacia el noreste. Se
+
+espera que las condiciones ambientales se vuelvan menos propicias
+
+para el desarrollo a finales de esta semana.
+
+* Probabilidad de formación hasta 48 horas...alta...90 por ciento.
+
+* Probabilidad de formación hasta 7 días...alta...90 por ciento.
+
+$$
+
+Pronosticador Cangialosi
+
+*** Este producto ha sido procesado automáticamente utilizando un
+
+programa de traducción y puede contener omisiones y errores. El
+
+Servicio Nacional de Meteorología no puede garantizar la precisión
+
+del texto convertido. De haber alguna duda, el texto en inglés es
+
+siempre la versión autorizada. ***
+
+Tropical Weather Discussion
+
+ZCZC MIATWOAT ALL
+TTAA00 KNHC DDHHMM
+
+Tropical Weather Outlook
+NWS National Hurricane Center Miami FL
+800 PM EDT Mon Sep 28 2026
+
+For the North Atlantic...Caribbean Sea and the Gulf of America:
+
+Active Systems:
+The National Hurricane Center is issuing advisories on Tropical
+Depression Fay, located well to the west-southwest of the Azores,
+and on Tropical Storm Hanna, located well to the east-northeast of
+Bermuda.
+
+Tropical cyclone formation is not expected over the next 7 days.
+
+&&
+Public Advisories on Tropical Storm Hanna are issued under WMO
+header WTNT33 KNHC and under AWIPS header MIATCPAT3.
+Forecast/Advisories on Tropical Storm Hanna are issued under WMO
+header WTNT23 KNHC and under AWIPS header MIATCMAT3.
+
+$$
+Forecaster Reinhart
+NNNN
+
+Tropical Weather Discussion
+
+Tropical Weather Discussion
+
+Quick Links and Additional Resources
+
+Tropical Cyclone Forecasts
+
+Tropical Cyclone Advisories
+
+Tropical Weather Outlook
+
+Audio/Podcasts
+
+About Advisories
+
+Marine Forecasts
+
+Offshore Waters Forecasts
+
+Gridded Forecasts
+
+Graphicast
+
+About Marine
+
+Social Media
+
+NHC on Facebook
+
+NHC on X
+
+NHC on YouTube
+
+NHC Blog:
+"Inside the Eye"
+
+Hurricane Preparedness
+
+Preparedness Guide
+
+Hurricane Hazards
+
+Watches and Warnings
+
+Marine Safety
+
+Ready.gov Hurricanes
+
+Weather-Ready Nation
+
+Emergency Management Offices
+
+Research and Development
+
+NOAA Hurricane Research Division
+
+Hurricane and Ocean Testbed
+
+Hurricane Forecast Improvement Program
+
+Other Resources
+
+Q & A with NHC
+
+NHC/AOML Library Branch
+
+NOAA: Hurricane FAQs
+
+National Hurricane Operations Plan
+
+WX4NHC Amateur Radio
+
+NWS Forecast Offices
+
+Weather Prediction Center
+
+Storm Prediction Center
+
+Ocean Prediction Center
+
+Local Forecast Offices
+
+Worldwide Tropical Cyclone Centers
+
+Canadian Hurricane Centre
+
+Joint Typhoon Warning Center
+
+Other Tropical Cyclone Centers
+
+WMO Severe Weather Info Centre
+
+US Dept of Commerce
+
+National Oceanic and Atmospheric Administration
+
+National Hurricane Center
+
+11691 SW 17th Street
+
+Miami, FL, 33165
+
+nhcwebmaster@noaa.gov
+
+Central Pacific Hurricane Center
+
+2525 Correa Rd
+
+Suite 250
+
+Honolulu, HI 96822
+
+W-HFO.webmaster@noaa.gov
+
+Disclaimer
+
+Information Quality
+
+Help
+
+Glossary
 ```
 
 ---
@@ -3932,7 +5315,7 @@ T  INDICATES TRACE AMOUNT.
 |---|---|
 | **Resource ID** | nhc_homepage |
 | **Official source** | https://www.nhc.noaa.gov/ |
-| **Collected** | 2026-09-28T06:07:18.502502-10:00 HST |
+| **Collected** | 2026-09-28T16:11:44.568609-10:00 HST |
 
 ```text
 Home
@@ -4056,7 +5439,7 @@ Search
 Top News of the Day...
 view past news
 
-Last update Mon, 28 Sep 2026 16:06:07 UTC
+Last update Tue, 29 Sep 2026 02:08:33 UTC
 
 NHC issuing advisories for the Atlantic on
 
@@ -4184,11 +5567,11 @@ Tropical Weather Outlook
 
 (en Español*)
 
-500 AM PDT Mon Sep 28 2026
+500 PM PDT Mon Sep 28 2026
 
 Tropical Weather Discussion
 
-1605 UTC Mon Sep 28 2026
+2205 UTC Mon Sep 28 2026
 
 Hurricane Polo
 
@@ -4197,16 +5580,16 @@ Buoys |
 Grids |
 Storm Archive
 
-...POLO STILL A MAJOR HURRICANE AS IT APPROACHES THE BAJA CALIFORNIA PENINSULA...
-...CONDITIONS TO SOON DETERIORATE AS LIFE-THREATENING WINDS AND FLASH FLOODS EXPECTED OVER PORTIONS OF BAJA CALIFORNIA SUR AND SONORA TODAY AND TUESDAY...
+...POLO NEARING LANDFALL IN BAJA CALIFORNIA SUR...
+...LIFE-THREATENING WINDS AND FLASH FLOODING ONGOING...
 
-8:00 AM MST Mon Sep 28
+5:00 PM MST Mon Sep 28
 
-Location: 24.2°N 113.5°W
+Location: 25.5°N 112.8°W
 
-Moving: NE at 10 mph
+Moving: NE at 12 mph
 
-Min pressure: 958 mb
+Min pressure: 963 mb
 
 Max sustained: 115 mph
 
@@ -4214,33 +5597,33 @@ Public
 
 Advisory
 
-#32
+#33A
 
-800 AM MST
+500 PM MST
 
 Forecast
 
 Advisory
 
-#32
+#33
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#32
+#33
 
-800 AM MST
+200 PM MST
 
 Wind Speed
 
 Probabilities
 
-#32
+#33
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -4300,50 +5683,49 @@ Buoys |
 Grids |
 Storm Archive
 
-...RACHEL A LITTLE STRONGER AS IT MOVES WEST-NORTHWESTWARD...
-...TROPICAL STORM WARNING ISSUED FOR A PORTION OF THE COAST OF SOUTHWESTERN MEXICO...
+...RACHEL SLIGHTLY STRONGER...
 
-9:00 AM CST Mon Sep 28
+6:00 PM CST Mon Sep 28
 
-Location: 13.8°N 101.2°W
+Location: 14.3°N 102.5°W
 
-Moving: WNW at 8 mph
+Moving: WNW at 10 mph
 
-Min pressure: 999 mb
+Min pressure: 997 mb
 
-Max sustained: 50 mph
+Max sustained: 60 mph
 
 Public
 
 Advisory
 
-#6
+#7A
 
-900 AM CST
+600 PM CST
 
 Forecast
 
 Advisory
 
-#6
+#7
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#6
+#7
 
-900 AM CST
+300 PM CST
 
 Wind Speed
 
 Probabilities
 
-#6
+#7
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -4403,7 +5785,7 @@ Tropical Weather Outlook
 
 (en Español*)
 
-200 AM HST Mon Sep 28 2026
+200 PM HST Mon Sep 28 2026
 
 Hurricane Nolo
 
@@ -4412,49 +5794,50 @@ Buoys |
 Grids |
 Storm Archive
 
-...HURRICANE WARNING ISSUED FOR A PORTION OF THE PAPAHANAUMOKUAKEA MARINE NATIONAL MONUMENT...
+...NOLO HAS TURNED NORTHWESTWARD...
+...DANGEROUS CONDITIONS EXPECTED NEAR THE PAPAHANAUMOKUAKEA MARINE NATIONAL MONUMENT STARTING ON TUESDAY...
 
-5:00 AM HST Mon Sep 28
+2:00 PM HST Mon Sep 28
 
-Location: 17.1°N 162.3°W
+Location: 18.2°N 163.4°W
 
-Moving: WNW at 13 mph
+Moving: NW at 12 mph
 
-Min pressure: 929 mb
+Min pressure: 933 mb
 
-Max sustained: 155 mph
+Max sustained: 145 mph
 
 Public
 
 Advisory
 
-#32
+#33A
 
-500 AM HST
+200 PM HST
 
 Forecast
 
 Advisory
 
-#32
+#33
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#32
+#33
 
-500 AM HST
+1100 AM HST
 
 Wind Speed
 
 Probabilities
 
-#32
+#33
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -4501,11 +5884,11 @@ Tropical Weather Outlook
 
 (en Español*)
 
-800 AM EDT Mon Sep 28 2026
+800 PM EDT Mon Sep 28 2026
 
 Tropical Weather Discussion
 
-1215 UTC Mon Sep 28 2026
+0015 UTC Tue Sep 29 2026
 
 Tropical Depression Fay
 
@@ -4514,13 +5897,13 @@ Buoys |
 Grids |
 Storm Archive
 
-...FAY MOVING SOUTH-SOUTHWESTWARD OVER THE CENTRAL ATLANTIC...
+...FAY HOLDING STEADY...
 
-3:00 PM GMT Mon Sep 28
+5:00 PM AST Mon Sep 28
 
-Location: 27.1°N 44.6°W
+Location: 26.6°N 45.3°W
 
-Moving: SSW at 9 mph
+Moving: SW at 9 mph
 
 Min pressure: 1011 mb
 
@@ -4530,33 +5913,33 @@ Public
 
 Advisory
 
-#34
+#35
 
-300 PM GMT
+500 PM AST
 
 Forecast
 
 Advisory
 
-#34
+#35
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#34
+#35
 
-300 PM GMT
+500 PM AST
 
 Wind Speed
 
 Probabilities
 
-#34
+#35
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -4607,13 +5990,13 @@ Buoys |
 Grids |
 Storm Archive
 
-...TROPICAL STORM HANNA FORMS IN THE CENTRAL SUBTROPICAL ATLANTIC...
+...HANNA FORECAST TO BE A SHORT LIVED TROPICAL STORM AS IT MOVES EASTWARD ACROSS THE CENTRAL SUBTROPICAL ATLANTIC...
 
-11:00 AM AST Mon Sep 28
+5:00 PM AST Mon Sep 28
 
-Location: 36.6°N 50.4°W
+Location: 36.5°N 48.7°W
 
-Moving: E at 17 mph
+Moving: ESE at 17 mph
 
 Min pressure: 1006 mb
 
@@ -4623,33 +6006,33 @@ Public
 
 Advisory
 
-#1
+#2
 
-1100 AM AST
+500 PM AST
 
 Forecast
 
 Advisory
 
-#1
+#2
 
-1500 UTC
+2100 UTC
 
 Forecast
 
 Discussion
 
-#1
+#2
 
-1100 AM AST
+500 PM AST
 
 Wind Speed
 
 Probabilities
 
-#1
+#2
 
-1500 UTC
+2100 UTC
 
 Productos en español:
 
@@ -7471,16 +8854,16 @@ Global Monitoring Laboratory
 |---|---|
 | **Resource ID** | off_offshore_forecast |
 | **Official source** | https://forecast.weather.gov/product.php?site=HFO&product=OFF&issuedby=HFO |
-| **Collected** | 2026-09-28T05:33:51.974770-10:00 HST |
+| **Collected** | 2026-09-28T11:13:51.533987-10:00 HST |
 
 ```text
-410
-FZHW60 PHFO 281519
+131
+FZHW60 PHFO 282110
 OFFHFO
 
 Offshore Waters Forecast for Hawaii
 National Weather Service Honolulu HI
-519 AM HST Mon Sep 28 2026
+1110 AM HST Mon Sep 28 2026
 
 Hawaiian offshore waters beyond 40 nautical miles out to 240
 nautical miles including the portion of the Papahanaumokuakea
@@ -7490,63 +8873,56 @@ Seas given as significant wave height, which is the average height
 of the highest 1/3 of the waves. Individual waves may be more than
 twice the significant wave height.
 
-PHZ105-282230-
-519 AM HST Mon Sep 28 2026
+PHZ105-290430-
+1110 AM HST Mon Sep 28 2026
 
 .Synopsis for the Hawaiian offshore waters...
-The center of Hurricane Nolo remains just outside of the far SW
+The center of Hurricane Nolo remains just outside the far SW
 offshore waters boundary today. Nolo will track NW and turn N by
 Tuesday, when it will re-enter the far W offshore waters. Strong
 high pressure N of the area will maintain fresh to strong trade
 winds outside of the Nolo wind field during this time. Nolo will
-then turn W on Wednesday and exit the offshore waters by
-Thursday. Trade winds decrease as high pressure weakens and Nolo
-moves west of the islands.
+then turn W on Wednesday and exit the offshore waters by Thursday.
+Trade winds decrease as high pressure weakens and Nolo moves west
+of the islands.
 
-AT 500 AM HST HURRICANE NOLO WAS CENTERED AT 17.1N 162.3W...MOVING
-WNW AT 11 KT
+AT 1100 AM HST HURRICANE NOLO WAS CENTERED AT 17.7N 163.1W...MOVING
+WNW AT 10 KT
 
-NOLO FORECAST POSITIONS
-200 PM HST MONDAY 18.3N 163.3W
-200 AM HST TUESDAY 20.0N 163.9W
-200 PM HST TUESDAY 21.7N 164.0W
-200 AM HST WEDNESDAY 22.6N 164.0W
-200 PM HST MONDAY 22.8N 164.4W
-200 AM HST TUESDAY 23.1N 165.3W
-200 AM HST WEDNESDAY 23.7N 167.2W
-200 AM HST THURSDAY 24.1N 170.0W
-200 AM HST FRIDAY 25.0N 175.3W
-200 AM HST SATURDAY 26.7N 179.4E
+800 PM HST MONDAY 19.0N 163.7W
+800 AM HST TUESDAY 20.8N 164.0W
+800 PM HST TUESDAY 22.0N 164.1W
+800 AM HST WEDNESDAY 22.4N 164.2W
+800 PM HST MONDAY 22.5N 164.8W
+800 AM HST TUESDAY 22.7N 165.7W
+800 AM HST WEDNESDAY 23.2N 167.8W
+800 AM HST THURSDAY 23.8N 171.2W
+800 AM HST FRIDAY 25.0N 176.5W
+800 AM HST SATURDAY 26.5N 178.2E
 
-PHZ180-282230-
+PHZ180-290430-
 Hawaiian Offshore Waters-
-519 AM HST Mon Sep 28 2026
+1110 AM HST Mon Sep 28 2026
 
 ...HURRICANE WARNING IN EFFECT...
 
-.TODAY...Tropical storm conditions S of 22N W of 160W. Elsewhere,
-E winds 15 to 30 kt, strongest W of 158W and seas 8 to 14 ft.
-Isolated thunderstorms near Hurricane Nolo.
-.TONIGHT...Hurricane conditions expected S of 24N W of 161W.
-Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
-SE half, E to SE winds 10 to 15 kt and seas 7 to 8 ft. Isolated
-thunderstorms near Hurricane Nolo.
-.TUESDAY...Hurricane conditions expected S of 25N W of 161W.
-Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
-SE half, E to SE winds 10 to 15 kt and seas 6 to 8 ft. Isolated
-thunderstorms near Hurricane Nolo.
-.TUESDAY NIGHT...Hurricane conditions expected N of 20N W of
-161W. Elsewhere NW half, E to SE winds 15 to 30 kt and seas 8 to 14 ft.
-SE half, E to SE winds 10 to 15 kt and seas 6 to 8 ft. Isolated
-thunderstorms near Hurricane Nolo.
-.WEDNESDAY...Hurricane conditions possible W of 162W. Elsewhere NW
-half, SE winds 15 to 30 kt and seas 8 to 12 ft. SE half, E to SE
-winds 10 to 15 kt and seas 6 to 8 ft. Isolated thunderstorms near
-Hurricane Nolo.
-.THURSDAY...N of 20N W of 162W, SE winds 15 to 25 kt and seas 8
-to 10 ft. Elsewhere, E to SE winds 10 to 15 kt and seas 5 to 8 ft.
-.FRIDAY...NW half, SE winds 10 to 20 kt. SE half, E to SE winds
-10 to 15 kt. Seas 5 to 7 ft.
+.THIS AFTERNOON...Winds E winds 45 to 55 kt. Seas 8 to 14 ft.
+Isolated thunderstorms S of 24N.
+.TONIGHT...NW Half, E winds 50 to 60 kt, becoming SE 90 to
+100 kt. SE Half, E winds 10 to 20 kt. Seas 8 to 14 ft. Isolated
+thunderstorms S of 24N.
+.TUESDAY...NW Half, SE winds 90 to 100 kt, diminishing to 80 to
+90 kt late in the afternoon. SE Half, E winds 10 to 20 kt. Seas
+7 to 14 ft. Isolated thunderstorms NW Half.
+.TUESDAY NIGHT...NW Half, SE winds 80 to 90 kt, diminishing to
+70 to 80 kt after midnight. SE Half, SE winds 70 to 80 kt,
+diminishing to 10 to 20 kt after midnight. Seas 7 to 14 ft.
+Isolated thunderstorms.
+.WEDNESDAY...SE winds 60 to 70 kt NW Half, E 10 to 20 kt SE Half.
+Seas 6 to 12 ft. Isolated thunderstorms.
+.THURSDAY...SE winds 10 to 20 kt. Seas 6 to 9 ft. Isolated
+thunderstorms NW Half.
+.FRIDAY...SE winds 10 to 20 kt. Seas 6 to 8 ft.
 ```
 
 ---
@@ -7605,67 +8981,75 @@ No outage message at this time.
 |---|---|
 | **Resource ID** | sfp_state_forecast |
 | **Official source** | https://api.weather.gov/products/types/SFP/locations/HFO |
-| **Collected** | 2026-09-28T04:52:20.638777-10:00 HST |
+| **Collected** | 2026-09-28T15:04:47.047947-10:00 HST |
 
 ```text
 000
-FPHW60 PHFO 281447
+FPHW60 PHFO 290103
 SFPHFO
 
 State Forecast for Hawaii
 National Weather Service Honolulu HI
-447 AM HST Mon Sep 28 2026
+303 PM HST Mon Sep 28 2026
 
-HIZ001-003-004-006-007-009>011-015>018-022-029>050-290415-
+HIZ001-003-004-006-007-009>011-015>018-022-029>050-291630-
 Kauai-Oahu-Maui-Molokai-Lanai-
-447 AM HST Mon Sep 28 2026
+303 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY FOR SOUTH FACING SHORES...
+...HIGH SURF ADVISORY FOR SOUTH FACING SHORES OF NIIHAU AND 
+KAUAI...
 
-.TODAY...Sunny, breezy. Scattered showers windward and mountains.
-Highs 87 to 92. East winds 15 to 25 mph. 
-.TONIGHT...Mostly cloudy. Breezy. Isolated showers on Kauai. Lows
-73 to 78. East winds 15 to 25 mph. 
-.TUESDAY...Windward and mountains, occasional showers during the
-day. Scattered showers at night. Leeward, numerous showers during
-the day. Scattered showers at night. Highs 86 to 91. Lows 74 to
-79. Southeast winds 15 to 20 mph. 
-.WEDNESDAY...Mostly cloudy. On Kauai, numerous showers during the
+.TONIGHT...Mostly cloudy in the evening then clearing. Breezy.
+Isolated showers windward and mountains. Lows 73 to 78. East
+winds 15 to 25 mph. 
+.TUESDAY...Partly sunny. Breezy. Windward and mountains, isolated
+showers. Leeward, numerous showers in the morning. Isolated
+showers in the afternoon. Highs 86 to 91. Southeast winds 15 to
+25 mph. 
+.TUESDAY NIGHT...Breezy. Frequent showers windward and mountains.
+isolated showers leeward. Lows 74 to 79. Southeast winds 15 to
+25 mph. 
+.WEDNESDAY...Mostly cloudy. On Kauai, frequent showers during the
 day, then scattered showers at night. Oahu and Maui County,
-scattered showers. Highs 85 to 90. Lows 73 to 78. East winds
+scattered showers. Highs 85 to 90. Lows 74 to 79. Southeast winds
 15 to 20 mph. 
-.THURSDAY...Mostly cloudy. On Kauai and Oahu, scattered showers
-during the day, then isolated showers at night. Maui County,
-isolated showers at night. Highs 84 to 89. Lows 73 to 78. East
-winds around 15 mph. 
-.FRIDAY...Mostly cloudy. Windward and mountains, scattered
-showers. Leeward, isolated showers during the day. Scattered
-showers at night. Highs 84 to 89. Lows 73 to 78. East winds
-around 15 mph. 
+.THURSDAY...Mostly cloudy. Windward and mountains, scattered
+showers. Leeward, scattered showers during the day, then isolated
+showers at night. Highs 84 to 89. Lows 73 to 78. East winds 15 to
+20 mph. 
+.FRIDAY...Partly cloudy. On Kauai, scattered showers. Oahu and
+Maui County, isolated showers during the day. Scattered showers
+at night. Highs 84 to 89. Lows 72 to 77. East winds around
+15 mph. 
+.SATURDAY...Partly cloudy. Scattered showers windward and
+mountains. isolated showers leeward. Highs 84 to 89. Lows 72 to
+77. East winds around 15 mph. 
 
-HIZ023-026>028-051>054-290415-
+HIZ023-026>028-051>054-291630-
 Big Island of Hawaii-
-447 AM HST Mon Sep 28 2026
+303 PM HST Mon Sep 28 2026
 
-...HIGH SURF ADVISORY FOR SOUTH AND WEST FACING SHORES...
-
-.TODAY...Mostly sunny. Isolated showers. Highs 86 to 91. East
-winds 15 to 20 mph. 
-.TONIGHT...Partly cloudy. Lows 72 to 77. East winds around
-15 mph. 
-.TUESDAY...Mostly cloudy. Leeward, scattered showers during the
+.TONIGHT...Partly cloudy. Isolated showers. Lows 72 to 77. East
+winds around 15 mph shifting to the south after midnight. 
+.TUESDAY...Partly sunny. Isolated showers in the afternoon. Highs
+85 to 90. Variable winds to 15 mph becoming southeast around
+15 mph in the afternoon. 
+.TUESDAY NIGHT...Mostly cloudy in the evening then clearing.
+Isolated showers. Lows 72 to 77. Variable winds to 15 mph
+becoming south around 15 mph after midnight. 
+.WEDNESDAY...Mostly cloudy. Leeward, isolated showers during the
 day. Windward, isolated showers during the day. Scattered showers
-at night. Highs 85 to 90. Lows 72 to 77. Southeast winds around
+at night. Highs 85 to 90. Lows 72 to 77. East winds around
 15 mph. 
-.WEDNESDAY...Mostly cloudy. Windward, isolated showers during the
-day. Leeward, scattered showers during the day. Highs 85 to 90.
-Lows 72 to 77. Variable winds to 15 mph. 
-.THURSDAY...Mostly cloudy. Leeward, scattered showers during the
-day. Windward, isolated showers at night. Highs 84 to 89. Lows
-71 to 76. Northeast winds around 15 mph. 
-.FRIDAY...Mostly cloudy. Windward, isolated showers during the
-day, then scattered showers at night. Highs 83 to 88. Lows 71 to
-76. Variable winds to 15 mph.
+.THURSDAY...Mostly cloudy. Windward, scattered showers during the
+day. Leeward, isolated showers during the day. Highs 84 to 89.
+Lows 71 to 76. Northeast winds around 15 mph. 
+.FRIDAY...Mostly cloudy. Leeward, isolated showers. Windward,
+scattered showers at night. Highs 83 to 88. Lows 71 to 76.
+Northeast winds around 15 mph. 
+.SATURDAY...Partly cloudy. Leeward, isolated showers during the
+day. Windward, scattered showers. Highs 84 to 89. Lows 71 to 76.
+Northeast winds around 15 mph.
 ```
 
 ---
@@ -7680,72 +9064,72 @@ day, then scattered showers at night. Highs 83 to 88. Lows 71 to
 
 ```text
                         
-522
-SXHW80 PHFO 280115
+325
+SXHW80 PHFO 290115
 OMRHFO
 
 SURF OBSERVATIONS
 NATIONAL WEATHER SERVICE HONOLULU HI
-315 PM HST SUN SEP 27 2026
+315 PM HST MON SEP 28 2026
 
 FULL FACE SURF OBSERVATIONS ARE TAKEN BY COUNTY LIFE GUARDS AND
 COOPERATIVE OBSERVERS AND RELAYED TO THE NATIONAL WEATHER SERVICE
 FOR DISSEMINATION. THESE OBSERVATIONS ARE NOT QUALITY CONTROLLED.
 
-HIZ003-004-029>031-280100-
+HIZ003-004-029>031-290100-
 KAUAI-
 
 LOCATION        TIME   SURF HEIGHT DIR   PER                  REMARKS
 KEE
-HAENA        1200 PM           4-5  NE    10
-HANALEI      1200 PM           2-4  NE    10
-ANAHOLA      1000 AM           4-6   E    12
-KEALIA       1000 AM           6-8   E    12
-LYDGATE      1000 AM           4-7   E    12
-POIPU        1000 AM           6-8  SE     8
-SALT POND    1000 AM           6-8   S     8
-KEKAHA       1000 AM           6-8   S     8
+HAENA        1230 PM           4-8  NE    10
+HANALEI      1230 PM           3-5 NNE    10
+ANAHOLA
+KEALIA
+LYDGATE
+POIPU
+SALT POND
+KEKAHA
 $$
 
-HIZ006-007-009>011-032>036-280100-
+HIZ006-007-009>011-032>036-290100-
 OAHU-
 
 LOCATION        TIME   SURF HEIGHT DIR PER         WIND      REMARKS
 DIAMOND HEAD
 SUNSET
-WAIKIKI      1000 AM           4-5                            CANOES
-SANDY BEACH  1000 AM           6-8                       SHORE BREAK
-MAKAPUU      1000 AM          8-12
-EHUKAI       1000 AM           1-2
-MAKAHA       1000 AM           1-2
+WAIKIKI       123 PM           3-4             NE 15-20       CANOES
+SANDY BEACH   123 PM           4-6             NE 20-25  SHORE BREAK
+MAKAPUU       123 PM           3-5             NE 15-25
+EHUKAI        123 PM           3-4             NE 10-15
+MAKAHA        123 PM           2-3             NE 20-25
 $$
 
-HIZ015>018-022-045>050-280100-
+HIZ015>018-022-045>050-290100-
 MAUI-MOLOKAI-LANAI-KAHOOLAWE-
 
 LOCATION        TIME   SURF HEIGHT   DIR         WIND      REMARKS
-KANAHA       1045 AM           0-1    NE      E 15-25
-BALDWIN SHOR 1045 AM           0-1     E         E 25
-BALDWIN OUTE 1045 AM           2-3     E
-HOOKIPA
-KAMAOLE I
-KAMAOLE III
-HANAKAOO
+KANAHA        135 PM           2-3            E 15-25  PARTLY CLDY
+BALDWIN SHOR  137 PM           2-4           NE 15-30 MOSTLY SUNNY
+BALDWIN OUTE  137 PM           6-8           NE 15-30 MOSTLY SUNNY
+HOOKIPA       151 PM          8-10        TRADE 15-20        SUNNY
+KAMAOLE I     149 PM           2-4           VRB 5-10  PARTLY CLDY
+KAMAOLE III   150 PM           2-4             S 5-10        SUNNY
+HANAKAOO      153 PM           2-3     S        S 5-1  PARTLY CLDY
 FLEMING
 $$
 
-HIZ023-026>028-051>054-280100-
+HIZ023-026>028-051>054-290100-
 BIG ISLAND OF HAWAII-
 
 LOCATION        TIME   SURF HEIGHT   DIR         WIND      REMARKS
-RICHARDSONS  1045 AM           3-4    NE         NE 5      -DZ OVC
-HONOLII
+RICHARDSONS   127 PM           3-4            NE 5-10  PARTLY CLDY
+HONOLII       129 PM           2-3           SE 10-20        SUNNY
 PUNALU`U
-ISAAC HALE   1045 AM           5-7     E      E 10-20        SUNNY
-HAPUNA
-KAHALUU      1045 AM           3-5     S        VRB 5          P/C
-MAGIC SANDS  1045 AM           2-3    SW         SW 7        SUNNY
-KUA BAY
+ISAAC HALE    130 PM    4-5 CHOPPY           L/V 5-10        SUNNY
+HAPUNA        131 PM           3-5            L/V 0-5        SUNNY
+KAHALUU       132 PM           3-4           NW 10-15        SUNNY
+MAGIC SANDS   133 PM    4-5 OCNL 6           NW 10-15 MOSTLY SUNNY
+KUA BAY       134 PM           1-3               W 10 MOSTLY SUNNY
 $$
 
 LEGEND
@@ -7770,7 +9154,7 @@ $$
 |---|---|
 | **Resource ID** | hfo_tib_reference |
 | **Official source** | https://forecast.weather.gov/product_types.php |
-| **Collected** | 2026-09-28T05:52:20.996294-10:00 HST |
+| **Collected** | 2026-09-28T16:04:47.225351-10:00 HST |
 
 ```text
 National Weather Service
