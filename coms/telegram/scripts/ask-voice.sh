@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+echo "target is not on this desk. Do not run a skills inference." >&2
+exit 1
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"

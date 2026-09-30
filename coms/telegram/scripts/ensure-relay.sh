@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+echo "target is not on this desk. The live relay is Pacific Communications/telegram/. Do not start a second getUpdates." >&2
+exit 1
 # ==============================================================================
 # # INFO — ensure exactly one council-relay.py (python) is running
 # ------------------------------------------------------------------------------

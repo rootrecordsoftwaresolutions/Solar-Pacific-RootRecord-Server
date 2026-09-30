@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+echo "target is not on this desk. This script sends a Telegram message. Do not send." >&2
+exit 1
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"
