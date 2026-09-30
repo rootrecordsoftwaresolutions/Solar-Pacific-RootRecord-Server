@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+echo "target is not on this desk. Do not start the SSH relay loop." >&2
+exit 1
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
