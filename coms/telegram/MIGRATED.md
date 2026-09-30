@@ -1,4 +1,4 @@
 # MIGRATED 2026-09-30
 
-`config/voices.conf` matches Pacific `Communications/telegram/config/voices.conf` and was removed.
+`config/voices.conf` and `SKILL.md` match Pacific `Communications/telegram/` and were removed.
 The relay scripts differ and stay.
