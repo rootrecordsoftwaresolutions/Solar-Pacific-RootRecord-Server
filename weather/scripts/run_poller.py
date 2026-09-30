@@ -36,4 +36,5 @@ BASE_DIR = "/home/rootrecord/Database/WEATHER/Hawai'i/hfo"
 HURRICANES_BASE_DIR = "/home/rootrecord/Database/WEATHER/Hawai'i/hurricanes"
 
 if __name__ == "__main__":
-    run_cycle.run_forever(BASE_DIR, HURRICANES_BASE_DIR)
+    print("target is not on this desk. The live weather poller is Pacific Weather/scripts/run_poller.py.", file=sys.stderr)
+    raise SystemExit(1)

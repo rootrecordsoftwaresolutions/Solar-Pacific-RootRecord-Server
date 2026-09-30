@@ -210,7 +210,5 @@ def main():
         time.sleep(0.2)
 
 if __name__ == "__main__":
-    try:
-        raise SystemExit(main())
-    except KeyboardInterrupt:
-        print("[ok] stopped"); raise SystemExit(0)
+    print("target is not on this desk. The live relay is Pacific Communications/telegram/. Do not start a second getUpdates.", file=sys.stderr)
+    raise SystemExit(1)
