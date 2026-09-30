@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-echo "target is not on this desk. This script reads master-key.env. Do not print secrets." >&2
-exit 1
+echo "target is not on this desk. This script reads master-key.env. Do not print secrets." >&2; exit 1
 # ==============================================================================
 # # INFO — telegram council status (no secret values)
 # ------------------------------------------------------------------------------

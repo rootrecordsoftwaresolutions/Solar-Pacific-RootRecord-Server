@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-echo "target is not on this desk. This script rsyncs the skills plumbing tree. Live plumbing is Pacific System/scripts/plumbing/." >&2
-exit 1
+echo "target is not on this desk. This script rsyncs the skills plumbing tree. Live plumbing is Pacific System/scripts/plumbing/." >&2; exit 1
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEST=/home/rootrecord/.ollama/skills/plumbing
