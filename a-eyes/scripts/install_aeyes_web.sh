@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo 'target is not on this desk. Live cameras are Pacific Security/Cameras/. This script would pkill cam_server.py and reload the poller.' >&2; exit 1
 # Install /aeyes live web UI path through the poller proxy + restart cam server.
 set -euo pipefail
 
