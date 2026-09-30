@@ -1,3 +1,0 @@
-# Desk — mysql
-
-Function desk.
